@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmFormasPago</class>
+ <widget class="QWidget" name="frmFormasPago">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>690</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Formas de Pago / Cobro</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Las formas de pago representan a los medios o hechos que se producen para generar un pago. Es decir, &lt;span style=&quot; font-style:italic;&quot;&gt;reflejan el acto en sí del pago&lt;/span&gt;, su naturaleza u origen. Permite definir también algunos costes financieros asociado al mismo.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Constituyen un modelo o guía que predefinirá ciertos valores en los registros que lo utilice. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&amp;Código*</string>
+       </property>
+       <property name="buddy">
+        <cstring>db_codpago</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="2">
+      <widget class="DBLineEdit" name="db_codpago">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Código único que identifica a la forma de pago. Puede ser alfanumérico.</string>
+       </property>
+       <property name="statusTip">
+        <string>Código único que identifica a la forma de pago. Puede ser alfanumérico.</string>
+       </property>
+       <property name="whatsThis">
+        <string>Código único que identifica a la forma de pago. Puede ser alfanumérico.</string>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="fieldName">
+        <string>codpago</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>398</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lblNombre">
+       <property name="text">
+        <string>&amp;Descripción*</string>
+       </property>
+       <property name="buddy">
+        <cstring>db_nombre</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="3">
+      <widget class="DBLineEdit" name="db_nombre">
+       <property name="whatsThis">
+        <string>Descripción de la forma de pago</string>
+       </property>
+       <property name="fieldName">
+        <string>descripcion</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Indique a través de qué medio se realiza el pago o el cobro. Son excluyentes</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="0">
+       <widget class="DBChooseRecordButton" name="db_idcaja">
+        <property name="whatsThis">
+         <string>Cuenta bancaria en el que se produce el cargo asociado a esta forma de pago. Sólo tiene sentido en formas de pago de tipo Externa e indica una cuenta de banco propia de la empresa.</string>
+        </property>
+        <property name="text">
+         <string>Caja</string>
+        </property>
+        <property name="fieldName">
+         <string>idcaja</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="DBChooseRecordButton" name="db_idtarjeta">
+        <property name="whatsThis">
+         <string>Tarjeta de crédito (con la que se abona) asociada a esta forma de pago. Sólo tiene sentido en formas de pago Externa, y la tarjeta de crédito es el medio con la que la empresa paga al proveedor.</string>
+        </property>
+        <property name="text">
+         <string>Tarjeta de crédito</string>
+        </property>
+        <property name="fieldName">
+         <string>idtarjeta</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBLineEdit" name="db_tarjeta">
+        <property name="fieldName">
+         <string>tarjetascredito.descripcion</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="DBChooseRecordButton" name="db_idcuenta">
+        <property name="whatsThis">
+         <string>Cuenta bancaria en el que se produce el cargo asociado a esta forma de pago. Sólo tiene sentido en formas de pago de tipo Externa e indica una cuenta de banco propia de la empresa.</string>
+        </property>
+        <property name="text">
+         <string>Cuenta bancaria</string>
+        </property>
+        <property name="fieldName">
+         <string>idcuenta</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="DBLineEdit" name="db_tarjeta_2">
+        <property name="fieldName">
+         <string>cuentasbanco.descripcion</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="DBLineEdit" name="db_tarjeta_3">
+        <property name="fieldName">
+         <string>cajas.nombre</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="DBCheckBox" name="db_domiciliado">
+        <property name="text">
+         <string>Pago por domiciliación bancaria en cuenta del tercero</string>
+        </property>
+        <property name="fieldName">
+         <string>domiciliado</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Costes financieros asociados</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Coste lineal</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBNumberEdit" name="db_comisionlineal">
+        <property name="fieldName">
+         <string>comisionlineal</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Coste porcentual</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBNumberEdit" name="db_comisionporcentual">
+        <property name="fieldName">
+         <string>comisionporcentual</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codpago</tabstop>
+  <tabstop>db_nombre</tabstop>
+  <tabstop>db_idtarjeta</tabstop>
+  <tabstop>db_tarjeta</tabstop>
+  <tabstop>db_idcuenta</tabstop>
+  <tabstop>db_tarjeta_2</tabstop>
+  <tabstop>db_idcaja</tabstop>
+  <tabstop>db_tarjeta_3</tabstop>
+  <tabstop>db_domiciliado</tabstop>
+  <tabstop>db_comisionlineal</tabstop>
+  <tabstop>db_comisionporcentual</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../../programacion/alepherp/alepherp/src/resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

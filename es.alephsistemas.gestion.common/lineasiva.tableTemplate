@@ -1,0 +1,133 @@
+<table>
+    <name>lineasiva</name>
+    <!--Líneas que contienen los acumulados según tipo de IVA de las facturas. Campos comunes-->
+    <alias>Lineas de IVA</alias>
+
+    <field>
+        <name>idimpuesto</name>
+        <!--Tipo de IVA aplicado-->
+        <alias>I.V.A.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>tvw_periodosimpuestos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>nombre_impuesto</name>
+        <alias>Impuesto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <calculated>true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    return bean.fatherFieldValue("tvw_periodosimpuestos", "nombre");
+}
+]]>
+        </script>
+    </field>
+
+    <field>
+        <name>tipoiva</name>
+        <alias>Tipo I.V.A.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Sujeta a I.V.A.,Exenta de I.V.A.,No sujeta a I.V.A.</optionList>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <visiblegrid>true</visiblegrid>        
+        <default>Sujeta a I.V.A.</default>
+    </field>
+    
+    <field>
+        <name>observaciones</name>
+        <alias>Observaciones</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>neto</name>
+        <alias>Base imponible</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+
+    <field>
+        <name>iva</name>
+        <alias>% I.V.A.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+    </field>
+
+    <field>
+        <name>totaliva</name>
+        <!--Total de IVA-->
+        <alias>I.V.A.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <calculated saveOnDb="true">true</calculated>
+        <builtInExpression>
+            <expression>neto * (iva / 100)</expression>
+        </builtInExpression>
+    </field>
+
+    <field>
+        <name>recargo</name>
+        <alias>% R.Equivalencia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+    </field>
+
+    <field>
+        <name>totalrecargo</name>
+        <!--Total de recargo de equivalencia-->
+        <alias>R.Equivalencia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <calculated saveOnDb="true">true</calculated>
+        <builtInExpression>
+            <expression>neto * (recargo / 100)</expression>
+        </builtInExpression>
+    </field>
+
+    <field>
+        <name>totallinea</name>
+        <alias>Base Imponible + I.V.A.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <calculated saveOnDb="true">true</calculated>
+        <default>0</default>
+        <builtInExpression>
+            <expression>neto + totaliva + totalrecargo</expression>
+        </builtInExpression>
+    </field>
+</table>
+
+

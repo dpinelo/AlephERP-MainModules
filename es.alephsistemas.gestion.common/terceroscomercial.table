@@ -1,0 +1,162 @@
+<table>
+	<name>terceroscomercial</name>
+	<!--Información de tipo de comercial de terceros-->
+	<alias>Información comercial de Terceros</alias>
+	<!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+	y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+	por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+	AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+	y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+			<!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+			<!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+	<field>
+		<name>id</name>
+		<alias>ID</alias>
+		<null>false</null>
+		<pk>true</pk>
+		<type>serial</type>
+	</field>
+	
+	<field>
+		<name>idtercero</name>
+		<!--Código identificativo del tercero-->
+		<alias>Código</alias>
+		<null>false</null>
+		<pk>false</pk>
+		<type>int</type>
+		<visiblegrid>false</visiblegrid>
+		
+		<relation>
+			<table>terceros</table>
+			<field>id</field>
+			<card>M1</card>
+		</relation>
+	</field>
+
+	<field>
+		<name>codcuentarem</name>
+		<!--Código de cuenta corriente en la que se remesan los recibos del cliente-->
+		<alias>Remesar en</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>string</type>
+		<length>6</length>
+
+		<relation>
+			<table>cuentasbanco</table>
+			<field>codcuenta</field>
+			<card>M1</card>
+			<delC>true</delC>
+		</relation>
+	</field>
+
+	<field>
+		<name>codcuentadom</name>
+		<!--Código de cuenta corriente en la que se domicilain los recibos del cliente-->
+		<alias>Domiciliar en</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>string</type>
+		<length>6</length>
+
+		<relation>
+			<table>cuentasbanco</table>
+			<field>codcuenta</field>
+			<card>M1</card>
+		</relation>
+	</field>
+	
+	<field>
+		<name>riesgomax</name>
+		<!--Cantidad máxima que el tercero podrá adeudar a la empresa-->
+		<alias>Riesgo máximo autorizado</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>double</type>
+		<partI>8</partI>
+		<partD>2</partD>
+	</field>
+
+	<field>
+		<name>riesgoalcanzado</name>
+		<!--Cantidad máxima que el cliente ha adeudado a la empresa-->
+		<alias>Riesgo alcanzado</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>double</type>
+		<partI>8</partI>
+		<partD>2</partD>
+		<editable>false</editable>
+	</field>
+
+	<field>
+		<name>capitalimpagado</name>
+		<!--Cantidad impagada por el cliente a la empresa-->
+		<alias>Capital impagado</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>double</type>
+		<partI>8</partI>
+		<partD>2</partD>
+	</field>
+
+	<field>
+		<name>codtiporappel</name>
+		<alias>Tipo de rappel</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>string</type>
+		<length>10</length>
+
+		<relation>
+			<table>tiposrappel</table>
+			<field>codtiporappel</field>
+			<card>M1</card>
+		</relation>
+
+	</field>
+
+	<field>
+		<name>codagente</name>
+		<!--Código del agente comercial asignado al cliente-->
+		<alias>Agente comercial</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>int</type>
+
+		<relation>
+			<table>agentes</table>
+			<field>int</field>
+			<card>M1</card>
+		</relation>
+	</field>
+
+	<field>
+		<name>riesgoasegurado</name>
+		<!--Cantidad máxima que el cliente adeuda a la empresa cubierta por el seguro de ventas-->
+		<alias>Riesgo asegurado</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>double</type>
+		<partI>8</partI>
+		<partD>2</partD>
+	</field>
+
+	<field>
+		<name>ventas_aseguradas</name>
+		<!--Indica si el tercero tiene o no aseguradas las ventas-->
+		<alias>Ventas aseguradas</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>string</type>
+		<optionslist>Aseguradas,NO aseguradas,Organismo Público,Particular,Sin clasificación solicitada</optionslist>
+		<default>Sin clasificación solicitada</default>
+	</field>
+</table>

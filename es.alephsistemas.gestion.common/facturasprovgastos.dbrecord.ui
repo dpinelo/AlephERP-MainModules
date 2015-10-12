@@ -1,0 +1,1392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmFacturasProv</class>
+ <widget class="QDialog" name="frmFacturasProv">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>937</width>
+    <height>629</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Facturas recibidas</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <property name="tableName" stdset="0">
+   <string>facturasprov</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_7">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0" rowspan="6">
+    <widget class="QFrame" name="frameButtons">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>140</width>
+       <height>450</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>135</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: #CECFB0</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QToolButton" name="tbCostes">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Distribución de costes</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/distribucioncostes.png</normaloff>:/images/commons/distribucioncostes.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tbObservaciones">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>111</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Campo libre de observaciones.</string>
+        </property>
+        <property name="statusTip">
+         <string>Campo libre de observaciones.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Campo libre de observaciones.</string>
+        </property>
+        <property name="text">
+         <string>Observaciones</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/estadisticas.png</normaloff>:/images/commons/estadisticas.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tbEfectos">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Efectos de pago</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/tesoreria.png</normaloff>:/images/commons/tesoreria.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tbContabilidad">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>111</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Acceda a los datos contables.</string>
+        </property>
+        <property name="statusTip">
+         <string>Acceda a los datos contables.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Acceda a los datos contables.</string>
+        </property>
+        <property name="text">
+         <string>Contabilidad</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/contabilidad.png</normaloff>:/images/commons/contabilidad.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="groupBox_14">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Código*</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codfactura</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_codfactura">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Código unico del tercero. El sistema propone un número, aunque usted puede cambiarlo. El número debe ser único.</string>
+        </property>
+        <property name="statusTip">
+         <string>Código unico del tercero. El sistema propone un número, aunque usted puede cambiarlo. El número debe ser único.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Código unico del tercero. El sistema propone un número, aunque usted puede cambiarlo. El número debe ser único.</string>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+        <property name="fieldName">
+         <string>codfactura</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Ejercicio</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_ejercicios_descripcion</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_ejercicios_descripcion">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Código unico del tercero. El sistema propone un número, aunque usted puede cambiarlo. El número debe ser único.</string>
+        </property>
+        <property name="statusTip">
+         <string>Código unico del tercero. El sistema propone un número, aunque usted puede cambiarlo. El número debe ser único.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Código unico del tercero. El sistema propone un número, aunque usted puede cambiarlo. El número debe ser único.</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="fieldName">
+         <string>ejercicios.nombre</string>
+        </property>
+        <property name="dataEditable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_16">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Serie de facturación *</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_idserie</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBComboBox" name="db_idserie">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="fieldName">
+         <string>idserie</string>
+        </property>
+        <property name="listTableModel">
+         <string>seriesfacturacion</string>
+        </property>
+        <property name="listColumnName">
+         <string>descripcion</string>
+        </property>
+        <property name="listFilter">
+         <string>seriecompra=true</string>
+        </property>
+        <property name="listColumnToSave">
+         <string>id</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QGroupBox" name="groupBox_10">
+     <property name="title">
+      <string>Datos de la factura</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Número de la factura *</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_numproveedor</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBLineEdit" name="db_numproveedor">
+        <property name="fieldName">
+         <string>numproveedor</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Fecha *</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_fecha</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="DBDateTimeEdit" name="db_fecha">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="displayFormat">
+         <string>dd/MM/yyyy</string>
+        </property>
+        <property name="fieldName">
+         <string>fecha</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="DBLineEdit" name="db_forma_pago">
+        <property name="fieldName">
+         <string>planespago.descripcion</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="DBChooseRecordButton" name="db_idplanpago">
+        <property name="text">
+         <string>Plan de pago *</string>
+        </property>
+        <property name="fieldName">
+         <string>idplanpago</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Datos generales del tercero</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="DBChooseRecordButton" name="db_idtercero">
+        <property name="text">
+         <string>Tercero *</string>
+        </property>
+        <property name="fieldName">
+         <string>idtercero</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="replaceFields">
+         <stringlist>
+          <string>nombre;nombre</string>
+          <string>cifnif;cifnif</string>
+         </stringlist>
+        </property>
+        <property name="scriptExecuteAfterChoose">
+         <string>terceroWasSelected</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>CIF / NIF *</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_cifnif</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="DBLineEdit" name="db_cifnif">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Introduzca aquí el CIF o el NIF del tercero.</string>
+        </property>
+        <property name="statusTip">
+         <string>Introduzca aquí el CIF o el NIF del tercero.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Introduzca aquí el CIF o el NIF del tercero. El formato del CIF debe ser: B0123567. El formato del NIF debe ser: 01234567M</string>
+        </property>
+        <property name="inputMask">
+         <string>xxxxxxxxxx</string>
+        </property>
+        <property name="fieldName">
+         <string>cifnif</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="DBLineEdit" name="db_nombre">
+        <property name="toolTip">
+         <string>Se introduce aquí la razón social o nombre del tercero.</string>
+        </property>
+        <property name="statusTip">
+         <string>Se introduce aquí la razón social o nombre del tercero.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Se introduce aquí la razón social o nombre del tercero.</string>
+        </property>
+        <property name="fieldName">
+         <string>nombre</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="autoComplete">
+         <set>AlephERP::ValuesFromTableWithNoRelation</set>
+        </property>
+        <property name="autoCompleteTableName">
+         <string>terceros</string>
+        </property>
+        <property name="autoCompleteColumn">
+         <string>nombre</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBLineEdit" name="db_terceros_codtercero">
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="fieldName">
+         <string>idtercero</string>
+        </property>
+        <property name="autoComplete">
+         <set>AlephERP::RestrictValueToItemFromList|AlephERP::UpdateOwnerFieldBean|AlephERP::ValuesFromRelation</set>
+        </property>
+        <property name="autoCompleteColumn">
+         <string>codtercero</string>
+        </property>
+        <property name="autoCompletePopupSize">
+         <size>
+          <width>350</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QGroupBox" name="groupBox_11">
+     <property name="title">
+      <string>Datos del Gasto</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="DBChooseRecordButton" name="db_chooseidservicio">
+          <property name="text">
+           <string>Seleccione el servicio recibido *</string>
+          </property>
+          <property name="fieldName">
+           <string/>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+          <property name="tableName">
+           <string>servicios</string>
+          </property>
+          <property name="searchFilter">
+           <string>serecibe=true</string>
+          </property>
+          <property name="scriptExecuteAfterChoose">
+           <string>servicioSelected</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DBLineEdit" name="db_lineidservicio">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="relationFilter">
+           <string>serecibe=true</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+          <property name="autoComplete">
+           <set>AlephERP::RestrictValueToItemFromList|AlephERP::ValuesFromTableWithNoRelation</set>
+          </property>
+          <property name="autoCompleteTableName">
+           <string>servicios</string>
+          </property>
+          <property name="autoCompleteColumn">
+           <string>referencia</string>
+          </property>
+          <property name="autoCompletePopupSize">
+           <size>
+            <width>350</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="autoCompleteVisibleFields">
+           <string>referencia;nombre</string>
+          </property>
+          <property name="scriptAfterChooseFromCompleter">
+           <string>servicioReferenciaSelected</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DBLineEdit" name="db_servicios_nombre">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="fieldName">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_17">
+        <property name="text">
+         <string>Descripción</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="DBLineEdit" name="db_servicios_descripcion">
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="title">
+      <string>Importes</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Base Imponible</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_baseimponible</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBChooseRecordButton" name="db_idimpuesto">
+        <property name="text">
+         <string>I.V.A.</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="tableName">
+         <string>tvw_periodosimpuestos</string>
+        </property>
+        <property name="searchFilter">
+         <string>fechahasta&gt;now()</string>
+        </property>
+        <property name="scriptExecuteAfterChoose">
+         <string>updateIVA</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Cuota I.V.A.</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy">
+         <cstring>db_servicios_cuotaiva</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="DBChooseRecordButton" name="db_idimpuesto_irpf">
+        <property name="text">
+         <string>I.R.P.F.</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="tableName">
+         <string>tvw_periodosimpuestos_irpf</string>
+        </property>
+        <property name="searchFilter">
+         <string>fechahasta&gt;now()</string>
+        </property>
+        <property name="scriptExecuteAfterChoose">
+         <string>updateIRPF</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>Cuota I.R.P.F.</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy">
+         <cstring>db_servicios_cuotairpf</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>TOTAL</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy">
+         <cstring>db_servicios_total</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="DBNumberEdit" name="db_baseimponible">
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="DBLineEdit" name="db_servicios_iva">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="fieldName">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="DBNumberEdit" name="db_servicios_cuotaiva"/>
+      </item>
+      <item row="1" column="3">
+       <widget class="DBNumberEdit" name="db_servicios_irpf">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="DBNumberEdit" name="db_servicios_cuotairpf"/>
+      </item>
+      <item row="1" column="5">
+       <widget class="DBNumberEdit" name="db_servicios_total">
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QStackedWidget" name="swFichas">
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="pageCostes">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Seleccione una distribución de costes a aplicar</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="DBChooseRecordButton" name="db_iddistribucioncostes">
+            <property name="text">
+             <string>Distribución de costes</string>
+            </property>
+            <property name="fieldName">
+             <string>iddistribucioncostes</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="scriptExecuteAfterChoose">
+             <string>asignarCostes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBLineEdit" name="db_distribucioncostes_nombre">
+            <property name="fieldName">
+             <string>distribucioncostes.nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pbAgregarMultiplesCentrosCoste">
+            <property name="text">
+             <string>Agregar Múltiples Subcentros de coste</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/images/commons/centrosdecoste.png</normaloff>:/images/commons/centrosdecoste.png</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Distribución de costes de esta factura</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="DBDetailView" name="db_lineasdistribucioncostesfacturasprov">
+            <property name="relationName">
+             <string>lineasdistribucioncostesfacturasprov</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>178</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_10">
+              <property name="text">
+               <string>Total de costes (base imponible) imputados</string>
+              </property>
+              <property name="buddy">
+               <cstring>db_totalcostesdistribuidos</cstring>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="DBNumberEdit" name="db_totalcostesdistribuidos">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="fieldName">
+               <string>totalcostesdistribuidos</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Total de costes (total factura) imputados</string>
+              </property>
+              <property name="buddy">
+               <cstring>db_neto_costes</cstring>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="DBNumberEdit" name="db_neto_costes">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="fieldName">
+               <string>totalcostesdistribuidosconimpuestos</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageObservaciones">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="title">
+          <string>Observaciones</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="DBRichTextEdit" name="db_observaciones">
+            <property name="fieldName">
+             <string>observaciones</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageContabilidad">
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_9">
+         <property name="title">
+          <string>Contabilidad</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0" colspan="2">
+           <widget class="DBCheckBox" name="db_nogenerarasiento">
+            <property name="text">
+             <string>No generar asiento contable</string>
+            </property>
+            <property name="fieldName">
+             <string>nogenerarasiento</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>Asiento número</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="DBLineEdit" name="db_co_asientos_numero">
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="fieldName">
+             <string>co_asientos.brother.numero</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_19">
+            <property name="text">
+             <string>Fecha</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="DBDateTimeEdit" name="db_co_asientos_fecha">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>120</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="fieldName">
+             <string>co_asientos.brother.fecha</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>478</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="5">
+           <widget class="QPushButton" name="pbGenerarAsiento">
+            <property name="text">
+             <string>Volver a generar asiento contable</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="6">
+           <widget class="DBTableView" name="frmFacturasProv-co_asientos.co_partidas">
+            <property name="internalData">
+             <bool>true</bool>
+            </property>
+            <property name="relationName">
+             <string>co_asientos.co_partidas</string>
+            </property>
+            <property name="allowedEdit">
+             <bool>false</bool>
+            </property>
+            <property name="visibleColumns">
+             <string>codsubcuenta;concepto;debe;haber</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageEfectos">
+      <layout class="QVBoxLayout" name="verticalLayout_12">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>Efectos de pago</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="1">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>498</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="0">
+           <widget class="DBCheckBox" name="db_efectospagoautomaticos">
+            <property name="text">
+             <string>Gestión automática de efectos de pago</string>
+            </property>
+            <property name="fieldName">
+             <string>efectospagoautomaticos</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="pbMarcarPagada">
+            <property name="toolTip">
+             <string>Marca esta factura como pagada, creando los efectos de pago correspondientes.</string>
+            </property>
+            <property name="statusTip">
+             <string>Marca esta factura como pagada, creando los efectos de pago correspondientes.</string>
+            </property>
+            <property name="whatsThis">
+             <string>Marca esta factura como pagada, creando los efectos de pago correspondientes.</string>
+            </property>
+            <property name="text">
+             <string>Marcar como pagada</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/aplicacion/images/ok.png</normaloff>:/aplicacion/images/ok.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="DBRelatedElementsView" name="db_efectospago">
+            <property name="allowedMetadatas">
+             <string>efectospago</string>
+            </property>
+            <property name="categories">
+             <string>Pagos</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="visibleButtons">
+             <set>DBRelatedElementsView::Delete|DBRelatedElementsView::Insert|DBRelatedElementsView::InsertExisting|DBRelatedElementsView::RemoveExisting|DBRelatedElementsView::Update|DBRelatedElementsView::View</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>widgets/dbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>widgets/dbdatetimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBRelatedElementsView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbrelatedelementsview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTableView</class>
+   <extends>QTableView</extends>
+   <header>widgets/dbtableview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBRichTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>widgets/dbrichtextedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codfactura</tabstop>
+  <tabstop>db_ejercicios_descripcion</tabstop>
+  <tabstop>db_idserie</tabstop>
+  <tabstop>db_numproveedor</tabstop>
+  <tabstop>db_fecha</tabstop>
+  <tabstop>db_idplanpago</tabstop>
+  <tabstop>db_forma_pago</tabstop>
+  <tabstop>db_idtercero</tabstop>
+  <tabstop>db_terceros_codtercero</tabstop>
+  <tabstop>db_nombre</tabstop>
+  <tabstop>db_cifnif</tabstop>
+  <tabstop>db_chooseidservicio</tabstop>
+  <tabstop>db_lineidservicio</tabstop>
+  <tabstop>db_servicios_descripcion</tabstop>
+  <tabstop>db_baseimponible</tabstop>
+  <tabstop>db_idimpuesto</tabstop>
+  <tabstop>db_servicios_cuotaiva</tabstop>
+  <tabstop>db_idimpuesto_irpf</tabstop>
+  <tabstop>db_servicios_cuotairpf</tabstop>
+  <tabstop>db_servicios_total</tabstop>
+  <tabstop>db_iddistribucioncostes</tabstop>
+  <tabstop>db_distribucioncostes_nombre</tabstop>
+  <tabstop>pbAgregarMultiplesCentrosCoste</tabstop>
+  <tabstop>db_totalcostesdistribuidos</tabstop>
+  <tabstop>db_neto_costes</tabstop>
+  <tabstop>db_observaciones</tabstop>
+  <tabstop>pbMarcarPagada</tabstop>
+  <tabstop>db_efectospagoautomaticos</tabstop>
+  <tabstop>db_nogenerarasiento</tabstop>
+  <tabstop>db_co_asientos_numero</tabstop>
+  <tabstop>db_co_asientos_fecha</tabstop>
+  <tabstop>pbGenerarAsiento</tabstop>
+  <tabstop>frmFacturasProv-co_asientos.co_partidas</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../../programacion/alepherp/alepherp/src/resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

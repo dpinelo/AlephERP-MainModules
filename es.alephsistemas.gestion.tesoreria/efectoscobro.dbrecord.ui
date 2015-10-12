@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1033</width>
+    <height>798</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Efectos de cobro</string>
+  </property>
+  <property name="tableName" stdset="0">
+   <string>efectoscobro</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="label_12">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Los efectos de cobro son documentos que se generan para dar soporte al cobro de facturas emitidas u otros documentos que impliquen un cobro por la empresa (una devolución de un impuesto por ejemplo). Así, por ejemplo toda factura emitida podrá tener uno o varios efectos de cobro. Por ejemplo, una factura que se paga en 30 y 60 dias, tendrá dos efectos de cobro, por cada vencimiento. Los efectos de cobro permitirán llevar un control de elementos pagados o no.&lt;/p&gt;&lt;p&gt;A su vez, y asociado al efecto de pago, se pueden asociar los cobros físicos que se producen. Por ejemplo, si llegado el vencimiento del día 30, el 50% del cobro se produce por banco y el 50% restante se produce en contado, ésto se anotará en Cobros y Devoluciones.&lt;/p&gt;&lt;p&gt;Los &lt;span style=&quot; font-style:italic;&quot;&gt;efectos de cobro&lt;/span&gt; son útiles para las previsiones de &lt;span style=&quot; font-style:italic;&quot;&gt;tesoreria&lt;/span&gt;, mientras que la zona de&lt;span style=&quot; font-style:italic;&quot;&gt; Cobros y Devoluciones&lt;/span&gt; hace referencia al &lt;span style=&quot; font-style:italic;&quot;&gt;movimiento real de dinero&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="topMargin">
+       <number>3</number>
+      </property>
+      <property name="bottomMargin">
+       <number>3</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Código</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codigo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_codigo">
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="fieldName">
+         <string>codigo</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>Nº Documento</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_numdocumentointerno</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBChooseRelatedRecordButton" name="db_chooseDocumentoExterno">
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
+        <property name="allowedMetadatas">
+         <string>facturascli</string>
+        </property>
+        <property name="category">
+         <string>Cobros</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_numdocumentointerno">
+        <property name="fieldName">
+         <string>numdocumentointerno</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Fecha</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_fecha</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBDateTimeEdit" name="db_fecha">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
+        <property name="displayFormat">
+         <string>dd/MM/yyyy</string>
+        </property>
+        <property name="fieldName">
+         <string>fecha</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="AERPScriptWidget" name="script_datosgeneralestercero">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="name">
+      <string>datosgeneralestercero</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Cobro previsto en</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="topMargin">
+       <number>3</number>
+      </property>
+      <property name="bottomMargin">
+       <number>3</number>
+      </property>
+      <item>
+       <widget class="DBComboBox" name="db_idformapagoprevista">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
+        <property name="fieldName">
+         <string>idformapagoprevista</string>
+        </property>
+        <property name="listTableModel">
+         <string>formaspago</string>
+        </property>
+        <property name="listColumnName">
+         <string>descripcion</string>
+        </property>
+        <property name="listColumnToSave">
+         <string>id</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>C.C.C. tercero (si procede)</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codentidad</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_iban">
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="fieldName">
+         <string>iban</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_codentidad">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
+        <property name="fieldName">
+         <string>codentidad</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_codsucursal">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
+        <property name="fieldName">
+         <string>codsucursal</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_dc">
+        <property name="maximumSize">
+         <size>
+          <width>25</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
+        <property name="fieldName">
+         <string>dc</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_cuenta">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
+        <property name="fieldName">
+         <string>cuenta</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Concepto</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="DBChooseRecordButton" name="db_idtipoefecto">
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
+        <property name="text">
+         <string>Tipo de Efecto</string>
+        </property>
+        <property name="fieldName">
+         <string>idtipoefecto</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBLineEdit" name="db_tipoefecto">
+        <property name="fieldName">
+         <string>tiposefectos.nombre</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="DBTextEdit" name="db_texto">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
+        <property name="fieldName">
+         <string>texto</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Datos principales</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Importe a cobrar</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_importe</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DBNumberEdit" name="db_importe">
+          <property name="maximumSize">
+           <size>
+            <width>180</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::TabFocus</enum>
+          </property>
+          <property name="fieldName">
+           <string>importe</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DBLineEdit" name="db_importenombrado">
+          <property name="fieldName">
+           <string>importenombrado</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Importe cobrado</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_importecobrado</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DBNumberEdit" name="db_importecobrado">
+          <property name="maximumSize">
+           <size>
+            <width>180</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="fieldName">
+           <string>importecobrado</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Estado</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_estado</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DBComboBox" name="db_estado">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::TabFocus</enum>
+          </property>
+          <property name="fieldName">
+           <string>estado</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Fecha Vencimiento</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_fechav</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DBDateTimeEdit" name="db_fechav">
+          <property name="focusPolicy">
+           <enum>Qt::TabFocus</enum>
+          </property>
+          <property name="displayFormat">
+           <string>dd/MM/yyyy</string>
+          </property>
+          <property name="fieldName">
+           <string>fechav</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <attribute name="title">
+       <string>Cobros y devoluciones</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="DBDetailView" name="db_cobrosdevoluciones">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="relationName">
+          <string>cobrosdevoluciones</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <attribute name="title">
+       <string>Documentos relacionados</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="DBRelatedElementsView" name="db_masterdocumentos">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="linkColumns">
+          <string>registros</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AERPScriptWidget</class>
+   <extends>QWidget</extends>
+   <header>scripts/perpscriptwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRelatedRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserelatedrecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>widgets/dbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>widgets/dbdatetimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBRelatedElementsView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbrelatedelementsview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>widgets/dbtextedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codigo</tabstop>
+  <tabstop>db_chooseDocumentoExterno</tabstop>
+  <tabstop>db_numdocumentointerno</tabstop>
+  <tabstop>db_fecha</tabstop>
+  <tabstop>script_datosgeneralestercero</tabstop>
+  <tabstop>db_idformapagoprevista</tabstop>
+  <tabstop>db_codentidad</tabstop>
+  <tabstop>db_codsucursal</tabstop>
+  <tabstop>db_dc</tabstop>
+  <tabstop>db_cuenta</tabstop>
+  <tabstop>db_idtipoefecto</tabstop>
+  <tabstop>db_tipoefecto</tabstop>
+  <tabstop>db_texto</tabstop>
+  <tabstop>db_importe</tabstop>
+  <tabstop>db_importenombrado</tabstop>
+  <tabstop>db_importecobrado</tabstop>
+  <tabstop>db_estado</tabstop>
+  <tabstop>db_fechav</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../../programacion/git/alepherp/src/resources/modules.qrc"/>
+ </resources>
+ <connections/>
+</ui>

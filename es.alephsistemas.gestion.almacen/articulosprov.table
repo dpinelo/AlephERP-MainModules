@@ -1,0 +1,130 @@
+<table>
+    <name>articulosprov</name>
+    <!-- Listado de artículos reales o físicos que proporcionan los proveedores -->
+    <alias>Artículos de Proveedores</alias>
+   
+    <field>
+        <name>id</name>
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>idarticulo</name>
+        <alias>ID. Artículo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>articulos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>refproveedor</name>
+        <!-- Referencia que el proveedor le da a su artículo -->
+        <alias>Ref. Proveedor</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+    </field>
+
+    <field>
+        <name>nombre</name>
+        <!-- Nombre que el proveedor le da al artículo -->
+        <alias>Nombre</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>true</visiblegrid>
+    </field>
+
+    <field>
+        <name>coste</name>
+        <alias>Coste</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+
+    <field>
+        <name>coddivisa</name>
+        <!-- Divisa -->
+        <alias>Divisa</alias>
+        <pk>false</pk>
+        <null>true</null>
+        <type>string</type>
+		<length>3</length>
+        <visiblegrid>true</visiblegrid>
+        <!-- Este campo puede no ser visible en un abstractview normal, pero su edición en abstractview con inlineEdit sí es relevante.
+        Por eso, le definimos el comportamiento en paralelo -->
+        <behaviourOnInlineEdit>
+            <!-- ¿Qué se presenta en esa celda del abstract view cuando no se está editando? -->
+            <viewOnRead>divisas.descripcion</viewOnRead>
+            <!-- ¿Qué se presenta en esa celda del abstract view cuando se está editando? -->
+            <widgetOnEdit>DBChooseRecordButton</widgetOnEdit>
+            <!-- Después de que el usuario escoge una divisa, ejecutamos esto -->
+            <executeScriptAfterChoose>coste;costehora</executeScriptAfterChoose>
+        </behaviourOnInlineEdit>        
+        <relation>
+            <table>divisas</table>
+            <field>coddivisa</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>costedivisaempresa</name>
+        <alias>Coste en divisa local</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+
+    <field>
+        <name>idtercero</name>
+        <!-- Proveedor -->
+        <alias>ID. Tercero</alias>
+        <pk>false</pk>
+        <null>false</null>
+        <type>int</type>
+        <visiblegrid>true</visiblegrid>
+        <!-- Este campo puede no ser visible en un abstractview normal, pero su edición en abstractview con inlineEdit sí es relevante.
+        Por eso, le definimos el comportamiento en paralelo -->
+        <behaviourOnInlineEdit>
+            <!-- ¿Qué se presenta en esa celda del abstract view cuando no se está editando? -->
+            <viewOnRead>terceros.nombre</viewOnRead>
+            <!-- ¿Qué se presenta en esa celda del abstract view cuando se está editando? -->
+            <widgetOnEdit>DBChooseRecordButton</widgetOnEdit>
+        </behaviourOnInlineEdit>        
+        
+        <relation>
+            <table>terceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>fabricante</name>
+        <alias>Fabricante</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+        <visiblegrid>true</visiblegrid>
+    </field>
+
+</table>

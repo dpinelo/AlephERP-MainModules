@@ -1,0 +1,593 @@
+<table>
+    <name>pedidosprov</name>
+    <!--Pedidos a proveedores-->
+    <alias>Pedidos a proveedores</alias>
+    
+	<!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+	y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+	por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+	AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+	y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+	    <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+    
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>lineasarticulospedidosprov</table>
+            <field>idpedido</field>
+            <card>1M</card>
+        </relation>
+        <relation>
+        	<table>lineasserviciospedidosprov</table>
+        	<field>idpedido</field>
+        	<card>1M</card>
+        </relation>
+        <relation>
+        	<table>lineasivapedidosprov</table>
+        	<field>idpedido</field>
+        	<card>1M</card>
+        </relation>        	        
+        <relation>
+            <table>alepherp_informe_analisis_bolsas</table>
+            <field>idpedido</field>
+            <card>1M</card>
+        </relation>        	        
+        	        
+    </field>
+    
+    <field>
+        <name>idempresa</name>
+        <alias>ID. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>		
+        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+   	    <name>idejercicio</name>
+        <alias>ID. Ejercicio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    var idEjercicio = idejercicioActual();
+    debug ("ID Ejercicio: " + idEjercicio);
+    return idEjercicio;
+}
+]]>		
+        </script>
+        <relation>
+            <table>ejercicios</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idserie</name>
+        <!--Serie de facturación-->        
+        <alias>Serie</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>seriesfacturacion</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>    
+
+    <field>
+        <name>idplanpago</name>
+        <alias>Forma de Pago</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+		<visiblegrid>false</visiblegrid>
+        <relation>
+            <table>planespago</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idcomision</name>
+        <alias>Comisión</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>comisiones</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+    	<name>idprepedido</name>
+    	<alias>Id. Prepedido</alias>
+    	<null>false</null>
+    	<pk>false</pk>
+    	<type>int</type>
+    	<visiblegrid>false</visiblegrid>
+    	<relation>
+    		<table>alepherp_prepedidos</table>
+    		<field>id</field>
+    		<card>M1</card>
+   		</relation>
+	</field>
+    		
+    <field>
+    	<name>idanalisis</name>
+    	<alias>Id. Analisis</alias>
+    	<null>false</null>
+    	<pk>false</pk>
+    	<type>int</type>
+    	<visiblegrid>false</visiblegrid>
+    	<relation>
+    		<table>alepherp_informe_analisis</table>
+    		<field>id</field>
+    		<card>M1</card>
+    	</relation>
+    </field>
+    		    		    		
+    <field>
+        <name>coddivisa</name>
+        <alias>Divisa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+        <visiblegrid>false</visiblegrid>
+		<scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    // Esta función esta en __init__.js
+    return coddivisaPorDefecto();
+}
+]]>		
+        </scriptDefaultValue>
+        <relation>
+            <table>divisas</table>
+            <field>coddivisa</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>codpedido</name>
+        <alias>Nº Pedido</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>18</length>
+        <default>0</default>
+        <!-- Este campo, mostrado en un grid, se presenta como un enlace que abre el formulario de edición del registro -->
+        <link linkOpenReadOnly="false">true</link>
+        <!-- Definimos la lógica de generación del contador del tercero. Se podrán anticipar
+        una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 
+        aparecen en dependsOnField. Si alguno de estos campos tiene una relación M1, como el 
+        caso de idempresa->empresas, el valor que se utilizará será el del field de empresas
+        definido en prefixOnRelation: es decir, para el caso de idempresa, el sistema se irá
+        a la relación empresas, al "padre" o empresa, y cogerá el valor definido en el field
+        counter_prefix. 
+        Finalmente, puede determinarse si el usuario puede modificar este contador, con userCanModify
+        y además, especificar si entre los diferentes prefijos y el número aparece algún separador,
+        con separator. -->
+        <counter>
+            <fixedString>PED</fixedString>
+            <dependsOnField prefixOnRelation="counter_prefix">idempresa</dependsOnField>
+            <dependsOnField prefixOnRelation="counter_prefix">idejercicio</dependsOnField>
+            <userCanModify>false</userCanModify>
+            <calculateOnlyOnInsert>true</calculateOnlyOnInsert>
+            <separator>/</separator>
+        </counter>
+    </field>
+
+    <field>
+        <name>tipoiva</name>
+        <alias>Tipo I.V.A.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Sujeta a I.V.A.,Extenta de I.V.A.,No sujeta a I.V.A.</optionList>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <visiblegrid>false</visiblegrid>		
+    </field>
+        
+    <field>
+        <name>tipooperacion</name>
+        <alias>Tipo de operación</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Interior,Intracomunitaria,Exportacion</optionList>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <visiblegrid>false</visiblegrid>		
+    </field>
+
+    <field>
+    	<name>reftercero</name>
+    	<!--Referencia que el cliente da a su pedido-->
+    	<alias>Referencia Cliente</alias>
+    	<null>true</null>
+    	<pk>false</pk>
+    	<type>string</type>
+    	<length>100</length>
+    </field>
+    	    
+    <field>
+        <name>servido</name>
+        <alias>Servido</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <optionList>Completo,Parcial,No</optionList>
+        <default>No</default>
+    </field>
+
+    <field>
+        <name>fecha</name>
+        <alias>Fecha</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+		<scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+	return new Date();
+}
+]]>		
+		</scriptDefaultValue>
+    </field>
+
+    <field>
+        <name>fechasalida</name>
+        <!--Fecha prevista de envío del pedido-->
+        <alias>F. Salida</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+		<scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+	return new Date();
+}
+]]>		
+		</scriptDefaultValue>
+    </field>
+    
+    <field>
+        <name>idtercero</name>
+        <alias>Proveedor</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>terceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+    	<name>iddirtercero</name>
+	    <alias>Dir. Tercero</alias>
+	    <null>true</null>
+	    <pk>false</pk>
+	    <type>int</type>
+	    <visiblegrid>false</visiblegrid>
+	    <relation>
+		    <table>dirterceros</table>
+		    <field>id</field>
+		    <card>M1</card>
+	    </relation>
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <!--Nombre del cliente-->
+        <alias>Cliente</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+    
+    <field>
+        <name>cifnif</name>
+        <alias>C.I.F./N.I.F</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+    </field>
+        
+    <field>
+    	<name>nombredirtercero</name>
+	    <alias>Dirección</alias>
+	    <null>true</null>
+	    <pk>false</pk>
+	    <type>string</type>
+	    <length>250</length>
+	    <visiblegrid>false</visiblegrid>
+	</field>
+
+    <field>
+        <name>direccion</name>
+        <alias>Dirección</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+	    <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>codpostal</name>
+        <alias>Código Postal</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+	    <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>ciudad</name>
+        <alias>Ciudad</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+	    <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>provincia</name>
+        <alias>Provincia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+	    <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>codpais</name>
+        <alias>Pais</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+	    <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>paises</table>
+            <field>codpais</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idpresupuesto</name>
+        <!--Identificador del presupuesto del que proviene el pedido-->
+        <alias>Presupuesto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <default>0</default>
+        <relation>
+            <table>presupuestos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>recfinanciero</name>
+        <alias>R. Financiero</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+        
+    <field>
+        <name>observaciones</name>
+        <alias>Observaciones</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>porcomision</name>
+        <alias>% Comision</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+    </field>
+    
+    <field>
+        <name>neto</name>
+        <alias>Base imponible</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <visiblegrid>false</visiblegrid>
+        <aggregateCalc>
+            <operation>sum</operation>
+            <aggregate>
+                <field>importetotal</field>
+                <relation>lineasarticulospedidoscli</relation>
+            </aggregate>
+            <aggregate>
+                <field>importetotal</field>
+                <relation>lineasserviciospedidoscli</relation>
+            </aggregate>
+        </aggregateCalc>             		        
+    </field>
+    
+    <field>
+        <name>totaliva</name>
+        <!--Total de IVA-->        
+        <alias>IVA</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+    
+    <field>
+        <name>totalirpf</name>
+        <!--Total de IRPF-->        
+        <alias>I.R.P.F.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+    
+    <field>
+        <name>totalrecargo</name>
+        <!--Total de recargo de equivalencia-->        
+        <alias>R.E.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+
+    <field>
+        <name>total</name>
+        <alias>Total</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <calculated saveOnDb="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    var result = bean.fieldValue("neto") + bean.fieldValue("totaliva") - bean.fieldValue("totalirpf") + bean.fieldValue("totalrecargo");
+    return result;
+}
+]]>		
+        </script>        
+	    <displayValueScript>
+<![CDATA[
+function displayValueScript(value, displayValue) {
+  	// Value contiene el valor a formatear, y displayValue el valor que formatería el sistema.
+  	var beanMoneda = bean.father("divisas");
+  	return (displayValue + " " + beanMoneda.fieldValue("simbolo"));
+}
+]]>
+    	</displayValueScript>        
+    </field>
+    
+    <field>
+        <name>totaldivisaempresa</name>
+        <alias>Total en la divisa local</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <calculated saveOnDb="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    var result = bean.fieldValue("total") * bean.fieldValue("tasaconv");
+    return result;
+}
+]]>		
+      	</script>
+    </field>
+    
+    <field>
+        <name>tasaconv</name>
+        <alias>Tasa de conversión</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>3</partD>
+        <default>1</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>idagente</name>
+        <alias>Agente</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <relation>
+            <table>agentescomerciales</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idalmacen</name>
+        <alias>Almacén</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <relation>
+            <table>almacenes</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+</table>

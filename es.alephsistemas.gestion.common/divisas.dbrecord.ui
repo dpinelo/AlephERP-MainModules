@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmBancos</class>
+ <widget class="QWidget" name="frmBancos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>656</width>
+    <height>183</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Divisas</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resources/resources.qrc">
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblNombre">
+     <property name="text">
+      <string>&amp;Código*</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_codigo</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="DBLineEdit" name="db_codigo">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>codigo</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" colspan="4">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>422</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblNombre_4">
+     <property name="text">
+      <string>Descripción*</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_codigo</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="5">
+    <widget class="DBLineEdit" name="db_descripcion">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>descripcion</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblNombre_2">
+     <property name="text">
+      <string>Tasa de conversión</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_codigo</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3" colspan="2">
+    <widget class="QLabel" name="lblNombre_5">
+     <property name="text">
+      <string>Fecha de última actualización de la tasa</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_codigo</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5">
+    <widget class="DBDateTimeEdit" name="db_fecha">
+     <property name="fieldName">
+      <string>fecha</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblNombre_10">
+     <property name="text">
+      <string>Código ISO</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_codigo</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="2">
+    <widget class="DBLineEdit" name="db_codiso">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>codiso</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QLabel" name="lblNombre_3">
+     <property name="text">
+      <string>Símbolo</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_codigo</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="6">
+    <widget class="DBFileUpload" name="dbFileUpload">
+     <property name="fieldName">
+      <string>bandera</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+     <property name="groupName">
+      <string>Bandera</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="2">
+    <widget class="DBNumberEdit" name="db_tasaconv">
+     <property name="fieldName">
+      <string>tasaconv</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4" colspan="2">
+    <widget class="DBLineEdit" name="db_simbolo">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>simbolo</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>widgets/dbdatetimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBFileUpload</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbfileupload.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

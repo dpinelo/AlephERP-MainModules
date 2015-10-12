@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmDirterceros</class>
+ <widget class="QWidget" name="frmDirterceros">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>947</width>
+    <height>723</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Direcciones de terceros</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <property name="tableName" stdset="0">
+   <string>dirterceros</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="DBCheckBox" name="db_domfacturacion">
+     <property name="text">
+      <string>Domicilio de facturación</string>
+     </property>
+     <property name="fieldName">
+      <string>domfacturacion</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="DBCheckBox" name="db_domenvio">
+     <property name="text">
+      <string>Domicilio de envío</string>
+     </property>
+     <property name="fieldName">
+      <string>domenvio</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Descripción</string>
+       </property>
+       <property name="buddy">
+        <cstring>db_descripcion</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="DBLineEdit" name="db_descripcion">
+       <property name="fieldName">
+        <string>descripcion</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Dirección</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="3" column="2">
+       <widget class="DBLineEdit" name="db_codpais">
+        <property name="maxLength">
+         <number>3</number>
+        </property>
+        <property name="fieldName">
+         <string>codpais</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3" colspan="2">
+       <widget class="DBLineEdit" name="db_paises_nombre">
+        <property name="fieldName">
+         <string>paises.nombre</string>
+        </property>
+        <property name="dataEditable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Población</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_poblacion</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="DBLineEdit" name="db_poblacion">
+        <property name="fieldName">
+         <string>poblacion</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Provincia</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_provincia</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="DBChooseRecordButton" name="db_paisChoose">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Paises</string>
+        </property>
+        <property name="fieldName">
+         <string>codpais</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="fieldsToGet" stdset="0">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Dirección</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_direccion</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Cod. Postal</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codpostal</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="5">
+       <widget class="DBMapPosition" name="dbMapPosition">
+        <property name="fieldName">
+         <string>coordenadas</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2" colspan="3">
+       <widget class="DBComboBox" name="db_provincia">
+        <property name="fieldName">
+         <string>idprovincia</string>
+        </property>
+        <property name="listTableModel">
+         <string>provincias</string>
+        </property>
+        <property name="listColumnName">
+         <string>provincia</string>
+        </property>
+        <property name="listColumnToSave">
+         <string>idprovincia</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="DBLineEdit" name="db_codpostal">
+        <property name="fieldName">
+         <string>codpostal</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" colspan="3">
+       <widget class="DBLineEdit" name="db_direccion">
+        <property name="fieldName">
+         <string>direccion</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Contacto</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Teléfono 1</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_telefonoprefijo1</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="DBLineEdit" name="db_telefono1">
+        <property name="inputMask">
+         <string>999 999 999</string>
+        </property>
+        <property name="fieldName">
+         <string>telefono1</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Teléfono 2</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_telefonoprefijo2</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="6">
+       <widget class="DBLineEdit" name="db_telefono2">
+        <property name="inputMask">
+         <string>999 999 999</string>
+        </property>
+        <property name="fieldName">
+         <string>telefono2</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Fax</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_fax_2</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>EMail</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_email</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="DBLineEdit" name="db_telefonoextension1">
+        <property name="fieldName">
+         <string>telefonoextension1</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="3">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Membrete</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_membrete</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBLineEdit" name="db_telefonoprefijo1">
+        <property name="fieldName">
+         <string>telefonoprefijo1</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="DBLineEdit" name="db_telefonoprefijo2">
+        <property name="fieldName">
+         <string>telefonoprefijo2</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7">
+       <widget class="DBLineEdit" name="db_telefonoextension2">
+        <property name="fieldName">
+         <string>telefonoextension2</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="8">
+       <widget class="DBTextEdit" name="db_membrete">
+        <property name="fieldName">
+         <string>membrete</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="3">
+       <widget class="DBLineEdit" name="db_fax_2">
+        <property name="fieldName">
+         <string>fax</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="5" colspan="3">
+       <widget class="DBLineEdit" name="db_email">
+        <property name="fieldName">
+         <string>email</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>widgets/dbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBMapPosition</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbmaposition.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>widgets/dbtextedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_domfacturacion</tabstop>
+  <tabstop>db_domenvio</tabstop>
+  <tabstop>db_descripcion</tabstop>
+  <tabstop>db_direccion</tabstop>
+  <tabstop>db_codpostal</tabstop>
+  <tabstop>db_poblacion</tabstop>
+  <tabstop>db_provincia</tabstop>
+  <tabstop>db_paisChoose</tabstop>
+  <tabstop>db_codpais</tabstop>
+  <tabstop>db_paises_nombre</tabstop>
+  <tabstop>db_telefonoprefijo1</tabstop>
+  <tabstop>db_telefono1</tabstop>
+  <tabstop>db_telefonoextension1</tabstop>
+  <tabstop>db_telefonoprefijo2</tabstop>
+  <tabstop>db_telefono2</tabstop>
+  <tabstop>db_telefonoextension2</tabstop>
+  <tabstop>db_fax_2</tabstop>
+  <tabstop>db_email</tabstop>
+  <tabstop>db_membrete</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

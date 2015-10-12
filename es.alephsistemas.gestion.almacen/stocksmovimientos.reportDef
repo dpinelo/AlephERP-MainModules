@@ -1,0 +1,14 @@
+<report>
+    <name>stocksmovimientos</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Movimiento de almacén</alias>
+    <reportName>stocksmovimientos.xml</reportName>
+    <linkedTo>stocksmovimientos</linkedTo>
+    <type>record</type>    
+    <parameterBinding>
+        <binding>
+            <parameter>id</parameter>
+            <field>id</field>
+        </binding>
+    </parameterBinding>
+</report>

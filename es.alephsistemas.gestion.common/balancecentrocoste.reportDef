@@ -1,0 +1,13 @@
+<report>
+    <name>balancecentrocoste</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Balance Ingresos y Gastos de Centros de Coste</alias>
+    <reportName>balancecentrocoste.xml</reportName>
+    <parameterForm>serviciosfacturasprovcostes</parameterForm>
+    <envVarParameterBinding>
+        <binding>
+            <parameter>P_ID_EMPRESA</parameter>
+            <envVar>idempresa</envVar>
+        </binding>
+    </envVarParameterBinding>    
+</report>

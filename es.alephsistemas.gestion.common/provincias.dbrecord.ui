@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmProvincias</class>
+ <widget class="QWidget" name="frmProvincias">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>391</width>
+    <height>67</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Provincias</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resources/resources.qrc">
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Nombre</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="3">
+    <widget class="DBLineEdit" name="db_nombre">
+     <property name="fieldName">
+      <string>nombre</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="DBChooseRecordButton" name="dbChooseRecordButton">
+     <property name="text">
+      <string>Pais</string>
+     </property>
+     <property name="tableName">
+      <string>paises</string>
+     </property>
+     <property name="fieldsToGet">
+      <string>codpais</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="DBLineEdit" name="dbLineEdit_2">
+     <property name="fieldName">
+      <string>codpais</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="DBLineEdit" name="dbLineEdit_3">
+     <property name="fieldName">
+      <string>nombre</string>
+     </property>
+     <property name="relationFilter">
+      <string>paises</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../resources/modules.qrc"/>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

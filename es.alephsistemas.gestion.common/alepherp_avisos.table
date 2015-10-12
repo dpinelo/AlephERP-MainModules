@@ -1,0 +1,59 @@
+<table>
+	<name>alepherp_avisos</name>
+	<alias>Avisos</alias>
+	      
+	<field>
+		<name>id</name>
+		<alias>Id</alias>
+		<null>false</null>
+		<pk>true</pk>
+		<type>serial</type>
+		<length>255</length>
+		<visiblegrid>false</visiblegrid>
+	</field>
+        
+	<field>
+		<name>fecha</name>
+		<alias>Fecha</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>date</type>
+		<default></default>
+		<visiblegrid>true</visiblegrid>
+	</field>
+        
+	<field>
+		<name>id_users</name>
+		<alias>Usuario</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>string</type>
+		<length>255</length>
+		<visiblegrid>false</visiblegrid>
+		<relation>
+			<table>alepherp_users</table>
+			<field>username</field>
+			<card>M1</card>
+		</relation>
+	</field>
+        
+	<field>
+		<name>descripcion</name>
+		<alias>Descripcion</alias>
+		<null>false</null>
+		<pk>false</pk>
+		<type>string</type>
+		<length>250</length>
+		<visiblegrid>true</visiblegrid>
+	</field>
+        
+	<field>
+		<name>leida</name>
+		<alias>Leído</alias>
+		<null>false</null>
+		<pk>false</pk>
+		<type>bool</type>
+		<visiblegrid>true</visiblegrid>
+	</field>
+        
+</table>

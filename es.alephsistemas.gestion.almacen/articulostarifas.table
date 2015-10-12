@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+
+    <!-- Nombre de la tabla -->
+    <name>articulostarifas</name>
+    <!-- Alias a presentar en la aplicación -->
+    <alias>Tarifas aplicadas a artículos</alias>
+
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+   
+    <field>
+        <name>idarticulo</name>
+        <alias>Id. Articulo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>integer</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>articulos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idtarifa</name>
+        <alias>Tarifa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>integer</type>
+        <visiblegrid>false</visiblegrid>
+        <!-- Este campo puede no ser visible en un abstractview normal, pero su edición en abstractview con inlineEdit sí es relevante.
+        Por eso, le definimos el comportamiento en paralelo -->
+        <behaviourOnInlineEdit>
+            <!-- ¿Qué se presenta en esa celda del abstract view cuando no se está editando? -->
+            <viewOnRead>tarifas.nombre</viewOnRead>
+            <!-- ¿Qué se presenta en esa celda del abstract view cuando se está editando? -->
+            <widgetOnEdit>DBChooseRecordButton</widgetOnEdit>
+            <!-- Después de que el usuario escoge una divisa, ejecutamos esto -->
+            <!-- executeScriptAfterChoose coste;costehora /executeScriptAfterChoose-->
+        </behaviourOnInlineEdit>
+        <onChangeScript>
+<![CDATA[
+function onChange() {
+    bean.pvp.value = (bean.articulos.father.pvp.value * (1 +(bean.tarifas.father.incporcentual.value / 100))) + bean.tarifas.father.inclineal.value;
+}
+]]>    
+        </onChangeScript>        
+        <relation>
+            <table>tarifas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>inclineal</name>
+        <alias>Incremento lineal</alias>
+        <expression>tarifas.father.inclineal</expression>
+    </field>
+
+        <field>
+        <name>incporcentual</name>
+        <alias>Incremento porcentual</alias>
+        <expression>tarifas.father.incporcentual</expression>
+    </field>
+    
+    <field>
+        <name>pvp</name>
+        <alias>P.V.P.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+    	    
+</table>

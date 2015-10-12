@@ -1,0 +1,264 @@
+<table>
+    <name>ejercicios</name>
+    <!--Listado de ejercicios fiscales-->
+    <alias>Ejercicios Fiscales</alias>
+    <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+    <isCached>true</isCached>
+    
+    <associatedScript>contabilidadcommonfunctions.qs</associatedScript>    
+    
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <field>
+        <name>id</name>
+        <!--Código del ejercicio -->
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>seriesfacturacion</table>
+            <field>idejercicio</field>
+            <card>1M</card>
+        </relation>
+        <relation>
+            <table>co_grupos</table>
+            <field>idejercicio</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>
+        <relation>
+            <table>co_cuentasesp</table>
+            <field>idejercicio</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+    
+    <field>
+        <name>codejercicio</name>
+        <!--Código del ejercicio -->
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <uniqueOnFilterField>idempresa</uniqueOnFilterField>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    // dbField es un objeto disponible sólo en este script, y representa a este propio campo. Está disponible
+    // para el ámbito de ejecución de este script como "dbField". Otro objeto también disponible en todos los
+    // scripts es AERPScriptCommon con funciones comunes para ayudar al desarrollador QS
+    // También está disponible bean, y representa al registro total.
+    var value = AERPScriptCommon.nextCounter(dbField);
+    return value;
+}
+]]>        
+        </scriptDefaultValue>        
+    </field>
+
+    <!-- ID de la empresa. Ojo, esta es la única tabla donde el valor del ID de la empresa no se establece
+    como campo calculado. La razón es que un ejercicio puede crearse desde una empresa: si la empresa
+    está en modo inserción (una nueva empresa), no hay forma de saber cuándo la empresa se ha grabado de forma
+    efectiva para recalcular los campos de los beans hijos y que esta relación tomara el valor adecuado.
+    Por eso y solo en este caso, el valor de este campo se dará en el formulario de edición de ejercicios, o
+    bien se tomará del DBDetailView que está dentro de las empresas -->
+    <field>
+        <name>idempresa</name>
+        <alias>Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>        
+        </script>   
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+    </field>
+    
+    <field>
+        <name>fechainicio</name>
+        <!--Fecha de inicio del ejercicio-->
+        <alias>Inicio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    var ahora = new Date();
+    var v = new Date(ahora.getFullYear(), 0, 1, 
+            ahora.getHours(), ahora.getMinutes(), ahora.getSeconds(), ahora.getMilliseconds());
+    return v;
+}
+]]>        
+        </scriptDefaultValue>        
+    </field>
+    
+    <field>
+        <name>fechafin</name>
+        <alias>Fin</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    var ahora = new Date();
+    var v = new Date(ahora.getFullYear(), 11, 31, 
+            ahora.getHours(), ahora.getMinutes(), ahora.getSeconds(), ahora.getMilliseconds());
+    return v;
+}
+]]>        
+        </scriptDefaultValue>        
+    </field>
+
+    <field>
+        <name>estado</name>
+        <!--Estado contable del ejercicio -->
+        <alias>Estado</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>15</length>
+        <optionList>Abierto,Cerrado</optionList>
+        <!-- Estos son los valores que se guardan en la base de datos -->
+        <optionValues>abierto,cerrado</optionValues>
+        <default>abierto</default>
+    </field>
+    
+    <field>
+        <name>counter_prefix</name>
+        <alias>Prefijo para contadores</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>2</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+        
+    <field>
+        <name>longsubcuenta</name>
+        <!-- Número de dígitos de las subcuentas contables del ejercicio (para contabilidad) -->
+        <alias>Dígitos de subcuenta</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <default>10</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>plancontable</name>
+        <alias>Plan contable</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <optionList>PGC 2007, PGC 2007 PYMES, PGC 2010 Entidades sin Animo de Lucro, PGC  2010 Entidades sin Animo de Lucro Abreviado</optionList>
+        <optionValues>2007,2007pyme,2010ent,2010entabr</optionValues>
+        <default>2007</default>
+    </field>
+    
+    <field>
+        <name>idasientoapertura</name>
+        <!-- Identificador del asiento de apertura del ejercicio (para contabilidad)-->
+        <alias>Asiento de apertura</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>co_asientos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idasientopyg</name>
+        <!-- Identificador del asiento de regularización de pérdidas y ganancias del ejercicio (para contabilidad) -->
+        <alias>Asiento de regularización</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>co_asientos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idasientocierre</name>
+        <!-- Identificador del asiento de cierre del ejercicio (para contabilidad) -->
+        <alias>Asiento de cierre</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>co_asientos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>pgactivo</name>
+        <!-- Identificador para comprobar si se ha copiado un plan general anterio.-->
+        <alias>Plan General Activo</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>boolean</type>
+        <visiblegrid>false</visiblegrid>
+        <defaultValue>false</defaultValue>
+    </field>
+
+    <field>
+        <name>partidasivaenexencion</name>
+        <!-- Identificador para comprobar si se ha copiado un plan general anterio.-->
+        <alias>Plan General Activo</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>boolean</type>
+        <visiblegrid>false</visiblegrid>
+        <defaultValue>false</defaultValue>
+    </field>
+    
+</table>
+

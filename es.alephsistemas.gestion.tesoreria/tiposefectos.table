@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://www.alephsistemas.es" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.alephsistemas.es alepherp-metadata.xsd">
+
+    <!-- Nombre de la tabla -->
+    <name>tiposefectos</name>
+    <!-- Alias a presentar en la aplicación -->
+    <alias>Tipos de Efectos</alias>
+
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+        
+    <itemsFilterColumn>
+        <itemFilter>
+            <fieldToFilter>ambito</fieldToFilter>
+        </itemFilter>
+    </itemsFilterColumn>
+                
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+   
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>true</visiblegrid>
+    </field>
+    
+    <field>
+        <name>ambito</name>
+        <alias>Ámbito</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <optionList>Pagos, Cobros, Pagos y Cobros</optionList>
+        <default>Pagos y Cobros</default>
+    </field>
+
+</table>

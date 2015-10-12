@@ -1,0 +1,101 @@
+<table>
+    <name>cobrosdevoluciones</name>
+    
+    <!-- Cobros y devoluciones asociados a Efectos de Cobro -->
+    <alias>Cobros y Devoluciones</alias>
+    
+    <associatedScript debug="true">pagoscobroscommonfunctions.qs</associatedScript>
+    <associatedScript>contabilidadcommonfunctions.qs</associatedScript>    
+    
+    <!-- Los elementos relacionados que tendrá serán los movimientos en los bancos o cajas -->
+    <canHaveRelatedElements>true</canHaveRelatedElements>
+    <relatedElementsContentToBeDelete>
+        <item>
+            <tableName>entradascaja</tableName>
+            <category>*</category>
+            <cardinality>child</cardinality>
+            <type>record</type>
+        </item>
+        <item>
+            <tableName>entradasbanco</tableName>
+            <category>*</category>
+            <cardinality>child</cardinality>
+            <type>record</type>
+        </item>
+    </relatedElementsContentToBeDelete>
+        
+    <qsDbRecord>pagoscobrosdevoluciones.dbrecord.qs</qsDbRecord>
+            
+    <inherits name="pagoscobrosdevoluciones">
+        <element type="connections"/>
+        <element type="relatedElementsContentToBeDelete"/>
+        <element>newRelatedElementScript</element>
+    </inherits>
+
+    <toStringExpression>
+        <expression>Cobro/Devolución de fecha {fecha}</expression>
+    </toStringExpression>
+
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idefecto</name>
+        <alias>Identificador Recibo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>efectoscobro</table>
+            <field>id</field>
+            <card>M1</card>
+            <delC>true</delC>
+            <showOnRelatedModels>true</showOnRelatedModels>
+        </relation>
+    </field>
+
+    <inherits name="pagoscobrosdevoluciones">
+        <element type="field">idformapago</element>
+        <element type="field">fecha</element>
+        <element type="field">importe</element>
+        <element type="field">costedevolucion</element>
+        <element type="field">tasaconv</element>
+        <element type="field">coddivisa</element>
+        <element type="field">importedivisaempresa</element>
+    </inherits>
+    
+    <field>
+        <name>tipo</name>
+        <alias>Tipo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Cobro,Devolución</optionList>
+        <optionIcons>:/images/commons/entradascaja.png,:/images/commons/efectospagodevuelto.png</optionIcons>
+    </field>
+
+    <inherits name="pagoscobrosdevoluciones">
+        <element type="field">editable</element>
+        <element type="field">idcuenta</element>
+        <element type="field">idcaja</element>
+        <element type="field">descripcion</element>
+        <element type="field">iban</element>
+        <element type="field">codentidad</element>
+        <element type="field">codsucursal</element>
+        <element type="field">dc</element>
+        <element type="field">cuenta</element>
+        <element type="field">ccc</element>
+        <element type="field">idasiento</element>
+        <element type="field">nogenerarasiento</element>
+    </inherits>
+    
+</table>

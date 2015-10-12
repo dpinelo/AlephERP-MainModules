@@ -1,0 +1,10 @@
+<AlephERP>
+<export>
+  <generatedTime>2015-03-24 18:35:54</generatedTime>
+  <module>es.alephsistemas.gestion.common</module>
+  <module>es.alephsistemas.gestion.almacen</module>
+  <module>es.alephsistemas.gestion.tesoreria</module>
+  <module>es.alephsistemas.gestion.contabilidad</module>
+
+</export>
+</AlephERP>

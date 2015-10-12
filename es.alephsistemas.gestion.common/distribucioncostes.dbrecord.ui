@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>668</width>
+    <height>410</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Distribución de coste</string>
+  </property>
+  <property name="tableName">
+   <string>distribucioncostes</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Nombre</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="DBLineEdit" name="db_nombre">
+     <property name="fieldName">
+      <string>nombre</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Fecha inicio validez</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="DBDateTimeEdit" name="db_fechainicio">
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
+       </property>
+       <property name="fieldName">
+        <string>fechainicio</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Fecha fin validez</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="DBDateTimeEdit" name="db_fechafin">
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
+       </property>
+       <property name="fieldName">
+        <string>fechafin</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>178</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Detalle de la distribución por subcentro de coste</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QStackedWidget" name="swFichas">
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="pageDetail">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="DBDetailView" name="dbDetailView">
+            <property name="relationName">
+             <string>lineasdistribucioncostes</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QPushButton" name="pbAniadirSubcentros">
+              <property name="text">
+               <string>Añadir múltiples subcentros</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>:/images/commons/centrosdecoste.png</normaloff>:/images/commons/centrosdecoste.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>Suma de los porcentajes</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="DBNumberEdit" name="db_totalporcentajes">
+              <property name="maximumSize">
+               <size>
+                <width>70</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="fieldName">
+               <string>totalporcentajes</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pageSubcentros">
+         <layout class="QGridLayout" name="gridLayout">
+          <property name="margin">
+           <number>0</number>
+          </property>
+          <item row="1" column="0" colspan="2">
+           <widget class="DBTreeView" name="tvSubcentros">
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="rootIsDecorated">
+             <bool>true</bool>
+            </property>
+            <property name="animated">
+             <bool>true</bool>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="tableNames">
+             <string>centroscoste;subcentroscoste</string>
+            </property>
+            <property name="visibleColumns">
+             <string>nombre;nombre</string>
+            </property>
+            <property name="keyColumns">
+             <string>id;id</string>
+            </property>
+            <property name="automaticName">
+             <bool>false</bool>
+            </property>
+            <property name="itemCheckBox">
+             <bool>true</bool>
+            </property>
+            <property name="checkFatherCheckChildrens">
+             <bool>true</bool>
+            </property>
+            <property name="tableName" stdset="0">
+             <string/>
+            </property>
+            <property name="visibleField" stdset="0">
+             <string/>
+            </property>
+            <property name="order" stdset="0">
+             <string/>
+            </property>
+            <property name="keyField" stdset="0">
+             <string/>
+            </property>
+            <attribute name="headerVisible">
+             <bool>false</bool>
+            </attribute>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="pbAniadirMultiple">
+            <property name="text">
+             <string>Añadir</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/aplicacion/images/ok.png</normaloff>:/aplicacion/images/ok.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="pbCancelar">
+            <property name="text">
+             <string>Cancelar</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/generales/images/delete.png</normaloff>:/generales/images/delete.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="2">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Seleccione los subcentros que desea añadir a esta distribución de costes. Si marca un centro de coste, se marcarán automáticamente todos los subcentros que cuelgan de éste.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AERPBaseDialog</class>
+   <extends>QDialog</extends>
+   <header>aerpbasedialog.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>widgets/dbdatetimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTreeView</class>
+   <extends>QTreeView</extends>
+   <header>widgets/dbtreeview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../../programacion/alepherp/src/resources/resources.qrc"/>
+  <include location="../../../programacion/git/alepherp/src/resources/modules.qrc"/>
+ </resources>
+ <connections/>
+</ui>

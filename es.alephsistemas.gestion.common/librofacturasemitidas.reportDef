@@ -1,0 +1,13 @@
+<report>
+    <name>librofacturasemitidas</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Libro de Facturas emitidas</alias>
+    <reportName>librofacturasemitidas.xml</reportName>
+    <parameterForm>librofacturasemitidas</parameterForm>
+    <envVarParameterBinding>
+        <binding>
+            <parameter>P_ID_EMPRESA</parameter>
+            <envVar>idempresa</envVar>
+        </binding>
+    </envVarParameterBinding>
+</report>

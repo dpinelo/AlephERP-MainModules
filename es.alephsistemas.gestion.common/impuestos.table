@@ -1,0 +1,392 @@
+<table> 
+    <name>impuestos</name>
+    <!--Listado de impuestos-->
+    <alias>Impuestos IVA</alias>
+    <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+    <isCached>true</isCached>
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <field>
+        <name>id</name>
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>periodosimpuestos</table>
+            <field>idimpuesto</field>
+            <card>1M</card>
+        </relation>            
+    </field>                
+    
+    <field>
+        <name>idempresa</name>
+        <alias>Cod. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true" onlyOnInsert="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+// Esta función está en __init__.js
+return idempresaActual();
+}
+]]>
+        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>codimpuesto</name>
+        <!--Código del impuesto-->
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <!-- Comprobará que el valor de codtercero es único para el un valor específico de idempresa en 
+        este caso. Es decir, podrá existir el registro 0000001 para idempresa=1 y 0000001 para idempresa=2 -->
+        <uniqueOnFilterField>idempresa</uniqueOnFilterField>        
+    </field>
+
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>iva</name>
+        <alias>% I.V.A.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <!-- La propiedad connectToChilds, hace que este campo se recalcule con cada modificación que se produzca
+        en un child hijo o padre de este bean. Debe ser utilizada con mucho cuidado ya que puede provocar comportamientos
+        recursivos si se entrecruzan cálculos anidades en fields de padres e hijos. -->
+        <calculated saveOnDb="true" connectToChilds="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    var childs = bean.relationChilds("periodosimpuestos");
+    var now = new Date();
+    var v = 0;
+    for ( var i = 0 ; i < childs.length ; i++ ) {
+        if ( childs[i].fieldValue("fechadesde") < now && childs[i].fieldValue("fechahasta") > now ) {
+            v = childs[i].fieldValue("iva");
+        }
+    }
+    return v;
+}
+]]>        
+        </script>
+    </field>
+
+    <field>
+        <name>recargo</name>
+        <alias>% Rec. equivalencia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <!-- La propiedad connectToChilds, hace que este campo se recalcule con cada modificación que se produzca
+        en un child hijo o padre de este bean. Debe ser utilizada con mucho cuidado ya que puede provocar comportamientos
+        recursivos si se entrecruzan cálculos anidades en fields de padres e hijos. -->
+        <calculated saveOnDb="true" connectToChilds="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    var childs = bean.relationChilds("periodosimpuestos");
+    var now = new Date();
+    var v = 0;
+    for ( var i = 0 ; i < childs.length ; i++ ) {
+        if ( childs[i].fieldValue("fechadesde") < now && childs[i].fieldValue("fechahasta") > now ) {
+            v = childs[i].fieldValue("recargo");
+        }
+    }
+    return v;
+}
+]]>        
+        </script>
+    </field>
+    
+    <field>
+        <name>idsubcuentarep</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Repercutido (IVAREP)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentasrep</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idsubcuentasop</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Soportado (IVASOP)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentassop</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idsubcuentarepisp</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Repercutido en inversión de sujeto pasivo (IVAREP)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentasrepisp</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idsubcuentasopisp</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Soportado en inversión de sujeto pasivo (IVASOP)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentassopisp</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+        
+    <field>
+        <name>idsubcuentaacr</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>H.P. Acreedor I.V.A. (IVAACR)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentasacr</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idsubcuentadeu</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>H.P. Deudor I.V.A. (IVADEU)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentasreu</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idsubcuentaivadevadue</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Rep. Adquisiciones Intracomunitarias (IVARUE)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentasdevadue</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idsubcuentaivadedadue</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Sop. Adquisiciones Intracomunitarias (IVASUE)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentasdedadue</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idsubcuentaivadeventue</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Rep. Entregas Intracomunitarias (IVAEUE)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentasdeventue</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idsubcuentaivasopimp</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Sop. Importaciones (IVASIM)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentassopimp</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idsubcuentaivarepexp</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Rep. Exportaciones (IVARXP)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentasrepexp</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idsubcuentaivasopexe</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Sop. Exento (IVASEX)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentassopexe</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idsubcuentaivarepexe</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Rep. Exento (IVAREX)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentasrepexe</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idsubcuentaivarepre</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>Recargo equivalencia (IVARRE)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentasrepre</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idsubcuentaivasopagra</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>I.V.A. Sop. Reg.Agrario (IVASRA)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+                        <name>co_subcuentaspagra</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+</table>

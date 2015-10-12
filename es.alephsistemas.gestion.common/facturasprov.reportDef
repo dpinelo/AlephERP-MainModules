@@ -1,0 +1,14 @@
+<report>
+    <name>facturasprov</name>
+    <reportName>facturasprov.xml</reportName>
+    <alias>Documento de pago de facturas recibidas</alias>
+    <linkedTo>facturasprov</linkedTo>
+    <pluginName>openrptplugin</pluginName>
+    <type>record</type>
+    <parameterBinding>
+        <binding>
+            <parameter>id</parameter>
+            <field>id</field>
+        </binding>
+    </parameterBinding>
+</report>

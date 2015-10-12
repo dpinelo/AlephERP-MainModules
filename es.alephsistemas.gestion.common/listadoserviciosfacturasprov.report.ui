@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>Form</class>
+<widget class="QWidget" name="Form">
+<property name="geometry">
+<rect>
+<x>0</x>
+<y>0</y>
+<width>528</width>
+<height>38</height>
+</rect>
+</property>
+<property name="windowTitle">
+<string>Form</string>
+</property>
+<layout class="QHBoxLayout" name="horizontalLayout">
+<property name="margin">
+<number>0</number>
+</property>
+<item>
+<widget class="QLabel" name="label">
+<property name="sizePolicy">
+<sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+<horstretch>0</horstretch>
+<verstretch>0</verstretch>
+</sizepolicy>
+</property>
+<property name="text">
+<string>Fechas entre</string>
+</property>
+</widget>
+</item>
+<item>
+<widget class="DBDateTimeEdit" name="dbDateTimeEdit">
+<property name="displayFormat">
+<string>dd/MM/yyyy</string>
+</property>
+<property name="fieldName">
+<string>fecha</string>
+</property>
+<property name="reportParameterBinding">
+<string>P_FECHA_INICIO</string>
+</property>
+</widget>
+</item>
+<item>
+<widget class="QLabel" name="label_2">
+<property name="sizePolicy">
+<sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+<horstretch>0</horstretch>
+<verstretch>0</verstretch>
+</sizepolicy>
+</property>
+<property name="text">
+<string>y</string>
+</property>
+</widget>
+</item>
+<item>
+<widget class="DBDateTimeEdit" name="dbDateTimeEdit_2">
+<property name="displayFormat">
+<string>dd/MM/yyyy</string>
+</property>
+<property name="fieldName">
+<string>fecha</string>
+</property>
+<property name="reportParameterBinding">
+<string>P_FECHA_FIN</string>
+</property>
+</widget>
+</item>
+</layout>
+</widget>
+<customwidgets>
+<customwidget>
+<class>DBDateTimeEdit</class>
+<extends>QDateTimeEdit</extends>
+<header>widgets/dbdatetimeedit.h</header>
+</customwidget>
+</customwidgets>
+<resources/>
+<connections/>
+</ui>

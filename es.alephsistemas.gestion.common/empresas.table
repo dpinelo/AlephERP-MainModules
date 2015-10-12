@@ -1,0 +1,292 @@
+<table>
+    <name>empresas</name>
+    <!--Listado de empresas que maneja el sistema. Pueden ser múltiples-->
+    <alias>Empresas</alias>
+    <!-- Indica si el borrado del este registro es lógico o físico. Si es lógico, el registro
+      se marcará como borrado. Para ello, la tabla deberá tener un campo "is_deleted" -->
+    <logicalDelete>true</logicalDelete>
+    <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+    <isCached>true</isCached>
+
+    <associatedScript>empresascommonfunctions.qs</associatedScript>
+    
+    <field>
+        <name>id</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>ejercicios</table>
+            <field>idempresa</field>
+            <card>1M</card>
+        </relation>
+        <relation>
+            <table>empresasvalorespordefecto</table>
+            <field>idempresa</field>
+            <card>1M</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>cifnif</name>
+        <alias>C.I.F./N.I.F</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+    </field>
+
+    <field>
+        <name>codedi</name>
+        <alias>Cód. edi (EAN)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>17</length>
+    </field>
+
+    <field>
+        <name>direccion</name>
+        <alias>Dirección</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>codpostal</name>
+        <alias>Código postal</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+    </field>
+
+    <field>
+        <name>ciudad</name>
+        <alias>Ciudad</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+    </field>
+
+    <field>
+        <name>idprovincia</name>
+        <alias>Cod. Provincia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>provincias</table>
+            <field>idprovincia</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>codpais</name>
+        <alias>País</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <relation>
+            <table>paises</table>
+            <field>codpais</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>telefono</name>
+        <alias>Teléfono</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+    </field>
+
+    <field>
+        <name>fax</name>
+        <alias>Fax</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+    </field>
+    
+    <field>
+        <name>logo</name>
+        <!--Gráfico con el logotipo de la empresa-->
+        <alias>Logo</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>image</type>
+    </field>
+
+    <field>
+        <name>email</name>
+        <alias>E-mail</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>200</length>
+    </field>
+
+    <field>
+        <name>web</name>
+        <alias>Web</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>200</length>
+    </field>
+    
+    <field>
+        <name>counter_prefix</name>
+        <alias>Prefijo en los contadores</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>2</length>
+    </field>
+    
+    <field>
+        <name>coddivisa</name>
+        <!--Divisa por defecto para las actividades de la empresa (divisa local)-->
+        <alias>Divisa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+
+        <relation>
+            <table>divisas</table>
+            <field>coddivisa</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>recequivalencia</name>
+        <alias>Aplicar recargo de equivalencia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+    </field>
+
+    <field>
+        <name>contintegrada</name>
+        <!--Indica si la contabilidad se integra con la facturación, de modo que las modificaciones de facturas y pagos generen automáticamente los asientos correspondientes. Esta opción no tiene efecto si el módulo principal de contabilidad no está cargado-->
+        <alias>Contabilidad integrada</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+    </field>
+
+    <field>
+        <name>idterceroprovgenerico</name>
+        <!--Proveedor genérico o al que se imputan datos que no van al 347-->
+        <alias>ID. Proveedor Genérico</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        
+        <relation>
+            <table>terceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idterceroclientegenerico</name>
+        <!--Cliente genérico o al que se imputan datos que no van al 347-->
+        <alias>ID. Cliente Genérico</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        
+        <relation>
+            <table>terceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+            
+    <field>
+        <name>idseriefacturaciongastos</name>
+        <!--Series de facturación para gastos pequeños-->
+        <alias>ID. Serie de Facturación pequeños gastos</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        
+        <relation>
+            <table>seriesfacturacion</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idseriefacturacionventas</name>
+        <!--Series de facturación para ventas pequeñss-->
+        <alias>ID. Serie de Facturación pequeñas ventas</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        
+        <relation>
+            <table>seriesfacturacion</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>contabilidadcostes</name>
+        <alias>Habilitar Contabilidad de Costes</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+    </field>
+
+    <field>
+        <name>leyendadocumentos</name>
+        <alias>Leyenda en documentos</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>1000</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>is_deleted</name>
+        <!--Obligatorio por tener la propiedad logicalDeleted a true-->
+        <alias>De baja</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+    </field>
+    
+</table>

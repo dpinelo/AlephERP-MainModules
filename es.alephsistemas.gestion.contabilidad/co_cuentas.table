@@ -1,0 +1,195 @@
+<table>
+    <name>co_cuentas</name>
+    <!--Listado de cuentas del ejercicio actual-->
+    <alias>Cuentas Contables</alias>
+
+    <!-- Tabla cacheada en memoria para el rendimiento -->
+    <isCached>true</isCached>
+    
+    <toStringExpression>
+        <expression>{codcuenta}. {descripcion></expression>    
+    </toStringExpression>
+    
+    <!-- Algunas visualizaciones de algunas tablas, como estas, es lógica hacerlas a modo de árbol.
+        Aquí se especifica que el formulario de trabajo con artículos, será un árbol en el que aparecerán
+        primero las familias, las subfamilias y los artículos, dándole contexto al contenido. Esa presentación
+        se hace siempre en base a relaciones existentes definidas en este archivos y los padres. -->
+    <showOnTree>
+        <!-- Esta relación familias debe existir en la tabla subfamiliasservicios -->
+        <relation>
+            <name>co_grupos</name>
+            <!--<visibleField>descripcion</visibleField>-->
+            <allowInsert>true</allowInsert>
+            <allowEdit>true</allowEdit>
+            <allowDelete>true</allowDelete>
+        </relation>
+        <relation>
+            <!-- Relación a buscar -->
+            <name>co_subgrupos</name>
+            <!-- Nombre del field que se visualizará -->
+            <!--<visibleField>descripcion</visibleField>-->
+            <allowInsert>true</allowInsert>
+            <allowEdit>true</allowEdit>
+            <allowDelete>true</allowDelete>
+        </relation>
+    </showOnTree>
+
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idejercicio</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idejercicio</field>
+        </pair>
+    </envVars>
+    
+    <field>
+        <name>id</name>
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>co_subcuentas</table>
+            <field>idcuenta</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>
+        <relation>
+            <table>co_cuentashijas</table>
+            <table>co_cuentas</table>
+            <field>idcuentapadre</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+
+    <field>
+        <name>idempresa</name>
+        <alias>Cod. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <dbIndex>true</dbIndex>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    return idempresaActual();
+}
+]]>
+        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idejercicio</name>    
+        <alias>ID. Ejercicio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    return idejercicioActual();
+}
+]]>        
+        </script>
+        <relation>
+            <table>ejercicios</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idsubgrupo</name>
+        <alias></alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>co_subgrupos</table>
+            <field>id</field>
+            <card>M1</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+
+    <field>
+        <name>idcuentapadre</name>
+        <alias></alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <name>co_cuentaspadre</name>
+            <table>co_cuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>codcuenta</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <!-- Comprobará que el valor de codtercero es único para el un valor específico de idempresa en 
+        este caso. Es decir, podrá existir el registro 0000001 para idempresa=1 y 0000001 para idempresa=2 -->
+        <uniqueOnFilterField>idempresa,idejercicio</uniqueOnFilterField>
+        <type>string</type>
+        <length>4</length>
+        <scriptDefaultValue>
+ <![CDATA[
+function defaultValue() {
+    return bean.co_subgrupos.father.codsubgrupo.value;
+}
+]]> 
+        </scriptDefaultValue>     
+    </field>
+    
+    <field>
+        <name>descripcion</name>
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>255</length>
+    </field>
+
+    <field>
+        <name>idcuentaesp</name>
+        <!-- Identificador del tipo de cuenta especial -->
+        <alias>Tipo especial</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <relation>
+            <table>co_cuentasesp</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+</table>

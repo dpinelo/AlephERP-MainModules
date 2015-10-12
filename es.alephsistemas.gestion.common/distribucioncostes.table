@@ -1,0 +1,113 @@
+<table>
+	<name>distribucioncostes</name>
+	<alias>Distribucion de costes</alias>
+	<isCached>true</isCached>
+	<!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+		y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+		por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+		AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+		y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+	<envVars>
+		<pair>
+			<!-- Nombre de la variable de entorno en Javascript -->
+			<varName>idempresa</varName>
+			<!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+			<field>idempresa</field>
+		</pair>
+	</envVars>
+					
+	<field>
+		<name>id</name>
+		<!--Identificador interno de la tabla-->
+		<alias>ID</alias>
+		<null>false</null>
+		<pk>true</pk>
+		<type>serial</type>
+        <relation>
+            <table>lineasdistribucioncostes</table>
+            <field>iddistribucion</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>
+		<visiblegrid>false</visiblegrid>
+	</field>
+
+	<field>
+		<name>idempresa</name>
+		<alias>ID. Empresa</alias>
+		<null>false</null>
+		<pk>false</pk>
+		<type>int</type>
+		<visiblegrid>false</visiblegrid>
+		<calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+		<script>
+<![CDATA[
+function value() {
+	// Esta función está en __init__.js
+	return idempresaActual();
+}
+]]>		</script>
+		<relation>
+			<table>empresas</table>
+			<field>id</field>
+			<card>M1</card>
+		</relation>
+	</field>
+
+    <field>
+        <name>nombre</name>
+		<alias>Nombre</alias>
+        <pk>false</pk>
+        <null>false</null>
+        <type>string</type>
+        <length>200</length>
+    </field>
+    
+    <field>
+        <name>fechainicio</name>
+		<alias>Inicio</alias>
+        <pk>false</pk>
+        <null>false</null>
+        <type>date</type>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+   	return new Date();
+}
+]]>		
+       	</scriptDefaultValue>        
+    </field>
+    
+    <field>
+        <name>fechafin</name>
+		<alias>Fin</alias>
+        <pk>false</pk>
+        <null>false</null>
+        <type>date</type>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return new Date();
+}
+]]>		
+		</scriptDefaultValue>        
+    </field>
+    
+    <field>
+        <name>totalporcentajes</name>
+        <alias>Suma total de porcentajes</alias>
+        <pk>false</pk>
+        <null>false</null>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>false</visiblegrid>
+        <aggregateCalc>
+            <operation>sum</operation>
+            <aggregate>
+                <field>pordistribucioncoste</field>
+                <relation>lineasdistribucioncostes</relation>
+       		</aggregate>
+        </aggregateCalc>             		        			        
+    </field>
+
+</table>

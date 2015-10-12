@@ -1,0 +1,534 @@
+<AlephERP>
+<export>
+
+<id><![CDATA[es.alephsistemas.gestion.tesoreria]]></id>
+<description><![CDATA[Módulo de Tesorería]]></description>
+<name><![CDATA[Módulo de Tesorería]]></name>
+<showedText><![CDATA[Tesorería]]></showedText>
+<icon><![CDATA[]]></icon>
+<enabled>true</enabled>
+<generatedTime>2015-07-09 12:42:43</generatedTime>
+
+
+<file>
+    <objectName>efectos</objectName>
+    <name>efectos.tableTemp</name>
+    <version>44</version>
+    <type>tableTemp</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>pagoscobrosdevoluciones</objectName>
+    <name>pagoscobrosdevoluciones.tableTemp</name>
+    <version>33</version>
+    <type>tableTemp</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>cajas</objectName>
+    <name>cajas.table</name>
+    <version>5</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>cobrosdevoluciones</objectName>
+    <name>cobrosdevoluciones.table</name>
+    <version>40</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>conceptoscaja</objectName>
+    <name>conceptoscaja.table</name>
+    <version>3</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>conceptosmovimientodinerario</objectName>
+    <name>conceptosmovimientodinerario.table</name>
+    <version>5</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>efectoscobro</objectName>
+    <name>efectoscobro.table</name>
+    <version>51</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>efectospago</objectName>
+    <name>efectospago.table</name>
+    <version>97</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>entradasbanco</objectName>
+    <name>entradasbanco.table</name>
+    <version>21</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>entradascaja</objectName>
+    <name>entradascaja.table</name>
+    <version>24</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>pagosdevoluciones</objectName>
+    <name>pagosdevoluciones.table</name>
+    <version>53</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subconceptoscaja</objectName>
+    <name>subconceptoscaja.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subconceptosmovimientodinerario</objectName>
+    <name>subconceptosmovimientodinerario.table</name>
+    <version>8</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>tiposefectos</objectName>
+    <name>tiposefectos.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>traspasos</objectName>
+    <name>traspasos.table</name>
+    <version>20</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>crearpagorapido.view.qs</objectName>
+    <name>crearpagorapido.view.qs</name>
+    <version>13</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>efectoscommonsfunctions.qs</objectName>
+    <name>efectoscommonsfunctions.qs</name>
+    <version>60</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>efectospagocobro.dbform.qs</objectName>
+    <name>efectospagocobro.dbform.qs</name>
+    <version>13</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>efectospagocobro.dbrecord.qs</objectName>
+    <name>efectospagocobro.dbrecord.qs</name>
+    <version>35</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>entradasbanco.dbrecord.qs</objectName>
+    <name>entradasbanco.dbrecord.qs</name>
+    <version>5</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>entradascaja.dbrecord.qs</objectName>
+    <name>entradascaja.dbrecord.qs</name>
+    <version>5</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadotesoreriafacturasemitidas.report.qs</objectName>
+    <name>listadotesoreriafacturasemitidas.report.qs</name>
+    <version>7</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>pagoscobroscommonfunctions.qs</objectName>
+    <name>pagoscobroscommonfunctions.qs</name>
+    <version>29</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>pagoscobrosdevoluciones.dbrecord.qs</objectName>
+    <name>pagoscobrosdevoluciones.dbrecord.qs</name>
+    <version>20</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>pagosdevoluciones.dbrecord.qs</objectName>
+    <name>pagosdevoluciones.dbrecord.qs</name>
+    <version>8</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subconceptoscaja.dbrecord.qs</objectName>
+    <name>subconceptoscaja.dbrecord.qs</name>
+    <version>3</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subconceptosmovimientodinerario.dbrecord.qs</objectName>
+    <name>subconceptosmovimientodinerario.dbrecord.qs</name>
+    <version>4</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>tesoreria/__init__.js</objectName>
+    <name>tesoreria/__init__.js</name>
+    <version>38</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>traspasos.dbform.qs</objectName>
+    <name>traspasos.dbform.qs</name>
+    <version>5</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>traspasos.dbrecord.qs</objectName>
+    <name>traspasos.dbrecord.qs</name>
+    <version>9</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>traspasos.qs</objectName>
+    <name>traspasos.qs</name>
+    <version>10</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>efectospago.xml</objectName>
+    <name>efectospago.xml.report</name>
+    <version>33</version>
+    <type>report</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadotesoreriafacturasemitidas.xml</objectName>
+    <name>listadotesoreriafacturasemitidas.xml.report</name>
+    <version>32</version>
+    <type>report</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadotesoreriafacturasrecibidas.xml</objectName>
+    <name>listadotesoreriafacturasrecibidas.xml.report</name>
+    <version>8</version>
+    <type>report</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>efectospago</objectName>
+    <name>efectospago.reportDef</name>
+    <version>2</version>
+    <type>reportDef</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadotesoreriafacturasemitidas</objectName>
+    <name>listadotesoreriafacturasemitidas.reportDef</name>
+    <version>4</version>
+    <type>reportDef</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadotesoreriafacturasrecibidas</objectName>
+    <name>listadotesoreriafacturasrecibidas.reportDef</name>
+    <version>3</version>
+    <type>reportDef</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>cajas.dbrecord.ui</objectName>
+    <name>cajas.dbrecord.ui</name>
+    <version>6</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>cobrosdevoluciones.dbrecord.ui</objectName>
+    <name>cobrosdevoluciones.dbrecord.ui</name>
+    <version>14</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>conceptoscaja.dbrecord.ui</objectName>
+    <name>conceptoscaja.dbrecord.ui</name>
+    <version>4</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>conceptosmovimientodinerario.dbrecord.ui</objectName>
+    <name>conceptosmovimientodinerario.dbrecord.ui</name>
+    <version>6</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>crearpagorapido.view.ui</objectName>
+    <name>crearpagorapido.view.ui</name>
+    <version>10</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>efectoscobro.dbrecord.ui</objectName>
+    <name>efectoscobro.dbrecord.ui</name>
+    <version>40</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>efectospago.dbrecord.ui</objectName>
+    <name>efectospago.dbrecord.ui</name>
+    <version>75</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>entradasbanco.dbrecord.ui</objectName>
+    <name>entradasbanco.dbrecord.ui</name>
+    <version>9</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>entradascaja.dbrecord.ui</objectName>
+    <name>entradascaja.dbrecord.ui</name>
+    <version>6</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadotesoreriafacturasemitidas.report.ui</objectName>
+    <name>listadotesoreriafacturasemitidas.report.ui</name>
+    <version>5</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>pagosdevoluciones.dbrecord.ui</objectName>
+    <name>pagosdevoluciones.dbrecord.ui</name>
+    <version>18</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subconceptoscaja.dbrecord.ui</objectName>
+    <name>subconceptoscaja.dbrecord.ui</name>
+    <version>2</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subconceptosmovimientodinerario.dbrecord.ui</objectName>
+    <name>subconceptosmovimientodinerario.dbrecord.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>tiposefectos.dbrecord.ui</objectName>
+    <name>tiposefectos.dbrecord.ui</name>
+    <version>2</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>traspasos.dbrecord.ui</objectName>
+    <name>traspasos.dbrecord.ui</name>
+    <version>12</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+</export>
+</AlephERP>

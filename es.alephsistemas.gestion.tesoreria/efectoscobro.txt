@@ -1,0 +1,502 @@
+﻿<table>
+    <name>efectoscobro</name>
+    <!-- Listado de efectos de cobro de la empresa (recibos de pago a proveedores, acreedores...)-->
+    <alias>Efectos de cobro</alias>
+
+	<!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+		y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+		por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+		AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+		y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+				
+	<beforeSaveScript>
+<![CDATA[
+function beforeSave() {
+    // Ajustamos el estado del recibo en función de los cobros apuntados.
+    var cobros = bean.relationChildren("cobrosdevoluciones");
+    var importeCobros = 0;
+    for ( var i = 0 ; i < cobros.length ; i++ ) {
+        if ( cobros[i].fieldValue("tipo") == "Cobro" ) {
+            importeCobros = importeCobros + cobros[i].fieldValue("importe");
+        }
+    }
+    if ( importeCobros == bean.fieldValue("importe") ) {
+        bean.setFieldValue("estado", "Cobrado");
+    } else {
+        if ( cobros.length == 1 && cobros[0].fieldValue("tipo") == "Devolución" ) {
+            bean.setFieldValue("estado", "Devuelto");
+        } else if ( bean.fieldValue("estado") != "Devuelto" ) {
+            bean.setFieldValue("estado", "Emitido");
+        }
+    }
+    return true;
+}
+]]>		
+	</beforeSaveScript>
+
+    <field>
+        <name>id</name>
+        <!-- Identificador interno -->
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>cobrosdevoluciones</table>
+            <field>idefecto</field>
+            <card>1M</card>
+        </relation>
+    </field>
+
+    <field>
+    	<name>idempresa</name>
+        <alias>ID. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>		
+        </script>
+        <relation>
+  	        <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    		
+    <field>
+        <name>idejercicio</name>
+        <alias>ID. Ejercicio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    var idEjercicio = idejercicioActual();
+    debug ("ID Ejercicio: " + idEjercicio);
+    return idEjercicio;
+}
+]]>		
+   	    </script>
+   	    <relation>
+            <table>ejercicios</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    			    			
+    <field>
+        <name>codigo</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>15</length>
+        <default>0</default>
+        <!-- Definimos la lógica de generación del contador del tercero. Se podrán anticipar
+        	una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 
+        	aparecen en dependsOnField. Si alguno de estos campos tiene una relación M1, como el 
+        	caso de idempresa->empresas, el valor que se utilizará será el del field de empresas
+        	definido en prefixOnRelation: es decir, para el caso de idempresa, el sistema se irá
+        	a la relación empresas, al "padre" o empresa, y cogerá el valor definido en el field
+        	counter_prefix. 
+        	Finalmente, puede determinarse si el usuario puede modificar este contador, con userCanModify
+        	y además, especificar si entre los diferentes prefijos y el número aparece algún separador,
+        	con separator. -->
+        <counter>
+            <fixedString>COB</fixedString>
+            <dependsOnField prefixOnRelation="counter_prefix">idempresa</dependsOnField>
+            <dependsOnField prefixOnRelation="counter_prefix">idejercicio</dependsOnField>
+            <userCanModify>false</userCanModify>
+            <calculateOnlyOnInsert>true</calculateOnlyOnInsert>
+            <separator>/</separator>
+        </counter>        
+    </field>
+
+    <field>
+        <name>estado</name>
+        <!-- Indica si el recibo está emitido, pagado o devuelto -->
+        <alias>Estado</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Emitido,Cobrado,Devuelto</optionList>
+        <optionIcons>:/images/commons/efectospagoemitido.png,:/images/commns/ok.png,:/images/commons/efectospagodevuelto.png</optionIcons>
+    </field>
+
+    <field>
+    	<name>idpedido</name>
+    	<alias>Identificador Factura</alias>
+    	<null>false</null>
+    	<pk>false</pk>
+    	<type>int</type>
+    	<visiblegrid>false</visiblegrid>
+    	<relation>
+    		<table>pedidoscli</table>
+    		<field>id</field>
+    		<card>M1</card>
+    		<delC>true</delC>
+    	</relation>
+    </field>
+    
+    <field>
+    	<name>idfactura</name>
+    	<alias>Identificador Factura</alias>
+    	<null>false</null>
+    	<pk>false</pk>
+    	<type>int</type>
+    	<visiblegrid>false</visiblegrid>
+    	<relation>
+    		<table>facturascli</table>
+    		<field>id</field>
+    		<card>M1</card>
+    		<delC>true</delC>
+    	</relation>
+    </field>
+    		
+    <field>
+    	<name>numcliente</name>
+    	<alias>Nº Factura Cliente</alias>
+    	<null>false</null>
+    	<pk>false</pk>
+    	<type>string</type>
+    	<length>50</length>
+    	<visiblegrid>true</visiblegrid>
+    </field>
+    			
+    <field>
+        <name>importe</name>
+        <alias>Importe</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+    </field>
+
+    <field>
+        <name>fecha</name>
+        <!-- Fecha de emisión -->
+        <alias>Fecha de Emisión</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+    </field>
+
+    <field>
+        <name>fechav</name>
+        <alias>Vencimiento</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+    </field>
+
+    <field>
+        <name>idtercero</name>
+        <!-- Código del tercero -->
+        <alias>Cod. proveedor</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>terceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>nombretercero</name>
+        <!-- Nombre del cliente-->
+        <alias>Tercero</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>true</visiblegrid>        
+    </field>
+
+    <field>
+        <name>idremesa</name>
+        <alias>Número de Remesa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <default>0</default>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>cifnif</name>
+        <!-- C.I.F./N.I.F del cliente-->
+        <alias>C.I.F./N.I.F</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>importedivisaempresa</name>
+        <alias>Importe en la divisa local</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    var result = bean.fieldValue("importe") * bean.fieldValue("tasaconv");
+    return result;
+}
+]]>		
+       	</script>
+        	        
+    </field>
+
+    <field>
+    	<name>tasaconv</name>
+    	<alias>Tasa de conversión</alias>
+    	<null>false</null>
+    	<pk>false</pk>
+    	<type>double</type>
+    	<partD>2</partD>
+    	<visiblegrid>false</visiblegrid>
+    </field>
+    	
+    <field>
+        <name>coddivisa</name>
+        <!-- Código de la divisa -->
+        <alias>Divisa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>divisas</table>
+            <field>coddivisa</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idcuenta</name>
+        <!-- Código de la cuenta bancaria del cliente-->
+        <alias>Cuenta</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>cuentasbcoterceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>descripcion</name>
+        <!-- Descripción de la cuenta bancaria del cliente-->
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>ctaentidad</name>
+        <!-- Entidad de la cuenta bancaria del cliente-->
+        <alias>Nº Entidad</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>ctaagencia</name>
+        <!-- Oficina de la cuenta bancaria del cliente-->
+        <alias>Nº Oficina</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>dc</name>
+        <!-- Dígitos de Control de la cuenta bancaria del cliente-->
+        <alias>Dígitos de Control</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>2</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>cuenta</name>
+        <!-- Número de la cuenta bancaria del cliente -->
+        <alias>Nº Cuenta</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+	<field>
+		<name>ccc</name>
+		<alias>C.C.C.</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>stringlist</type>
+		<calculated>true</calculated>
+		<visiblegrid>false</visiblegrid>
+		<script>
+<![CDATA[
+function value() {
+	var ccc = bean.fieldValue("ctaentidad") + " " + bean.fieldValue("ctaagencia") + " " + bean.fieldValue("dc") +
+	     " " + bean.fieldValue("cuenta");
+	return ccc;
+}
+]]>		
+		</script>
+	</field>
+			
+    <field>
+        <name>iddirtercero</name>
+        <!-- Dirección del proveedor -->
+        <alias>Dirección</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>dirterceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>direccion</name>
+        <!-- Dirección que aparece en el recibo -->
+        <alias>Dirección</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>codpostal</name>
+        <alias>Código Postal</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>poblacion</name>
+        <alias>Poblacion</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>provincia</name>
+        <alias>Provincia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>codpais</name>
+        <alias>Pais</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+	<field>
+		<name>direccion_large</name>
+		<alias>Direccion</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>stringlist</type>
+		<calculated>true</calculated>
+		<visiblegrid>false</visiblegrid>
+		<script>
+<![CDATA[
+function value() {
+    var direccion = bean.fieldValue("direccion") + " - " + bean.fieldValue("poblacion") + " - " + bean.fieldValue("provincia");
+    return direccion;
+}
+]]>		
+		</script>
+	</field>
+		
+    <field>
+        <name>texto</name>
+        <alias>Texto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>numero</name>
+        <alias>Numero</alias>
+        <null>false</null>
+        <ck>true</ck>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+</table>
+

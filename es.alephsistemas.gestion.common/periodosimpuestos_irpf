@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>frmPeriodosImpuesto</class>
+<widget class="QWidget" name="frmPeriodosImpuesto">
+<property name="geometry">
+<rect>
+<x>0</x>
+<y>0</y>
+<width>454</width>
+<height>112</height>
+</rect>
+</property>
+<property name="windowTitle">
+<string>Períodos de validez del impuesto</string>
+</property>
+<layout class="QVBoxLayout" name="verticalLayout">
+<property name="margin">
+<number>0</number>
+</property>
+<item>
+<widget class="QGroupBox" name="groupBox">
+<property name="title">
+<string>Período de validez</string>
+</property>
+<layout class="QHBoxLayout" name="horizontalLayout">
+<item>
+<widget class="QLabel" name="label">
+<property name="text">
+<string>Desde</string>
+</property>
+</widget>
+</item>
+<item>
+<widget class="DBDateTimeEdit" name="db_fechadesde">
+<property name="displayFormat">
+<string>dd/MM/yyyy</string>
+</property>
+<property name="fieldName">
+<string>fechadesde</string>
+</property>
+<property name="dataEditable">
+<bool>true</bool>
+</property>
+</widget>
+</item>
+<item>
+<widget class="QLabel" name="label_2">
+<property name="text">
+<string>Hasta</string>
+</property>
+</widget>
+</item>
+<item>
+<widget class="DBDateTimeEdit" name="db_fechahasta">
+<property name="displayFormat">
+<string>dd/MM/yyyy</string>
+</property>
+<property name="fieldName">
+<string>fechahasta</string>
+</property>
+<property name="dataEditable">
+<bool>true</bool>
+</property>
+</widget>
+</item>
+</layout>
+</widget>
+</item>
+<item>
+<widget class="QGroupBox" name="groupBox_2">
+<property name="title">
+<string>Valores en el período</string>
+</property>
+<layout class="QHBoxLayout" name="horizontalLayout_2">
+<item>
+<widget class="QLabel" name="label_3">
+<property name="text">
+<string>I.V.A.</string>
+</property>
+</widget>
+</item>
+<item>
+<widget class="DBNumberEdit" name="db_iva">
+<property name="fieldName">
+<string>iva</string>
+</property>
+<property name="dataEditable">
+<bool>true</bool>
+</property>
+</widget>
+</item>
+<item>
+<widget class="QLabel" name="label_4">
+<property name="text">
+<string>Recargo de Equivalencia</string>
+</property>
+</widget>
+</item>
+<item>
+<widget class="DBNumberEdit" name="db_recargo">
+<property name="fieldName">
+<string>recargo</string>
+</property>
+<property name="dataEditable">
+<bool>true</bool>
+</property>
+</widget>
+</item>
+</layout>
+</widget>
+</item>
+</layout>
+</widget>
+<customwidgets>
+<customwidget>
+<class>DBDateTimeEdit</class>
+<extends>QDateTimeEdit</extends>
+<header>widgets/dbdatetimeedit.h</header>
+</customwidget>
+<customwidget>
+<class>DBNumberEdit</class>
+<extends>QLineEdit</extends>
+<header>widgets/dbnumberedit.h</header>
+</customwidget>
+</customwidgets>
+<resources/>
+<connections/>
+</ui>

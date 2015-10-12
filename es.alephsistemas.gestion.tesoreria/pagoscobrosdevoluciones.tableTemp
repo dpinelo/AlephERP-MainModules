@@ -1,0 +1,446 @@
+<table>
+    <name>pagoscobrosdevoluciones</name>
+    <!-- Pagos, cobros y devoluciones asociados a Efectos de Pago y cobro. Definición común-->
+    
+    <!-- Las funciones QS definidas en este script, estárán disponibles como propiedades dentro de un objeto que 
+    representa a un registro de este tipo -->
+    <associatedScript debug="true">pagoscobroscommonfunctions.qs</associatedScript>
+    
+    <!-- Los elementos relacionados que tendrá serán los movimientos en los bancos o cajas -->
+    <canHaveRelatedElements>true</canHaveRelatedElements>
+
+    <!-- Los movimientos de caja o de banco de este pago o cobro, seran borrados si este es borrado -->
+    <relatedElementsContentToBeDelete>
+        <item>
+            <tableName>entradascaja</tableName>
+            <category>*</category>
+            <cardinality>child</cardinality>
+            <type>record</type>
+        </item>
+        <item>
+            <tableName>entradasbanco</tableName>
+            <category>*</category>
+            <cardinality>child</cardinality>
+            <type>record</type>
+        </item>
+    </relatedElementsContentToBeDelete>
+    
+    <connections>
+        <connection>
+            <sender>bean.idformapago</sender>
+            <action>
+                <signal>valueModified</signal>
+                <slot>aerpCopyDatosFormaPago</slot>
+            </action>
+        </connection>
+        <connection>
+            <sender>bean</sender>
+            <action>
+                <signal>beforeSave</signal>
+                <slot>aerpCrearOActualizarMovimientoDinerario</slot>
+            </action>
+        </connection>
+        <connection>
+            <sender>bean</sender>
+            <action>
+                <signal>beforeSave</signal>
+                <slot>aerpGenerarAsiento</slot>
+            </action>
+        </connection>        
+    </connections>
+
+    <newRelatedElementScript>
+<![CDATA[
+/** Damos los valores por defecto al registro nuevo */
+function newRelatedElement(element) {
+    if ( element != null && element != undefined ) {
+        if ( element.relatedTableName == "entradascaja" || element.relatedTableName == "entradasbanco" ) {
+            var entrada = element.relatedBean;
+            if ( entrada != null ) {
+                var signo = 0;
+                entrada.fecha.value = bean.fecha.value;
+                if ( bean.metadata.tableName == "cobrosdevoluciones" ) {
+                    entrada.descripcion.value = "Cobro de Efecto de Cobro: " + bean.efectoscobro.father.codigo.value + " del documento: " + bean.efectoscobro.father.numdocumentointerno.value;
+                } else if ( bean.metadata.tableName == "pagosdevoluciones" ) {
+                    entrada.descripcion.value = "Pago de Efecto de Pago: " + bean.efectospago.father.codigo.value + " del documento: " + bean.efectospago.father.numdocumentotercero.value;
+                }
+                if ( bean.tipo.value == "Pago" ) {
+                    entrada.tipo.value = "Salida";
+                    signo = -1;
+                } else if ( bean.tipo.value == "Cobro" ) {
+                    entrada.tipo.value ="Entrada";
+                    signo = 1;
+                } else if ( bean.tipo.value == "Devolución" ) {
+                    if ( bean.metadata.tableName == "cobrosdevoluciones" ) {
+                        entrada.tipo.value = "Salida";
+                        signo = -1;
+                    } else if ( bean.metadata.tableName == "pagosdevoluciones" ) {
+                        entrada.tipo.value = "Entrada";
+                        signo = 1;
+                    }
+                }
+                entrada.saldoinicial.value = 0;
+                entrada.importe.value = signo * bean.importe.value;
+                entrada.saldofinal.value = signo * bean.importe.value;
+                
+                if ( entrada.metadata.tableName == "entradasbanco" ) {
+                    entrada.idcuentabanco.value = bean.idcuenta.value;
+                } else if ( entrada.metadata.tableName == "entradascaja" ) {
+                    entrada.idcaja.value = bean.idcaja.value;
+                }
+            } 
+        }
+    }
+}
+]]>    
+    </newRelatedElementScript>
+    
+    <field>
+        <name>idformapago</name>
+        <alias>ID Forma de pago</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    var efecto = undefined;
+    var idformapagoprevista = 0;
+        
+    if ( bean.metadata.tableName == "pagosdevoluciones" ) {
+        efecto = bean.efectospago.father;
+    } else if ( bean.metadata.tableName == "cobrosdevoluciones" ) {
+        efecto = bean.efectoscobro.father;
+    }
+    return efecto.idformapagoprevista.value;
+}        
+]]>        
+        </scriptDefaultValue>
+
+        <relation>
+            <table>formaspago</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>fecha</name>
+        <alias>Fecha</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+        <default>now</default>
+    </field>
+
+    <field>
+        <name>importe</name>
+        <alias>Importe</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    var efecto = 0;
+    var pagosActuales;
+    if ( bean.metadata.tableName == "pagosdevoluciones" ) {
+        efecto = bean.efectospago.father;
+    } else if ( bean.metadata.tableName == "cobrosdevoluciones" ) {
+        efecto = bean.efectoscobro.father;
+    }
+        
+    var pagosActuales = efecto.relationChilds(bean.metadata.tableName);
+    
+    var value = efecto.importe.value;
+    
+    for ( var i = 0 ; i < pagosActuales.length ; i++ ) {
+        value = value - Number(pagosActuales[i].importe.value);
+        if ( value < 0 ) { 
+            value = 0;
+        }
+    }
+    return value;
+}
+]]>        
+        </scriptDefaultValue>        
+    </field>
+
+    <field>
+        <name>costedevolucion</name>
+        <alias>Coste o comisión por devolución</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>tasaconv</name>
+        <alias>Tasa de conversión</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>3</partD>
+        <visiblegrid>false</visiblegrid>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return bean.fatherFieldValue("efectospago", "tasaconv");
+}
+]]>        
+        </scriptDefaultValue>        
+    </field>
+    
+    <field>
+        <name>coddivisa</name>
+        <alias>Divisa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+        <visiblegrid>false</visiblegrid>
+        <builtInStringExpressionDefaultValue>
+            <expression>{efectospago.father.coddivisa}</expression>
+        </builtInStringExpressionDefaultValue>
+
+        <relation>
+            <table>divisas</table>
+            <field>coddivisa</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+
+    <field>
+        <name>importedivisaempresa</name>
+        <alias>Importe en divisa local</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true">true</calculated>
+        <builtInExpression>
+            <expression>importe*tasaconv</expression>
+        </builtInExpression>
+    </field>
+
+    <field>
+        <name>editable</name>
+        <alias>Estado Actual</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>true</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idcuenta</name>
+        <alias>Cuenta</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return bean.formaspago.father.idcuenta.value;
+}
+]]>        
+        </scriptDefaultValue>        
+        
+        <relation>
+            <table>cuentasbanco</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idtarjeta</name>
+        <alias>Tarjeta</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return bean.formaspago.father.idtarjeta.value;
+}
+]]>        
+        </scriptDefaultValue>        
+        
+        <relation>
+            <table>tarjetascredito</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idcaja</name>
+        <alias>Caja</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return bean.formaspago.father.idcaja.value;
+}
+]]>        
+        </scriptDefaultValue>        
+        
+        <relation>
+            <table>cajas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>descripcion</name>
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <calculated>true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    var text = "";
+    var key;
+    if ( bean.metadata.tableName == "pagosdevoluciones" ) {
+        key = "Pagado";
+        text = "Efecto de pago: " + bean.efectospago.father.codigo.value + " " + bean.efectospago.father.texto.value;
+    } else if ( bean.metadata.tableName == "cobrosdevoluciones" ) {
+        key = "Cobrado";
+        text = "Efecto de cobro: " + bean.efectoscobro.father.codigo.value + " " + bean.efectoscobro.father.texto.value;
+    }
+    if ( bean.idcaja.value > 0 ) {
+        text += (key + " por Caja: " + bean.cajas.father.nombre.value);
+    } else if ( bean.idcuenta.value > 0 ) {
+        text += (key + " por Cuenta bancaria: " + bean.cuentasbanco.father.ccc.value);
+    } else if ( bean.metadata.tableName == "pagosdevoluciones" && bean.idtarjeta.value > 0 ) {
+        text += (key + " por Caja: " + bean.tarjetascredito.father.descripcion.value);
+    }
+    return text;
+}
+]]>        
+        </script>        
+    </field>
+
+    <field>
+        <name>iban</name>
+        <alias>IBAN</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <visiblegrid>false</visiblegrid>
+        <builtInStringExpressionDefaultValue>
+            <expression>{formaspago.father.cuentasbanco.father.iban}</expression>
+        </builtInStringExpressionDefaultValue>
+    </field>
+    
+    <field>
+        <name>codentidad</name>
+        <alias>Nº Entidad</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <visiblegrid>false</visiblegrid>
+        <builtInStringExpressionDefaultValue>
+            <expression>{formaspago.father.cuentasbanco.father.codentidad}</expression>
+        </builtInStringExpressionDefaultValue>
+    </field>
+
+    <field>
+        <name>codsucursal</name>
+        <alias>Nº Oficina</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <visiblegrid>false</visiblegrid>
+        <builtInStringExpressionDefaultValue>
+            <expression>{formaspago.father.cuentasbanco.father.codsucursal}</expression>
+        </builtInStringExpressionDefaultValue>
+    </field>
+
+    <field>
+        <name>dc</name>
+        <alias>Dígitos de Control</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>2</length>
+        <visiblegrid>false</visiblegrid>
+        <builtInStringExpressionDefaultValue>
+            <expression>{formaspago.father.cuentasbanco.father.dc}</expression>
+        </builtInStringExpressionDefaultValue>
+    </field>
+
+    <field>
+        <name>cuenta</name>
+        <alias>Nº Cuenta</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <visiblegrid>false</visiblegrid>
+        <builtInStringExpressionDefaultValue>
+            <expression>{formaspago.father.cuentasbanco.father.cuenta}</expression>
+        </builtInStringExpressionDefaultValue>
+    </field>
+
+    <field>
+        <name>ccc</name>
+        <alias>C.C.C.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <calculated>true</calculated>
+        <builtInStringExpression>
+            <expression>{codentidad} {codsucursal} {dc} {cuenta}</expression>
+        </builtInStringExpression>
+    </field>
+    
+    <field>
+        <name>idasiento</name>
+        <!-- Código del asiento generado por el pago o devolución-->
+        <alias>Asiento</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>co_asientos</table>
+            <field>id</field>
+            <card>11</card>   
+            <delC>true</delC>
+            <showOnRelatedModels>true</showOnRelatedModels>
+        </relation>
+    </field>
+
+    <field>
+        <name>nogenerarasiento</name>
+        <!--Si la validación del pago o devolución va a generar un asiento 
+        contable-->
+        <alias>Ignorar contabilidad</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+</table>

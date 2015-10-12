@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmSucursales</class>
+ <widget class="QWidget" name="frmSucursales">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>513</width>
+    <height>448</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sucursales bancarias</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resources/resources.qrc">
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Oficina</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="1" colspan="2">
+       <widget class="DBLineEdit" name="db_nombre">
+        <property name="fieldName">
+         <string>nombre</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBNumberEdit" name="db_codsucursal">
+        <property name="inputMask">
+         <string>9999; </string>
+        </property>
+        <property name="fieldName">
+         <string>codsucursal</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>&amp;Nombre*</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_nombre</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Nº &amp;Oficina*</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codsucursal</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>204</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Dirección</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Dirección</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_direccion</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="4">
+       <widget class="DBLineEdit" name="db_direccion">
+        <property name="fieldName">
+         <string>direccion</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Cod. Postal</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codpostal</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="DBLineEdit" name="db_codpostal">
+        <property name="fieldName">
+         <string>codpostal</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Población</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_poblacion</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="DBLineEdit" name="db_poblacion">
+        <property name="fieldName">
+         <string>poblacion</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Provincia</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_provincia</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="DBChooseRecordButton" name="db_paisChoose">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Paises</string>
+        </property>
+        <property name="fieldsToGet">
+         <string/>
+        </property>
+        <property name="fieldName" stdset="0">
+         <string>codpais</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="DBLineEdit" name="db_codpais">
+        <property name="fieldName">
+         <string>codpais</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="autoComplete" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3" colspan="2">
+       <widget class="DBLineEdit" name="db_paises_nombre">
+        <property name="fieldName">
+         <string>paises.nombre</string>
+        </property>
+        <property name="dataEditable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="4">
+       <widget class="DBComboBox" name="db_provincia">
+        <property name="fieldName">
+         <string>provincia</string>
+        </property>
+        <property name="listTableModel">
+         <string>provincias</string>
+        </property>
+        <property name="listColumnName">
+         <string>nombre</string>
+        </property>
+        <property name="listColumnToSave">
+         <string>idprovincia</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Contacto</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Contacto</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_contacto</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="3">
+       <widget class="DBLineEdit" name="db_contacto">
+        <property name="fieldName">
+         <string>contacto</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>Teléfono</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_telefono</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="DBLineEdit" name="db_telefono">
+        <property name="fieldName">
+         <string>telefono</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>Fax</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_fax</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="DBLineEdit" name="db_fax">
+        <property name="fieldName">
+         <string>fax</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Observaciones</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_observaciones</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="4">
+       <widget class="DBTextEdit" name="db_observaciones">
+        <property name="fieldName">
+         <string>observaciones</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>widgets/dbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>widgets/dbtextedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codsucursal</tabstop>
+  <tabstop>db_nombre</tabstop>
+  <tabstop>db_direccion</tabstop>
+  <tabstop>db_codpostal</tabstop>
+  <tabstop>db_poblacion</tabstop>
+  <tabstop>db_provincia</tabstop>
+  <tabstop>db_paisChoose</tabstop>
+  <tabstop>db_codpais</tabstop>
+  <tabstop>db_paises_nombre</tabstop>
+  <tabstop>db_contacto</tabstop>
+  <tabstop>db_telefono</tabstop>
+  <tabstop>db_fax</tabstop>
+  <tabstop>db_observaciones</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

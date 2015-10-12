@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>formGruposClientes</class>
+ <widget class="QWidget" name="formGruposClientes">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>616</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Grupos de terceros</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Los grupos de terceros permiten clasificar a éstos de una forma más entendible al cliente de AlephERP. Permiten además establecer ciertos comportamientos predefinidos para los terceros, como puede ser una serie de facturación por defecto, un plan de pago por defecto, o la necesidad de especificar un NIF obligatorios para estos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1" colspan="2">
+       <widget class="DBLineEdit" name="db_codgrupo">
+        <property name="toolTip">
+         <string>Código único en esta empresa para el grupo</string>
+        </property>
+        <property name="statusTip">
+         <string>Código único en esta empresa para el grupo</string>
+        </property>
+        <property name="whatsThis">
+         <string>Código único en esta empresa para el grupo</string>
+        </property>
+        <property name="fieldName">
+         <string>codgrupo</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>259</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Nombre</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_nombre</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="4">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="DBCheckBox" name="db_nifobligatorio">
+          <property name="toolTip">
+           <string>Si está activo, obliga a los terceros que se creen dentro de este grupo a especificar un NIF.</string>
+          </property>
+          <property name="statusTip">
+           <string>Si está activo, obliga a los terceros que se creen dentro de este grupo a especificar un NIF.</string>
+          </property>
+          <property name="whatsThis">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si está activo, obliga a los terceros que se creen dentro de este grupo a especificar un NIF. Esta opción es útil cuando se tienen grupos de terceros a los que no es necesario tomarles el NIF (por ejemplo, a clientes de caja a los que se le emiten tickets).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>NIF obligatorio</string>
+          </property>
+          <property name="fieldName">
+           <string>nifobligatorio</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Prefijo</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_prefijo</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DBLineEdit" name="db_prefijo">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Prefijo utilizado en los contadores asociados a este grupo.</string>
+          </property>
+          <property name="statusTip">
+           <string>Prefijo utilizado en los contadores asociados a este grupo.</string>
+          </property>
+          <property name="whatsThis">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Prefijo utilizado en los contadores asociados a este grupo. Por ejemplo, si se define este prefijo como &amp;quot;AC&amp;quot;, y el prefijo de la empresa es &amp;quot;EP&amp;quot;, todos los terceros que se creen pertenecientes a este grupo, tendrán un código del estilo: &amp;quot;EPACXXXXX&amp;quot; donde X serán números.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="fieldName">
+           <string>prefijo</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="DBChooseRecordButton" name="db_idserie">
+        <property name="toolTip">
+         <string>Serie de facturación por defecto que se asociará a los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="statusTip">
+         <string>Serie de facturación por defecto que se asociará a los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Serie de facturación por defecto que se asociará a los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="text">
+         <string>Serie de facturación</string>
+        </property>
+        <property name="fieldName">
+         <string>idserie</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="3">
+       <widget class="DBLineEdit" name="db_nombre">
+        <property name="fieldName">
+         <string>nombre</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Código</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codgrupo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2" colspan="2">
+       <widget class="DBLineEdit" name="db_descripcion_serie">
+        <property name="toolTip">
+         <string>Serie de facturación por defecto que se asociará a los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="statusTip">
+         <string>Serie de facturación por defecto que se asociará a los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Serie de facturación por defecto que se asociará a los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="fieldName">
+         <string>seriesfacturacion.descripcion</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="DBChooseRecordButton" name="db_idserie_2">
+        <property name="toolTip">
+         <string>Plan de pago por defecto para los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="statusTip">
+         <string>Plan de pago por defecto para los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Plan de pago por defecto para los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="text">
+         <string>Plan de Pago</string>
+        </property>
+        <property name="fieldName">
+         <string>idplanpago</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2" colspan="2">
+       <widget class="DBLineEdit" name="db_descripcion_serie_2">
+        <property name="toolTip">
+         <string>Serie de facturación por defecto que se asociará a los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="statusTip">
+         <string>Serie de facturación por defecto que se asociará a los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Serie de facturación por defecto que se asociará a los terceros que pertenezcan a este grupo.</string>
+        </property>
+        <property name="fieldName">
+         <string>planespago.descripcion</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Información adicional</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="DBDetailView" name="dbDetailView">
+        <property name="relationName">
+         <string>grupostercerosinfoadicional</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="inlineEdit">
+         <bool>true</bool>
+        </property>
+        <property name="atRowsEndNewRow">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codgrupo</tabstop>
+  <tabstop>db_nombre</tabstop>
+  <tabstop>db_nifobligatorio</tabstop>
+  <tabstop>db_prefijo</tabstop>
+  <tabstop>db_idserie</tabstop>
+  <tabstop>db_descripcion_serie</tabstop>
+  <tabstop>db_idserie_2</tabstop>
+  <tabstop>db_descripcion_serie_2</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

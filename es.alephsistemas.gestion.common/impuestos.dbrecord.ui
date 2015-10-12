@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>771</width>
+    <height>582</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0" rowspan="2">
+    <widget class="QFrame" name="frameButtons">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>140</width>
+       <height>450</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>135</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: #CECFB0</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QToolButton" name="tbDatos">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>111</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Presenta la ficha con la información general de esta entidad</string>
+        </property>
+        <property name="statusTip">
+         <string>Presenta la ficha con la información general de esta entidad</string>
+        </property>
+        <property name="whatsThis">
+         <string>Presenta la ficha con la información general de esta entidad</string>
+        </property>
+        <property name="text">
+         <string>Datos Generales</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/impuestos.png</normaloff>:/images/commons/impuestos.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tbContabilidad">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>111</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Acceda a los datos contables.</string>
+        </property>
+        <property name="statusTip">
+         <string>Acceda a los datos contables.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Acceda a los datos contables.</string>
+        </property>
+        <property name="text">
+         <string>Contabilidad</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/contabilidad.png</normaloff>:/images/commons/contabilidad.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Codigo</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="DBLineEdit" name="db_codigo">
+     <property name="maximumSize">
+      <size>
+       <width>150</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="fieldName">
+      <string>codimpuesto</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Nombre</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="DBLineEdit" name="db_nombre">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="fieldName">
+      <string>nombre</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="4">
+    <widget class="QStackedWidget" name="swFichas">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="pageDatosGenerales">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Valores del impuesto</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>% I.V.A.</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBNumberEdit" name="db_iva">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="fieldName">
+             <string>iva</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Recargo de equivalencia</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBNumberEdit" name="db_recargo">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="fieldName">
+             <string>recargo</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Períodos de validez del impuesto</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="DBDetailView" name="db_periodosimpuestos">
+            <property name="relationName">
+             <string>periodosimpuestos</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageContabilidad">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Subcuentas contables</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep">
+            <property name="text">
+             <string>I.V.A. Repercutido</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentarep</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit">
+            <property name="fieldName">
+             <string>idsubcuentarep</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_2">
+            <property name="fieldName">
+             <string>co_subcuentasrep.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_2">
+            <property name="text">
+             <string>I.V.A. Soportado</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentasop</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_3">
+            <property name="fieldName">
+             <string>idsubcuentasop</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_4">
+            <property name="fieldName">
+             <string>co_subcuentassop.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_3">
+            <property name="text">
+             <string>H.P. Acreedora por I.V.A.</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentaacr</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_5">
+            <property name="fieldName">
+             <string>idsubcuentaacr</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_6">
+            <property name="fieldName">
+             <string>co_subcuentasacr.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_4">
+            <property name="text">
+             <string>H.P. Deudora por I.V.A.</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentadeu</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_7">
+            <property name="fieldName">
+             <string>idsubcuentadeu</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_8">
+            <property name="fieldName">
+             <string>co_subcuentasreu.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_5">
+            <property name="text">
+             <string>I.V.A. Rep. Adquisiciones Intracomunitarias</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentaivadevadue</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_9">
+            <property name="fieldName">
+             <string>idsubcuentaivadevadue</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_10">
+            <property name="fieldName">
+             <string>co_subcuentasdevadue.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_6">
+            <property name="text">
+             <string>I.V.A. Sop. Adquisiciones Intracomunitarias</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentaivadedadue</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_11">
+            <property name="fieldName">
+             <string>idsubcuentaivadedadue</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_12">
+            <property name="fieldName">
+             <string>co_subcuentasdedadue.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_7">
+            <property name="text">
+             <string>I.V.A. Rep. Entregas Intracomunitarias</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentaivadeventue</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_13">
+            <property name="fieldName">
+             <string>idsubcuentaivadeventue</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_14">
+            <property name="fieldName">
+             <string>co_subcuentasdeventue.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_8">
+            <property name="text">
+             <string>I.V.A. Sop. Importaciones</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentaivasopimp</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_15">
+            <property name="fieldName">
+             <string>idsubcuentaivasopimp</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_16">
+            <property name="fieldName">
+             <string>co_subcuentassopimp.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_9">
+            <property name="text">
+             <string>I.V.A. Rep. Exportaciones</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentaivarepexp</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_17">
+            <property name="fieldName">
+             <string>idsubcuentaivarepexp</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_18">
+            <property name="fieldName">
+             <string>co_subcuentasrepexp.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_10">
+            <property name="text">
+             <string>I.V.A. Sop. Exento</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentaivasopexe</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_19">
+            <property name="fieldName">
+             <string>idsubcuentaivasopexe</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_20">
+            <property name="fieldName">
+             <string>co_subcuentassopexe.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_11">
+            <property name="text">
+             <string>I.V.A. Rep. Exento</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentaivarepexe</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_21">
+            <property name="fieldName">
+             <string>idsubcuentaivarepexe</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_22">
+            <property name="fieldName">
+             <string>co_subcuentasrepexe.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarep_12">
+            <property name="text">
+             <string>Recargo equivalencia</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentaivarepre</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_23">
+            <property name="fieldName">
+             <string>idsubcuentaivarepre</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_24">
+            <property name="fieldName">
+             <string>co_subcuentasrepre.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentasopisp">
+            <property name="text">
+             <string>I.V.A. Sop. en Inversión de sujeto pasivo</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentasopisp</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_26">
+            <property name="fieldName">
+             <string>idsubcuentasopisp</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_25">
+            <property name="fieldName">
+             <string>co_subcuentassopisp.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="0">
+           <widget class="DBChooseRecordButton" name="db_idsubcuentarepisp">
+            <property name="text">
+             <string>I.V.A. Rep. en Inversión de sujeto pasivo</string>
+            </property>
+            <property name="fieldName">
+             <string>idsubcuentarepisp</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="1">
+           <widget class="DBLineEdit" name="dbLineEdit_28">
+            <property name="fieldName">
+             <string>idsubcuentarepisp</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codsubcuenta</string>
+            </property>
+            <property name="autoCompleteVisibleFields">
+             <string>codsubcuenta,descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="2">
+           <widget class="DBLineEdit" name="dbLineEdit_27">
+            <property name="fieldName">
+             <string>co_subcuentasrepisp.father.descripcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="14" column="2">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>177</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="C:/programacion/git/alepherp/src/resources/modules.qrc"/>
+ </resources>
+ <connections/>
+</ui>

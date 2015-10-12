@@ -1,0 +1,54 @@
+<AlephERP>
+<export>
+
+<id><![CDATA[es.alephsistemas.gestion.rrhh]]></id>
+<description><![CDATA[Módulo de Recursos Himanos]]></description>
+<name><![CDATA[Módulo de Recursos Himanos]]></name>
+<showedText><![CDATA[RRHH]]></showedText>
+<icon><![CDATA[]]></icon>
+<enabled>true</enabled>
+<generatedTime>2015-08-02 13:52:11</generatedTime>
+
+
+<file>
+    <objectName>rrhh_nominas</objectName>
+    <name>rrhh_nominas.table</name>
+    <version>15</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>rrhh_nominasdistribucioncostes</objectName>
+    <name>rrhh_nominasdistribucioncostes.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>rrhh_nominas.dbrecord.qs</objectName>
+    <name>rrhh_nominas.dbrecord.qs</name>
+    <version>9</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>rrhh_nominas.dbrecord.ui</objectName>
+    <name>rrhh_nominas.dbrecord.ui</name>
+    <version>10</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+</export>
+</AlephERP>

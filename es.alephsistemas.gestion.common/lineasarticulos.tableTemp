@@ -1,0 +1,246 @@
+<table>
+    <name>lineasarticulos</name>
+    <!--Líneas de factura con artículos a proveedor-->
+    <alias>Líneas de Facturas de artículos de proveedores</alias>
+    <uiDbRecord>lineasarticulos.dbrecord.ui</uiDbRecord>
+    <qsDbRecord>lineasarticulos.dbrecord.qs</qsDbRecord>
+
+    <toStringExpression>
+        <expression>Línea de Albarán: Artículo {nombre} con referencia {referencia} y cantidad {cantidad}. Importe total línea {importetotal}</expression>
+    </toStringExpression>
+    
+    <field>
+        <name>idarticulo</name>
+        <!--Referencia del artículo-->
+        <alias>Artículo</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>articulos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idinstancia</name>
+        <!--Referencia del artículo-->
+        <alias>Artículo Instancia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>articulosinstancias</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idalmacen</name>
+        <!--Almacen destino u origen-->
+        <alias>Almacen</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <builtInExpressionDefaultValue>
+            <expression>{${tablaPadre}.father.idalmacen}</expression>
+        </builtInExpressionDefaultValue>
+        <relation>
+            <table>almacenes</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>referencia</name>
+        <!--Nombre del artículo-->
+        <alias>Referencia</alias>
+        <expression>articulos.father.referencia</expression>
+    </field>
+
+    <field>
+        <name>nombre</name>
+        <!--Nombre del artículo-->
+        <alias>Nombre</alias>
+        <expression>articulos.father.nombre</expression>
+    </field>
+
+    <field>
+        <name>descripcion</name>
+        <!--Descripción del artículo-->
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>cantidad</name>
+        <alias>Cantidad</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>1</default>
+    </field>
+
+    <field>
+        <name>importeunitario</name>
+        <alias>Precio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+    </field>
+
+    <field>
+        <name>importesindto</name>
+        <!--Precio unitario por cantidad-->
+        <alias>Importe</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <calculated saveOnDb="true">true</calculated>
+        <builtInExpression>
+             <expression>cantidad * importeunitario</expression>
+        </builtInExpression>
+    </field>
+
+    <field>
+        <name>dtolineal</name>
+        <alias>Dto. Lineal</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <builtInExpressionDefaultValue>
+            <expression>{${tablaPadre}.father.tarifas.father.inclineal.value}</expression>
+        </builtInExpressionDefaultValue>        
+    </field>
+
+    <field>
+        <name>dtopor</name>
+        <alias>% Descuento</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <builtInExpressionDefaultValue>
+            <expression>{${tablaPadre}.father.tarifas.father.incporcentual.value}</expression>
+        </builtInExpressionDefaultValue>        
+    </field>
+
+    <field>
+        <name>importetotal</name>
+        <!--Precio unitario por cantidad-->
+        <alias>Total</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <calculated saveOnDb="true">true</calculated>
+        <builtInExpression>
+            <expression>(importesindto - dtolineal) - (importesindto * dtopor / 100)</expression>
+        </builtInExpression>
+    </field>
+
+    <field>
+        <name>idimpuesto</name>
+        <!--Tipo de IVA aplicado-->
+        <alias>I.V.A.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>tvw_periodosimpuestos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idimpuesto_irpf</name>
+        <!--Tipo de IRPF aplicado-->
+        <alias>I.R.P.F.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>tvw_periodosimpuestos_irpf</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>iva</name>
+        <alias>%I.V.A.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+    </field>
+
+    <field>
+        <name>tipoiva</name>
+        <alias>Tipo I.V.A.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <optionList>Sujeta a I.V.A.,Exenta de I.V.A.,No sujeta a I.V.A.,Inversión de sujeto pasivo</optionList>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <visiblegrid>false</visiblegrid>
+        <default>Sujeta a I.V.A.</default>    
+    </field>
+
+    <field>
+        <name>incluirrecargoequivalencia</name>
+        <alias>Incluir Req. de Equivalencia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>recargo</name>
+        <alias>% R.Equivalencia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+    </field>
+
+    <field>
+        <name>irpf</name>
+        <alias>% I.R.P.F.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+    </field>
+
+    <field>
+        <name>generamovimientosstock</name>
+        <alias>Genera movimientos de stock</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>true</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+  
+</table>
+

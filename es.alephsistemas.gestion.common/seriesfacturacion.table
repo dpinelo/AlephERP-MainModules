@@ -1,0 +1,226 @@
+<table>
+    <name>seriesfacturacion</name>
+    <!--Listado de series de facturación-->
+    <alias>Series de Facturación</alias>
+    <!-- Orden inicial y por defecto -->
+    <initOrderSort>descripcion ASC</initOrderSort>
+    <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+    <isCached>true</isCached>
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <field>
+        <name>id</name>
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>codserie</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>2</length>
+        <uniqueOnFilterField>idempresa</uniqueOnFilterField>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    // dbField es un objeto disponible sólo en este script, y representa a este propio campo.
+    // También está disponible bean, y representa al registro total.
+    var value = AERPScriptCommon.nextCounter(dbField);
+    return value;
+}
+]]>        
+        </scriptDefaultValue>
+        <!-- En este formulario no se ha definido un formulario de búsqueda. AlephERP lo genera solo.
+            Pero este campo no es interesante para ser incluído en la búsqueda, y por tanto en ese formulario
+        generado automáticamente. Aquí se especifica -->
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+    </field>
+
+    <field>
+        <name>idempresa</name>
+        <alias>ID. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>  
+       </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+<!--
+    <field>
+        <name>idejercicio</name>
+        <alias>ID. Ejercicio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    // Esta función está en __init__.js
+    return idejercicioActual();
+}
+]]>
+        </scriptDefaultValue>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <relation>
+            <table>ejercicios</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+ -->   
+    <field>
+        <name>descripcion</name>
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+    </field>
+
+    <field>
+        <name>tipooperacioniva</name>
+        <alias>Tipo de Operación de I.V.A.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Deducible,No deducible</optionList>
+        <default>Deducible</default>
+    </field>
+        
+    <field>
+        <name>tipoiva</name>
+        <alias>Tipo I.V.A.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <optionList>Sujeta a I.V.A.,Exenta de I.V.A.,No sujeta a I.V.A.,Inversión de sujeto pasivo</optionList>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <visiblegrid>false</visiblegrid>        
+        <default>Sujeta a I.V.A.</default>
+    </field>
+            
+    <field>
+        <name>tipooperacion</name>
+        <alias>Tipo de operación</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Interior,Intracomunitaria,Exportacion</optionList>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+    </field>
+
+    <field>
+        <name>proforma</name>
+        <alias>Serie para facturas proforma</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+                <default>false</default>
+    </field>
+        
+    <field>
+        <name>seriecompra</name>
+        <alias>Serie de facturas de compra</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>        
+    </field>
+    
+    <field>
+        <name>serieventa</name>
+        <alias>Serie de facturas de venta</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>        
+    </field>
+        
+    <field>
+        <name>ignoracontabilidad</name>
+        <alias>No genera asientos contables</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>        
+    </field>
+            
+    <field>
+        <name>counter_prefix</name>
+        <alias>Prefijo para contadores</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>2</length>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+    </field>
+    
+    <field>
+        <name>idsubcuenta</name>
+        <!-- Identificador interno de la cuenta -->
+        <alias>ID</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <relation>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idplanpago</name>
+        <!-- Plan de pago por defecto si el tercero no tiene asignada -->
+        <alias>ID</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <relation>
+            <table>planespago</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+</table>

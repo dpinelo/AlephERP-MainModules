@@ -1,0 +1,141 @@
+<table>
+    <name>gestionbugs</name>
+    <alias>Gestión de errores / mejoras</alias>
+
+    <field>
+        <name>id</name>
+        <!--Código del ejercicio -->
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>true</visiblegrid>
+        <relation>
+            <table>gestionbugsincidencias</table>
+            <field>idbug</field>
+            <card>1M</card>
+        </relation>
+    </field>    
+    
+    <field>
+        <name>idempresa</name>
+        <alias>ID. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>		
+        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>tipo</name>
+        <alias>Tipo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Error,Mejora</optionList>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <default>Error</default>
+        <visiblegrid>true</visiblegrid>		
+    </field>
+
+    <field>
+        <name>prioridad</name>
+        <alias>Prioridad</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Crítico,Alta,Media,Baja</optionList>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <default>Media</default>
+        <visiblegrid>true</visiblegrid>		
+    </field>
+    
+    <field>
+        <name>estado</name>
+        <alias>Estado</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>30</length>
+        <optionList>Abierto,En ejecución,Cerrado,Rechazado,No reproducible,Pendiente información</optionList>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <default>Abierto</default>
+        <visiblegrid>true</visiblegrid>
+    </field>
+    
+    <field>
+        <name>fechaapertura</name>
+        <alias>Fecha apertura</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return new Date();
+}
+]]>		
+        </scriptDefaultValue>
+    </field>
+
+    <field>
+        <name>fechacierre</name>
+        <alias>Fecha de cierre</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>date</type>
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>descripcion</name>
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>usuario</name>
+        <alias>Usuario</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return AERPScriptCommon.username();
+}
+]]>		
+        </scriptDefaultValue>        
+    </field>
+            
+</table>
+
+

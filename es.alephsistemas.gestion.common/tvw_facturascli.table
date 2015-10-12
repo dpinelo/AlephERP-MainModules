@@ -1,0 +1,273 @@
+<table>
+    <name>tvw_facturascli</name>
+    <!--Facturas de proveedor-->
+    <alias>Facturas emitidas</alias>
+    <!-- He creado una vista por lo que pueda pasar a futuro... -->
+    <creationSqlView>
+        CREATE VIEW tvw_facturascli AS
+        SELECT fc.id, fc.idempresa, fc.idejercicio, fc.idserie, fc.coddivisa, fc.codfactura, 
+          fc.fecha, fc.nombre, fc.cifnif, fc.neto, fc.totaliva, fc.totalrecargo, fc.totalirpf,
+          fc.total, fc.totaldivisaempresa, fc.tasaconv, fc.idprepedido
+          FROM facturascli as fc
+          ORDER BY codfactura desc;
+    </creationSqlView>
+
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <itemsFilterColumn>
+        <!--
+        <itemFilter>
+            <fieldToFilter>idejercicio</fieldToFilter>
+            <relationFieldToShow>nombre</relationFieldToShow>
+        </itemFilter>
+    -->
+        <itemFilter>
+            <fieldToFilter>idserie</fieldToFilter>
+            <relationFieldToShow>descripcion</relationFieldToShow>
+        </itemFilter>
+    </itemsFilterColumn>
+
+    <infoSubTotals>
+          <infoSubTotal>
+              <alias>Subtotal Base Imponible</alias>
+              <name>neto</name>
+              <calc>sum</calc>
+              <field>neto</field>
+              <lineEditStyleSheet>font-weight:bold;align:right</lineEditStyleSheet>
+              <labelStyleSheet>font-weight:bold</labelStyleSheet>
+              <lineEditWidth>100</lineEditWidth>
+              <lineEditAlign>right</lineEditAlign>
+        </infoSubTotal>
+          <infoSubTotal>
+              <alias>Subtotal Total Factura</alias>
+              <name>total</name>
+              <calc>sum</calc>
+              <field>total</field>
+              <lineEditStyleSheet>font-weight:bold;align:right</lineEditStyleSheet>
+              <labelStyleSheet>font-weight:bold</labelStyleSheet>
+              <lineEditWidth>100</lineEditWidth>
+              <lineEditAlign>right</lineEditAlign>
+           </infoSubTotal>
+    </infoSubTotals>
+    
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idempresa</name>
+        <alias>ID. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>            
+    </field>
+
+    <field>
+        <name>idejercicio</name>
+        <alias>ID. Ejercicio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idserie</name>
+        <alias>ID. Serie</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>seriesfacturacion</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>            
+    </field>
+
+    <field>
+        <name>idprepedido</name>
+        <alias>Empresa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>alepherp_prepedidos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>            
+    </field>
+    
+    <field>
+        <name>codfactura</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>18</length>
+        <default>0</default>
+    </field>
+
+    <field>
+        <name>fecha</name>
+        <alias>Fecha</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+    </field>
+
+    <field>
+        <name>nombre</name>
+        <!--Nombre del proveedor-->
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>cifnif</name>
+        <alias>C.I.F./N.I.F</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+    </field>
+
+    <field>
+        <name>neto</name>
+        <alias>Base imponible</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+
+    <field>
+        <name>totaliva</name>
+        <!--Total de IVA-->
+        <alias>I.V.A.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+
+    <field>
+        <name>totalrecargo</name>
+        <!--Total de recargo de equivalencia-->
+        <alias>Rec. de Equivalencia</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+    
+    <field>
+        <name>totalirpf</name>
+        <!--Total de IRPF-->        
+        <alias>I.R.P.F.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+    </field>
+
+    <field>
+        <name>total</name>
+        <alias>Total</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <displayValueScript>
+<![CDATA[
+function displayValueScript(value, displayValue) {
+    // Value contiene el valor a formatear, y displayValue el valor que formatería el sistema.
+    if ( typeof(bean) != "undefined" && bean != null ) {
+        return (displayValue + " " + bean.divisas.father.simbolo.value);
+    } else {
+        return displayValue;
+    }
+}
+]]>
+        </displayValueScript>        
+    </field>
+
+    <field>
+        <name>totaldivisaempresa</name>
+        <alias>Total en divisa local</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <displayValueScript>
+<![CDATA[
+function displayValueScript(value, displayValue) {
+    // Value contiene el valor a formatear, y displayValue el valor que formatería el sistema.
+    var beanEmpresa = bean.father("empresas");
+    var divisaEmpresa = beanEmpresa.father("divisas");
+    return (displayValue + " " + divisaEmpresa.fieldValue("simbolo"));
+}
+]]>
+        </displayValueScript>        
+    </field>
+
+    <field>
+        <name>coddivisa</name>
+        <alias>Divisa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>divisas</table>
+            <field>coddivisa</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>tasaconv</name>
+        <alias>Tasa de conversión</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>3</partD>
+        <default>1</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+</table>

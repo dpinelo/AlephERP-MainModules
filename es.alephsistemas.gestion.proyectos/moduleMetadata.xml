@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AlephERP>
+<export>
+
+<id><![CDATA[es.alephsistemas.gestion.proyectos]]></id>
+<description><![CDATA[Módulo de Proyectos]]></description>
+<name><![CDATA[Módulo de Proyectos]]></name>
+<showedText><![CDATA[Proyectos]]></showedText>
+<icon><![CDATA[]]></icon>
+<enabled>true</enabled>
+
+<file>
+  <objectName>defproyectos</objectName>
+  <name>defproyectos.table</name>
+  <version>6</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>defproyectosdocumentos</objectName>
+  <name>defproyectosdocumentos.table</name>
+  <version>3</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>defproyectosfases</objectName>
+  <name>defproyectosfases.table</name>
+  <version>3</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>defproyectositemscalidad</objectName>
+  <name>defproyectositemscalidad.table</name>
+  <version>3</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>defproyectosrecursos</objectName>
+  <name>defproyectosrecursos.table</name>
+  <version>4</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>defproyectostareas</objectName>
+  <name>defproyectostareas.table</name>
+  <version>8</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>defproyectos.dbrecord.ui</objectName>
+  <name>defproyectos.dbrecord.ui</name>
+  <version>5</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>defproyectosfases.dbrecord.ui</objectName>
+  <name>defproyectosfases.dbrecord.ui</name>
+  <version>3</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>defproyectostareas.dbrecord.ui</objectName>
+  <name>defproyectostareas.dbrecord.ui</name>
+  <version>3</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+</export>
+</AlephERP>

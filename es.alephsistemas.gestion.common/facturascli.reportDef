@@ -1,0 +1,14 @@
+<report>
+    <name>facturascli</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Facturas emitidas</alias>
+    <reportName>facturascli.xml</reportName>
+    <linkedTo>facturascli,tvw_facturascli</linkedTo>
+    <parameterBinding>
+        <binding>
+            <parameter>id</parameter>
+            <field>id</field>
+        </binding>
+    </parameterBinding>
+</report>
+

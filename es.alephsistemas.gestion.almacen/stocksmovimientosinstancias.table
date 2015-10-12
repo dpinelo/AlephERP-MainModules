@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!-- Los movimientos de instancias, son movimientos de stocks pero de artículos instanciados, es decir, ´unicos.
+    Por tanto no tiene sentido almacenar el n´umero de instancias que se mueven, ya que s´olo se mueve una -->
+    <!-- Nombre de la tabla -->
+    <name>stocksmovimientosinstancias</name>
+    <!-- Alias a presentar en la aplicación -->
+    <alias>Movimientos de stocks (instancias de articulos)</alias>
+    <pixmap>:/images/commons/stocksmovimientos.png</pixmap>
+
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+   
+    <field>
+        <name>idmovimiento</name>
+        <alias>Id. Movimiento</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <name>stocksmovimientos</name>
+            <table>stocksmovimientos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idarticulo</name>
+        <alias>Id. Articulo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>articulos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+   </field>
+
+   <field>
+        <name>articulo</name>
+        <alias>Artículo</alias>
+        <expression>articulos.father.nombre</expression>
+    </field>
+    
+    <field>
+        <name>idinstancia</name>
+        <alias>Id. Instancia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <onChangeScript>
+<![CDATA[     
+function onChange() {
+    if ( bean.articulos.father.dbState == BaseBean.INSERT && !bean.articulos.father.modified ) {
+        bean.articulos.father = bean.articulosinstancias.father.articulos.father;
+    }
+}
+]]>
+        </onChangeScript>
+        <relation>
+            <name>articulosinstancias</name>
+            <table>articulosinstancias</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+   </field>
+    
+   <field>
+        <name>cantidad</name>
+        <alias>Cantidad</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>true</visiblegrid>
+        <default>1</default>
+    </field>
+    
+   <field>
+        <name>referencia</name>
+        <alias>Ref. Artículo</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>24</length>
+        <visiblegrid>true</visiblegrid>
+        <calculated saveOnDb="true">true</calculated>
+        <builtInStringExpression>
+            <expression>{articulosinstancias.father.referencia}</expression>
+        </builtInStringExpression>
+    </field>
+
+    <field>
+        <name>codbarras</name>
+        <alias>Código de barras</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <visiblegrid>true</visiblegrid>
+        <calculated saveOnDb="true">true</calculated>
+        <builtInStringExpression>
+            <expression>{articulosinstancias.father.codbarras}</expression>
+        </builtInStringExpression>
+    </field>
+    
+    <field>
+        <name>refproveedor</name>
+        <alias>Referencia Proveedor</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+    
+</table>

@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmBancos</class>
+ <widget class="QWidget" name="frmBancos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>742</width>
+    <height>241</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Cuentas bancarias de Empresa</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <property name="tableName" stdset="0">
+   <string>cuentasbanco</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&amp;Código*</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_codcuenta</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="DBLineEdit" name="db_codcuenta">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>Código único que identifica a la cuenta corriente de empresa. Puede ser alfanumérico.</string>
+     </property>
+     <property name="statusTip">
+      <string>Código único que identifica a la cuenta corriente de empresa. Puede ser alfanumérico.</string>
+     </property>
+     <property name="whatsThis">
+      <string>Código único que identifica a la cuenta corriente de empresa. Puede ser alfanumérico.</string>
+     </property>
+     <property name="fieldName">
+      <string>codcuenta</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+     <property name="replacePointWithCharacter">
+      <bool>true</bool>
+     </property>
+     <property name="replacePointCharacter">
+      <char>
+       <unicode>48</unicode>
+      </char>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" colspan="4">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>532</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblNombre">
+     <property name="text">
+      <string>&amp;Descripción*</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_descripcion</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="6">
+    <widget class="DBLineEdit" name="db_descripcion">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>descripcion</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="DBChooseRecordButton" name="dbcrbCodEntidad">
+     <property name="whatsThis">
+      <string>Cuenta bancaria en el que se produce el cargo asociado a esta tarjeta.</string>
+     </property>
+     <property name="text">
+      <string>Banco*</string>
+     </property>
+     <property name="fieldName">
+      <string>codentidad</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblNombre_7">
+     <property name="text">
+      <string>IBAN</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="6">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="DBLineEdit" name="db_iban">
+       <property name="maximumSize">
+        <size>
+         <width>37</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="fieldName">
+        <string>iban</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+       <property name="autoCompletePopupSize">
+        <size>
+         <width>500</width>
+         <height>200</height>
+        </size>
+       </property>
+       <property name="automaticWidthBasedOnFieldMaxLength">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="DBLineEdit" name="db_codentidad">
+       <property name="maximumSize">
+        <size>
+         <width>37</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="inputMask">
+        <string>9999</string>
+       </property>
+       <property name="fieldName">
+        <string>codentidad</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+       <property name="autoCompletePopupSize">
+        <size>
+         <width>500</width>
+         <height>200</height>
+        </size>
+       </property>
+       <property name="automaticWidthBasedOnFieldMaxLength">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="DBLineEdit" name="db_codsucursal">
+       <property name="maximumSize">
+        <size>
+         <width>37</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="inputMask">
+        <string>9999</string>
+       </property>
+       <property name="fieldName">
+        <string>codsucursal</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+       <property name="autoCompletePopupSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="automaticWidthBasedOnFieldMaxLength">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="DBLineEdit" name="db_dc">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(216, 216, 216);</string>
+       </property>
+       <property name="fieldName">
+        <string>dc</string>
+       </property>
+       <property name="automaticWidthBasedOnFieldMaxLength">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblNombre_4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Cuenta</string>
+       </property>
+       <property name="buddy">
+        <cstring>db_cuenta</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="DBLineEdit" name="db_cuenta">
+       <property name="maximumSize">
+        <size>
+         <width>79</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="whatsThis">
+        <string>Numeración de la tarjeta</string>
+       </property>
+       <property name="inputMask">
+        <string>9999999999</string>
+       </property>
+       <property name="fieldName">
+        <string>cuenta</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+       <property name="automaticWidthBasedOnFieldMaxLength">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QLabel" name="lblNombre_5">
+     <property name="text">
+      <string>Sufijo Norma 19</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_sufijo19</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2" colspan="2">
+    <widget class="DBLineEdit" name="db_sufijo19">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="whatsThis">
+      <string>Código único que identifica a la tarjeta de crédito</string>
+     </property>
+     <property name="inputMask">
+      <string>999</string>
+     </property>
+     <property name="fieldName">
+      <string>sufijo19</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4">
+    <widget class="QLabel" name="lblNombre_6">
+     <property name="text">
+      <string>Sufijo Norma 58</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_sufijo58</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="5">
+    <widget class="DBLineEdit" name="db_sufijo58">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>100</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="whatsThis">
+      <string>Código único que identifica a la tarjeta de crédito</string>
+     </property>
+     <property name="inputMask">
+      <string>999</string>
+     </property>
+     <property name="fieldName">
+      <string>sufijo58</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="6">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>284</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="lblNombre_8">
+     <property name="text">
+      <string>SWIFT</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_swift</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2" colspan="5">
+    <widget class="DBLineEdit" name="db_swift">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="whatsThis">
+      <string>Código único que identifica a la tarjeta de crédito</string>
+     </property>
+     <property name="inputMask">
+      <string>999</string>
+     </property>
+     <property name="fieldName">
+      <string>swift</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="7">
+    <widget class="QGroupBox" name="gbContabilidad">
+     <property name="title">
+      <string>Contabilidad</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="DBChooseRecordButton" name="db_idsubcuenta">
+        <property name="toolTip">
+         <string>Cuenta contable de ingresos para </string>
+        </property>
+        <property name="whatsThis">
+         <string>Cuenta contable de ingresos para </string>
+        </property>
+        <property name="text">
+         <string>Subcuenta contable</string>
+        </property>
+        <property name="fieldName">
+         <string>idsubcuenta</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_idsubcuenta_text">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="fieldName">
+         <string>idsubcuenta</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="autoComplete">
+         <set>AlephERP::ValuesFromRelation</set>
+        </property>
+        <property name="autoCompleteColumn">
+         <string>codsubcuenta</string>
+        </property>
+        <property name="autoCompletePopupSize">
+         <size>
+          <width>400</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="autoCompleteVisibleFields">
+         <string>codsubcuenta,descripcion</string>
+        </property>
+        <property name="replacePointWithCharacter">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="dbLineEdit_2">
+        <property name="fieldName">
+         <string>co_subcuentas.descripcion</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="6">
+    <widget class="DBLineEdit" name="db_banco">
+     <property name="fieldName">
+      <string>bancos.father.nombre</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codcuenta</tabstop>
+  <tabstop>db_descripcion</tabstop>
+  <tabstop>dbcrbCodEntidad</tabstop>
+  <tabstop>db_iban</tabstop>
+  <tabstop>db_codentidad</tabstop>
+  <tabstop>db_codsucursal</tabstop>
+  <tabstop>db_cuenta</tabstop>
+  <tabstop>db_sufijo19</tabstop>
+  <tabstop>db_sufijo58</tabstop>
+  <tabstop>db_swift</tabstop>
+  <tabstop>db_idsubcuenta</tabstop>
+  <tabstop>db_idsubcuenta_text</tabstop>
+  <tabstop>dbLineEdit_2</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

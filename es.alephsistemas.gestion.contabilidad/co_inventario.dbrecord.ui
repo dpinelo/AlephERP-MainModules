@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>659</width>
+    <height>242</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0" colspan="4">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Nombre</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_nombre</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="DBLineEdit" name="db_nombre">
+          <property name="fieldName">
+           <string>nombre</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Descripción</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_descripcion</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1" rowspan="2">
+         <widget class="DBTextEdit" name="db_descripcion">
+          <property name="fieldName">
+           <string>descripcion</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <widget class="DBChooseRecordButton" name="db_idsubcuenta">
+        <property name="text">
+         <string>Subcuenta de activo</string>
+        </property>
+        <property name="fieldName">
+         <string>idsubcuenta</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QPushButton" name="pbCrearSubcuenta">
+        <property name="text">
+         <string>Crear cuenta de activo</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="DBChooseRecordButton" name="db_idsubcuentaamortizacion">
+        <property name="text">
+         <string>Subcuenta de amortización</string>
+        </property>
+        <property name="fieldName">
+         <string>idsubcuentaamortizacion</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QPushButton" name="pbCrearSubcuentaAmortizacion">
+        <property name="text">
+         <string>Crear subcuenta de amortización</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="DBLineEdit" name="db_idsubcuenta_text">
+        <property name="fieldName">
+         <string>idsubcuenta</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="autoComplete">
+         <set>AlephERP::RestrictValueToItemFromList|AlephERP::ValuesFromRelation</set>
+        </property>
+        <property name="autoCompleteColumn">
+         <string>codsubcuenta</string>
+        </property>
+        <property name="autoCompletePopupSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="autoCompleteVisibleFields">
+         <string>codsubcuenta,descripcion</string>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="DBLineEdit" name="db_subcuenta">
+        <property name="fieldName">
+         <string>co_subcuentas_activo.brother.descripcion</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="DBLineEdit" name="db_idscubcuentaamortizacion_text">
+        <property name="fieldName">
+         <string>idsubcuentaamortizacion</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="autoComplete">
+         <set>AlephERP::RestrictValueToItemFromList|AlephERP::ValuesFromRelation</set>
+        </property>
+        <property name="autoCompleteColumn">
+         <string>codsubcuenta</string>
+        </property>
+        <property name="autoCompletePopupSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="autoCompleteVisibleFields">
+         <string>codsubcuenta,descripcion</string>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="DBLineEdit" name="db_subcuentaamortizacion">
+        <property name="fieldName">
+         <string>co_subcuentas_amortizacion.brother.descripcion</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>widgets/dbtextedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_nombre</tabstop>
+  <tabstop>db_descripcion</tabstop>
+  <tabstop>db_idsubcuenta</tabstop>
+  <tabstop>db_idsubcuenta_text</tabstop>
+  <tabstop>db_subcuenta</tabstop>
+  <tabstop>pbCrearSubcuenta</tabstop>
+  <tabstop>db_idsubcuentaamortizacion</tabstop>
+  <tabstop>db_idscubcuentaamortizacion_text</tabstop>
+  <tabstop>db_subcuentaamortizacion</tabstop>
+  <tabstop>pbCrearSubcuentaAmortizacion</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

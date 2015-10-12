@@ -1,0 +1,3410 @@
+<AlephERP-Data>
+
+<table>
+	<name>co_grupos</name>
+	<record>
+		<column name="codgrupo">1</column>
+		<column name="descripcion">Financiación básica</column>
+		<relatedRecords table="co_subgrupos">
+			<record>
+				<column name="codsubgrupo">10</column>
+				<column name="descripcion">Capital</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">100</column>
+						<column name="descripcion">Capital social</column>
+					</record>
+					<record>
+						<column name="codcuenta">101</column>
+						<column name="descripcion">Fondo social</column>
+					</record>
+					<record>
+						<column name="codcuenta">102</column>
+						<column name="descripcion">Capital</column>
+					</record>
+					<record>
+						<column name="codcuenta">1030</column>
+						<column name="descripcion">Socios por desembolsos no exigidos, capital social</column>
+					</record>
+					<record>
+						<column name="codcuenta">1034</column>
+						<column name="descripcion">Socios por desembolsos no exigidos, capital pendiente de inscripción</column>
+					</record>
+					<record>
+						<column name="codcuenta">1040</column>
+						<column name="descripcion">Socios por aportaciones no dinerarias pendientes, capital social</column>
+					</record>
+					<record>
+						<column name="codcuenta">1044</column>
+						<column name="descripcion">Socios por aportaciones no dinerarias pendientes, capital pendiente de inscripción</column>
+					</record>
+					<record>
+						<column name="codcuenta">108</column>
+						<column name="descripcion">Acciones o participaciones propias en situaciones especiales</column>
+					</record>
+					<record>
+						<column name="codcuenta">109</column>
+						<column name="descripcion">Acciones o participaciones propias para reducción de capital</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">11</column>
+				<column name="descripcion">Reservas y otros instrumentos de patrimonio</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">110</column>
+						<column name="descripcion">Prima de emisión o asunción</column>
+					</record>
+					<record>
+						<column name="codcuenta">1110</column>
+						<column name="descripcion">Patrimonio neto por emisión de instrumentos financieros compuestos</column>
+					</record>
+					<record>
+						<column name="codcuenta">1111</column>
+						<column name="descripcion">Resto de instrumentos de patrimonio neto</column>
+					</record>
+					<record>
+						<column name="codcuenta">112</column>
+						<column name="descripcion">Reserva legal</column>
+					</record>
+					<record>
+						<column name="codcuenta">113</column>
+						<column name="descripcion">Reservas voluntarias</column>
+					</record>
+					<record>
+						<column name="codcuenta">1140</column>
+						<column name="descripcion">Reservas para acciones o participaciones de la sociedad dominante</column>
+					</record>
+					<record>
+						<column name="codcuenta">1141</column>
+						<column name="descripcion">Reservas estatutarias</column>
+					</record>
+					<record>
+						<column name="codcuenta">1142</column>
+						<column name="descripcion">Reserva por capital amortizado</column>
+					</record>
+					<record>
+						<column name="codcuenta">1143</column>
+						<column name="descripcion">Reserva por fondo de comercio</column>
+					</record>
+					<record>
+						<column name="codcuenta">1144</column>
+						<column name="descripcion">Reservas por acciones propias aceptadas en garantía</column>
+					</record>
+					<record>
+						<column name="codcuenta">115</column>
+						<column name="descripcion">Reservas por pérdidas y ganancias actuariales y otros ajustes</column>
+					</record>
+					<record>
+						<column name="codcuenta">118</column>
+						<column name="descripcion">Aportaciones de socios o propietarios</column>
+					</record>
+					<record>
+						<column name="codcuenta">119</column>
+						<column name="descripcion">Diferencias por ajuste del capital a euros</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">12</column>
+				<column name="descripcion">Resultados pendientes de aplicacion</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">120</column>
+						<column name="descripcion">Remanente</column>
+					</record>
+					<record>
+						<column name="codcuenta">121</column>
+						<column name="descripcion">Resultados negativos de ejercicios anteriores</column>
+					</record>
+					<record>
+						<column name="codcuenta">129</column>
+						<column name="descripcion">Resultado del ejercicio</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">13</column>
+				<column name="descripcion">Subvenciones, donaciones y ajustes por cambios de valor</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">130</column>
+						<column name="descripcion">Subvenciones oficiales de capital</column>
+					</record>
+					<record>
+						<column name="codcuenta">131</column>
+						<column name="descripcion">Donaciones y legados de capital</column>
+					</record>
+					<record>
+						<column name="codcuenta">132</column>
+						<column name="descripcion">Otras subvenciones, donaciones y legados</column>
+					</record>
+					<record>
+						<column name="codcuenta">133</column>
+						<column name="descripcion">Ajustes por valoración en activos financieros disponibles para la venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">1340</column>
+						<column name="descripcion">Cobertura de flujos de efectivo</column>
+					</record>
+					<record>
+						<column name="codcuenta">1341</column>
+						<column name="descripcion">Cobertura de una inversión neta en un negocio en el extranjero</column>
+					</record>
+					<record>
+						<column name="codcuenta">135</column>
+						<column name="descripcion">Diferencias de conversión</column>
+					</record>
+					<record>
+						<column name="codcuenta">136</column>
+						<column name="descripcion">Ajustes por valoración en activos no corrientes y grupos enajenables de elementos, mant venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">1370</column>
+						<column name="descripcion">Ingresos fiscales por diferencias permanentes a distribuir en varios ejercicios</column>
+					</record>
+					<record>
+						<column name="codcuenta">1371</column>
+						<column name="descripcion">Ingresos fiscales por deducciones y bonificaciones a distribuir en varios ejercicios</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">14</column>
+				<column name="descripcion">Provisiones</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">140</column>
+						<column name="descripcion">Provisión por retribuciones a largo plazo al personal</column>
+					</record>
+					<record>
+						<column name="codcuenta">141</column>
+						<column name="descripcion">Provisión para impuestos</column>
+					</record>
+					<record>
+						<column name="codcuenta">142</column>
+						<column name="descripcion">Provisión para otras responsabilidades</column>
+					</record>
+					<record>
+						<column name="codcuenta">143</column>
+						<column name="descripcion">Provisión por desmantelamiento, retiro o rehabilitación del inmovilizado</column>
+					</record>
+					<record>
+						<column name="codcuenta">145</column>
+						<column name="descripcion">Provisión para actuaciones medioambientales</column>
+					</record>
+					<record>
+						<column name="codcuenta">146</column>
+						<column name="descripcion">Provisión para reestructuraciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">147</column>
+						<column name="descripcion">Provisión por transacciones con pagos basados en instrumentos de patrimonio</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">15</column>
+				<column name="descripcion">Deudas a largo plazo con caracteristicas especiales</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">150</column>
+						<column name="descripcion">Acciones o participaciones a largo plazo consideradas como pasivos financieros</column>
+					</record>
+					<record>
+						<column name="codcuenta">1533</column>
+						<column name="descripcion">Desembolsos no exigidos, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">1534</column>
+						<column name="descripcion">Desembolsos no exigidos, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">1535</column>
+						<column name="descripcion">Desembolsos no exigidos, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">1536</column>
+						<column name="descripcion">Otros desembolsos no exigidos</column>
+					</record>
+					<record>
+						<column name="codcuenta">1543</column>
+						<column name="descripcion">Aportaciones no dinerarias pendientes, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">1544</column>
+						<column name="descripcion">Aportaciones no dinerarias pendientes, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">1545</column>
+						<column name="descripcion">Aportaciones no dinerarias pendientes, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">1546</column>
+						<column name="descripcion">Otras aportaciones no dinerarias pendientes</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">16</column>
+				<column name="descripcion">Deudas a largo plazo con partes vinculadas</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">1603</column>
+						<column name="descripcion">Deudas a largo plazo con entidades de crédito, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">1604</column>
+						<column name="descripcion">Deudas a largo plazo con entidades de crédito, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">1605</column>
+						<column name="descripcion">Deudas a largo plazo con otras entidades de crédito vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">1613</column>
+						<column name="descripcion">Proveedores de inmovilizado a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">1614</column>
+						<column name="descripcion">Proveedores de inmovilizado a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">1615</column>
+						<column name="descripcion">Proveedores de inmovilizado a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">1623</column>
+						<column name="descripcion">Acreedores por arrendamiento financiero a largo plazo, empresas de grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">1624</column>
+						<column name="descripcion">Acreedores por arrendamiento financiero a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">1625</column>
+						<column name="descripcion">Acreedores por arrendamiento financiero a largo plazo, otras partes vinculadas.</column>
+					</record>
+					<record>
+						<column name="codcuenta">1633</column>
+						<column name="descripcion">Otras deudas a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">1634</column>
+						<column name="descripcion">Otras deudas a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">1635</column>
+						<column name="descripcion">Otras deudas a largo plazo, con otras partes vinculadas</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">17</column>
+				<column name="descripcion">Deudas a largo plazo por prestamos recibidos, emprestitos y otros conceptos</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">170</column>
+						<column name="descripcion">Deudas a largo plazo con entidades de crédito</column>
+					</record>
+					<record>
+						<column name="codcuenta">171</column>
+						<column name="descripcion">Deudas a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">172</column>
+						<column name="descripcion">Deudas a largo plazo transformables en subvenciones, donaciones y legados</column>
+					</record>
+					<record>
+						<column name="codcuenta">173</column>
+						<column name="descripcion">Proveedores de inmovilizado a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">174</column>
+						<column name="descripcion">Acreedores por arrendamiento financiero a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">175</column>
+						<column name="descripcion">Efectos a pagar a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">1765</column>
+						<column name="descripcion">Pasivos por derivados financieros a largo plazo, cartera de negociación</column>
+					</record>
+					<record>
+						<column name="codcuenta">1768</column>
+						<column name="descripcion">Pasivos por derivados financieros a largo plazo, instrumentos de cobertura</column>
+					</record>
+					<record>
+						<column name="codcuenta">177</column>
+						<column name="descripcion">Obligaciones y bonos</column>
+					</record>
+					<record>
+						<column name="codcuenta">178</column>
+						<column name="descripcion">Obligaciones y bonos convertibles</column>
+					</record>
+					<record>
+						<column name="codcuenta">179</column>
+						<column name="descripcion">Deudas representadas en otros valores negociables</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">18</column>
+				<column name="descripcion">Pasivos por fianzas, garantias y otros conceptos a largo plazo</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">180</column>
+						<column name="descripcion">Fianzas recibidas a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">181</column>
+						<column name="descripcion">Anticipos recibidos por ventas o prestaciones de servicios a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">185</column>
+						<column name="descripcion">Depósitos recibidos a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">189</column>
+						<column name="descripcion">Garantías financieras a largo plazo</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">19</column>
+				<column name="descripcion">Situaciones transitorias de financiacion</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">190</column>
+						<column name="descripcion">Acciones o participaciones emitidas</column>
+					</record>
+					<record>
+						<column name="codcuenta">192</column>
+						<column name="descripcion">Suscriptores de acciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">194</column>
+						<column name="descripcion">Capital emitido pendiente de inscripción</column>
+					</record>
+					<record>
+						<column name="codcuenta">195</column>
+						<column name="descripcion">Acciones o participaciones emitidas consideradas como pasivos financieros</column>
+					</record>
+					<record>
+						<column name="codcuenta">197</column>
+						<column name="descripcion">Suscriptores de acciones consideradas como pasivos financieros</column>
+					</record>
+					<record>
+						<column name="codcuenta">199</column>
+						<column name="descripcion">Acciones o participaciones emitidas consideradas como pasivos financieros pendie inscripción.</column>
+					</record>
+				</relatedRecords>
+			</record>
+		</relatedRecords>
+	</record>
+	
+	<record>
+		<column name="codgrupo">2</column>
+		<column name="descripcion">Activo no corriente</column>
+		<relatedRecords table="co_subgrupos">
+			<record>
+				<column name="codsubgrupo">20</column>
+				<column name="descripcion">Inmovilizaciones intangibles</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">200</column>
+						<column name="descripcion">Investigación</column>
+					</record>
+					<record>
+						<column name="codcuenta">201</column>
+						<column name="descripcion">Desarrollo</column>
+					</record>
+					<record>
+						<column name="codcuenta">202</column>
+						<column name="descripcion">Concesiones administrativas</column>
+					</record>
+					<record>
+						<column name="codcuenta">203</column>
+						<column name="descripcion">Propiedad industrial</column>
+					</record>
+					<record>
+						<column name="codcuenta">204</column>
+						<column name="descripcion">Fondo de comercio</column>
+					</record>
+					<record>
+						<column name="codcuenta">205</column>
+						<column name="descripcion">Derechos de traspaso</column>
+					</record>
+					<record>
+						<column name="codcuenta">206</column>
+						<column name="descripcion">Aplicaciones informáticas</column>
+					</record>
+					<record>
+						<column name="codcuenta">209</column>
+						<column name="descripcion">Anticipos para inmovilizaciones intangibles</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">21</column>
+				<column name="descripcion">Inmovilizaciones materiales</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">210</column>
+						<column name="descripcion">Terrenos y bienes naturales</column>
+					</record>
+					<record>
+						<column name="codcuenta">211</column>
+						<column name="descripcion">Construcciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">212</column>
+						<column name="descripcion">Instalaciones técnicas</column>
+					</record>
+					<record>
+						<column name="codcuenta">213</column>
+						<column name="descripcion">Maquinaria</column>
+					</record>
+					<record>
+						<column name="codcuenta">214</column>
+						<column name="descripcion">Utillaje</column>
+					</record>
+					<record>
+						<column name="codcuenta">215</column>
+						<column name="descripcion">Otras instalaciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">216</column>
+						<column name="descripcion">Mobiliario</column>
+					</record>
+					<record>
+						<column name="codcuenta">217</column>
+						<column name="descripcion">Equipos para procesos de información</column>
+					</record>
+					<record>
+						<column name="codcuenta">218</column>
+						<column name="descripcion">Elementos de transporte</column>
+					</record>
+					<record>
+						<column name="codcuenta">219</column>
+						<column name="descripcion">Otro inmovilizado material</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">22</column>
+				<column name="descripcion">Inversiones inmobiliarias</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">220</column>
+						<column name="descripcion">Inversiones en terrenos y bienes naturales</column>
+					</record>
+					<record>
+						<column name="codcuenta">221</column>
+						<column name="descripcion">Inversiones en construcciones</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">23</column>
+				<column name="descripcion">Inmovilizaciones materiales en curso</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">230</column>
+						<column name="descripcion">Adaptación de terrenos y bienes naturales</column>
+					</record>
+					<record>
+						<column name="codcuenta">231</column>
+						<column name="descripcion">Construcciones en curso</column>
+					</record>
+					<record>
+						<column name="codcuenta">232</column>
+						<column name="descripcion">Instalaciones técnicas en montaje</column>
+					</record>
+					<record>
+						<column name="codcuenta">233</column>
+						<column name="descripcion">Maquinaria en montaje</column>
+					</record>
+					<record>
+						<column name="codcuenta">237</column>
+						<column name="descripcion">Equipos para procesos de información en montaje</column>
+					</record>
+					<record>
+						<column name="codcuenta">239</column>
+						<column name="descripcion">Anticipos para inmovilizaciones materiales</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">24</column>
+				<column name="descripcion">Inversiones financieras a largo plazo en partes vinculadas</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">2403</column>
+						<column name="descripcion">Participaciones a largo plazo en empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">2404</column>
+						<column name="descripcion">Participaciones a largo plazo en empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2405</column>
+						<column name="descripcion">Participaciones a largo plazo en otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2413</column>
+						<column name="descripcion">Valores representativos de deuda a largo plazo de empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">2414</column>
+						<column name="descripcion">Valores representativos de deuda a largo plazo de empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2415</column>
+						<column name="descripcion">Valores representativos de deuda a largo plazo de otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2423</column>
+						<column name="descripcion">Créditos a largo plazo a empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">2424</column>
+						<column name="descripcion">Créditos a largo plazo a empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2425</column>
+						<column name="descripcion">Créditos a largo plazo a otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2493</column>
+						<column name="descripcion">Desembolsos pendientes sobre participaciones a largo plazo en empresas del grupo.</column>
+					</record>
+					<record>
+						<column name="codcuenta">2494</column>
+						<column name="descripcion">Desembolsos pendientes sobre participaciones a largo plazo en empresas asociadas.</column>
+					</record>
+					<record>
+						<column name="codcuenta">2495</column>
+						<column name="descripcion">Desembolsos pendientes sobre participaciones a largo plazo en otras partes vinculadas</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">25</column>
+				<column name="descripcion">Otras inversiones financieras a largo plazo</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">250</column>
+						<column name="descripcion">Inversiones financieras a largo plazo en instrumentos de patrimonio</column>
+					</record>
+					<record>
+						<column name="codcuenta">251</column>
+						<column name="descripcion">Valores representativos de deuda a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">252</column>
+						<column name="descripcion">Créditos a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">253</column>
+						<column name="descripcion">Créditos a largo plazo por enajenación de inmovilizado</column>
+					</record>
+					<record>
+						<column name="codcuenta">254</column>
+						<column name="descripcion">Créditos a largo plazo al personal</column>
+					</record>
+					<record>
+						<column name="codcuenta">2550</column>
+						<column name="descripcion">Activos por derivados financieros a largo plazo, cartera de negociación</column>
+					</record>
+					<record>
+						<column name="codcuenta">2553</column>
+						<column name="descripcion">Activos por derivados financieros a largo plazo, instrumentos de cobertura</column>
+					</record>
+					<record>
+						<column name="codcuenta">257</column>
+						<column name="descripcion">Derechos de reembolso derivados de contratos de seguro relativos a retribuciones a largo p personal</column>
+					</record>
+					<record>
+						<column name="codcuenta">258</column>
+						<column name="descripcion">Imposiciones a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">259</column>
+						<column name="descripcion">Desembolsos pendientes sobre participaciones en el patrimonio neto a largo plazo</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">26</column>
+				<column name="descripcion">Fianzas y depositos constituidos a largo plazo</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">260</column>
+						<column name="descripcion">Fianzas constituidas a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">265</column>
+						<column name="descripcion">Depósitos constituidos a largo plazo</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">28</column>
+				<column name="descripcion">Amortizacion acumulada del inmovilizado</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">2800</column>
+						<column name="descripcion">Amortización acumulada de investigación</column>
+					</record>
+					<record>
+						<column name="codcuenta">2801</column>
+						<column name="descripcion">Amortización acumulada de desarrollo</column>
+					</record>
+					<record>
+						<column name="codcuenta">2802</column>
+						<column name="descripcion">Amortización acumulada de concesiones administrativas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2803</column>
+						<column name="descripcion">Amortización acumulada de propiedad industrial</column>
+					</record>
+					<record>
+						<column name="codcuenta">2805</column>
+						<column name="descripcion">Amortización acumulada de derechos de traspaso</column>
+					</record>
+					<record>
+						<column name="codcuenta">2806</column>
+						<column name="descripcion">Amortización acumulada de aplicaciones informáticas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2811</column>
+						<column name="descripcion">Amortización acumulada de construcciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">2812</column>
+						<column name="descripcion">Amortización acumulada de instalaciones técnicas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2813</column>
+						<column name="descripcion">Amortización acumulada de maquinaria</column>
+					</record>
+					<record>
+						<column name="codcuenta">2814</column>
+						<column name="descripcion">Amortización acumulada de utillaje</column>
+					</record>
+					<record>
+						<column name="codcuenta">2815</column>
+						<column name="descripcion">Amortización acumulada de otras instalaciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">2816</column>
+						<column name="descripcion">Amortización acumulada de mobiliario</column>
+					</record>
+					<record>
+						<column name="codcuenta">2817</column>
+						<column name="descripcion">Amortización acumulada de equipos para procesos de información</column>
+					</record>
+					<record>
+						<column name="codcuenta">2818</column>
+						<column name="descripcion">Amortización acumulada de elementos de transporte</column>
+					</record>
+					<record>
+						<column name="codcuenta">2819</column>
+						<column name="descripcion">Amortización acumulada de otro inmovilizado material</column>
+					</record>
+					<record>
+						<column name="codcuenta">282</column>
+						<column name="descripcion">Amortización acumulada de las inversiones inmobiliarias</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">29</column>
+				<column name="descripcion">Deterioro de valor de activos no corrientes</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">2900</column>
+						<column name="descripcion">Deterioro de valor de investigación</column>
+					</record>
+					<record>
+						<column name="codcuenta">2901</column>
+						<column name="descripcion">Deterioro del valor de desarrollo</column>
+					</record>
+					<record>
+						<column name="codcuenta">2902</column>
+						<column name="descripcion">Deterioro de valor de concesiones administrativas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2903</column>
+						<column name="descripcion">Deterioro de valor de propiedad industrial</column>
+					</record>
+					<record>
+						<column name="codcuenta">2905</column>
+						<column name="descripcion">Deterioro de valor de derechos de traspaso</column>
+					</record>
+					<record>
+						<column name="codcuenta">2906</column>
+						<column name="descripcion">Deterioro de valor de aplicaciones informáticas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2910</column>
+						<column name="descripcion">Deterioro de valor de terrenos y bienes naturales</column>
+					</record>
+					<record>
+						<column name="codcuenta">2911</column>
+						<column name="descripcion">Deterioro de valor de construcciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">2912</column>
+						<column name="descripcion">Deterioro de valor de instalaciones técnicas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2913</column>
+						<column name="descripcion">Deterioro de valor de maquinaria</column>
+					</record>
+					<record>
+						<column name="codcuenta">2914</column>
+						<column name="descripcion">Deterioro de valor de utillaje</column>
+					</record>
+					<record>
+						<column name="codcuenta">2915</column>
+						<column name="descripcion">Deterioro de valor de otras instalaciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">2916</column>
+						<column name="descripcion">Deterioro de valor de mobiliario</column>
+					</record>
+					<record>
+						<column name="codcuenta">2917</column>
+						<column name="descripcion">Deterioro de valor de equipos para procesos de información</column>
+					</record>
+					<record>
+						<column name="codcuenta">2918</column>
+						<column name="descripcion">Deterioro de valor de elementos de transporte</column>
+					</record>
+					<record>
+						<column name="codcuenta">2919</column>
+						<column name="descripcion">Deterioro de valor de otro inmovilizado material</column>
+					</record>
+					<record>
+						<column name="codcuenta">2920</column>
+						<column name="descripcion">Deterioro de valor de los terrenos y bienes naturales</column>
+					</record>
+					<record>
+						<column name="codcuenta">2921</column>
+						<column name="descripcion">Deterioro de valor de construcciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">2933</column>
+						<column name="descripcion">Deterioro de valor de participaciones a largo plazo en empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">2934</column>
+						<column name="descripcion">Deterioro de valor de participaciones a largo plazo en empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2943</column>
+						<column name="descripcion">Deterioro de valor de valores representativos de deuda a largo plazo de empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">2944</column>
+						<column name="descripcion">Deterioro de valor de valores representativos de deuda a largo plazo de empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2945</column>
+						<column name="descripcion">Deterioro de valor de valores representativos de deuda a largo plazo de otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2953</column>
+						<column name="descripcion">Deterioro de valor de créditos a largo plazo a empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">2954</column>
+						<column name="descripcion">Deterioro de valor de créditos a largo plazo a empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">2955</column>
+						<column name="descripcion">Deterioro de valor de créditos a largo plazo a otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">297</column>
+						<column name="descripcion">Deterioro de valor de valores representativos de deuda a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">298</column>
+						<column name="descripcion">Deterioro de valor de créditos a largo plazo</column>
+					</record>
+				</relatedRecords>
+			</record>
+		</relatedRecords>
+	</record>
+
+	<record>
+		<column name="codgrupo">3</column>
+		<column name="descripcion">Existencias</column>
+		<relatedRecords table="co_subgrupos">
+			<record>
+				<column name="codsubgrupo">30</column>
+				<column name="descripcion">Comerciales</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">300</column>
+						<column name="descripcion">Mercaderías a</column>
+					</record>
+					<record>
+						<column name="codcuenta">301</column>
+						<column name="descripcion">Mercaderías b</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">31</column>
+				<column name="descripcion">Materias primas</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">310</column>
+						<column name="descripcion">Materias primas a</column>
+					</record>
+					<record>
+						<column name="codcuenta">311</column>
+						<column name="descripcion">Materias primas b</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">32</column>
+				<column name="descripcion">Otros aprovisionamientos</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">320</column>
+						<column name="descripcion">Elementos y conjuntos incorporables</column>
+					</record>
+					<record>
+						<column name="codcuenta">321</column>
+						<column name="descripcion">Combustibles</column>
+					</record>
+					<record>
+						<column name="codcuenta">322</column>
+						<column name="descripcion">Repuestos</column>
+					</record>
+					<record>
+						<column name="codcuenta">325</column>
+						<column name="descripcion">Materiales diversos</column>
+					</record>
+					<record>
+						<column name="codcuenta">326</column>
+						<column name="descripcion">Embalajes</column>
+					</record>
+					<record>
+						<column name="codcuenta">327</column>
+						<column name="descripcion">Envases</column>
+					</record>
+					<record>
+						<column name="codcuenta">328</column>
+						<column name="descripcion">Material de oficina</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">33</column>
+				<column name="descripcion">Productos en curso</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">330</column>
+						<column name="descripcion">Productos en curso a</column>
+					</record>
+					<record>
+						<column name="codcuenta">331</column>
+						<column name="descripcion">Productos en curso b</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">34</column>
+				<column name="descripcion">Productos semiterminados</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">340</column>
+						<column name="descripcion">Productos semiterminados a</column>
+					</record>
+					<record>
+						<column name="codcuenta">341</column>
+						<column name="descripcion">Productos semiterminados b</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">35</column>
+				<column name="descripcion">Productos terminados</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">350</column>
+						<column name="descripcion">Productos terminados a</column>
+					</record>
+					<record>
+						<column name="codcuenta">351</column>
+						<column name="descripcion">Productos terminados b</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">36</column>
+				<column name="descripcion">Subproductos, residuos y materiales recuperados</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">360</column>
+						<column name="descripcion">Subproductos a</column>
+					</record>
+					<record>
+						<column name="codcuenta">361</column>
+						<column name="descripcion">Subproductos b</column>
+					</record>
+					<record>
+						<column name="codcuenta">365</column>
+						<column name="descripcion">Residuos a</column>
+					</record>
+					<record>
+						<column name="codcuenta">366</column>
+						<column name="descripcion">Residuos b</column>
+					</record>
+					<record>
+						<column name="codcuenta">368</column>
+						<column name="descripcion">Materiales recuperados a</column>
+					</record>
+					<record>
+						<column name="codcuenta">369</column>
+						<column name="descripcion">Materiales recuperados b</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">39</column>
+				<column name="descripcion">Deterioro de valor de las existencias</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">390</column>
+						<column name="descripcion">Deterioro de valor de las mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">391</column>
+						<column name="descripcion">Deterioro de valor de las materias primas</column>
+					</record>
+					<record>
+						<column name="codcuenta">392</column>
+						<column name="descripcion">Deterioro de valor de otros aprovisionamientos</column>
+					</record>
+					<record>
+						<column name="codcuenta">393</column>
+						<column name="descripcion">Deterioro de valor de los productos en curso</column>
+					</record>
+					<record>
+						<column name="codcuenta">394</column>
+						<column name="descripcion">Deterioro de valor de los productos semiterminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">395</column>
+						<column name="descripcion">Deterioro de valor de los productos terminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">396</column>
+						<column name="descripcion">Deterioro de valor de los subproductos, residuos y materiales recuperados</column>
+					</record>
+				</relatedRecords>
+			</record>
+		</relatedRecords>
+	</record>
+	
+	<record>
+		<column name="codgrupo">4</column>
+		<column name="descripcion">Acreedores y deudores por operaciones comerciales</column>
+		<relatedRecords table="co_subgrupos">
+			<record>
+				<column name="codsubgrupo">40</column>
+				<column name="descripcion">Proveedores</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">400</column>
+						<column name="descripcion">Proveedores</column>
+					</record>
+					<record>
+						<column name="codcuenta">4000</column>
+						<column name="descripcion">Proveedores (euros)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4004</column>
+						<column name="descripcion">Proveedores (moneda extranjera)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4009</column>
+						<column name="descripcion">Proveedores, facturas pendientes de recibir o de formalizar</column>
+					</record>
+					<record>
+						<column name="codcuenta">401</column>
+						<column name="descripcion">Proveedores, efectos comerciales a pagar</column>
+					</record>
+					<record>
+						<column name="codcuenta">4030</column>
+						<column name="descripcion">Proveedores, empresas del grupo (euros)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4031</column>
+						<column name="descripcion">Efectos comerciales a pagar, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">4034</column>
+						<column name="descripcion">Proveedores, empresas del grupo (moneda extranjera)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4036</column>
+						<column name="descripcion">Envases y embalajes a devolver a proveedores, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">4039</column>
+						<column name="descripcion">Proveedores, empresas del grupo, facturas pendientes de recibir o de formalizar</column>
+					</record>
+					<record>
+						<column name="codcuenta">404</column>
+						<column name="descripcion">Proveedores, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">405</column>
+						<column name="descripcion">Proveedores, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">406</column>
+						<column name="descripcion">Envases y embalajes a devolver a proveedores</column>
+					</record>
+					<record>
+						<column name="codcuenta">407</column>
+						<column name="descripcion">Anticipos a proveedores</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">41</column>
+				<column name="descripcion">Acreedores varios</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">410</column>
+						<column name="descripcion">Acreedores</column>
+					</record>
+					<record>
+						<column name="codcuenta">4100</column>
+						<column name="descripcion">Acreedores por prestaciones de servicios (euros)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4104</column>
+						<column name="descripcion">Acreedores por prestaciones de servicios, (moneda extranjera)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4109</column>
+						<column name="descripcion">Acreedores por prestaciones de servicios, facturas pendientes de recibir o de formalizar</column>
+					</record>
+					<record>
+						<column name="codcuenta">411</column>
+						<column name="descripcion">Acreedores, efectos comerciales a pagar</column>
+					</record>
+					<record>
+						<column name="codcuenta">419</column>
+						<column name="descripcion">Acreedores por operaciones en común</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">43</column>
+				<column name="descripcion">Clientes</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">430</column>
+						<column name="descripcion">Clientes</column>
+					</record>
+					<record>
+						<column name="codcuenta">4300</column>
+						<column name="descripcion">Clientes (euros)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4304</column>
+						<column name="descripcion">Clientes (moneda extranjera)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4309</column>
+						<column name="descripcion">Clientes, facturas pendientes de formalizar</column>
+					</record>
+					<record>
+						<column name="codcuenta">4310</column>
+						<column name="descripcion">Efectos comerciales en cartera</column>
+					</record>
+					<record>
+						<column name="codcuenta">4311</column>
+						<column name="descripcion">Efectos comerciales descontados</column>
+					</record>
+					<record>
+						<column name="codcuenta">4312</column>
+						<column name="descripcion">Efectos comerciales en gestión de cobro</column>
+					</record>
+					<record>
+						<column name="codcuenta">4315</column>
+						<column name="descripcion">Efectos comerciales impagados</column>
+					</record>
+					<record>
+						<column name="codcuenta">432</column>
+						<column name="descripcion">Clientes, operaciones de factoring</column>
+					</record>
+					<record>
+						<column name="codcuenta">4330</column>
+						<column name="descripcion">Clientes empresas del grupo (euros)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4331</column>
+						<column name="descripcion">Efectos comerciales a cobrar, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">4332</column>
+						<column name="descripcion">Clientes empresas del grupo, operaciones de factoring</column>
+					</record>
+					<record>
+						<column name="codcuenta">4334</column>
+						<column name="descripcion">Clientes empresas del grupo (moneda extranjera)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4336</column>
+						<column name="descripcion">Clientes empresas del grupo de dudoso cobro</column>
+					</record>
+					<record>
+						<column name="codcuenta">4337</column>
+						<column name="descripcion">Envases y embalajes a devolver a clientes, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">4339</column>
+						<column name="descripcion">Clientes empresas del grupo, facturas pendientes de formalizar</column>
+					</record>
+					<record>
+						<column name="codcuenta">434</column>
+						<column name="descripcion">Clientes, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">435</column>
+						<column name="descripcion">Clientes, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">436</column>
+						<column name="descripcion">Clientes de dudoso cobro</column>
+					</record>
+					<record>
+						<column name="codcuenta">437</column>
+						<column name="descripcion">Envases y embalajes a devolver por clientes</column>
+					</record>
+					<record>
+						<column name="codcuenta">438</column>
+						<column name="descripcion">Anticipos de clientes</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">44</column>
+				<column name="descripcion">Deudores varios</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">4400</column>
+						<column name="descripcion">Deudores (euros)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4404</column>
+						<column name="descripcion">Deudores (moneda extranjera)</column>
+					</record>
+					<record>
+						<column name="codcuenta">4409</column>
+						<column name="descripcion">Deudores, facturas pendientes de formalizar</column>
+					</record>
+					<record>
+						<column name="codcuenta">4410</column>
+						<column name="descripcion">Deudores, efectos comerciales en cartera</column>
+					</record>
+					<record>
+						<column name="codcuenta">4411</column>
+						<column name="descripcion">Deudores, efectos comerciales descontados</column>
+					</record>
+					<record>
+						<column name="codcuenta">4412</column>
+						<column name="descripcion">Deudores, efectos comerciales en gestión de cobro</column>
+					</record>
+					<record>
+						<column name="codcuenta">4415</column>
+						<column name="descripcion">Deudores, efectos comerciales impagados</column>
+					</record>
+					<record>
+						<column name="codcuenta">446</column>
+						<column name="descripcion">Deudores de dudoso cobro</column>
+					</record>
+					<record>
+						<column name="codcuenta">449</column>
+						<column name="descripcion">Deudores por operaciones en común</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">46</column>
+				<column name="descripcion">Personal</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">460</column>
+						<column name="descripcion">Anticipos de remuneraciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">465</column>
+						<column name="descripcion">Remuneraciones pendientes de pago</column>
+					</record>
+					<record>
+						<column name="codcuenta">466</column>
+						<column name="descripcion">Remuneraciones mediante sistemas de aportación definida pendientes de pago</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">47</column>
+				<column name="descripcion">Administraciones publicas</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">4700</column>
+						<column name="descripcion">Hacienda pública, deudora por iva</column>
+					</record>
+					<record>
+						<column name="codcuenta">4708</column>
+						<column name="descripcion">Hacienda pública, deudora por subvenciones concedidas</column>
+					</record>
+					<record>
+						<column name="codcuenta">4709</column>
+						<column name="descripcion">Hacienda pública, deudora por devolución de impuestos</column>
+					</record>
+					<record>
+						<column name="codcuenta">471</column>
+						<column name="descripcion">Organismos de la seguridad social, deudores</column>
+					</record>
+					<record>
+						<column name="codcuenta">472</column>
+						<column name="descripcion">Hacienda pública, iva soportado</column>
+					</record>
+					<record>
+						<column name="codcuenta">473</column>
+						<column name="descripcion">Hacienda pública, retenciones y pagos a cuenta</column>
+					</record>
+					<record>
+						<column name="codcuenta">4740</column>
+						<column name="descripcion">Activos por diferencias temporarias deducibles</column>
+					</record>
+					<record>
+						<column name="codcuenta">4742</column>
+						<column name="descripcion">Derechos por deducciones y bonificaciones pendientes de aplicar</column>
+					</record>
+					<record>
+						<column name="codcuenta">4745</column>
+						<column name="descripcion">Crédito por pérdidas a compensar del ejercicio</column>
+					</record>
+					<record>
+						<column name="codcuenta">4750</column>
+						<column name="descripcion">Hacienda pública, acreedora por iva</column>
+					</record>
+					<record>
+						<column name="codcuenta">4751</column>
+						<column name="descripcion">Hacienda pública, acreedora por retenciones practicadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">4752</column>
+						<column name="descripcion">Hacienda pública, acreedora por impuesto sobre sociedades</column>
+					</record>
+					<record>
+						<column name="codcuenta">4758</column>
+						<column name="descripcion">Hacienda pública, acreedora por subvenciones a reintegrar</column>
+					</record>
+					<record>
+						<column name="codcuenta">476</column>
+						<column name="descripcion">Organismos de la seguridad social, acreedores</column>
+					</record>
+					<record>
+						<column name="codcuenta">477</column>
+						<column name="descripcion">Hacienda pública, iva repercutido</column>
+					</record>
+					<record>
+						<column name="codcuenta">479</column>
+						<column name="descripcion">Pasivos por diferencias temporarias imponibles</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">48</column>
+				<column name="descripcion">Ajustes por periodificacion</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">480</column>
+						<column name="descripcion">Gastos anticipados</column>
+					</record>
+					<record>
+						<column name="codcuenta">485</column>
+						<column name="descripcion">Ingresos anticipados</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">49</column>
+				<column name="descripcion">Deterioro de valor de creditos comerciales y provisiones a corto plazo</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">490</column>
+						<column name="descripcion">Deterioro de valor de créditos por operaciones comerciales</column>
+					</record>
+					<record>
+						<column name="codcuenta">4933</column>
+						<column name="descripcion">Deterioro de valor de créditos por operaciones comerciales con empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">4934</column>
+						<column name="descripcion">Deterioro de valor de créditos por operaciones comerciales con empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">4935</column>
+						<column name="descripcion">Deterioro de valor de créditos por operaciones comerciales con otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">4994</column>
+						<column name="descripcion">Provisión por contratos onerosos</column>
+					</record>
+					<record>
+						<column name="codcuenta">4999</column>
+						<column name="descripcion">Provisión para otras operaciones comerciales</column>
+					</record>
+				</relatedRecords>
+			</record>
+		</relatedRecords>
+	</record>
+
+	<record>
+		<column name="codgrupo">5</column>
+		<column name="descripcion">Cuentas financieras</column>
+		<relatedRecords table="co_subgrupos">
+			<record>
+				<column name="codsubgrupo">50</column>
+				<column name="descripcion">Emprestitos, deudas con caracteristicas especiales y otras emisiones analogas a corto plazo</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">500</column>
+						<column name="descripcion">Obligaciones y bonos a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">501</column>
+						<column name="descripcion">Obligaciones y bonos convertibles a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">502</column>
+						<column name="descripcion">Acciones o participaciones a corto plazo consideradas como pasivos financieros</column>
+					</record>
+					<record>
+						<column name="codcuenta">505</column>
+						<column name="descripcion">Deudas representadas en otros valores negociables a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">506</column>
+						<column name="descripcion">Intereses a corto plazo de empréstitos y otras emisiones análogas</column>
+					</record>
+					<record>
+						<column name="codcuenta">507</column>
+						<column name="descripcion">Dividendos de acciones o participaciones consideradas como pasivos financieros</column>
+					</record>
+					<record>
+						<column name="codcuenta">5090</column>
+						<column name="descripcion">Obligaciones y bonos amortizados</column>
+					</record>
+					<record>
+						<column name="codcuenta">5091</column>
+						<column name="descripcion">Obligaciones y bonos convertibles amortizados</column>
+					</record>
+					<record>
+						<column name="codcuenta">5095</column>
+						<column name="descripcion">Otros valores negociables amortizados</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">51</column>
+				<column name="descripcion">Deudas a corto plazo con partes vinculadas</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">5103</column>
+						<column name="descripcion">Deudas a corto plazo con entidades de crédito, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5104</column>
+						<column name="descripcion">Deudas a corto plazo con entidades de crédito, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5105</column>
+						<column name="descripcion">Deudas a corto plazo con otras entidades de crédito vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5113</column>
+						<column name="descripcion">Proveedores de inmovilizado a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5114</column>
+						<column name="descripcion">Proveedores de inmovilizado a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5115</column>
+						<column name="descripcion">Proveedores de inmovilizado a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5123</column>
+						<column name="descripcion">Acreedores por arrendamiento financiero a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5124</column>
+						<column name="descripcion">Acreedores por arrendamiento financiero a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5125</column>
+						<column name="descripcion">Acreedores por arrendamiento financiero a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5133</column>
+						<column name="descripcion">Otras deudas a corto plazo con empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5134</column>
+						<column name="descripcion">Otras deudas a corto plazo con empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5135</column>
+						<column name="descripcion">Otras deudas a corto plazo con otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5143</column>
+						<column name="descripcion">Intereses a corto plazo de deudas, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5144</column>
+						<column name="descripcion">Intereses a corto plazo de deudas, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5145</column>
+						<column name="descripcion">Intereses a corto plazo de deudas, otras partes vinculadas</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">52</column>
+				<column name="descripcion">Deudas a corto plazo por prestamos recibidos y otros conceptos</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">5200</column>
+						<column name="descripcion">Préstamos a corto plazo de entidades de crédito</column>
+					</record>
+					<record>
+						<column name="codcuenta">5201</column>
+						<column name="descripcion">Deudas a corto plazo por crédito dispuesto</column>
+					</record>
+					<record>
+						<column name="codcuenta">5208</column>
+						<column name="descripcion">Deudas por efectos descontados</column>
+					</record>
+					<record>
+						<column name="codcuenta">5209</column>
+						<column name="descripcion">Deudas por operaciones de factoring</column>
+					</record>
+					<record>
+						<column name="codcuenta">521</column>
+						<column name="descripcion">Deudas a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">522</column>
+						<column name="descripcion">Deudas a corto plazo transformables en subvenciones, donaciones y legados</column>
+					</record>
+					<record>
+						<column name="codcuenta">523</column>
+						<column name="descripcion">Proveedores de inmovilizado a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">524</column>
+						<column name="descripcion">Acreedores por arrendamiento financiero a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">525</column>
+						<column name="descripcion">Efectos a pagar a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">526</column>
+						<column name="descripcion">Dividendo activo a pagar</column>
+					</record>
+					<record>
+						<column name="codcuenta">527</column>
+						<column name="descripcion">Intereses a corto plazo de deudas con entidades de crédito</column>
+					</record>
+					<record>
+						<column name="codcuenta">528</column>
+						<column name="descripcion">Intereses a corto plazo de deudas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5290</column>
+						<column name="descripcion">Provisión a corto plazo por retribuciones al personal</column>
+					</record>
+					<record>
+						<column name="codcuenta">5291</column>
+						<column name="descripcion">Provisión a corto plazo para impuestos</column>
+					</record>
+					<record>
+						<column name="codcuenta">5292</column>
+						<column name="descripcion">Provisión a corto plazo para otras responsabilidades</column>
+					</record>
+					<record>
+						<column name="codcuenta">5293</column>
+						<column name="descripcion">Provisión a corto plazo por desmantelamiento, retiro o rehabilitación del inmovilizado</column>
+					</record>
+					<record>
+						<column name="codcuenta">5295</column>
+						<column name="descripcion">Provisión a corto plazo para actuaciones medioambientales</column>
+					</record>
+					<record>
+						<column name="codcuenta">5296</column>
+						<column name="descripcion">Provisión a corto plazo para reestructuraciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">5297</column>
+						<column name="descripcion">Provisión a corto plazo por transacciones con pagos basados en instrumentos de patrimonio</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">53</column>
+				<column name="descripcion">Inversiones financieras a corto plazo en partes vinculadas</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">5303</column>
+						<column name="descripcion">Participaciones a corto plazo, en empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5304</column>
+						<column name="descripcion">Participaciones a corto plazo, en empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5305</column>
+						<column name="descripcion">Participaciones a corto plazo, en otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5313</column>
+						<column name="descripcion">Valores representativos de deuda a corto plazo de empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5314</column>
+						<column name="descripcion">Valores representativos de deuda a corto plazo de empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5315</column>
+						<column name="descripcion">Valores representativos de deuda a corto plazo de otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5323</column>
+						<column name="descripcion">Créditos a corto plazo a empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5324</column>
+						<column name="descripcion">Créditos a corto plazo a empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5325</column>
+						<column name="descripcion">Créditos a corto plazo a otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5333</column>
+						<column name="descripcion">Intereses a corto plazo de valores representativos de deuda de empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5334</column>
+						<column name="descripcion">Intereses a corto plazo de valores representativos de deuda de empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5335</column>
+						<column name="descripcion">Intereses a corto plazo de valores representativos de deuda de otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5343</column>
+						<column name="descripcion">Intereses a corto plazo de créditos a empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5344</column>
+						<column name="descripcion">Intereses a corto plazo de créditos a empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5345</column>
+						<column name="descripcion">Intereses a corto plazo de créditos a otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5353</column>
+						<column name="descripcion">Dividendo a cobrar de empresas de grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5354</column>
+						<column name="descripcion">Dividendo a cobrar de empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5355</column>
+						<column name="descripcion">Dividendo a cobrar de otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5393</column>
+						<column name="descripcion">Desembolsos pendientes sobre participaciones a corto plazo en empresas del grupo.</column>
+					</record>
+					<record>
+						<column name="codcuenta">5394</column>
+						<column name="descripcion">Desembolsos pendientes sobre participaciones a corto plazo en empresas asociadas.</column>
+					</record>
+					<record>
+						<column name="codcuenta">5395</column>
+						<column name="descripcion">Desembolsos pendientes sobre participaciones a corto plazo en otras partes vinculadas</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">54</column>
+				<column name="descripcion">Otras inversiones financieras a corto plazo</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">540</column>
+						<column name="descripcion">Inversiones financieras a corto plazo en instrumentos de patrimonio</column>
+					</record>
+					<record>
+						<column name="codcuenta">541</column>
+						<column name="descripcion">Valores representativos de deuda a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">542</column>
+						<column name="descripcion">Créditos a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">543</column>
+						<column name="descripcion">Créditos a corto plazo por enajenación de inmovilizado</column>
+					</record>
+					<record>
+						<column name="codcuenta">544</column>
+						<column name="descripcion">Créditos a corto plazo al personal</column>
+					</record>
+					<record>
+						<column name="codcuenta">545</column>
+						<column name="descripcion">Dividendo a cobrar</column>
+					</record>
+					<record>
+						<column name="codcuenta">546</column>
+						<column name="descripcion">Intereses a corto plazo de valores representativos de deudas</column>
+					</record>
+					<record>
+						<column name="codcuenta">547</column>
+						<column name="descripcion">Intereses a corto plazo de créditos</column>
+					</record>
+					<record>
+						<column name="codcuenta">548</column>
+						<column name="descripcion">Imposiciones a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">549</column>
+						<column name="descripcion">Desembolsos pendientes sobre participaciones en el patrimonio neto a corto plazo</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">55</column>
+				<column name="descripcion">Otras cuentas no bancarias</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">550</column>
+						<column name="descripcion">Titular de la explotación</column>
+					</record>
+					<record>
+						<column name="codcuenta">551</column>
+						<column name="descripcion">Cuenta corriente con socios y administradores</column>
+					</record>
+					<record>
+						<column name="codcuenta">5523</column>
+						<column name="descripcion">Cuenta corriente con empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5524</column>
+						<column name="descripcion">Cuenta corriente con empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5525</column>
+						<column name="descripcion">Cuenta corriente con otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5530</column>
+						<column name="descripcion">Socios de sociedad disuelta</column>
+					</record>
+					<record>
+						<column name="codcuenta">5531</column>
+						<column name="descripcion">Socios, cuenta de fusión</column>
+					</record>
+					<record>
+						<column name="codcuenta">5532</column>
+						<column name="descripcion">Socios de sociedad escindida</column>
+					</record>
+					<record>
+						<column name="codcuenta">5533</column>
+						<column name="descripcion">Socios, cuenta de escisión</column>
+					</record>
+					<record>
+						<column name="codcuenta">554</column>
+						<column name="descripcion">Cuenta corriente con uniones temporales de empresas y comunidades de bienes</column>
+					</record>
+					<record>
+						<column name="codcuenta">555</column>
+						<column name="descripcion">Partidas pendientes de aplicación</column>
+					</record>
+					<record>
+						<column name="codcuenta">5563</column>
+						<column name="descripcion">Desembolsos exigidos sobre participaciones, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5564</column>
+						<column name="descripcion">Desembolsos exigidos sobre participaciones, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5565</column>
+						<column name="descripcion">Desembolsos exigidos sobre participaciones, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5566</column>
+						<column name="descripcion">Desembolsos exigidos sobre participaciones de otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">557</column>
+						<column name="descripcion">Dividendo activo a cuenta</column>
+					</record>
+					<record>
+						<column name="codcuenta">5580</column>
+						<column name="descripcion">Socios por desembolsos exigidos sobre acciones o participaciones ordinarias</column>
+					</record>
+					<record>
+						<column name="codcuenta">5585</column>
+						<column name="descripcion">Socios por desembolsos exigidos sobre acciones o participaciones consideradas como  financieros</column>
+					</record>
+					<record>
+						<column name="codcuenta">5590</column>
+						<column name="descripcion">Activos por derivados financieros a corto plazo, cartera de negociación</column>
+					</record>
+					<record>
+						<column name="codcuenta">5593</column>
+						<column name="descripcion">Activos por derivados financieros a corto plazo, instrumentos de cobertura</column>
+					</record>
+					<record>
+						<column name="codcuenta">5595</column>
+						<column name="descripcion">Pasivos por derivados financieros a corto plazo, cartera de negociación</column>
+					</record>
+					<record>
+						<column name="codcuenta">5598</column>
+						<column name="descripcion">Pasivos por derivados financieros a corto plazo, instrumentos de cobertura</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">56</column>
+				<column name="descripcion">Fianzas y depósitos recibidos y constituidos a corto plazo y ajustes por periodificación</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">560</column>
+						<column name="descripcion">Fianzas recibidas a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">561</column>
+						<column name="descripcion">Depósitos recibidos a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">565</column>
+						<column name="descripcion">Fianzas constituidas a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">566</column>
+						<column name="descripcion">Depósitos constituidos a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">567</column>
+						<column name="descripcion">Intereses pagados por anticipado</column>
+					</record>
+					<record>
+						<column name="codcuenta">568</column>
+						<column name="descripcion">Intereses cobrados por anticipado</column>
+					</record>
+					<record>
+						<column name="codcuenta">569</column>
+						<column name="descripcion">Garantías financieras a corto plazo</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">57</column>
+				<column name="descripcion">Tesorería</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">570</column>
+						<column name="descripcion">Caja, euros</column>
+					</record>
+					<record>
+						<column name="codcuenta">571</column>
+						<column name="descripcion">Caja, moneda extranjera</column>
+					</record>
+					<record>
+						<column name="codcuenta">572</column>
+						<column name="descripcion">Bancos e instituciones de crédito c/c vista, euros</column>
+					</record>
+					<record>
+						<column name="codcuenta">573</column>
+						<column name="descripcion">Bancos e instituciones de crédito c/c vista, moneda extranjera</column>
+					</record>
+					<record>
+						<column name="codcuenta">574</column>
+						<column name="descripcion">Bancos e instituciones de crédito, cuentas de ahorro, euros</column>
+					</record>
+					<record>
+						<column name="codcuenta">575</column>
+						<column name="descripcion">Bancos e instituciones de crédito, cuentas de ahorro, moneda extranjera</column>
+					</record>
+					<record>
+						<column name="codcuenta">576</column>
+						<column name="descripcion">Inversiones a corto plazo de gran liquidez</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">58</column>
+				<column name="descripcion">Activos no corrientes mantenidos para la venta y activos y pasivos asociados</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">580</column>
+						<column name="descripcion">Inmovilizado</column>
+					</record>
+					<record>
+						<column name="codcuenta">581</column>
+						<column name="descripcion">Inversiones con personas y entidades vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">582</column>
+						<column name="descripcion">Inversiones financieras</column>
+					</record>
+					<record>
+						<column name="codcuenta">583</column>
+						<column name="descripcion">Existencias, deudores comerciales y otras cuentas a cobrar</column>
+					</record>
+					<record>
+						<column name="codcuenta">584</column>
+						<column name="descripcion">Otros activos</column>
+					</record>
+					<record>
+						<column name="codcuenta">585</column>
+						<column name="descripcion">Provisiones</column>
+					</record>
+					<record>
+						<column name="codcuenta">586</column>
+						<column name="descripcion">Deudas con características especiales</column>
+					</record>
+					<record>
+						<column name="codcuenta">587</column>
+						<column name="descripcion">Deudas con personas y entidades vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">588</column>
+						<column name="descripcion">Acreedores comerciales y otras cuentas a pagar</column>
+					</record>
+					<record>
+						<column name="codcuenta">589</column>
+						<column name="descripcion">Otros pasivos</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">59</column>
+				<column name="descripcion">Deterioro del valor de inversiones financieras a corto plazo y de activos no corrientes mantenidos para la venta</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">5933</column>
+						<column name="descripcion">Deterioro de valor de participaciones a corto plazo en empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5934</column>
+						<column name="descripcion">Deterioro de valor de participaciones a corto plazo en empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5943</column>
+						<column name="descripcion">Deterioro de valor de valores representativos de deuda a corto plazo de empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5944</column>
+						<column name="descripcion">Deterioro de valor de valores representativos de deuda a corto plazo de empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5945</column>
+						<column name="descripcion">Deterioro de valor de valores representativos de deuda a corto plazo de otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5953</column>
+						<column name="descripcion">Deterioro de valor de créditos a corto plazo a empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5954</column>
+						<column name="descripcion">Deterioro de valor de créditos a corto plazo a empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">5955</column>
+						<column name="descripcion">Deterioro de valor de créditos a corto plazo a otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">597</column>
+						<column name="descripcion">Deterioro de valor de valores representativos de deuda a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">598</column>
+						<column name="descripcion">Deterioro de valor de créditos a corto plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">5990</column>
+						<column name="descripcion">Deterioro de valor de inmovilizado no corriente mantenido para la venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">5991</column>
+						<column name="descripcion">Deterioro de valor de inversiones con personas y entidades vinculadas no corrientes mant venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">5992</column>
+						<column name="descripcion">Deterioro de valor de inversiones financieras no corrientes mantenidas para la venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">5993</column>
+						<column name="descripcion">Deterioro de valor de existencias, deudores comerciales y otras cuentas a cobrar integrados en un grupo enajenable mantenido para la venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">5994</column>
+						<column name="descripcion">Deterioro de valor de otros activos mantenidos para la venta</column>
+					</record>
+				</relatedRecords>
+			</record>
+		</relatedRecords>
+	</record>
+
+	<record>
+		<column name="codgrupo">6</column>
+		<column name="descripcion">Compras y gastos</column>
+		<relatedRecords table="co_subgrupos">
+			<record>
+				<column name="codsubgrupo">60</column>
+				<column name="descripcion">Compras</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">600</column>
+						<column name="descripcion">Compras de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">601</column>
+						<column name="descripcion">Compras de materias primas</column>
+					</record>
+					<record>
+						<column name="codcuenta">602</column>
+						<column name="descripcion">Compras de otros aprovisionamientos</column>
+					</record>
+					<record>
+						<column name="codcuenta">6060</column>
+						<column name="descripcion">Descuentos sobre compras por pronto pago de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">6061</column>
+						<column name="descripcion">Descuentos sobre compras por pronto pago de materias primas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6062</column>
+						<column name="descripcion">Descuentos sobre compras por pronto pago de otros aprovisionamientos</column>
+					</record>
+					<record>
+						<column name="codcuenta">607</column>
+						<column name="descripcion">Trabajos realizados por otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6080</column>
+						<column name="descripcion">Devoluciones de compras de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">6081</column>
+						<column name="descripcion">Devoluciones de compras de materias primas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6082</column>
+						<column name="descripcion">Devoluciones de compras de otros aprovisionamientos</column>
+					</record>
+					<record>
+						<column name="codcuenta">6090</column>
+						<column name="descripcion">Rappels por compras de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">6091</column>
+						<column name="descripcion">Rappels por compras de materias primas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6092</column>
+						<column name="descripcion">Rappels por compras de otros aprovisionamientos</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">61</column>
+				<column name="descripcion">Variación de existencias</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">610</column>
+						<column name="descripcion">Variación de existencias de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">611</column>
+						<column name="descripcion">Variación de existencias de materias primas</column>
+					</record>
+					<record>
+						<column name="codcuenta">612</column>
+						<column name="descripcion">Variación de existencias de otros aprovisionamientos</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">62</column>
+				<column name="descripcion">Servicios exteriores</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">620</column>
+						<column name="descripcion">Gastos en investigación y desarrollo del ejercicio</column>
+					</record>
+					<record>
+						<column name="codcuenta">621</column>
+						<column name="descripcion">Arrendamientos y cánones</column>
+					</record>
+					<record>
+						<column name="codcuenta">622</column>
+						<column name="descripcion">Reparaciones y conservación</column>
+					</record>
+					<record>
+						<column name="codcuenta">623</column>
+						<column name="descripcion">Servicios de profesionales independientes</column>
+					</record>
+					<record>
+						<column name="codcuenta">624</column>
+						<column name="descripcion">Transportes</column>
+					</record>
+					<record>
+						<column name="codcuenta">625</column>
+						<column name="descripcion">Primas de seguros</column>
+					</record>
+					<record>
+						<column name="codcuenta">626</column>
+						<column name="descripcion">Servicios bancarios y similares</column>
+					</record>
+					<record>
+						<column name="codcuenta">627</column>
+						<column name="descripcion">Publicidad, propaganda y relaciones públicas</column>
+					</record>
+					<record>
+						<column name="codcuenta">628</column>
+						<column name="descripcion">Suministros</column>
+					</record>
+					<record>
+						<column name="codcuenta">629</column>
+						<column name="descripcion">Otros servicios</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">63</column>
+				<column name="descripcion">Tributos</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">6300</column>
+						<column name="descripcion">Impuesto corriente</column>
+					</record>
+					<record>
+						<column name="codcuenta">6301</column>
+						<column name="descripcion">Impuesto diferido</column>
+					</record>
+					<record>
+						<column name="codcuenta">631</column>
+						<column name="descripcion">Otros tributos</column>
+					</record>
+					<record>
+						<column name="codcuenta">633</column>
+						<column name="descripcion">Ajustes negativos en la imposición sobre beneficios</column>
+					</record>
+					<record>
+						<column name="codcuenta">6341</column>
+						<column name="descripcion">Ajustes negativos en iva de activo corriente</column>
+					</record>
+					<record>
+						<column name="codcuenta">6342</column>
+						<column name="descripcion">Ajustes negativos en iva de inversiones</column>
+					</record>
+					<record>
+						<column name="codcuenta">636</column>
+						<column name="descripcion">Devolución de impuestos</column>
+					</record>
+					<record>
+						<column name="codcuenta">638</column>
+						<column name="descripcion">Ajustes positivos en la imposición sobre beneficios</column>
+					</record>
+					<record>
+						<column name="codcuenta">6391</column>
+						<column name="descripcion">Ajustes positivos en iva de activo corriente</column>
+					</record>
+					<record>
+						<column name="codcuenta">6392</column>
+						<column name="descripcion">Ajustes positivos en iva de inversiones</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">64</column>
+				<column name="descripcion">Gastos de personal</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">640</column>
+						<column name="descripcion">Sueldos y salarios</column>
+					</record>
+					<record>
+						<column name="codcuenta">641</column>
+						<column name="descripcion">Indemnizaciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">642</column>
+						<column name="descripcion">Seguridad social a cargo de la empresa</column>
+					</record>
+					<record>
+						<column name="codcuenta">643</column>
+						<column name="descripcion">Retribuciones a largo plazo mediante sistemas de aportación definida</column>
+					</record>
+					<record>
+						<column name="codcuenta">6440</column>
+						<column name="descripcion">Contribuciones anuales</column>
+					</record>
+					<record>
+						<column name="codcuenta">6442</column>
+						<column name="descripcion">Otros costes</column>
+					</record>
+					<record>
+						<column name="codcuenta">6450</column>
+						<column name="descripcion">Retribuciones al personal liquidados con instrumentos de patrimonio</column>
+					</record>
+					<record>
+						<column name="codcuenta">6457</column>
+						<column name="descripcion">Retribuciones al personal liquidados en efectivo basado en instrumentos de patrimonio</column>
+					</record>
+					<record>
+						<column name="codcuenta">649</column>
+						<column name="descripcion">Otros gastos sociales</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">65</column>
+				<column name="descripcion">Otros gastos de gestión</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">650</column>
+						<column name="descripcion">Pérdidas de créditos comerciales incobrables</column>
+					</record>
+					<record>
+						<column name="codcuenta">6510</column>
+						<column name="descripcion">Beneficio transferido (gestor)</column>
+					</record>
+					<record>
+						<column name="codcuenta">6511</column>
+						<column name="descripcion">Pérdida soportada (partícipe o asociado no gestor)</column>
+					</record>
+					<record>
+						<column name="codcuenta">659</column>
+						<column name="descripcion">Otras pérdidas en gestión corriente</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">66</column>
+				<column name="descripcion">Gastos financieros</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">660</column>
+						<column name="descripcion">Gastos financieros por actualización de provisiones</column>
+					</record>
+					<record>
+						<column name="codcuenta">6610</column>
+						<column name="descripcion">Intereses de obligaciones y bonos a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6611</column>
+						<column name="descripcion">Intereses de obligaciones y bonos a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6612</column>
+						<column name="descripcion">Intereses de obligaciones y bonos a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6613</column>
+						<column name="descripcion">Intereses de obligaciones y bonos a largo plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6615</column>
+						<column name="descripcion">Intereses de obligaciones y bonos a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6616</column>
+						<column name="descripcion">Intereses de obligaciones y bonos a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6617</column>
+						<column name="descripcion">Intereses de obligaciones y bonos a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6618</column>
+						<column name="descripcion">Intereses de obligaciones y bonos a corto plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6620</column>
+						<column name="descripcion">Intereses de deudas, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6621</column>
+						<column name="descripcion">Intereses de deudas, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6622</column>
+						<column name="descripcion">Intereses de deudas, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6623</column>
+						<column name="descripcion">Intereses de deudas con entidades de crédito</column>
+					</record>
+					<record>
+						<column name="codcuenta">6624</column>
+						<column name="descripcion">Intereses de deudas, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6630</column>
+						<column name="descripcion">Pérdidas de cartera de negociación</column>
+					</record>
+					<record>
+						<column name="codcuenta">6631</column>
+						<column name="descripcion">Pérdidas de designados por la empresa</column>
+					</record>
+					<record>
+						<column name="codcuenta">6632</column>
+						<column name="descripcion">Pérdidas de disponibles para la venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">6633</column>
+						<column name="descripcion">Pérdidas de instrumentos de cobertura</column>
+					</record>
+					<record>
+						<column name="codcuenta">6640</column>
+						<column name="descripcion">Dividendos de pasivos, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6641</column>
+						<column name="descripcion">Dividendos de pasivos, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6642</column>
+						<column name="descripcion">Dividendos de pasivos, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6643</column>
+						<column name="descripcion">Dividendos de pasivos, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6650</column>
+						<column name="descripcion">Intereses por descuento de efectos en entidades de crédito del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6651</column>
+						<column name="descripcion">Intereses por descuento de efectos en entidades de crédito asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6652</column>
+						<column name="descripcion">Intereses por descuento de efectos en otras entidades de crédito vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6653</column>
+						<column name="descripcion">Intereses por descuento de efectos en otras entidades de crédito</column>
+					</record>
+					<record>
+						<column name="codcuenta">6654</column>
+						<column name="descripcion">Intereses por operaciones de factoring con entidades de crédito del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6655</column>
+						<column name="descripcion">Intereses por operaciones de factoring con entidades de crédito asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6656</column>
+						<column name="descripcion">Intereses por operaciones de factoring con otras entidades de crédito vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6657</column>
+						<column name="descripcion">Intereses por operaciones de factoring con otras entidades de crédito</column>
+					</record>
+					<record>
+						<column name="codcuenta">6660</column>
+						<column name="descripcion">Pérdidas en valores representativos de deuda a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6661</column>
+						<column name="descripcion">Pérdidas en valores representativos de deuda a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6662</column>
+						<column name="descripcion">Pérdidas en valores representativos de deuda a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6663</column>
+						<column name="descripcion">Pérdidas en participaciones y valores representativos de deuda a largo plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6665</column>
+						<column name="descripcion">Pérdidas en participaciones y valores representativos de deuda a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6666</column>
+						<column name="descripcion">Pérdidas en participaciones y valores representativos de deuda a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6667</column>
+						<column name="descripcion">Pérdidas en valores representativos de deuda a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6668</column>
+						<column name="descripcion">Pérdidas en valores representativos de deuda a corto plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6670</column>
+						<column name="descripcion">Pérdidas de créditos a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6671</column>
+						<column name="descripcion">Pérdidas de créditos a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6672</column>
+						<column name="descripcion">Pérdidas de créditos a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6673</column>
+						<column name="descripcion">Pérdidas de créditos a largo plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6675</column>
+						<column name="descripcion">Pérdidas de créditos a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6676</column>
+						<column name="descripcion">Pérdidas de créditos a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6677</column>
+						<column name="descripcion">Pérdidas de créditos a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6678</column>
+						<column name="descripcion">Pérdidas de créditos a corto plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">668</column>
+						<column name="descripcion">Diferencias negativas de cambio</column>
+					</record>
+					<record>
+						<column name="codcuenta">669</column>
+						<column name="descripcion">Otros gastos financieros</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">67</column>
+				<column name="descripcion">Pérdidas procedentes de activos no corrientes y gastos excepcionales</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">670</column>
+						<column name="descripcion">Pérdidas procedentes del inmovilizado intangible</column>
+					</record>
+					<record>
+						<column name="codcuenta">671</column>
+						<column name="descripcion">Pérdidas procedentes del inmovilizado material</column>
+					</record>
+					<record>
+						<column name="codcuenta">672</column>
+						<column name="descripcion">Pérdidas procedentes de las inversiones inmobiliarias</column>
+					</record>
+					<record>
+						<column name="codcuenta">6733</column>
+						<column name="descripcion">Pérdidas procedentes de participaciones a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6734</column>
+						<column name="descripcion">Pérdidas procedentes de participaciones a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6735</column>
+						<column name="descripcion">Pérdidas procedentes de participaciones a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">675</column>
+						<column name="descripcion">Pérdidas por operaciones con obligaciones propias</column>
+					</record>
+					<record>
+						<column name="codcuenta">678</column>
+						<column name="descripcion">Gastos excepcionales</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">68</column>
+				<column name="descripcion">Dotaciones para amortizaciones</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">680</column>
+						<column name="descripcion">Amortización del inmovilizado intangible</column>
+					</record>
+					<record>
+						<column name="codcuenta">681</column>
+						<column name="descripcion">Amortización del inmovilizado material</column>
+					</record>
+					<record>
+						<column name="codcuenta">682</column>
+						<column name="descripcion">Amortización de las inversiones inmobiliarias</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">69</column>
+				<column name="descripcion">Pérdidas por deterioro y otras dotaciones</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">690</column>
+						<column name="descripcion">Pérdidas por deterioro del inmovilizado intangible</column>
+					</record>
+					<record>
+						<column name="codcuenta">691</column>
+						<column name="descripcion">Pérdidas por deterioro del inmovilizado material</column>
+					</record>
+					<record>
+						<column name="codcuenta">692</column>
+						<column name="descripcion">Pérdidas por deterioro de las inversiones inmobiliarias</column>
+					</record>
+					<record>
+						<column name="codcuenta">6930</column>
+						<column name="descripcion">Pérdidas por deterioro de productos terminados y en curso de fabricación</column>
+					</record>
+					<record>
+						<column name="codcuenta">6931</column>
+						<column name="descripcion">Pérdidas por deterioro de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">6932</column>
+						<column name="descripcion">Pérdidas por deterioro de materias primas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6933</column>
+						<column name="descripcion">Pérdidas por deterioro de otros aprovisionamientos</column>
+					</record>
+					<record>
+						<column name="codcuenta">694</column>
+						<column name="descripcion">Pérdidas por deterioro de créditos por operaciones comerciales</column>
+					</record>
+					<record>
+						<column name="codcuenta">6954</column>
+						<column name="descripcion">Dotación a la provisión por contratos onerosos</column>
+					</record>
+					<record>
+						<column name="codcuenta">6959</column>
+						<column name="descripcion">Dotación a la provisión para otras operaciones comerciales</column>
+					</record>
+					<record>
+						<column name="codcuenta">6960</column>
+						<column name="descripcion">Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6961</column>
+						<column name="descripcion">Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6962</column>
+						<column name="descripcion">Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6963</column>
+						<column name="descripcion">Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto a largo plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6965</column>
+						<column name="descripcion">Pérdidas por deterioro en valores representativos de deuda a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6966</column>
+						<column name="descripcion">Pérdidas por deterioro en valores representativos de deuda a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6967</column>
+						<column name="descripcion">Pérdidas por deterioro en valores representativos de deuda a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6968</column>
+						<column name="descripcion">Pérdidas por deterioro en valores representativos de deuda a largo plazo, de otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6970</column>
+						<column name="descripcion">Pérdidas por deterioro de créditos a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6971</column>
+						<column name="descripcion">Pérdidas por deterioro de créditos a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6972</column>
+						<column name="descripcion">Pérdidas por deterioro de créditos a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6973</column>
+						<column name="descripcion">Pérdidas por deterioro de créditos a largo plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6980</column>
+						<column name="descripcion">Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6981</column>
+						<column name="descripcion">Pérdidas por deterioro de participaciones en instrumentos de patrimonio neto a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6985</column>
+						<column name="descripcion">Pérdidas por deterioro en valores representativos de deuda a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6986</column>
+						<column name="descripcion">Pérdidas por deterioro en valores representativos de deuda a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6987</column>
+						<column name="descripcion">Pérdidas por deterioro en valores representativos de deuda a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6988</column>
+						<column name="descripcion">Pérdidas por deterioro en valores representativos de deuda a corto plazo, de otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6990</column>
+						<column name="descripcion">Pérdidas por deterioro de créditos a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">6991</column>
+						<column name="descripcion">Pérdidas por deterioro de créditos a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6992</column>
+						<column name="descripcion">Pérdidas por deterioro de créditos a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">6993</column>
+						<column name="descripcion">Pérdidas por deterioro de créditos a corto plazo, otras empresas</column>
+					</record>
+				</relatedRecords>
+			</record>
+		</relatedRecords>
+	</record>
+
+	<record>
+		<column name="codgrupo">7</column>
+		<column name="descripcion">Ventas e ingresos</column>
+		<relatedRecords table="co_subgrupos">
+			<record>
+				<column name="codsubgrupo">70</column>
+				<column name="descripcion">Ventas de mercaderías, de producción propia, de servicios, etc</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">700</column>
+						<column name="descripcion">Ventas de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">701</column>
+						<column name="descripcion">Ventas de productos terminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">702</column>
+						<column name="descripcion">Ventas de productos semiterminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">703</column>
+						<column name="descripcion">Ventas de subproductos y residuos</column>
+					</record>
+					<record>
+						<column name="codcuenta">704</column>
+						<column name="descripcion">Ventas de envases y embalajes</column>
+					</record>
+					<record>
+						<column name="codcuenta">705</column>
+						<column name="descripcion">Prestaciones de servicios</column>
+					</record>
+					<record>
+						<column name="codcuenta">7060</column>
+						<column name="descripcion">Descuentos sobre ventas por pronto pago de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">7061</column>
+						<column name="descripcion">Descuentos sobre ventas por pronto pago de productos terminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">7062</column>
+						<column name="descripcion">Descuentos sobre ventas por pronto pago de productos semiterminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">7063</column>
+						<column name="descripcion">Descuentos sobre ventas por pronto pago de subproductos y residuos</column>
+					</record>
+					<record>
+						<column name="codcuenta">7080</column>
+						<column name="descripcion">Devoluciones de ventas de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">7081</column>
+						<column name="descripcion">Devoluciones de ventas de productos terminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">7082</column>
+						<column name="descripcion">Devoluciones de ventas de productos semiterminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">7083</column>
+						<column name="descripcion">Devoluciones de ventas de subproductos y residuos</column>
+					</record>
+					<record>
+						<column name="codcuenta">7084</column>
+						<column name="descripcion">Devoluciones de ventas de envases y embalajes</column>
+					</record>
+					<record>
+						<column name="codcuenta">7090</column>
+						<column name="descripcion">Rappels sobre ventas de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">7091</column>
+						<column name="descripcion">Rappels sobre ventas de productos terminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">7092</column>
+						<column name="descripcion">Rappels sobre ventas de productos semiterminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">7093</column>
+						<column name="descripcion">Rappels sobre ventas de subproductos y residuos</column>
+					</record>
+					<record>
+						<column name="codcuenta">7094</column>
+						<column name="descripcion">Rappels sobre ventas de envases y embalajes</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">71</column>
+				<column name="descripcion">Variación de existencias</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">710</column>
+						<column name="descripcion">Variación de existencias de productos en curso</column>
+					</record>
+					<record>
+						<column name="codcuenta">711</column>
+						<column name="descripcion">Variación de existencias de productos semiterminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">712</column>
+						<column name="descripcion">Variación de existencias de productos terminados</column>
+					</record>
+					<record>
+						<column name="codcuenta">713</column>
+						<column name="descripcion">Variación de existencias de subproductos,residuos y materiales recuperados</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">73</column>
+				<column name="descripcion">Trabajos realizados para la empresa</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">730</column>
+						<column name="descripcion">Trabajos realizados para el inmovilizado intangible</column>
+					</record>
+					<record>
+						<column name="codcuenta">731</column>
+						<column name="descripcion">Trabajos realizados para el inmovilizado material</column>
+					</record>
+					<record>
+						<column name="codcuenta">732</column>
+						<column name="descripcion">Trabajos realizados en inversiones inmobiliarias</column>
+					</record>
+					<record>
+						<column name="codcuenta">733</column>
+						<column name="descripcion">Trabajos realizados para el inmovilizado material en curso</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">74</column>
+				<column name="descripcion">Subvenciones, donaciones y legados</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">740</column>
+						<column name="descripcion">Subvenciones, donaciones y legados a la explotación</column>
+					</record>
+					<record>
+						<column name="codcuenta">746</column>
+						<column name="descripcion">Subvenciones, donaciones y legados de capital transferidos al resultado del ejercicio</column>
+					</record>
+					<record>
+						<column name="codcuenta">747</column>
+						<column name="descripcion">Otras subvenciones, donaciones y legados transferidos al resultado del ejercicio</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">75</column>
+				<column name="descripcion">Otros ingresos de gestión</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">7510</column>
+						<column name="descripcion">Pérdida transferida (gestor)</column>
+					</record>
+					<record>
+						<column name="codcuenta">7511</column>
+						<column name="descripcion">Beneficio atribuido (partícipe o asociado no gestor)</column>
+					</record>
+					<record>
+						<column name="codcuenta">752</column>
+						<column name="descripcion">Ingresos por arrendamientos</column>
+					</record>
+					<record>
+						<column name="codcuenta">753</column>
+						<column name="descripcion">Ingresos de propiedad industrial cedida en explotación</column>
+					</record>
+					<record>
+						<column name="codcuenta">754</column>
+						<column name="descripcion">Ingresos por comisiones</column>
+					</record>
+					<record>
+						<column name="codcuenta">755</column>
+						<column name="descripcion">Ingresos por servicios al personal</column>
+					</record>
+					<record>
+						<column name="codcuenta">759</column>
+						<column name="descripcion">Ingresos por servicios diversos</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">76</column>
+				<column name="descripcion">Ingresos financieros</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">7600</column>
+						<column name="descripcion">Ingresos de participaciones en instrumentos de patrimonio, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7601</column>
+						<column name="descripcion">Ingresos de participaciones en instrumentos de patrimonio, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7602</column>
+						<column name="descripcion">Ingresos de participaciones en instrumentos de patrimonio, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7603</column>
+						<column name="descripcion">Ingresos de participaciones en instrumentos de patrimonio, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7610</column>
+						<column name="descripcion">Ingresos de valores representativos de deuda, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7611</column>
+						<column name="descripcion">Ingresos de valores representativos de deuda, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7612</column>
+						<column name="descripcion">Ingresos de valores representativos de deuda, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7613</column>
+						<column name="descripcion">Ingresos de valores representativos de deuda, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">76200</column>
+						<column name="descripcion">Ingresos de créditos a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">76201</column>
+						<column name="descripcion">Ingresos de créditos a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">76202</column>
+						<column name="descripcion">Ingresos de créditos a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">76203</column>
+						<column name="descripcion">Ingresos de créditos a largo plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">76210</column>
+						<column name="descripcion">Ingresos de créditos a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">76211</column>
+						<column name="descripcion">Ingresos de créditos a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">76212</column>
+						<column name="descripcion">Ingresos de créditos a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">76213</column>
+						<column name="descripcion">Ingresos de créditos a corto plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7630</column>
+						<column name="descripcion">Beneficios de cartera de negociación</column>
+					</record>
+					<record>
+						<column name="codcuenta">7631</column>
+						<column name="descripcion">Beneficios de designados por la empresa</column>
+					</record>
+					<record>
+						<column name="codcuenta">7632</column>
+						<column name="descripcion">Beneficios de disponibles para la venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">7633</column>
+						<column name="descripcion">Beneficios de instrumentos de cobertura</column>
+					</record>
+					<record>
+						<column name="codcuenta">7660</column>
+						<column name="descripcion">Beneficios en valores representativos de deuda a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7661</column>
+						<column name="descripcion">Beneficios en valores representativos de deuda a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7662</column>
+						<column name="descripcion">Beneficios en valores representativos de deuda a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7663</column>
+						<column name="descripcion">Beneficios en participaciones y valores representativos de deuda a largo plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7665</column>
+						<column name="descripcion">Beneficios en participaciones y valores representativos de deuda a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7666</column>
+						<column name="descripcion">Beneficios en participaciones y valores representativos de deuda a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7667</column>
+						<column name="descripcion">Beneficios en valores representativos de deuda a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7668</column>
+						<column name="descripcion">Beneficios en valores representativos de deuda a corto plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">767</column>
+						<column name="descripcion">Ingresos de activos afectos y de derechos de reembolso relativos a retribuciones a largo plazo</column>
+					</record>
+					<record>
+						<column name="codcuenta">768</column>
+						<column name="descripcion">Diferencias positivas de cambio</column>
+					</record>
+					<record>
+						<column name="codcuenta">769</column>
+						<column name="descripcion">Otros ingresos financieros</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">77</column>
+				<column name="descripcion">Beneficios procedentes de activos no corrientes e ingresos excepcionales</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">770</column>
+						<column name="descripcion">Beneficios procedentes del inmovilizado intangible</column>
+					</record>
+					<record>
+						<column name="codcuenta">771</column>
+						<column name="descripcion">Beneficios procedentes del inmovilizado material</column>
+					</record>
+					<record>
+						<column name="codcuenta">772</column>
+						<column name="descripcion">Beneficios procedentes de las inversiones inmobiliarias</column>
+					</record>
+					<record>
+						<column name="codcuenta">7733</column>
+						<column name="descripcion">Beneficios procedentes de participaciones a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7734</column>
+						<column name="descripcion">Beneficios procedentes de participaciones a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7735</column>
+						<column name="descripcion">Beneficios procedentes de participaciones a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">774</column>
+						<column name="descripcion">Diferencia negativa en combinaciones de negocios</column>
+					</record>
+					<record>
+						<column name="codcuenta">775</column>
+						<column name="descripcion">Beneficios por operaciones con obligaciones propias</column>
+					</record>
+					<record>
+						<column name="codcuenta">778</column>
+						<column name="descripcion">Ingresos excepcionales</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">79</column>
+				<column name="descripcion">Excesos y aplicaciones de provisiones y de pérdidas por deterioro</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">790</column>
+						<column name="descripcion">Reversión del deterioro del inmovilizado intangible</column>
+					</record>
+					<record>
+						<column name="codcuenta">791</column>
+						<column name="descripcion">Reversión del deterioro del inmovilizado material</column>
+					</record>
+					<record>
+						<column name="codcuenta">792</column>
+						<column name="descripcion">Reversión del deterioro de las inversiones inmobiliarias</column>
+					</record>
+					<record>
+						<column name="codcuenta">7930</column>
+						<column name="descripcion">Reversión del deterioro de productos terminados y en curso de fabricación</column>
+					</record>
+					<record>
+						<column name="codcuenta">7931</column>
+						<column name="descripcion">Reversión del deterioro de mercaderías</column>
+					</record>
+					<record>
+						<column name="codcuenta">7932</column>
+						<column name="descripcion">Reversión del deterioro de materias primas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7933</column>
+						<column name="descripcion">Reversión del deterioro de otros aprovisionamientos</column>
+					</record>
+					<record>
+						<column name="codcuenta">794</column>
+						<column name="descripcion">Reversión del deterioro de créditos por operaciones comerciales</column>
+					</record>
+					<record>
+						<column name="codcuenta">7950</column>
+						<column name="descripcion">Exceso de provisión por retribuciones al personal</column>
+					</record>
+					<record>
+						<column name="codcuenta">7951</column>
+						<column name="descripcion">Exceso de provisión para impuestos</column>
+					</record>
+					<record>
+						<column name="codcuenta">7952</column>
+						<column name="descripcion">Exceso de provisión para otras responsabilidades</column>
+					</record>
+					<record>
+						<column name="codcuenta">79544</column>
+						<column name="descripcion">Exceso de provisión por contratos onerosos</column>
+					</record>
+					<record>
+						<column name="codcuenta">79549</column>
+						<column name="descripcion">Exceso de provisión para otras operaciones comerciales</column>
+					</record>
+					<record>
+						<column name="codcuenta">7955</column>
+						<column name="descripcion">Exceso de provisión para actuaciones medioambientales</column>
+					</record>
+					<record>
+						<column name="codcuenta">7956</column>
+						<column name="descripcion">Exceso de provisión para reestructuraciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">7957</column>
+						<column name="descripcion">Exceso de provisión por transacciones con pagos basados en instrumentos de patrimonio</column>
+					</record>
+					<record>
+						<column name="codcuenta">7960</column>
+						<column name="descripcion">Reversión del deterioro de participaciones en instrumentos de patrimonio neto a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7961</column>
+						<column name="descripcion">Reversión del deterioro de participaciones en instrumentos de patrimonio neto a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7965</column>
+						<column name="descripcion">Reversión del deterioro de valores representativos de deuda a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7966</column>
+						<column name="descripcion">Reversión del deterioro de valores representativos de deuda a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7967</column>
+						<column name="descripcion">Reversión del deterioro de valores representativos de deuda a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7968</column>
+						<column name="descripcion">Reversión del deterioro de valores representativos de deuda a largo plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7970</column>
+						<column name="descripcion">Reversión del deterioro de créditos a largo plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7971</column>
+						<column name="descripcion">Reversión del deterioro de créditos a largo plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7972</column>
+						<column name="descripcion">Reversión del deterioro de créditos a largo plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7973</column>
+						<column name="descripcion">Reversión del deterioro de créditos a largo plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7980</column>
+						<column name="descripcion">Reversión del deterioro de participaciones en instrumentos de patrimonio neto a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7981</column>
+						<column name="descripcion">Reversión del deterioro de participaciones en instrumentos de patrimonio neto a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7985</column>
+						<column name="descripcion">Reversión del deterioro en valores representativos de deuda a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7986</column>
+						<column name="descripcion">Reversión del deterioro en valores representativos de deuda a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7987</column>
+						<column name="descripcion">Reversión del deterioro en valores representativos de deuda a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7988</column>
+						<column name="descripcion">Reversión del deterioro en valores representativos de deuda a corto plazo, otras empresas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7990</column>
+						<column name="descripcion">Reversión del deterioro de créditos a corto plazo, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">7991</column>
+						<column name="descripcion">Reversión del deterioro de créditos a corto plazo, empresas asociadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7992</column>
+						<column name="descripcion">Reversión del deterioro de créditos a corto plazo, otras partes vinculadas</column>
+					</record>
+					<record>
+						<column name="codcuenta">7993</column>
+						<column name="descripcion">Reversión del deterioro de créditos a corto plazo, otras empresas</column>
+					</record>
+				</relatedRecords>
+			</record>
+		</relatedRecords>
+	</record>
+
+	<record>
+		<column name="codgrupo">8</column>
+		<column name="descripcion">Gastos imputados al patrimonio neto</column>
+		<relatedRecords table="co_subgrupos">
+			<record>
+				<column name="codsubgrupo">80</column>
+				<column name="descripcion">Gastos financieros por valoración de activos y pasivos</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">800</column>
+						<column name="descripcion">Pérdidas en activos financieros disponibles para la venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">802</column>
+						<column name="descripcion">Transferencia de beneficios en activos financieros disponibles para la venta</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">81</column>
+				<column name="descripcion">Gastos en operaciones de cobertura</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">810</column>
+						<column name="descripcion">Pérdidas por coberturas de flujos de efectivo</column>
+					</record>
+					<record>
+						<column name="codcuenta">811</column>
+						<column name="descripcion">Pérdidas por coberturas de inversiones netas en un negocio en el extranjero</column>
+					</record>
+					<record>
+						<column name="codcuenta">812</column>
+						<column name="descripcion">Transferencia de beneficios por coberturas de flujos de efectivo</column>
+					</record>
+					<record>
+						<column name="codcuenta">813</column>
+						<column name="descripcion">Transferencia de beneficios por coberturas de inversiones netas en un negocio en el extranjero</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">82</column>
+				<column name="descripcion">Gastos por diferencias de conversión</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">820</column>
+						<column name="descripcion">Diferencias de conversión negativas</column>
+					</record>
+					<record>
+						<column name="codcuenta">821</column>
+						<column name="descripcion">Transferencia de diferencias de conversión positivas</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">83</column>
+				<column name="descripcion">Impuesto sobre beneficios</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">8300</column>
+						<column name="descripcion">Impuesto corriente</column>
+					</record>
+					<record>
+						<column name="codcuenta">8301</column>
+						<column name="descripcion">Impuesto diferido</column>
+					</record>
+					<record>
+						<column name="codcuenta">833</column>
+						<column name="descripcion">Ajustes negativos en la imposición sobre beneficios</column>
+					</record>
+					<record>
+						<column name="codcuenta">834</column>
+						<column name="descripcion">Ingresos fiscales por diferencias permanentes</column>
+					</record>
+					<record>
+						<column name="codcuenta">835</column>
+						<column name="descripcion">Ingresos fiscales por deducciones y bonificaciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">836</column>
+						<column name="descripcion">Transferencia de diferencias permanentes</column>
+					</record>
+					<record>
+						<column name="codcuenta">837</column>
+						<column name="descripcion">Transferencia de deducciones y bonificaciones</column>
+					</record>
+					<record>
+						<column name="codcuenta">838</column>
+						<column name="descripcion">Ajustes positivos en la imposición sobre beneficios</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">84</column>
+				<column name="descripcion">Transferencias de subvenciones, donaciones y legados</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">840</column>
+						<column name="descripcion">Transferencia de subvenciones oficiales de capital</column>
+					</record>
+					<record>
+						<column name="codcuenta">841</column>
+						<column name="descripcion">Transferencia de donaciones y legados de capital</column>
+					</record>
+					<record>
+						<column name="codcuenta">842</column>
+						<column name="descripcion">Transferencia de otras subvenciones, donaciones y legados</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">85</column>
+				<column name="descripcion">Gastos por pérdidas actuariales y ajustes en los activos por retribuciones a largo plazo de prestación definida</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">850</column>
+						<column name="descripcion">Pérdidas actuariales</column>
+					</record>
+					<record>
+						<column name="codcuenta">851</column>
+						<column name="descripcion">Ajustes negativos en activos por retribuciones a largo plazo de prestación definida</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">86</column>
+				<column name="descripcion">Gastos por activos no corrientes en venta</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">860</column>
+						<column name="descripcion">Pérdidas en activos no corrientes y grupos enajenables de elementos mantenidos para la venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">862</column>
+						<column name="descripcion">Transferencia de beneficios en activos no corrientes y grupos enajenables de elementos mantenidos para la venta</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">89</column>
+				<column name="descripcion">Gastos de participaciones en empresas del grupo o asociadas con ajustes valorativos positivos previos</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">891</column>
+						<column name="descripcion">Deterioro de participaciones en el patrimonio, empresas del grupo</column>
+					</record>
+					<record>
+						<column name="codcuenta">892</column>
+						<column name="descripcion">Deterioro de participaciones en el patrimonio, empresas asociadas</column>
+					</record>
+				</relatedRecords>
+			</record>
+		</relatedRecords>
+	</record>
+
+	<record>
+		<column name="codgrupo">9</column>
+		<column name="descripcion">Ingresos imputados al patrimonio neto</column>
+		<relatedRecords table="co_subgrupos">
+			<record>
+				<column name="codsubgrupo">90</column>
+				<column name="descripcion">Ingresos financieros por valoración de activos y pasivos</column>
+				<relatedRecords table="co_cuentas">
+					<record>
+						<column name="codcuenta">900</column>
+						<column name="descripcion">Beneficios en activos financieros disponibles para la venta</column>
+					</record>
+					<record>
+						<column name="codcuenta">902</column>
+						<column name="descripcion">Transferencia de pérdidas de activos financieros disponibles para la venta</column>
+					</record>
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">91</column>
+				<column name="descripcion">Ingresos en operaciones de cobertura</column>
+				<relatedRecords table="co_cuentas">
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">92</column>
+				<column name="descripcion">Ingresos por diferencias de conversion</column>
+				<relatedRecords table="co_cuentas">
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">94</column>
+				<column name="descripcion">Ingresos por subvenciones, donaciones y legados</column>
+				<relatedRecords table="co_cuentas">
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">95</column>
+				<column name="descripcion">Ingresos por ganancias actuariales y ajustes en los activos por retribuciones a largo plazo de ion definida"</column>
+				<relatedRecords table="co_cuentas">
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">96</column>
+				<column name="descripcion">Ingresos por activos no corrientes en venta</column>
+				<relatedRecords table="co_cuentas">
+				</relatedRecords>
+			</record>
+
+			<record>
+				<column name="codsubgrupo">99</column>
+				<column name="descripcion">Ingresos de participaciones en empresas del grupo o asociadas con ajustes valorativos negativos prev</column>
+				<relatedRecords table="co_cuentas">
+				</relatedRecords>
+			</record>
+		</relatedRecords>
+	</record>	
+</table>
+
+</AlephERP-Data>

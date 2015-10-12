@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>946</width>
+    <height>478</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Cuenta</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codcuenta</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBLineEdit" name="db_codcuenta">
+        <property name="fieldName">
+         <string>co_cuentas.father.codcuenta</string>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" colspan="2">
+       <widget class="DBLineEdit" name="db_descripcioncuenta">
+        <property name="fieldName">
+         <string>co_cuentas.father.descripcion</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Código*</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codsubcuenta</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="DBLineEdit" name="db_codsubcuenta">
+        <property name="fieldName">
+         <string>codsubcuenta</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="replacePointWithCharacter">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Descripción</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_descripcion</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="DBLineEdit" name="db_descripcion">
+        <property name="fieldName">
+         <string>descripcion</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="title">
+      <string>Saldo</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Debe</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_debe</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBNumberEdit" name="db_debe">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="fieldName">
+         <string>debe</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Haber</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_haber</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBNumberEdit" name="db_haber">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="fieldName">
+         <string>haber</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>Saldo</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy">
+         <cstring>db_saldo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBNumberEdit" name="db_saldo">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="fieldName">
+         <string>saldo</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Mayor</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="DBTableView" name="co_partidas">
+         <property name="internalData">
+          <bool>true</bool>
+         </property>
+         <property name="relationName">
+          <string>co_partidas</string>
+         </property>
+         <property name="visibleColumns">
+          <string>co_asientos.father.numero;co_asientos.father.fecha;concepto;debe;haber;saldo;incrementalSum(saldo);enlaceADocumento</string>
+         </property>
+         <property name="linkColumns">
+          <string>co_asientos.father.numero;enlaceADocumento</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+  <zorder>groupBox_4</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>tabWidget</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTableView</class>
+   <extends>QTableView</extends>
+   <header>widgets/dbtableview.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codcuenta</tabstop>
+  <tabstop>db_descripcioncuenta</tabstop>
+  <tabstop>db_codsubcuenta</tabstop>
+  <tabstop>db_descripcion</tabstop>
+  <tabstop>db_debe</tabstop>
+  <tabstop>db_haber</tabstop>
+  <tabstop>db_saldo</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>co_partidas</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

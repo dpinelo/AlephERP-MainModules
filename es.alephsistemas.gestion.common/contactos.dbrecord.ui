@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmContatos</class>
+ <widget class="QWidget" name="frmContatos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>568</width>
+    <height>76</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Contactos de Empresa</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <property name="tableName" stdset="0">
+   <string>contactos</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0" colspan="2">
+    <widget class="DBChooseRecordButton" name="db_idpersona">
+     <property name="text">
+      <string>Persona</string>
+     </property>
+     <property name="fieldName">
+      <string>idpersona</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" colspan="4">
+    <widget class="DBLineEdit" name="db_contacto">
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>nombre</string>
+     </property>
+     <property name="dataEditable">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblNombre_2">
+     <property name="text">
+      <string>Cargo</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_cargo</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="2">
+    <widget class="DBLineEdit" name="db_cargo">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>cargo</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLabel" name="lblNombre_10">
+     <property name="text">
+      <string>Correo electronico</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_email</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <widget class="DBLineEdit" name="db_email">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>email</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblNombre_3">
+     <property name="text">
+      <string>Teléfono</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_telefono</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" colspan="2">
+    <widget class="DBLineEdit" name="db_telefono">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="inputMask">
+      <string>999 999 999</string>
+     </property>
+     <property name="fieldName">
+      <string>telefono</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QLabel" name="lblNombre_9">
+     <property name="text">
+      <string>Fax</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_fax</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5">
+    <widget class="DBLineEdit" name="db_fax">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="inputMask">
+      <string>999 999 999</string>
+     </property>
+     <property name="fieldName">
+      <string>fax</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

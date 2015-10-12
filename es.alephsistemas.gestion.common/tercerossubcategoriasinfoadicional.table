@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+    <name>tercerossubcategoriasinfoadicional</name>
+    <alias>SubCategorías de Información adicional de terceros</alias>
+
+    <field>
+        <name>id</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idcategoria</name>
+        <alias>Id. Categoria</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+        	<table>terceroscategoriasinfoadicional</table>
+        	<field>id</field>
+        	<card>M1</card>
+       	</relation>        
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+</table>

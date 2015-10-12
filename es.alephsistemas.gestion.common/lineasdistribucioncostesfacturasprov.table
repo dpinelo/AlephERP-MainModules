@@ -1,0 +1,173 @@
+<table>
+    <name>lineasdistribucioncostesfacturasprov</name>
+    <!--Líneas con la distribución de costes por subcentro-->
+    <alias>Líneas con la distribución de costes</alias>
+
+    <toStringExpression>
+        <expression>{nombrecentro}: {nombresubcentro}: {porcentaje}. Base imponible distribuida: {importe}</expression>
+        </toStringExpression>
+        
+    <field>
+        <name>id</name>
+        <!--Identificador interno de la tabla-->
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idfactura</name>
+        <!--Identificador de la factura a la que pertenece la línea-->
+        <alias>Factura</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>facturasprov</table>
+            <field>id</field>
+            <card>M1</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+
+    <field>
+        <name>idcentro</name>
+        <!--Referencia del centro de coste-->
+        <alias>Cod. Centro coste</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>centroscoste</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>nombrecentro</name>
+        <!--Nombre del centro de coste-->
+        <alias>Centro de coste</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <calculated saveOnDb="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    return bean.fatherFieldValue("centroscoste", "nombre");
+}
+]]>
+        </script>
+    </field>
+
+    <field>
+        <name>idsubcentro</name>
+        <!--Referencia del centro de coste-->
+        <alias>Cod. Subcentro coste</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+    
+        <relation>
+            <table>subcentroscoste</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>nombresubcentro</name>
+        <!--Nombre del centro de coste-->
+        <alias>Subcentro de coste</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <calculated saveOnDb="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    return bean.fatherFieldValue("subcentroscoste", "nombre");
+}
+]]>
+        </script>
+    </field>
+    
+    <field>
+        <name>porcentaje</name>
+        <alias>Porcentaje</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <displayValueScript>
+<![CDATA[
+function displayValueScript(value, displayValue) {
+    // Value contiene el valor a formatear, y displayValue el valor que formatería el sistema.
+       return (displayValue + " %");
+}
+]]>
+        </displayValueScript>  
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    var lineas = bean.facturasprov.father.lineasdistribucioncostesfacturasprov.items;
+    var porcentaje = 100;
+    for ( var i = 0 ; i < lineas.length ; i++ ) {
+        if ( lineas[i].dbState != BaseBean.TO_BE_DELETED ) {
+            porcentaje = porcentaje - lineas[i].porcentaje.value;
+        }
+    }
+    if ( porcentaje < 0 ) porcentaje = 0;
+    return porcentaje;
+}
+]]>
+        </scriptDefaultValue>      
+    </field>
+
+    <field>
+        <name>importe</name>
+        <alias>Importe</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return (bean.facturasprov.father.neto.value * bean.porcentaje.value) / 100;
+}
+]]>
+        </scriptDefaultValue>      
+                    
+    </field>
+
+    <field>
+        <!-- Es el total con impuestos incluídos... -->
+        <name>total</name>
+        <alias>Total</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return (bean.facturasprov.father.total.value * bean.porcentaje.value) / 100;
+}
+]]>
+        </scriptDefaultValue>          
+    </field>
+            
+</table>
+

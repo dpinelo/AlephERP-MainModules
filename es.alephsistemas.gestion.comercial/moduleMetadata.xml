@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AlephERP>
+<export>
+
+<id><![CDATA[es.alephsistemas.gestion.comercial]]></id>
+<description><![CDATA[Módulo Comercial]]></description>
+<name><![CDATA[Módulo Comercial]]></name>
+<showedText><![CDATA[Comercial]]></showedText>
+<icon><![CDATA[]]></icon>
+<enabled>true</enabled>
+
+<file>
+  <objectName>accionescomerciales</objectName>
+  <name>accionescomerciales.table</name>
+  <version>4</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>accionescomercialesestado</objectName>
+  <name>accionescomercialesestado.table</name>
+  <version>5</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>accionescomercialestareas</objectName>
+  <name>accionescomercialestareas.table</name>
+  <version>3</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>accionescomercialestareaspersonas</objectName>
+  <name>accionescomercialestareaspersonas.table</name>
+  <version>3</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>accionescomerciales.dbrecord.ui</objectName>
+  <name>accionescomerciales.dbrecord.ui</name>
+  <version>6</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>accionescomercialestareas.dbrecord.ui</objectName>
+  <name>accionescomercialestareas.dbrecord.ui</name>
+  <version>4</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+</export>
+</AlephERP>

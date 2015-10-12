@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>932</width>
+    <height>539</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_5">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aquí puede indicar movimientos de dinero intraempresas, entre contenedores de dinero, es decir, entre bancos, tarjetas o cajas físicas donde existe dinero. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Datos comunes</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Fecha</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_fecha</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBDateTimeEdit" name="db_fecha">
+        <property name="displayFormat">
+         <string>dd/MM/yyyy</string>
+        </property>
+        <property name="fieldName">
+         <string>fecha</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" colspan="3">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>599</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Descripción</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_descripcion</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="4">
+       <widget class="DBLineEdit" name="db_descripcion">
+        <property name="fieldName">
+         <string>descripcion</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Importe (divisa empresa)</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_importe</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="DBNumberEdit" name="db_importe">
+        <property name="fieldName">
+         <string>importe</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="3">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Coste financiero</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_coste</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4">
+       <widget class="DBNumberEdit" name="db_coste">
+        <property name="fieldName">
+         <string>coste</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Origen</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="DBChooseRecordButton" name="db_idcuentaorigen">
+        <property name="text">
+         <string>Cuenta bancaria</string>
+        </property>
+        <property name="fieldName">
+         <string>idcuentaorigen</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="tableName">
+         <string>cuentasbanco</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBLineEdit" name="db_cuentabanco">
+        <property name="fieldName">
+         <string>idcuentaorigen.cuentasbanco.descripcion</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="DBChooseRecordButton" name="db_idcajaorigen">
+        <property name="text">
+         <string>Caja</string>
+        </property>
+        <property name="fieldName">
+         <string>idcajaorigen</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="tableName">
+         <string>cajas</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="DBLineEdit" name="db_cajaorigen">
+        <property name="fieldName">
+         <string>idcajaorigen.cajas.nombre</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="DBChooseRecordButton" name="dbChooseRecordButton_3">
+        <property name="text">
+         <string>Tarjeta</string>
+        </property>
+        <property name="fieldName">
+         <string>idtarjetaorigen</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="tableName">
+         <string>tarjetascredito</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="DBLineEdit" name="db_tarjetaorigen">
+        <property name="fieldName">
+         <string>idtarjetaorigen.tarjetascredito.descripcion</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="title">
+      <string>Destino</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="DBChooseRecordButton" name="db_idcuentaorigen_2">
+        <property name="text">
+         <string>Cuenta bancaria</string>
+        </property>
+        <property name="fieldName">
+         <string>idcuentadestino</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="tableName">
+         <string>cuentasbanco</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBLineEdit" name="db_cuentadestino">
+        <property name="fieldName">
+         <string>idcuentadestino.cuentasbanco.descripcion</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="DBChooseRecordButton" name="db_idcajaorigen_2">
+        <property name="text">
+         <string>Caja</string>
+        </property>
+        <property name="fieldName">
+         <string>idcajadestino</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="tableName">
+         <string>cajas</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="DBLineEdit" name="db_cajadestino">
+        <property name="fieldName">
+         <string>idcajadestino.cajas.nombre</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>21</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Movimientos a generar</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="DBRelatedElementsView" name="db_movimientos">
+         <property name="allowedMetadatas">
+          <string>entradasbanco;entradascaja</string>
+         </property>
+         <property name="categories">
+          <string>Traspasos</string>
+         </property>
+         <property name="visibleButtons">
+          <set>DBRelatedElementsView::View</set>
+         </property>
+         <property name="visibleColumnsEnVersionActualArraDaError" stdset="0">
+          <string>tabla;fecha;tipo;importe;descripcion</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Contabilidad</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0" colspan="2">
+        <widget class="DBCheckBox" name="db_nogenerarasiento">
+         <property name="text">
+          <string>No generar asiento contable</string>
+         </property>
+         <property name="fieldName">
+          <string>nogenerarasiento</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Asiento número</string>
+         </property>
+         <property name="buddy">
+          <cstring>db_co_asientos_numero</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="DBLineEdit" name="db_co_asientos_numero">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="fieldName">
+          <string>co_asientos.father.numero</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Fecha</string>
+         </property>
+         <property name="buddy">
+          <cstring>db_co_asientos_fecha</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="DBDateTimeEdit" name="db_co_asientos_fecha">
+         <property name="fieldName">
+          <string>co_asientos.father.fecha</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>312</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="5">
+        <widget class="QPushButton" name="pbGenerarAsiento">
+         <property name="text">
+          <string>Volver a generar asiento contable</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/generales/images/recalculatecounter.png</normaloff>:/generales/images/recalculatecounter.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="5">
+        <widget class="QLabel" name="label_6">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Partidas</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="6">
+        <widget class="DBTableView" name="co_asientos.co_partidas">
+         <property name="internalData">
+          <bool>true</bool>
+         </property>
+         <property name="relationName">
+          <string>co_asientos.co_partidas</string>
+         </property>
+         <property name="allowedEdit">
+          <bool>false</bool>
+         </property>
+         <property name="visibleColumns">
+          <string>codsubcuenta;concepto;debe;haber</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>widgets/dbdatetimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBRelatedElementsView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbrelatedelementsview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTableView</class>
+   <extends>QTableView</extends>
+   <header>widgets/dbtableview.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_fecha</tabstop>
+  <tabstop>db_descripcion</tabstop>
+  <tabstop>db_importe</tabstop>
+  <tabstop>db_coste</tabstop>
+  <tabstop>db_idcuentaorigen</tabstop>
+  <tabstop>db_cuentabanco</tabstop>
+  <tabstop>db_idcajaorigen</tabstop>
+  <tabstop>db_cajaorigen</tabstop>
+  <tabstop>dbChooseRecordButton_3</tabstop>
+  <tabstop>db_tarjetaorigen</tabstop>
+  <tabstop>db_idcuentaorigen_2</tabstop>
+  <tabstop>db_cuentadestino</tabstop>
+  <tabstop>db_idcajaorigen_2</tabstop>
+  <tabstop>db_cajadestino</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>db_nogenerarasiento</tabstop>
+  <tabstop>db_co_asientos_numero</tabstop>
+  <tabstop>db_co_asientos_fecha</tabstop>
+  <tabstop>pbGenerarAsiento</tabstop>
+  <tabstop>co_asientos.co_partidas</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

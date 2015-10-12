@@ -1,0 +1,75 @@
+<table>
+    <name>divisas</name>
+    <!--Listado de divisas-->
+    <alias>Divisas</alias>
+	<!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+	<isCached>true</isCached>
+	<initOrderSort>descripcion</initOrderSort>
+		
+    <field>
+        <name>coddivisa</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>string</type>
+        <length>3</length>
+    </field>
+    
+    <field>
+        <name>descripcion</name>
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+    </field>
+    
+    <field>
+        <name>tasaconv</name>
+        <alias>Tasa de conversión</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partI>6</partI>
+        <partD>3</partD>
+        <default>1</default>
+    </field>
+    
+    <field>
+        <name>bandera</name>
+        <alias>Bandera</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>image</type>
+    </field>
+    
+    <field>
+        <name>fecha</name>
+		<!--Fecha de la última actualización de la tasa de conversión-->
+        <alias>Fecha de actualización</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>date</type>
+    </field>
+    
+    <field>
+        <name>codiso</name>
+		<!--Código ISO de la divisa, utilizado en transaccciones bancarias-->
+        <alias>Código ISO</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+    </field>
+    
+    <field>
+        <name>simbolo</name>
+        <!--Simbolo-->
+        <alias>Símbolo</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+    </field>
+    
+</table>

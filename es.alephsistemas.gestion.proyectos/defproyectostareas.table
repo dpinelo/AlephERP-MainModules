@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+
+    <!-- Nombre de la tabla -->
+    <name>defproyectostareas</name>
+    <!-- Alias a presentar en la aplicación -->
+    <alias>Definición de proyectos: Tareas</alias>
+
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+   
+    <field>
+        <name>idfase</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>defproyectosfases</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>        
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+    </field>
+
+    <field>
+        <name>duracionestimada</name>
+        <alias>Duración</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <default>0</default>
+    </field>
+    
+    <field>
+        <name>duracionmaxima</name>
+        <alias>Duración Máxima</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <default>0</default>
+    </field>
+    
+    <field>
+        <name>unidadtiempo</name>
+        <!--Estado contable del ejercicio -->
+        <alias>Unidad de tiempo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>15</length>
+        <optionList>Minutos,Horas,Dias</optionList>
+        <optionValues>minutos,horas,dias</optionValues>
+        <default>horas</default>
+    </field>
+    
+   <field>
+        <name>orden</name>
+        <alias>Orden</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <default>0</default>
+    </field>
+    
+</table>

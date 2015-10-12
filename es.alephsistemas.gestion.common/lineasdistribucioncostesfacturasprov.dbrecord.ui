@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>538</width>
+    <height>196</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Distribución de costes</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Centro y subcentro de coste</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Centro de coste</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="DBLineEdit" name="db_nombrecentro">
+        <property name="fieldName">
+         <string>nombrecentro</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="DBChooseRecordButton" name="db_idsubcentro">
+        <property name="text">
+         <string>Subcentro de coste</string>
+        </property>
+        <property name="fieldName">
+         <string>idsubcentro</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="scriptExecuteAfterChoose">
+         <string>asignarCentroCoste</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="DBLineEdit" name="db_idsubcentro_text">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="fieldName">
+         <string>idsubcentro</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="autoComplete">
+         <set>AlephERP::RestrictValueToItemFromList|AlephERP::ValuesFromRelation</set>
+        </property>
+        <property name="autoCompleteColumn">
+         <string>codigo</string>
+        </property>
+        <property name="autoCompletePopupSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="autoCompleteVisibleFields">
+         <string>codigo;nombre</string>
+        </property>
+        <property name="scriptAfterChooseFromCompleter">
+         <string>asignarCentroCoste</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="DBLineEdit" name="db_nombresubcentro">
+        <property name="fieldName">
+         <string>nombresubcentro</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Distribución</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Base imponible factura</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBNumberEdit" name="db_facturasprov_neto">
+        <property name="fieldName">
+         <string>facturasprov.neto</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Total factura</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="DBNumberEdit" name="db_facturasprov_total">
+        <property name="fieldName">
+         <string>facturasprov.total</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Porcentaje</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="DBNumberEdit" name="db_porcentaje">
+          <property name="fieldName">
+           <string>porcentaje</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>%</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="2" colspan="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>239</width>
+          <height>19</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Base imponible a asignar</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="DBNumberEdit" name="db_importe">
+        <property name="fieldName">
+         <string>importe</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Total factura a asignar</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="DBNumberEdit" name="db_importe_2">
+        <property name="fieldName">
+         <string>total</string>
+        </property>
+        <property name="dataEditable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_idsubcentro_text</tabstop>
+  <tabstop>db_nombresubcentro</tabstop>
+  <tabstop>db_facturasprov_neto</tabstop>
+  <tabstop>db_facturasprov_total</tabstop>
+  <tabstop>db_porcentaje</tabstop>
+  <tabstop>db_importe</tabstop>
+  <tabstop>db_importe_2</tabstop>
+  <tabstop>db_idsubcentro</tabstop>
+  <tabstop>db_nombrecentro</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

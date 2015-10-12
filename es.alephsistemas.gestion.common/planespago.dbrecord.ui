@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmPlanesPago</class>
+ <widget class="QWidget" name="frmPlanesPago">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>854</width>
+    <height>588</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Planes de pago</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Las planes de pago permiten definir el flujo monetario que se producirá para el abono de una determinada factura. Reflejará por tanto un grupo de plazos o aplazamientos ligados a unas formas de pago que permitiran un control adecuado de la tesorería.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="4">
+         <widget class="DBComboBox" name="db_tipo">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="whatsThis">
+           <string>Indica si esta forma de pago es de las que aplica su empresa a sus clientes (Propia) o las que sus proveedores le aplican a usted (Externa)</string>
+          </property>
+          <property name="fieldName">
+           <string>tipo</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lblNombre">
+          <property name="text">
+           <string>&amp;Descripción*</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_nombre</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="4">
+         <widget class="DBLineEdit" name="db_nombre">
+          <property name="whatsThis">
+           <string>Descripción de la forma de pago</string>
+          </property>
+          <property name="fieldName">
+           <string>descripcion</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lblNombre_2">
+          <property name="text">
+           <string>&amp;Genera recibos como*</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_nombre</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="4">
+         <widget class="DBComboBox" name="db_genrecibos">
+          <property name="whatsThis">
+           <string>Indique qué tipo de recibos genera esta forma de pago. Estos recibos son efectos de pago para el cálculo de tesorería.</string>
+          </property>
+          <property name="fieldName">
+           <string>genrecibos</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>&amp;Código*</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_codpago</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="DBLineEdit" name="db_codpago">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Código único que identifica a la forma de pago. Puede ser alfanumérico.</string>
+          </property>
+          <property name="statusTip">
+           <string>Código único que identifica a la forma de pago. Puede ser alfanumérico.</string>
+          </property>
+          <property name="whatsThis">
+           <string>Código único que identifica a la forma de pago. Puede ser alfanumérico.</string>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="fieldName">
+           <string>codpago</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="lblNombre_3">
+          <property name="text">
+           <string>Tipo*</string>
+          </property>
+          <property name="buddy">
+           <cstring>db_nombre</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Pago domiciliado</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="4">
+         <widget class="DBCheckBox" name="dbCheckBox">
+          <property name="fieldName">
+           <string>domiciliado</string>
+          </property>
+          <property name="dataEditable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Plazos / Aplazamientos</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="DBDetailView" name="db_plazos">
+        <property name="relationName">
+         <string>plazos</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Texto descriptivo a incluir en facturas emitidas</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="DBRichTextEdit" name="db_textofactura">
+        <property name="fieldName">
+         <string>textofactura</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>widgets/dbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBRichTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>widgets/dbrichtextedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codpago</tabstop>
+  <tabstop>db_tipo</tabstop>
+  <tabstop>db_nombre</tabstop>
+  <tabstop>db_genrecibos</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../../programacion/alepherp/alepherp/src/resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

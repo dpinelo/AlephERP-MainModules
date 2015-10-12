@@ -1,0 +1,168 @@
+<table>
+    <name>efectoscobro</name>
+    <!-- Listado de efectos de cobro de la empresa (recibos de pago a proveedores, acreedores...)-->
+    <alias>Efectos de cobro</alias>
+    <qsDbForm>efectospagocobro.dbform.qs</qsDbForm>
+    <qsDbRecord>efectospagocobro.dbrecord.qs</qsDbRecord>
+    <!-- Las funciones QS definidas en este script, estárán disponibles como propiedades dentro de un objeto que
+    representa a un registro de este tipo -->
+    <associatedScript>efectoscommonsfunctions.qs</associatedScript>
+
+    <canHaveRelatedElements>true</canHaveRelatedElements>
+
+    <toStringExpression>
+        <expression>Efecto de cobro nº {codigo} de fecha {fecha}, estado {estado} y fecha de vencimiento {fechav}</expression>
+    </toStringExpression>
+    
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+        y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+        por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+        AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+        y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+   <itemsFilterColumn>
+        <itemFilter>
+            <fieldToFilter>idejercicio</fieldToFilter>
+            <relationFieldToShow>nombre</relationFieldToShow>
+            <setFilterValueOnNewRecords>true</setFilterValueOnNewRecords>    		
+        </itemFilter>
+        <itemFilter>
+            <fieldToFilter>estado</fieldToFilter>
+        </itemFilter>
+    </itemsFilterColumn>
+    
+    <inherits name="efectos">
+        <element type="connections"/>
+    </inherits>
+    
+    <field>
+        <name>id</name>
+        <!-- Identificador interno -->
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>cobrosdevoluciones</table>
+            <field>idefecto</field>
+            <card>1M</card>
+            <delC>true</delC>
+            <showOnRelatedModels>true</showOnRelatedModels>
+        </relation>
+    </field>
+
+    <inherits name="efectos">
+        <element type="field">idempresa</element>
+        <element type="field">idejercicio</element>
+        <element type="field">idtipoefecto</element>
+        <element type="field">idformapagoprevista</element>
+    </inherits>
+    
+    <field>
+        <name>codigo</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>15</length>
+        <default>0</default>
+        <!-- Definimos la lógica de generación del contador del tercero. Se podrán anticipar
+            una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 
+            aparecen en dependsOnField. Si alguno de estos campos tiene una relación M1, como el 
+            caso de idempresa->empresas, el valor que se utilizará será el del field de empresas
+            definido en prefixOnRelation: es decir, para el caso de idempresa, el sistema se irá
+            a la relación empresas, al "padre" o empresa, y cogerá el valor definido en el field
+            counter_prefix. 
+            Finalmente, puede determinarse si el usuario puede modificar este contador, con userCanModify
+            y además, especificar si entre los diferentes prefijos y el número aparece algún separador,
+            con separator. -->
+        <counter>
+            <fixedString>COB</fixedString>
+            <dependsOnField prefixOnRelation="counter_prefix">idempresa</dependsOnField>
+            <dependsOnField prefixOnRelation="counter_prefix">idejercicio</dependsOnField>
+            <userCanModify>false</userCanModify>
+            <calculateOnlyOnInsert>true</calculateOnlyOnInsert>
+            <separator>/</separator>
+        </counter>        
+    </field>
+
+    <field>
+        <name>estado</name>
+        <!-- Indica si el recibo está emitido, pagado o devuelto -->
+        <alias>Estado</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Emitido,Cobrado,Devuelto</optionList>
+        <optionIcons>:/images/commons/efectospagoemitido.png,:/images/ok.png,:/images/commons/efectospagodevuelto.png</optionIcons>
+    </field>
+
+    <inherits name="efectos">
+        <element type="field">numdocumentointerno</element>
+        <element type="field">numdocumentotercero</element>
+        <element type="field">importe</element>
+        <element type="field">importenombrado</element>
+    </inherits>
+    
+    <field>
+        <name>importecobrado</name>
+        <alias>Importe cobrado actualmente</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <visiblegrid>true</visiblegrid>
+        <aggregateCalc saveOnDb="true">
+            <operation>sum</operation>
+            <aggregate>
+                <field>importe</field>
+                <relation>cobrosdevoluciones</relation>
+            </aggregate>
+        </aggregateCalc>
+        <displayValueExpression>
+            <expression>{displayValue} {divisas.father.simbolo}</expression>
+        </displayValueExpression>
+    </field>
+
+    <inherits name="efectos">
+        <element type="field">fecha</element>
+        <element type="field">fechav</element>
+        <element type="field">formapagoprevista</element>
+        <element type="field">idtercero</element>
+        <element type="field">nombre</element>
+        <element type="field">cifnif</element>
+        <element type="field">importedivisaempresa</element>
+        <element type="field">tasaconv</element>
+        <element type="field">coddivisa</element>
+        <element type="field">idcuenta</element>
+        <element type="field">iban</element>
+        <element type="field">codentidad</element>
+        <element type="field">codsucursal</element>
+        <element type="field">dc</element>
+        <element type="field">cuenta</element>
+        <element type="field">ccc</element>
+        <element type="field">iddirtercero</element>
+        <element type="field">direccion</element>
+        <element type="field">codpostal</element>
+        <element type="field">poblacion</element>
+        <element type="field">provincia</element>
+        <element type="field">codpais</element>
+        <element type="field">direccion_large</element>
+        <element type="field">texto</element>
+        <element type="field">numero</element>
+    </inherits>
+            
+</table>
+

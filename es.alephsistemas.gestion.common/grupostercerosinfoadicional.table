@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+    <name>grupostercerosinfoadicional</name>
+    <!-- Definicion de caracteristicas de información adicional de terceros-->
+    <alias>Características de artículos</alias>
+    <isCached>true</isCached>
+
+    <field>
+        <name>id</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        
+        <relation>
+            <table>tercerosinfoadicional</table>
+            <field>idinfo</field>
+            <card>1M</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idgrupo</name>
+        <alias>Id. Grupo</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>integer</type>
+        <visiblegrid>false</visiblegrid>
+        
+        <relation>
+            <table>gruposterceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <alias>Característica</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+    
+</table>

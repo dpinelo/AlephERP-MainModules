@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1035</width>
+    <height>259</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Facturas recibidas</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QStackedWidget" name="wizard">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page_3">
+      <property name="title" stdset="0">
+       <string>Introducción de Proveedor / Acreedor</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0" rowspan="2">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Ejemplos</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0" colspan="3">
+           <widget class="QStackedWidget" name="stackedWidget">
+            <widget class="QWidget" name="page"/>
+            <widget class="QWidget" name="page_2"/>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>278</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="1">
+           <widget class="QToolButton" name="tbPrevious">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QToolButton" name="tbNext">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Este asistente le guiará en la introducción de una factura de gastos que ha recibido. Para ello, durante los pasos del mismo, se le solicitará la información relevante sobre la factura recibida.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;En este primer apartado deberá usted introducir el proveedor o acreedor que le ha enviado la factura. Podrá escoger el proveedor o acreedor de la Agenda de Terceros de su empresa, o bien, si éste no existe, podrá crearle la ficha para futuras facturas. En el caso de que ésta factura no supere los 3.000 €, y además pertenezca a un cliente con el que no va a volver a trabajar en el año fiscal, podrá asignarla a un proveedor o acreedor genérico. Ante la duda, es mejor crear una ficha de proveedor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::RichText</enum>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Proveedor o acreedor</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="DBChooseRecordButton" name="db_idtercero">
+            <property name="text">
+             <string>Tercero *</string>
+            </property>
+            <property name="fieldName">
+             <string>idtercero</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="replaceFields">
+             <stringlist>
+              <string>nombre;nombre</string>
+              <string>cifnif;cifnif</string>
+             </stringlist>
+            </property>
+            <property name="scriptExecuteAfterChoose">
+             <string>terceroWasSelected</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="DBLineEdit" name="db_terceros_codtercero">
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="fieldName">
+             <string>idtercero</string>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::RestrictValueToItemFromList|AlephERP::UpdateOwnerFieldBean|AlephERP::ValuesFromRelation</set>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>codtercero</string>
+            </property>
+            <property name="autoCompletePopupSize">
+             <size>
+              <width>350</width>
+              <height>0</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>CIF / NIF *</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="DBLineEdit" name="db_cifnif">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Introduzca aquí el CIF o el NIF del tercero.</string>
+            </property>
+            <property name="statusTip">
+             <string>Introduzca aquí el CIF o el NIF del tercero.</string>
+            </property>
+            <property name="whatsThis">
+             <string>Introduzca aquí el CIF o el NIF del tercero. El formato del CIF debe ser: B0123567. El formato del NIF debe ser: 01234567M</string>
+            </property>
+            <property name="inputMask">
+             <string>xxxxxxxxxx; </string>
+            </property>
+            <property name="fieldName">
+             <string>cifnif</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="4">
+           <widget class="DBLineEdit" name="db_nombre">
+            <property name="toolTip">
+             <string>Se introduce aquí la razón social o nombre del tercero.</string>
+            </property>
+            <property name="statusTip">
+             <string>Se introduce aquí la razón social o nombre del tercero.</string>
+            </property>
+            <property name="whatsThis">
+             <string>Se introduce aquí la razón social o nombre del tercero.</string>
+            </property>
+            <property name="fieldName">
+             <string>nombre</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+            <property name="autoComplete">
+             <set>AlephERP::ValuesFromTableWithNoRelation</set>
+            </property>
+            <property name="autoCompleteTableName">
+             <string>terceros</string>
+            </property>
+            <property name="autoCompleteColumn">
+             <string>nombre</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <property name="title" stdset="0">
+       <string>Datos de la factura</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0" rowspan="2">
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>Ejemplos</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0" colspan="3">
+           <widget class="QStackedWidget" name="stackedWidget_3">
+            <widget class="QWidget" name="page_5"/>
+            <widget class="QWidget" name="page_6"/>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>278</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="1">
+           <widget class="QToolButton" name="tbPrevious_2">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QToolButton" name="tbNext_2">
+            <property name="text">
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Debe introducir ahora el número de factura proporcionado por su proveedor, así como la fecha de la misma.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;De la misma forma, y para poder llevar un control de tesorería, esto es, de facturas pagadas o pendientes de pago, deberá escoger el plan de pago que tiene previsto (por ejemplo, pago al contado, pago a 30 días, pago a 30-60-90 días...)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::RichText</enum>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="groupBox_10">
+         <property name="title">
+          <string>Datos de la factura</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Número de la factura *</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="DBLineEdit" name="db_numproveedor">
+            <property name="fieldName">
+             <string>numproveedor</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Fecha *</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="DBDateTimeEdit" name="db_fecha">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="displayFormat">
+             <string>dd/MM/yyyy</string>
+            </property>
+            <property name="fieldName">
+             <string>fecha</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="DBChooseRecordButton" name="db_idplanpago">
+            <property name="text">
+             <string>Plan de pago *</string>
+            </property>
+            <property name="fieldName">
+             <string>idplanpago</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="3">
+           <widget class="DBLineEdit" name="db_forma_pago">
+            <property name="fieldName">
+             <string>planespago.descripcion</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>widgets/dbdatetimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

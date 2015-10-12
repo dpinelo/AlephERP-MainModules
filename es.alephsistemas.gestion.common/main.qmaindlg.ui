@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QMainDlg</class>
+ <widget class="AERPMainWindow" name="QMainDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1045</width>
+    <height>677</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AlephERP - Aleph Sistemas de Información</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1045</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuGesti_n">
+    <property name="title">
+     <string>Gestión</string>
+    </property>
+    <addaction name="table_agenda"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+    <addaction name="table_productos"/>
+   </widget>
+   <widget class="QMenu" name="menuContabilidad">
+    <property name="title">
+     <string>Contabilidad</string>
+    </property>
+    <widget class="QMenu" name="menuConfiguracionContabilidad">
+     <property name="title">
+      <string>Configuración</string>
+     </property>
+     <addaction name="table_co_grupos"/>
+     <addaction name="table_co_conceptospar"/>
+     <addaction name="table_co_inventario"/>
+    </widget>
+    <widget class="QMenu" name="menuExportar_datos">
+     <property name="title">
+      <string>Exportar datos</string>
+     </property>
+     <addaction name="actionExportContaplus"/>
+    </widget>
+    <addaction name="table_co_asientos"/>
+    <addaction name="separator"/>
+    <addaction name="table_co_cuentas"/>
+    <addaction name="table_co_subcuentas"/>
+    <addaction name="separator"/>
+    <addaction name="menuConfiguracionContabilidad"/>
+    <addaction name="separator"/>
+    <addaction name="menuExportar_datos"/>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionHelp"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuConfiguraci_n">
+    <property name="title">
+     <string>Configuración</string>
+    </property>
+    <addaction name="actionDocMngmnt"/>
+    <addaction name="actionEnterLocalMode"/>
+    <addaction name="actionExportData"/>
+    <addaction name="actionSelectScanSource"/>
+    <addaction name="action_entornousuario"/>
+    <addaction name="actionStyle"/>
+    <addaction name="separator"/>
+    <addaction name="table_alepherp_system"/>
+   </widget>
+   <widget class="QMenu" name="menuTesorer_a">
+    <property name="title">
+     <string>Tesorería</string>
+    </property>
+    <widget class="QMenu" name="menuConfiguraci_n_4">
+     <property name="title">
+      <string>Configuración</string>
+     </property>
+     <addaction name="table_conceptosmovimientodinerario"/>
+     <addaction name="table_cajas"/>
+     <addaction name="table_tiposefectos"/>
+    </widget>
+    <addaction name="table_efectoscobro"/>
+    <addaction name="table_efectospago"/>
+    <addaction name="table_entradascaja"/>
+    <addaction name="table_entradasbanco"/>
+    <addaction name="table_traspasos"/>
+    <addaction name="separator"/>
+    <addaction name="menuConfiguraci_n_4"/>
+   </widget>
+   <widget class="QMenu" name="menuCompras">
+    <property name="title">
+     <string>Compras</string>
+    </property>
+    <widget class="QMenu" name="menuInformes_2">
+     <property name="title">
+      <string>Informes</string>
+     </property>
+     <addaction name="report_librofacturasrecibidas"/>
+    </widget>
+    <addaction name="table_facturasprov"/>
+    <addaction name="separator"/>
+    <addaction name="menuInformes_2"/>
+   </widget>
+   <widget class="QMenu" name="menuMaestros">
+    <property name="title">
+     <string>Maestros</string>
+    </property>
+    <widget class="QMenu" name="menuTablas_Generales">
+     <property name="title">
+      <string>Maestros de la Empresa actual</string>
+     </property>
+     <addaction name="table_centroscoste"/>
+     <addaction name="table_comisiones"/>
+     <addaction name="table_cuentasbanco"/>
+     <addaction name="table_distribucioncostes"/>
+     <addaction name="table_ejercicios"/>
+     <addaction name="table_familiasservicios"/>
+     <addaction name="table_formaspago"/>
+     <addaction name="table_gruposterceros"/>
+     <addaction name="table_impuestos_irpf"/>
+     <addaction name="table_impuestos"/>
+     <addaction name="table_personas"/>
+     <addaction name="table_planespago"/>
+     <addaction name="table_seriesfacturacion"/>
+     <addaction name="table_subcentroscoste"/>
+     <addaction name="table_tarjetascredito"/>
+    </widget>
+    <widget class="QMenu" name="menuConfiguraci_n_General">
+     <property name="title">
+      <string>Configuración General</string>
+     </property>
+     <addaction name="table_bancos"/>
+     <addaction name="table_divisas"/>
+     <addaction name="table_empresas"/>
+     <addaction name="table_paises"/>
+     <addaction name="table_unidadesmedida"/>
+     <addaction name="separator"/>
+    </widget>
+    <widget class="QMenu" name="menuArtes_Gr_ficas">
+     <property name="title">
+      <string>Artes Gráficas</string>
+     </property>
+     <addaction name="table_caracteristicaspapel"/>
+     <addaction name="table_colores"/>
+     <addaction name="table_tipossubfamiliaspapel"/>
+    </widget>
+    <addaction name="table_servicios"/>
+    <addaction name="table_terceros"/>
+    <addaction name="menuTablas_Generales"/>
+    <addaction name="menuConfiguraci_n_General"/>
+    <addaction name="menuArtes_Gr_ficas"/>
+   </widget>
+   <widget class="QMenu" name="menuAlmacen">
+    <property name="title">
+     <string>Almacén</string>
+    </property>
+    <widget class="QMenu" name="menuConfiguraci_n_2">
+     <property name="title">
+      <string>Configuración</string>
+     </property>
+     <addaction name="table_almacenes"/>
+     <addaction name="table_familiasarticulos"/>
+     <addaction name="table_familiaspapel"/>
+     <addaction name="table_subfamiliaspapel"/>
+    </widget>
+    <addaction name="table_articulos"/>
+    <addaction name="table_papeles"/>
+    <addaction name="menuConfiguraci_n_2"/>
+   </widget>
+   <widget class="QMenu" name="menuInformes">
+    <property name="title">
+     <string>Informes</string>
+    </property>
+    <addaction name="action_informes"/>
+   </widget>
+   <widget class="QMenu" name="menuVentas">
+    <property name="title">
+     <string>Ventas</string>
+    </property>
+    <addaction name="table_pedidoscli"/>
+    <addaction name="table_facturascli"/>
+   </widget>
+   <widget class="QMenu" name="menuProducci_n">
+    <property name="title">
+     <string>Producción</string>
+    </property>
+    <widget class="QMenu" name="menuConfiguraci_n_3">
+     <property name="title">
+      <string>Configuración</string>
+     </property>
+     <addaction name="table_actividadesproductivas"/>
+     <addaction name="table_categoriasactividades"/>
+     <addaction name="table_operarios"/>
+     <addaction name="table_tipostrabajo"/>
+    </widget>
+    <addaction name="table_odt"/>
+    <addaction name="menuConfiguraci_n_3"/>
+   </widget>
+   <addaction name="menuGesti_n"/>
+   <addaction name="menuVentas"/>
+   <addaction name="menuCompras"/>
+   <addaction name="menuProducci_n"/>
+   <addaction name="menuTesorer_a"/>
+   <addaction name="menuAlmacen"/>
+   <addaction name="menuMaestros"/>
+   <addaction name="menuContabilidad"/>
+   <addaction name="menuConfiguraci_n"/>
+   <addaction name="menuAyuda"/>
+   <addaction name="menuInformes"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>Barra de Herramientas Principal</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+   <addaction name="table_terceros"/>
+   <addaction name="separator"/>
+   <addaction name="table_pedidoscli"/>
+   <addaction name="table_facturascli"/>
+   <addaction name="separator"/>
+   <addaction name="table_facturasprov"/>
+   <addaction name="separator"/>
+   <addaction name="actionStyle"/>
+   <addaction name="separator"/>
+   <addaction name="actionClose"/>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="windowTitle">
+    <string>Acciones</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="MenuTreeWidget" name="menuTreeWidget">
+       <property name="rootIsDecorated">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerVisible">
+        <bool>false</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
+       <item>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignLeft|AlignLeading</set>
+        </property>
+        <property name="background">
+         <color>
+          <red>192</red>
+          <green>192</green>
+          <blue>192</blue>
+         </color>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="table_terceros">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/clientes.png</normaloff>:/images/commons/clientes.png</iconset>
+   </property>
+   <property name="text">
+    <string>Terceros</string>
+   </property>
+   <property name="toolTip">
+    <string>Terceros: Clientes, proveedores, acreedores...</string>
+   </property>
+   <property name="statusTip">
+    <string>Terceros</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Los terceros son todas aquellas entidades (personas físicas o jurídicas) que tienen interacción con la empresa, como por ejemplo, clientes, proveedores, acreedores...&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>Acerca de...</string>
+   </property>
+   <property name="statusTip">
+    <string>Acerca de</string>
+   </property>
+   <property name="whatsThis">
+    <string>Acerca de</string>
+   </property>
+  </action>
+  <action name="actionStyle">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/generales/images/display.png</normaloff>:/generales/images/display.png</iconset>
+   </property>
+   <property name="text">
+    <string>Seleccionar Estilo</string>
+   </property>
+   <property name="statusTip">
+    <string>Seleccionar Estilo</string>
+   </property>
+   <property name="whatsThis">
+    <string>Seleccionar Estilo</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/generales/images/close.png</normaloff>:/generales/images/close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+   <property name="statusTip">
+    <string>Salir</string>
+   </property>
+   <property name="whatsThis">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="table_alepherp_system">
+   <property name="text">
+    <string>Configuración de tablas</string>
+   </property>
+   <property name="statusTip">
+    <string>Configuración de tablas</string>
+   </property>
+   <property name="whatsThis">
+    <string>Configuración de tablas</string>
+   </property>
+  </action>
+  <action name="table_conceptosmovimientodinerario">
+   <property name="text">
+    <string>Clasificación de movimientos dinerarios</string>
+   </property>
+  </action>
+  <action name="table_entradascaja">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/entradascaja.png</normaloff>:/images/commons/entradascaja.png</iconset>
+   </property>
+   <property name="text">
+    <string>Movimientos de caja</string>
+   </property>
+  </action>
+  <action name="table_entradasbanco">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/entradasbanco.png</normaloff>:/images/commons/entradasbanco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Movimientos de banco</string>
+   </property>
+  </action>
+  <action name="table_ejercicios">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/ejerciciosfiscales.png</normaloff>:/images/commons/ejerciciosfiscales.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ejercicios Fiscales</string>
+   </property>
+  </action>
+  <action name="table_productos">
+   <property name="text">
+    <string>Productos</string>
+   </property>
+  </action>
+  <action name="table_paises">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/paises.png</normaloff>:/images/commons/paises.png</iconset>
+   </property>
+   <property name="text">
+    <string>Países</string>
+   </property>
+   <property name="toolTip">
+    <string>Países</string>
+   </property>
+  </action>
+  <action name="table_bancos">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/bancos.png</normaloff>:/images/commons/bancos.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bancos</string>
+   </property>
+   <property name="toolTip">
+    <string>Bancos</string>
+   </property>
+  </action>
+  <action name="table_seriesfacturacion">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/seriesfacturacion.png</normaloff>:/images/commons/seriesfacturacion.png</iconset>
+   </property>
+   <property name="text">
+    <string>Series de facturación</string>
+   </property>
+   <property name="toolTip">
+    <string>Series de facturación del sistema</string>
+   </property>
+  </action>
+  <action name="table_planespago">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/formaspago.png</normaloff>:/images/commons/formaspago.png</iconset>
+   </property>
+   <property name="text">
+    <string>Planes de pago</string>
+   </property>
+   <property name="toolTip">
+    <string>Planes de pago</string>
+   </property>
+  </action>
+  <action name="table_tarjetascredito">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/tarjetascredito.png</normaloff>:/images/commons/tarjetascredito.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tarjetas de Crédito</string>
+   </property>
+  </action>
+  <action name="table_cuentasbanco">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/cuentasbanco.png</normaloff>:/images/commons/cuentasbanco.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cuentas Bancarias</string>
+   </property>
+  </action>
+  <action name="table_divisas">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/divisas.png</normaloff>:/images/commons/divisas.png</iconset>
+   </property>
+   <property name="text">
+    <string>Divisas</string>
+   </property>
+  </action>
+  <action name="table_personas">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/personas.png</normaloff>:/images/commons/personas.png</iconset>
+   </property>
+   <property name="text">
+    <string>Personas</string>
+   </property>
+  </action>
+  <action name="action_entornousuario">
+   <property name="text">
+    <string>Entorno de Usuario</string>
+   </property>
+  </action>
+  <action name="table_empresas">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/empresas.png</normaloff>:/images/commons/empresas.png</iconset>
+   </property>
+   <property name="text">
+    <string>Empresas</string>
+   </property>
+   <property name="toolTip">
+    <string>Empresas dadas de alta en el sistema</string>
+   </property>
+   <property name="statusTip">
+    <string>Empresas dadas de alta en el sistema</string>
+   </property>
+   <property name="whatsThis">
+    <string>Empresas dadas de alta en el sistema</string>
+   </property>
+  </action>
+  <action name="table_centroscoste">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/centrosdecoste.png</normaloff>:/images/commons/centrosdecoste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Centros y Subcentros de coste</string>
+   </property>
+   <property name="iconText">
+    <string>Centros de coste</string>
+   </property>
+   <property name="toolTip">
+    <string>Centros de coste</string>
+   </property>
+  </action>
+  <action name="table_impuestos">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/impuestos.png</normaloff>:/images/commons/impuestos.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tipos de I.V.A.</string>
+   </property>
+   <property name="toolTip">
+    <string>Tipos de I.V.A.</string>
+   </property>
+  </action>
+  <action name="table_familiasarticulos">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/familiasarticulos.png</normaloff>:/images/commons/familiasarticulos.png</iconset>
+   </property>
+   <property name="text">
+    <string>Familias y Subfamilias de artículos</string>
+   </property>
+  </action>
+  <action name="table_articulos">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/articulos.png</normaloff>:/images/commons/articulos.png</iconset>
+   </property>
+   <property name="text">
+    <string>Artículos</string>
+   </property>
+  </action>
+  <action name="table_familiasservicios">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/familiasservicios.png</normaloff>:/images/commons/familiasservicios.png</iconset>
+   </property>
+   <property name="text">
+    <string>Familias de Servicios</string>
+   </property>
+  </action>
+  <action name="table_servicios">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/servicios.png</normaloff>:/images/commons/servicios.png</iconset>
+   </property>
+   <property name="text">
+    <string>Servicios</string>
+   </property>
+   <property name="toolTip">
+    <string>Servicios recibidos por la empresa por sus proveedores o acreedores, o servicios que la empresa presta.</string>
+   </property>
+  </action>
+  <action name="table_facturasprov">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/facturasproveedores.png</normaloff>:/images/commons/facturasproveedores.png</iconset>
+   </property>
+   <property name="text">
+    <string>Facturas recibidas</string>
+   </property>
+   <property name="statusTip">
+    <string>Listado de facturas recibidas de proveedores o acreedores</string>
+   </property>
+   <property name="whatsThis">
+    <string>Listado de facturas recibidas de proveedores o acreedores</string>
+   </property>
+  </action>
+  <action name="table_gruposterceros">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/gruposterceros.png</normaloff>:/images/commons/gruposterceros.png</iconset>
+   </property>
+   <property name="text">
+    <string>Grupos de Terceros</string>
+   </property>
+   <property name="toolTip">
+    <string>Grupos de Terceros</string>
+   </property>
+  </action>
+  <action name="table_impuestos_irpf">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/impuestos.png</normaloff>:/images/commons/impuestos.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tipos de I.R.P.F.</string>
+   </property>
+   <property name="toolTip">
+    <string>Tipos de I.R.P.F.</string>
+   </property>
+  </action>
+  <action name="table_distribucioncostes">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/distribucioncostes.png</normaloff>:/images/commons/distribucioncostes.png</iconset>
+   </property>
+   <property name="text">
+    <string>Distribución de costes</string>
+   </property>
+   <property name="toolTip">
+    <string>Distribución de costes</string>
+   </property>
+  </action>
+  <action name="table_efectospago">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/tesoreria.png</normaloff>:/images/commons/tesoreria.png</iconset>
+   </property>
+   <property name="text">
+    <string>Efectos de Pago</string>
+   </property>
+   <property name="toolTip">
+    <string>Documentos o recibos de pago de facturas recibidas por la empresa.</string>
+   </property>
+  </action>
+  <action name="action_informes">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/generales/images/print.png</normaloff>:/generales/images/print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Interfaz de Informes</string>
+   </property>
+  </action>
+  <action name="table_pedidoscli">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/pedidoscli.png</normaloff>:/images/commons/pedidoscli.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pedidos de clientes</string>
+   </property>
+   <property name="toolTip">
+    <string>Pedidos de clientes</string>
+   </property>
+  </action>
+  <action name="table_formaspago">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/money.png</normaloff>:/images/commons/money.png</iconset>
+   </property>
+   <property name="text">
+    <string>Formas de pago</string>
+   </property>
+   <property name="toolTip">
+    <string>Formas de pago soportadas o efectuadas</string>
+   </property>
+  </action>
+  <action name="table_efectoscobro">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/efectoscobro.png</normaloff>:/images/commons/efectoscobro.png</iconset>
+   </property>
+   <property name="text">
+    <string>Efectos de Cobro</string>
+   </property>
+   <property name="toolTip">
+    <string>Efectos de Cobro</string>
+   </property>
+  </action>
+  <action name="table_colores">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/colores.png</normaloff>:/images/printingerp/colores.png</iconset>
+   </property>
+   <property name="text">
+    <string>Colores</string>
+   </property>
+   <property name="toolTip">
+    <string>Colores</string>
+   </property>
+  </action>
+  <action name="table_caracteristicaspapel">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/catacteristicas_tecnicas.png</normaloff>:/images/printingerp/catacteristicas_tecnicas.png</iconset>
+   </property>
+   <property name="text">
+    <string>Características asignables a papeles</string>
+   </property>
+  </action>
+  <action name="table_familiaspapel">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/nodo_familia_papel.png</normaloff>:/images/printingerp/nodo_familia_papel.png</iconset>
+   </property>
+   <property name="text">
+    <string>Familias de papeles</string>
+   </property>
+  </action>
+  <action name="table_tipossubfamiliaspapel">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/materiales.png</normaloff>:/images/printingerp/materiales.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tipos de Subfamilias de Papeles</string>
+   </property>
+  </action>
+  <action name="table_papeles">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/papeles.png</normaloff>:/images/printingerp/papeles.png</iconset>
+   </property>
+   <property name="text">
+    <string>Papeles</string>
+   </property>
+  </action>
+  <action name="table_subfamiliaspapel">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/nodo_subfamilia_papel.png</normaloff>:/images/printingerp/nodo_subfamilia_papel.png</iconset>
+   </property>
+   <property name="text">
+    <string>Subfamilias de papeles</string>
+   </property>
+  </action>
+  <action name="table_unidadesmedida">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/unidadesmedida.png</normaloff>:/images/commons/unidadesmedida.png</iconset>
+   </property>
+   <property name="text">
+    <string>Unidades de Medida</string>
+   </property>
+  </action>
+  <action name="table_operarios">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/operarios.png</normaloff>:/images/printingerp/operarios.png</iconset>
+   </property>
+   <property name="text">
+    <string>Operarios</string>
+   </property>
+  </action>
+  <action name="table_odt">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/ordendetrabajo.png</normaloff>:/images/printingerp/ordendetrabajo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Órdenes de trabajo</string>
+   </property>
+  </action>
+  <action name="table_actividadesproductivas">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/actividades.png</normaloff>:/images/printingerp/actividades.png</iconset>
+   </property>
+   <property name="text">
+    <string>Actividades de Producción</string>
+   </property>
+   <property name="toolTip">
+    <string>Conjunto de actividades de producción</string>
+   </property>
+  </action>
+  <action name="table_categoriasactividades">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/nodo_categorias.png</normaloff>:/images/printingerp/nodo_categorias.png</iconset>
+   </property>
+   <property name="text">
+    <string>Categorias de Actividades de Producción</string>
+   </property>
+   <property name="toolTip">
+    <string>Agrupación de actividades de producción</string>
+   </property>
+  </action>
+  <action name="table_tipostrabajo">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/printingerp/tipostrabajo.png</normaloff>:/images/printingerp/tipostrabajo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tipos de Trabajo</string>
+   </property>
+   <property name="toolTip">
+    <string>Tipos de Trabajo</string>
+   </property>
+  </action>
+  <action name="actionEnterLocalMode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/generales/images/localMode.png</normaloff>:/generales/images/localMode.png</iconset>
+   </property>
+   <property name="text">
+    <string>Entrar en modo de trabajo local</string>
+   </property>
+  </action>
+  <action name="report_librofacturasrecibidas">
+   <property name="text">
+    <string>Libro de facturas recibidas</string>
+   </property>
+   <property name="whatsThis">
+    <string>Informe para obtener el libro de facturas recibidas para el ejercicio actual, en un rango de fechas determinado.</string>
+   </property>
+  </action>
+  <action name="table_facturascli">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/facturasclientes.png</normaloff>:/images/commons/facturasclientes.png</iconset>
+   </property>
+   <property name="text">
+    <string>Facturas emitidas</string>
+   </property>
+   <property name="toolTip">
+    <string>Facturas emitidas a clientes</string>
+   </property>
+  </action>
+  <action name="actionExportData">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/generales/images/exportdata.png</normaloff>:/generales/images/exportdata.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exportar Datos</string>
+   </property>
+   <property name="toolTip">
+    <string>Exportar Datos</string>
+   </property>
+  </action>
+  <action name="table_comisiones">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/comisiones.png</normaloff>:/images/commons/comisiones.png</iconset>
+   </property>
+   <property name="text">
+    <string>Comisiones</string>
+   </property>
+   <property name="toolTip">
+    <string>Comisiones</string>
+   </property>
+  </action>
+  <action name="table_subcentroscoste">
+   <property name="icon">
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+     <normaloff>:/images/commons/subcentroscoste.png</normaloff>:/images/commons/subcentroscoste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Subcentros de coste</string>
+   </property>
+  </action>
+  <action name="actionDocMngmnt">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/generales/images/document.png</normaloff>:/generales/images/document.png</iconset>
+   </property>
+   <property name="text">
+    <string>Explorador del Gestor Documental</string>
+   </property>
+  </action>
+  <action name="table_cajas">
+   <property name="text">
+    <string>Cajas</string>
+   </property>
+  </action>
+  <action name="table_traspasos">
+   <property name="text">
+    <string>Traspasos</string>
+   </property>
+   <property name="toolTip">
+    <string>Traspasos</string>
+   </property>
+  </action>
+  <action name="table_tiposefectos">
+   <property name="text">
+    <string>Tipos de Efectos</string>
+   </property>
+  </action>
+  <action name="actionSelectScanSource">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/generales/images/scanner.png</normaloff>:/generales/images/scanner.png</iconset>
+   </property>
+   <property name="text">
+    <string>Seleccionar Escaner</string>
+   </property>
+   <property name="toolTip">
+    <string>Seleccione el escaner</string>
+   </property>
+  </action>
+  <action name="table_agenda">
+   <property name="text">
+    <string>Agenda</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/generales/images/help-browser.png</normaloff>:/generales/images/help-browser.png</iconset>
+   </property>
+   <property name="text">
+    <string>Manual de Usuario</string>
+   </property>
+   <property name="toolTip">
+    <string>Acceso al manual completo de usuario de AlephERP</string>
+   </property>
+  </action>
+  <action name="table_almacenes">
+   <property name="text">
+    <string>Almacenes</string>
+   </property>
+  </action>
+  <action name="table_co_asientos">
+   <property name="text">
+    <string>Libro Diario - Asientos</string>
+   </property>
+  </action>
+  <action name="table_co_cuentas">
+   <property name="text">
+    <string>Plan General de Contabilidad</string>
+   </property>
+  </action>
+  <action name="table_co_subcuentas">
+   <property name="text">
+    <string>Subcuentas contables</string>
+   </property>
+  </action>
+  <action name="table_co_grupos">
+   <property name="text">
+    <string>Grupos / Epigrafes</string>
+   </property>
+  </action>
+  <action name="table_co_conceptospar">
+   <property name="text">
+    <string>Conceptos para partidas</string>
+   </property>
+  </action>
+  <action name="actionExportContaplus">
+   <property name="text">
+    <string>Contaplus</string>
+   </property>
+  </action>
+  <action name="table_co_inventario">
+   <property name="text">
+    <string>Inventario</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AERPMainWindow</class>
+   <extends>QMainWindow</extends>
+   <header>AERPMainWindow.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MenuTreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>widgets/menutreewidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc"/>
+  <include location="../var/home/david/src/alepherp/trunk/src/resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

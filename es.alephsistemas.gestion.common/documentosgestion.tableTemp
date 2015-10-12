@@ -1,0 +1,566 @@
+<table>
+    <name>documentosgestion</name>
+    <alias>Estructura básica de los documentos de gestión</alias>
+    
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <beforeDeleteScript>
+<![CDATA[
+function beforeDelete() {
+       return true;
+}
+]]>
+    </beforeDeleteScript>
+    
+    <newRelatedElementScript>
+<![CDATA[
+/** Damos los valores por defecto al registro nuevo */
+function newRelatedElement(element) {
+    if ( element != null && element != undefined ) {
+        if ( element.relatedTableName == "efectospago" || element.relatedTableName == "efectoscobro" ) {
+            element.relatedBean.copyValues(bean, "idempresa", "idejercicio", "fecha", "idtercero", "nombre", "cifnif", 
+                           "coddivisa", "tasaconv", "iddirtercero", "direccion", "codpostal", "poblacion", "provincia", "codpais", "fecha");
+            element.relatedBean.importe.value = bean.total.value;
+            element.relatedBean.fechav.value = bean.fecha.value;
+            element.relatedBean.numdocumentointerno.value = bean['${coddocumento}'].value;
+            if ( element.relatedTableName == "efectospago" ) {
+                element.relatedBean.numdocumentotercero.value = bean.numproveedor.value;
+            }
+            if ( element.relatedBean.metadata.tableName == "efectospago" ) {
+                element.relatedBean.texto.value = "Pago de " + bean.metadata.alias + " nº " + bean.numproveedor.value + " a nombre de " + bean.nombre.value;
+            } else if ( element.relatedBean.metadata.tableName == "efectoscobro" ) {
+                element.relatedBean.texto.value = "Cobro de " + bean.metadata.alias + " nº " + bean['${coddocumento}'].value + " a nombre de " + bean.nombre.value;
+            }
+            if ( bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli" ) {
+                if ( bean.idtercero.value > 0 && bean.planespago.father.domiciliado.value == true ) {
+                    var cuentaBancoTercero = null;
+                    if ( bean.terceros.father.cuentasbcoterceros.items.length == 1 ) {
+                        cuentaBancoTercero = bean.terceros.father.cuentabcoterceros.items[0];
+                    } else {
+                        for ( var i = 0 ; i < bean.terceros.father.cuentasbcoterceros.items.length ; i++ ) {
+                            if ( bean.terceros.father.cuentasbcoterceros.items[i].principal.value == true ) {
+                                cuentaBancoTercero = bean.terceros.father.cuentabcoterceros.items[i];
+                            }
+                        }
+                    }
+                    if ( cuentaBancoTercero != null ) {
+                        element.relatedBean.copyValues(cuentaBancoTercero, "codentidad", "codsucursal", "dc", "cuenta");
+                    }
+                }
+            }
+        }
+    }
+}
+]]>    
+    </newRelatedElementScript>
+    
+    <deletedRelatedElementScript>
+<![CDATA[
+function deletedRelatedElement(element) {
+    if ( element != null && element != undefined ) {
+        if ( element.relatedTableName == "efectospago" || element.relatedTableName == "efectoscobro" ) {
+            element.relatedBean.idtercero.value = 0;
+            element.relatedBean.nombre.value = "";
+            element.relatedBean.cifnif.value = "";
+            element.relatedBean.iddirtercero.value = 0;
+            element.relatedBean.direccion.value = "";
+            element.relatedBean.codpostal.value = "";
+            element.relatedBean.poblacion.value = "";
+            element.relatedBean.provincia.value = "";
+            element.relatedBean.codpais.value = "";
+            element.relatedBean.importe.value = 0;
+            element.relatedBean.numdocumentointerno.value = "";
+            if ( element.relatedTableName == "efectospago" ) {
+                element.relatedBean.numdocumentotercero.value = "";
+            }
+        }
+    }
+}
+]]>    
+    </deletedRelatedElementScript>
+
+    <connections>
+        <connection>
+            <sender>bean.neto</sender>
+            <action>
+                <signal>valueModified</signal>
+                <slot>aerpRecalcularDistribucionCostes</slot>
+            </action>
+        </connection>
+        <connection>
+            <sender>bean</sender>
+            <action>
+                <signal>beforeSave</signal>
+                <slot>aerpCalcularImpuestos</slot>
+            </action>
+        </connection>
+        <connection>
+            <sender>bean</sender>
+            <action>
+                <signal>beforeSave</signal>
+                <slot>aerpGenerarAsiento</slot>
+            </action>
+        </connection>
+    </connections>
+
+    <field>
+        <name>idempresa</name>
+        <alias>Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>        
+        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idejercicio</name>
+        <alias>Ejercicio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idejercicioActual();
+}
+]]>        
+        </script>
+        <relation>
+            <table>ejercicios</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idserie</name>
+        <!--Serie de facturación-->        
+        <alias>Serie de Facturación</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>seriesfacturacion</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idalmacen</name>
+        <!--Almacen-->        
+        <alias>Almacen</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>almacenes</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idtarifa</name>
+        <!--Almacen-->        
+        <alias>Tarifas</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>tarifas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>tipooperacion</name>
+        <alias>Tipo de operación</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Interior,Intracomunitaria,Exportacion</optionList>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <default>Interior</default>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>fecha</name>
+        <alias>Fecha</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+        <default>now</default>
+    </field>
+
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>cifnif</name>
+        <alias>C.I.F./N.I.F</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+    </field>
+
+    <field>
+        <name>idtercero</name>
+        <alias>Tercero</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>terceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>iddirtercero</name>
+        <alias>Dir. Tercero</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>dirterceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>nombredirtercero</name>
+        <alias>Dirección</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>direccion</name>
+        <alias>Dirección</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>codpostal</name>
+        <alias>Código Postal</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>ciudad</name>
+        <alias>Ciudad</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>provincia</name>
+        <alias>Provincia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>codpais</name>
+        <alias>Pais</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>paises</table>
+            <field>codpais</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>observaciones</name>
+        <alias>Observaciones</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>neto</name>
+        <alias>Base imponible</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <visiblegrid>true</visiblegrid>
+        <aggregateCalc saveOnDb="true">
+            <operation>sum</operation>
+            <aggregate>
+                <field>importetotal</field>
+                <!-- Utilizar ${tableName} indica que se utilizará el valor de la propiedad entre corchetes, "tableName" para calcular el nombre total -->
+                <relation>lineasarticulos${tableName}</relation>
+            </aggregate>
+            <aggregate>
+                <field>importetotal</field>
+                <relation>lineasservicios${tableName}</relation>
+            </aggregate>
+        </aggregateCalc>
+        <!--
+        <displayValueExpression>
+            <expression>{displayValue} {divisas.father.simbolo}</expression>
+        </displayValueExpression>
+        -->
+    </field>
+
+    <field>
+        <name>totaliva</name>
+        <!--Total de IVA-->
+        <alias>IVA</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <visiblegrid>true</visiblegrid>
+        <aggregateCalc saveOnDb="true">
+            <operation>sum</operation>
+            <aggregate>
+                <field>totaliva</field>
+                <relation>lineasiva${tableName}</relation>
+            </aggregate>
+        </aggregateCalc>
+        <!--
+        <displayValueExpression>
+            <expression>{displayValue} {divisas.father.simbolo}</expression>
+        </displayValueExpression>
+        -->
+    </field>
+
+    <field>
+        <name>totalirpf</name>
+        <!--Total de IRPF-->        
+        <alias>IRPF</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <visiblegrid>false</visiblegrid>
+        <aggregateCalc saveOnDb="true">
+            <operation>sum</operation>
+            <aggregate>
+                <builtInExpression>
+                    <expression>importetotal * irpf / 100</expression>
+                </builtInExpression>
+                <relation>lineasservicios${tableName}</relation>
+            </aggregate>
+            <aggregate>
+                <builtInExpression>
+                    <expression>importetotal * irpf / 100</expression>
+                </builtInExpression>
+                <relation>lineasarticulos${tableName}</relation>
+            </aggregate>            
+        </aggregateCalc>                     
+    </field>
+
+    <field>
+        <name>totalrecargo</name>
+        <!--Total de recargo de equivalencia-->
+        <alias>Recargo de Equivalencia</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <visiblegrid>false</visiblegrid>
+        <aggregateCalc saveOnDb="true">
+            <operation>sum</operation>
+            <aggregate>
+                <field>totalrecargo</field>
+                <relation>lineasiva${tableName}</relation>
+            </aggregate>
+        </aggregateCalc>
+    </field>
+
+    <field>
+        <name>total</name>
+        <alias>Total</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <calculated saveOnDb="true">true</calculated>
+        <visiblegrid>true</visiblegrid>
+        <!-- Las variables que aquí se definen son Fields directos del bean, y accesible desde propiedades -->
+        <builtInExpression>
+            <expression>neto + totaliva - totalirpf + totalrecargo</expression>                                    
+        </builtInExpression>
+        <!--
+        <displayValueExpression>
+            <expression>{displayValue} {divisas.father.simbolo}</expression>
+        </displayValueExpression>
+        -->
+    </field>
+
+    <field>
+        <name>totaldivisaempresa</name>
+        <alias>Total en la divisa local</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <calculated saveOnDb="true">true</calculated>
+        <visiblegrid>false</visiblegrid>
+        <!-- Las variables que aquí se definen son Fields directos del bean, y accesible desde propiedades -->
+        <builtInExpression>
+            <expression>total * tasaconv</expression>                                    
+        </builtInExpression>
+    </field>
+
+    <field>
+        <name>coddivisa</name>
+        <alias>Divisa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+        <visiblegrid>false</visiblegrid>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    // Esta función esta en __init__.js
+    return coddivisaPorDefecto();
+}
+]]>        
+        </scriptDefaultValue>
+        <relation>
+            <table>divisas</table>
+            <field>coddivisa</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idplanpago</name>
+        <alias>Forma de Pago</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>planespago</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>tasaconv</name>
+        <alias>Tasa de conversión</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>3</partD>
+        <default>1</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>deabono</name>
+        <!--Si la factura es de abono-->        
+        <alias>Rectificativa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+    </field>
+
+   <field>
+        <name>comprobado</name>
+        <!--Si la factura es de abono-->        
+        <alias>Comprobado</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+    </field>
+    
+    <!--A & C-->        
+    <field>
+        <name>deposito</name>
+        <!--Si la factura es de abono-->        
+        <alias>Rectificativa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+    </field>
+    
+</table>
+

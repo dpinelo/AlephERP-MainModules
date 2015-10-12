@@ -1,0 +1,465 @@
+<table>
+    <name>efectos</name>
+    <!-- Las funciones QS definidas en este script, estárán disponibles como propiedades dentro de un objeto que
+    representa a un registro de este tipo -->
+    <associatedScript debug="true">efectoscommonsfunctions.qs</associatedScript>
+
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <beforeDeleteScript>
+<![CDATA[
+function beforeDelete() {
+    return true;
+}
+]]>
+    </beforeDeleteScript>
+        
+    <connections>
+        <connection>
+            <sender>bean</sender>
+            <action>
+                <signal>beforeSave</signal>
+                <slot>aerpComprobarPagadoCobrado</slot>
+            </action>
+        </connection>
+        <connection>
+            <sender>bean.estado</sender>
+            <action>
+                <signal>valueModified</signal>
+                <slot>aerpMarcarPagadoCobrado</slot>
+            </action>
+        </connection>
+    </connections>
+
+    <field>
+        <name>idempresa</name>
+        <alias>ID. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>        
+        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idejercicio</name>
+        <alias>Ejercicio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idejercicioActual();
+}
+]]>        
+        </script>
+        <relation>
+            <table>ejercicios</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idtipoefecto</name>
+        <alias>ID. Tipo Efecto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>tiposefectos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+                
+    <field>
+        <name>idformapagoprevista</name>
+        <!-- Forma de pago prevista -->
+        <alias>ID Forma Pago Prevista</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>formaspago</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>numdocumentointerno</name>
+        <alias>Nº Documento Interno</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <visiblegrid>true</visiblegrid>
+    </field>
+
+    <field>
+        <name>numdocumentotercero</name>
+        <alias>Nº Documento Externo</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <visiblegrid>true</visiblegrid>
+    </field>                
+    
+    <field>
+        <name>importe</name>
+        <alias>Importe</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <!--
+        <displayValueExpression>
+            <expression>{displayValue} {divisas.father.simbolo}</expression>
+        </displayValueExpression>
+    -->
+    </field>
+
+    <field>
+        <name>importenombrado</name>
+        <alias>Importe</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>1000</length>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true">true</calculated>        
+        <builtInStringExpression>
+            <expression>{importe.spellValue}</expression>
+        </builtInStringExpression>        
+    </field>
+    
+    <field>
+        <name>fecha</name>
+        <!-- Fecha de emisión -->
+        <alias>Fecha de Emisión</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+        <default>now</default>
+    </field>
+
+    <field>
+        <name>fechav</name>
+        <alias>Vencimiento</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+        <default>now</default>
+    </field>
+
+    <field>
+        <name>formapagoprevista</name>
+        <alias>Forma de Pago Prevista</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <visiblegrid>true</visiblegrid>
+        <calculated>true</calculated>
+        <builtInStringExpression>
+            <expression>{formaspago.father.descripcion}</expression>
+        </builtInStringExpression>
+    </field>
+    
+    <field>
+        <name>idtercero</name>
+        <!-- Código del tercero -->
+        <alias>Cod. proveedor</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>terceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>nombre</name>
+        <!-- Nombre del proveedor-->
+        <alias>Tercero</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>true</visiblegrid>        
+    </field>
+
+    <field>
+        <name>cifnif</name>
+        <!-- C.I.F./N.I.F del proveedor-->
+        <alias>C.I.F./N.I.F</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>importedivisaempresa</name>
+        <alias>Importe en la divisa local</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true">true</calculated>
+        <builtInExpression>
+            <expression>importe * tasaconv</expression>
+        </builtInExpression>
+    </field>
+
+    <field>
+        <name>tasaconv</name>
+        <alias>Tasa de conversión</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>3</partD>
+        <default>1</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+        
+
+    <field>
+        <name>coddivisa</name>
+        <!-- Código de la divisa -->
+        <alias>Divisa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+        <visiblegrid>false</visiblegrid>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+       // Esta función esta en __init__.js
+       return coddivisaPorDefecto();
+}
+]]>        
+        </scriptDefaultValue>
+        <relation>
+            <table>divisas</table>
+            <field>coddivisa</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idcuenta</name>
+        <!-- Código de la cuenta bancaria del proveedor-->
+        <alias>Cuenta</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>cuentasbcoterceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>iban</name>
+        <!-- Entidad de la cuenta bancaria del proveedor-->
+        <alias>IBAN</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>codentidad</name>
+        <!-- Entidad de la cuenta bancaria del proveedor-->
+        <alias>Nº Entidad</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>codsucursal</name>
+        <!-- Oficina de la cuenta bancaria del proveedor-->
+        <alias>Nº Oficina</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>dc</name>
+        <!-- Dígitos de Control de la cuenta bancaria del proveedor-->
+        <alias>Dígitos de Control</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>2</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>cuenta</name>
+        <!-- Número de la cuenta bancaria del proveedor -->
+        <alias>Nº Cuenta</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>ccc</name>
+        <alias>C.C.C.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <calculated>true</calculated>
+        <visiblegrid>false</visiblegrid>
+        <builtInStringExpression>
+            <expression>{codentidad} {codsucursal} {dc} {cuenta}</expression>
+        </builtInStringExpression>
+    </field>
+
+    <field>
+        <name>iddirtercero</name>
+        <!-- Dirección del proveedor -->
+        <alias>Dirección</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>dirterceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>direccion</name>
+        <!-- Dirección que aparece en el recibo -->
+        <alias>Dirección</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>codpostal</name>
+        <alias>Código Postal</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>poblacion</name>
+        <alias>Poblacion</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>provincia</name>
+        <alias>Provincia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>codpais</name>
+        <alias>Pais</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>direccion_large</name>
+        <alias>Direccion</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <calculated>true</calculated>
+        <visiblegrid>false</visiblegrid>
+        <script>
+<![CDATA[
+function value() {
+    var direccion = bean.fieldValue("direccion") + " - " + bean.fieldValue("poblacion") + " - " + bean.fieldValue("provincia");
+    return direccion;
+}
+]]>        
+        </script>
+    </field>
+
+    <field>
+        <name>texto</name>
+        <alias>Texto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+</table>
+

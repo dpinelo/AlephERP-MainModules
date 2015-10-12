@@ -1,0 +1,60 @@
+<table>
+    <name>co_conceptospar</name>
+    <!--Concepto. Utilizado en las partidas-->
+    <alias>Conceptos</alias>
+
+    <field>
+        <name>id</name>
+        <alias>Id</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>string</type>
+        <length>4</length>    
+
+        <relation>
+            <table>co_partidas</table>
+            <field>idconcepto</field>
+            <card>1M</card>
+        </relation>
+        
+        <relation>
+            <table>co_asientos</table>
+            <field>idconcepto</field>
+            <card>1M</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idempresa</name>
+        <alias>Cod. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <dbIndex>true</dbIndex>
+        <calculated saveOnDb="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    return idempresaActual();
+}
+]]>
+        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>    
+        <name>concepto</name>
+        <!-- Descripcion del concepto -->
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>255</length>    
+    </field>
+
+</table>

@@ -1,0 +1,159 @@
+<table>
+    <name>gruposterceros</name>
+    <alias>Grupos de Terceros</alias>
+    <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+    <isCached>true</isCached>
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <field>
+        <name>id</name>
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>terceros</table>
+            <field>idgrupo</field>
+            <card>1M</card>
+        </relation>
+
+        <relation>
+            <table>grupostercerosinfoadicional</table>
+            <field>idgrupo</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>
+        
+    </field>
+    
+    <!--Código del grupo-->
+    <field>
+        <name>codgrupo</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>6</length>
+        <uniqueOnFilterField>idempresa</uniqueOnFilterField>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    // dbField es un objeto disponible sólo en este script, y representa a este propio campo.
+    // También está disponible bean, y representa al registro total.
+    var value = AERPScriptCommon.nextCounter(dbField);
+    return value;
+}
+]]>        
+        </scriptDefaultValue>
+    </field>
+
+    <field>
+        <name>idempresa</name>
+        <alias>Cod. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <alias>Nombre del grupo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+    </field>
+
+    <field>
+        <name>idtarifa</name>
+        <alias>Tarifa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>tarifas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <!--Prefijo que se antepondrá a la numeración del tercero para distinguir las diferentes numeraciones-->
+    <field>
+        <name>prefijo</name>
+        <alias>Prefijo</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+    </field>
+
+    <!--Este grupo de terceros deberá incluir el NIF obligatorio-->
+    <field>
+        <name>nifobligatorio</name>
+        <alias>CIF/NIF obligatorio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+    </field>
+
+    <!--Serie de facturación por defecto para este grupo de terceros-->
+    <field>
+        <name>idserie</name>
+        <alias>Serie de facturación</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>seriesfacturacion</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <!--Plan de pago por defecto para este grupo de terceros-->
+    <field>
+        <name>idplanpago</name>
+        <alias>Plan de pago</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>planespago</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+            
+</table>

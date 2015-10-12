@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>751</width>
+    <height>427</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>SubGrupo</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codsubgrupo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBLineEdit" name="db_codsubgrupo">
+        <property name="fieldName">
+         <string>co_subgrupos.father.codsubgrupo</string>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" colspan="3">
+       <widget class="DBLineEdit" name="db_subgrupo_descripcion">
+        <property name="fieldName">
+         <string>co_subgrupos.father.descripcion</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Código*</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codcuenta</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Descripción</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_descripcion</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="DBLineEdit" name="db_descripcion">
+        <property name="fieldName">
+         <string>descripcion</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="DBLineEdit" name="db_codcuenta">
+        <property name="fieldName">
+         <string>codcuenta</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="replacePointWithCharacter">
+         <bool>true</bool>
+        </property>
+        <property name="focusNextOnEnd">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="DBChooseRecordButton" name="db_idcuentapadre">
+        <property name="text">
+         <string>Cuenta Padre</string>
+        </property>
+        <property name="fieldName">
+         <string>idcuentapadre</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="DBLineEdit" name="dbLineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="fieldName">
+         <string>idcuentapadre</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="autoComplete">
+         <set>AlephERP::RestrictValueToItemFromList|AlephERP::ValuesFromRelation</set>
+        </property>
+        <property name="autoCompleteColumn">
+         <string>codcuenta</string>
+        </property>
+        <property name="autoCompletePopupSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="autoCompleteVisibleFields">
+         <string>codcuenta,descripcion</string>
+        </property>
+        <property name="replacePointWithCharacter">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2" colspan="3">
+       <widget class="DBLineEdit" name="db_cuentapadre_descripcion">
+        <property name="fieldName">
+         <string>co_cuentas.father.descripcion</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>SubCuentas</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="DBDetailView" name="db_co_subcuentas">
+        <property name="relationName">
+         <string>co_subcuentas</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codsubgrupo</tabstop>
+  <tabstop>db_subgrupo_descripcion</tabstop>
+  <tabstop>db_codcuenta</tabstop>
+  <tabstop>db_descripcion</tabstop>
+  <tabstop>db_idcuentapadre</tabstop>
+  <tabstop>dbLineEdit</tabstop>
+  <tabstop>db_cuentapadre_descripcion</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!-- Nombre de la tabla -->
+    <name>stocksmovimientos</name>
+    <!-- Alias a presentar en la aplicación -->
+    <alias>Movimientos de stocks</alias>
+    <pixmap>:/images/commons/stocksmovimientos.png</pixmap>
+
+    <menuEntryPath>Almacén</menuEntryPath>
+    <moduleToolBarEntryPath>Almacén</moduleToolBarEntryPath>
+    
+    <canHaveRelatedElements>true</canHaveRelatedElements>
+    
+   <toStringExpression>
+        <expression>Movimiento de almacén de tipo: {tipo}, con fecha {fecha}, almacén origen {almacenorigen.father.nombre} y almacén destino {almacendestino.father.nombre}</expression>
+    </toStringExpression>
+    
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <name>stocksmovimientosinstancias</name>
+            <table>stocksmovimientosinstancias</table>
+            <field>idmovimiento</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>
+        
+    </field>
+   
+    <field>
+        <name>idalmacenorigen</name>
+        <alias>Id. Almacen Origen</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <name>almacenorigen</name>
+            <table>almacenes</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+   <field>
+        <name>almacenorigen</name>
+        <alias>Almacén Origen</alias>
+        <expression>almacenorigen.father.nombre</expression>
+    </field>
+    
+    <field>
+        <name>idalmacendestino</name>
+        <alias>Id. Almacen Destino</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <name>almacendestino</name>
+            <table>almacenes</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+   <field>
+        <name>almacendestino</name>
+        <alias>Almacén Destino</alias>
+        <expression>almacendestino.father.nombre</expression>
+    </field>
+    
+    <field>
+        <name>tipo</name>
+        <alias>Tipo de movimiento</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Entrada,Salida,Regularización,Transferencia</optionList>
+        <default>Entrada</default>
+        <visiblegrid>true</visiblegrid>        
+    </field>
+    
+    <field>
+        <name>fecha</name>
+        <alias>Fecha</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>datetime</type>
+        <default>now</default>
+        <visiblegrid>true</visiblegrid>        
+    </field>
+    
+    <field>
+        <name>descripcion</name>
+        <alias>Descripcion</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>true</visiblegrid>        
+    </field>
+    
+</table>

@@ -1,0 +1,766 @@
+<!DOCTYPE openRPTDef>
+<report>
+ <title></title>
+ <name></name>
+ <description></description>
+ <parameter default="2013-03-30" active="true" listtype="static" type="string" name="P_FECHA_FIN">
+  <description></description>
+ </parameter>
+ <parameter default="2012-01-01" active="true" listtype="static" type="string" name="P_FECHA_INICIO">
+  <description></description>
+ </parameter>
+ <parameter default="3" active="true" listtype="static" type="integer" name="P_ID_EMPRESA">
+  <description></description>
+ </parameter>
+ <grid>
+  <snap/>
+  <show/>
+  <x>0.05</x>
+  <y>0.05</y>
+ </grid>
+ <size>Letter</size>
+ <portrait/>
+ <topmargin>56</topmargin>
+ <bottommargin>56</bottommargin>
+ <rightmargin>56</rightmargin>
+ <leftmargin>56</leftmargin>
+ <querysource>
+  <name>qryMain</name>
+  <sql>SELECT * FROM (
+SELECT 
+  1 as orden,
+  'INGRESOS' as tipo,
+  (sum(lin.importetotal * dist.porcentaje / 100)) as importe, 
+  serv.nombre as servicio, 
+  upper(subcost.nombre) as nombre
+FROM 
+  facturascli as fp, 
+  lineasserviciosfacturascli as lin, 
+  servicios as serv,
+  lineasdistribucioncostesfacturascli as dist, 
+  subcentroscoste as subcost,
+  empresas as emp
+WHERE 
+  fp.idempresa = emp.id AND
+  fp.id=lin.idfactura AND 
+  fp.id=dist.idfactura AND 
+  lin.idservicio = serv.id AND
+  dist.idsubcentro=subcost.id AND
+  fp.fecha between &lt;? value("P_FECHA_INICIO") ?> and &lt;? value("P_FECHA_FIN") ?> AND
+  emp.id=&lt;? value("P_ID_EMPRESA") ?>
+GROUP BY serv.nombre, subcost.nombre
+
+UNION
+
+SELECT 
+  2 as orden,
+  'GASTOS' as tipo,
+  (sum(lin.importetotal * dist.porcentaje / 100)) as importe, 
+  serv.nombre as servicio, 
+  upper(subcost.nombre) as nombre
+FROM 
+  facturasprov as fp, 
+  lineasserviciosfacturasprov as lin, 
+  servicios as serv,
+  lineasdistribucioncostesfacturasprov as dist, 
+  subcentroscoste as subcost,
+  empresas as emp
+WHERE 
+  fp.idempresa = emp.id AND
+  fp.id=lin.idfactura AND 
+  fp.id=dist.idfactura AND 
+  lin.idservicio = serv.id AND
+  dist.idsubcentro=subcost.id AND
+  fp.fecha between &lt;? value("P_FECHA_INICIO") ?> and &lt;? value("P_FECHA_FIN") ?> AND
+  emp.id=&lt;? value("P_ID_EMPRESA") ?>
+GROUP BY serv.nombre, subcost.nombre
+) AS FOO
+ORDER BY nombre, orden, servicio
+</sql>
+ </querysource>
+ <querysource>
+  <name>qryTotales</name>
+  <sql>SELECT round(sum(importe)::numeric,2) as total, nombre FROM (
+SELECT 
+  1 as orden,
+  'INGRESOS' as tipo,
+  (sum(lin.importetotal * dist.porcentaje / 100)) as importe, 
+  serv.nombre as servicio, 
+  upper(subcost.nombre) as nombre
+FROM 
+  facturascli as fp, 
+  lineasserviciosfacturascli as lin, 
+  servicios as serv,
+  lineasdistribucioncostesfacturascli as dist, 
+  subcentroscoste as subcost,
+  empresas as emp
+WHERE 
+  fp.idempresa = emp.id AND
+  fp.id=lin.idfactura AND 
+  fp.id=dist.idfactura AND 
+  lin.idservicio = serv.id AND
+  dist.idsubcentro=subcost.id AND
+  fp.fecha between &lt;? value("P_FECHA_INICIO") ?> and &lt;? value("P_FECHA_FIN") ?> AND
+  emp.id=&lt;? value("P_ID_EMPRESA") ?>
+GROUP BY serv.nombre, subcost.nombre
+
+UNION
+
+SELECT 
+  2 as orden,
+  'GASTOS' as tipo,
+  -1 * (sum(lin.importetotal * dist.porcentaje / 100)) as importe, 
+  serv.nombre as servicio, 
+  upper(subcost.nombre) as nombre
+FROM 
+  facturasprov as fp, 
+  lineasserviciosfacturasprov as lin, 
+  servicios as serv,
+  lineasdistribucioncostesfacturasprov as dist, 
+  subcentroscoste as subcost,
+  empresas as emp
+WHERE 
+  fp.idempresa = emp.id AND
+  fp.id=lin.idfactura AND 
+  fp.id=dist.idfactura AND 
+  lin.idservicio = serv.id AND
+  dist.idsubcentro=subcost.id AND
+  fp.fecha between &lt;? value("P_FECHA_INICIO") ?> and &lt;? value("P_FECHA_FIN") ?> AND
+  emp.id=&lt;? value("P_ID_EMPRESA") ?>
+GROUP BY serv.nombre, subcost.nombre
+) AS FOO
+GROUP BY nombre
+ORDER BY nombre</sql>
+ </querysource>
+ <pghead>
+  <height>149</height>
+  <image>
+   <rect>
+    <x>544</x>
+    <y>-1</y>
+    <width>195</width>
+    <height>70</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <mode>stretch</mode>
+   <data>
+    <query>qryMain</query>
+    <column>logo</column>
+   </data>
+  </image>
+  <label>
+   <rect>
+    <x>4</x>
+    <y>64</y>
+    <width>735</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+    <bordercolor>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </bordercolor>
+    <color>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </color>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>14</size>
+    <weight>bold</weight>
+   </font>
+   <hcenter/>
+   <top/>
+   <string>Balance de Ingresos y Gastos por Centro de Coste</string>
+  </label>
+  <field>
+   <rect>
+    <x>219</x>
+    <y>109</y>
+    <width>121</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <right/>
+   <top/>
+   <data>
+    <query>Parameter Query</query>
+    <column>P_FECHA_INICIO</column>
+   </data>
+   <alephERPFormat>facturasprov.fecha</alephERPFormat>
+  </field>
+  <label>
+   <rect>
+    <x>334</x>
+    <y>109</y>
+    <width>32</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <hcenter/>
+   <top/>
+   <string>--</string>
+  </label>
+  <field>
+   <rect>
+    <x>364</x>
+    <y>109</y>
+    <width>122</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <top/>
+   <data>
+    <query>Parameter Query</query>
+    <column>P_FECHA_FIN</column>
+   </data>
+   <alephERPFormat>facturasprov.fecha</alephERPFormat>
+  </field>
+  <line>
+   <color>
+    <red>109</red>
+    <green>109</green>
+    <blue>109</blue>
+   </color>
+   <xstart>0</xstart>
+   <ystart>146</ystart>
+   <xend>735</xend>
+   <yend>146</yend>
+   <weight>1</weight>
+  </line>
+  <field>
+   <rect>
+    <x>4</x>
+    <y>9</y>
+    <width>404</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+    <bordercolor>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </bordercolor>
+    <color>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </color>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>10</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <top/>
+   <data>
+    <query>qryMain</query>
+    <column>empresa</column>
+   </data>
+  </field>
+  <label>
+   <rect>
+    <x>509</x>
+    <y>119</y>
+    <width>100</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+    <color>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </color>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <right/>
+   <bottom/>
+   <string>Total (SIN I.V.A.)</string>
+  </label>
+  <label>
+   <rect>
+    <x>74</x>
+    <y>119</y>
+    <width>175</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+    <color>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </color>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <bottom/>
+   <string>Servicio</string>
+  </label>
+  <label>
+   <rect>
+    <x>4</x>
+    <y>84</y>
+    <width>735</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+    <bordercolor>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </bordercolor>
+    <color>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </color>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>14</size>
+    <weight>bold</weight>
+   </font>
+   <hcenter/>
+   <top/>
+   <string>en un período</string>
+  </label>
+ </pghead>
+ <section>
+  <name>Totales</name>
+  <pagebreak when="at end"/>
+  <group>
+   <name>Vacia</name>
+   <column></column>
+   <head>
+    <height>45</height>
+    <label>
+     <rect>
+      <x>44</x>
+      <y>10</y>
+      <width>535</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+      <color>
+       <red>109</red>
+       <green>109</green>
+       <blue>109</blue>
+      </color>
+     </rect>
+     <font>
+      <face>Helvetica</face>
+      <size>11</size>
+      <weight>bold</weight>
+     </font>
+     <left/>
+     <vcenter/>
+     <string>RESULTADOS: MARGEN BRUTO POR CENTRO DE COSTE</string>
+    </label>
+   </head>
+   <foot>
+    <height>40</height>
+    <field>
+     <rect>
+      <x>509</x>
+      <y>10</y>
+      <width>95</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+     </rect>
+     <font>
+      <face>Helvetica</face>
+      <size>10</size>
+      <weight>bold</weight>
+     </font>
+     <right/>
+     <vcenter/>
+     <data>
+      <query>qryTotales</query>
+      <column>total</column>
+     </data>
+     <format>%0.2f</format>
+     <tracktotal/>
+    </field>
+    <label>
+     <rect>
+      <x>44</x>
+      <y>10</y>
+      <width>455</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+      <color>
+       <red>109</red>
+       <green>109</green>
+       <blue>109</blue>
+      </color>
+     </rect>
+     <font>
+      <face>Helvetica</face>
+      <size>11</size>
+      <weight>bold</weight>
+     </font>
+     <left/>
+     <vcenter/>
+     <string>RESULTADO TOTAL</string>
+    </label>
+   </foot>
+  </group>
+  <detail>
+   <key>
+    <query>qryTotales</query>
+   </key>
+   <height>40</height>
+   <field>
+    <rect>
+     <x>74</x>
+     <y>5</y>
+     <width>385</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+     <color>
+      <red>109</red>
+      <green>109</green>
+      <blue>109</blue>
+     </color>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>10</size>
+     <weight>bold</weight>
+    </font>
+    <left/>
+    <vcenter/>
+    <data>
+     <query>qryTotales</query>
+     <column>nombre</column>
+    </data>
+   </field>
+   <field>
+    <rect>
+     <x>510</x>
+     <y>5</y>
+     <width>95</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>10</size>
+     <weight>bold</weight>
+    </font>
+    <right/>
+    <vcenter/>
+    <data>
+     <query>qryTotales</query>
+     <column>total</column>
+    </data>
+    <alephERPFormat>lineasserviciosfacturasprov.importetotal</alephERPFormat>
+   </field>
+  </detail>
+ </section>
+ <section>
+  <name>Lineas</name>
+  <group>
+   <name>Subcentro de coste</name>
+   <column>nombre</column>
+   <pagebreak when="after foot"/>
+   <head>
+    <height>35</height>
+    <label>
+     <rect>
+      <x>44</x>
+      <y>5</y>
+      <width>210</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+      <color>
+       <red>109</red>
+       <green>109</green>
+       <blue>109</blue>
+      </color>
+     </rect>
+     <font>
+      <face>Helvetica</face>
+      <size>10</size>
+      <weight>bold</weight>
+     </font>
+     <left/>
+     <vcenter/>
+     <string>SUBCENTRO DE COSTE</string>
+    </label>
+    <field>
+     <rect>
+      <x>269</x>
+      <y>5</y>
+      <width>385</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+      <color>
+       <red>109</red>
+       <green>109</green>
+       <blue>109</blue>
+      </color>
+     </rect>
+     <font>
+      <face>Helvetica</face>
+      <size>10</size>
+      <weight>bold</weight>
+     </font>
+     <left/>
+     <vcenter/>
+     <data>
+      <query>qryMain</query>
+      <column>nombre</column>
+     </data>
+    </field>
+    <line>
+     <color>
+      <red>109</red>
+      <green>109</green>
+      <blue>109</blue>
+     </color>
+     <xstart>39</xstart>
+     <ystart>30</ystart>
+     <xend>619</xend>
+     <yend>30</yend>
+     <weight>0</weight>
+    </line>
+   </head>
+  </group>
+  <group>
+   <name>Tipo</name>
+   <column>tipo</column>
+   <head>
+    <height>25</height>
+    <field>
+     <rect>
+      <x>74</x>
+      <y>0</y>
+      <width>385</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+     </rect>
+     <font>
+      <face>Helvetica</face>
+      <size>10</size>
+      <weight>bold</weight>
+      <italic/>
+     </font>
+     <left/>
+     <vcenter/>
+     <data>
+      <query>qryMain</query>
+      <column>tipo</column>
+     </data>
+    </field>
+   </head>
+  </group>
+  <detail>
+   <key>
+    <query>qryMain</query>
+   </key>
+   <height>27</height>
+   <field>
+    <rect>
+     <x>509</x>
+     <y>5</y>
+     <width>95</width>
+     <height>20</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <right/>
+    <top/>
+    <data>
+     <query>qryMain</query>
+     <column>importe</column>
+    </data>
+    <alephERPFormat>lineasserviciosfacturasprov.importetotal</alephERPFormat>
+   </field>
+   <field>
+    <rect>
+     <x>74</x>
+     <y>5</y>
+     <width>405</width>
+     <height>20</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <left/>
+    <top/>
+    <data>
+     <query>qryMain</query>
+     <column>servicio</column>
+    </data>
+   </field>
+  </detail>
+ </section>
+ <pgfoot>
+  <height>37</height>
+  <field>
+   <rect>
+    <x>579</x>
+    <y>8</y>
+    <width>155</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+    <color>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </color>
+   </rect>
+   <font>
+    <face>MS Shell Dlg 2</face>
+    <size>8</size>
+    <weight>normal</weight>
+   </font>
+   <left/>
+   <top/>
+   <data>
+    <query>Context Query</query>
+    <column>now</column>
+   </data>
+  </field>
+  <field>
+   <rect>
+    <x>9</x>
+    <y>8</y>
+    <width>40</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+    <color>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </color>
+   </rect>
+   <font>
+    <face>MS Shell Dlg 2</face>
+    <size>8</size>
+    <weight>normal</weight>
+   </font>
+   <right/>
+   <top/>
+   <data>
+    <query>Context Query</query>
+    <column>page_number</column>
+   </data>
+  </field>
+  <label>
+   <rect>
+    <x>54</x>
+    <y>8</y>
+    <width>15</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+    <color>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </color>
+   </rect>
+   <font>
+    <face>MS Shell Dlg 2</face>
+    <size>8</size>
+    <weight>normal</weight>
+   </font>
+   <left/>
+   <top/>
+   <string>de</string>
+  </label>
+  <field>
+   <rect>
+    <x>74</x>
+    <y>8</y>
+    <width>40</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+    <color>
+     <red>109</red>
+     <green>109</green>
+     <blue>109</blue>
+    </color>
+   </rect>
+   <font>
+    <face>MS Shell Dlg 2</face>
+    <size>8</size>
+    <weight>normal</weight>
+   </font>
+   <left/>
+   <top/>
+   <data>
+    <query>Context Query</query>
+    <column>page_count</column>
+   </data>
+  </field>
+  <line>
+   <color>
+    <red>109</red>
+    <green>109</green>
+    <blue>109</blue>
+   </color>
+   <xstart>5</xstart>
+   <ystart>5</ystart>
+   <xend>735</xend>
+   <yend>5</yend>
+   <weight>1</weight>
+  </line>
+ </pgfoot>
+ <rptfoot>
+  <height>33</height>
+ </rptfoot>
+</report>

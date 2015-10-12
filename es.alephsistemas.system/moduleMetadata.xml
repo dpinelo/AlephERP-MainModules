@@ -1,0 +1,18 @@
+<AlephERP>
+<export>
+<module>es.alephsistemas.system</module>
+<generatedTime>2014-05-20 11:30:12</generatedTime>
+
+
+<file>
+    <objectName>alepherp_system</objectName>
+    <name>alepherp_system.table</name>
+    <version>10</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+</export>
+</AlephERP>

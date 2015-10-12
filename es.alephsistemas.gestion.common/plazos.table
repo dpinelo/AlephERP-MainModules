@@ -1,0 +1,114 @@
+<table>
+    <name>plazos</name>
+    <!--Listado de plazos de pago-->
+    <alias>Plazos de Pago</alias>
+    <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+    <isCached>true</isCached>
+
+    <field>
+        <name>id</name>
+        <!--Identificador interno-->
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>idplanpago</name>
+        <!--Código del plan de pagos-->
+        <alias>Plan de Pago</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>planespago</table>
+            <field>id</field>
+            <card>M1</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+
+    <field>
+        <name>idformapago</name>
+        <alias>Forma de Pago</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>formaspago</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>formapago</name>
+        <alias>Forma de Pago</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>true</visiblegrid>
+        <calculated>true</calculated>
+        <builtInStringExpression>
+            <expression>{formaspago.father.descripcion}</expression>
+        </builtInStringExpression>
+    </field>
+                                                            
+    <field>
+        <name>dias</name>
+        <alias>Dias aplazados</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+    </field>
+
+    <field>
+        <name>aplazado</name>
+        <alias>% Aplazado</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <debug onInitDebug="false">false</debug>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    var formaPagoBean = bean.father("planespago");
+    var plazosActuales = formaPagoBean.relationChilds("plazos");
+    var value = 100;
+    for ( var i = 0 ; i < plazosActuales.length ; i++ ) {
+        value = value - Number(plazosActuales[i].fieldValue("aplazado"));
+        if ( value < 0 ) { 
+            value = 0;
+        }
+    }
+    return value;
+}
+]]>        
+        </scriptDefaultValue>
+    </field>
+
+    <field>
+        <name>cargodiafijomes</name>
+        <alias>Cargo en día fijo del mes</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>boolean</type>
+        <default>false</default>
+    </field>
+    
+    <field>
+        <name>diames</name>
+        <alias>Día del mes de cargo</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <default>30</default>
+    </field>
+            
+</table>

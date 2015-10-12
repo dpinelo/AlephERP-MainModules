@@ -1,0 +1,56 @@
+<report>
+    <name>listadoserviciosfacturasprov</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Listado de Gastso/Servicios recibidos en un período</alias>
+    <reportName>listadoserviciosfacturasprov.xml</reportName>
+    <parameterForm>listadoserviciosfacturasprov</parameterForm>
+    <envVarParameterBinding>
+        <binding>
+            <parameter>P_ID_EMPRESA</parameter>
+            <envVar>idempresa</envVar>
+        </binding>
+    </envVarParameterBinding>     
+    <exportSql>
+    SELECT 
+  emp.nombre as empresa, 
+  fp.codfactura, 
+  fp.nombre,
+  fp.cifnif, 
+  fp.fecha, 
+  fp.neto, 
+  fp.totaliva, 
+  fp.total, 
+  fp.numproveedor,
+  linea.descripcion, 
+  serv.nombre as servicio, 
+  linea.importetotal,
+  case when linea.tipoiva='Sujeta a I.V.A.' then (linea.importetotal + (linea.importetotal * linea.iva / 100)) else linea.importetotal end as servicioconiva,
+  costes.centroscoste
+FROM 
+  empresas as emp, 
+  servicios as serv, 
+  facturasprov as fp 
+  LEFT JOIN lineasserviciosfacturasprov as linea 
+    ON fp.id=linea.idfactura
+  LEFT JOIN
+  (SELECT idfactura, string_agg(sub.nombre, ', ') as centroscoste 
+   FROM
+     lineasdistribucioncostesfacturasprov as lin,
+     facturasprov as fact,
+     subcentroscoste as sub
+   WHERE
+     fact.id=lin.idfactura AND
+     sub.id=lin.idsubcentro AND
+     fact.fecha between :P_FECHA_INICIO AND :P_FECHA_FIN AND
+     fact.idempresa=:P_ID_EMPRESA
+   GROUP BY idfactura
+   ) as costes ON costes.idfactura = fp.id
+WHERE 
+  emp.id=:P_ID_EMPRESA AND
+  emp.id = fp.idempresa AND 
+  serv.id=linea.idservicio AND
+  fecha between :P_FECHA_INICIO AND :P_FECHA_FIN
+ORDER BY fecha, codfactura
+</exportSql>
+
+</report>

@@ -1,0 +1,13 @@
+<report>
+    <name>listadotesoreriafacturasrecibidas</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Estado de tesorería de Facturas Recibidas</alias>
+    <reportName>listadotesoreriafacturasrecibidas.xml</reportName>
+    <parameterForm>listadotesoreriafacturasemitidas</parameterForm>
+    <envVarParameterBinding>
+        <binding>
+            <parameter>P_ID_EMPRESA</parameter>
+            <envVar>idempresa</envVar>
+        </binding>
+    </envVarParameterBinding>
+</report>

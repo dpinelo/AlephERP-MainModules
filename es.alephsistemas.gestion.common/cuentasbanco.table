@@ -1,0 +1,209 @@
+<table>
+    <!--Listado de cuentas bancarias-->
+    <name>cuentasbanco</name>
+    <alias>Cuentas Bancarias</alias>
+    <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+    <isCached>true</isCached>
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <field>
+        <name>id</name>
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>codcuenta</name>
+        <!--Identificador interno de la cuenta bancaria-->
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>6</length>
+        <uniqueOnFilterField>idempresa</uniqueOnFilterField>
+        <debug onInitDebug="false">false</debug>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    // dbField es un objeto disponible sólo en este script, y representa a este propio campo.
+    // También está disponible bean, y representa al registro total.
+    var value = AERPScriptCommon.nextCounter(dbField);
+    return value;
+}
+]]>        
+        </scriptDefaultValue>
+    </field>
+
+    <field>
+        <name>idempresa</name>
+        <alias>Cod. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>descripcion</name>
+        <alias>Descripción</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+    </field>
+
+    <field>
+        <name>codentidad</name>
+        <alias>Entidad</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>bancos</table>
+            <field>codentidad</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>codsucursal</name>
+        <alias>Oficina</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>sucursales</table>
+            <field>codsucursal</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>dc</name>
+        <!-- Digitos de control-->
+        <alias>D.C.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>2</length>
+        <visiblegrid>false</visiblegrid>
+        <calculated calculatedOneTime="false">true</calculated>
+        <debug onInitDebug="false">false</debug>
+        <script>
+function value() {
+    // Se llama a la función contenida en __init__.js
+    return calcularDC(bean.codentidad.value, bean.codsucursal.value, bean.cuenta.value);
+}
+        </script>
+    </field>
+    
+    <field>
+        <name>cuenta</name>
+        <alias>Cuenta</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>ccc</name>
+        <alias>Cuenta Bancaria</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <calculated>true</calculated>
+        <length>24</length>
+        <builtInStringExpression>
+            <expression>{iban} {codentidad} {codsucursal} {dc} {cuenta}</expression>
+        </builtInStringExpression>
+    </field>
+    
+    <field>
+        <name>sufijo19</name>
+        <alias>Sufijo Norma 19</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+        <default>000</default>
+    </field>
+    
+   <field>
+        <name>sufijo58</name>
+        <alias>Sufijo Norma 58</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+        <default>000</default>
+    </field>
+    
+    <field>
+        <name>iban</name>
+        <alias>IBAN</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>4</length>
+    </field>
+
+    <field>
+        <name>swift</name>
+        <alias>SWIFT</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>11</length>
+    </field>
+
+    <field>
+        <name>idsubcuenta</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>ID</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+</table>

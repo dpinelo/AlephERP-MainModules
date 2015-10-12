@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+    <name>lineasarticulosalbaranesprov</name>
+    <!--Líneas de albaranes con artículos a proveedor-->
+    <alias>Líneas de Albaranes de artículos de proveedores</alias>
+    <uiDbRecord>lineasarticulos.dbrecord.ui</uiDbRecord>
+    <qsDbRecord>lineasarticulos.dbrecord.qs</qsDbRecord>
+      
+    <metadataVar name="tablaPadre">albaranesprov</metadataVar>
+    <canHaveRelatedElements>true</canHaveRelatedElements>
+    
+    <field>
+        <name>id</name>
+        <!--Identificador interno de la tabla-->
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idalbaran</name>
+        <!--Identificador de la factura a la que pertenece la línea-->
+        <alias>Albarán</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>albaranesprov</table>
+            <field>id</field>
+            <card>M1</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+
+    <field>
+        <name>idlineafactura</name>
+        <!--Identificador de la factura a la que pertenece la línea-->
+        <alias>Línea de factura</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>lineasarticulosfacturasprov</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <inherits name="lineasarticulos">
+        <element>toStringExpression</element>
+        <element type="allFields"/>
+    </inherits>
+        
+ </table>

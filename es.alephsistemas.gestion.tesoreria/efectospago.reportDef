@@ -1,0 +1,14 @@
+<report>
+    <name>efectospago</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Efectos de Pago</alias>
+    <reportName>efectospago.xml</reportName>
+    <linkedTo>efectospago</linkedTo>
+    <parameterBinding>
+        <binding>
+            <parameter>id</parameter>
+            <field>id</field>
+        </binding>
+    </parameterBinding>
+</report>
+

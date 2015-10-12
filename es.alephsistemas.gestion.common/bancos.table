@@ -1,0 +1,34 @@
+<table>
+	<name>bancos</name>
+	<!--Listado de bancos-->
+	<alias>Bancos</alias>
+	<!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+	<isCached>true</isCached>
+	<initOrderSort>nombre</initOrderSort>
+	
+	<field>
+		<name>codentidad</name>
+		<alias>Nº de Entidad</alias>
+		<null>false</null>
+		<pk>true</pk>
+		<type>string</type>
+		<length>4</length>
+
+		<relation>
+			<table>sucursales</table>
+			<field>codentidad</field>
+			<card>1M</card>
+		</relation>
+	</field>
+
+	<!--Nombre comercial del banco-->
+	<field>
+		<name>nombre</name>
+		<alias>Nombre</alias>
+		<null>false</null>
+		<pk>false</pk>
+		<type>string</type>
+		<length>100</length>
+	</field>
+	
+</table>

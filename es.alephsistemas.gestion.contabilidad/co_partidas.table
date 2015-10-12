@@ -1,0 +1,236 @@
+<table>
+    <name>co_partidas</name>
+    <!--Listado de partidas-->
+    <alias>Partidas</alias>
+
+    <!--
+  CREATE TRIGGER modificar_debe_haber_saldo
+  AFTER INSERT OR UPDATE OR DELETE
+  ON generic.co_partidas
+  FOR EACH ROW
+  EXECUTE PROCEDURE modificar_debe_haber_saldo();
+  
+  
+CREATE FUNCTION modificar_debe_haber_saldo()
+  RETURNS trigger AS
+$BODY$
+  DECLARE
+	v_haber	double precision;
+	v_debe 	double precision;
+	v_saldo	double precision;
+	v_id	integer;
+  BEGIN
+	IF (TG_OP = 'INSERT' OR TG_OP = 'UPDATE' ) THEN
+		v_id = NEW.idsubcuenta;
+	END IF;
+	IF (TG_OP = 'DELETE') THEN
+		v_id = OLD.idsubcuenta;
+	END IF;
+	
+	SELECT haber,debe INTO v_haber ,v_debe
+	FROM co_subcuentas
+	WHERE id = v_id;
+
+	CASE 
+		WHEN TG_OP = 'INSERT' THEN 
+			v_haber = v_haber + NEW.haber;
+			v_debe = v_debe + NEW.debe;
+		WHEN TG_OP = 'DELETE' THEN 
+			v_haber = v_haber - OLD.haber;
+			v_debe = v_debe - OLD.debe;
+		WHEN TG_OP = 'UPDATE' THEN 
+			v_haber = v_haber + NEW.haber - OLD.haber;
+			v_debe = v_debe + NEW.debe - OLD.debe;
+	END CASE;
+
+	UPDATE co_subcuentas 
+	SET 
+		haber = v_haber,
+		debe = v_debe,
+		saldo = v_debe - v_haber
+	WHERE id = v_id;
+	RETURN NEW;
+  END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100;
+ALTER FUNCTION modificar_debe_haber_saldo()
+  OWNER TO alepherp;
+
+    -->
+    <field>
+        <name>id</name>
+        <!-- Identificador interno de la partida -->
+        <alias>Id</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>entradasbanco</table>
+            <field>idpartida</field>
+            <card>11</card>
+        </relation>        
+        <relation>
+            <table>entradascaja</table>
+            <field>idpartida</field>
+            <card>11</card>
+        </relation>        
+    </field>
+
+    <field>
+        <name>idasiento</name>
+        <!-- Código del asiento al que pertenece la partida-->
+        <alias>Asiento</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <dbIndex>true</dbIndex>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>co_asientos</table>
+            <field>id</field>
+            <card>M1</card>            
+            <delC>true</delC>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idsubcuenta</name>
+        <!-- Código de la subcuenta -->
+        <alias>Subcuenta</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <dbIndex>true</dbIndex>
+       <relation>
+            <name>co_subcuentas</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+        <behaviourOnInlineEdit>
+            <widgetOnEdit>DBLineEdit</widgetOnEdit>
+            <viewOnRead>codsubcuenta</viewOnRead>
+            <autoComplete>ValuesFromRelation,RestrictValueToItemFromList</autoComplete>
+            <autoCompleteColumn>codsubcuenta</autoCompleteColumn>
+            <autoCompleteVisibleFields>codsubcuenta;descripcion</autoCompleteVisibleFields>
+            <autoCompletePopupSize>400x0</autoCompletePopupSize> 
+            <replacePointWithCharacter>true</replacePointWithCharacter>
+            <replacePointCharacter>0</replacePointCharacter>
+        </behaviourOnInlineEdit>        
+        <toolTipStringExpression>
+            <expression>{co_subcuentas.father.descripcion}</expression>
+        </toolTipStringExpression>
+    </field>
+
+    <field>
+        <name>codsubcuenta</name>
+        <alias>Subcuenta</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <visiblegrid>true</visiblegrid>
+        <calculated>true</calculated>
+        <builtInStringExpression>
+            <expression>{co_subcuentas.father.codsubcuenta}</expression>
+        </builtInStringExpression>
+        <toolTipStringExpression>
+            <expression>{co_subcuentas.father.descripcion}</expression>
+        </toolTipStringExpression>
+    </field>    
+
+    <field>
+        <name>concepto</name>
+        <!-- Concepto o descripción de la partida -->
+        <alias>Concepto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>255</length> 
+        <scriptDefaultValue>
+ <![CDATA[
+function defaultValue() {
+    if(bean.co_asientos.father.co_partidas.items.length > 1) {
+        return bean.co_asientos.father.co_partidas.items[0].concepto.value;
+    }
+}
+]]> 
+        </scriptDefaultValue>  
+    </field>
+    
+    <field>
+        <!-- Cantidad en el Debe -->
+        <name>debe</name>
+        <alias>Debe</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <scriptDefaultValue>
+ <![CDATA[
+function defaultValue() {
+    if ( bean.co_asientos.father.descuadre.value < 0 ) {
+        return -1 * bean.co_asientos.father.descuadre.value;
+    }
+    return 0;
+}
+]]> 
+        </scriptDefaultValue>
+        <onChangeScript>
+<![CDATA[     
+function onChange() {
+    if ( bean.debe.value != 0 ) {
+        bean.haber.value = 0;
+    }
+}
+]]>
+        </onChangeScript>        
+    </field>
+
+    <field>
+        <!-- Cantidad en el Haber -->
+        <name>haber</name>
+        <alias>Haber</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <scriptDefaultValue>
+ <![CDATA[
+function defaultValue() {
+    if ( bean.co_asientos.father.descuadre.value > 0 ) {
+        return bean.co_asientos.father.descuadre.value;
+    }
+    return 0;
+}
+]]> 
+        </scriptDefaultValue>
+        <onChangeScript>
+<![CDATA[     
+function onChange() {
+    if ( bean.haber.value != 0 ) {
+        bean.debe.value = 0;
+    }
+}
+]]>
+        </onChangeScript>        
+    </field>
+
+    <field>
+        <name>saldo</name>
+        <alias>Saldo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>false</visiblegrid>
+        <calculated>true</calculated>
+        <builtInExpression>
+            <expression>debe - haber</expression>
+        </builtInExpression>
+    </field>    
+    
+</table>

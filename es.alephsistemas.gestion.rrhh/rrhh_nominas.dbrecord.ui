@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1038</width>
+    <height>674</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>C&amp;ódigo*</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_codnomina</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4" colspan="2">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Fecha</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="6" colspan="2">
+       <widget class="DBDateTimeEdit" name="dbDateTimeEdit">
+        <property name="displayFormat">
+         <string>dd/MM/yyyy</string>
+        </property>
+        <property name="fieldName" stdset="0">
+         <string>fecha</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="8" colspan="7">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>632</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0" colspan="3">
+       <widget class="DBChooseRecordButton" name="db_idempleado">
+        <property name="text">
+         <string>Empleado</string>
+        </property>
+        <property name="fieldName" stdset="0">
+         <string>idempleado</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3" colspan="12">
+       <widget class="DBLineEdit" name="db_nombreempleado">
+        <property name="fieldName" stdset="0">
+         <string>nombreempleado</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="3">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>S&amp;ueldo bruto</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_sueldobruto</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3" colspan="2">
+       <widget class="DBNumberEdit" name="db_sueldobruto">
+        <property name="fieldName" stdset="0">
+         <string>sueldobruto</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="5" colspan="2">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>S.S.</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy">
+         <cstring>db_ss</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="7" colspan="2">
+       <widget class="DBNumberEdit" name="db_ss">
+        <property name="fieldName" stdset="0">
+         <string>ss</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="9">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>I.R.P.F.</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy">
+         <cstring>db_irpf</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="10">
+       <widget class="DBNumberEdit" name="db_irpf">
+        <property name="fieldName" stdset="0">
+         <string>irpf</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="13">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>A percibir</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy">
+         <cstring>db_apercibir</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="14">
+       <widget class="DBNumberEdit" name="db_apercibir">
+        <property name="fieldName" stdset="0">
+         <string>apercibir</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3" colspan="12">
+       <widget class="DBLineEdit" name="db_descripcion">
+        <property name="fieldName" stdset="0">
+         <string>concepto</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Concepto</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_descripcion</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" colspan="2">
+       <widget class="DBLineEdit" name="db_codnomina">
+        <property name="fieldName" stdset="0">
+         <string>codnomina</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="replacePointWithCharacter" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="automaticWidthBasedOnFieldMaxLength" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="11">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>&amp;Dietas</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="buddy">
+         <cstring>db_dietas</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="12">
+       <widget class="DBNumberEdit" name="db_dietas">
+        <property name="fieldName" stdset="0">
+         <string>dietas</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabPagos">
+      <attribute name="title">
+       <string>Pagos</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>Efectos de pago</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="1">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>498</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="0">
+           <widget class="DBCheckBox" name="db_efectospagoautomaticos">
+            <property name="text">
+             <string>Gestión automática de efectos de pago</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>efectospagoautomaticos</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="pbMarcarPagada">
+            <property name="toolTip">
+             <string>Marca esta factura como pagada, creando los efectos de pago correspondientes.</string>
+            </property>
+            <property name="statusTip">
+             <string>Marca esta factura como pagada, creando los efectos de pago correspondientes.</string>
+            </property>
+            <property name="whatsThis">
+             <string>Marca esta factura como pagada, creando los efectos de pago correspondientes.</string>
+            </property>
+            <property name="text">
+             <string>Marcar como pagada</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/aplicacion/images/ok.png</normaloff>:/aplicacion/images/ok.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="DBRelatedElementsView" name="db_efectospago" native="true">
+            <property name="allowedMetadatas" stdset="0">
+             <string>efectospago</string>
+            </property>
+            <property name="categories" stdset="0">
+             <string>Pagos</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabCostes">
+      <attribute name="title">
+       <string>Distribución de costes</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Seleccione una distribución de costes a aplicar</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="DBChooseRecordButton" name="db_iddistribucioncostes">
+            <property name="text">
+             <string>Distribución de costes</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>iddistribucioncostes</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="scriptExecuteAfterChoose" stdset="0">
+             <string>asignarCostes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBLineEdit" name="db_distribucioncostes_nombre">
+            <property name="fieldName" stdset="0">
+             <string>distribucioncostes.nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pbAgregarMultiplesCentrosCoste">
+            <property name="text">
+             <string>Agregar Múltiples Subcentros de coste</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/images/commons/centrosdecoste.png</normaloff>:/images/commons/centrosdecoste.png</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Distribución de costes de esta nómina</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="DBDetailView" name="db_lineasdistribucioncostesfacturasprov" native="true">
+            <property name="relationName" stdset="0">
+             <string>rrhh_nominasdistribucioncostes</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>178</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>Total de costes imputados</string>
+              </property>
+              <property name="buddy">
+               <cstring>db_neto_costes</cstring>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="DBNumberEdit" name="db_neto_costes">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="fieldName" stdset="0">
+               <string>totalcostesdistribuidosconimpuestos</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabContabilidad">
+      <attribute name="title">
+       <string>Contabilidad</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0" colspan="2">
+        <widget class="DBCheckBox" name="db_nogenerarasiento">
+         <property name="text">
+          <string>No generar asiento contable</string>
+         </property>
+         <property name="fieldName" stdset="0">
+          <string>nogenerarasiento</string>
+         </property>
+         <property name="dataEditable" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>Nº Asiento</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="DBNumberEdit" name="db_co_asientos_numero">
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="fieldName" stdset="0">
+          <string>co_asientos.brother.numero</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>Fecha</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="DBDateTimeEdit" name="db_co_asientos_fecha">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>23</height>
+          </size>
+         </property>
+         <property name="displayFormat">
+          <string>dd/MM/yyyy</string>
+         </property>
+         <property name="fieldName" stdset="0">
+          <string>co_asientos.brother.fecha</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>430</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="5">
+        <widget class="QPushButton" name="pbGenerarAsiento">
+         <property name="text">
+          <string>Volver a generar asiento contable</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/generales/images/recalculatecounter.png</normaloff>:/generales/images/recalculatecounter.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Partidas</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="6">
+        <widget class="DBTableView" name="co_asientos.co_partidas">
+         <property name="internalData" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="relationName" stdset="0">
+          <string>co_asientos.co_partidas</string>
+         </property>
+         <property name="allowedEdit" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="visibleColumns" stdset="0">
+          <string>codsubcuenta;concepto;debe;haber</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>widgets/dbdatetimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBRelatedElementsView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbrelatedelementsview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTableView</class>
+   <extends>QTableView</extends>
+   <header>widgets/dbtableview.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codnomina</tabstop>
+  <tabstop>dbDateTimeEdit</tabstop>
+  <tabstop>db_idempleado</tabstop>
+  <tabstop>db_sueldobruto</tabstop>
+  <tabstop>db_ss</tabstop>
+  <tabstop>db_irpf</tabstop>
+  <tabstop>db_dietas</tabstop>
+  <tabstop>db_apercibir</tabstop>
+  <tabstop>db_descripcion</tabstop>
+  <tabstop>db_efectospagoautomaticos</tabstop>
+  <tabstop>pbMarcarPagada</tabstop>
+  <tabstop>db_nogenerarasiento</tabstop>
+  <tabstop>co_asientos.co_partidas</tabstop>
+  <tabstop>db_co_asientos_fecha</tabstop>
+  <tabstop>pbGenerarAsiento</tabstop>
+  <tabstop>db_co_asientos_numero</tabstop>
+  <tabstop>db_iddistribucioncostes</tabstop>
+  <tabstop>db_distribucioncostes_nombre</tabstop>
+  <tabstop>pbAgregarMultiplesCentrosCoste</tabstop>
+  <tabstop>db_neto_costes</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

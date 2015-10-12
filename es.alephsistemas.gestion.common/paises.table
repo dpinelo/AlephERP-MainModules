@@ -1,0 +1,89 @@
+<table>
+	<name>paises</name>
+	<!--Listado de países-->
+	<alias>Países</alias>
+	<!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+	<isCached>true</isCached>
+	<initOrderSort>nombre</initOrderSort>
+		
+	<field>
+		<name>codpais</name>
+		<!--Código de país-->
+		<alias>Código</alias>
+		<null>false</null>		
+		<pk>true</pk>
+		<type>string</type>
+		<length>20</length>
+
+		<relation>
+			<table>provincias</table>
+			<field>codpais</field>
+			<card>1M</card>
+		</relation>
+		
+		<relation>
+			<table>sucursales</table>
+			<field>codpais</field>
+			<card>1M</card>
+		</relation>
+
+		<relation>
+			<table>dirclientes</table>
+			<field>codpais</field>
+			<card>1M</card>
+		</relation>
+
+		<relation>
+			<table>dirproveedores</table>
+			<field>codpais</field>
+			<card>1M</card>
+		</relation>
+
+		<relation>
+			<table>almacenes</table>
+			<field>codpais</field>
+			<card>1M</card>
+		</relation>
+
+		<relation>
+			<table>empresa</table>
+			<field>codpais</field>
+			<card>1M</card>
+		</relation>
+		
+		<relation>
+			<table>co_operaciones349</table>
+			<field>codpais</field>
+			<card>1M</card>
+		</relation>
+	</field>
+
+	<field>
+		<name>nombre</name>
+		<alias>Nombre</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>string</type>
+		<length>100</length>
+	</field>
+
+	<field>
+		<name>bandera</name>
+		<!--Gráfico de la bandera-->
+		<alias>Bandera</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>image</type>
+		<visiblegrid>false</visiblegrid>
+	</field>
+	
+	<field>
+		<name>codiso</name>
+		<!--Código ISO-->
+		<alias>Código I.S.O.</alias>
+		<null>true</null>
+		<pk>false</pk>
+		<type>string</type>
+		<length>2</length>
+	</field>
+</table>

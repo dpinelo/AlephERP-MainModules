@@ -1,0 +1,109 @@
+<table>
+    <name>co_cuentasesp</name>
+    <!--Cuentas especiales (Impuestos, redondeo de moneda, saldo en ejercicios anteriores, divisas...). Se utiliza internamente por el código-->    
+    <alias>Cuentas especiales</alias>
+
+    <initOrderSort>descripcion ASC</initOrderSort>
+    
+    <validateScript>
+<![CDATA[
+function validate() {
+    if ( bean.idcuenta == 0 && bean.idsubcuenta == 0 ) {
+        return "Debe escoger o una subcuenta, o una cuenta";
+    }
+    if ( bean.idcuenta > 0 && bean.idsubcuenta > 0 ) {
+        return "Debe escoger o una cuenta, o una subcuenta, pero no ambas a la vez";
+    }
+    return "";
+}
+ ]]>
+    </validateScript>
+    
+    <field>
+        <name>id</name>
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>    
+        <name>codigo</name>
+        <alias>Código interno</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>6</length>    
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>    
+        <name>descripcion</name>
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>255</length>    
+    </field>
+    
+    <field>
+        <name>idejercicio</name>
+        <!-- Código de la cuenta asociada a la cuenta especial -->
+        <alias>Id. Ejercicio</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <dbIndex>true</dbIndex>
+        <relation>
+            <table>ejercicios</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>        
+    </field>
+    
+    <field>
+        <name>idcuenta</name>
+        <!-- Código de la cuenta asociada a la cuenta especial -->
+        <alias>Cuenta por defecto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <dbIndex>true</dbIndex>
+        <relation>
+            <table>co_cuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>        
+       <behaviourOnInlineEdit>
+            <!-- ¿Qué se presenta en esa celda del abstract view cuando no se está editando? -->
+            <viewOnRead>co_cuentas.descripcion</viewOnRead>
+            <!-- ¿Qué se presenta en esa celda del abstract view cuando se está editando? -->
+            <widgetOnEdit>DBChooseRecordButton</widgetOnEdit>
+        </behaviourOnInlineEdit>         
+    </field>
+    
+    <field>
+        <!-- Código de la subcuenta asociada a la cuenta especial -->
+        <name>idsubcuenta</name>
+        <alias>Subcuenta por defecto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <dbIndex>true</dbIndex>
+        <relation>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>        
+       <behaviourOnInlineEdit>
+            <!-- ¿Qué se presenta en esa celda del abstract view cuando no se está editando? -->
+            <viewOnRead>co_subcuentas.descripcion</viewOnRead>
+            <!-- ¿Qué se presenta en esa celda del abstract view cuando se está editando? -->
+            <widgetOnEdit>DBChooseRecordButton</widgetOnEdit>
+        </behaviourOnInlineEdit>                 
+    </field>
+    
+</table>

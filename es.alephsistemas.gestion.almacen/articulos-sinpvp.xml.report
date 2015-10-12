@@ -1,0 +1,84 @@
+<!DOCTYPE openRPTDef>
+<report>
+ <title></title>
+ <name>Prepedido</name>
+ <description></description>
+ <parameter listtype="static" active="true" type="integer" default="15" name="id">
+  <description></description>
+ </parameter>
+ <grid>
+  <snap/>
+  <show/>
+  <x>0.05</x>
+  <y>0.05</y>
+ </grid>
+ <size>
+  <width>243</width>
+  <height>150</height>
+ </size>
+ <portrait/>
+ <topmargin>10</topmargin>
+ <bottommargin>0</bottommargin>
+ <rightmargin>0</rightmargin>
+ <leftmargin>5</leftmargin>
+ <querysource>
+  <name>qry_principal</name>
+  <sql>SELECT *&#xd;
+FROM articulos&#xd;
+WHERE id=&lt;? value("id") ?>&#xd;
+</sql>
+ </querysource>
+ <querysource>
+  <name>qry_empresa</name>
+  <sql>select emp.* from empresas as emp, articulos as f&#xd;
+where f.id=&lt;? value("id") ?> and f.idempresa=emp.id</sql>
+ </querysource>
+ <section>
+  <name>Detalles</name>
+  <detail>
+   <key>
+    <query>qry_principal</query>
+   </key>
+   <height>95</height>
+   <barcode>
+    <rect>
+     <x>-5</x>
+     <y>0</y>
+     <width>235</width>
+     <height>50</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <format>128</format>
+    <maxlength>18</maxlength>
+    <left/>
+    <narrowBarWidth>0.01</narrowBarWidth>
+    <data>
+     <query>qry_principal</query>
+     <column>codbarras</column>
+    </data>
+   </barcode>
+   <field>
+    <rect>
+     <x>0</x>
+     <y>45</y>
+     <width>215</width>
+     <height>35</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>MS Shell Dlg 2</face>
+     <size>10</size>
+     <weight>normal</weight>
+    </font>
+    <left/>
+    <vcenter/>
+    <data>
+     <query>qry_principal</query>
+     <column>codbarras</column>
+    </data>
+   </field>
+  </detail>
+ </section>
+</report>

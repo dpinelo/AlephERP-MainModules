@@ -1,0 +1,70 @@
+<table>
+    <name>co_subgrupos</name>
+    <!--Listado de epígrafes del plan general contable-->
+    <alias>Subgrupos</alias>
+    <!-- Tabla cacheada en memoria para el rendimiento -->
+    <isCached>true</isCached>
+    
+    <toStringExpression>
+        <expression>{codsubgrupo}. {descripcion></expression>    
+    </toStringExpression>
+    
+    <field>
+        <name>id</name>
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>co_cuentas</table>
+            <field>idsubgrupo</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+
+    <field>
+        <name>idgrupo</name>
+        <!-- Identificador del epígrafe padre, del que depende el actual -->
+        <alias>Grupo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>co_grupos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>codsubgrupo</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <!-- Comprobará que el valor de codtercero es único para el un valor específico de idempresa en 
+        este caso. Es decir, podrá existir el registro 0000001 para idempresa=1 y 0000001 para idempresa=2 -->
+        <uniqueOnFilterField>idempresa,idejercicio</uniqueOnFilterField>
+        <type>string</type>
+        <length>2</length>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return bean.co_grupos.father.codgrupo.value;
+}
+]]>
+        </scriptDefaultValue>
+    </field>
+
+    <field>
+        <name>descripcion</name>
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>255</length>
+    </field>
+    
+</table>

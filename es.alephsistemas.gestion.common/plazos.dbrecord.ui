@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>frmBancos</class>
+<widget class="QWidget" name="frmBancos">
+<property name="geometry">
+<rect>
+<x>0</x>
+<y>0</y>
+<width>656</width>
+<height>115</height>
+</rect>
+</property>
+<property name="windowTitle">
+<string>Plazos de pago</string>
+</property>
+<property name="windowIcon">
+<iconset>
+<normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+</property>
+<layout class="QVBoxLayout" name="verticalLayout">
+<property name="margin">
+<number>0</number>
+</property>
+<item>
+<widget class="QGroupBox" name="groupBox">
+<property name="title">
+<string/>
+</property>
+<layout class="QGridLayout" name="gridLayout">
+<item row="1" column="0">
+<widget class="QLabel" name="label">
+<property name="text">
+<string>Dias aplazados*</string>
+</property>
+</widget>
+</item>
+<item row="2" column="0">
+<widget class="QLabel" name="label_2">
+<property name="text">
+<string>% Aplazado*</string>
+</property>
+</widget>
+</item>
+<item row="3" column="0" colspan="2">
+<widget class="DBCheckBox" name="db_cargodiafijomes">
+<property name="text">
+<string>Cargo en un día fijo del mes</string>
+</property>
+<property name="fieldName">
+<string>cargodiafijomes</string>
+</property>
+<property name="dataEditable">
+<bool>true</bool>
+</property>
+</widget>
+</item>
+<item row="3" column="2">
+<widget class="DBNumberEdit" name="db_diames">
+<property name="fieldName">
+<string>diames</string>
+</property>
+<property name="dataEditable">
+<bool>true</bool>
+</property>
+</widget>
+</item>
+<item row="0" column="0">
+<widget class="QLabel" name="lbl_idformapago">
+<property name="text">
+<string>Forma de pago</string>
+</property>
+</widget>
+</item>
+<item row="3" column="3">
+<spacer name="horizontalSpacer">
+<property name="orientation">
+<enum>Qt::Horizontal</enum>
+</property>
+<property name="sizeHint" stdset="0">
+<size>
+<width>40</width>
+<height>20</height>
+</size>
+</property>
+</spacer>
+</item>
+<item row="2" column="1" colspan="3">
+<widget class="DBNumberEdit" name="db_aplazado">
+<property name="fieldName">
+<string>aplazado</string>
+</property>
+<property name="dataEditable">
+<bool>true</bool>
+</property>
+</widget>
+</item>
+<item row="1" column="1" colspan="3">
+<widget class="DBNumberEdit" name="db_dias">
+<property name="fieldName">
+<string>dias</string>
+</property>
+<property name="dataEditable">
+<bool>true</bool>
+</property>
+</widget>
+</item>
+<item row="0" column="1" colspan="3">
+<widget class="DBComboBox" name="db_idformapago">
+<property name="fieldName">
+<string>idformapago</string>
+</property>
+<property name="listColumnName">
+<string>descripcion</string>
+</property>
+<property name="listColumnToSave">
+<string>id</string>
+</property>
+<property name="dataEditable">
+<bool>true</bool>
+</property>
+</widget>
+</item>
+</layout>
+</widget>
+</item>
+</layout>
+</widget>
+<customwidgets>
+<customwidget>
+<class>DBCheckBox</class>
+<extends>QCheckBox</extends>
+<header>widgets/dbcheckbox.h</header>
+</customwidget>
+<customwidget>
+<class>DBComboBox</class>
+<extends>QComboBox</extends>
+<header>widgets/dbcombobox.h</header>
+</customwidget>
+<customwidget>
+<class>DBNumberEdit</class>
+<extends>QLineEdit</extends>
+<header>widgets/dbnumberedit.h</header>
+</customwidget>
+</customwidgets>
+<tabstops>
+<tabstop>db_idformapago</tabstop>
+<tabstop>db_dias</tabstop>
+<tabstop>db_aplazado</tabstop>
+<tabstop>db_cargodiafijomes</tabstop>
+<tabstop>db_diames</tabstop>
+</tabstops>
+<resources>
+<include location="../../../programacion/alepherp/alepherp/src/resources/resources.qrc"/>
+</resources>
+<connections/>
+</ui>
+

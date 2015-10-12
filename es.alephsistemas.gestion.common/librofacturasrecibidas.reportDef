@@ -1,0 +1,13 @@
+<report>
+    <name>librofacturasrecibidas</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Libro de Facturas recibidas</alias>
+    <reportName>librofacturasrecibidas.xml</reportName>
+    <parameterForm>librofacturasrecibidas</parameterForm>
+    <envVarParameterBinding>
+        <binding>
+            <parameter>P_ID_EMPRESA</parameter>
+            <envVar>idempresa</envVar>
+        </binding>
+    </envVarParameterBinding>    
+</report>

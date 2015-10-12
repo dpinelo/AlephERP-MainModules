@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmEmpresas</class>
+ <widget class="QWidget" name="frmEmpresas">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>786</width>
+    <height>453</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Empresas</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblNombre_4">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Nombre</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_nombre</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="DBLineEdit" name="db_nombre">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>nombre</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>General</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0" colspan="2">
+          <widget class="DBChooseRecordButton" name="dbChooseRecordButton">
+           <property name="text">
+            <string>Administrador</string>
+           </property>
+           <property name="fieldName">
+            <string>codadministrador</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" colspan="3">
+          <widget class="DBLineEdit" name="db_codadministrador">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>personas.nombrecompleto</string>
+           </property>
+           <property name="dataEditable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lblNombre_2">
+           <property name="text">
+            <string>C.I.F.</string>
+           </property>
+           <property name="buddy">
+            <cstring>db_cifnif</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" colspan="2">
+          <widget class="DBLineEdit" name="db_cifnif">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>cifnif</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="lblNombre_6">
+           <property name="text">
+            <string>Cód. edi (EAN)</string>
+           </property>
+           <property name="buddy">
+            <cstring>db_cifnif</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="DBLineEdit" name="db_codedi">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>codedi</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lblNombre_7">
+           <property name="text">
+            <string>Dirección</string>
+           </property>
+           <property name="buddy">
+            <cstring>db_direccion</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lblNombre_8">
+           <property name="text">
+            <string>Cod. Postal</string>
+           </property>
+           <property name="buddy">
+            <cstring>db_codpostal</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" colspan="2">
+          <widget class="DBLineEdit" name="db_codpostal">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>codpostal</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLabel" name="lblNombre_9">
+           <property name="text">
+            <string>Ciudad</string>
+           </property>
+           <property name="buddy">
+            <cstring>db_ciudad</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="4">
+          <widget class="DBLineEdit" name="db_ciudad">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>ciudad</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="DBChooseRecordButton" name="dbChooseRecordButton_3">
+           <property name="text">
+            <string>Provincia</string>
+           </property>
+           <property name="fieldName">
+            <string>idprovincia</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1" colspan="2">
+          <widget class="DBLineEdit" name="db_idprovincia">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>provincias.provincia</string>
+           </property>
+           <property name="dataEditable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="DBChooseRecordButton" name="dbChooseRecordButton_2">
+           <property name="text">
+            <string>Pais</string>
+           </property>
+           <property name="fieldName">
+            <string>codpais</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="4">
+          <widget class="DBLineEdit" name="db_codpais">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>paises.nombre</string>
+           </property>
+           <property name="dataEditable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="lblNombre_3">
+           <property name="text">
+            <string>Teléfono</string>
+           </property>
+           <property name="buddy">
+            <cstring>db_telefono</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="2">
+          <widget class="DBLineEdit" name="db_telefono">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>telefono</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3">
+          <widget class="QLabel" name="lblNombre_5">
+           <property name="text">
+            <string>Fax</string>
+           </property>
+           <property name="buddy">
+            <cstring>db_fax</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="4">
+          <widget class="DBLineEdit" name="db_fax">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>fax</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="lblNombre_10">
+           <property name="text">
+            <string>Correo electronico</string>
+           </property>
+           <property name="buddy">
+            <cstring>db_email</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1" colspan="2">
+          <widget class="DBLineEdit" name="db_email">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>email</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="3">
+          <widget class="QLabel" name="lblNombre_11">
+           <property name="text">
+            <string>Web</string>
+           </property>
+           <property name="buddy">
+            <cstring>db_web</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="4">
+          <widget class="DBLineEdit" name="db_web">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="fieldName">
+            <string>web</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" colspan="4">
+          <widget class="DBLineEdit" name="db_direccion">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>direccion</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="5" rowspan="7">
+          <widget class="DBFileUpload" name="dbFileUpload">
+           <property name="fieldName">
+            <string>logo</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+           <property name="groupName">
+            <string>Logo</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Leyenda en documentos (Facturas, Albaranes...)</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="DBLineEdit" name="db_leyendadocumentos">
+            <property name="fieldName">
+             <string>leyendadocumentos</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>98</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Ejercicios Fiscales</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="DBDetailView" name="dbDetailView">
+         <property name="relationName">
+          <string>ejercicios</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Valores por defecto</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="7" column="2">
+        <widget class="DBNumberEdit" name="db_comisionoro">
+         <property name="fieldName">
+          <string>comisionoro</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <widget class="DBLineEdit" name="dbLineEdit_3">
+         <property name="fieldName">
+          <string>idseriefacturaciongastos.seriesfacturacion.descripcion</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="DBCheckBox" name="dbCheckBox">
+         <property name="text">
+          <string>Aplicar recargo de equivalencia</string>
+         </property>
+         <property name="fieldName">
+          <string>recequivalencia</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="DBCheckBox" name="db_empenios">
+         <property name="text">
+          <string>Empresa dedicada a empeños</string>
+         </property>
+         <property name="fieldName">
+          <string>empenios</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Comisión Oro</string>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0">
+        <widget class="DBChooseRecordButton" name="db_idseriefacturacionproformacoberturas">
+         <property name="text">
+          <string>Serie de facturación proforma coberturas</string>
+         </property>
+         <property name="fieldName">
+          <string>idseriefacturacionproformacoberturas</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="DBLineEdit" name="dbLineEdit">
+         <property name="fieldName">
+          <string>idterceroprovgenerico.terceros.nombre</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="DBChooseRecordButton" name="db_idterceroprovgenerico">
+         <property name="text">
+          <string>Proveedor genérico</string>
+         </property>
+         <property name="fieldName">
+          <string>idterceroprovgenerico</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="DBChooseRecordButton" name="db_idterceroclientegenerico">
+         <property name="text">
+          <string>Cliente genérico</string>
+         </property>
+         <property name="fieldName">
+          <string>idterceroclientegenerico</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="DBChooseRecordButton" name="db_idseriefacturaciongastos">
+         <property name="text">
+          <string>Serie de facturación de gastos por defecto</string>
+         </property>
+         <property name="fieldName">
+          <string>idseriefacturaciongastos</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="DBChooseRecordButton" name="db_idseriefacturacionventas">
+         <property name="text">
+          <string>Serie de facturación de ventas por defecto</string>
+         </property>
+         <property name="fieldName">
+          <string>idseriefacturacionventas</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="2">
+        <widget class="DBLineEdit" name="dbLineEdit_4">
+         <property name="fieldName">
+          <string>idseriefacturacionventas.seriesfacturacion.descripcion</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="3">
+        <widget class="DBCheckBox" name="db_contabilidadcostes">
+         <property name="text">
+          <string>Habilitar contabilidad de costes</string>
+         </property>
+         <property name="fieldName">
+          <string>contabilidadcostes</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="DBCheckBox" name="dbCheckBox_2">
+         <property name="text">
+          <string>Contabilidad integrada</string>
+         </property>
+         <property name="fieldName">
+          <string>contintegrada</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="2">
+        <widget class="DBLineEdit" name="dbLineEdit_5">
+         <property name="fieldName">
+          <string>idseriefacturacionproformacoberturas.seriesfacturacion.descripcion</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
+        <widget class="DBLineEdit" name="dbLineEdit_2">
+         <property name="fieldName">
+          <string>idterceroclientegenerico.terceros.nombre</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0">
+        <widget class="DBChooseRecordButton" name="db_idseriefacturaciongastostiendas">
+         <property name="text">
+          <string>Serie de facturación para gastos desde tiendas</string>
+         </property>
+         <property name="fieldName">
+          <string>idseriefacturaciongastostiendas</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="3">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="DBChooseRecordButton" name="dbChooseRecordButton_4">
+           <property name="text">
+            <string>Divisa</string>
+           </property>
+           <property name="fieldName">
+            <string>coddivisa</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="DBLineEdit" name="db_coddivisa">
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>coddivisa</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+           <property name="autoComplete">
+            <set>AlephERP::NoCompletition</set>
+           </property>
+           <property name="autoCompletePopupSize">
+            <size>
+             <width>300</width>
+             <height>200</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="DBLineEdit" name="db_divisa">
+           <property name="whatsThis">
+            <string>Descripción</string>
+           </property>
+           <property name="fieldName">
+            <string>divisas.descripcion</string>
+           </property>
+           <property name="dataEditable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="0" colspan="3">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Prefijo para contadores</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="DBLineEdit" name="db_counter_prefix">
+           <property name="fieldName">
+            <string>counter_prefix</string>
+           </property>
+           <property name="dataEditable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="14" column="2">
+        <widget class="DBLineEdit" name="dbLineEdit_6">
+         <property name="fieldName">
+          <string>idseriefacturaciongastostiendas.seriesfacturacion.descripcion</string>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="0">
+        <widget class="DBChooseRecordButton" name="db_idseriefacturacioncompraoro">
+         <property name="text">
+          <string>Serie de facturación para gastos de compra de oro</string>
+         </property>
+         <property name="fieldName">
+          <string>idseriefacturacioncompraoro</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="2">
+        <widget class="DBLineEdit" name="dbLineEdit_7">
+         <property name="fieldName">
+          <string>idseriefacturacioncompraoro.seriesfacturacion.descripcion</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="DBChooseRecordButton" name="db_idseriefaturacioncoberturas">
+         <property name="text">
+          <string>Serie de facturación coberturas</string>
+         </property>
+         <property name="fieldName">
+          <string>idseriefacturacioncoberturas</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="2">
+        <widget class="DBLineEdit" name="dbLineEdit_8">
+         <property name="fieldName">
+          <string>idseriefacturacioncoberturas.seriesfacturacion.descripcion</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Otros datos</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="DBFileUpload" name="dbFileUpload_2">
+         <property name="fieldName">
+          <string>firmaadministrador</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+         <property name="groupName">
+          <string>Firma del administrador</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>193</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBFileUpload</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbfileupload.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_nombre</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>dbChooseRecordButton</tabstop>
+  <tabstop>db_codadministrador</tabstop>
+  <tabstop>db_cifnif</tabstop>
+  <tabstop>db_codedi</tabstop>
+  <tabstop>db_direccion</tabstop>
+  <tabstop>db_codpostal</tabstop>
+  <tabstop>db_ciudad</tabstop>
+  <tabstop>dbChooseRecordButton_3</tabstop>
+  <tabstop>db_idprovincia</tabstop>
+  <tabstop>dbChooseRecordButton_2</tabstop>
+  <tabstop>db_codpais</tabstop>
+  <tabstop>db_telefono</tabstop>
+  <tabstop>db_fax</tabstop>
+  <tabstop>db_email</tabstop>
+  <tabstop>db_web</tabstop>
+  <tabstop>dbChooseRecordButton_4</tabstop>
+  <tabstop>db_coddivisa</tabstop>
+  <tabstop>db_divisa</tabstop>
+  <tabstop>dbCheckBox</tabstop>
+  <tabstop>dbCheckBox_2</tabstop>
+  <tabstop>db_contabilidadcostes</tabstop>
+  <tabstop>db_counter_prefix</tabstop>
+  <tabstop>db_idterceroprovgenerico</tabstop>
+  <tabstop>dbLineEdit</tabstop>
+  <tabstop>db_idterceroclientegenerico</tabstop>
+  <tabstop>dbLineEdit_2</tabstop>
+  <tabstop>db_idseriefacturaciongastos</tabstop>
+  <tabstop>dbLineEdit_3</tabstop>
+  <tabstop>db_idseriefacturacionventas</tabstop>
+  <tabstop>dbLineEdit_4</tabstop>
+  <tabstop>db_comisionoro</tabstop>
+  <tabstop>db_empenios</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

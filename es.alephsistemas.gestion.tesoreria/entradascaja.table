@@ -1,0 +1,219 @@
+<table>
+    <name>entradascaja</name>
+    <alias>Apuntes/Movimientos de Caja</alias>
+
+    <canHaveRelatedElements>true</canHaveRelatedElements>
+    
+    <toStringExpression>
+        <expression>Entrada caja {cajas.father.nombre} de fecha {fecha} e importe {importe} €</expression>
+    </toStringExpression>    
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <itemsFilterColumn>
+        <itemFilter>
+            <fieldToFilter>idejercicio</fieldToFilter>
+            <relationFieldToShow>nombre</relationFieldToShow>
+            <setFilterValueOnNewRecords>true</setFilterValueOnNewRecords>    		
+        </itemFilter>
+        <itemFilter>
+            <fieldToFilter>idcaja</fieldToFilter>
+            <relationFieldToShow>nombre</relationFieldToShow>
+            <setFilterValueOnNewRecords>true</setFilterValueOnNewRecords>    		
+        </itemFilter>
+    </itemsFilterColumn>
+    
+    <afterSaveScript>
+<![CDATA[
+function afterSave() {
+    AERPScriptCommon.sqlExecute("SELECT calcularsaldoscaja(" + bean.idejercicio.value + ", " + bean.idcaja.value + ");");
+}
+]]>        
+    </afterSaveScript>
+    
+    <field>
+        <name>id</name>
+        <alias>Nº Registro</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <length>255</length>
+        <visiblegrid>true</visiblegrid>
+    </field>
+
+    <field>
+        <name>idempresa</name>
+        <alias>ID. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>        
+        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idejercicio</name>
+        <alias>ID. Ejercicio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idejercicioActual();
+}
+]]>        
+        </script>
+        <relation>
+            <table>ejercicios</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idcaja</name>
+        <alias>Caja</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>cajas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idsubconcepto</name>
+        <alias>SubConcepto de Caja</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>subconceptosmovimientodinerario</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idpartida</name>
+        <alias>Partida contable</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>co_partidas</table>
+            <field>id</field>
+            <card>11</card>
+            <showOnRelatedModels>true</showOnRelatedModels>
+        </relation>
+    </field>
+    
+    <field>
+        <name>fecha</name>
+        <alias>Fecha</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>date</type>
+        <default></default>
+        <visiblegrid>true</visiblegrid>
+        <default>now</default>
+    </field>
+    
+    <field>
+        <name>tipo</name>
+        <alias>Tipo Movimiento</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>Entrada,Salida</optionList>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+            
+    <field>
+        <name>saldoinicial</name>
+        <alias>Saldo Inicial</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>true</visiblegrid>
+    </field>
+    
+    <field>
+        <name>importe</name>
+        <alias>Importe</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>true</visiblegrid>
+    </field>
+    
+    <field>
+        <name>saldofinal</name>
+        <alias>Saldo Final</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>true</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <builtInExpression>
+            <expression>saldoinicial + importe</expression>
+        </builtInExpression>
+    </field>
+    
+    <field>
+        <name>descripcion</name>
+        <alias>Descripcion</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>true</visiblegrid>
+    </field> 
+
+    <field>
+        <name>observaciones</name>
+        <alias>Descripcion</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <visiblegrid>false</visiblegrid>
+    </field> 
+            
+</table>

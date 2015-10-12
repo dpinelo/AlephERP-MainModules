@@ -1,0 +1,12 @@
+<report>
+    <name>albaranesmovimientosarticulos</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Movimientos de artículos registrados en albaranes</alias>
+    <reportName>albaranesmovimientosarticulos.xml</reportName>
+    <envVarParameterBinding>
+        <binding>
+            <parameter>P_ID_EMPRESA</parameter>
+            <envVar>idempresa</envVar>
+        </binding>
+    </envVarParameterBinding>
+</report>

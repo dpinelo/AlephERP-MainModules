@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmEjercicios</class>
+ <widget class="QWidget" name="frmEjercicios">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1042</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ejercicios Fiscales</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="2" column="1">
+      <widget class="DBDateTimeEdit" name="db_inicio">
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
+       </property>
+       <property name="fieldName">
+        <string>fechainicio</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lblNombre_4">
+       <property name="text">
+        <string>Nombre</string>
+       </property>
+       <property name="buddy">
+        <cstring>db_nombre</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="7">
+      <widget class="DBLineEdit" name="db_nombre">
+       <property name="whatsThis">
+        <string>Descripción</string>
+       </property>
+       <property name="fieldName">
+        <string>nombre</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="lblNombre_15">
+       <property name="text">
+        <string>Estado</string>
+       </property>
+       <property name="buddy">
+        <cstring>db_estado</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="DBComboBox" name="db_estado">
+       <property name="fieldName">
+        <string>estado</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="lblNombre">
+       <property name="text">
+        <string>&amp;Código</string>
+       </property>
+       <property name="buddy">
+        <cstring>db_codejercicio</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="2">
+      <widget class="DBLineEdit" name="db_codejercicio">
+       <property name="fieldName">
+        <string>codejercicio</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="lblNombre_13">
+       <property name="text">
+        <string>Inicio</string>
+       </property>
+       <property name="buddy">
+        <cstring>db_inicio</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="7">
+      <widget class="QPushButton" name="pb_copiarejercicio">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Copiar Ejercicio Fiscal Anterior</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="5" colspan="3">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>138</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="lblNombre_12">
+       <property name="text">
+        <string>Plan Contable</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>db_plancontable</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4" colspan="3">
+      <widget class="DBComboBox" name="db_plancontable">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="fieldName">
+        <string>plancontable</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="4">
+      <widget class="DBDateTimeEdit" name="db_inicio_2">
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
+       </property>
+       <property name="fieldName">
+        <string>fechafin</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="4">
+      <widget class="DBLineEdit" name="db_counter_prefix">
+       <property name="fieldName">
+        <string>counter_prefix</string>
+       </property>
+       <property name="dataEditable">
+        <bool>true</bool>
+       </property>
+       <property name="automaticWidthBasedOnFieldMaxLength">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2" colspan="2">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Prefijo para contadores</string>
+       </property>
+       <property name="buddy">
+        <cstring>db_counter_prefix</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2" colspan="2">
+      <widget class="QLabel" name="lblNombre_14">
+       <property name="text">
+        <string>Fin</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>db_inicio_2</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="5" colspan="3">
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>68</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabSeriesFacturacion">
+      <attribute name="title">
+       <string>Series de facturación</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="DBDetailView" name="dbDetailView">
+         <property name="relationName">
+          <string>seriesfacturacion</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabAsientos">
+      <attribute name="title">
+       <string>Configuración de Contabilidad</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="3" column="2" colspan="2">
+        <widget class="DBLineEdit" name="db_codpostal_4">
+         <property name="whatsThis">
+          <string>Descripción</string>
+         </property>
+         <property name="fieldName">
+          <string>idasientoapertura</string>
+         </property>
+         <property name="dataEditable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="7">
+        <widget class="QPushButton" name="pb_generarejercicio">
+         <property name="text">
+          <string>Generar Estructura Plan General Contable</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0" colspan="7">
+        <widget class="DBTableView" name="co_cuentasesp">
+         <property name="internalData">
+          <bool>true</bool>
+         </property>
+         <property name="relationName">
+          <string>co_cuentasesp</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="DBChooseRecordButton" name="dbcrb_asientopyg">
+         <property name="text">
+          <string>Asiento de regularización</string>
+         </property>
+         <property name="fieldName">
+          <string>idasientopyg</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="6">
+        <spacer name="horizontalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="4">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Ejemplo de código de subcuenta</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QLineEdit" name="leEjemploSubcuenta">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:#cccccc;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4" colspan="3">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>280</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="4" colspan="3">
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>280</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="4" colspan="3">
+        <spacer name="horizontalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>280</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="DBChooseRecordButton" name="dbcbr_idasientocierre">
+         <property name="text">
+          <string>Asiento de cierre</string>
+         </property>
+         <property name="fieldName">
+          <string>idasientocierre</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="DBChooseRecordButton" name="dbcrb_asientoapertura">
+         <property name="text">
+          <string>Asiento de apertura</string>
+         </property>
+         <property name="fieldName">
+          <string>idasientoapertura</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2" colspan="2">
+        <widget class="DBLineEdit" name="db_codpostal_7">
+         <property name="whatsThis">
+          <string>Descripción</string>
+         </property>
+         <property name="fieldName">
+          <string>idasientoapertura</string>
+         </property>
+         <property name="dataEditable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblNombre_16">
+         <property name="text">
+          <string>Digitos para completar subcuenta</string>
+         </property>
+         <property name="buddy">
+          <cstring>db_longsubcuenta</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2" colspan="2">
+        <widget class="DBNumberEdit" name="db_longsubcuenta">
+         <property name="fieldName">
+          <string>longsubcuenta</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2" colspan="2">
+        <widget class="DBLineEdit" name="db_codpostal_6">
+         <property name="whatsThis">
+          <string>Descripción</string>
+         </property>
+         <property name="fieldName">
+          <string>idasientopyg</string>
+         </property>
+         <property name="dataEditable">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="7">
+        <widget class="DBCheckBox" name="db_partidasivaenexencion">
+         <property name="whatsThis">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Algunos programas de contabilidad a los que AlephERP puede exportar, requieren que aquellas facturas exentas de IVA, generen asientos contables con partidas compensadas en las cuentas 472 y 477. La razón es que utilizan esas partidas para conocer qué facturas irán en los libros de facturas recibidas o emitidas que es necesario rellenar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="text">
+          <string>Las facturas Exentas de I.V.A. generan partidas contables compensadas en las cuentas 472 y 477</string>
+         </property>
+         <property name="fieldName">
+          <string>partidasivaenexencion</string>
+         </property>
+         <property name="dataEditable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+  <zorder>tabWidget</zorder>
+  <zorder></zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBComboBox</class>
+   <extends>QComboBox</extends>
+   <header>widgets/dbcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>widgets/dbdatetimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTableView</class>
+   <extends>QTableView</extends>
+   <header>widgets/dbtableview.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codejercicio</tabstop>
+  <tabstop>db_plancontable</tabstop>
+  <tabstop>pb_copiarejercicio</tabstop>
+  <tabstop>db_nombre</tabstop>
+  <tabstop>db_inicio</tabstop>
+  <tabstop>db_inicio_2</tabstop>
+  <tabstop>db_estado</tabstop>
+  <tabstop>db_counter_prefix</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>db_codpostal_7</tabstop>
+  <tabstop>dbcrb_asientoapertura</tabstop>
+  <tabstop>db_codpostal_6</tabstop>
+  <tabstop>dbcbr_idasientocierre</tabstop>
+  <tabstop>dbcrb_asientopyg</tabstop>
+  <tabstop>db_partidasivaenexencion</tabstop>
+  <tabstop>db_codpostal_4</tabstop>
+  <tabstop>co_cuentasesp</tabstop>
+  <tabstop>pb_generarejercicio</tabstop>
+  <tabstop>db_longsubcuenta</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

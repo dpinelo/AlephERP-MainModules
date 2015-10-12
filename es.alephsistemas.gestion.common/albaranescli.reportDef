@@ -1,0 +1,13 @@
+<report>
+    <name>albaranescli</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Albaranes emitidas</alias>
+    <reportName>albaranescli.xml</reportName>
+    <linkedTo>albaranescli,tvw_albaranescli</linkedTo>
+    <parameterBinding>
+        <binding>
+            <parameter>id</parameter>
+            <field>id</field>
+        </binding>
+    </parameterBinding>
+</report>

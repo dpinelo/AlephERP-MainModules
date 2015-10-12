@@ -1,0 +1,117 @@
+<table> 
+    <name>tvw_periodosimpuestos</name>
+    <!--Listado de periodos para un impuesto-->
+    <alias>Periodos</alias>
+    <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+    <isCached>true</isCached>
+    <creationSqlView>
+CREATE VIEW tvw_periodosimpuestos AS 
+SELECT per.id, per.idimpuesto, imp.codimpuesto, imp.nombre, per.fechadesde, per.fechahasta, per.iva, per.recargo, imp.idempresa
+FROM periodosimpuestos per, impuestos imp
+WHERE per.idimpuesto = imp.id
+ORDER BY imp.nombre;
+    </creationSqlView>
+        
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+        
+    <field>
+        <name>id</name>
+        <!--Identificador interno de la tabla-->
+        <alias>Id</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idimpuesto</name>
+        <!--Código del impuesto-->
+        <alias>Impuesto</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>impuestos</table>
+            <field>id</field>
+            <card>M1</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+
+    <field>
+        <name>idempresa</name>
+        <!--Código del impuesto-->
+        <alias>Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+            
+    <field>
+        <name>codimpuesto</name>
+        <alias>Referencia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+    </field>
+
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>fechadesde</name>
+        <alias>Desde</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>date</type>
+    </field>
+
+    <field>
+        <name>fechahasta</name>
+        <alias>Hasta</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>date</type>
+    </field>
+
+    <field>
+        <name>iva</name>
+        <alias>% I.V.A.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+    </field>
+
+    <field>
+        <name>recargo</name>
+        <alias>% Rec. equivalencia</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+    </field>
+</table>
+

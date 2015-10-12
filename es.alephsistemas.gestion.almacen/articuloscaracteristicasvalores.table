@@ -1,0 +1,84 @@
+<table>
+    <name>articuloscaracteristicasvalores</name>
+    <!-- Valores de las caracteristicas de articulos-->
+    <alias>Características de artículos</alias>
+
+    <field>
+        <name>id</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idcaracteristica</name>
+        <alias>Id. Caracteristica</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>integer</type>
+        <visiblegrid>false</visiblegrid>
+        <onChangeScript>
+<![CDATA[
+function onChange() {
+    bean.caracteristica.value = bean.articuloscaracteristicasdefiniciones.father.nombre.value;
+}
+]]>    
+        </onChangeScript>
+        <relation>
+            <table>articuloscaracteristicasdefiniciones</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idarticulo</name>
+        <alias>Id. Articulo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>integer</type>
+        <visiblegrid>false</visiblegrid>
+        
+        <relation>
+            <table>articulos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idinstancia</name>
+        <alias>Id. Instancia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>integer</type>
+        <visiblegrid>false</visiblegrid>
+        
+        <relation>
+            <table>articulosinstancias</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>caracteristica</name>
+        <alias>Característica</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+    
+    <field>
+        <name>valor</name>
+        <alias>Valor</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+    
+</table>

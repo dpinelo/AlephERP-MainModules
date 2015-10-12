@@ -1,0 +1,36 @@
+<table>
+    <name>unidadesmedida</name>
+    <!--Unidades de medida-->
+    <alias>Unidades de medida</alias>
+	<!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+	<isCached>true</isCached>
+	<initOrderSort>nombre</initOrderSort>
+    
+    <field>
+        <name>codunidadmedida</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>string</type>
+        <length>6</length>
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+    </field>
+
+    <field>
+    	<name>acronimo</name>
+	    <alias>Nombre</alias>
+	    <null>true</null>
+	    <pk>false</pk>
+	    <type>string</type>
+	    <length>20</length>
+    </field>
+    
+ </table>

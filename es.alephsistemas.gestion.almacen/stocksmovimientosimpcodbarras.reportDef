@@ -1,0 +1,13 @@
+<report>
+    <name>stocksmovimientosimpcodbarras</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Impresión de códigos de barras de artículos presentes en el movimiento de stock</alias>
+    <reportName>stocksmovimientosimpcodbarras.xml</reportName>
+    <linkedTo>stocksmovimientos</linkedTo>
+    <parameterBinding>
+        <binding>
+            <parameter>id</parameter>
+            <field>id</field>
+        </binding>
+    </parameterBinding>
+</report>

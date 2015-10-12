@@ -1,0 +1,217 @@
+<table>
+    <name>albaranesprov</name>
+    <!--Albaranes de proveedor-->
+    <alias>Albaranes Recibidos</alias>
+    <!-- Las funciones QS definidas en este script, estárán disponibles como propiedades dentro de un objeto que
+        representa a un registro de este tipo -->
+    <associatedScript debug="true">documentosgestioncommonfunctions.qs</associatedScript>
+    <associatedScript debug="true">almacencommonfunctions.qs</associatedScript>
+    
+   <menuEntryPath>Compras</menuEntryPath>
+   <moduleToolBarEntryPath>Compras</moduleToolBarEntryPath>
+    
+    <metadataVar name="coddocumento">codalbaran</metadataVar>
+    
+    <canHaveRelatedElements>true</canHaveRelatedElements>
+    <relatedElementsContentToBeDelete>
+        <item>
+            <tableName>stocksmovimientos</tableName>
+            <category>*</category>
+            <cardinality>child</cardinality>
+            <type>record</type>
+        </item>
+    </relatedElementsContentToBeDelete>
+    
+    <connections>
+        <connection>
+            <sender>bean</sender>
+            <action>
+                <signal>beforeInsert</signal>
+                <slot>aerpGenerarEntradaStock</slot>
+            </action>
+        </connection>
+        <connection>
+            <sender>bean</sender>
+            <action>
+                <signal>beforeDelete</signal>
+                <slot>aerpBorrarEntradaStock</slot>
+            </action>
+        </connection>
+    </connections>
+    
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+  
+    <repositoryPathScript>
+<![CDATA[
+function repositoryPath() {
+    var path = "/Administración/Albaranes Recibidos/" + bean.fecha.year;
+    if ( bean.fecha.month < 10 ) {
+        path = path + "/0" + bean.fecha.month;
+    } else {
+        path = path + "/" + bean.fecha.month;
+    }
+    return path;
+}
+]]>
+    </repositoryPathScript>
+
+    <repositoryKeywordsScript>
+<![CDATA[
+function repositoryKeywords() {
+    var keywords = "Albaranes Recibidos;Gastos";
+    keywords = keywords + ";" + bean.fecha.year;
+    return keywords;
+}
+]]>
+    </repositoryKeywordsScript>
+
+    <inherits name="documentosgestion">
+        <element type="connections"/>
+        <element>beforeDeleteScript</element>
+        <element>newRelatedElementScript</element>
+        <element>deleteRelatedElementScript</element>
+    </inherits>
+
+    <toStringExpression>
+        <expression>Albarán recibido nº interno {codalbaran} y nº de tercero {numproveedor} de fecha {fecha}</expression>
+    </toStringExpression>
+                           
+    <itemsFilterColumn>
+        <itemFilter>
+            <fieldToFilter>idejercicio</fieldToFilter>
+            <relationFieldToShow>nombre</relationFieldToShow>
+        </itemFilter>
+    </itemsFilterColumn>
+         
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>lineasarticulosalbaranesprov</table>
+            <field>idalbaran</field>
+            <card>1M</card>
+            <delC>true</delC>
+            <includeOnCopy>true</includeOnCopy>
+            <showOnRelatedModels>true</showOnRelatedModels>
+        </relation>
+        <relation>
+            <table>lineasserviciosalbaranesprov</table>
+            <field>idalbaran</field>
+            <card>1M</card>
+            <delC>true</delC>
+            <includeOnCopy>true</includeOnCopy>
+            <showOnRelatedModels>true</showOnRelatedModels>
+        </relation>
+        <relation>
+            <table>lineasivaalbaranesprov</table>
+            <field>idalbaran</field>
+            <card>1M</card>
+            <delC>true</delC>
+            <includeOnCopy>true</includeOnCopy>
+        </relation>
+        <relation>
+            <table>albaranesprov</table>
+            <field>idalbaranrect</field>
+            <card>1M</card>
+        </relation>
+    </field>
+   
+    <inherits name="documentosgestion">
+        <element type="field">idempresa</element>
+        <element type="field">idejercicio</element>
+    </inherits>
+   
+    <field>
+        <name>codalbaran</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>18</length>
+        <default>0</default>
+        <uniqueOnFilterField>idempresa,idejercicio</uniqueOnFilterField>
+        <!-- Definimos la lógica de generación del contador del tercero. Se podrán anticipar
+        una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 
+        aparecen en dependsOnField. Si alguno de estos campos tiene una relación M1, como el 
+        caso de idempresa->empresas, el valor que se utilizará será el del field de empresas
+        definido en prefixOnRelation: es decir, para el caso de idempresa, el sistema se irá
+        a la relación empresas, al "padre" o empresa, y cogerá el valor definido en el field
+        counter_prefix. 
+        Finalmente, puede determinarse si el usuario puede modificar este contador, con userCanModify
+        y además, especificar si entre los diferentes prefijos y el número aparece algún separador,
+        con separator. -->
+        <counter>
+            <expression>ALB/{empresas.father.counter_prefix}/{ejercicios.father.counter_prefix}/{value.trailingZeros}</expression>
+            <userCanModify>false</userCanModify>
+            <calculateOnlyOnInsert>true</calculateOnlyOnInsert>
+        </counter> 
+    </field>
+
+    <field>
+        <name>numproveedor</name>
+        <!--Número que el proveedor asigna al albarán-->        
+        <alias>Número Albarán Proveedor</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+    </field>
+            
+   <inherits name="documentosgestion">
+      <element type="field">idalmacen</element>
+      <element type="field">fecha</element>
+      <element type="field">nombre</element>
+      <element type="field">cifnif</element>
+      <element type="field">idtercero</element>                     
+      <element type="field">iddirtercero</element>                     
+      <element type="field">nombredirtercero</element>                     
+      <element type="field">direccion</element>                     
+      <element type="field">codpostal</element>                     
+      <element type="field">ciudad</element>                     
+      <element type="field">provincia</element>                     
+      <element type="field">codpais</element>                     
+      <element type="field">observaciones</element>                     
+      <element type="field">neto</element>                     
+      <element type="field">totaliva</element>                     
+      <element type="field">totalirpf</element>                     
+      <element type="field">totalrecargo</element>                     
+      <element type="field">total</element>                     
+      <element type="field">totaldivisaempresa</element>                     
+      <element type="field">coddivisa</element>                     
+      <element type="field">tasaconv</element>       
+      <element type="field">deabono</element>       
+      <element type="field">deposito</element>       
+   </inherits>
+
+    <field>
+        <name>idalbaranrect</name>
+        <!--Identificador de la factura a la que rectifica-->        
+        <alias></alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>albaranesprov</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+   
+</table>

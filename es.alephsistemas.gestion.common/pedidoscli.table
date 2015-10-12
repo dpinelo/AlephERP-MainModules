@@ -1,0 +1,195 @@
+<table>
+    <name>pedidoscli</name>
+    <!--Pedidos de clientes-->
+    <alias>Pedidos de clientes</alias>
+
+    <inherits name="documentosgestion">
+        <element>envVars</element>
+    </inherits>
+    
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>lineasarticulospedidoscli</table>
+            <field>idpedido</field>
+            <card>1M</card>
+        </relation>
+        <relation>
+        	<table>lineasserviciospedidoscli</table>
+        	<field>idpedido</field>
+        	<card>1M</card>
+        </relation>
+        <relation>
+            <table>odt</table>
+            <field>idpedido</field>
+            <card>1M</card>
+        </relation>
+        <relation>
+        	<table>lineasivapedidoscli</table>
+        	<field>idpedido</field>
+        	<card>1M</card>
+        </relation>        	        
+    </field>
+
+    <inherits name="documentosgestion">
+        <element type="field">idempresa</element>
+        <element type="field">idejercicio</element>
+        <element type="field">idserie</element>
+        <element type="field">idplanpago</element>
+        <element type="field">coddivisa</element>
+    </inherits>
+    
+    <field>
+        <name>codpedido</name>
+        <alias>Nº Pedido</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>18</length>
+        <default>0</default>
+        <!-- Este campo, mostrado en un grid, se presenta como un enlace que abre el formulario de edición del registro -->
+        <link linkOpenReadOnly="false">true</link>
+        <!-- Definimos la lógica de generación del contador del tercero. Se podrán anticipar
+        una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 
+        aparecen en dependsOnField. Si alguno de estos campos tiene una relación M1, como el 
+        caso de idempresa->empresas, el valor que se utilizará será el del field de empresas
+        definido en prefixOnRelation: es decir, para el caso de idempresa, el sistema se irá
+        a la relación empresas, al "padre" o empresa, y cogerá el valor definido en el field
+        counter_prefix. 
+        Finalmente, puede determinarse si el usuario puede modificar este contador, con userCanModify
+        y además, especificar si entre los diferentes prefijos y el número aparece algún separador,
+        con separator. -->
+        <counter>
+            <fixedString>PED</fixedString>
+            <dependsOnField prefixOnRelation="counter_prefix">idempresa</dependsOnField>
+            <dependsOnField prefixOnRelation="counter_prefix">idejercicio</dependsOnField>
+            <userCanModify>false</userCanModify>
+            <calculateOnlyOnInsert>true</calculateOnlyOnInsert>
+            <separator>/</separator>
+        </counter>
+    </field>
+
+    <field>
+    	<name>reftercero</name>
+    	<!--Referencia que el cliente da a su pedido-->
+    	<alias>Referencia Cliente</alias>
+    	<null>true</null>
+    	<pk>false</pk>
+    	<type>string</type>
+    	<length>100</length>
+    </field>
+    	    
+    <field>
+        <name>servido</name>
+        <alias>Servido</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+        <optionList>Completo,Parcial,No</optionList>
+        <default>No</default>
+    </field>
+
+	<inherits name="documentosgestion">
+	    <element type="field">fecha</element>
+	</inherits>
+
+    <field>
+        <name>fechasalida</name>
+        <!--Fecha prevista de envío del pedido-->
+        <alias>F. Salida</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+		<scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+	return new Date();
+}
+]]>		
+		</scriptDefaultValue>
+    </field>
+
+	<inherits name="documentosgestion">
+	    <element type="field">idtercero</element>
+	    <element type="field">iddirtercero</element>
+	    <element type="field">nombre</element>
+	    <element type="field">cifnif</element>
+	    <element type="field">nombredirtercero</element>
+	    <element type="field">direccion</element>
+	    <element type="field">codpostal</element>
+	    <element type="field">ciudad</element>
+	    <element type="field">provincia</element>
+	    <element type="field">codpais</element>
+	    <element type="field">observaciones</element>
+	    <element type="field">neto</element>
+	    <element type="field">totaliva</element>
+	    <element type="field">totalirpf</element>
+	    <element type="field">totalrecargo</element>
+	    <element type="field">total</element>
+	    <element type="field">totaldivisaempresa</element>
+	    <element type="field">tipooperacion</element>
+	    <element type="field">tasaconv</element> 	    	    	    	    	    	    
+	</inherits>
+   
+    <field>
+        <name>idpresupuesto</name>
+        <!--Identificador del presupuesto del que proviene el pedido-->
+        <alias>Presupuesto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <default>0</default>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>presupuestos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>recfinanciero</name>
+        <alias>R. Financiero</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+        
+    <field>
+        <name>idagente</name>
+        <alias>Agente</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>agentescomerciales</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idalmacen</name>
+        <alias>Almacén</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>almacenes</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+</table>

@@ -1,0 +1,600 @@
+<table>
+    <name>terceros</name>
+    <!--Listado de datos de Terceros: Clientes, proveedores, acreedores...-->
+    <alias>Terceros</alias>
+    <allowLocalWork>true</allowLocalWork>
+    
+   <canHaveRelatedElements>true</canHaveRelatedElements>
+   
+    <!-- Estas opciones harán que en el formulario con el listado de ejercicios, aparezca un combo box
+    que permitirá visualizar los ejercicios por empresa creada en el sistema. -->
+    <itemsFilterColumn>
+        <!-- Se pueden añadir tantos items "itemFilter" como se quieran. Estos pueden referirse a
+        campos de esta tabla que tienen una relación M1 asignada, o que tienen definido un optionList -->
+        <itemFilter>
+            <fieldToFilter>cliente</fieldToFilter>
+            <setFilterValueOnNewRecords>true</setFilterValueOnNewRecords>
+        </itemFilter>
+        <itemFilter>
+            <fieldToFilter>proveedor</fieldToFilter>
+            <setFilterValueOnNewRecords>true</setFilterValueOnNewRecords>
+        </itemFilter>
+        <itemFilter>
+            <fieldToFilter>otro</fieldToFilter>
+            <setFilterValueOnNewRecords>true</setFilterValueOnNewRecords>
+        </itemFilter>
+        <itemFilter>
+            <fieldToFilter>acreedor</fieldToFilter>
+            <setFilterValueOnNewRecords>true</setFilterValueOnNewRecords>
+        </itemFilter>
+    </itemsFilterColumn> 
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <toStringExpression>
+        <expression>{tipo}: {nombrecomercial}</expression>
+    </toStringExpression>
+    
+    <field>
+        <name>id</name>
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>dirterceros</table>
+            <field>idtercero</field>
+            <card>1M</card>
+        </relation>
+
+        <relation>
+            <table>contactos</table>
+            <field>idtercero</field>
+            <card>1M</card>
+        </relation>
+            
+        <relation>
+            <table>cuentasbcoterceros</table>
+            <field>idtercero</field>
+            <card>1M</card>
+        </relation>
+
+        <relation>
+            <table>facturasprov</table>
+            <field>idtercero</field>
+            <card>1M</card>
+        </relation>
+
+        <relation>
+            <table>tercerosinfoadicional</table>
+            <field>idtercero</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>
+        
+    </field>
+    
+    <field>
+        <name>codtercero</name>
+        <!--Código identificativo del tercero-->
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>14</length>
+        <!-- Comprobará que el valor de codtercero es único para el un valor específico de idempresa en 
+        este caso. Es decir, podrá existir el registro 0000001 para idempresa=1 y 0000001 para idempresa=2 -->
+        <uniqueOnFilterField>idempresa</uniqueOnFilterField>
+        <!-- Definimos la lógica de generación del contador del tercero. Se podrán anticipar
+        una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 
+        aparecen en dependsOnField. Si alguno de estos campos tiene una relación M1, como el 
+        caso de idempresa->empresas, el valor que se utilizará será el del field de empresas
+        definido en prefixOnRelation: es decir, para el caso de idempresa, el sistema se irá
+        a la relación empresas, al "padre" o empresa, y cogerá el valor definido en el field
+        counter_prefix. 
+        Finalmente, puede determinarse si el usuario puede modificar este contador, con userCanModify
+        y además, especificar si entre los diferentes prefijos y el número aparece algún separador,
+        con separator. -->
+        <counter>
+            <calculateOnlyOnInsert>true</calculateOnlyOnInsert>
+            <dependsOnField prefixOnRelation="counter_prefix">idempresa</dependsOnField>
+            <dependsOnField prefixOnRelation="">tipo</dependsOnField>
+            <userCanModify>false</userCanModify>
+            <separator></separator>
+        </counter>
+    </field>
+
+    <field>
+        <name>idempresa</name>
+        <alias>Cod. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>
+        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>cliente</name>
+        <alias>Cliente</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>proveedor</name>
+        <alias>Proveedor</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+    
+    <field>
+        <name>acreedor</name>
+        <alias>Otro</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+    
+    <field>
+        <name>otro</name>
+        <alias>Prospecto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <!-- Se permiten que haya terceros sin NIF -->
+    <field>
+        <name>cifnif</name>
+        <alias>C.I.F./N.I.F</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>12</length>
+    </field>
+
+    <field>
+        <name>nombrecomercial</name>
+        <alias>Nombre comercial</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>idgrupo</name>
+        <!--Si el cliente pertenece a un grupo, el código del mismo-->
+        <alias>Grupo de Terceros</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        
+        <relation>
+            <table>gruposterceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>observaciones</name>
+        <alias>Observaciones</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idplanpago</name>
+        <alias>Forma de pago</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        
+        <relation>
+            <table>planespago</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>coddivisa</name>
+        <!--Si el cliente es extranjero, la divisa en que trabaja-->
+        <alias>Divisa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+        <visiblegrid>false</visiblegrid>
+        
+        <relation>
+            <table>divisas</table>
+            <field>coddivisa</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idserie</name>
+        <!--Serie de facturación asociada a cliente-->
+        <alias>Serie de facturación</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        
+        <relation>
+            <table>seriesfacturacion</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>regimeniva</name>
+        <alias>Régimen I.V.A.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>20</length>
+        <optionList>General,Exportaciones,U.E.,Exento</optionList>
+        <default>General</default>
+    </field>
+
+    <field>
+        <name>recargo</name>
+        <alias>Aplicar recargo de equivalencia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>ivaincluido</name>
+        <alias>Facturar con I.V.A. incluido</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>telefono1</name>
+        <alias>Teléfono 1</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>30</length>
+    </field>
+    
+    <field>
+        <name>telefono2</name>
+        <alias>Teléfono 2</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>30</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>fax</name>
+        <alias>Fax</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>30</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>email</name>
+        <alias>E-mail</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+    
+    <field>
+        <name>web</name>
+        <alias>Web</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+    
+    <field>
+        <name>codedi</name>
+        <alias>Código edi (EAN)</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>17</length>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+
+    <field>
+        <name>idsubcuentacliente</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>ID</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>co_subcuentas</table>
+            <name>co_subcuentascliente</name>
+            <field>id</field>
+            <card>M1</card>
+            <checkIn>false</checkIn>
+        </relation>
+    </field>
+
+    <field>
+        <name>idsubcuentaproveedor</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>ID</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>co_subcuentas</table>
+            <name>co_subcuentasproveedor</name>
+            <field>id</field>
+            <card>M1</card>
+            <checkIn>false</checkIn>
+        </relation>
+    </field>
+    
+    <field>
+        <name>debaja</name>
+        <!-- Indica si el cliente está de baja -->        
+        <alias>De baja</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+        <visiblegrid>false</visiblegrid>        
+    </field>
+    
+    <field>
+        <name>fechabaja</name>
+        <!-- Fecha de baja -->        
+        <alias>Fecha de baja</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>date</type>
+        <default>null</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>codcuentarem</name>
+        <!--Código de cuenta corriente en la que se remesan los recibos del cliente-->
+        <alias>Remesar en</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>6</length>
+        <visiblegrid>false</visiblegrid>
+                
+        <relation>
+            <table>cuentasbanco</table>
+            <field>codcuenta</field>
+            <card>M1</card>
+        </relation>
+    </field>
+            
+    <field>
+        <name>codcuentadom</name>
+        <!--Código de cuenta corriente en la que se domicilain los recibos del cliente-->
+        <alias>Domiciliar en</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>6</length>
+        <visiblegrid>false</visiblegrid>
+                        
+        <relation>
+            <table>cuentasbanco</table>
+            <field>codcuenta</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>riesgomax</name>
+        <!--Cantidad máxima que el tercero podrá adeudar a la empresa-->
+        <alias>Riesgo máximo autorizado</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>riesgoalcanzado</name>
+        <!--Cantidad máxima que el cliente ha adeudado a la empresa-->
+        <alias>Riesgo alcanzado</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>capitalimpagado</name>
+        <!--Cantidad impagada por el cliente a la empresa-->
+        <alias>Capital impagado</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idagente</name>
+        <!--Código del agente comercial asignado al cliente-->
+        <alias>Agente comercial</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>agentescomerciales</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>riesgoasegurado</name>
+        <!--Cantidad máxima que el cliente adeuda a la empresa cubierta por el seguro de ventas-->
+        <alias>Riesgo asegurado</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>ventas_aseguradas</name>
+        <!--Indica si el tercero tiene o no aseguradas las ventas-->
+        <alias>Ventas aseguradas</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <optionslist>Aseguradas,NO aseguradas,Organismo Público,Particular,Sin clasificación solicitada</optionslist>
+        <default>Sin clasificación solicitada</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>resumen_direccion_principal</name>
+        <alias>Resumen Dirección principal</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <calculated>true</calculated>
+        <visiblegrid>false</visiblegrid>
+        <script>
+<![CDATA[
+function value() {
+    // Obtenemos el hijo marcado como dirección principal
+    var direccion = bean.relationChildByField("dirterceros", "domfacturacion", true);
+    var html = "";
+    if ( direccion != undefined && direccion != null ) {
+        if ( direccion.fieldValue("descripcion") != undefined ) {
+            html = "<strong>" + direccion.fieldValue("descripcion") + "</strong><br/>";
+        }
+        if ( direccion.fieldValue("direccion") != undefined ) {
+            html = html + direccion.fieldValue("direccion") + "<br/>";
+        }
+        if ( direccion.fieldValue("codpostal") != undefined ) {
+            html = html + direccion.fieldValue("codpostal") + " - ";
+        }
+        if ( direccion.fieldValue("poblacion") != undefined ) {
+            html = html + direccion.fieldValue("poblacion") + "<br/>";
+        }
+        if ( direccion.fatherFieldValue("provincias", "provincia") != undefined ) {
+            html = html + direccion.fatherFieldValue("provincias", "provincia");
+        }
+        if ( direccion.fatherFieldValue("paises", "nombre") != undefined ) {
+            html = html + " (" + direccion.fatherFieldValue("paises", "nombre") + ")";
+        }
+    }
+    return html;
+}
+]]>
+        </script>
+    </field>
+    
+    <field>
+        <name>resumen_contacto_principal</name>
+        <!--Código del contacto principal-->
+        <alias>Resumen Contacto principal</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+        <calculated>true</calculated>
+        <visiblegrid>false</visiblegrid>
+        <script>
+<![CDATA[
+function value() {
+    // Obtenemos el hijo marcado como dirección principal
+    var contacto = bean.relationChildByField("contactos", "principal", true);
+    var html = "";
+    if ( contacto != undefined && contacto != null ) {
+        if ( contacto.fieldValue("cargo") != undefined ) {
+            html = contacto.fieldValue("cargo") + " ";
+        }
+        if ( contacto.fatherFieldValue("personas", "nombrecompleto") != undefined ) {
+            html = html + "<strong>" + contacto.fatherFieldValue("personas", "nombrecompleto") + "</strong><br/>";
+        }
+    }
+    return html;
+}
+]]>
+        </script>
+    </field>    
+</table>

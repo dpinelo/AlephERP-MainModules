@@ -1,0 +1,164 @@
+<table> 
+    <name>impuestos_irpf</name>
+    <!--Listado de impuestos-->
+    <alias>Tipos de I.R.P.F.</alias>
+    <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+    <isCached>true</isCached>
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+
+    <field>
+        <name>id</name>
+        <alias>ID</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>periodosimpuestos_irpf</table>
+            <field>idimpuesto</field>
+            <card>1M</card>
+        </relation>            
+    </field>                
+
+    <field>
+        <name>idempresa</name>
+        <alias>Cod. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true" onlyOnInsert="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>
+        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>codimpuesto</name>
+        <!--Código del impuesto-->
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>string</type>
+        <length>10</length>
+        <!-- Comprobará que el valor de codtercero es único para el un valor específico de idempresa en 
+        este caso. Es decir, podrá existir el registro 0000001 para idempresa=1 y 0000001 para idempresa=2 -->
+        <uniqueOnFilterField>idempresa</uniqueOnFilterField>        
+    </field>
+
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>irpf</name>
+        <alias>% I.R.P.F.</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <!-- La propiedad connectToChilds, hace que este campo se recalcule con cada modificación que se produzca
+        en un child hijo o padre de este bean. Debe ser utilizada con mucho cuidado ya que puede provocar comportamientos
+        recursivos si se entrecruzan cálculos anidades en fields de padres e hijos. -->
+        <calculated saveOnDb="true" connectToChilds="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    var childs = bean.relationChilds("periodosimpuestos_irpf");
+    var now = new Date();
+    var v = 0;
+    for ( var i = 0 ; i < childs.length ; i++ ) {
+        if ( childs[i].fieldValue("fechadesde") < now && childs[i].fieldValue("fechahasta") > now ) {
+            v = childs[i].fieldValue("irpf");
+        }
+    }
+    return v;
+}
+]]>        
+        </script>
+    </field>
+
+    <field>
+        <name>codsubcuentahpacr</name>
+        <!-- Código de la cuenta de H.P. Acreedora por retenciones practicadas-->
+        <alias>H.P. Acreedora por retenciones practicadas</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>15</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idsubcuentahpacr</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>ID</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <name>co_subcuentashpacr</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>codsubcuentahppagos</name>
+        <!-- Código de la cuenta de Hacienda pública, retenciones y pagos a cuenta-->
+        <alias>H.P. Retenciones y pagos a cuenta</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>15</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idsubcuentahppagos</name>
+        <!-- Identificador interno de la subcuenta -->
+        <alias>ID</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <name>co_subcuentashppagos</name>
+            <table>co_subcuentas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+</table>

@@ -1,0 +1,14 @@
+<report>
+	<name>co_subcuentas</name>
+	<pluginName>openrptplugin</pluginName>
+	<alias>Mayor de subcuenta contable</alias>
+	<reportName>co_subcuentas.xml</reportName>
+	<linkedTo>co_subcuentas</linkedTo>
+        <parameterForm>co_subcuentas</parameterForm>        
+	<parameterBinding>
+		<binding>
+			<parameter>id</parameter>
+			<field>id</field>
+		</binding>
+	</parameterBinding>
+</report>

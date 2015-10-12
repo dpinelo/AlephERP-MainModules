@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmBancos</class>
+ <widget class="QWidget" name="frmBancos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>786</width>
+    <height>385</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Personas</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblNombre_4">
+     <property name="text">
+      <string>Nombre</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_nombre</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="DBLineEdit" name="db_nombre">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>nombre</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QLabel" name="lblNombre_6">
+     <property name="text">
+      <string>Apellidos</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_apellidos</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="DBLineEdit" name="db_apellidos">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>apellidos</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblNombre_2">
+     <property name="text">
+      <string>NIF</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_nif</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="DBLineEdit" name="db_nif">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>nif</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLabel" name="lblNombre_10">
+     <property name="text">
+      <string>Correo electronico</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_email</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="DBLineEdit" name="db_email">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>email</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblNombre_3">
+     <property name="text">
+      <string>Teléfono</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_telefono</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="DBLineEdit" name="db_telefono">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="inputMask">
+      <string>999 999 999</string>
+     </property>
+     <property name="fieldName">
+      <string>telefono</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="lblNombre_5">
+     <property name="text">
+      <string>Fax</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_fax</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="DBLineEdit" name="db_fax">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="inputMask">
+      <string>999 999 999</string>
+     </property>
+     <property name="fieldName">
+      <string>fax</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblNombre_7">
+     <property name="text">
+      <string>Dirección</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_direccion</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="DBLineEdit" name="db_direccion">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>direccion</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblNombre_8">
+     <property name="text">
+      <string>Cod. Postal</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_codpostal</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="DBLineEdit" name="db_codpostal">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>codpostal</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QLabel" name="lblNombre_9">
+     <property name="text">
+      <string>Ciudad</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_ciudad</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3">
+    <widget class="DBLineEdit" name="db_ciudad">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>ciudad</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="DBChooseRecordButton" name="dbChooseRecordButton">
+     <property name="text">
+      <string>Provincia</string>
+     </property>
+     <property name="fieldName">
+      <string>idprovincia</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="DBLineEdit" name="db_codpostal_2">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>provincias.provincia</string>
+     </property>
+     <property name="dataEditable">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="DBChooseRecordButton" name="dbChooseRecordButton_2">
+     <property name="text">
+      <string>Pais</string>
+     </property>
+     <property name="fieldName">
+      <string>codpais</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="3">
+    <widget class="DBLineEdit" name="db_codpostal_3">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName">
+      <string>paises.nombre</string>
+     </property>
+     <property name="dataEditable">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="4">
+    <widget class="DBFileUpload" name="dbFileUpload">
+     <property name="fieldName">
+      <string>firma_digitalizada</string>
+     </property>
+     <property name="dataEditable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="4">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Relaciones con otras personas o terceros</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="DBRelatedElementsView" name="dbRelatedElementsView">
+        <property name="allowedMetadatas">
+         <string>personas;terceros</string>
+        </property>
+        <property name="categories">
+         <string>Relaciones</string>
+        </property>
+        <property name="visibleButtons">
+         <set>DBRelatedElementsView::InsertExisting|DBRelatedElementsView::RemoveExisting|DBRelatedElementsView::View</set>
+        </property>
+        <property name="cardinality">
+         <set>AlephERP::PointToAll</set>
+        </property>
+        <property name="linkColumns">
+         <string>categorias;tabla;registros</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBFileUpload</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbfileupload.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBRelatedElementsView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbrelatedelementsview.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_nombre</tabstop>
+  <tabstop>db_apellidos</tabstop>
+  <tabstop>db_nif</tabstop>
+  <tabstop>db_email</tabstop>
+  <tabstop>db_telefono</tabstop>
+  <tabstop>db_fax</tabstop>
+  <tabstop>db_direccion</tabstop>
+  <tabstop>db_codpostal</tabstop>
+  <tabstop>db_ciudad</tabstop>
+  <tabstop>dbChooseRecordButton</tabstop>
+  <tabstop>db_codpostal_2</tabstop>
+  <tabstop>dbChooseRecordButton_2</tabstop>
+  <tabstop>db_codpostal_3</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

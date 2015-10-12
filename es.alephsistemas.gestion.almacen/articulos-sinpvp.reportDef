@@ -1,0 +1,14 @@
+<report>
+    <name>articulos-sinpvp</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Articulos (sin P.V.P.)</alias>
+    <reportName>articulos-sinpvp.xml</reportName>
+    <linkedTo>articulos</linkedTo>
+    <parameterBinding>
+        <binding>
+            <parameter>id</parameter>
+            <field>id</field>
+        </binding>
+    </parameterBinding>
+</report>
+

@@ -1,0 +1,1894 @@
+<AlephERP>
+<export>
+
+<id><![CDATA[es.alephsistemas.gestion.common]]></id>
+<description><![CDATA[Módulo básico de gestión]]></description>
+<name><![CDATA[Módulo de Gestión]]></name>
+<showedText><![CDATA[Gestión]]></showedText>
+<icon><![CDATA[]]></icon>
+<enabled>true</enabled>
+<generatedTime>2015-09-10 15:39:46</generatedTime>
+
+
+<file>
+    <objectName>documentosgestion</objectName>
+    <name>documentosgestion.tableTemp</name>
+    <version>63</version>
+    <type>tableTemp</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasarticulos</objectName>
+    <name>lineasarticulos.tableTemp</name>
+    <version>19</version>
+    <type>tableTemp</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasiva</objectName>
+    <name>lineasiva.tableTemp</name>
+    <version>6</version>
+    <type>tableTemp</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasservicios</objectName>
+    <name>lineasservicios.tableTemp</name>
+    <version>8</version>
+    <type>tableTemp</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>agenda</objectName>
+    <name>agenda.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>agentescomerciales</objectName>
+    <name>agentescomerciales.table</name>
+    <version>4</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>albaranescli</objectName>
+    <name>albaranescli.table</name>
+    <version>9</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>albaranesprov</objectName>
+    <name>albaranesprov.table</name>
+    <version>27</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>bancos</objectName>
+    <name>bancos.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>centroscoste</objectName>
+    <name>centroscoste.table</name>
+    <version>6</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>comisiones</objectName>
+    <name>comisiones.table</name>
+    <version>4</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>contactos</objectName>
+    <name>contactos.table</name>
+    <version>4</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>cuentasbanco</objectName>
+    <name>cuentasbanco.table</name>
+    <version>14</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>cuentasbcoterceros</objectName>
+    <name>cuentasbcoterceros.table</name>
+    <version>3</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>departamentos</objectName>
+    <name>departamentos.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>dirterceros</objectName>
+    <name>dirterceros.table</name>
+    <version>18</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>distribucioncostes</objectName>
+    <name>distribucioncostes.table</name>
+    <version>10</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>divisas</objectName>
+    <name>divisas.table</name>
+    <version>3</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>ejercicios</objectName>
+    <name>ejercicios.table</name>
+    <version>19</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>empleados</objectName>
+    <name>empleados.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>empresas</objectName>
+    <name>empresas.table</name>
+    <version>19</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>empresasvalorespordefecto</objectName>
+    <name>empresasvalorespordefecto.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturascli</objectName>
+    <name>facturascli.table</name>
+    <version>70</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprov</objectName>
+    <name>facturasprov.table</name>
+    <version>137</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>familiasservicios</objectName>
+    <name>familiasservicios.table</name>
+    <version>5</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>formaspago</objectName>
+    <name>formaspago.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>gestionbugs</objectName>
+    <name>gestionbugs.table</name>
+    <version>7</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>gestionbugsincidencias</objectName>
+    <name>gestionbugsincidencias.table</name>
+    <version>5</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>gruposterceros</objectName>
+    <name>gruposterceros.table</name>
+    <version>10</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>grupostercerosinfoadicional</objectName>
+    <name>grupostercerosinfoadicional.table</name>
+    <version>3</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>impuestos</objectName>
+    <name>impuestos.table</name>
+    <version>7</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>impuestos_irpf</objectName>
+    <name>impuestos_irpf.table</name>
+    <version>5</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasarticulosalbaranescli</objectName>
+    <name>lineasarticulosalbaranescli.table</name>
+    <version>4</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasarticulosfacturascli</objectName>
+    <name>lineasarticulosfacturascli.table</name>
+    <version>7</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasarticulosfacturasprov</objectName>
+    <name>lineasarticulosfacturasprov.table</name>
+    <version>29</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasarticulospedidoscli</objectName>
+    <name>lineasarticulospedidoscli.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasarticulospedidosprov</objectName>
+    <name>lineasarticulospedidosprov.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasdistribucioncostes</objectName>
+    <name>lineasdistribucioncostes.table</name>
+    <version>11</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasdistribucioncostesfacturasprov</objectName>
+    <name>lineasdistribucioncostesfacturasprov.table</name>
+    <version>19</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasivaalbaranescli</objectName>
+    <name>lineasivaalbaranescli.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasivafacturascli</objectName>
+    <name>lineasivafacturascli.table</name>
+    <version>6</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasivafacturasprov</objectName>
+    <name>lineasivafacturasprov.table</name>
+    <version>18</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasivapedidoscli</objectName>
+    <name>lineasivapedidoscli.table</name>
+    <version>3</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasivapedidosprov</objectName>
+    <name>lineasivapedidosprov.table</name>
+    <version>12</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasserviciosalbaranescli</objectName>
+    <name>lineasserviciosalbaranescli.table</name>
+    <version>4</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasserviciosalbaranesprov</objectName>
+    <name>lineasserviciosalbaranesprov.table</name>
+    <version>4</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasserviciosfacturascli</objectName>
+    <name>lineasserviciosfacturascli.table</name>
+    <version>25</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasserviciosfacturasprov</objectName>
+    <name>lineasserviciosfacturasprov.table</name>
+    <version>29</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasserviciospedidoscli</objectName>
+    <name>lineasserviciospedidoscli.table</name>
+    <version>13</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasserviciospedidosprov</objectName>
+    <name>lineasserviciospedidosprov.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>paises</objectName>
+    <name>paises.table</name>
+    <version>3</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>pedidoscli</objectName>
+    <name>pedidoscli.table</name>
+    <version>18</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>periodosimpuestos</objectName>
+    <name>periodosimpuestos.table</name>
+    <version>5</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>periodosimpuestos_irpf</objectName>
+    <name>periodosimpuestos_irpf.table</name>
+    <version>3</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>personas</objectName>
+    <name>personas.table</name>
+    <version>6</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>planespago</objectName>
+    <name>planespago.table</name>
+    <version>12</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>plazos</objectName>
+    <name>plazos.table</name>
+    <version>20</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>provincias</objectName>
+    <name>provincias.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>seriesfacturacion</objectName>
+    <name>seriesfacturacion.table</name>
+    <version>25</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>servicios</objectName>
+    <name>servicios.table</name>
+    <version>21</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subcentroscoste</objectName>
+    <name>subcentroscoste.table</name>
+    <version>4</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subfamiliasservicios</objectName>
+    <name>subfamiliasservicios.table</name>
+    <version>3</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>sucursales</objectName>
+    <name>sucursales.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>tarjetascredito</objectName>
+    <name>tarjetascredito.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>terceros</objectName>
+    <name>terceros.table</name>
+    <version>36</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>terceroscategoriasinfoadicional</objectName>
+    <name>terceroscategoriasinfoadicional.table</name>
+    <version>4</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>tercerosinfoadicional</objectName>
+    <name>tercerosinfoadicional.table</name>
+    <version>8</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>tercerossubcategoriasinfoadicional</objectName>
+    <name>tercerossubcategoriasinfoadicional.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>unidadesmedida</objectName>
+    <name>unidadesmedida.table</name>
+    <version>4</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>__init__.js</objectName>
+    <name>__init__.js</name>
+    <version>30</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>albaranescli.dbrecord.qs</objectName>
+    <name>albaranescli.dbrecord.qs</name>
+    <version>3</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>albaranesprov.dbrecord.qs</objectName>
+    <name>albaranesprov.dbrecord.qs</name>
+    <version>3</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp/__init__.js</objectName>
+    <name>alepherp/__init__.js</name>
+    <version>9</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp/documentosgestion.js</objectName>
+    <name>alepherp/documentosgestion.js</name>
+    <version>122</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp/ivafunctions.js</objectName>
+    <name>alepherp/ivafunctions.js</name>
+    <version>26</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp/lineasdocumentosgestion.js</objectName>
+    <name>alepherp/lineasdocumentosgestion.js</name>
+    <version>33</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_avisos.dbform.qs</objectName>
+    <name>alepherp_avisos.dbform.qs</name>
+    <version>7</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>centroscoste.dbrecord.qs</objectName>
+    <name>centroscoste.dbrecord.qs</name>
+    <version>2</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>cuentasbanco.dbrecord.qs</objectName>
+    <name>cuentasbanco.dbrecord.qs</name>
+    <version>4</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>dirterceros.dbrecord.qs</objectName>
+    <name>dirterceros.dbrecord.qs</name>
+    <version>16</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>distribucioncostes.dbrecord.qs</objectName>
+    <name>distribucioncostes.dbrecord.qs</name>
+    <version>17</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>documentosgestioncommonfunctions.qs</objectName>
+    <name>documentosgestioncommonfunctions.qs</name>
+    <version>54</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>ejercicios.dbrecord.qs</objectName>
+    <name>ejercicios.dbrecord.qs</name>
+    <version>98</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>empresas.dbrecord.qs</objectName>
+    <name>empresas.dbrecord.qs</name>
+    <version>3</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>empresascommonfunctions.qs</objectName>
+    <name>empresascommonfunctions.qs</name>
+    <version>5</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>entornousuario.view.qs</objectName>
+    <name>entornousuario.view.qs</name>
+    <version>24</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprov.dbform.qs</objectName>
+    <name>facturasprov.dbform.qs</name>
+    <version>13</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprov.dbrecord.qs</objectName>
+    <name>facturasprov.dbrecord.qs</name>
+    <version>89</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprovagregarsubcentroscoste.view.qs</objectName>
+    <name>facturasprovagregarsubcentroscoste.view.qs</name>
+    <version>11</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprovgastos.dbrecord.qs</objectName>
+    <name>facturasprovgastos.dbrecord.qs</name>
+    <version>52</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>formaspago.dbrecord.qs</objectName>
+    <name>formaspago.dbrecord.qs</name>
+    <version>2</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>importarmaestrosintraempresas.view.qs</objectName>
+    <name>importarmaestrosintraempresas.view.qs</name>
+    <version>20</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasarticulos.dbrecord.qs</objectName>
+    <name>lineasarticulos.dbrecord.qs</name>
+    <version>13</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasdistribucioncostes.dbrecord.qs</objectName>
+    <name>lineasdistribucioncostes.dbrecord.qs</name>
+    <version>13</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasdistribucioncostesfacturasprov.dbrecord.qs</objectName>
+    <name>lineasdistribucioncostesfacturasprov.dbrecord.qs</name>
+    <version>19</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasservicios.dbrecord.qs</objectName>
+    <name>lineasservicios.dbrecord.qs</name>
+    <version>23</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>main.qmaindlg.qs</objectName>
+    <name>main.qmaindlg.qs</name>
+    <version>47</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>pedidoscli.dbrecord.qs</objectName>
+    <name>pedidoscli.dbrecord.qs</name>
+    <version>19</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>plazos.dbrecord.qs</objectName>
+    <name>plazos.dbrecord.qs</name>
+    <version>12</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>seriesfacturacion.dbrecord.qs</objectName>
+    <name>seriesfacturacion.dbrecord.qs</name>
+    <version>5</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>servicios.dbform.qs</objectName>
+    <name>servicios.dbform.qs</name>
+    <version>5</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>servicios.dbrecord.qs</objectName>
+    <name>servicios.dbrecord.qs</name>
+    <version>1</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subcentroscoste.dbrecord.qs</objectName>
+    <name>subcentroscoste.dbrecord.qs</name>
+    <version>7</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>terceros.dbform.qs</objectName>
+    <name>terceros.dbform.qs</name>
+    <version>8</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>terceros.dbrecord.qs</objectName>
+    <name>terceros.dbrecord.qs</name>
+    <version>37</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>viewjasperserverpage.script.qs</objectName>
+    <name>viewjasperserverpage.script.qs</name>
+    <version>3</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>commonsResources.rcc</objectName>
+    <name>commonsResources.rcc</name>
+    <version>11</version>
+    <type>rcc</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>albaranescli.xml</objectName>
+    <name>albaranescli.xml.report</name>
+    <version>6</version>
+    <type>report</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturascli.xml</objectName>
+    <name>facturascli.xml.report</name>
+    <version>63</version>
+    <type>report</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprov.xml</objectName>
+    <name>facturasprov.xml.report</name>
+    <version>16</version>
+    <type>report</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>librofacturasemitidas.xml</objectName>
+    <name>librofacturasemitidas.xml.report</name>
+    <version>30</version>
+    <type>report</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>librofacturasrecibidas.xml</objectName>
+    <name>librofacturasrecibidas.xml.report</name>
+    <version>55</version>
+    <type>report</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadocostesfacturasprov.xml</objectName>
+    <name>listadocostesfacturasprov.xml.report</name>
+    <version>12</version>
+    <type>report</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadoserviciosfacturasprov.xml</objectName>
+    <name>listadoserviciosfacturasprov.xml.report</name>
+    <version>30</version>
+    <type>report</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>albaranescli</objectName>
+    <name>albaranescli.reportDef</name>
+    <version>2</version>
+    <type>reportDef</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturascli</objectName>
+    <name>facturascli.reportDef</name>
+    <version>3</version>
+    <type>reportDef</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprov</objectName>
+    <name>facturasprov.reportDef</name>
+    <version>7</version>
+    <type>reportDef</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>librofacturasemitidas</objectName>
+    <name>librofacturasemitidas.reportDef</name>
+    <version>3</version>
+    <type>reportDef</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>librofacturasrecibidas</objectName>
+    <name>librofacturasrecibidas.reportDef</name>
+    <version>3</version>
+    <type>reportDef</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadocostesfacturasprov</objectName>
+    <name>listadocostesfacturasprov.reportDef</name>
+    <version>2</version>
+    <type>reportDef</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadoserviciosfacturasprov</objectName>
+    <name>listadoserviciosfacturasprov.reportDef</name>
+    <version>4</version>
+    <type>reportDef</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>albaranescli.dbrecord.ui</objectName>
+    <name>albaranescli.dbrecord.ui</name>
+    <version>20</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>albaranesprov.dbrecord.ui</objectName>
+    <name>albaranesprov.dbrecord.ui</name>
+    <version>27</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_avisos.dbrecord.ui</objectName>
+    <name>alepherp_avisos.dbrecord.ui</name>
+    <version>6</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_avisos.view.ui</objectName>
+    <name>alepherp_avisos.view.ui</name>
+    <version>5</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>articulos.search.ui</objectName>
+    <name>articulos.search.ui</name>
+    <version>4</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>bancos.dbrecord.ui</objectName>
+    <name>bancos.dbrecord.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>centroscoste.dbrecord.ui</objectName>
+    <name>centroscoste.dbrecord.ui</name>
+    <version>6</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>comisiones.dbrecord.ui</objectName>
+    <name>comisiones.dbrecord.ui</name>
+    <version>2</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>contactos.dbrecord.ui</objectName>
+    <name>contactos.dbrecord.ui</name>
+    <version>9</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>cuentasbanco.dbrecord.ui</objectName>
+    <name>cuentasbanco.dbrecord.ui</name>
+    <version>6</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>cuentasbanco.search.ui</objectName>
+    <name>cuentasbanco.search.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>cuentasbcoterceros.dbrecord.ui</objectName>
+    <name>cuentasbcoterceros.dbrecord.ui</name>
+    <version>4</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>datosgeneralestercero.widget.ui</objectName>
+    <name>datosgeneralestercero.widget.ui</name>
+    <version>8</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>dirterceros.dbrecord.ui</objectName>
+    <name>dirterceros.dbrecord.ui</name>
+    <version>16</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>dirterceros.search.ui</objectName>
+    <name>dirterceros.search.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>distribucioncostes.dbrecord.ui</objectName>
+    <name>distribucioncostes.dbrecord.ui</name>
+    <version>26</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>ejercicios.dbrecord.ui</objectName>
+    <name>ejercicios.dbrecord.ui</name>
+    <version>18</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>ejercicios.search.ui</objectName>
+    <name>ejercicios.search.ui</name>
+    <version>2</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>empresas.dbrecord.ui</objectName>
+    <name>empresas.dbrecord.ui</name>
+    <version>23</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>empresas.search.ui</objectName>
+    <name>empresas.search.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>entornousuario.view.ui</objectName>
+    <name>entornousuario.view.ui</name>
+    <version>2</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturascli.dbrecord.ui</objectName>
+    <name>facturascli.dbrecord.ui</name>
+    <version>39</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturascli.search.ui</objectName>
+    <name>facturascli.search.ui</name>
+    <version>7</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprov.dbrecord.ui</objectName>
+    <name>facturasprov.dbrecord.ui</name>
+    <version>66</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprov.search.ui</objectName>
+    <name>facturasprov.search.ui</name>
+    <version>2</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprovagregarsubcentroscoste.view.ui</objectName>
+    <name>facturasprovagregarsubcentroscoste.view.ui</name>
+    <version>4</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>facturasprovgastos.dbrecord.ui</objectName>
+    <name>facturasprovgastos.dbrecord.ui</name>
+    <version>30</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>familiasservicios.dbrecord.ui</objectName>
+    <name>familiasservicios.dbrecord.ui</name>
+    <version>1</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>gestionbugs.dbrecord.ui</objectName>
+    <name>gestionbugs.dbrecord.ui</name>
+    <version>4</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>gestionbugsincidencias.dbrecord.ui</objectName>
+    <name>gestionbugsincidencias.dbrecord.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>gruposterceros.dbrecord.ui</objectName>
+    <name>gruposterceros.dbrecord.ui</name>
+    <version>9</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>importarmaestrosintraempresas.view.ui</objectName>
+    <name>importarmaestrosintraempresas.view.ui</name>
+    <version>4</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>impuestos.dbrecord.ui</objectName>
+    <name>impuestos.dbrecord.ui</name>
+    <version>1</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>impuestos_irpf.dbrecord.ui</objectName>
+    <name>impuestos_irpf.dbrecord.ui</name>
+    <version>4</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>librofacturasemitidas.report.ui</objectName>
+    <name>librofacturasemitidas.report.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>librofacturasrecibidas.report.ui</objectName>
+    <name>librofacturasrecibidas.report.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasarticulos.dbrecord.ui</objectName>
+    <name>lineasarticulos.dbrecord.ui</name>
+    <version>19</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasdistribucioncostes.dbrecord.ui</objectName>
+    <name>lineasdistribucioncostes.dbrecord.ui</name>
+    <version>5</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasdistribucioncostesfacturasprov.dbrecord.ui</objectName>
+    <name>lineasdistribucioncostesfacturasprov.dbrecord.ui</name>
+    <version>10</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasservicios.dbrecord.ui</objectName>
+    <name>lineasservicios.dbrecord.ui</name>
+    <version>22</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadocostesfacturasprov.report.ui</objectName>
+    <name>listadocostesfacturasprov.report.ui</name>
+    <version>2</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>listadoserviciosfacturasprov.report.ui</objectName>
+    <name>listadoserviciosfacturasprov.report.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>main.qmaindlg.ui</objectName>
+    <name>main.qmaindlg.ui</name>
+    <version>36</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>paises.dbrecord.ui</objectName>
+    <name>paises.dbrecord.ui</name>
+    <version>1</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>pedidoscli.dbrecord.ui</objectName>
+    <name>pedidoscli.dbrecord.ui</name>
+    <version>25</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>periodosimpuestos.dbrecord.ui</objectName>
+    <name>periodosimpuestos.dbrecord.ui</name>
+    <version>2</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>periodosimpuestos.search.ui</objectName>
+    <name>periodosimpuestos.search.ui</name>
+    <version>2</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>periodosimpuestos_irpf.dbrecord.ui</objectName>
+    <name>periodosimpuestos_irpf.dbrecord.ui</name>
+    <version>4</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>personas.dbrecord.ui</objectName>
+    <name>personas.dbrecord.ui</name>
+    <version>12</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>personas.search.ui</objectName>
+    <name>personas.search.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>planespago.dbrecord.ui</objectName>
+    <name>planespago.dbrecord.ui</name>
+    <version>12</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>plazos.dbrecord.ui</objectName>
+    <name>plazos.dbrecord.ui</name>
+    <version>7</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>provincias.dbrecord.ui</objectName>
+    <name>provincias.dbrecord.ui</name>
+    <version>1</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>seriesfacturacion.dbrecord.ui</objectName>
+    <name>seriesfacturacion.dbrecord.ui</name>
+    <version>8</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>servicios.dbrecord.ui</objectName>
+    <name>servicios.dbrecord.ui</name>
+    <version>9</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>servicios.search.ui</objectName>
+    <name>servicios.search.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subcentroscoste.dbrecord.ui</objectName>
+    <name>subcentroscoste.dbrecord.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subcentroscoste.search.ui</objectName>
+    <name>subcentroscoste.search.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>subfamiliasservicios.dbrecord.ui</objectName>
+    <name>subfamiliasservicios.dbrecord.ui</name>
+    <version>1</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>sucursales.dbrecord.ui</objectName>
+    <name>sucursales.dbrecord.ui</name>
+    <version>1</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>tarjetascredito.dbrecord.ui</objectName>
+    <name>tarjetascredito.dbrecord.ui</name>
+    <version>2</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>terceros.dbrecord.ui</objectName>
+    <name>terceros.dbrecord.ui</name>
+    <version>34</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>terceros.search.ui</objectName>
+    <name>terceros.search.ui</name>
+    <version>4</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>terceroscategoriasinfoadicional.dbrecord.ui</objectName>
+    <name>terceroscategoriasinfoadicional.dbrecord.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>tvw_periodosimpuestos.search.ui</objectName>
+    <name>tvw_periodosimpuestos.search.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>tvw_periodosimpuestos_irpf.search.ui</objectName>
+    <name>tvw_periodosimpuestos_irpf.search.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>viewjasperserverpage.script.ui</objectName>
+    <name>viewjasperserverpage.script.ui</name>
+    <version>8</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+</export>
+</AlephERP>

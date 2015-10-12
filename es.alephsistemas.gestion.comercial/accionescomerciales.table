@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+
+    <!-- Nombre de la tabla -->
+    <name>accionescomerciales</name>
+    <!-- Alias a presentar en la aplicación -->
+    <alias>Acciones Comerciales</alias>
+
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <envVars>
+        <pair>
+            <!-- Nombre de la variable de entorno en Javascript -->
+            <varName>idempresa</varName>
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <field>idempresa</field>
+        </pair>
+    </envVars>
+        
+    <field>
+        <name>id</name>
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>accionescomercialestareas</table>
+            <field>id</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>        
+    </field>
+   
+    <field>
+        <name>idempresa</name>
+        <alias>ID. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>        
+        </script>        
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idtercero</name>
+        <alias>ID. Tercero</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>terceros</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idestado</name>
+        <alias>ID. Tercero</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>accionescomercialesestado</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>codaccion</name>
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>24</length>
+        <default>0</default>
+        <!-- Definimos la lógica de generación del contador del tercero. Se podrán anticipar
+        una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 
+        aparecen en dependsOnField. Si alguno de estos campos tiene una relación M1, como el 
+        caso de idempresa->empresas, el valor que se utilizará será el del field de empresas
+        definido en prefixOnRelation: es decir, para el caso de idempresa, el sistema se irá
+        a la relación empresas, al "padre" o empresa, y cogerá el valor definido en el field
+        counter_prefix. 
+        Finalmente, puede determinarse si el usuario puede modificar este contador, con userCanModify
+        y además, especificar si entre los diferentes prefijos y el número aparece algún separador,
+        con separator. -->
+        <counter>
+            <expression>{empresas.father.counter_prefix}/ACCOM/{terceros.codtercero}/{value.trailingZeros}</expression>
+            <userCanModify>false</userCanModify>
+            <calculateOnlyOnInsert>true</calculateOnlyOnInsert>
+        </counter> 
+    </field>
+        
+    <field>
+        <name>fechainicio</name>
+        <alias>Inicio</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>date</type>
+        <default>now</default>
+    </field>
+
+    <field>
+        <name>fechafin</name>
+        <alias>Inicio</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>date</type>
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+</table>

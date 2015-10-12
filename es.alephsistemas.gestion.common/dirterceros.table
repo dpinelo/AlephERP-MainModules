@@ -1,0 +1,255 @@
+<table>
+    <name>dirterceros</name>
+    <!--Listado de direcciones de terceros-->
+    <alias>Direcciones de Terceros</alias>
+    
+    <onCreateScript>
+<![CDATA[
+function onCreate() {
+    // Vamos a dar ciertos valores por defecto
+    if ( bean.terceros.father.dirterceros.items.length == 1 ) {
+        bean.descripcion.value = "Dirección de Facturación";
+    }
+}
+]]>    
+    </onCreateScript>
+    
+    <field>
+        <name>id</name>
+        <!--Identificador interno-->
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idtercero</name>
+        <!--Código del cliente-->
+        <alias>Cliente</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>terceros</table>
+            <field>id</field>
+            <card>M1</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+
+    <field>
+        <name>domfacturacion</name>
+        <!--Se marca para la dirección de facturación, que será la utilizada en los documentos de facturación del o proveedor-->
+        <alias>Dom. Facturación</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+    </field>
+
+    <field>
+        <name>domenvio</name>
+        <!--Dirección de envío. Se marca para la dirección de envío de correspondencia y paquetería del tercero-->
+        <alias>Dom. Envio</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
+    </field>
+
+    <field>
+        <name>descripcion</name>
+        <alias>Descripción</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+    </field>
+
+    <field>
+        <name>direccion</name>
+        <alias>Dirección</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>200</length>
+    </field>
+
+    <field>
+        <name>codpostal</name>
+        <alias>Código postal</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>10</length>
+    </field>
+
+    <field>
+        <name>poblacion</name>
+        <alias>Población</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>100</length>
+    </field>
+
+    <field>
+        <name>idprovincia</name>
+        <alias>ID Provincia</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        
+        <relation>
+            <table>provincias</table>
+            <field>idprovincia</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>codpais</name>
+        <alias>Pais</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>3</length>
+
+        <relation>
+            <table>paises</table>
+            <field>codpais</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>telefonoprefijo1</name>
+        <alias>Prefijo Teléfono 1</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>5</length>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return bean.terceros.father.empresas.father.valorPorDefecto.call("Prefijo Teléfonos"); 
+}
+]]>            
+        </scriptDefaultValue>
+    </field>
+    
+    <field>
+        <name>telefono1</name>
+        <alias>Teléfono 1</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>30</length>
+    </field>
+
+    <field>
+        <name>telefonoextension1</name>
+        <alias>Extensión Teléfono 1</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>5</length>
+    </field>
+
+    <field>
+        <name>telefonoprefijo2</name>
+        <alias>Prefijo Teléfono 2</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>5</length>
+        <scriptDefaultValue>
+<![CDATA[
+function defaultValue() {
+    return bean.terceros.father.empresas.father.valorPorDefecto.call("Prefijo Teléfonos"); 
+}
+]]>            
+        </scriptDefaultValue>
+    </field>
+    
+    <field>
+        <name>telefono2</name>
+        <alias>Teléfono 2</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>30</length>
+    </field>
+
+    <field>
+        <name>telefonoextension2</name>
+        <alias>Extensión Teléfono 2</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>5</length>
+    </field>
+    
+    <field>
+        <name>fax</name>
+        <alias>Fax</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>30</length>
+    </field>
+
+    <field>
+        <name>email</name>
+        <alias>EMail</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>200</length>
+    </field>
+
+    <field>
+        <name>membrete</name>
+        <alias>Membrete</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+    </field>
+
+    <field>
+        <name>idcontacto</name>
+        <alias>Contacto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <relation>
+            <table>contactos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>coordenadas</name>
+        <alias>Coordenadas</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <coordinates>true</coordinates>
+    </field>
+
+    <field>
+        <name>observaciones</name>
+        <alias>Observaciones</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>stringlist</type>
+    </field>
+    
+</table>
