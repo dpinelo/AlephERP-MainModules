@@ -17,108 +17,65 @@
    <iconset>
     <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
-   <property name="leftMargin">
-    <number>0</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>0</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
-   </property>
-   <item>
-    <layout class="QGridLayout" name="gridLayout_2">
-     <item row="2" column="1">
-      <widget class="DBDateTimeEdit" name="db_inicio">
-       <property name="displayFormat">
-        <string>dd/MM/yyyy</string>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QLabel" name="lblNombre">
+     <property name="text">
+      <string>&amp;Código</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_codejercicio</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="DBLineEdit" name="db_codejercicio">
+     <property name="fieldName" stdset="0">
+      <string>codejercicio</string>
+     </property>
+     <property name="dataEditable" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="lblNombre_12">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
-       <property name="fieldName">
-        <string>fechainicio</string>
+       <property name="text">
+        <string>P&amp;lan Contable</string>
        </property>
-       <property name="dataEditable">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>db_plancontable</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="DBComboBox" name="db_plancontable">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="fieldName" stdset="0">
+        <string>plancontable</string>
+       </property>
+       <property name="dataEditable" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="lblNombre_4">
-       <property name="text">
-        <string>Nombre</string>
-       </property>
-       <property name="buddy">
-        <cstring>db_nombre</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1" colspan="7">
-      <widget class="DBLineEdit" name="db_nombre">
-       <property name="whatsThis">
-        <string>Descripción</string>
-       </property>
-       <property name="fieldName">
-        <string>nombre</string>
-       </property>
-       <property name="dataEditable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="lblNombre_15">
-       <property name="text">
-        <string>Estado</string>
-       </property>
-       <property name="buddy">
-        <cstring>db_estado</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="DBComboBox" name="db_estado">
-       <property name="fieldName">
-        <string>estado</string>
-       </property>
-       <property name="dataEditable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="lblNombre">
-       <property name="text">
-        <string>&amp;Código</string>
-       </property>
-       <property name="buddy">
-        <cstring>db_codejercicio</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1" colspan="2">
-      <widget class="DBLineEdit" name="db_codejercicio">
-       <property name="fieldName">
-        <string>codejercicio</string>
-       </property>
-       <property name="dataEditable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="lblNombre_13">
-       <property name="text">
-        <string>Inicio</string>
-       </property>
-       <property name="buddy">
-        <cstring>db_inicio</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="7">
+     <item>
       <widget class="QPushButton" name="pb_copiarejercicio">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
@@ -134,85 +91,57 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="5" colspan="3">
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>138</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="0" column="3">
-      <widget class="QLabel" name="lblNombre_12">
-       <property name="text">
-        <string>Plan Contable</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-       <property name="buddy">
-        <cstring>db_plancontable</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="4" colspan="3">
-      <widget class="DBComboBox" name="db_plancontable">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="fieldName">
-        <string>plancontable</string>
-       </property>
-       <property name="dataEditable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="4">
-      <widget class="DBDateTimeEdit" name="db_inicio_2">
-       <property name="displayFormat">
-        <string>dd/MM/yyyy</string>
-       </property>
-       <property name="fieldName">
-        <string>fechafin</string>
-       </property>
-       <property name="dataEditable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="4">
-      <widget class="DBLineEdit" name="db_counter_prefix">
-       <property name="fieldName">
-        <string>counter_prefix</string>
-       </property>
-       <property name="dataEditable">
-        <bool>true</bool>
-       </property>
-       <property name="automaticWidthBasedOnFieldMaxLength">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2" colspan="2">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Prefijo para contadores</string>
-       </property>
-       <property name="buddy">
-        <cstring>db_counter_prefix</cstring>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2" colspan="2">
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lblNombre_4">
+     <property name="text">
+      <string>&amp;Nombre</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_nombre</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="4">
+    <widget class="DBLineEdit" name="db_nombre">
+     <property name="whatsThis">
+      <string>Descripción</string>
+     </property>
+     <property name="fieldName" stdset="0">
+      <string>nombre</string>
+     </property>
+     <property name="dataEditable" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lblNombre_13">
+     <property name="text">
+      <string>Inicio</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_inicio</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="DBDateTimeEdit" name="db_inicio">
+     <property name="displayFormat">
+      <string>dd/MM/yyyy</string>
+     </property>
+     <property name="fieldName" stdset="0">
+      <string>fechainicio</string>
+     </property>
+     <property name="dataEditable" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
       <widget class="QLabel" name="lblNombre_14">
        <property name="text">
         <string>Fin</string>
@@ -225,22 +154,95 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="5" colspan="3">
-      <spacer name="horizontalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+     <item>
+      <widget class="DBDateTimeEdit" name="db_inicio_2">
+       <property name="displayFormat">
+        <string>dd/MM/yyyy</string>
        </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>68</width>
-         <height>20</height>
-        </size>
+       <property name="fieldName" stdset="0">
+        <string>fechafin</string>
        </property>
-      </spacer>
+       <property name="dataEditable" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
-   <item>
+   <item row="2" column="4">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>614</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lblNombre_15">
+     <property name="text">
+      <string>Es&amp;tado</string>
+     </property>
+     <property name="buddy">
+      <cstring>db_estado</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="DBComboBox" name="db_estado">
+     <property name="fieldName" stdset="0">
+      <string>estado</string>
+     </property>
+     <property name="dataEditable" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Prefi&amp;jo para contadores</string>
+       </property>
+       <property name="buddy">
+        <cstring>db_counter_prefix</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="DBLineEdit" name="db_counter_prefix">
+       <property name="fieldName" stdset="0">
+        <string>counter_prefix</string>
+       </property>
+       <property name="dataEditable" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="automaticWidthBasedOnFieldMaxLength" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="4">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>614</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="0" colspan="5">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
       <number>0</number>
@@ -251,11 +253,11 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="DBDetailView" name="dbDetailView">
-         <property name="relationName">
+        <widget class="DBDetailView" name="dbDetailView" native="true">
+         <property name="relationName" stdset="0">
           <string>seriesfacturacion</string>
          </property>
-         <property name="dataEditable">
+         <property name="dataEditable" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -272,10 +274,10 @@
          <property name="whatsThis">
           <string>Descripción</string>
          </property>
-         <property name="fieldName">
+         <property name="fieldName" stdset="0">
           <string>idasientoapertura</string>
          </property>
-         <property name="dataEditable">
+         <property name="dataEditable" stdset="0">
           <bool>false</bool>
          </property>
         </widget>
@@ -289,13 +291,13 @@
        </item>
        <item row="8" column="0" colspan="7">
         <widget class="DBTableView" name="co_cuentasesp">
-         <property name="internalData">
+         <property name="internalData" stdset="0">
           <bool>true</bool>
          </property>
-         <property name="relationName">
+         <property name="relationName" stdset="0">
           <string>co_cuentasesp</string>
          </property>
-         <property name="dataEditable">
+         <property name="dataEditable" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -305,10 +307,10 @@
          <property name="text">
           <string>Asiento de regularización</string>
          </property>
-         <property name="fieldName">
+         <property name="fieldName" stdset="0">
           <string>idasientopyg</string>
          </property>
-         <property name="dataEditable">
+         <property name="dataEditable" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -393,10 +395,10 @@
          <property name="text">
           <string>Asiento de cierre</string>
          </property>
-         <property name="fieldName">
+         <property name="fieldName" stdset="0">
           <string>idasientocierre</string>
          </property>
-         <property name="dataEditable">
+         <property name="dataEditable" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -406,10 +408,10 @@
          <property name="text">
           <string>Asiento de apertura</string>
          </property>
-         <property name="fieldName">
+         <property name="fieldName" stdset="0">
           <string>idasientoapertura</string>
          </property>
-         <property name="dataEditable">
+         <property name="dataEditable" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -419,10 +421,10 @@
          <property name="whatsThis">
           <string>Descripción</string>
          </property>
-         <property name="fieldName">
+         <property name="fieldName" stdset="0">
           <string>idasientoapertura</string>
          </property>
-         <property name="dataEditable">
+         <property name="dataEditable" stdset="0">
           <bool>false</bool>
          </property>
         </widget>
@@ -439,10 +441,10 @@
        </item>
        <item row="1" column="2" colspan="2">
         <widget class="DBNumberEdit" name="db_longsubcuenta">
-         <property name="fieldName">
+         <property name="fieldName" stdset="0">
           <string>longsubcuenta</string>
          </property>
-         <property name="dataEditable">
+         <property name="dataEditable" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -452,10 +454,10 @@
          <property name="whatsThis">
           <string>Descripción</string>
          </property>
-         <property name="fieldName">
+         <property name="fieldName" stdset="0">
           <string>idasientopyg</string>
          </property>
-         <property name="dataEditable">
+         <property name="dataEditable" stdset="0">
           <bool>false</bool>
          </property>
         </widget>
@@ -468,10 +470,10 @@
          <property name="text">
           <string>Las facturas Exentas de I.V.A. generan partidas contables compensadas en las cuentas 472 y 477</string>
          </property>
-         <property name="fieldName">
+         <property name="fieldName" stdset="0">
           <string>partidasivaenexencion</string>
          </property>
-         <property name="dataEditable">
+         <property name="dataEditable" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -483,6 +485,7 @@
   </layout>
   <zorder>tabWidget</zorder>
   <zorder></zorder>
+  <zorder>pb_copiarejercicio</zorder>
  </widget>
  <customwidgets>
   <customwidget>

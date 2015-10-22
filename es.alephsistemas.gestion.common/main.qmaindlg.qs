@@ -32,7 +32,7 @@ function MainDlg(ui) {
         var dlg = new DBDialog;
         dlg.type = "record";
         dlg.tableName = "empresas";
-        dlg.show();	
+        dlg.show();
         if ( dlg.userClickOk ) {
             var recordEmpresa = dlg.selectedBean();
             AERPScriptCommon.setDbEnvVar("idempresa", recordEmpresa.fieldValue("id"));
@@ -43,7 +43,7 @@ function MainDlg(ui) {
             return;
         }
     }
-	
+
     // Veamos ahora si el usuario tiene definido una empresa de trabajo y un ejercicio fiscal, si no, deberá
     // seleccionar uno
     var idempresa = AERPScriptCommon.envVar("idempresa");
