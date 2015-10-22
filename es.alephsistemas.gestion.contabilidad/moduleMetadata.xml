@@ -7,7 +7,7 @@
 <showedText><![CDATA[Contabilidad]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
-<generatedTime>2015-09-21 18:37:04</generatedTime>
+<generatedTime>2015-10-19 20:45:17</generatedTime>
 
 
 <file>
@@ -211,16 +211,6 @@
 </file>
 
 <file>
-    <objectName>co_cuentas.dbform.qs</objectName>
-    <name>co_cuentas.dbform.qs</name>
-    <version>17</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
     <objectName>co_cuentas.dbrecord.qs</objectName>
     <name>co_cuentas.dbrecord.qs</name>
     <version>15</version>
@@ -253,7 +243,7 @@
 <file>
     <objectName>co_mod303.view.qs</objectName>
     <name>co_mod303.view.qs</name>
-    <version>49</version>
+    <version>53</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -373,7 +363,7 @@
 <file>
     <objectName>co_subcuentas.xml</objectName>
     <name>co_subcuentas.xml.report</name>
-    <version>19</version>
+    <version>20</version>
     <type>report</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

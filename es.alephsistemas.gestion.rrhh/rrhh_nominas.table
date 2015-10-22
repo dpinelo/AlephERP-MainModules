@@ -3,8 +3,6 @@
     <name>rrhh_nominas</name>
     <alias>Nóminas</alias>
     
-    <associatedScript>contabilidadcommonfunctions.qs</associatedScript>    
-    
     <canHaveRelatedElements>true</canHaveRelatedElements>
     <relatedElementsContentToBeDelete>
         <item>
@@ -104,7 +102,7 @@ function value() {
     <field>
         <name>idempleado</name>    
         <alias>ID. Empleado</alias>
-        <null>true</null>
+        <null>false</null>
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
@@ -124,26 +122,6 @@ function value() {
         <pk>false</pk>
         <type>string</type>
         <length>17</length>
-        <uniqueOnFilterField>idempresa,idejercicio</uniqueOnFilterField>
-        <!-- Definimos la lógica de generación del contador. Se podrán anticipar
-        una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 
-        aparecen en dependsOnField. Si alguno de estos campos tiene una relación M1, como el 
-        caso de idempresa->empresas, el valor que se utilizará será el del field de empresas
-        definido en prefixOnRelation: es decir, para el caso de idempresa, el sistema se irá
-        a la relación empresas, al "padre" o empresa, y cogerá el valor definido en el field
-        counter_prefix. 
-        Finalmente, puede determinarse si el usuario puede modificar este contador, con userCanModify
-        y además, especificar si entre los diferentes prefijos y el número aparece algún separador,
-        con separator. -->
-        <counter>
-            <expression>{empresas.father.counter_prefix}/{ejercicios.father.counter_prefix}/{value.trailingZeros}</expression>
-            <dependsOnField prefixOnRelation="counter_prefix">idempresa</dependsOnField>
-            <dependsOnField prefixOnRelation="counter_prefix">idejercicio</dependsOnField>
-            <userCanModify>false</userCanModify>
-            <calculateOnlyOnInsert>true</calculateOnlyOnInsert>
-            <separator>/</separator>
-            <useTrailingZeros>true</useTrailingZeros>
-        </counter>        
     </field>
     
     <field>
@@ -157,12 +135,19 @@ function value() {
     </field>
     
     <field>
-        <name>nombreempleado</name>
+        <name>empleado</name>
         <alias>Empleado</alias>
         <null>true</null>
         <pk>false</pk>
-        <type>string</type>
-        <length>255</length>
+        <type>double</type>
+        <partD>2</partD>
+        <default>0</default>
+        <calculated saveOnDb="true">true</calculated>
+        <visiblegrid>true</visiblegrid>
+        <!-- Las variables que aquí se definen son Fields directos del bean, y accesible desde propiedades -->
+        <builtInStringExpression>
+            <expression>{alepherp_personal.father.nombre} {alepherp_personal.father.apellidos}</expression>                                    
+        </builtInStringExpression>
     </field>
     
     <field>
@@ -229,17 +214,6 @@ function value() {
         <pk>false</pk>
         <type>string</type>
         <length>255</length>
-    </field>
-    
-    <field>
-        <name>nogenerarasiento</name>
-        <!--Si la validación de la factura va a generar un asiento contable-->
-        <alias>Ignorar contabilidad</alias>
-        <null>false</null>
-        <pk>false</pk>
-        <type>bool</type>
-        <default>false</default>
-        <visiblegrid>false</visiblegrid>
     </field>
     
     <field>

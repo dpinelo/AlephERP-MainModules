@@ -1,0 +1,13 @@
+<report>
+    <name>co_mod303</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Datos modelo 303</alias>
+    <reportName>co_mod303.xml</reportName>
+    <parameterForm>co_mod303</parameterForm>
+    <envVarParameterBinding>
+        <binding>
+            <parameter>P_ID_EMPRESA</parameter>
+            <envVar>idempresa</envVar>
+        </binding>
+    </envVarParameterBinding>
+</report>
