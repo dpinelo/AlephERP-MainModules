@@ -1501,6 +1501,16 @@
 </file>
 
 <file>
+    <objectName>formaspago.dbrecord.ui</objectName>
+    <name>formaspago.dbrecord.ui</name>
+    <version>1</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
     <objectName>gestionbugs.dbrecord.ui</objectName>
     <name>gestionbugs.dbrecord.ui</name>
     <version>4</version>

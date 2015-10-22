@@ -1,0 +1,877 @@
+<!DOCTYPE openRPTDef>
+<report>
+ <title></title>
+ <name></name>
+ <description></description>
+ <parameter active="false" default="" type="bool" listtype="static" name="P_COMPRA">
+  <description></description>
+ </parameter>
+ <parameter active="false" default="" type="integer" listtype="static" name="P_CONTRATO_ENTRE">
+  <description></description>
+ </parameter>
+ <parameter active="false" default="" type="integer" listtype="static" name="P_CONTRATO_Y">
+  <description></description>
+ </parameter>
+ <parameter active="true" default="" type="bool" listtype="static" name="P_EMPENIO">
+  <description></description>
+ </parameter>
+ <parameter active="true" default="I - Iniciado" type="string" listtype="static" name="P_ESTADO">
+  <description></description>
+ </parameter>
+ <parameter active="true" default="2012-02-29" type="string" listtype="static" name="P_FECHA_FIN">
+  <description></description>
+ </parameter>
+ <parameter active="true" default="2012-01-01" type="string" listtype="static" name="P_FECHA_INICIO">
+  <description></description>
+ </parameter>
+ <parameter active="true" default="2" type="integer" listtype="static" name="P_ID_TIENDA">
+  <description></description>
+ </parameter>
+ <parameter active="true" default="" type="bool" listtype="static" name="P_MONTE_PIEDAD">
+  <description></description>
+ </parameter>
+ <parameter active="false" default="" type="string" listtype="static" name="P_TODOS">
+  <description></description>
+ </parameter>
+ <grid>
+  <snap/>
+  <show/>
+  <x>0.05</x>
+  <y>0.05</y>
+ </grid>
+ <size>A4</size>
+ <landscape/>
+ <topmargin>50</topmargin>
+ <bottommargin>50</bottommargin>
+ <rightmargin>50</rightmargin>
+ <leftmargin>50</leftmargin>
+ <querysource>
+  <name>query_vendis</name>
+  <sql>select tienda.nemo || '-' || vendi.numero_vendi as numero_vendi, vendi.estado, to_char(vendi.fecha, 'DD/MM/YYYY') as fecha, cliente.nombre || ' ' || cliente.apellidos as nombre_cliente, count(linea_vendi.id) as num_objetos, 
+to_char(linea_vendi.bruto, '999G990D99') as bruto, linea_vendi.bruto as bruto_numeric, 
+to_char(linea_vendi.neto_estimado, '999G990D99') as neto_estimado,
+to_char(linea_vendi.precio_gramo, '999G990D99') as precio_gramo,
+to_char(linea_vendi.importe, '999G990D99L') as precio_total, 
+tienda.nombre as nombretienda, vendi.opcion_recompra, vendi.monte_piedad,
+case when cliente.dni is not null then cliente.dni when cliente.pasaporte is not null then cliente.pasaporte
+when cliente.t_residente is not null then cliente.t_residente when cliente.nie is not null then cliente.nie
+else cliente.c_conducir end as identificacion,
+producto.descripcion as producto, to_char(now(), 'DD/MM/YYYY') as ahora,
+to_char(calculo_media.total_importe/calculo_media.total_neto_estimado, '999G990D99') as media,
+to_char(calculo_media.total_importe, '999G990D99L') as total_importe,
+to_char(calculo_media.total_neto_estimado, '999G990D99') as total_neto_estimado,
+to_char(calculo_media.total_bruto, '999G990D99') as total_bruto
+from generic.alepherp_vendi as vendi, generic.alepherp_linea_vendi as linea_vendi, generic.alepherp_cliente as cliente, generic.alepherp_tienda as tienda, generic.alepherp_producto as producto, 
+(
+	select sum(linea_vendi.neto_estimado) as total_neto_estimado, sum(linea_vendi.importe) as total_importe,
+	sum(linea_vendi.bruto) as total_bruto, producto.descripcion
+	from generic.alepherp_linea_vendi as linea_vendi, generic.alepherp_vendi as vendi, alepherp_producto as producto
+	where 
+		vendi.id_tienda=&lt;? value("P_ID_TIENDA") ?>
+		&lt;? if not exists("P_TODOS") ?>
+		and vendi.estado=&lt;? value("P_ESTADO") ?>
+		&lt;? endif ?>
+		&lt;? if exists("P_CONTRATO_ENTRE") ?>
+		and to_number(substring(vendi.numero_vendi from 1 for 5), '99999') 
+		between &lt;? value("P_CONTRATO_ENTRE") ?> and &lt;? value("P_CONTRATO_Y") ?> 
+		&lt;? endif ?>
+		and vendi.monte_piedad in (false, &lt;? value("P_MONTE_PIEDAD") ?>)
+		and vendi.opcion_recompra in (false, &lt;? value("P_EMPENIO") ?>)
+		&lt;? if not exists("P_COMPRA") ?>
+		and not (monte_piedad = false and opcion_recompra = false)
+		&lt;? endif ?>
+		and vendi.id = linea_vendi.id_vendi
+		and vendi.fecha between &lt;? value("P_FECHA_INICIO") ?> and &lt;? value("P_FECHA_FIN") ?> 
+		and linea_vendi.id_producto = producto.id
+	group by producto.descripcion
+) as calculo_media
+where vendi.id_tienda=&lt;? value("P_ID_TIENDA") ?>
+&lt;? if not exists("P_TODOS") ?>
+and vendi.estado=&lt;? value("P_ESTADO") ?>
+&lt;? endif ?>
+&lt;? if exists("P_CONTRATO_ENTRE") ?>
+and to_number(substring(vendi.numero_vendi from 1 for 5), '99999') 
+between &lt;? value("P_CONTRATO_ENTRE") ?> and &lt;? value("P_CONTRATO_Y") ?> 
+&lt;? endif ?>
+and vendi.monte_piedad in (false, &lt;? value("P_MONTE_PIEDAD") ?>)
+and vendi.opcion_recompra in (false, &lt;? value("P_EMPENIO") ?>)
+&lt;? if not exists("P_COMPRA") ?>
+and not (vendi.monte_piedad = false and vendi.opcion_recompra = false)
+&lt;? endif ?>
+and vendi.id = linea_vendi.id_vendi and cliente.id = vendi.id_cliente and vendi.id_tienda = tienda.id
+and linea_vendi.id_producto = producto.id and calculo_media.descripcion = producto.descripcion
+and vendi.fecha between &lt;? value("P_FECHA_INICIO") ?> and &lt;? value("P_FECHA_FIN") ?> 
+group by vendi.numero_vendi, vendi.estado, vendi.fecha, cliente.nombre, cliente.apellidos, linea_vendi.bruto, linea_vendi.neto_estimado, tienda.nombre,tienda.nemo,
+linea_vendi.precio_gramo, linea_vendi.importe, vendi.opcion_recompra, vendi.monte_piedad,
+cliente.dni, cliente.pasaporte, cliente.t_residente, cliente.nie, cliente.c_conducir, producto.descripcion,
+calculo_media.total_neto_estimado, calculo_media.total_importe, calculo_media.total_bruto
+order by producto.descripcion, tienda.nombre, vendi.numero_Vendi</sql>
+ </querysource>
+ <rpthead>
+  <height>7</height>
+ </rpthead>
+ <pghead>
+  <height>128</height>
+  <label>
+   <rect>
+    <x>1</x>
+    <y>21</y>
+    <width>1066</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>12</size>
+    <weight>bold</weight>
+   </font>
+   <hcenter/>
+   <top/>
+   <string>RELACIÓN DE VENDÍS POR PRODUCTO</string>
+  </label>
+  <label>
+   <rect>
+    <x>108</x>
+    <y>97</y>
+    <width>100</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <top/>
+   <string>Estado</string>
+  </label>
+  <label>
+   <rect>
+    <x>395</x>
+    <y>97</y>
+    <width>100</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <top/>
+   <string>Cliente</string>
+  </label>
+  <label>
+   <rect>
+    <x>519</x>
+    <y>42</y>
+    <width>32</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <hcenter/>
+   <top/>
+   <string>--</string>
+  </label>
+  <label>
+   <rect>
+    <x>3</x>
+    <y>97</y>
+    <width>100</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <top/>
+   <string>Nº Vendi</string>
+  </label>
+  <label>
+   <rect>
+    <x>4</x>
+    <y>63</y>
+    <width>100</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>12</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <top/>
+   <string>TIENDA</string>
+  </label>
+  <label>
+   <rect>
+    <x>194</x>
+    <y>97</y>
+    <width>83</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <top/>
+   <string>Fecha</string>
+  </label>
+  <label>
+   <rect>
+    <x>779</x>
+    <y>97</y>
+    <width>100</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <right/>
+   <top/>
+   <string>Neto Gr</string>
+  </label>
+  <label>
+   <rect>
+    <x>960</x>
+    <y>97</y>
+    <width>100</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <right/>
+   <top/>
+   <string>Total Vendi</string>
+  </label>
+  <field>
+   <rect>
+    <x>546</x>
+    <y>42</y>
+    <width>122</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <top/>
+   <data>
+    <query>Parameter Query</query>
+    <column>P_FECHA_FIN</column>
+   </data>
+  </field>
+  <label>
+   <rect>
+    <x>0</x>
+    <y>2</y>
+    <width>187</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>12</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <top/>
+   <string>ARRA &amp; CLAUD, S.L.</string>
+  </label>
+  <field>
+   <rect>
+    <x>404</x>
+    <y>42</y>
+    <width>121</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <right/>
+   <top/>
+   <data>
+    <query>Parameter Query</query>
+    <column>P_FECHA_INICIO</column>
+   </data>
+  </field>
+  <field>
+   <rect>
+    <x>81</x>
+    <y>63</y>
+    <width>428</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>12</size>
+    <weight>normal</weight>
+   </font>
+   <left/>
+   <top/>
+   <data>
+    <query>query_vendis</query>
+    <column>nombretienda</column>
+   </data>
+  </field>
+  <label>
+   <rect>
+    <x>704</x>
+    <y>97</y>
+    <width>100</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <right/>
+   <top/>
+   <string>Bruto Gr</string>
+  </label>
+  <label>
+   <rect>
+    <x>868</x>
+    <y>97</y>
+    <width>100</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <right/>
+   <top/>
+   <string>Euros Gr</string>
+  </label>
+  <line>
+   <xstart>1</xstart>
+   <ystart>117</ystart>
+   <xend>1062</xend>
+   <yend>117</yend>
+   <weight>0</weight>
+  </line>
+  <label>
+   <rect>
+    <x>275</x>
+    <y>97</y>
+    <width>83</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>9</size>
+    <weight>bold</weight>
+   </font>
+   <left/>
+   <top/>
+   <string>DNI</string>
+  </label>
+  <field>
+   <rect>
+    <x>806</x>
+    <y>2</y>
+    <width>259</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>12</size>
+    <weight>normal</weight>
+   </font>
+   <right/>
+   <top/>
+   <data>
+    <query>query_vendis</query>
+    <column>ahora</column>
+   </data>
+  </field>
+ </pghead>
+ <section>
+  <name>Detalles</name>
+  <group>
+   <name>Producto</name>
+   <column>producto</column>
+   <head>
+    <height>39</height>
+    <label>
+     <rect>
+      <x>33</x>
+      <y>3</y>
+      <width>100</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+     </rect>
+     <font>
+      <face>Liberation Sans</face>
+      <size>11</size>
+      <weight>bold</weight>
+     </font>
+     <left/>
+     <top/>
+     <string>Producto</string>
+    </label>
+    <field>
+     <rect>
+      <x>108</x>
+      <y>3</y>
+      <width>498</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+     </rect>
+     <font>
+      <face>Liberation Sans</face>
+      <size>11</size>
+      <weight>normal</weight>
+     </font>
+     <left/>
+     <top/>
+     <data>
+      <query>query_vendis</query>
+      <column>producto</column>
+     </data>
+    </field>
+    <line>
+     <xstart>34</xstart>
+     <ystart>21</ystart>
+     <xend>442</xend>
+     <yend>21</yend>
+     <weight>0</weight>
+    </line>
+   </head>
+   <foot>
+    <height>39</height>
+    <line>
+     <xstart>691</xstart>
+     <ystart>8</ystart>
+     <xend>1060</xend>
+     <yend>8</yend>
+     <weight>0</weight>
+    </line>
+    <field>
+     <rect>
+      <x>867</x>
+      <y>11</y>
+      <width>100</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+     </rect>
+     <font>
+      <face>Liberation Sans</face>
+      <size>9</size>
+      <weight>bold</weight>
+     </font>
+     <right/>
+     <top/>
+     <data>
+      <query>query_vendis</query>
+      <column>media</column>
+     </data>
+    </field>
+    <field>
+     <rect>
+      <x>703</x>
+      <y>11</y>
+      <width>100</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+     </rect>
+     <font>
+      <face>Liberation Sans</face>
+      <size>9</size>
+      <weight>bold</weight>
+     </font>
+     <right/>
+     <top/>
+     <data>
+      <query>query_vendis</query>
+      <column>total_bruto</column>
+     </data>
+    </field>
+    <field>
+     <rect>
+      <x>959</x>
+      <y>11</y>
+      <width>99</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+     </rect>
+     <font>
+      <face>Liberation Sans</face>
+      <size>9</size>
+      <weight>bold</weight>
+     </font>
+     <right/>
+     <top/>
+     <data>
+      <query>query_vendis</query>
+      <column>total_importe</column>
+     </data>
+    </field>
+    <field>
+     <rect>
+      <x>778</x>
+      <y>11</y>
+      <width>100</width>
+      <height>25</height>
+      <weight>0</weight>
+      <borderwidth>0</borderwidth>
+     </rect>
+     <font>
+      <face>Liberation Sans</face>
+      <size>9</size>
+      <weight>bold</weight>
+     </font>
+     <right/>
+     <top/>
+     <data>
+      <query>query_vendis</query>
+      <column>total_neto_estimado</column>
+     </data>
+    </field>
+   </foot>
+  </group>
+  <detail>
+   <key>
+    <query>query_vendis</query>
+   </key>
+   <height>27</height>
+   <field>
+    <rect>
+     <x>2</x>
+     <y>4</y>
+     <width>99</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <left/>
+    <top/>
+    <data>
+     <query>query_vendis</query>
+     <column>numero_vendi</column>
+    </data>
+   </field>
+   <field>
+    <rect>
+     <x>107</x>
+     <y>4</y>
+     <width>76</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <left/>
+    <top/>
+    <data>
+     <query>query_vendis</query>
+     <column>estado</column>
+    </data>
+   </field>
+   <field>
+    <rect>
+     <x>191</x>
+     <y>4</y>
+     <width>80</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <left/>
+    <top/>
+    <data>
+     <query>query_vendis</query>
+     <column>fecha</column>
+    </data>
+   </field>
+   <field>
+    <rect>
+     <x>393</x>
+     <y>3</y>
+     <width>324</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <left/>
+    <top/>
+    <data>
+     <query>query_vendis</query>
+     <column>nombre_cliente</column>
+    </data>
+   </field>
+   <field>
+    <rect>
+     <x>728</x>
+     <y>4</y>
+     <width>75</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <right/>
+    <top/>
+    <data>
+     <query>query_vendis</query>
+     <column>bruto</column>
+    </data>
+   </field>
+   <field>
+    <rect>
+     <x>807</x>
+     <y>4</y>
+     <width>71</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <right/>
+    <top/>
+    <data>
+     <query>query_vendis</query>
+     <column>neto_estimado</column>
+    </data>
+   </field>
+   <field>
+    <rect>
+     <x>882</x>
+     <y>4</y>
+     <width>85</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <right/>
+    <top/>
+    <data>
+     <query>query_vendis</query>
+     <column>precio_gramo</column>
+    </data>
+   </field>
+   <field>
+    <rect>
+     <x>972</x>
+     <y>4</y>
+     <width>87</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <right/>
+    <top/>
+    <data>
+     <query>query_vendis</query>
+     <column>precio_total</column>
+    </data>
+   </field>
+   <field>
+    <rect>
+     <x>275</x>
+     <y>4</y>
+     <width>104</width>
+     <height>25</height>
+     <weight>0</weight>
+     <borderwidth>0</borderwidth>
+    </rect>
+    <font>
+     <face>Helvetica</face>
+     <size>9</size>
+     <weight>normal</weight>
+    </font>
+    <left/>
+    <top/>
+    <data>
+     <query>query_vendis</query>
+     <column>identificacion</column>
+    </data>
+   </field>
+  </detail>
+ </section>
+ <pgfoot>
+  <height>33</height>
+  <field>
+   <rect>
+    <x>954</x>
+    <y>7</y>
+    <width>26</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>8</size>
+    <weight>normal</weight>
+   </font>
+   <right/>
+   <top/>
+   <data>
+    <query>Context Query</query>
+    <column>page_number</column>
+   </data>
+  </field>
+  <label>
+   <rect>
+    <x>913</x>
+    <y>7</y>
+    <width>46</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>8</size>
+    <weight>normal</weight>
+   </font>
+   <left/>
+   <top/>
+   <string>Página</string>
+  </label>
+  <label>
+   <rect>
+    <x>989</x>
+    <y>7</y>
+    <width>23</width>
+    <height>25</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>8</size>
+    <weight>normal</weight>
+   </font>
+   <left/>
+   <top/>
+   <string>de</string>
+  </label>
+  <field>
+   <rect>
+    <x>1011</x>
+    <y>7</y>
+    <width>51</width>
+    <height>26</height>
+    <weight>0</weight>
+    <borderwidth>0</borderwidth>
+   </rect>
+   <font>
+    <face>Helvetica</face>
+    <size>8</size>
+    <weight>normal</weight>
+   </font>
+   <left/>
+   <top/>
+   <data>
+    <query>Context Query</query>
+    <column>page_count</column>
+   </data>
+  </field>
+  <line>
+   <xstart>-1</xstart>
+   <ystart>5</ystart>
+   <xend>1066</xend>
+   <yend>5</yend>
+   <weight>0</weight>
+  </line>
+ </pgfoot>
+ <rptfoot>
+  <height>1</height>
+ </rptfoot>
+</report>

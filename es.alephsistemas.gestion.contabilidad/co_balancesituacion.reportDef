@@ -1,0 +1,13 @@
+<report>
+    <name>co_balancesituacion</name>
+    <pluginName>openrptplugin</pluginName>
+    <alias>Balance situacion</alias>
+    <reportName>co_balancesituacion.xml</reportName>
+    <parameterForm>co_balancesituacion</parameterForm>
+    <envVarParameterBinding>
+        <binding>
+            <parameter>P_ID_EMPRESA</parameter>
+            <envVar>idempresa</envVar>
+        </binding>
+    </envVarParameterBinding>
+</report>

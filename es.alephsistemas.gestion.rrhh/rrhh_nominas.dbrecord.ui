@@ -35,7 +35,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>C&amp;ódigo*</string>
+         <string>Código*</string>
         </property>
         <property name="buddy">
          <cstring>db_codnomina</cstring>
@@ -51,13 +51,10 @@
       </item>
       <item row="0" column="6" colspan="2">
        <widget class="DBDateTimeEdit" name="dbDateTimeEdit">
-        <property name="displayFormat">
-         <string>dd/MM/yyyy</string>
-        </property>
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>fecha</string>
         </property>
-        <property name="dataEditable" stdset="0">
+        <property name="dataEditable">
          <bool>true</bool>
         </property>
        </widget>
@@ -80,28 +77,25 @@
         <property name="text">
          <string>Empleado</string>
         </property>
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>idempleado</string>
         </property>
-        <property name="dataEditable" stdset="0">
+        <property name="dataEditable">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item row="1" column="3" colspan="12">
-       <widget class="DBLineEdit" name="db_nombreempleado">
-        <property name="fieldName" stdset="0">
-         <string>nombreempleado</string>
-        </property>
-        <property name="dataEditable" stdset="0">
-         <bool>true</bool>
+       <widget class="DBLineEdit" name="dbLineEdit">
+        <property name="fieldName">
+         <string/>
         </property>
        </widget>
       </item>
       <item row="2" column="0" colspan="3">
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>S&amp;ueldo bruto</string>
+         <string>Sueldo bruto</string>
         </property>
         <property name="buddy">
          <cstring>db_sueldobruto</cstring>
@@ -110,10 +104,10 @@
       </item>
       <item row="2" column="3" colspan="2">
        <widget class="DBNumberEdit" name="db_sueldobruto">
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>sueldobruto</string>
         </property>
-        <property name="dataEditable" stdset="0">
+        <property name="dataEditable">
          <bool>true</bool>
         </property>
        </widget>
@@ -123,9 +117,6 @@
         <property name="text">
          <string>S.S.</string>
         </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
         <property name="buddy">
          <cstring>db_ss</cstring>
         </property>
@@ -133,10 +124,10 @@
       </item>
       <item row="2" column="7" colspan="2">
        <widget class="DBNumberEdit" name="db_ss">
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>ss</string>
         </property>
-        <property name="dataEditable" stdset="0">
+        <property name="dataEditable">
          <bool>true</bool>
         </property>
        </widget>
@@ -146,9 +137,6 @@
         <property name="text">
          <string>I.R.P.F.</string>
         </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
         <property name="buddy">
          <cstring>db_irpf</cstring>
         </property>
@@ -156,10 +144,10 @@
       </item>
       <item row="2" column="10">
        <widget class="DBNumberEdit" name="db_irpf">
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>irpf</string>
         </property>
-        <property name="dataEditable" stdset="0">
+        <property name="dataEditable">
          <bool>true</bool>
         </property>
        </widget>
@@ -169,9 +157,6 @@
         <property name="text">
          <string>A percibir</string>
         </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
         <property name="buddy">
          <cstring>db_apercibir</cstring>
         </property>
@@ -179,17 +164,17 @@
       </item>
       <item row="2" column="14">
        <widget class="DBNumberEdit" name="db_apercibir">
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>apercibir</string>
         </property>
        </widget>
       </item>
       <item row="3" column="3" colspan="12">
        <widget class="DBLineEdit" name="db_descripcion">
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>concepto</string>
         </property>
-        <property name="dataEditable" stdset="0">
+        <property name="dataEditable">
          <bool>true</bool>
         </property>
        </widget>
@@ -206,16 +191,16 @@
       </item>
       <item row="0" column="2" colspan="2">
        <widget class="DBLineEdit" name="db_codnomina">
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>codnomina</string>
         </property>
-        <property name="dataEditable" stdset="0">
+        <property name="dataEditable">
          <bool>true</bool>
         </property>
-        <property name="replacePointWithCharacter" stdset="0">
+        <property name="replacePointWithCharacter">
          <bool>true</bool>
         </property>
-        <property name="automaticWidthBasedOnFieldMaxLength" stdset="0">
+        <property name="automaticWidthBasedOnFieldMaxLength">
          <bool>true</bool>
         </property>
        </widget>
@@ -223,10 +208,7 @@
       <item row="2" column="11">
        <widget class="QLabel" name="label_8">
         <property name="text">
-         <string>&amp;Dietas</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         <string>Dietas</string>
         </property>
         <property name="buddy">
          <cstring>db_dietas</cstring>
@@ -235,10 +217,10 @@
       </item>
       <item row="2" column="12">
        <widget class="DBNumberEdit" name="db_dietas">
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>dietas</string>
         </property>
-        <property name="dataEditable" stdset="0">
+        <property name="dataEditable">
          <bool>true</bool>
         </property>
        </widget>
@@ -283,10 +265,10 @@
             <property name="text">
              <string>Gestión automática de efectos de pago</string>
             </property>
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>efectospagoautomaticos</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
            </widget>
@@ -312,15 +294,18 @@
            </widget>
           </item>
           <item row="1" column="0" colspan="3">
-           <widget class="DBRelatedElementsView" name="db_efectospago" native="true">
-            <property name="allowedMetadatas" stdset="0">
+           <widget class="DBRelatedElementsView" name="db_efectospago">
+            <property name="allowedMetadatas">
              <string>efectospago</string>
             </property>
-            <property name="categories" stdset="0">
+            <property name="categories">
              <string>Pagos</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
+            </property>
+            <property name="visibleButtons">
+             <set>DBRelatedElementsView::Delete|DBRelatedElementsView::Insert|DBRelatedElementsView::InsertExisting|DBRelatedElementsView::RemoveExisting|DBRelatedElementsView::Update|DBRelatedElementsView::View</set>
             </property>
            </widget>
           </item>
@@ -345,20 +330,20 @@
             <property name="text">
              <string>Distribución de costes</string>
             </property>
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>iddistribucioncostes</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
-            <property name="scriptExecuteAfterChoose" stdset="0">
+            <property name="scriptExecuteAfterChoose">
              <string>asignarCostes</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="DBLineEdit" name="db_distribucioncostes_nombre">
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>distribucioncostes.nombre</string>
             </property>
            </widget>
@@ -384,11 +369,11 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="DBDetailView" name="db_lineasdistribucioncostesfacturasprov" native="true">
-            <property name="relationName" stdset="0">
+           <widget class="DBDetailView" name="db_lineasdistribucioncostesfacturasprov">
+            <property name="relationName">
              <string>rrhh_nominasdistribucioncostes</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
            </widget>
@@ -426,7 +411,7 @@
                 <bold>true</bold>
                </font>
               </property>
-              <property name="fieldName" stdset="0">
+              <property name="fieldName">
                <string>totalcostesdistribuidosconimpuestos</string>
               </property>
              </widget>
@@ -448,10 +433,10 @@
          <property name="text">
           <string>No generar asiento contable</string>
          </property>
-         <property name="fieldName" stdset="0">
+         <property name="fieldName">
           <string>nogenerarasiento</string>
          </property>
-         <property name="dataEditable" stdset="0">
+         <property name="dataEditable">
           <bool>true</bool>
          </property>
         </widget>
@@ -471,7 +456,7 @@
            <height>16777215</height>
           </size>
          </property>
-         <property name="fieldName" stdset="0">
+         <property name="fieldName">
           <string>co_asientos.brother.numero</string>
          </property>
         </widget>
@@ -500,7 +485,7 @@
          <property name="displayFormat">
           <string>dd/MM/yyyy</string>
          </property>
-         <property name="fieldName" stdset="0">
+         <property name="fieldName">
           <string>co_asientos.brother.fecha</string>
          </property>
         </widget>
@@ -544,16 +529,16 @@
        </item>
        <item row="3" column="0" colspan="6">
         <widget class="DBTableView" name="co_asientos.co_partidas">
-         <property name="internalData" stdset="0">
+         <property name="internalData">
           <bool>true</bool>
          </property>
-         <property name="relationName" stdset="0">
+         <property name="relationName">
           <string>co_asientos.co_partidas</string>
          </property>
-         <property name="allowedEdit" stdset="0">
+         <property name="allowedEdit">
           <bool>false</bool>
          </property>
-         <property name="visibleColumns" stdset="0">
+         <property name="visibleColumns">
           <string>codsubcuenta;concepto;debe;haber</string>
          </property>
         </widget>
@@ -610,6 +595,7 @@
   <tabstop>db_codnomina</tabstop>
   <tabstop>dbDateTimeEdit</tabstop>
   <tabstop>db_idempleado</tabstop>
+  <tabstop>dbLineEdit</tabstop>
   <tabstop>db_sueldobruto</tabstop>
   <tabstop>db_ss</tabstop>
   <tabstop>db_irpf</tabstop>

@@ -4,6 +4,7 @@ function DBRecordDlg(ui) {
 
     var beanEmpresaActual = empresaActual();
     this.pbMarcarPagada = this.ui.findChild("pbMarcarPagada");        
+    this.tbCostes.visible = beanEmpresaActual.contabilidadcostes.value;
     this.ui.findChild("tabCostes").enabled = beanEmpresaActual.contabilidadcostes.value;
     this.pbAgregarMultiplesCentrosCoste = this.ui.findChild("pbAgregarMultiplesCentrosCoste");
     if ( beanEmpresaActual.fieldValue("contintegrada") == false ) {
@@ -38,14 +39,6 @@ DBRecordDlg.prototype.validate = function() {
     return true;        
 }
 
-DBRecordDlg.prototype.idempleadoValueModified = function() {
-    if ( bean.idempleado.value > 0 ) {
-        bean.nombreempleado.value = bean.alepherp_personal.father.nombre.value + " " + bean.alepherp_personal.father.apellidos.value;
-    } else {
-        bean.nombreempleado.value = "";
-    }
-}
-    
 DBRecordDlg.prototype.beforeSave = function() {
     if ( !bean.nogenerarasiento.value ) {
         bean.aerpGenerarAsiento.call();
@@ -54,7 +47,7 @@ DBRecordDlg.prototype.beforeSave = function() {
 }
 
 DBRecordDlg.prototype.asignarCostes = function() {
-    var lineasCostes = bean.relationChilds("rrhh_nominasdistribucioncostes");
+    var lineasCostes = bean.relationChilds("lineasdistribucioncostes" + bean.metadata.tableName);
     if ( lineasCostes.length > 0 ) {
         var ret = AERPMessageBox.question("Al escoger una nueva distribución de costes, se borrará la existente. ¿Desea continuar?", AERPMessageBox.Yes | AERPMessageBox.No);
         if ( ret == AERPMessageBox.No ) {
@@ -62,7 +55,7 @@ DBRecordDlg.prototype.asignarCostes = function() {
         }            
     }
 
-    var relationLineasCoste = bean.relation("rrhh_nominasdistribucioncostes");
+    var relationLineasCoste = bean.relation("lineasdistribucioncostes" + bean.metadata.tableName);
     relationLineasCoste.deleteAllChilds();
     var beanDistribucion = thisForm.db_iddistribucioncostes.selectedBean;
     if ( beanDistribucion == null ) {
@@ -93,7 +86,8 @@ DBRecordDlg.prototype.marcarPagada = function() {
 }
 
 DBRecordDlg.prototype.generarAsientoContable = function() {
-    if ( !bean.nogenerarasiento.value ) {
+    if ( !bean.nogenerarasiento.value && !bean.seriesfacturacion.father.ignoracontabilidad.value ) {
+        this.calcularImpuestos();
         bean.aerpGenerarAsiento.call();
     } else {
         var asiento = bean.co_asientos.brother;
