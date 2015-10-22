@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <AlephERP>
 <export>
 
@@ -7,467 +8,465 @@
 <showedText><![CDATA[Almacén]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
-<generatedTime>2015-04-16 13:58:15</generatedTime>
-
 
 <file>
-    <objectName>almacenes</objectName>
-    <name>almacenes.table</name>
-    <version>15</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>almacenes</objectName>
+  <name>almacenes.table</name>
+  <version>15</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulos</objectName>
-    <name>articulos.table</name>
-    <version>41</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulos</objectName>
+  <name>articulos.table</name>
+  <version>41</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articuloscaracteristicasdefiniciones</objectName>
-    <name>articuloscaracteristicasdefiniciones.table</name>
-    <version>8</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articuloscaracteristicasdefiniciones</objectName>
+  <name>articuloscaracteristicasdefiniciones.table</name>
+  <version>8</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articuloscaracteristicasvalores</objectName>
-    <name>articuloscaracteristicasvalores.table</name>
-    <version>10</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articuloscaracteristicasvalores</objectName>
+  <name>articuloscaracteristicasvalores.table</name>
+  <version>10</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulosinstancias</objectName>
-    <name>articulosinstancias.table</name>
-    <version>14</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulosinstancias</objectName>
+  <name>articulosinstancias.table</name>
+  <version>14</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulosprov</objectName>
-    <name>articulosprov.table</name>
-    <version>6</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulosprov</objectName>
+  <name>articulosprov.table</name>
+  <version>6</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulostarifas</objectName>
-    <name>articulostarifas.table</name>
-    <version>7</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulostarifas</objectName>
+  <name>articulostarifas.table</name>
+  <version>7</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>familiasarticulos</objectName>
-    <name>familiasarticulos.table</name>
-    <version>8</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>familiasarticulos</objectName>
+  <name>familiasarticulos.table</name>
+  <version>8</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>lineasarticulosalbaranesprov</objectName>
-    <name>lineasarticulosalbaranesprov.table</name>
-    <version>8</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>lineasarticulosalbaranesprov</objectName>
+  <name>lineasarticulosalbaranesprov.table</name>
+  <version>8</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>lineasivaalbaranesprov</objectName>
-    <name>lineasivaalbaranesprov.table</name>
-    <version>2</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>lineasivaalbaranesprov</objectName>
+  <name>lineasivaalbaranesprov.table</name>
+  <version>2</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocks</objectName>
-    <name>stocks.table</name>
-    <version>23</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocks</objectName>
+  <name>stocks.table</name>
+  <version>23</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksmovimientos</objectName>
-    <name>stocksmovimientos.table</name>
-    <version>30</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksmovimientos</objectName>
+  <name>stocksmovimientos.table</name>
+  <version>30</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksmovimientosinstancias</objectName>
-    <name>stocksmovimientosinstancias.table</name>
-    <version>12</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksmovimientosinstancias</objectName>
+  <name>stocksmovimientosinstancias.table</name>
+  <version>12</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>subfamiliasarticulos</objectName>
-    <name>subfamiliasarticulos.table</name>
-    <version>4</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>subfamiliasarticulos</objectName>
+  <name>subfamiliasarticulos.table</name>
+  <version>4</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>tarifas</objectName>
-    <name>tarifas.table</name>
-    <version>3</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>tarifas</objectName>
+  <name>tarifas.table</name>
+  <version>3</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>alepherp/almacen/__init__.js</objectName>
-    <name>alepherp/almacen/__init__.js</name>
-    <version>16</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>albaranesmovimientosarticulos</objectName>
+  <name>albaranesmovimientosarticulos.reportDef</name>
+  <version>2</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>almacencommonfunctions.qs</objectName>
-    <name>almacencommonfunctions.qs</name>
-    <version>80</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>albaranesmovimientosarticulos.report.ui</objectName>
+  <name>albaranesmovimientosarticulos.report.ui</name>
+  <version>3</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>almacencommonsfunctions.qs</objectName>
-    <name>almacencommonsfunctions.qs</name>
-    <version>2</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>albaranesmovimientosarticulos.xml</objectName>
+  <name>albaranesmovimientosarticulos.xml.report</name>
+  <version>17</version>
+  <type>report</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulos.dbrecord.qs</objectName>
-    <name>articulos.dbrecord.qs</name>
-    <version>9</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>alepherp/almacen/__init__.js</objectName>
+  <name>alepherp/almacen/__init__.js</name>
+  <version>16</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocks.dbform.qs</objectName>
-    <name>stocks.dbform.qs</name>
-    <version>5</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>almacencommonfunctions.qs</objectName>
+  <name>almacencommonfunctions.qs</name>
+  <version>80</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocks.dbrecord.qs</objectName>
-    <name>stocks.dbrecord.qs</name>
-    <version>9</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>almacencommonsfunctions.qs</objectName>
+  <name>almacencommonsfunctions.qs</name>
+  <version>2</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksmovimientos.dbrecord.qs</objectName>
-    <name>stocksmovimientos.dbrecord.qs</name>
-    <version>51</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>almacenes.dbrecord.ui</objectName>
+  <name>almacenes.dbrecord.ui</name>
+  <version>5</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksmovimientosinstancias.dbrecord.qs</objectName>
-    <name>stocksmovimientosinstancias.dbrecord.qs</name>
-    <version>52</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulos</objectName>
+  <name>articulos.reportDef</name>
+  <version>6</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>albaranesmovimientosarticulos.xml</objectName>
-    <name>albaranesmovimientosarticulos.xml.report</name>
-    <version>17</version>
-    <type>report</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulos-sinpvp</objectName>
+  <name>articulos-sinpvp.reportDef</name>
+  <version>3</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulos-sinpvp.xml</objectName>
-    <name>articulos-sinpvp.xml.report</name>
-    <version>14</version>
-    <type>report</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulos-sinpvp.xml</objectName>
+  <name>articulos-sinpvp.xml.report</name>
+  <version>14</version>
+  <type>report</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulos.xml</objectName>
-    <name>articulos.xml.report</name>
-    <version>34</version>
-    <type>report</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulos.dbrecord.qs</objectName>
+  <name>articulos.dbrecord.qs</name>
+  <version>9</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksestadoinventario.xml</objectName>
-    <name>stocksestadoinventario.xml.report</name>
-    <version>12</version>
-    <type>report</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulos.dbrecord.ui</objectName>
+  <name>articulos.dbrecord.ui</name>
+  <version>46</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksmovimientos.xml</objectName>
-    <name>stocksmovimientos.xml.report</name>
-    <version>10</version>
-    <type>report</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulos.report.ui</objectName>
+  <name>articulos.report.ui</name>
+  <version>2</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksmovimientosimpcodbarras.xml</objectName>
-    <name>stocksmovimientosimpcodbarras.xml.report</name>
-    <version>9</version>
-    <type>report</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articulos.xml</objectName>
+  <name>articulos.xml.report</name>
+  <version>34</version>
+  <type>report</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>albaranesmovimientosarticulos</objectName>
-    <name>albaranesmovimientosarticulos.reportDef</name>
-    <version>2</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>articuloscaracteristicasdefiniciones.dbrecord.ui</objectName>
+  <name>articuloscaracteristicasdefiniciones.dbrecord.ui</name>
+  <version>4</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulos</objectName>
-    <name>articulos.reportDef</name>
-    <version>6</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>familiasarticulos.dbrecord.ui</objectName>
+  <name>familiasarticulos.dbrecord.ui</name>
+  <version>1</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulos-sinpvp</objectName>
-    <name>articulos-sinpvp.reportDef</name>
-    <version>3</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocks.dbform.qs</objectName>
+  <name>stocks.dbform.qs</name>
+  <version>5</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksestadoinventario</objectName>
-    <name>stocksestadoinventario.reportDef</name>
-    <version>3</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocks.dbrecord.qs</objectName>
+  <name>stocks.dbrecord.qs</name>
+  <version>9</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksmovimientos</objectName>
-    <name>stocksmovimientos.reportDef</name>
-    <version>3</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocks.dbrecord.ui</objectName>
+  <name>stocks.dbrecord.ui</name>
+  <version>13</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksmovimientosimpcodbarras</objectName>
-    <name>stocksmovimientosimpcodbarras.reportDef</name>
-    <version>3</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksestadoinventario</objectName>
+  <name>stocksestadoinventario.reportDef</name>
+  <version>3</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>albaranesmovimientosarticulos.report.ui</objectName>
-    <name>albaranesmovimientosarticulos.report.ui</name>
-    <version>3</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksestadoinventario.xml</objectName>
+  <name>stocksestadoinventario.xml.report</name>
+  <version>12</version>
+  <type>report</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>almacenes.dbrecord.ui</objectName>
-    <name>almacenes.dbrecord.ui</name>
-    <version>5</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksmovimientos</objectName>
+  <name>stocksmovimientos.reportDef</name>
+  <version>3</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulos.dbrecord.ui</objectName>
-    <name>articulos.dbrecord.ui</name>
-    <version>46</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksmovimientos.dbrecord.qs</objectName>
+  <name>stocksmovimientos.dbrecord.qs</name>
+  <version>51</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articulos.report.ui</objectName>
-    <name>articulos.report.ui</name>
-    <version>2</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksmovimientos.dbrecord.ui</objectName>
+  <name>stocksmovimientos.dbrecord.ui</name>
+  <version>43</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>articuloscaracteristicasdefiniciones.dbrecord.ui</objectName>
-    <name>articuloscaracteristicasdefiniciones.dbrecord.ui</name>
-    <version>4</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksmovimientos.xml</objectName>
+  <name>stocksmovimientos.xml.report</name>
+  <version>10</version>
+  <type>report</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>familiasarticulos.dbrecord.ui</objectName>
-    <name>familiasarticulos.dbrecord.ui</name>
-    <version>1</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksmovimientosimpcodbarras</objectName>
+  <name>stocksmovimientosimpcodbarras.reportDef</name>
+  <version>3</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocks.dbrecord.ui</objectName>
-    <name>stocks.dbrecord.ui</name>
-    <version>13</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksmovimientosimpcodbarras.xml</objectName>
+  <name>stocksmovimientosimpcodbarras.xml.report</name>
+  <version>9</version>
+  <type>report</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksmovimientos.dbrecord.ui</objectName>
-    <name>stocksmovimientos.dbrecord.ui</name>
-    <version>43</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksmovimientosinstancias.dbrecord.qs</objectName>
+  <name>stocksmovimientosinstancias.dbrecord.qs</name>
+  <version>52</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>stocksmovimientosinstancias.dbrecord.ui</objectName>
-    <name>stocksmovimientosinstancias.dbrecord.ui</name>
-    <version>17</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>stocksmovimientosinstancias.dbrecord.ui</objectName>
+  <name>stocksmovimientosinstancias.dbrecord.ui</name>
+  <version>17</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>subfamiliasarticulos.dbrecord.ui</objectName>
-    <name>subfamiliasarticulos.dbrecord.ui</name>
-    <version>1</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>subfamiliasarticulos.dbrecord.ui</objectName>
+  <name>subfamiliasarticulos.dbrecord.ui</name>
+  <version>1</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>tarifas.dbrecord.ui</objectName>
-    <name>tarifas.dbrecord.ui</name>
-    <version>4</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>tarifas.dbrecord.ui</objectName>
+  <name>tarifas.dbrecord.ui</name>
+  <version>4</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 </export>
