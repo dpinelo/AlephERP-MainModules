@@ -18,7 +18,7 @@ function MainDlg(ui) {
         divisa.descripcion.value = "Euros";
         divisa.save();
     }
-    
+
     // Comprobemos primero que hay definida una empresa y un ejercicio fiscal actual, ya que si no,
     // habrá que crearlos. Se utiliza la función sqlCount del objeto de entorno de script AERPScriptCommon,
     // que dispone de funciones de ayuda al programador QS.
@@ -32,7 +32,7 @@ function MainDlg(ui) {
         var dlg = new DBDialog;
         dlg.type = "record";
         dlg.tableName = "empresas";
-        dlg.show();	
+        dlg.show();
         if ( dlg.userClickOk ) {
             var recordEmpresa = dlg.selectedBean();
             AERPScriptCommon.setDbEnvVar("idempresa", recordEmpresa.fieldValue("id"));
@@ -43,7 +43,7 @@ function MainDlg(ui) {
             return;
         }
     }
-	
+
     // Veamos ahora si el usuario tiene definido una empresa de trabajo y un ejercicio fiscal, si no, deberá
     // seleccionar uno
     var idempresa = AERPScriptCommon.envVar("idempresa");
@@ -54,7 +54,7 @@ function MainDlg(ui) {
     if ( idempresa == null || idejercicio == null ) {
         this.selectEntornoUsuario();
     }
-	
+
     var action_entornousuario = thisForm.findChild("action_entornousuario");
     action_entornousuario.triggered.connect(this, "selectEntornoUsuario");
     var action_informes = thisForm.findChild("action_informes");

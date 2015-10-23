@@ -1,0 +1,160 @@
+<table>
+    <name>rrhh_personal</name>
+    <alias>Personal</alias>
+    <isCached>true</isCached>
+        
+    <itemsFilterColumn>
+        <itemFilter>
+            <fieldToFilter>debaja</fieldToFilter>
+        </itemFilter>
+    </itemsFilterColumn> 
+    
+    <field>
+        <name>id</name>
+        <alias>Id de Personal</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <length>255</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>nombre</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>apellidos</name>
+        <alias>Apellidos</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+    <field>
+        <name>nombre_completo</name>
+        <alias>Nombre</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <visiblegrid>true</visiblegrid>
+        <calculated>true</calculated>
+        <script>
+<![CDATA[
+        function value() {
+            var nombre = bean.fieldValue("nombre") + " " + bean.fieldValue("apellidos");
+            return nombre;
+        }
+]]>
+        </script>
+    </field>
+
+    <field>
+        <name>dni</name>
+        <alias>DNI</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <visiblegrid>true</visiblegrid>
+    </field>
+    
+    <field>
+        <name>telefono</name>
+        <alias>Telefono</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>true</visiblegrid>
+    </field>    
+    
+    <field>
+        <name>movil</name>
+        <alias>Telefono Movil</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>50</length>
+        <visiblegrid>true</visiblegrid>
+    </field>
+    
+    <field>
+        <name>direccion</name>
+        <alias>Direccion</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>250</length>
+        <visiblegrid>true</visiblegrid>
+    </field>
+    
+    <field>
+        <name>debaja</name>
+        <alias>De baja</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+                <default>false</default>
+    </field>
+    
+    <field>
+        <name>codsubcuentasueldo</name>
+        <alias>Subcuenta Sueldos y Salarios</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>17</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>codsubcuentassempresa</name>
+        <alias>Subcuenta S.S. a cargo de la empresa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>17</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>codsubcuentassacredora</name>
+        <alias>Subcuenta S.S. acreedora</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>17</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>codsubcuentahpacreedora</name>
+        <alias>Subcuenta H.P. acreedora</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>17</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>codsubcuentaremuneracionpendiente</name>
+        <alias>Subcuenta Remuneraciones pendientes de pago</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>17</length>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
+</table>

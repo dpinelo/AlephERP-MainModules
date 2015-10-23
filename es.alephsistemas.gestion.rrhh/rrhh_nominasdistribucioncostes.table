@@ -142,13 +142,14 @@ function defaultValue() {
         <pk>false</pk>
         <type>double</type>
         <partD>2</partD>
-        <scriptDefaultValue>
+        <calculated saveOnDb="true">true</calculated>
+        <script>
 <![CDATA[
-function defaultValue() {
-    return (bean.rrhh_nominas.father.apercibir.value * bean.porcentaje.value) / 100;
+function value() {
+    return (bean.rrhh_nominas.father.sueldobruto.value * bean.porcentaje.value) / 100;
 }
 ]]>
-        </scriptDefaultValue>      
+        </script>      
                     
     </field>
 </table>

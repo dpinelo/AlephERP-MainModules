@@ -7,7 +7,7 @@
 <showedText><![CDATA[RRHH]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
-<generatedTime>2015-10-23 17:03:01</generatedTime>
+<generatedTime>2015-10-23 17:30:59</generatedTime>
 
 
 <file>
@@ -23,7 +23,7 @@
 <file>
     <objectName>rrhh_nominasdistribucioncostes</objectName>
     <name>rrhh_nominasdistribucioncostes.table</name>
-    <version>2</version>
+    <version>3</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -33,7 +33,17 @@
 <file>
     <objectName>rrhh_nominas.dbrecord.qs</objectName>
     <name>rrhh_nominas.dbrecord.qs</name>
-    <version>9</version>
+    <version>10</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>rrhh_nominasdistribucioncostes.dbrecord.qs</objectName>
+    <name>rrhh_nominasdistribucioncostes.dbrecord.qs</name>
+    <version>3</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -44,6 +54,16 @@
     <objectName>rrhh_nominas.dbrecord.ui</objectName>
     <name>rrhh_nominas.dbrecord.ui</name>
     <version>10</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>rrhh_nominasdistribucioncostes.dbrecord.ui</objectName>
+    <name>rrhh_nominasdistribucioncostes.dbrecord.ui</name>
+    <version>5</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

@@ -7,14 +7,23 @@
     <x>0</x>
     <y>0</y>
     <width>538</width>
-    <height>196</height>
+    <height>258</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Distribución de costes</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
@@ -32,7 +41,7 @@
       </item>
       <item row="0" column="1" colspan="2">
        <widget class="DBLineEdit" name="db_nombrecentro">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>nombrecentro</string>
         </property>
        </widget>
@@ -42,13 +51,13 @@
         <property name="text">
          <string>Subcentro de coste</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idsubcentro</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="scriptExecuteAfterChoose">
+        <property name="scriptExecuteAfterChoose" stdset="0">
          <string>asignarCentroCoste</string>
         </property>
        </widget>
@@ -61,35 +70,32 @@
           <height>16777215</height>
          </size>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idsubcentro</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="autoComplete">
-         <set>AlephERP::RestrictValueToItemFromList|AlephERP::ValuesFromRelation</set>
-        </property>
-        <property name="autoCompleteColumn">
+        <property name="autoCompleteColumn" stdset="0">
          <string>codigo</string>
         </property>
-        <property name="autoCompletePopupSize">
+        <property name="autoCompletePopupSize" stdset="0">
          <size>
           <width>300</width>
           <height>0</height>
          </size>
         </property>
-        <property name="autoCompleteVisibleFields">
+        <property name="autoCompleteVisibleFields" stdset="0">
          <string>codigo;nombre</string>
         </property>
-        <property name="scriptAfterChooseFromCompleter">
+        <property name="scriptAfterChooseFromCompleter" stdset="0">
          <string>asignarCentroCoste</string>
         </property>
        </widget>
       </item>
       <item row="1" column="2">
        <widget class="DBLineEdit" name="db_nombresubcentro">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>nombresubcentro</string>
         </property>
        </widget>
@@ -106,28 +112,14 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Base imponible factura</string>
+         <string>Sueldo bruto</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="DBNumberEdit" name="db_facturasprov_neto">
-        <property name="fieldName">
-         <string>facturasprov.neto</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>Total factura</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="DBNumberEdit" name="db_facturasprov_total">
-        <property name="fieldName">
-         <string>facturasprov.total</string>
+        <property name="fieldName" stdset="0">
+         <string>rrhh_nominas.sueldobruto</string>
         </property>
        </widget>
       </item>
@@ -142,10 +134,10 @@
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="DBNumberEdit" name="db_porcentaje">
-          <property name="fieldName">
+          <property name="fieldName" stdset="0">
            <string>porcentaje</string>
           </property>
-          <property name="dataEditable">
+          <property name="dataEditable" stdset="0">
            <bool>true</bool>
           </property>
          </widget>
@@ -175,34 +167,17 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>Base imponible a asignar</string>
+         <string>Sueldo bruto a asignar</string>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
        <widget class="DBNumberEdit" name="db_importe">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>importe</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>Total factura a asignar</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="3">
-       <widget class="DBNumberEdit" name="db_importe_2">
-        <property name="fieldName">
-         <string>total</string>
-        </property>
-        <property name="dataEditable">
-         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -232,10 +207,8 @@
   <tabstop>db_idsubcentro_text</tabstop>
   <tabstop>db_nombresubcentro</tabstop>
   <tabstop>db_facturasprov_neto</tabstop>
-  <tabstop>db_facturasprov_total</tabstop>
   <tabstop>db_porcentaje</tabstop>
   <tabstop>db_importe</tabstop>
-  <tabstop>db_importe_2</tabstop>
   <tabstop>db_idsubcentro</tabstop>
   <tabstop>db_nombrecentro</tabstop>
  </tabstops>

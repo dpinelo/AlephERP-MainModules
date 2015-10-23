@@ -58,7 +58,9 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.init = function(ui) {
             this.tbContabilidad.enabled = false;
         }
         if ( thisForm.openType != AlephERP.ReadOnly ) {
-            this.ui.findChild("pbGenerarAsiento").clicked.connect(this, "generarAsientoContable");
+            if ( this.ui.findChild("pbGenerarAsiento") != undefined && this.ui.findChild("pbGenerarAsiento") != null ) {
+                this.ui.findChild("pbGenerarAsiento").clicked.connect(this, "generarAsientoContable");
+            }
             this.pbAgregarMultiplesCentrosCoste.clicked.connect(this, "agregarMultiplesCentrosCoste"); 
         } else {
             this.pbAgregarMultiplesCentrosCoste.visible = false;
