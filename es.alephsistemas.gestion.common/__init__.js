@@ -356,13 +356,15 @@ precargarDatosSiNecesario = function() {
         // Creamos un ejercicio
         var ejercicio = empresa.ejercicios.newChild();
         ejercicio.codejercicio.value = ahora.getFullYear();
-        ejercicio.nombre.value = "Ejercicio " + ahora.getFullYear();
+        ejercicio.nombre.value = "Ejercicio " + ahora.getFullYear() + " - EDÍTEME";
         ejercicio.counter_prefix.value = "EJ";
         ejercicio.estado.value = "abierto";
         
         // También creamos una serie de facturación a ese ejercicio
-        var serieFacturacion = ejercicio.seriesfacturacion.newChild();
+        var serieFacturacion = empresa.seriesfacturacionventas.newChild();
+        serieFacturacion.descripcion.value = "Serie de Facturación - EDÍTEME";
         serieFacturacion.codserie.value = "SA";
+        serieFacturacion.counter_prefix = "SA";
         
         if ( !AERPScriptCommon.commit(true, true) ) {
             AERPMessageBox.error("Se han producido errores a la hora de crear datos. Los errores son: " + AERPScriptCommon.lastError);

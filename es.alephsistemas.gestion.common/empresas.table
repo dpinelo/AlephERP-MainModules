@@ -239,9 +239,10 @@
         <type>int</type>
         
         <relation>
+            <name>seriesfacturacioncompras</name>
             <table>seriesfacturacion</table>
-            <field>id</field>
-            <card>M1</card>
+            <field>idempresa</field>
+            <card>1M</card>
         </relation>
     </field>
 
@@ -254,9 +255,10 @@
         <type>int</type>
         
         <relation>
+            <name>seriesfacturacionventas</name>
             <table>seriesfacturacion</table>
-            <field>id</field>
-            <card>M1</card>
+            <field>idempresa</field>
+            <card>1M</card>
         </relation>
     </field>
 

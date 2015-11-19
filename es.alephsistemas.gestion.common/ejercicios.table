@@ -30,11 +30,6 @@
         <type>serial</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-            <table>seriesfacturacion</table>
-            <field>idejercicio</field>
-            <card>1M</card>
-        </relation>
-        <relation>
             <table>co_grupos</table>
             <field>idejercicio</field>
             <card>1M</card>

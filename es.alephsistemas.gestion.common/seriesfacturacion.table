@@ -28,6 +28,30 @@
         <type>serial</type>
         <visiblegrid>false</visiblegrid>
     </field>
+
+    <field>
+        <name>idempresa</name>
+        <alias>ID. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <script>
+<![CDATA[
+function value() {
+    // Esta función está en __init__.js
+    return idempresaActual();
+}
+]]>  
+       </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
     
     <field>
         <name>codserie</name>
@@ -53,53 +77,6 @@ function defaultValue() {
         <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
     </field>
 
-    <field>
-        <name>idempresa</name>
-        <alias>ID. Empresa</alias>
-        <null>false</null>
-        <pk>false</pk>
-        <type>int</type>
-        <visiblegrid>false</visiblegrid>
-        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
-        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
-        <script>
-<![CDATA[
-function value() {
-    // Esta función está en __init__.js
-    return idempresaActual();
-}
-]]>  
-       </script>
-        <relation>
-            <table>empresas</table>
-            <field>id</field>
-            <card>M1</card>
-        </relation>
-    </field>
-<!--
-    <field>
-        <name>idejercicio</name>
-        <alias>ID. Ejercicio</alias>
-        <null>false</null>
-        <pk>false</pk>
-        <type>int</type>
-        <visiblegrid>false</visiblegrid>
-        <scriptDefaultValue>
-<![CDATA[
-function defaultValue() {
-    // Esta función está en __init__.js
-    return idejercicioActual();
-}
-]]>
-        </scriptDefaultValue>
-        <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
-        <relation>
-            <table>ejercicios</table>
-            <field>id</field>
-            <card>M1</card>
-        </relation>
-    </field>
- -->   
     <field>
         <name>descripcion</name>
         <alias>Descripción</alias>
