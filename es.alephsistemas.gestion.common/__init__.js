@@ -316,7 +316,43 @@ calcularDC = function(banco, sucursal, cuenta) {
         result = "0" + result;
     }
     return result;
- }
+}
+
+/**
+* Comprueba si hay datos cargados en la instancia (al menos algún dato mínimo...) y si no es así, inicia la app con datos
+*/
+precargarDatosSiNecesario = function() {
+    
+    // ¿Hay alguna divisa definida? Si no es así, creamos al menos EUROS
+    var numDivisas = AERPScriptCommon.sqlCount("divisas", "");
+    if ( numDivisas == 0 ) {
+        var divisa = AERPScriptCommon.createBean("divisas");
+        divisa.coddivisa.value = "EUR";
+        divisa.descripcion.value = "Euros";
+        divisa.save();
+    }
+
+    // Comprobemos primero que hay definida una empresa y un ejercicio fiscal actual, ya que si no,
+    // habrá que crearlos. Se utiliza la función sqlCount del objeto de entorno de script AERPScriptCommon,
+    // que dispone de funciones de ayuda al programador QS.
+    var numEmpresas = AERPScriptCommon.sqlCount("empresas", "");
+    if ( numEmpresas == -1 ) {
+        AERPMessageBox.information("Ha ocurrido un error en el primer acceso a base de datos. No existe la tabla 'empresas'. La importación no se ha efectuado correctamente. No se puede iniciar la aplicación.");
+        quitApplication();
+        return;    
+    } else if ( numEmpresas == 0 ) {
+        AERPMessageBox.information("No hay definida ninguna empresa en el sistema. Se crearán algunos datos por defecto.");
+        
+        var empresa = AERPScriptCommon.createBean("empresas");
+        empresa.nombre.value = "Empresa de pruebas - EDÍTEME";
+        empresa.cifnif.value = "87654321X";
+        empresa.counter_prefix.value = "EP";
+        empresa.coddivisa.value = "EUR";
+        empresa.contabilidadcostes.value = false;
+        var ejercicio = empresa.ejercicios.newChild();
+    }
+}
+ 
  
 Function.prototype.bind = function() { 
     var func = this;
@@ -327,78 +363,3 @@ Function.prototype.bind = function() {
     }
 }
 
-/**
-Las l?neas de art?culos de pedidos de clientes/proveedores, albaranes o facturas, comparten mucho c?digo en com?n.
-Utilizamos "Prototype chaining" de Javascript para simular herencia, y de esa manera, no reescribir c?digo
-*/
-function DBRecordDlgLineasArticulos (ui) {
-    loadExtension("qt.core");
-    loadExtension("qt.gui");
-    this.ui = ui;
-    
-    if ( bean.dbState == BaseBean.INSERT ) {
-        thisForm.db_recargo.visible = false;
-    } else {
-        thisForm.db_recargo.visible = bean.fieldValue("incluirrecargoequivalencia");
-    }
-}
-
-DBRecordDlgLineasArticulos.prototype.validate = function() {
-    return true;
-}
-
-DBRecordDlgLineasArticulos.prototype.beforeSave = function() {
-    return true;
-}
-
-DBRecordDlgLineasArticulos.prototype.beanSaved = function() {
-    return;
-}
-
-DBRecordDlgLineasArticulos.prototype.beforeNavigate = function() {
-    return true;
-}
-
-DBRecordDlgLineasArticulos.prototype.afterNavigate = function() {
-    return;
-}
-
-DBRecordDlgLineasArticulos.prototype.updateIVA = function() {
-    var beanIVA = thisForm.db_idimpuesto.selectedBean;
-    if ( beanIVA != null ) {
-        bean.setFieldValue("iva", beanIVA.fieldValue("iva"));
-        bean.setFieldValue("recargo", beanIVA.fieldValue("recargo"));
-    }        
-}
-
-DBRecordDlgLineasArticulos.prototype.updateIRPF = function() {
-    var beanIRPF = thisForm.db_idimpuesto_irpf.selectedBean;
-    if ( beanIRPF != null ) {
-        bean.setFieldValue("irpf", beanIRPF.fieldValue("irpf"));
-    }        
-}
-
-DBRecordDlgLineasArticulos.prototype.incluirrecargoequivalenciaValueModified = function() {
-    thisForm.db_recargo.visible = thisForm.db_incluirrecargoequivalencia.checked;
-}
-
-DBRecordDlgLineasArticulos.prototype.idarticuloValueModified = function () {
-    if ( bean.fieldValue("idarticulo") > 0 ) {
-        if ( bean.fieldValue("idimpuesto") == null || bean.fieldValue("idimpuesto") == 0 ) {
-            bean.setFieldValue("idimpuesto", bean.fatherFieldValue("articulos", "idimpuestocompra"));
-            var impuestoCompra = bean.father("articulos").field("idimpuestocompra").relation("impuestos").father();
-            bean.setFieldValue("iva", impuestoCompra.fieldValue("iva"));
-            bean.setFieldValue("importesindto", bean.fatherFieldValue("articulos", "pvp"));
-        } else {
-            if ( bean.fatherFieldValue("articulos", "idimpuestocompra" ) != bean.fieldValue("idimpuesto") ) {
-                var ret = QMessageBox.question(this.ui, "AlephERP", "¿Desea utilizar el IVA del nuevo artículo?",
-                    QMessageBox.StandardButtons(QMessageBox.Yes, QMessageBox.No));
-                if ( ret == QMessageBox.Yes ) {
-                    bean.setFieldValue("idimpuesto", bean.fatherFieldValue("articulos", "idimpuestocompra"));
-                    bean.setFieldValue("iva", bean.fatherFieldValue("articulos", "iva"));
-                    bean.setFieldValue("importesindto", bean.fatherFieldValue("articulos", "pvp"));
-                }
-            }
-        }
-    }
-}

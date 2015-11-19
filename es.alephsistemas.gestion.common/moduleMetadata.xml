@@ -8,7 +8,7 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <generatedTime>2015-11-19 12:03:25</generatedTime>
-
+<tableCreationOptions>AlephERP::WithForeignKeys | AlephERP::CreateIndexOnRelationColumns</tableCreationOptions>
 
 <file>
     <objectName>documentosgestion</objectName>

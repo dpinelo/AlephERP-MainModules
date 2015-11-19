@@ -8,12 +8,53 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <generatedTime>2015-11-19 16:22:39</generatedTime>
+<tableCreationOptions>AlephERP::WithForeignKeys | AlephERP::CreateIndexOnRelationColumns</tableCreationOptions>
 
 
 <file>
     <objectName>almacenes</objectName>
     <name>almacenes.table</name>
     <version>17</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>almaceneszonas</objectName>
+    <name>almaceneszonas.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>almacenessecciones</objectName>
+    <name>almacenessecciones.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>almacenescalles</objectName>
+    <name>almacenescalles.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>almacenesubicaciones</objectName>
+    <name>almacenesubicaciones.table</name>
+    <version>1</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -104,6 +145,26 @@
     <objectName>lineasivaalbaranesprov</objectName>
     <name>lineasivaalbaranesprov.table</name>
     <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>marcas</objectName>
+    <name>marcas.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>marcasmodelos</objectName>
+    <name>marcasmodelos.table</name>
+    <version>1</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

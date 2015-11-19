@@ -142,6 +142,7 @@ function defaultValue() {
         <length>20</length>
         <optionList>Interior,Intracomunitaria,Exportacion</optionList>
         <includeOnGeneratedSearchDlg>false</includeOnGeneratedSearchDlg>
+        <default>Interior</default>
     </field>
 
     <field>

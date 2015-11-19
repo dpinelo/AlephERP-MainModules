@@ -10,39 +10,8 @@ Function.prototype.bind = function() {
 function MainDlg(ui) {
     this.ui = ui;
 
-    // ¿Hay alguna divisa definida? Si no es así, creamos al menos EUROS
-    var numDivisas = AERPScriptCommon.sqlCount("divisas", "");
-    if ( numDivisas == 0 ) {
-        var divisa = AERPScriptCommon.createBean("divisas");
-        divisa.coddivisa.value = "EUR";
-        divisa.descripcion.value = "Euros";
-        divisa.save();
-    }
-
-    // Comprobemos primero que hay definida una empresa y un ejercicio fiscal actual, ya que si no,
-    // habrá que crearlos. Se utiliza la función sqlCount del objeto de entorno de script AERPScriptCommon,
-    // que dispone de funciones de ayuda al programador QS.
-    var numEmpresas = AERPScriptCommon.sqlCount("empresas", "");
-    if ( numEmpresas == -1 ) {
-        AERPMessageBox.information("Ha ocurrido un error en el primer acceso a base de datos. No existe la tabla 'empresas'. La importación no se ha efectuado correctamente. No se puede iniciar la aplicación.");
-        quitApplication();
-        return;    
-    } else if ( numEmpresas == 0 ) {
-        AERPMessageBox.information("No hay definida ninguna empresa en el sistema. Debe iniciar AlephERP creando una primera empresa.");
-        var dlg = new DBDialog;
-        dlg.type = "record";
-        dlg.tableName = "empresas";
-        dlg.show();
-        if ( dlg.userClickOk ) {
-            var recordEmpresa = dlg.selectedBean();
-            AERPScriptCommon.setDbEnvVar("idempresa", recordEmpresa.fieldValue("id"));
-            this.checkEjercicios();
-        } else {
-            AERPMessageBox.information("No es posible iniciar AlephERP sin ninguna empresa.");
-            quitApplication();
-            return;
-        }
-    }
+    // Vamos a comprobar primero si estamos antes una instancia recién creada, vacía, y por tanto precargamos algunos datos
+    precargarDatosSiNecesario();
 
     // Veamos ahora si el usuario tiene definido una empresa de trabajo y un ejercicio fiscal, si no, deberá
     // seleccionar uno
