@@ -1,19 +1,19 @@
 <table>
-	<name>agentescomerciales</name>
-	<!--Listado de agentes comerciales -->
-	<alias>Agentes Comerciales</alias>
-	<!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
-	<isCached>true</isCached>
-	<!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
-	y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
-	por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
-	AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
-	y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+    <name>agentescomerciales</name>
+    <!--Listado de agentes comerciales -->
+    <alias>Agentes Comerciales</alias>
+    <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
+    <isCached>true</isCached>
+    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
     <envVars>
         <pair>
-			<!-- Nombre de la variable de entorno en Javascript -->
+            <!-- Nombre de la variable de entorno en Javascript -->
             <varName>idempresa</varName>
-			<!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
+            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
             <field>idempresa</field>
         </pair>
     </envVars>
@@ -27,110 +27,110 @@
         <visiblegrid>false</visiblegrid>
     </field>
     
-	<field>
-		<name>codagente</name>
-		<!--Código del agente comercial-->
-		<alias>Código</alias>
-		<null>false</null>
-		<pk>false</pk>
-		<type>string</type>
-		<length>6</length>
+    <field>
+        <name>codagente</name>
+        <!--Código del agente comercial-->
+        <alias>Código</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>6</length>
         <uniqueOnFilterField>idempresa</uniqueOnFilterField>
         <scriptDefaultValue>
 <![CDATA[
 function defaultValue() {
-	// dbField es un objeto disponible sólo en este script, y representa a este propio campo.
-	// También está disponible bean, y representa al registro total.
-	var value = AERPScriptCommon.nextCounter(dbField);
-	return value;
+    // dbField es un objeto disponible sólo en este script, y representa a este propio campo.
+    // También está disponible bean, y representa al registro total.
+    var value = AERPScriptCommon.nextCounter(dbField);
+    return value;
 }
-]]>		
+]]>        
         </scriptDefaultValue>
     </field>
 
-	<field>
-		<name>idempresa</name>
-		<alias>Cod. Empresa</alias>
-		<null>false</null>
-		<pk>false</pk>
-		<type>int</type>
-		<visiblegrid>false</visiblegrid>
-		<calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
-		<script>
+    <field>
+        <name>idempresa</name>
+        <alias>Cod. Empresa</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
+        <script>
 <![CDATA[
 function value() {
-	// Esta función está en __init__.js
-	return idempresaActual();
+    // Esta función está en __init__.js
+    return idempresaActual();
 }
-]]>		</script>
-		<relation>
-			<table>empresas</table>
-			<field>id</field>
-			<card>M1</card>
-		</relation>
-	</field>
-	
-	<field>
-		<name>idpersona</name>
-		<!--Código de la persona-->
-		<alias>Id. Persona</alias>
-		<null>false</null>
-		<pk>true</pk>
-		<type>int</type>
-		<relation>
-			<table>personas</table>
-			<field>id</field>
-			<card>M1</card>
-		</relation>
-	</field>
-	
-	<field>
-		<name>irpf</name>
-		<alias>% I.R.P.F.</alias>
-		<null>true</null>
-		<pk>false</pk>
-		<type>double</type>
-		<partI>3</partI>
-		<partD>2</partD>
-		<length>50</length>
-	</field>
+]]>        </script>
+        <relation>
+            <table>empresas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idpersona</name>
+        <!--Código de la persona-->
+        <alias>Id. Persona</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <relation>
+            <table>personas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
+        <name>irpf</name>
+        <alias>% I.R.P.F.</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partI>3</partI>
+        <partD>2</partD>
+        <length>50</length>
+    </field>
 
-	<field>
-		<name>porcomision</name>
-		<!--Comisión porcentual de ventas asignada al agente-->
-		<alias>% Comisión</alias>
-		<null>false</null>
-		<pk>false</pk>
-		<type>double</type>
-		<partI>3</partI>
-		<partD>2</partD>
-	</field>
+    <field>
+        <name>porcomision</name>
+        <!--Comisión porcentual de ventas asignada al agente-->
+        <alias>% Comisión</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>double</type>
+        <partI>3</partI>
+        <partD>2</partD>
+    </field>
 
-	<field>
-		<name>iddepartamento</name>
-		<alias>ID. Departamento</alias>
-		<null>true</null>
-		<pk>false</pk>
-		<type>int</type>
-		<relation>
-			<table>departamentos</table>
-			<field>id</field>
-			<card>M1</card>
-		</relation>
-	</field>
+    <field>
+        <name>iddepartamento</name>
+        <alias>ID. Departamento</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <relation>
+            <table>departamentos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
 
-	<field>
-		<name>username</name>
-		<alias>Usuario</alias>
-		<null>true</null>
-		<pk>false</pk>
-		<type>string</type>
-		<length>255</length>
+    <field>
+        <name>username</name>
+        <alias>Usuario</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <length>255</length>
 
-		<relation>
-			<table>alepherp_users</table>
-			<field>username</field>
-			<card>M1</card>
-		</relation>
-	</field>
+        <relation>
+            <table>alepherp_users</table>
+            <field>username</field>
+            <card>M1</card>
+        </relation>
+    </field>
 </table>

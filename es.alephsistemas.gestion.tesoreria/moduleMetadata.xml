@@ -8,6 +8,7 @@
 <showedText><![CDATA[Tesorería]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
+<tableCreationOptions>AlephERP::WithForeignKeys | AlephERP::CreateIndexOnRelationColumns</tableCreationOptions>
 
 <file>
   <objectName>efectos</objectName>

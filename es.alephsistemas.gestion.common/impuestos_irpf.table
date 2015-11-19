@@ -60,9 +60,10 @@ function value() {
         <!--Código del impuesto-->
         <alias>Código</alias>
         <null>false</null>
-        <pk>true</pk>
+        <pk>false</pk>
         <type>string</type>
         <length>10</length>
+        <uniqueOnFilterField>idempresa</uniqueOnFilterField>
         <!-- Comprobará que el valor de codtercero es único para el un valor específico de idempresa en 
         este caso. Es decir, podrá existir el registro 0000001 para idempresa=1 y 0000001 para idempresa=2 -->
         <uniqueOnFilterField>idempresa</uniqueOnFilterField>        

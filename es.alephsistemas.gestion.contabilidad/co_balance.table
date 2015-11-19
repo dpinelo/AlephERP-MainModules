@@ -29,7 +29,7 @@
         <name>nivelresumen</name>
         <alias>Resumen</alias>
         <null>false</null>
-        <pk>true</pk>
+        <pk>false</pk>
         <type>boolean</type>
         <visiblegrid>false</visiblegrid>
     </field>

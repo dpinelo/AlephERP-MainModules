@@ -96,6 +96,20 @@ function value() {
     </field>
 
     <field>
+        <name>idsucursal</name>
+        <alias>Oficina</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>integer</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>sucursales</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
         <name>codsucursal</name>
         <alias>Oficina</alias>
         <null>false</null>
@@ -103,11 +117,6 @@ function value() {
         <type>string</type>
         <length>4</length>
         <visiblegrid>false</visiblegrid>
-        <relation>
-            <table>sucursales</table>
-            <field>codsucursal</field>
-            <card>M1</card>
-        </relation>
     </field>
 
     <field>

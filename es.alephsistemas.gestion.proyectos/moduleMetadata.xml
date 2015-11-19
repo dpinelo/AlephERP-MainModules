@@ -8,6 +8,7 @@
 <showedText><![CDATA[Proyectos]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
+<tableCreationOptions>AlephERP::WithForeignKeys | AlephERP::CreateIndexOnRelationColumns</tableCreationOptions>
 
 <file>
   <objectName>defproyectos</objectName>

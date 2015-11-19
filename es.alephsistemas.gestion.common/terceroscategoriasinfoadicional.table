@@ -11,11 +11,11 @@
         <type>serial</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-        	<table>tercerossubcategoriasinfoadicional</table>
-        	<field>idcategoria</field>
-        	<card>1M</card>
-                <delC>true</delC>
-       	</relation>                
+            <table>tercerossubcategoriasinfoadicional</table>
+            <field>idcategoria</field>
+            <card>1M</card>
+            <delC>true</delC>
+        </relation>                
     </field>
 
     <field>
