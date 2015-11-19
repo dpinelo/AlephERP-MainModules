@@ -343,13 +343,30 @@ precargarDatosSiNecesario = function() {
     } else if ( numEmpresas == 0 ) {
         AERPMessageBox.information("No hay definida ninguna empresa en el sistema. Se crearán algunos datos por defecto.");
         
+        var ahora = new Date();
         var empresa = AERPScriptCommon.createBean("empresas");
+        AERPScriptCommon.addToTransaction(empresa);
+        
         empresa.nombre.value = "Empresa de pruebas - EDÍTEME";
         empresa.cifnif.value = "87654321X";
         empresa.counter_prefix.value = "EP";
         empresa.coddivisa.value = "EUR";
         empresa.contabilidadcostes.value = false;
+        
+        // Creamos un ejercicio
         var ejercicio = empresa.ejercicios.newChild();
+        ejercicio.codejercicio.value = ahora.getFullYear();
+        ejercicio.nombre.value = "Ejercicio " + ahora.getFullYear();
+        ejercicio.counter_prefix.value = "EJ";
+        ejercicio.estado.value = "abierto";
+        
+        // También creamos una serie de facturación a ese ejercicio
+        var serieFacturacion = ejercicio.seriesfacturacion.newChild();
+        serieFacturacion.codserie.value = "SA";
+        
+        if ( !AERPScriptCommon.commit(true, true) ) {
+            AERPMessageBox.error("Se han producido errores a la hora de crear datos. Los errores son: " + AERPScriptCommon.lastError);
+        }
     }
 }
  
