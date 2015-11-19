@@ -40,13 +40,13 @@
     </field>
 
     <field>
-        <name>idalmacen</name>
-        <alias>ID. Almacén</alias>
+        <name>idubicacion</name>
+        <alias>ID. Ubicacion</alias>
         <null>true</null>
         <type>integer</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-        	<table>almacenes</table>
+        	<table>almacenesubicaciones</table>
         	<field>id</field>
         	<card>M1</card>
        	</relation>
@@ -62,9 +62,9 @@
     </field>    
     
     <field>
-        <name>almacen</name>
-        <alias>Almacén</alias>
-        <expression>almacenes.father.nombre</expression>
+        <name>ubicacion</name>
+        <alias>Ubicación</alias>
+        <expression>almacenesubicaciones.father.nombre</expression>
     </field>
     
     <field>
@@ -105,7 +105,7 @@ function onChange() {
 
     <field>
         <name>refproveedor</name>
-        <alias>Referencia Proveedor</alias>
+        <alias>Nº Serie Fabricante</alias>
         <null>true</null>
         <pk>false</pk>
         <type>string</type>

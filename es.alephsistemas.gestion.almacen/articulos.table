@@ -145,6 +145,21 @@ function value() {
     </field>
 
     <field>
+        <name>idmarca</name>
+        <alias>Id. Marca</alias>
+        <pk>false</pk>
+        <null>true</null>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        
+        <relation>
+            <table>marcasmodelos</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
         <name>nombre</name>
         <!-- Descripción del artículo    -->
         <alias>Nombre</alias>

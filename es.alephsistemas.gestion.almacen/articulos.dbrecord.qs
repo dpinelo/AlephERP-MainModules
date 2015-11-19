@@ -17,7 +17,7 @@ function DBRecordDlg (ui) {
     this.tbCompras = this.ui.findChild("tbCompras");
     this.tbVentas = this.ui.findChild("tbVentas");
     this.tbStocks = this.ui.findChild("tbStocks");
-    this.tbComisiones = this.ui.findChild("tbComisiones");
+    this.tbObservaciones = this.ui.findChild("tbObservaciones");
     this.tbContabilidad = this.ui.findChild("tbContabilidad");
     this.tbInstancias = this.ui.findChild("tbInstancias");
     this.tbDatos.checked = true;
@@ -28,7 +28,7 @@ function DBRecordDlg (ui) {
     this.tbCompras.clicked.connect(this, "showPage");
     this.tbVentas.clicked.connect(this, "showPage");
     this.tbStocks.clicked.connect(this, "showPage");
-    this.tbComisiones.clicked.connect(this, "showPage");
+    this.tbObservaciones.clicked.connect(this, "showPage");
     this.tbContabilidad.clicked.connect(this, "showPage");
     this.tbInstancias.clicked.connect(this, "showPage");
 
@@ -58,8 +58,8 @@ DBRecordDlg.prototype.showPage = function() {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageVentas"));
     } else if ( this.tbStocks.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageStocks"));
-    } else if ( this.tbComisiones.checked ) {
-        this.swFichas.setCurrentWidget(this.ui.findChild("pageComisiones"));
+    } else if ( this.tbObservaciones.checked ) {
+        this.swFichas.setCurrentWidget(this.ui.findChild("pageObservaciones"));
     } else if ( this.tbContabilidad.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageContabilidad"));
     } else if ( this.tbInstancias.checked ) {
