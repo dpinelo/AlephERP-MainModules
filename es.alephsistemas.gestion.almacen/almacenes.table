@@ -33,7 +33,7 @@
         <type>serial</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-            <table>almacenes_zonas</table>
+            <table>almaceneszonas</table>
             <field>idalmacen</field>
             <card>1M</card>
             <delC>true</delC>

@@ -204,7 +204,7 @@
       <item>
        <widget class="DBDetailView" name="dbDetailView">
         <property name="relationName">
-         <string>almacenes_zonas</string>
+         <string>almaceneszonas</string>
         </property>
         <property name="dataEditable">
          <bool>true</bool>
