@@ -145,8 +145,8 @@ function value() {
     </field>
 
     <field>
-        <name>idmarca</name>
-        <alias>Id. Marca</alias>
+        <name>idmodelo</name>
+        <alias>Id. Modelo</alias>
         <pk>false</pk>
         <null>true</null>
         <type>int</type>

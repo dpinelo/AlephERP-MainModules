@@ -420,11 +420,11 @@
          <string>Acceda a observaciones.</string>
         </property>
         <property name="text">
-         <string>Contabilidad</string>
+         <string>Observaciones</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>:/images/commons/contabilidad.png</normaloff>:/images/commons/contabilidad.png</iconset>
+          <normaloff>:/generales/images/relatedelements.png</normaloff>:/generales/images/relatedelements.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -499,13 +499,13 @@
         <property name="readOnly">
          <bool>false</bool>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>referencia</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="focusNextOnEnd">
+        <property name="focusNextOnEnd" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -566,10 +566,10 @@
         <property name="whatsThis">
          <string>Se introduce aquí la razón social o nombre del tercero.</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>nombre</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -583,10 +583,10 @@
       </item>
       <item row="2" column="0" colspan="6">
        <widget class="DBTextEdit" name="db_descripcion">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>descripcion</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -596,13 +596,8 @@
    </item>
    <item row="1" column="1">
     <widget class="QStackedWidget" name="swFichas">
-     <property name="font">
-      <font>
-       <family>Sans Serif</family>
-      </font>
-     </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="pageDatos">
       <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -624,54 +619,7 @@
           <string>Datos generales del artículo</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="5" column="2" colspan="5">
-           <widget class="QGroupBox" name="groupBox_7">
-            <property name="title">
-             <string>Características</string>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <item>
-              <widget class="DBDetailView" name="db_articuloscaracteristicas">
-               <property name="focusPolicy">
-                <enum>Qt::WheelFocus</enum>
-               </property>
-               <property name="relationName">
-                <string>articuloscaracteristicasvalores</string>
-               </property>
-               <property name="dataEditable">
-                <bool>true</bool>
-               </property>
-               <property name="inlineEdit">
-                <bool>true</bool>
-               </property>
-               <property name="visibleButtons">
-                <set>DBDetailView::None</set>
-               </property>
-               <property name="readOnlyColumns">
-                <string>caracteristica</string>
-               </property>
-               <property name="useDefaultShortcut">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item row="2" column="5">
-           <widget class="DBCheckBox" name="db_sevende">
-            <property name="text">
-             <string>Se vende</string>
-            </property>
-            <property name="fieldName">
-             <string>sevende</string>
-            </property>
-            <property name="dataEditable">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="2">
+          <item row="4" column="2">
            <widget class="QLabel" name="label_4">
             <property name="text">
              <string>C&amp;ódigo de barras</string>
@@ -681,7 +629,7 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="2">
+          <item row="5" column="2">
            <widget class="QLabel" name="label_5">
             <property name="text">
              <string>&amp;Tipo código de barras</string>
@@ -691,95 +639,146 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="0">
-           <widget class="DBChooseRecordButton" name="db_subfamiliasarticulos">
-            <property name="text">
-             <string>Subfamilia</string>
-            </property>
-            <property name="fieldName">
-             <string>idsubfamilia</string>
-            </property>
-            <property name="dataEditable">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0" rowspan="4" colspan="2">
-           <widget class="DBFileUpload" name="db_imagen">
-            <property name="fieldName">
+          <item row="3" column="0" rowspan="4" colspan="2">
+           <widget class="DBFileUpload" name="db_imagen" native="true">
+            <property name="fieldName" stdset="0">
              <string>imagen</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="groupName">
+            <property name="groupName" stdset="0">
              <string>Imágen</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="2">
-           <widget class="DBCheckBox" name="db_controlstock_2">
-            <property name="text">
-             <string>Controlar Stock</string>
-            </property>
-            <property name="fieldName">
-             <string>controlstock</string>
-            </property>
-            <property name="dataEditable">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="4">
-           <widget class="DBCheckBox" name="db_secompra">
-            <property name="text">
-             <string>Se compra</string>
-            </property>
-            <property name="fieldName">
-             <string>secompra</string>
-            </property>
-            <property name="dataEditable">
-             <bool>true</bool>
             </property>
            </widget>
           </item>
           <item row="0" column="1" colspan="6">
            <widget class="DBLineEdit" name="db_subfamiliasarticulos_nombre">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>subfamiliasarticulos.nombre</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="3" colspan="4">
-           <widget class="DBLineEdit" name="db_codbarras">
-            <property name="fieldName">
-             <string>codbarras</string>
+          <item row="3" column="2">
+           <widget class="DBCheckBox" name="db_controlstock_2">
+            <property name="text">
+             <string>Controlar Stock</string>
             </property>
-            <property name="dataEditable">
+            <property name="fieldName" stdset="0">
+             <string>controlstock</string>
+            </property>
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item row="4" column="3" colspan="4">
-           <widget class="DBComboBox" name="db_tipocodigobarras">
-            <property name="fieldName">
-             <string>tipocodigobarras</string>
+           <widget class="DBLineEdit" name="db_codbarras">
+            <property name="fieldName" stdset="0">
+             <string>codbarras</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
-          <item row="2" column="3">
+          <item row="3" column="4">
+           <widget class="DBCheckBox" name="db_secompra">
+            <property name="text">
+             <string>Se compra</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>secompra</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3" colspan="4">
+           <widget class="DBComboBox" name="db_tipocodigobarras">
+            <property name="fieldName" stdset="0">
+             <string>tipocodigobarras</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
            <widget class="DBCheckBox" name="db_trazabilidad">
             <property name="text">
              <string>Trazabilidad de artículos</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>trazabilidad</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="DBChooseRecordButton" name="db_subfamiliasarticulos">
+            <property name="text">
+             <string>Subfamilia</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>idsubfamilia</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2" colspan="5">
+           <widget class="QGroupBox" name="groupBox_7">
+            <property name="title">
+             <string>Características</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="DBDetailView" name="db_articuloscaracteristicas" native="true">
+               <property name="focusPolicy">
+                <enum>Qt::WheelFocus</enum>
+               </property>
+               <property name="relationName" stdset="0">
+                <string>articuloscaracteristicasvalores</string>
+               </property>
+               <property name="dataEditable" stdset="0">
+                <bool>true</bool>
+               </property>
+               <property name="inlineEdit" stdset="0">
+                <bool>true</bool>
+               </property>
+               <property name="readOnlyColumns" stdset="0">
+                <string>caracteristica</string>
+               </property>
+               <property name="useDefaultShortcut" stdset="0">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="3" column="5">
+           <widget class="DBCheckBox" name="db_sevende">
+            <property name="text">
+             <string>Se vende</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>sevende</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="6">
+           <widget class="DBLineEdit" name="db_marcasmodelos_nombre">
+            <property name="fieldName" stdset="0">
+             <string>marcasmodelos.nombre</string>
             </property>
            </widget>
           </item>
@@ -788,18 +787,31 @@
             <property name="text">
              <string>Modelo</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>idmodelo</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
-          <item row="1" column="1" colspan="6">
-           <widget class="DBLineEdit" name="db_marcasmodelos_nombre">
-            <property name="fieldName">
-             <string>marcasmodelos.nombre</string>
+          <item row="2" column="0">
+           <widget class="DBChooseRecordButton" name="db_idmercado">
+            <property name="text">
+             <string>Mercado</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>idmercado</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="6">
+           <widget class="DBLineEdit" name="dbLineEdit">
+            <property name="fieldName" stdset="0">
+             <string>mercados.nombre</string>
             </property>
            </widget>
           </item>
@@ -833,17 +845,17 @@
             <property name="text">
              <string>Tipo de I.V.A.</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>idimpuestoventa</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item row="0" column="3">
            <widget class="DBLineEdit" name="db_impuestoventa_nombre">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>impuestosventa.nombre</string>
             </property>
            </widget>
@@ -863,10 +875,10 @@
               <height>16777215</height>
              </size>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>pvp</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -881,17 +893,17 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_11">
           <item>
-           <widget class="DBDetailView" name="db_articulostarifas">
-            <property name="relationName">
+           <widget class="DBDetailView" name="db_articulostarifas" native="true">
+            <property name="relationName" stdset="0">
              <string>articulostarifas</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="order">
+            <property name="order" stdset="0">
              <string>descripcion</string>
             </property>
-            <property name="inlineEdit">
+            <property name="inlineEdit" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -926,17 +938,17 @@
             <property name="text">
              <string>Tipo de I.V.A.</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>idimpuestocompra</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item row="0" column="3">
            <widget class="DBLineEdit" name="db_impuestocompra_nombre">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>impuestoscompra.nombre</string>
             </property>
            </widget>
@@ -950,7 +962,7 @@
           </item>
           <item row="0" column="1">
            <widget class="DBNumberEdit" name="db_costemedio">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>costemedio</string>
             </property>
            </widget>
@@ -965,14 +977,14 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="DBDetailView" name="db_articulosprov">
-            <property name="relationName">
+           <widget class="DBDetailView" name="db_articulosprov" native="true">
+            <property name="relationName" stdset="0">
              <string>articulosprov</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="inlineEdit">
+            <property name="inlineEdit" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1011,7 +1023,7 @@
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_stockfis">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>stockfis</string>
             </property>
            </widget>
@@ -1025,7 +1037,7 @@
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_stockmin">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>stockmin</string>
             </property>
            </widget>
@@ -1039,7 +1051,7 @@
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_stockmax">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>stockmax</string>
             </property>
            </widget>
@@ -1054,15 +1066,12 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="0" column="0">
-           <widget class="DBDetailView" name="db_stocks">
-            <property name="relationName">
+           <widget class="DBDetailView" name="db_stocks" native="true">
+            <property name="relationName" stdset="0">
              <string>stocks</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
-            </property>
-            <property name="visibleButtons">
-             <set>DBDetailView::VIEW</set>
             </property>
            </widget>
           </item>
@@ -1092,15 +1101,12 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_9">
           <item>
-           <widget class="DBDetailView" name="dbDetailView_3">
-            <property name="relationName">
+           <widget class="DBDetailView" name="dbDetailView_3" native="true">
+            <property name="relationName" stdset="0">
              <string>articulosinstancias</string>
             </property>
-            <property name="order">
+            <property name="order" stdset="0">
              <string>referencia asc</string>
-            </property>
-            <property name="visibleButtons">
-             <set>DBDetailView::VIEW</set>
             </property>
            </widget>
           </item>
@@ -1146,10 +1152,10 @@
                <property name="text">
                 <string>Subcuenta de ventas</string>
                </property>
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>idsubcuentaventas</string>
                </property>
-               <property name="dataEditable">
+               <property name="dataEditable" stdset="0">
                 <bool>true</bool>
                </property>
               </widget>
@@ -1162,35 +1168,32 @@
                  <height>16777215</height>
                 </size>
                </property>
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>idsubcuentaventas</string>
                </property>
-               <property name="dataEditable">
+               <property name="dataEditable" stdset="0">
                 <bool>true</bool>
                </property>
-               <property name="autoComplete">
-                <set>AlephERP::ValuesFromRelation</set>
-               </property>
-               <property name="autoCompleteColumn">
+               <property name="autoCompleteColumn" stdset="0">
                 <string>codsubcuenta</string>
                </property>
-               <property name="autoCompletePopupSize">
+               <property name="autoCompletePopupSize" stdset="0">
                 <size>
                  <width>400</width>
                  <height>0</height>
                 </size>
                </property>
-               <property name="autoCompleteVisibleFields">
+               <property name="autoCompleteVisibleFields" stdset="0">
                 <string>codsubcuenta,descripcion</string>
                </property>
-               <property name="replacePointWithCharacter">
+               <property name="replacePointWithCharacter" stdset="0">
                 <bool>true</bool>
                </property>
               </widget>
              </item>
              <item row="0" column="2">
               <widget class="DBLineEdit" name="db_co_subcuentas_descripcion">
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>co_subcuentasventas.descripcion</string>
                </property>
               </widget>
@@ -1203,10 +1206,10 @@
                <layout class="QVBoxLayout" name="verticalLayout_15">
                 <item>
                  <widget class="DBTableView" name="idsubcuentaventas.co_partidas">
-                  <property name="internalData">
+                  <property name="internalData" stdset="0">
                    <bool>true</bool>
                   </property>
-                  <property name="relationName">
+                  <property name="relationName" stdset="0">
                    <string>idsubcuentaventas.co_partidas</string>
                   </property>
                  </widget>
@@ -1234,10 +1237,10 @@
                <property name="text">
                 <string>Subcuenta de compras</string>
                </property>
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>idsubcuentacompras</string>
                </property>
-               <property name="dataEditable">
+               <property name="dataEditable" stdset="0">
                 <bool>true</bool>
                </property>
               </widget>
@@ -1250,35 +1253,32 @@
                  <height>16777215</height>
                 </size>
                </property>
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>idsubcuentacompras</string>
                </property>
-               <property name="dataEditable">
+               <property name="dataEditable" stdset="0">
                 <bool>true</bool>
                </property>
-               <property name="autoComplete">
-                <set>AlephERP::ValuesFromRelation</set>
-               </property>
-               <property name="autoCompleteColumn">
+               <property name="autoCompleteColumn" stdset="0">
                 <string>codsubcuenta</string>
                </property>
-               <property name="autoCompletePopupSize">
+               <property name="autoCompletePopupSize" stdset="0">
                 <size>
                  <width>400</width>
                  <height>0</height>
                 </size>
                </property>
-               <property name="autoCompleteVisibleFields">
+               <property name="autoCompleteVisibleFields" stdset="0">
                 <string>codsubcuenta,descripcion</string>
                </property>
-               <property name="replacePointWithCharacter">
+               <property name="replacePointWithCharacter" stdset="0">
                 <bool>true</bool>
                </property>
               </widget>
              </item>
              <item row="0" column="2">
               <widget class="DBLineEdit" name="db_co_subcuentascompras_descripcion">
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>co_subcuentascompras.descripcion</string>
                </property>
               </widget>
@@ -1291,10 +1291,10 @@
                <layout class="QVBoxLayout" name="verticalLayout_6">
                 <item>
                  <widget class="DBTableView" name="idsubcuentacompras.co_partidas">
-                  <property name="internalData">
+                  <property name="internalData" stdset="0">
                    <bool>true</bool>
                   </property>
-                  <property name="relationName">
+                  <property name="relationName" stdset="0">
                    <string>idsubcuentacompras.co_partidas</string>
                   </property>
                  </widget>

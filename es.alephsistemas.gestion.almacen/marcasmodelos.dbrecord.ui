@@ -47,6 +47,12 @@
       </item>
       <item row="0" column="1">
        <widget class="DBLineEdit" name="db_codigo">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="fieldName" stdset="0">
          <string>codigo</string>
         </property>
@@ -91,7 +97,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Id código barras</string>
+         <string>Sección Código barras</string>
         </property>
         <property name="buddy">
          <cstring>db_codigo_2</cstring>

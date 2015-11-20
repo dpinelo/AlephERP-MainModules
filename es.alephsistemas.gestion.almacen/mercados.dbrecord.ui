@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>670</width>
-    <height>123</height>
+    <height>94</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -47,6 +47,12 @@
       </item>
       <item row="0" column="1">
        <widget class="DBLineEdit" name="db_codigo">
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="fieldName" stdset="0">
          <string>codigo</string>
         </property>
@@ -103,7 +109,6 @@
  <tabstops>
   <tabstop>db_codigo</tabstop>
   <tabstop>db_nombre</tabstop>
-  <tabstop>db_codigo_2</tabstop>
  </tabstops>
  <resources/>
  <connections/>

@@ -41,10 +41,16 @@
    </item>
    <item row="0" column="1">
     <widget class="DBLineEdit" name="db_codigo">
-     <property name="fieldName">
+     <property name="minimumSize">
+      <size>
+       <width>150</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="fieldName" stdset="0">
       <string>codigo</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -74,10 +80,10 @@
    </item>
    <item row="1" column="1" colspan="5">
     <widget class="DBLineEdit" name="db_nombre">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>nombre</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -94,10 +100,10 @@
    </item>
    <item row="2" column="1" colspan="5">
     <widget class="DBLineEdit" name="dbLineEdit">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>direccion</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -114,10 +120,10 @@
    </item>
    <item row="3" column="1">
     <widget class="DBLineEdit" name="dbLineEdit_3">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>poblacion</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -134,10 +140,10 @@
    </item>
    <item row="3" column="3">
     <widget class="DBLineEdit" name="dbLineEdit_2">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>codpostal</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -154,10 +160,10 @@
    </item>
    <item row="3" column="5">
     <widget class="DBComboBox" name="dbComboBox">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>idprovincia</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -174,10 +180,10 @@
    </item>
    <item row="4" column="1">
     <widget class="DBLineEdit" name="dbLineEdit_5">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>telefono1</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -202,11 +208,11 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="DBDetailView" name="dbDetailView">
-        <property name="relationName">
+       <widget class="DBDetailView" name="dbDetailView" native="true">
+        <property name="relationName" stdset="0">
          <string>almaceneszonas</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>

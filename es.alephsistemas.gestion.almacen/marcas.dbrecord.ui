@@ -41,10 +41,16 @@
    </item>
    <item row="0" column="1">
     <widget class="DBLineEdit" name="db_codigo">
-     <property name="fieldName">
+     <property name="minimumSize">
+      <size>
+       <width>150</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="fieldName" stdset="0">
       <string>codigo</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -74,10 +80,10 @@
    </item>
    <item row="1" column="1" colspan="3">
     <widget class="DBLineEdit" name="db_nombre">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>nombre</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -89,11 +95,11 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="DBDetailView" name="dbDetailView">
-        <property name="relationName">
+       <widget class="DBDetailView" name="dbDetailView" native="true">
+        <property name="relationName" stdset="0">
          <string>marcasmodelos</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -102,11 +108,11 @@
     </widget>
    </item>
    <item row="2" column="1" colspan="3">
-    <widget class="DBFileUpload" name="dbFileUpload">
-     <property name="fieldName">
+    <widget class="DBFileUpload" name="dbFileUpload" native="true">
+     <property name="fieldName" stdset="0">
       <string>logo</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
