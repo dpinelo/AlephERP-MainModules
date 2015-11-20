@@ -8,7 +8,7 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-11-20 15:52:28</generatedTime>
+<generatedTime>2015-11-20 16:18:38</generatedTime>
 
 
 <file>
@@ -64,7 +64,7 @@
 <file>
     <objectName>articulos</objectName>
     <name>articulos.table</name>
-    <version>42</version>
+    <version>43</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -94,7 +94,7 @@
 <file>
     <objectName>articulosinstancias</objectName>
     <name>articulosinstancias.table</name>
-    <version>15</version>
+    <version>16</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -154,7 +154,7 @@
 <file>
     <objectName>marcas</objectName>
     <name>marcas.table</name>
-    <version>1</version>
+    <version>3</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -164,7 +164,7 @@
 <file>
     <objectName>marcasmodelos</objectName>
     <name>marcasmodelos.table</name>
-    <version>1</version>
+    <version>2</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -524,7 +524,27 @@
 <file>
     <objectName>marcas.dbrecord.ui</objectName>
     <name>marcas.dbrecord.ui</name>
-    <version>4</version>
+    <version>7</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>marcasmodelos.dbrecord.ui</objectName>
+    <name>marcasmodelos.dbrecord.ui</name>
+    <version>3</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>mercados.dbrecord.ui</objectName>
+    <name>mercados.dbrecord.ui</name>
+    <version>2</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

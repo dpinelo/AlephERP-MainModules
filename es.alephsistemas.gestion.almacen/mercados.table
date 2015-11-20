@@ -3,28 +3,31 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.alephsistemas.es alepherp-metadata.xsd">
 
+    <!-- Dentro de las posibles clasificaciones que podemos hacer de artículos, puede especificarse los mercados a los que van dirigidos
+    (por ejemplo, nacional, europeo, americano, asiático...)  -->
+    
     <!-- Nombre de la tabla -->
-    <name>marcas</name>
+    <name>mercados</name>
     <!-- Alias a presentar en la aplicación -->
-    <alias>Marcas</alias>
-    <menuEntryPath>Marcas</menuEntryPath>
-    <moduleToolBarEntryPath>Marcas</moduleToolBarEntryPath>
+    <alias>Mercados</alias>
+    <menuEntryPath>Mercados</menuEntryPath>
+    <moduleToolBarEntryPath>Mercados</moduleToolBarEntryPath>
     <isCached>true</isCached> 
 
-    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
-    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
-    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
-    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
-    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+	<!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
+	y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+	por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+	AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+	y entrando en vigor en el mismo momento de la ejecución de ese comando -->
     <envVars>
-        <pair>
+	    <pair>
             <!-- Nombre de la variable de entorno en Javascript -->
             <varName>idempresa</varName>
             <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
             <field>idempresa</field>
         </pair>
     </envVars>
-        
+    	
     <field>
         <name>id</name>
         <alias>Identificador</alias>
@@ -33,11 +36,15 @@
         <type>serial</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-            <table>marcasmodelos</table>
-            <field>idmarca</field>
+            <table>articulos</table>
+            <field>idmercado</field>
             <card>1M</card>
-            <delC>true</delC>
         </relation>
+        <relation>
+            <table>articulosinstancias</table>
+            <field>idmercado</field>
+            <card>1M</card>
+        </relation>        
     </field>
    
     <field>
@@ -80,15 +87,5 @@ function value() {
         <type>string</type>
         <length>150</length>
     </field>
-   
-    <field>
-        <name>logo</name>
-        <!--Gráfico con el logotipo de la empresa-->
-        <alias>Logo</alias>
-        <null>true</null>
-        <pk>false</pk>
-        <type>image</type>
-        <visiblegrid>false</visiblegrid>
-    </field>
-    
+
 </table>

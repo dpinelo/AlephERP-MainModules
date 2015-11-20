@@ -53,6 +53,20 @@
     </field>
     
     <field>
+        <name>idmercado</name>
+        <alias>Id. Mercado</alias>
+        <pk>false</pk>
+        <null>true</null>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>mercados</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <field>
         <name>debaja</name>
         <alias>De baja</alias>
         <null>false</null>

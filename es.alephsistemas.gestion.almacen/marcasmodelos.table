@@ -18,11 +18,6 @@
         <pk>true</pk>
         <type>serial</type>
         <visiblegrid>false</visiblegrid>
-        <relation>
-            <table>articulos</table>
-            <field>idmarca</field>
-            <card>1M</card>
-        </relation>        
     </field>
    
     <field>
