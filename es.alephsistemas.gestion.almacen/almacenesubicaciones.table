@@ -61,7 +61,7 @@
     <field>
         <name>capacidad</name>
         <alias>Capacidad</alias>
-        <null>false</null>
+        <null>true</null>
         <pk>false</pk>
         <type>double</type>
     </field>

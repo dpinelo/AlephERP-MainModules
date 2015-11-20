@@ -85,13 +85,13 @@
    <item row="2" column="0" colspan="4">
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Calles</string>
+      <string>Ubicaciones</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="DBDetailView" name="dbDetailView" native="true">
         <property name="relationName" stdset="0">
-         <string>almacenescalles</string>
+         <string>almacenesubicaciones</string>
         </property>
         <property name="dataEditable" stdset="0">
          <bool>true</bool>
