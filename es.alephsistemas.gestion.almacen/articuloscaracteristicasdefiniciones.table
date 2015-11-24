@@ -23,21 +23,6 @@
     </field>
 
     <field>
-        <name>idfamilia</name>
-        <alias>Id. Familia</alias>
-        <null>true</null>
-        <pk>false</pk>
-        <type>integer</type>
-        <visiblegrid>false</visiblegrid>
-        
-        <relation>
-            <table>familiasarticulos</table>
-            <field>id</field>
-            <card>M1</card>
-        </relation>
-    </field>
-    
-    <field>
         <name>idsubfamilia</name>
         <alias>Id. Subfamilia</alias>
         <null>true</null>

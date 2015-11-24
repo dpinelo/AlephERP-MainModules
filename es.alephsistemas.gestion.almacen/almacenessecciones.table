@@ -27,7 +27,7 @@
     </field>
    
     <field>
-        <name>idcalle</name>
+        <name>idzona</name>
         <alias>ID. Zona</alias>
         <null>false</null>
         <pk>false</pk>

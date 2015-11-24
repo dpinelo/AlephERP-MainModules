@@ -32,6 +32,11 @@
             <field>idempresa</field>
             <card>1M</card>
         </relation>
+        <relation>
+            <table>seriesfacturacion</table>
+            <field>idempresa</field>
+            <card>1M</card>
+        </relation>
     </field>
 
     <field>

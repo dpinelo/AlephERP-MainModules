@@ -41,6 +41,12 @@
    </item>
    <item row="0" column="1">
     <widget class="DBLineEdit" name="db_codigo">
+     <property name="minimumSize">
+      <size>
+       <width>150</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="fieldName" stdset="0">
       <string>codigo</string>
      </property>

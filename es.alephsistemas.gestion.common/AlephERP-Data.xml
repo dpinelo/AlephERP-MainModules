@@ -1,0 +1,354 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<AlephERP-Data>
+
+  <table>
+    <name>agenda</name>
+  </table>
+
+  <table>
+    <name>agentescomerciales</name>
+  </table>
+
+  <table>
+    <name>albaranescli</name>
+  </table>
+
+  <table>
+    <name>albaranesprov</name>
+  </table>
+
+  <table>
+    <name>bancos</name>
+  </table>
+
+  <table>
+    <name>centroscoste</name>
+  </table>
+
+  <table>
+    <name>comisiones</name>
+  </table>
+
+  <table>
+    <name>contactos</name>
+  </table>
+
+  <table>
+    <name>cuentasbanco</name>
+  </table>
+
+  <table>
+    <name>cuentasbcoterceros</name>
+  </table>
+
+  <table>
+    <name>departamentos</name>
+  </table>
+
+  <table>
+    <name>dirterceros</name>
+  </table>
+
+  <table>
+    <name>distribucioncostes</name>
+  </table>
+
+  <table>
+    <name>divisas</name>
+    <record>
+      <column name="coddivisa"><![CDATA[EUR]]></column>
+      <column name="descripcion"><![CDATA[Euros]]></column>
+      <column name="tasaconv">1.00000</column>
+      <column name="bandera"></column>
+      <column name="fecha"></column>
+      <column name="codiso"><![CDATA[]]></column>
+      <column name="simbolo"><![CDATA[]]></column>
+    </record>
+  </table>
+
+  <table>
+    <name>ejercicios</name>
+    <record>
+      <column name="id">1</column>
+      <column name="codejercicio"><![CDATA[2015]]></column>
+      <column name="idempresa">1</column>
+      <column name="nombre"><![CDATA[Ejercicio 2015]]></column>
+      <column name="fechainicio">2015-01-02</column>
+      <column name="fechafin">2015-12-31</column>
+      <column name="estado"><![CDATA[abierto]]></column>
+      <column name="counter_prefix"><![CDATA[15]]></column>
+      <column name="longsubcuenta">10</column>
+      <column name="plancontable"><![CDATA[2007]]></column>
+      <column name="idasientoapertura">0</column>
+      <column name="idasientopyg">0</column>
+      <column name="idasientocierre">0</column>
+      <column name="pgactivo">false</column>
+      <column name="partidasivaenexencion">false</column>
+    </record>
+  </table>
+
+  <table>
+    <name>empleados</name>
+  </table>
+
+  <table>
+    <name>empresas</name>
+    <record>
+      <column name="id">1</column>
+      <column name="nombre"><![CDATA[Empresa Test]]></column>
+      <column name="cifnif"><![CDATA[87654321X]]></column>
+      <column name="codedi"><![CDATA[]]></column>
+      <column name="direccion"><![CDATA[]]></column>
+      <column name="codpostal"><![CDATA[]]></column>
+      <column name="ciudad"><![CDATA[]]></column>
+      <column name="idprovincia">0</column>
+      <column name="codpais"><![CDATA[]]></column>
+      <column name="telefono"><![CDATA[]]></column>
+      <column name="fax"><![CDATA[]]></column>
+      <column name="logo"></column>
+      <column name="email"><![CDATA[]]></column>
+      <column name="web"><![CDATA[]]></column>
+      <column name="counter_prefix"><![CDATA[TT]]></column>
+      <column name="coddivisa"><![CDATA[EUR]]></column>
+      <column name="recequivalencia">false</column>
+      <column name="contintegrada">true</column>
+      <column name="idterceroprovgenerico">0</column>
+      <column name="idterceroclientegenerico">0</column>
+      <column name="idseriefacturaciongastos">0</column>
+      <column name="idseriefacturacionventas">0</column>
+      <column name="contabilidadcostes">true</column>
+      <column name="leyendadocumentos"><![CDATA[]]></column>
+      <column name="is_deleted">false</column>
+    </record>
+  </table>
+
+  <table>
+    <name>empresasvalorespordefecto</name>
+  </table>
+
+  <table>
+    <name>facturascli</name>
+  </table>
+
+  <table>
+    <name>facturasprov</name>
+  </table>
+
+  <table>
+    <name>familiasservicios</name>
+  </table>
+
+  <table>
+    <name>formaspago</name>
+    <record>
+      <column name="id">1</column>
+      <column name="codpago"><![CDATA[CONTADO]]></column>
+      <column name="idempresa">1</column>
+      <column name="descripcion"><![CDATA[Contado]]></column>
+      <column name="comisionlineal">0.00000</column>
+      <column name="comisionporcentual">0.00000</column>
+      <column name="domiciliado">false</column>
+      <column name="idtarjeta">1</column>
+      <column name="idcuenta">1</column>
+      <column name="idcaja">1</column>
+    </record>
+  </table>
+
+  <table>
+    <name>gestionbugs</name>
+  </table>
+
+  <table>
+    <name>gestionbugsincidencias</name>
+  </table>
+
+  <table>
+    <name>gruposterceros</name>
+  </table>
+
+  <table>
+    <name>grupostercerosinfoadicional</name>
+  </table>
+
+  <table>
+    <name>impuestos</name>
+  </table>
+
+  <table>
+    <name>impuestos_irpf</name>
+  </table>
+
+  <table>
+    <name>lineasarticulosalbaranescli</name>
+  </table>
+
+  <table>
+    <name>lineasarticulosfacturascli</name>
+  </table>
+
+  <table>
+    <name>lineasarticulosfacturasprov</name>
+  </table>
+
+  <table>
+    <name>lineasarticulospedidoscli</name>
+  </table>
+
+  <table>
+    <name>lineasarticulospedidosprov</name>
+  </table>
+
+  <table>
+    <name>lineasdistribucioncostes</name>
+  </table>
+
+  <table>
+    <name>lineasdistribucioncostesfacturasprov</name>
+  </table>
+
+  <table>
+    <name>lineasivaalbaranescli</name>
+  </table>
+
+  <table>
+    <name>lineasivafacturascli</name>
+  </table>
+
+  <table>
+    <name>lineasivafacturasprov</name>
+  </table>
+
+  <table>
+    <name>lineasivapedidoscli</name>
+  </table>
+
+  <table>
+    <name>lineasivapedidosprov</name>
+  </table>
+
+  <table>
+    <name>lineasserviciosalbaranescli</name>
+  </table>
+
+  <table>
+    <name>lineasserviciosalbaranesprov</name>
+  </table>
+
+  <table>
+    <name>lineasserviciosfacturascli</name>
+  </table>
+
+  <table>
+    <name>lineasserviciosfacturasprov</name>
+  </table>
+
+  <table>
+    <name>lineasserviciospedidoscli</name>
+  </table>
+
+  <table>
+    <name>lineasserviciospedidosprov</name>
+  </table>
+
+  <table>
+    <name>paises</name>
+  </table>
+
+  <table>
+    <name>pedidoscli</name>
+  </table>
+
+  <table>
+    <name>periodosimpuestos</name>
+  </table>
+
+  <table>
+    <name>periodosimpuestos_irpf</name>
+  </table>
+
+  <table>
+    <name>personas</name>
+  </table>
+
+  <table>
+    <name>planespago</name>
+  </table>
+
+  <table>
+    <name>plazos</name>
+    <record>
+      <column name="id">1</column>
+      <column name="idplanpago">1</column>
+      <column name="idformapago">1</column>
+      <column name="dias">0</column>
+      <column name="aplazado">100.00000</column>
+      <column name="cargodiafijomes">false</column>
+      <column name="diames">30</column>
+    </record>
+  </table>
+
+  <table>
+    <name>provincias</name>
+  </table>
+
+  <table>
+    <name>seriesfacturacion</name>
+    <record>
+      <column name="id">1</column>
+      <column name="codserie"><![CDATA[01]]></column>
+      <column name="idempresa">1</column>
+      <column name="descripcion"><![CDATA[Serie de facturación modo test]]></column>
+      <column name="tipooperacioniva"><![CDATA[Deducible]]></column>
+      <column name="tipoiva"><![CDATA[Sujeta a I.V.A.]]></column>
+      <column name="tipooperacion"><![CDATA[Interior]]></column>
+      <column name="proforma">false</column>
+      <column name="seriecompra">true</column>
+      <column name="serieventa">true</column>
+      <column name="ignoracontabilidad">false</column>
+      <column name="counter_prefix"><![CDATA[ST]]></column>
+      <column name="idsubcuenta">1</column>
+      <column name="idplanpago">0</column>
+    </record>
+  </table>
+
+  <table>
+    <name>servicios</name>
+  </table>
+
+  <table>
+    <name>subcentroscoste</name>
+  </table>
+
+  <table>
+    <name>subfamiliasservicios</name>
+  </table>
+
+  <table>
+    <name>sucursales</name>
+  </table>
+
+  <table>
+    <name>tarjetascredito</name>
+  </table>
+
+  <table>
+    <name>terceros</name>
+  </table>
+
+  <table>
+    <name>terceroscategoriasinfoadicional</name>
+  </table>
+
+  <table>
+    <name>tercerosinfoadicional</name>
+  </table>
+
+  <table>
+    <name>tercerossubcategoriasinfoadicional</name>
+  </table>
+
+  <table>
+    <name>unidadesmedida</name>
+  </table>
+
+</AlephERP-Data>

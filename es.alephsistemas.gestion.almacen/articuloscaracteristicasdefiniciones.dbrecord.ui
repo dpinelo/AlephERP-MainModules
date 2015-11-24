@@ -7,14 +7,23 @@
     <x>0</x>
     <y>0</y>
     <width>693</width>
-    <height>258</height>
+    <height>214</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item row="0" column="0" colspan="2">
@@ -36,7 +45,7 @@
      </layout>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="1" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
       <string>Nombre</string>
@@ -46,62 +55,16 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
+   <item row="1" column="1">
     <widget class="DBLineEdit" name="db_nombre">
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
      </property>
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>nombre</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="DBLineEdit" name="db_subfamilia">
-     <property name="fieldName">
-      <string>subfamiliasarticulos.father.nombre</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="DBChooseRecordButton" name="db_idsubfamilia">
-     <property name="focusPolicy">
-      <enum>Qt::StrongFocus</enum>
-     </property>
-     <property name="text">
-      <string>Subfamilia de artículo</string>
-     </property>
-     <property name="fieldName">
-      <string>idsubfamilia</string>
-     </property>
-     <property name="dataEditable">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="DBChooseRecordButton" name="db_idfamilia">
-     <property name="focusPolicy">
-      <enum>Qt::StrongFocus</enum>
-     </property>
-     <property name="text">
-      <string>Familia de artículos</string>
-     </property>
-     <property name="fieldName">
-      <string>idfamilia</string>
-     </property>
-     <property name="dataEditable">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="DBLineEdit" name="db_familia">
-     <property name="fieldName">
-      <string>familiasarticulos.father.nombre</string>
      </property>
     </widget>
    </item>
@@ -109,19 +72,12 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>DBChooseRecordButton</class>
-   <extends>QPushButton</extends>
-   <header>widgets/dbchooserecordbutton.h</header>
-  </customwidget>
-  <customwidget>
    <class>DBLineEdit</class>
    <extends>QLineEdit</extends>
    <header>widgets/dblineedit.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>db_idfamilia</tabstop>
-  <tabstop>db_idsubfamilia</tabstop>
   <tabstop>db_nombre</tabstop>
  </tabstops>
  <resources/>

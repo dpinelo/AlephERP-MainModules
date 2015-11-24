@@ -7,34 +7,14 @@
 <showedText><![CDATA[Almacén]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
-<generatedTime>2015-11-19 16:22:39</generatedTime>
-<tableCreationOptions>AlephERP::WithForeignKeys | AlephERP::CreateIndexOnRelationColumns</tableCreationOptions>
+<tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
+<generatedTime>2015-11-20 17:04:36</generatedTime>
 
 
 <file>
     <objectName>almacenes</objectName>
     <name>almacenes.table</name>
-    <version>17</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>almaceneszonas</objectName>
-    <name>almaceneszonas.table</name>
-    <version>1</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>almacenessecciones</objectName>
-    <name>almacenessecciones.table</name>
-    <version>1</version>
+    <version>18</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -52,9 +32,29 @@
 </file>
 
 <file>
+    <objectName>almacenessecciones</objectName>
+    <name>almacenessecciones.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
     <objectName>almacenesubicaciones</objectName>
     <name>almacenesubicaciones.table</name>
-    <version>1</version>
+    <version>3</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>almaceneszonas</objectName>
+    <name>almaceneszonas.table</name>
+    <version>2</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -64,7 +64,7 @@
 <file>
     <objectName>articulos</objectName>
     <name>articulos.table</name>
-    <version>42</version>
+    <version>44</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -74,7 +74,7 @@
 <file>
     <objectName>articuloscaracteristicasdefiniciones</objectName>
     <name>articuloscaracteristicasdefiniciones.table</name>
-    <version>8</version>
+    <version>9</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -94,7 +94,7 @@
 <file>
     <objectName>articulosinstancias</objectName>
     <name>articulosinstancias.table</name>
-    <version>15</version>
+    <version>16</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -154,7 +154,7 @@
 <file>
     <objectName>marcas</objectName>
     <name>marcas.table</name>
-    <version>1</version>
+    <version>3</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -164,7 +164,7 @@
 <file>
     <objectName>marcasmodelos</objectName>
     <name>marcasmodelos.table</name>
-    <version>1</version>
+    <version>2</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -204,7 +204,7 @@
 <file>
     <objectName>subfamiliasarticulos</objectName>
     <name>subfamiliasarticulos.table</name>
-    <version>4</version>
+    <version>5</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -434,47 +434,7 @@
 <file>
     <objectName>almacenes.dbrecord.ui</objectName>
     <name>almacenes.dbrecord.ui</name>
-    <version>7</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>almacenes_calles.dbrecord.ui</objectName>
-    <name>almacenes_calles.dbrecord.ui</name>
-    <version>2</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>almacenes_secciones.dbrecord.ui</objectName>
-    <name>almacenes_secciones.dbrecord.ui</name>
-    <version>3</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>almacenes_ubicaciones.dbrecord.ui</objectName>
-    <name>almacenes_ubicaciones.dbrecord.ui</name>
-    <version>2</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>almacenes_zonas.dbrecord.ui</objectName>
-    <name>almacenes_zonas.dbrecord.ui</name>
-    <version>3</version>
+    <version>9</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -484,7 +444,7 @@
 <file>
     <objectName>almacenescalles.dbrecord.ui</objectName>
     <name>almacenescalles.dbrecord.ui</name>
-    <version>4</version>
+    <version>6</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -494,7 +454,7 @@
 <file>
     <objectName>almacenessecciones.dbrecord.ui</objectName>
     <name>almacenessecciones.dbrecord.ui</name>
-    <version>4</version>
+    <version>6</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -504,7 +464,7 @@
 <file>
     <objectName>almacenesubicaciones.dbrecord.ui</objectName>
     <name>almacenesubicaciones.dbrecord.ui</name>
-    <version>4</version>
+    <version>7</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -514,7 +474,7 @@
 <file>
     <objectName>almaceneszonas.dbrecord.ui</objectName>
     <name>almaceneszonas.dbrecord.ui</name>
-    <version>4</version>
+    <version>5</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -524,7 +484,7 @@
 <file>
     <objectName>articulos.dbrecord.ui</objectName>
     <name>articulos.dbrecord.ui</name>
-    <version>48</version>
+    <version>54</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -544,7 +504,7 @@
 <file>
     <objectName>articuloscaracteristicasdefiniciones.dbrecord.ui</objectName>
     <name>articuloscaracteristicasdefiniciones.dbrecord.ui</name>
-    <version>4</version>
+    <version>5</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -564,6 +524,16 @@
 <file>
     <objectName>marcas.dbrecord.ui</objectName>
     <name>marcas.dbrecord.ui</name>
+    <version>8</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>marcasmodelos.dbrecord.ui</objectName>
+    <name>marcasmodelos.dbrecord.ui</name>
     <version>4</version>
     <type>ui</type>
     <debug>false</debug>
@@ -572,9 +542,9 @@
 </file>
 
 <file>
-    <objectName>modelos.dbrecord.ui</objectName>
-    <name>modelos.dbrecord.ui</name>
-    <version>2</version>
+    <objectName>mercados.dbrecord.ui</objectName>
+    <name>mercados.dbrecord.ui</name>
+    <version>3</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -614,7 +584,7 @@
 <file>
     <objectName>subfamiliasarticulos.dbrecord.ui</objectName>
     <name>subfamiliasarticulos.dbrecord.ui</name>
-    <version>1</version>
+    <version>3</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

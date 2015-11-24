@@ -7,8 +7,9 @@
 <showedText><![CDATA[Gestión]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
-<generatedTime>2015-11-19 12:03:25</generatedTime>
-<tableCreationOptions>AlephERP::WithForeignKeys | AlephERP::CreateIndexOnRelationColumns</tableCreationOptions>
+<tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
+<generatedTime>2015-11-20 16:11:24</generatedTime>
+
 
 <file>
     <objectName>documentosgestion</objectName>
@@ -1793,7 +1794,7 @@
 <file>
     <objectName>main.qmaindlg.ui</objectName>
     <name>main.qmaindlg.ui</name>
-    <version>36</version>
+    <version>38</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
