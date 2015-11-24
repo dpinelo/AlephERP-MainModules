@@ -2,8 +2,8 @@
 <export>
 
 <id><![CDATA[es.alephsistemas.gestion.common]]></id>
-<description><![CDATA[Módulo básico de gestión]]></description>
-<name><![CDATA[Módulo de Gestión]]></name>
+<description><![CDATA[Módulo de Gestión]]></description>
+<name><![CDATA[Módulo básico de gestión]]></name>
 <showedText><![CDATA[Gestión]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
