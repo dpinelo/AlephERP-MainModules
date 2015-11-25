@@ -47,15 +47,14 @@
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
-        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
-        <script>
+        <scriptDefaultValue>
 <![CDATA[
-function value() {
+function defaultValue() {
     // Esta función está en __init__.js
     return idempresaActual();
 }
 ]]>
-        </script>
+        </scriptDefaultValue>
         <relation>
             <table>empresas</table>
             <field>id</field>

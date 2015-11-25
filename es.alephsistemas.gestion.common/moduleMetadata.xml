@@ -8,7 +8,7 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-11-20 16:11:24</generatedTime>
+<generatedTime>2015-11-23 18:06:05</generatedTime>
 
 
 <file>
@@ -784,7 +784,7 @@
 <file>
     <objectName>centroscoste.dbrecord.qs</objectName>
     <name>centroscoste.dbrecord.qs</name>
-    <version>2</version>
+    <version>3</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

@@ -8,13 +8,13 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-11-20 17:04:36</generatedTime>
+<generatedTime>2015-11-25 18:52:13</generatedTime>
 
 
 <file>
     <objectName>almacenes</objectName>
     <name>almacenes.table</name>
-    <version>18</version>
+    <version>19</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -64,7 +64,7 @@
 <file>
     <objectName>articulos</objectName>
     <name>articulos.table</name>
-    <version>44</version>
+    <version>45</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -484,7 +484,7 @@
 <file>
     <objectName>articulos.dbrecord.ui</objectName>
     <name>articulos.dbrecord.ui</name>
-    <version>54</version>
+    <version>55</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

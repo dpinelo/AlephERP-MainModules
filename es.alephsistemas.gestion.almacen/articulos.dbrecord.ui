@@ -96,7 +96,7 @@
          <string>Datos Generales</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/clientes.png</normaloff>:/images/commons/clientes.png</iconset>
         </property>
         <property name="iconSize">
@@ -152,7 +152,7 @@
          <string>Ventas</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/facturasclientes.png</normaloff>:/images/commons/facturasclientes.png</iconset>
         </property>
         <property name="iconSize">
@@ -208,7 +208,7 @@
          <string>Compras</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/facturasproveedores.png</normaloff>:/images/commons/facturasproveedores.png</iconset>
         </property>
         <property name="iconSize">
@@ -264,7 +264,7 @@
          <string>Stocks</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/stocks.png</normaloff>:/images/commons/stocks.png</iconset>
         </property>
         <property name="iconSize">
@@ -311,7 +311,7 @@
          <string>Instancias</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/traspasos.png</normaloff>:/images/commons/traspasos.png</iconset>
         </property>
         <property name="iconSize">
@@ -367,7 +367,7 @@
          <string>Contabilidad</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/contabilidad.png</normaloff>:/images/commons/contabilidad.png</iconset>
         </property>
         <property name="iconSize">
@@ -420,11 +420,11 @@
          <string>Acceda a observaciones.</string>
         </property>
         <property name="text">
-         <string>Contabilidad</string>
+         <string>Observaciones</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
-          <normaloff>:/images/commons/contabilidad.png</normaloff>:/images/commons/contabilidad.png</iconset>
+         <iconset>
+          <normaloff>:/generales/images/relatedelements.png</normaloff>:/generales/images/relatedelements.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -596,11 +596,6 @@
    </item>
    <item row="1" column="1">
     <widget class="QStackedWidget" name="swFichas">
-     <property name="font">
-      <font>
-       <family>Sans Serif</family>
-      </font>
-     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -624,7 +619,107 @@
           <string>Datos generales del artículo</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="5" column="2" colspan="3">
+          <item row="1" column="0">
+           <widget class="DBChooseRecordButton" name="db_marcasmodelos">
+            <property name="text">
+             <string>Modelo</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>idmodelo</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="4">
+           <widget class="DBLineEdit" name="db_subfamiliasarticulos_nombre">
+            <property name="fieldName" stdset="0">
+             <string>subfamiliasarticulos.nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="4">
+           <widget class="DBLineEdit" name="db_marcasmodelos_nombre">
+            <property name="fieldName" stdset="0">
+             <string>marcasmodelos.nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" colspan="4">
+           <widget class="DBLineEdit" name="dbLineEdit">
+            <property name="fieldName" stdset="0">
+             <string>mercados.nombre</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="DBChooseRecordButton" name="db_subfamiliasarticulos">
+            <property name="text">
+             <string>Subfamilia</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>idsubfamilia</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="DBChooseRecordButton" name="db_idmercado">
+            <property name="text">
+             <string>Mercado</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>idmercado</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>C&amp;ódigo de barras</string>
+            </property>
+            <property name="buddy">
+             <cstring>db_codbarras</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="3" colspan="2">
+           <widget class="DBLineEdit" name="db_codbarras">
+            <property name="fieldName" stdset="0">
+             <string>codbarras</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>&amp;Tipo código de barras</string>
+            </property>
+            <property name="buddy">
+             <cstring>db_tipocodigobarras</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3" colspan="2">
+           <widget class="DBComboBox" name="db_tipocodigobarras">
+            <property name="fieldName" stdset="0">
+             <string>tipocodigobarras</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2" colspan="3">
            <widget class="QGroupBox" name="groupBox_7">
             <property name="title">
              <string>Características</string>
@@ -655,40 +750,7 @@
             </layout>
            </widget>
           </item>
-          <item row="3" column="2">
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>C&amp;ódigo de barras</string>
-            </property>
-            <property name="buddy">
-             <cstring>db_codbarras</cstring>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="2">
-           <widget class="QLabel" name="label_5">
-            <property name="text">
-             <string>&amp;Tipo código de barras</string>
-            </property>
-            <property name="buddy">
-             <cstring>db_tipocodigobarras</cstring>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="DBChooseRecordButton" name="db_subfamiliasarticulos">
-            <property name="text">
-             <string>Subfamilia</string>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>idsubfamilia</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0" rowspan="4" colspan="2">
+          <item row="3" column="0" rowspan="4" colspan="2">
            <widget class="DBFileUpload" name="db_imagen" native="true">
             <property name="fieldName" stdset="0">
              <string>imagen</string>
@@ -698,53 +760,6 @@
             </property>
             <property name="groupName" stdset="0">
              <string>Imágen</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1" colspan="4">
-           <widget class="DBLineEdit" name="db_subfamiliasarticulos_nombre">
-            <property name="fieldName" stdset="0">
-             <string>subfamiliasarticulos.nombre</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="3" colspan="2">
-           <widget class="DBLineEdit" name="db_codbarras">
-            <property name="fieldName" stdset="0">
-             <string>codbarras</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="3" colspan="2">
-           <widget class="DBComboBox" name="db_tipocodigobarras">
-            <property name="fieldName" stdset="0">
-             <string>tipocodigobarras</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="DBChooseRecordButton" name="db_marcasmodelos">
-            <property name="text">
-             <string>Modelo</string>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>idmodelo</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1" colspan="4">
-           <widget class="DBLineEdit" name="db_marcasmodelos_nombre">
-            <property name="fieldName" stdset="0">
-             <string>marcasmodelos.nombre</string>
             </property>
            </widget>
           </item>
@@ -816,15 +831,15 @@
            </widget>
           </item>
           <item>
-           <widget class="DBCheckBox" name="db_seproduce">
+           <widget class="DBCheckBox" name="checkBox">
             <property name="text">
              <string>Se produce</string>
             </property>
-            <property name="fieldName" stdset="0">
-             <string>seproduce</string>
-            </property>
             <property name="dataEditable" stdset="0">
              <bool>true</bool>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>seproduce</string>
             </property>
            </widget>
           </item>
@@ -1418,19 +1433,37 @@
   <tabstop>db_referencia</tabstop>
   <tabstop>db_nombre</tabstop>
   <tabstop>db_descripcion</tabstop>
-  <tabstop>db_articuloscaracteristicas</tabstop>
   <tabstop>db_subfamiliasarticulos</tabstop>
   <tabstop>db_subfamiliasarticulos_nombre</tabstop>
+  <tabstop>db_marcasmodelos</tabstop>
+  <tabstop>db_marcasmodelos_nombre</tabstop>
+  <tabstop>db_idmercado</tabstop>
+  <tabstop>dbLineEdit</tabstop>
   <tabstop>db_codbarras</tabstop>
   <tabstop>db_tipocodigobarras</tabstop>
-  <tabstop>db_impuestocompra_nombre</tabstop>
-  <tabstop>db_costemedio</tabstop>
-  <tabstop>db_stockfis</tabstop>
-  <tabstop>db_stockmin</tabstop>
+  <tabstop>db_articuloscaracteristicas</tabstop>
+  <tabstop>db_controlstock_2</tabstop>
+  <tabstop>db_trazabilidad</tabstop>
+  <tabstop>db_secompra</tabstop>
+  <tabstop>db_sevende</tabstop>
+  <tabstop>checkBox</tabstop>
   <tabstop>db_stockmax</tabstop>
-  <tabstop>db_idimpuestocompra</tabstop>
   <tabstop>db_idimpuestoventa</tabstop>
+  <tabstop>db_idimpuestocompra</tabstop>
   <tabstop>db_impuestoventa_nombre</tabstop>
+  <tabstop>db_costemedio</tabstop>
+  <tabstop>db_stockmin</tabstop>
+  <tabstop>db_stockfis</tabstop>
+  <tabstop>db_impuestocompra_nombre</tabstop>
+  <tabstop>db_idsubcuentaventas</tabstop>
+  <tabstop>db_idsubcuentaventas_text</tabstop>
+  <tabstop>db_co_subcuentas_descripcion</tabstop>
+  <tabstop>idsubcuentaventas.co_partidas</tabstop>
+  <tabstop>db_idsubcuentacompras</tabstop>
+  <tabstop>db_idsubcuentacompras_text</tabstop>
+  <tabstop>db_co_subcuentascompras_descripcion</tabstop>
+  <tabstop>idsubcuentacompras.co_partidas</tabstop>
+  <tabstop>dbRichTextEdit</tabstop>
   <tabstop>db_pvp</tabstop>
  </tabstops>
  <resources>

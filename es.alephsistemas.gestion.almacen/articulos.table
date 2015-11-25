@@ -279,6 +279,15 @@ function value() {
     </field>
 
     <field>
+        <name>seproduce</name>
+        <alias>Se produce</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>true</default>
+    </field>
+    
+    <field>
         <name>codbarras</name>
         <alias>Código de barras</alias>
         <null>true</null>
