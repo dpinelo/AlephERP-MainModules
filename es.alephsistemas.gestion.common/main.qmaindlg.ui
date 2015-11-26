@@ -83,6 +83,8 @@
     <addaction name="actionStyle"/>
     <addaction name="separator"/>
     <addaction name="table_alepherp_system"/>
+    <addaction name="table_alepherp_users"/>
+    <addaction name="table_alepherp_roles"/>
    </widget>
    <widget class="QMenu" name="menuTesorer_a">
     <property name="title">
@@ -339,6 +341,28 @@
     <string>Configuración de tablas</string>
    </property>
   </action>
+  <action name="table_alepherp_users">
+   <property name="text">
+    <string>Gestión de usuarios</string>
+   </property>
+   <property name="statusTip">
+    <string>Gestión de usuarios</string>
+   </property>
+   <property name="whatsThis">
+    <string>Gestión de usuarios</string>
+   </property>
+  </action>
+  <action name="table_alepherp_roles">
+   <property name="text">
+    <string>Gestión de roles</string>
+   </property>
+   <property name="statusTip">
+    <string>Gestión de roles</string>
+   </property>
+   <property name="whatsThis">
+    <string>Gestión de roles</string>
+   </property>
+  </action>  
   <action name="table_conceptosmovimientodinerario">
    <property name="text">
     <string>Clasificación de movimientos dinerarios</string>

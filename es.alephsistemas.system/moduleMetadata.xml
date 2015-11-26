@@ -1,13 +1,91 @@
 <AlephERP>
 <export>
-<module>es.alephsistemas.system</module>
-<generatedTime>2014-05-20 11:30:12</generatedTime>
+
+<id><![CDATA[es.alephsistemas.system]]></id>
+<description><![CDATA[es.alephsistemas.system]]></description>
+<name><![CDATA[Módulo de sistema]]></name>
+<showedText><![CDATA[Módulo de sistema]]></showedText>
+<icon><![CDATA[]]></icon>
+<enabled>true</enabled>
+<tableCreationOptions>WithoutForeignKeys | WithSimulateOID | </tableCreationOptions>
+<generatedTime>2015-11-26 16:54:18</generatedTime>
+
 
 <file>
-    <objectName>alepherp_users.dbrecord.ui</objectName>
-    <name>alepherp_users.dbrecord.ui</name>
+    <objectName>alepherp_modules</objectName>
+    <name>alepherp_modules.table</name>
     <version>1</version>
-    <type>ui</type>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_system</objectName>
+    <name>alepherp_system.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_envvars</objectName>
+    <name>alepherp_envvars.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_emails_attachments</objectName>
+    <name>alepherp_emails_attachments.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_emails</objectName>
+    <name>alepherp_emails.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_users</objectName>
+    <name>alepherp_users.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_roles</objectName>
+    <name>alepherp_roles.table</name>
+    <version>1</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_users_roles</objectName>
+    <name>alepherp_users_roles.table</name>
+    <version>1</version>
+    <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
     <device>*</device>
@@ -16,7 +94,17 @@
 <file>
     <objectName>alepherp_roles.dbrecord.ui</objectName>
     <name>alepherp_roles.dbrecord.ui</name>
-    <version>1</version>
+    <version>5</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_users.dbrecord.ui</objectName>
+    <name>alepherp_users.dbrecord.ui</name>
+    <version>7</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

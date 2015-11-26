@@ -31,10 +31,13 @@
    </property>
    <item row="4" column="1">
     <widget class="DBLineEdit" name="dbLineEdit_2">
-     <property name="fieldName">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="fieldName" stdset="0">
       <string/>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -67,10 +70,10 @@
        <height>0</height>
       </size>
      </property>
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>username</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -100,10 +103,10 @@
    </item>
    <item row="1" column="1" colspan="4">
     <widget class="DBLineEdit" name="db_nombre">
-     <property name="fieldName">
-      <string>nombre</string>
+     <property name="fieldName" stdset="0">
+      <string>name</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -120,20 +123,23 @@
    </item>
    <item row="3" column="1">
     <widget class="DBLineEdit" name="db_password">
-     <property name="fieldName">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="fieldName" stdset="0">
       <string/>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
    </item>
    <item row="2" column="1" colspan="4">
     <widget class="DBLineEdit" name="dbLineEdit">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>email</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -150,6 +156,12 @@
    </item>
    <item row="5" column="0" colspan="5">
     <widget class="DBGroupRelationMMHelper" name="groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Roles</string>
      </property>
@@ -187,6 +199,7 @@
   <tabstop>db_nombre</tabstop>
   <tabstop>dbLineEdit</tabstop>
   <tabstop>db_password</tabstop>
+  <tabstop>dbLineEdit_2</tabstop>
  </tabstops>
  <resources/>
  <connections/>

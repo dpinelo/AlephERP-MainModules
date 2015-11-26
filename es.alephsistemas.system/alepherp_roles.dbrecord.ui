@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>56</height>
+    <height>92</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,34 +29,46 @@
    <property name="bottomMargin">
     <number>0</number>
    </property>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>&amp;Nombre</string>
+   <item row="0" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Rol</string>
      </property>
-     <property name="buddy">
-      <cstring>db_nombre</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1" colspan="2">
-    <widget class="DBLineEdit" name="db_nombre">
-     <property name="fieldName">
-      <string>nombre</string>
-     </property>
-     <property name="dataEditable">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="DBCheckBox" name="db_superadmin">
-     <property name="text">
-      <string>Administrador</string>
-     </property>
-     <property name="fieldName">
-      <string>superadmin</string>
-     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>&amp;Nombre</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_nombre</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="DBLineEdit" name="db_nombre">
+        <property name="fieldName" stdset="0">
+         <string>nombre</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="DBCheckBox" name="db_superadmin">
+        <property name="text">
+         <string>Administrador</string>
+        </property>
+        <property name="fieldName" stdset="0">
+         <string>superadmin</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
@@ -73,9 +85,6 @@
    <header>widgets/dblineedit.h</header>
   </customwidget>
  </customwidgets>
- <tabstops>
-  <tabstop>db_nombre</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

@@ -8,7 +8,7 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-11-23 18:06:05</generatedTime>
+<generatedTime>2015-11-26 16:17:58</generatedTime>
 
 
 <file>
@@ -1794,7 +1794,7 @@
 <file>
     <objectName>main.qmaindlg.ui</objectName>
     <name>main.qmaindlg.ui</name>
-    <version>38</version>
+    <version>39</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
