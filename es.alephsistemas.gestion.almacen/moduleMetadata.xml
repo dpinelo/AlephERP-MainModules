@@ -8,13 +8,13 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-11-25 18:52:13</generatedTime>
+<generatedTime>2015-11-25 18:59:30</generatedTime>
 
 
 <file>
     <objectName>almacenes</objectName>
     <name>almacenes.table</name>
-    <version>19</version>
+    <version>18</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

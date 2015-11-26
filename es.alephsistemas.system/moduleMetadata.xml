@@ -3,12 +3,31 @@
 <module>es.alephsistemas.system</module>
 <generatedTime>2014-05-20 11:30:12</generatedTime>
 
+<file>
+    <objectName>alepherp_users.dbrecord.qs</objectName>
+    <name>alepherp_users.dbrecord.qs</name>
+    <version>1</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
 
 <file>
-    <objectName>alepherp_system</objectName>
-    <name>alepherp_system.table</name>
-    <version>10</version>
-    <type>table</type>
+    <objectName>alepherp_users.dbrecord.ui</objectName>
+    <name>alepherp_users.dbrecord.ui</name>
+    <version>1</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp_roles.dbrecord.ui</objectName>
+    <name>alepherp_roles.dbrecord.ui</name>
+    <version>1</version>
+    <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
     <device>*</device>
