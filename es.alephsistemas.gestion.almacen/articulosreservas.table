@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0"?>
+<table>
     <!-- Nombre de la tabla -->
     <name>articulosreservas</name>
     <!-- Alias a presentar en la aplicación -->
-    <alias>Reserva de artículos</alias>
 
     <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
     y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer

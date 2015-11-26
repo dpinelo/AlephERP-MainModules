@@ -7,14 +7,14 @@
 <showedText><![CDATA[Almacén]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
+<tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
+<generatedTime>2015-11-26 17:41:37</generatedTime>
 
-<generatedTime>2015-11-25 18:59:30</generatedTime>
-<tableCreationOptions>AlephERP::WithForeignKeys | AlephERP::CreateIndexOnRelationColumns</tableCreationOptions>
 
 <file>
     <objectName>almacenes</objectName>
     <name>almacenes.table</name>
-    <version>18</version>
+    <version>19</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
