@@ -149,9 +149,21 @@
     </widget>
    </item>
    <item row="5" column="0" colspan="5">
-    <widget class="QGroupBox" name="groupBox">
+    <widget class="DBGroupRelationMMHelper" name="groupBox">
      <property name="title">
       <string>Roles</string>
+     </property>
+     <property name="relationName" stdset="0">
+      <string>alepherp_users_roles</string>
+     </property>
+     <property name="otherTableName" stdset="0">
+      <string>alepherp_roles</string>
+     </property>
+     <property name="otherFieldName" stdset="0">
+      <string>nombre</string>
+     </property>
+     <property name="dataEditable" stdset="0">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -162,6 +174,12 @@
    <class>DBLineEdit</class>
    <extends>QLineEdit</extends>
    <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBGroupRelationMMHelper</class>
+   <extends>QGroupBox</extends>
+   <header>widgets/dbgrouprelationmmhelper.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <tabstops>
