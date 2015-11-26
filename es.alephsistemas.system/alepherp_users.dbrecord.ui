@@ -30,7 +30,7 @@
     <number>0</number>
    </property>
    <item row="4" column="1">
-    <widget class="DBLineEdit" name="dbLineEdit_2">
+    <widget class="DBLineEdit" name="db_password_2">
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
      </property>
@@ -127,7 +127,7 @@
       <enum>QLineEdit::Password</enum>
      </property>
      <property name="fieldName" stdset="0">
-      <string/>
+      <string>password</string>
      </property>
      <property name="dataEditable" stdset="0">
       <bool>true</bool>
@@ -135,7 +135,7 @@
     </widget>
    </item>
    <item row="2" column="1" colspan="4">
-    <widget class="DBLineEdit" name="dbLineEdit">
+    <widget class="DBLineEdit" name="db_email">
      <property name="fieldName" stdset="0">
       <string>email</string>
      </property>
@@ -199,7 +199,7 @@
   <tabstop>db_nombre</tabstop>
   <tabstop>dbLineEdit</tabstop>
   <tabstop>db_password</tabstop>
-  <tabstop>dbLineEdit_2</tabstop>
+  <tabstop>db_password_2</tabstop>
  </tabstops>
  <resources/>
  <connections/>
