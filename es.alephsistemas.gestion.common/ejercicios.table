@@ -5,6 +5,8 @@
     <!-- Esta tabla estará cacheada en memoria para un mejor rendimiento del sistema en red -->
     <isCached>true</isCached>
     
+    <associatedScript>contabilidadcommonfunctions.qs</associatedScript>    
+    
     <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
     y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
     por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo

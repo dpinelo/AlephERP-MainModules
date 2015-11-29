@@ -8,8 +8,7 @@
 <showedText><![CDATA[Contabilidad]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
-<tableCreationOptions>AlephERP::WithForeignKeys | AlephERP::CreateIndexOnRelationColumns</tableCreationOptions>
-
+<tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
 <file>
   <objectName>co_asientos</objectName>
   <name>co_asientos.table</name>
@@ -301,6 +300,16 @@
 </file>
 
 <file>
+  <objectName>contabilidadcommonfunctions.qs</objectName>
+  <name>contabilidadcommonfunctions.qs</name>
+  <version>196</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
   <objectName>co_partidas.dbrecord.qs</objectName>
   <name>co_partidas.dbrecord.qs</name>
   <version>35</version>
@@ -431,16 +440,6 @@
 </file>
 
 <file>
-  <objectName>contabilidadcommonfunctions.qs</objectName>
-  <name>contabilidadcommonfunctions.qs</name>
-  <version>196</version>
-  <type>qs</type>
-  <debug>false</debug>
-  <debugOnInit>false</debugOnInit>
-  <device>*</device>
-</file>
-
-<file>
   <objectName>exportcontaplus.view.qs</objectName>
   <name>exportcontaplus.view.qs</name>
   <version>4</version>
@@ -501,16 +500,6 @@
 </file>
 
 <file>
-  <objectName>pgc2007.ods</objectName>
-  <name>pgc2007.ods</name>
-  <version>2</version>
-  <type>binary</type>
-  <debug>false</debug>
-  <debugOnInit>false</debugOnInit>
-  <device>*</device>
-</file>
-
-<file>
   <objectName>pgc2007abreviado.ods</objectName>
   <name>pgc2007abreviado.ods</name>
   <version>4</version>
@@ -534,6 +523,16 @@
   <objectName>pgc2007entidadessinlucro.ods</objectName>
   <name>pgc2007entidadessinlucro.ods</name>
   <version>3</version>
+  <type>binary</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>pgc2007.ods</objectName>
+  <name>pgc2007.ods</name>
+  <version>2</version>
   <type>binary</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>

@@ -8,8 +8,7 @@
 <showedText><![CDATA[Tesorería]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
-<tableCreationOptions>AlephERP::WithForeignKeys | AlephERP::CreateIndexOnRelationColumns</tableCreationOptions>
-
+<tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
 <file>
   <objectName>efectos</objectName>
   <name>efectos.tableTemp</name>
@@ -251,26 +250,6 @@
 </file>
 
 <file>
-  <objectName>efectospago.dbrecord.ui</objectName>
-  <name>efectospago.dbrecord.ui</name>
-  <version>75</version>
-  <type>ui</type>
-  <debug>false</debug>
-  <debugOnInit>false</debugOnInit>
-  <device>*</device>
-</file>
-
-<file>
-  <objectName>efectospago.xml</objectName>
-  <name>efectospago.xml.report</name>
-  <version>33</version>
-  <type>report</type>
-  <debug>false</debug>
-  <debugOnInit>false</debugOnInit>
-  <device>*</device>
-</file>
-
-<file>
   <objectName>efectospagocobro.dbform.qs</objectName>
   <name>efectospagocobro.dbform.qs</name>
   <version>13</version>
@@ -285,6 +264,26 @@
   <name>efectospagocobro.dbrecord.qs</name>
   <version>35</version>
   <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>efectospago.dbrecord.ui</objectName>
+  <name>efectospago.dbrecord.ui</name>
+  <version>75</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>efectospago.xml</objectName>
+  <name>efectospago.xml.report</name>
+  <version>33</version>
+  <type>report</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
   <device>*</device>

@@ -96,7 +96,7 @@
          <string>Datos Generales</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/clientes.png</normaloff>:/images/commons/clientes.png</iconset>
         </property>
         <property name="iconSize">
@@ -152,7 +152,7 @@
          <string>Ventas</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/facturasclientes.png</normaloff>:/images/commons/facturasclientes.png</iconset>
         </property>
         <property name="iconSize">
@@ -208,7 +208,7 @@
          <string>Compras</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/facturasproveedores.png</normaloff>:/images/commons/facturasproveedores.png</iconset>
         </property>
         <property name="iconSize">
@@ -264,7 +264,7 @@
          <string>Stocks</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/stocks.png</normaloff>:/images/commons/stocks.png</iconset>
         </property>
         <property name="iconSize">
@@ -311,7 +311,7 @@
          <string>Instancias</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/traspasos.png</normaloff>:/images/commons/traspasos.png</iconset>
         </property>
         <property name="iconSize">
@@ -367,7 +367,7 @@
          <string>Contabilidad</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/images/commons/contabilidad.png</normaloff>:/images/commons/contabilidad.png</iconset>
         </property>
         <property name="iconSize">
@@ -423,7 +423,7 @@
          <string>Observaciones</string>
         </property>
         <property name="icon">
-         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+         <iconset>
           <normaloff>:/generales/images/relatedelements.png</normaloff>:/generales/images/relatedelements.png</iconset>
         </property>
         <property name="iconSize">
@@ -840,12 +840,6 @@
             </property>
             <property name="fieldName" stdset="0">
              <string>seproduce</string>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>seproduce</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
             </property>
            </widget>
           </item>
