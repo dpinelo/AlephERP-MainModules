@@ -32,6 +32,41 @@
       <string>Subfamilias de artículos</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Subcuenta contable de ventas</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="DBLineEdit" name="dbLineEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="fieldName">
+         <string>codsubcuentaventas</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+        <property name="autoComplete">
+         <set>AlephERP::ValuesFromTableWithNoRelation</set>
+        </property>
+        <property name="autoCompleteTableName">
+         <string>co_subcuentas</string>
+        </property>
+        <property name="autoCompleteColumn">
+         <string>codsubcuenta</string>
+        </property>
+        <property name="autoCompleteVisibleFields">
+         <string>codsubcuenta;descripcion</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
@@ -42,8 +77,47 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>&amp;Nombre</string>
+        </property>
+        <property name="buddy">
+         <cstring>db_nombre</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="DBChooseRecordButton" name="db_codsubcuentaventasrb">
+        <property name="fieldName">
+         <string>codsubcuentaventas</string>
+        </property>
+        <property name="tableName">
+         <string>co_subcuentas</string>
+        </property>
+        <property name="searchFieldName" stdset="0">
+         <string>codsubcuenta</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="3">
+       <widget class="DBLineEdit" name="db_nombre">
+        <property name="fieldName">
+         <string>nombre</string>
+        </property>
+        <property name="dataEditable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
        <widget class="DBLineEdit" name="db_codsubfamilia">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="maximumSize">
          <size>
           <width>150</width>
@@ -58,7 +132,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
+      <item row="0" column="3">
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -70,26 +144,6 @@
          </size>
         </property>
        </spacer>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>&amp;Nombre</string>
-        </property>
-        <property name="buddy">
-         <cstring>db_nombre</cstring>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1" colspan="2">
-       <widget class="DBLineEdit" name="db_nombre">
-        <property name="fieldName">
-         <string>nombre</string>
-        </property>
-        <property name="dataEditable">
-         <bool>true</bool>
-        </property>
-       </widget>
       </item>
      </layout>
     </widget>
@@ -116,6 +170,11 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
   <customwidget>
    <class>DBDetailView</class>
    <extends>QWidget</extends>

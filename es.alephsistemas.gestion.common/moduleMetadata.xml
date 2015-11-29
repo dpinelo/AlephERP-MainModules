@@ -3,8 +3,8 @@
 <export>
 
 <id><![CDATA[es.alephsistemas.gestion.common]]></id>
-<description><![CDATA[Módulo de Gestión]]></description>
-<name><![CDATA[Módulo básico de gestión]]></name>
+<description><![CDATA[Módulo básico de gestión]]></description>
+<name><![CDATA[Módulo de Gestión]]></name>
 <showedText><![CDATA[Gestión]]></showedText>
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
@@ -1032,7 +1032,7 @@
 <file>
   <objectName>ejercicios.dbrecord.qs</objectName>
   <name>ejercicios.dbrecord.qs</name>
-  <version>98</version>
+  <version>99</version>
   <type>qs</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>

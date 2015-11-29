@@ -386,41 +386,25 @@ function value() {
     </field>
 
     <field>
-        <name>idsubcuentacompras</name>
-        <!-- Identificador interno de la subcuenta -->
-        <alias>ID</alias>
+        <name>codsubcuentacompras</name>
         <null>true</null>
         <pk>false</pk>
-        <type>int</type>
+        <type>string</type>
+        <length>15</length>
         <visiblegrid>false</visiblegrid>
-
-        <relation>
-            <name>co_subcuentascompras</name>
-            <table>co_subcuentas</table>
-            <field>id</field>
-            <card>M1</card>
-        </relation>
     </field>
 
     <field>
-        <name>idsubcuentaventas</name>
-        <!-- Identificador interno de la subcuenta -->
-        <alias>ID</alias>
+        <name>codsubcuentaventas</name>
         <null>true</null>
         <pk>false</pk>
-        <type>int</type>
+        <type>string</type>
+        <length>15</length>
         <visiblegrid>false</visiblegrid>
-        <relation>
-            <name>co_subcuentasventas</name>
-            <table>co_subcuentas</table>
-            <field>id</field>
-            <card>M1</card>
-        </relation>
     </field>
 
     <field>
         <name>codsubcuentairpfcom</name>
-        <!-- Código de la subcuenta de contabilidad asociada a la subcuenta de compras-->
         <alias>Subcuenta de IRPF compras</alias>
         <null>true</null>
         <pk>false</pk>
@@ -430,18 +414,13 @@ function value() {
     </field>
 
     <field>
-        <name>idsubcuentairpfcom</name>
-        <!-- Identificador interno de la subcuenta -->
+        <name>codsubcuentairpfcom</name>
         <alias>ID</alias>
         <null>true</null>
         <pk>false</pk>
-        <type>int</type>
+        <type>string</type>
+        <length>15</length>
         <visiblegrid>false</visiblegrid>
-        
-        <relation>
-            <table>co_subcuentas</table>
-            <field>id</field>
-            <card>M1</card>
-        </relation>
     </field>
+    
 </table>

@@ -62,7 +62,7 @@
 <file>
   <objectName>articulos</objectName>
   <name>articulos.table</name>
-  <version>45</version>
+  <version>46</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -202,7 +202,7 @@
 <file>
   <objectName>subfamiliasarticulos</objectName>
   <name>subfamiliasarticulos.table</name>
-  <version>5</version>
+  <version>7</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -582,7 +582,7 @@
 <file>
   <objectName>subfamiliasarticulos.dbrecord.ui</objectName>
   <name>subfamiliasarticulos.dbrecord.ui</name>
-  <version>3</version>
+  <version>5</version>
   <type>ui</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>

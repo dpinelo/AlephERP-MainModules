@@ -76,7 +76,7 @@ DBRecordDlg.prototype.copiarEjercicioAnterior = function() {
         for (var i = 0 ; i<grupoHijos.length ; i++) {
             //Creamos el nuevo Grupo.
             var grupo = bean.co_grupos.newChild();
-            AERPScriptCommon.addToTransaction(grupo);
+            AERPScriptCommon.addToTransaction(grupo, "contabilidadContext");
             grupo.codgrupo.value = grupoHijos[i].codgrupo.value;
             grupo.descripcion.value = grupoHijos[i].descripcion.value;
             grupo.validate();
@@ -98,7 +98,7 @@ DBRecordDlg.prototype.copiarEjercicioAnterior = function() {
                     cuenta.validate();
                 }
             }
-            if(!AERPScriptCommon.commit()){
+            if(!AERPScriptCommon.commit("contabilidadContext", true, true)){
                 bean.co_grupos.deleteAllChildren();
                 return;
             }
@@ -166,7 +166,7 @@ DBRecordDlg.prototype.generarPlanContable = function() {
                     case 0:
                         if (id.length == 1) {
                             var grupo = bean.co_grupos.newChild();
-                            AERPScriptCommon.addToTransaction(grupo);
+                            AERPScriptCommon.addToTransaction(grupo, "contabilidadContext");
                             grupo.codgrupo.value = sheetArchOds.cellValue(line,0) + "";
                             grupo.descripcion.value = sheetArchOds.cellValue(line,1);
                         }
@@ -197,7 +197,8 @@ DBRecordDlg.prototype.generarPlanContable = function() {
                 AERPScriptCommon.setValueProgressDialog((i * sheetArchOds.rowCount) + line);
             }
         }
-        var r = AERPScriptCommon.commit(false);
+        // OJO: No estoy seguro de que al descartar el contexto, bean (=ejercicio) no sea descartado también, aunque no debería ya que está en otro contexto.
+        var r = AERPScriptCommon.commit("contabilidadContext", true, true);
         AERPScriptCommon.closeProgressDialog();
         if ( !r ){
             bean.co_grupos.deleteAllChildren();
