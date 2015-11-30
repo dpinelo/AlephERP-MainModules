@@ -59,7 +59,7 @@
     </field>
         
     <field>
-        <name>codsubcuentaventa</name>
+        <name>codsubcuentaventas</name>
         <alias>Subcuenta de Ventas</alias>
         <null>true</null>
         <pk>false</pk>

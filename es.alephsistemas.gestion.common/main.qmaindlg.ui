@@ -29,7 +29,7 @@
    </property>
    <widget class="QMenu" name="menuGesti_n">
     <property name="title">
-     <string>Gestión</string>
+     <string>&amp;Gestión</string>
     </property>
     <addaction name="table_agenda"/>
     <addaction name="separator"/>
@@ -38,11 +38,11 @@
    </widget>
    <widget class="QMenu" name="menuContabilidad">
     <property name="title">
-     <string>Contabilidad</string>
+     <string>Contabili&amp;dad</string>
     </property>
     <widget class="QMenu" name="menuConfiguracionContabilidad">
      <property name="title">
-      <string>Configuración</string>
+      <string>&amp;Configuración</string>
      </property>
      <addaction name="table_co_grupos"/>
      <addaction name="table_co_conceptospar"/>
@@ -50,7 +50,7 @@
     </widget>
     <widget class="QMenu" name="menuExportar_datos">
      <property name="title">
-      <string>Exportar datos</string>
+      <string>&amp;Exportar datos</string>
      </property>
      <addaction name="actionExportContaplus"/>
     </widget>
@@ -65,7 +65,7 @@
    </widget>
    <widget class="QMenu" name="menuAyuda">
     <property name="title">
-     <string>Ayuda</string>
+     <string>A&amp;yuda</string>
     </property>
     <addaction name="actionHelp"/>
     <addaction name="separator"/>
@@ -73,7 +73,7 @@
    </widget>
    <widget class="QMenu" name="menuConfiguraci_n">
     <property name="title">
-     <string>Configuración</string>
+     <string>Config&amp;uración</string>
     </property>
     <addaction name="actionDocMngmnt"/>
     <addaction name="actionEnterLocalMode"/>
@@ -88,11 +88,11 @@
    </widget>
    <widget class="QMenu" name="menuTesorer_a">
     <property name="title">
-     <string>Tesorería</string>
+     <string>&amp;Tesorería</string>
     </property>
     <widget class="QMenu" name="menuConfiguraci_n_4">
      <property name="title">
-      <string>Configuración</string>
+      <string>&amp;Configuración</string>
      </property>
      <addaction name="table_conceptosmovimientodinerario"/>
      <addaction name="table_cajas"/>
@@ -108,25 +108,27 @@
    </widget>
    <widget class="QMenu" name="menuCompras">
     <property name="title">
-     <string>Compras</string>
+     <string>&amp;Compras</string>
     </property>
     <widget class="QMenu" name="menuInformes_2">
      <property name="title">
-      <string>Informes</string>
+      <string>&amp;Informes</string>
      </property>
      <addaction name="report_librofacturasrecibidas"/>
     </widget>
+    <addaction name="table_pedidosprov"/>
+    <addaction name="table_albaranesprov"/>
     <addaction name="table_facturasprov"/>
     <addaction name="separator"/>
     <addaction name="menuInformes_2"/>
    </widget>
    <widget class="QMenu" name="menuMaestros">
     <property name="title">
-     <string>Maestros</string>
+     <string>&amp;Maestros</string>
     </property>
     <widget class="QMenu" name="menuTablas_Generales">
      <property name="title">
-      <string>Maestros de la Empresa actual</string>
+      <string>&amp;Maestros de la Empresa actual</string>
      </property>
      <addaction name="table_centroscoste"/>
      <addaction name="table_comisiones"/>
@@ -146,7 +148,7 @@
     </widget>
     <widget class="QMenu" name="menuConfiguraci_n_General">
      <property name="title">
-      <string>Configuración General</string>
+      <string>&amp;Configuración General</string>
      </property>
      <addaction name="table_bancos"/>
      <addaction name="table_divisas"/>
@@ -162,11 +164,11 @@
    </widget>
    <widget class="QMenu" name="menuAlmacen">
     <property name="title">
-     <string>Almacén</string>
+     <string>A&amp;lmacén</string>
     </property>
     <widget class="QMenu" name="menuConfiguraci_n_2">
      <property name="title">
-      <string>Configuración</string>
+      <string>&amp;Configuración</string>
      </property>
      <addaction name="table_almacenes"/>
      <addaction name="table_familiasarticulos"/>
@@ -176,29 +178,31 @@
     <addaction name="table_articulos"/>
     <addaction name="table_stocks"/>
     <addaction name="table_stocksmovimientos"/>
+    <addaction name="table_articulosreservas"/>
     <addaction name="separator"/>
     <addaction name="menuConfiguraci_n_2"/>
    </widget>
    <widget class="QMenu" name="menuInformes">
     <property name="title">
-     <string>Informes</string>
+     <string>&amp;Informes</string>
     </property>
     <addaction name="action_informes"/>
    </widget>
    <widget class="QMenu" name="menuVentas">
     <property name="title">
-     <string>Ventas</string>
+     <string>Ve&amp;ntas</string>
     </property>
     <addaction name="table_pedidoscli"/>
+    <addaction name="table_albaranescli"/>
     <addaction name="table_facturascli"/>
    </widget>
    <widget class="QMenu" name="menuProducci_n">
     <property name="title">
-     <string>Producción</string>
+     <string>P&amp;roducción</string>
     </property>
     <widget class="QMenu" name="menuConfiguraci_n_3">
      <property name="title">
-      <string>Configuración</string>
+      <string>&amp;Configuración</string>
      </property>
      <addaction name="table_actividadesproductivas"/>
      <addaction name="table_categoriasactividades"/>
@@ -245,7 +249,7 @@
   </widget>
   <widget class="QDockWidget" name="dockWidget">
    <property name="windowTitle">
-    <string>Acciones</string>
+    <string>&amp;Acciones</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>1</number>
@@ -273,11 +277,11 @@
   </widget>
   <action name="table_terceros">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/clientes.png</normaloff>:/images/commons/clientes.png</iconset>
    </property>
    <property name="text">
-    <string>Terceros</string>
+    <string>&amp;Terceros</string>
    </property>
    <property name="toolTip">
     <string>Terceros: Clientes, proveedores, acreedores...</string>
@@ -291,7 +295,7 @@
   </action>
   <action name="actionAbout">
    <property name="text">
-    <string>Acerca de...</string>
+    <string>&amp;Acerca de...</string>
    </property>
    <property name="statusTip">
     <string>Acerca de</string>
@@ -306,7 +310,7 @@
      <normaloff>:/generales/images/display.png</normaloff>:/generales/images/display.png</iconset>
    </property>
    <property name="text">
-    <string>Seleccionar Estilo</string>
+    <string>Se&amp;leccionar Estilo</string>
    </property>
    <property name="statusTip">
     <string>Seleccionar Estilo</string>
@@ -321,7 +325,7 @@
      <normaloff>:/generales/images/close.png</normaloff>:/generales/images/close.png</iconset>
    </property>
    <property name="text">
-    <string>Salir</string>
+    <string>&amp;Salir</string>
    </property>
    <property name="statusTip">
     <string>Salir</string>
@@ -332,7 +336,7 @@
   </action>
   <action name="table_alepherp_system">
    <property name="text">
-    <string>Configuración de tablas</string>
+    <string>&amp;Configuración de tablas</string>
    </property>
    <property name="statusTip">
     <string>Configuración de tablas</string>
@@ -343,7 +347,7 @@
   </action>
   <action name="table_alepherp_users">
    <property name="text">
-    <string>Gestión de usuarios</string>
+    <string>&amp;Gestión de usuarios</string>
    </property>
    <property name="statusTip">
     <string>Gestión de usuarios</string>
@@ -354,7 +358,7 @@
   </action>
   <action name="table_alepherp_roles">
    <property name="text">
-    <string>Gestión de roles</string>
+    <string>Gestión de &amp;roles</string>
    </property>
    <property name="statusTip">
     <string>Gestión de roles</string>
@@ -362,51 +366,51 @@
    <property name="whatsThis">
     <string>Gestión de roles</string>
    </property>
-  </action>  
+  </action>
   <action name="table_conceptosmovimientodinerario">
    <property name="text">
-    <string>Clasificación de movimientos dinerarios</string>
+    <string>&amp;Clasificación de movimientos dinerarios</string>
    </property>
   </action>
   <action name="table_entradascaja">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/entradascaja.png</normaloff>:/images/commons/entradascaja.png</iconset>
    </property>
    <property name="text">
-    <string>Movimientos de caja</string>
+    <string>&amp;Movimientos de caja</string>
    </property>
   </action>
   <action name="table_entradasbanco">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/entradasbanco.png</normaloff>:/images/commons/entradasbanco.png</iconset>
    </property>
    <property name="text">
-    <string>Movimientos de banco</string>
+    <string>Movimientos de &amp;banco</string>
    </property>
   </action>
   <action name="table_ejercicios">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/ejerciciosfiscales.png</normaloff>:/images/commons/ejerciciosfiscales.png</iconset>
    </property>
    <property name="text">
-    <string>Ejercicios Fiscales</string>
+    <string>&amp;Ejercicios Fiscales</string>
    </property>
   </action>
   <action name="table_productos">
    <property name="text">
-    <string>Productos</string>
+    <string>&amp;Productos</string>
    </property>
   </action>
   <action name="table_paises">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/paises.png</normaloff>:/images/commons/paises.png</iconset>
    </property>
    <property name="text">
-    <string>Países</string>
+    <string>&amp;Países</string>
    </property>
    <property name="toolTip">
     <string>Países</string>
@@ -414,11 +418,11 @@
   </action>
   <action name="table_bancos">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/bancos.png</normaloff>:/images/commons/bancos.png</iconset>
    </property>
    <property name="text">
-    <string>Bancos</string>
+    <string>&amp;Bancos</string>
    </property>
    <property name="toolTip">
     <string>Bancos</string>
@@ -426,11 +430,11 @@
   </action>
   <action name="table_seriesfacturacion">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/seriesfacturacion.png</normaloff>:/images/commons/seriesfacturacion.png</iconset>
    </property>
    <property name="text">
-    <string>Series de facturación</string>
+    <string>&amp;Series de facturación</string>
    </property>
    <property name="toolTip">
     <string>Series de facturación del sistema</string>
@@ -438,11 +442,11 @@
   </action>
   <action name="table_planespago">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/formaspago.png</normaloff>:/images/commons/formaspago.png</iconset>
    </property>
    <property name="text">
-    <string>Planes de pago</string>
+    <string>P&amp;lanes de pago</string>
    </property>
    <property name="toolTip">
     <string>Planes de pago</string>
@@ -450,52 +454,52 @@
   </action>
   <action name="table_tarjetascredito">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/tarjetascredito.png</normaloff>:/images/commons/tarjetascredito.png</iconset>
    </property>
    <property name="text">
-    <string>Tarjetas de Crédito</string>
+    <string>Tar&amp;jetas de Crédito</string>
    </property>
   </action>
   <action name="table_cuentasbanco">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/cuentasbanco.png</normaloff>:/images/commons/cuentasbanco.png</iconset>
    </property>
    <property name="text">
-    <string>Cuentas Bancarias</string>
+    <string>Cuentas &amp;Bancarias</string>
    </property>
   </action>
   <action name="table_divisas">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/divisas.png</normaloff>:/images/commons/divisas.png</iconset>
    </property>
    <property name="text">
-    <string>Divisas</string>
+    <string>&amp;Divisas</string>
    </property>
   </action>
   <action name="table_personas">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/personas.png</normaloff>:/images/commons/personas.png</iconset>
    </property>
    <property name="text">
-    <string>Personas</string>
+    <string>&amp;Personas</string>
    </property>
   </action>
   <action name="action_entornousuario">
    <property name="text">
-    <string>Entorno de Usuario</string>
+    <string>Entorno &amp;de Usuario</string>
    </property>
   </action>
   <action name="table_empresas">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/empresas.png</normaloff>:/images/commons/empresas.png</iconset>
    </property>
    <property name="text">
-    <string>Empresas</string>
+    <string>&amp;Empresas</string>
    </property>
    <property name="toolTip">
     <string>Empresas dadas de alta en el sistema</string>
@@ -509,11 +513,11 @@
   </action>
   <action name="table_centroscoste">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/centrosdecoste.png</normaloff>:/images/commons/centrosdecoste.png</iconset>
    </property>
    <property name="text">
-    <string>Centros y Subcentros de coste</string>
+    <string>&amp;Centros y Subcentros de coste</string>
    </property>
    <property name="iconText">
     <string>Centros de coste</string>
@@ -524,11 +528,11 @@
   </action>
   <action name="table_impuestos">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/impuestos.png</normaloff>:/images/commons/impuestos.png</iconset>
    </property>
    <property name="text">
-    <string>Tipos de I.V.A.</string>
+    <string>Tipos de &amp;I.V.A.</string>
    </property>
    <property name="toolTip">
     <string>Tipos de I.V.A.</string>
@@ -536,38 +540,38 @@
   </action>
   <action name="table_familiasarticulos">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/familiasarticulos.png</normaloff>:/images/commons/familiasarticulos.png</iconset>
    </property>
    <property name="text">
-    <string>Familias y Subfamilias de artículos</string>
+    <string>&amp;Familias y Subfamilias de artículos</string>
    </property>
   </action>
   <action name="table_articulos">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/articulos.png</normaloff>:/images/commons/articulos.png</iconset>
    </property>
    <property name="text">
-    <string>Artículos</string>
+    <string>&amp;Artículos</string>
    </property>
   </action>
   <action name="table_familiasservicios">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/familiasservicios.png</normaloff>:/images/commons/familiasservicios.png</iconset>
    </property>
    <property name="text">
-    <string>Familias de Servicios</string>
+    <string>&amp;Familias de Servicios</string>
    </property>
   </action>
   <action name="table_servicios">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/servicios.png</normaloff>:/images/commons/servicios.png</iconset>
    </property>
    <property name="text">
-    <string>Servicios</string>
+    <string>&amp;Servicios</string>
    </property>
    <property name="toolTip">
     <string>Servicios recibidos por la empresa por sus proveedores o acreedores, o servicios que la empresa presta.</string>
@@ -575,11 +579,11 @@
   </action>
   <action name="table_facturasprov">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/facturasproveedores.png</normaloff>:/images/commons/facturasproveedores.png</iconset>
    </property>
    <property name="text">
-    <string>Facturas recibidas</string>
+    <string>&amp;Facturas recibidas</string>
    </property>
    <property name="statusTip">
     <string>Listado de facturas recibidas de proveedores o acreedores</string>
@@ -590,11 +594,11 @@
   </action>
   <action name="table_gruposterceros">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/gruposterceros.png</normaloff>:/images/commons/gruposterceros.png</iconset>
    </property>
    <property name="text">
-    <string>Grupos de Terceros</string>
+    <string>&amp;Grupos de Terceros</string>
    </property>
    <property name="toolTip">
     <string>Grupos de Terceros</string>
@@ -602,11 +606,11 @@
   </action>
   <action name="table_impuestos_irpf">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/impuestos.png</normaloff>:/images/commons/impuestos.png</iconset>
    </property>
    <property name="text">
-    <string>Tipos de I.R.P.F.</string>
+    <string>&amp;Tipos de I.R.P.F.</string>
    </property>
    <property name="toolTip">
     <string>Tipos de I.R.P.F.</string>
@@ -614,11 +618,11 @@
   </action>
   <action name="table_distribucioncostes">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/distribucioncostes.png</normaloff>:/images/commons/distribucioncostes.png</iconset>
    </property>
    <property name="text">
-    <string>Distribución de costes</string>
+    <string>&amp;Distribución de costes</string>
    </property>
    <property name="toolTip">
     <string>Distribución de costes</string>
@@ -626,11 +630,11 @@
   </action>
   <action name="table_efectospago">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/tesoreria.png</normaloff>:/images/commons/tesoreria.png</iconset>
    </property>
    <property name="text">
-    <string>Efectos de Pago</string>
+    <string>Efectos &amp;de Pago</string>
    </property>
    <property name="toolTip">
     <string>Documentos o recibos de pago de facturas recibidas por la empresa.</string>
@@ -642,16 +646,16 @@
      <normaloff>:/generales/images/print.png</normaloff>:/generales/images/print.png</iconset>
    </property>
    <property name="text">
-    <string>Interfaz de Informes</string>
+    <string>&amp;Interfaz de Informes</string>
    </property>
   </action>
   <action name="table_pedidoscli">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/pedidoscli.png</normaloff>:/images/commons/pedidoscli.png</iconset>
    </property>
    <property name="text">
-    <string>Pedidos de clientes</string>
+    <string>&amp;Pedidos de clientes</string>
    </property>
    <property name="toolTip">
     <string>Pedidos de clientes</string>
@@ -659,11 +663,11 @@
   </action>
   <action name="table_formaspago">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/money.png</normaloff>:/images/commons/money.png</iconset>
    </property>
    <property name="text">
-    <string>Formas de pago</string>
+    <string>Fo&amp;rmas de pago</string>
    </property>
    <property name="toolTip">
     <string>Formas de pago soportadas o efectuadas</string>
@@ -671,11 +675,11 @@
   </action>
   <action name="table_efectoscobro">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/efectoscobro.png</normaloff>:/images/commons/efectoscobro.png</iconset>
    </property>
    <property name="text">
-    <string>Efectos de Cobro</string>
+    <string>&amp;Efectos de Cobro</string>
    </property>
    <property name="toolTip">
     <string>Efectos de Cobro</string>
@@ -740,11 +744,11 @@
   </action>
   <action name="table_unidadesmedida">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/unidadesmedida.png</normaloff>:/images/commons/unidadesmedida.png</iconset>
    </property>
    <property name="text">
-    <string>Unidades de Medida</string>
+    <string>&amp;Unidades de Medida</string>
    </property>
   </action>
   <action name="table_operarios">
@@ -753,7 +757,7 @@
      <normaloff>:/images/printingerp/operarios.png</normaloff>:/images/printingerp/operarios.png</iconset>
    </property>
    <property name="text">
-    <string>Operarios</string>
+    <string>&amp;Operarios</string>
    </property>
   </action>
   <action name="table_odt">
@@ -762,7 +766,7 @@
      <normaloff>:/images/printingerp/ordendetrabajo.png</normaloff>:/images/printingerp/ordendetrabajo.png</iconset>
    </property>
    <property name="text">
-    <string>Órdenes de trabajo</string>
+    <string>&amp;Órdenes de trabajo</string>
    </property>
   </action>
   <action name="table_actividadesproductivas">
@@ -771,7 +775,7 @@
      <normaloff>:/images/printingerp/actividades.png</normaloff>:/images/printingerp/actividades.png</iconset>
    </property>
    <property name="text">
-    <string>Actividades de Producción</string>
+    <string>&amp;Actividades de Producción</string>
    </property>
    <property name="toolTip">
     <string>Conjunto de actividades de producción</string>
@@ -783,7 +787,7 @@
      <normaloff>:/images/printingerp/nodo_categorias.png</normaloff>:/images/printingerp/nodo_categorias.png</iconset>
    </property>
    <property name="text">
-    <string>Categorias de Actividades de Producción</string>
+    <string>&amp;Categorias de Actividades de Producción</string>
    </property>
    <property name="toolTip">
     <string>Agrupación de actividades de producción</string>
@@ -795,7 +799,7 @@
      <normaloff>:/images/printingerp/tipostrabajo.png</normaloff>:/images/printingerp/tipostrabajo.png</iconset>
    </property>
    <property name="text">
-    <string>Tipos de Trabajo</string>
+    <string>&amp;Tipos de Trabajo</string>
    </property>
    <property name="toolTip">
     <string>Tipos de Trabajo</string>
@@ -810,12 +814,12 @@
      <normaloff>:/generales/images/localMode.png</normaloff>:/generales/images/localMode.png</iconset>
    </property>
    <property name="text">
-    <string>Entrar en modo de trabajo local</string>
+    <string>Entrar en &amp;modo de trabajo local</string>
    </property>
   </action>
   <action name="report_librofacturasrecibidas">
    <property name="text">
-    <string>Libro de facturas recibidas</string>
+    <string>&amp;Libro de facturas recibidas</string>
    </property>
    <property name="whatsThis">
     <string>Informe para obtener el libro de facturas recibidas para el ejercicio actual, en un rango de fechas determinado.</string>
@@ -823,11 +827,11 @@
   </action>
   <action name="table_facturascli">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/facturasclientes.png</normaloff>:/images/commons/facturasclientes.png</iconset>
    </property>
    <property name="text">
-    <string>Facturas emitidas</string>
+    <string>&amp;Facturas emitidas</string>
    </property>
    <property name="toolTip">
     <string>Facturas emitidas a clientes</string>
@@ -839,7 +843,7 @@
      <normaloff>:/generales/images/exportdata.png</normaloff>:/generales/images/exportdata.png</iconset>
    </property>
    <property name="text">
-    <string>Exportar Datos</string>
+    <string>E&amp;xportar Datos</string>
    </property>
    <property name="toolTip">
     <string>Exportar Datos</string>
@@ -847,11 +851,11 @@
   </action>
   <action name="table_comisiones">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/comisiones.png</normaloff>:/images/commons/comisiones.png</iconset>
    </property>
    <property name="text">
-    <string>Comisiones</string>
+    <string>C&amp;omisiones</string>
    </property>
    <property name="toolTip">
     <string>Comisiones</string>
@@ -859,11 +863,11 @@
   </action>
   <action name="table_subcentroscoste">
    <property name="icon">
-    <iconset>
+    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
      <normaloff>:/images/commons/subcentroscoste.png</normaloff>:/images/commons/subcentroscoste.png</iconset>
    </property>
    <property name="text">
-    <string>Subcentros de coste</string>
+    <string>S&amp;ubcentros de coste</string>
    </property>
   </action>
   <action name="actionDocMngmnt">
@@ -872,17 +876,17 @@
      <normaloff>:/generales/images/document.png</normaloff>:/generales/images/document.png</iconset>
    </property>
    <property name="text">
-    <string>Explorador del Gestor Documental</string>
+    <string>&amp;Explorador del Gestor Documental</string>
    </property>
   </action>
   <action name="table_cajas">
    <property name="text">
-    <string>Cajas</string>
+    <string>Ca&amp;jas</string>
    </property>
   </action>
   <action name="table_traspasos">
    <property name="text">
-    <string>Traspasos</string>
+    <string>&amp;Traspasos</string>
    </property>
    <property name="toolTip">
     <string>Traspasos</string>
@@ -890,7 +894,7 @@
   </action>
   <action name="table_tiposefectos">
    <property name="text">
-    <string>Tipos de Efectos</string>
+    <string>&amp;Tipos de Efectos</string>
    </property>
   </action>
   <action name="actionSelectScanSource">
@@ -899,7 +903,7 @@
      <normaloff>:/generales/images/scanner.png</normaloff>:/generales/images/scanner.png</iconset>
    </property>
    <property name="text">
-    <string>Seleccionar Escaner</string>
+    <string>&amp;Seleccionar Escaner</string>
    </property>
    <property name="toolTip">
     <string>Seleccione el escaner</string>
@@ -907,7 +911,7 @@
   </action>
   <action name="table_agenda">
    <property name="text">
-    <string>Agenda</string>
+    <string>&amp;Agenda</string>
    </property>
   </action>
   <action name="actionHelp">
@@ -916,7 +920,7 @@
      <normaloff>:/generales/images/help-browser.png</normaloff>:/generales/images/help-browser.png</iconset>
    </property>
    <property name="text">
-    <string>Manual de Usuario</string>
+    <string>&amp;Manual de Usuario</string>
    </property>
    <property name="toolTip">
     <string>Acceso al manual completo de usuario de AlephERP</string>
@@ -924,64 +928,84 @@
   </action>
   <action name="table_almacenes">
    <property name="text">
-    <string>Almacenes</string>
+    <string>&amp;Almacenes</string>
    </property>
   </action>
   <action name="table_co_asientos">
    <property name="text">
-    <string>Libro Diario - Asientos</string>
+    <string>&amp;Libro Diario - Asientos</string>
    </property>
   </action>
   <action name="table_co_cuentas">
    <property name="text">
-    <string>Plan General de Contabilidad</string>
+    <string>&amp;Plan General de Contabilidad</string>
    </property>
   </action>
   <action name="table_co_subcuentas">
    <property name="text">
-    <string>Subcuentas contables</string>
+    <string>&amp;Subcuentas contables</string>
    </property>
   </action>
   <action name="table_co_grupos">
    <property name="text">
-    <string>Grupos / Epigrafes</string>
+    <string>&amp;Grupos / Epigrafes</string>
    </property>
   </action>
   <action name="table_co_conceptospar">
    <property name="text">
-    <string>Conceptos para partidas</string>
+    <string>&amp;Conceptos para partidas</string>
    </property>
   </action>
   <action name="actionExportContaplus">
    <property name="text">
-    <string>Contaplus</string>
+    <string>&amp;Contaplus</string>
    </property>
   </action>
   <action name="table_co_inventario">
    <property name="text">
-    <string>Inventario</string>
+    <string>&amp;Inventario</string>
    </property>
   </action>
   <action name="table_marcas">
    <property name="text">
-    <string>Marcas y modelos</string>
+    <string>&amp;Marcas y modelos</string>
    </property>
   </action>
   <action name="table_mercados">
    <property name="text">
-    <string>Mercados</string>
+    <string>M&amp;ercados</string>
    </property>
   </action>
   <action name="table_stocks">
    <property name="text">
-    <string>Stocks actuales</string>
+    <string>&amp;Stocks actuales</string>
    </property>
   </action>
   <action name="table_stocksmovimientos">
    <property name="text">
-    <string>Movimientos de stocks</string>
+    <string>&amp;Movimientos de stocks</string>
    </property>
   </action>
+  <action name="table_articulosreservas">
+   <property name="text">
+    <string>Reserva de artículos</string>
+   </property>
+  </action>
+  <action name="table_pedidosprov">
+   <property name="text">
+    <string>Pedidos a Proveedores</string>
+   </property>
+  </action>
+  <action name="table_albaranesprov">
+   <property name="text">
+    <string>Albaranes de Proveedores</string>
+   </property>
+  </action>
+  <action name="table_albaranescli">
+   <property name="text">
+    <string>Albaranes de Clientes</string>
+   </property>
+  </action>  
  </widget>
  <customwidgets>
   <customwidget>

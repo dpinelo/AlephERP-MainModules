@@ -32,7 +32,7 @@
 <file>
   <objectName>cajas</objectName>
   <name>cajas.table</name>
-  <version>5</version>
+  <version>6</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>

@@ -88,7 +88,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="4">
+   <item row="3" column="0" colspan="4">
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
       <string>Ubicaciones</string>
@@ -105,6 +105,13 @@
        </widget>
       </item>
      </layout>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QPushButton" name="pbCrearUbicaciones">
+     <property name="text">
+      <string>Crear ubicaciones automáticas</string>
+     </property>
     </widget>
    </item>
   </layout>

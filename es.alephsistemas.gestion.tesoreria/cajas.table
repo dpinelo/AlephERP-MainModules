@@ -39,14 +39,7 @@
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
-        <script>
-<![CDATA[
-function value() {
-    // Esta función está en __init__.js
-    return idempresaActual();
-}
-]]>        
-        </script>
+        <envDefaultValue>idempresa</envDefaultValue>
         <relation>
             <table>empresas</table>
             <field>id</field>
@@ -80,13 +73,7 @@ function value() {
         <null>false</null>
         <pk>false</pk>
         <type>date</type>
-        <scriptDefaultValue>
-<![CDATA[
-function defaultValue() {
-    return new Date();
-}
-]]>        
-        </scriptDefaultValue>
+        <defaultValue>now</defaultValue>
     </field>
 
     <field>

@@ -83,7 +83,7 @@
     	<type>string</type>
     	<length>100</length>
     </field>
-    	    
+
     <field>
         <name>servido</name>
         <alias>Servido</alias>
@@ -95,9 +95,9 @@
         <default>No</default>
     </field>
 
-	<inherits name="documentosgestion">
-	    <element type="field">fecha</element>
-	</inherits>
+    <inherits name="documentosgestion">
+        <element type="field">fecha</element>
+    </inherits>
 
     <field>
         <name>fechasalida</name>
@@ -106,36 +106,30 @@
         <null>false</null>
         <pk>false</pk>
         <type>date</type>
-		<scriptDefaultValue>
-<![CDATA[
-function defaultValue() {
-	return new Date();
-}
-]]>		
-		</scriptDefaultValue>
+        <default>now</default>
     </field>
 
-	<inherits name="documentosgestion">
-	    <element type="field">idtercero</element>
-	    <element type="field">iddirtercero</element>
-	    <element type="field">nombre</element>
-	    <element type="field">cifnif</element>
-	    <element type="field">nombredirtercero</element>
-	    <element type="field">direccion</element>
-	    <element type="field">codpostal</element>
-	    <element type="field">ciudad</element>
-	    <element type="field">provincia</element>
-	    <element type="field">codpais</element>
-	    <element type="field">observaciones</element>
-	    <element type="field">neto</element>
-	    <element type="field">totaliva</element>
-	    <element type="field">totalirpf</element>
-	    <element type="field">totalrecargo</element>
-	    <element type="field">total</element>
-	    <element type="field">totaldivisaempresa</element>
-	    <element type="field">tipooperacion</element>
-	    <element type="field">tasaconv</element> 	    	    	    	    	    	    
-	</inherits>
+    <inherits name="documentosgestion">
+        <element type="field">idtercero</element>
+        <element type="field">iddirtercero</element>
+        <element type="field">nombre</element>
+        <element type="field">cifnif</element>
+        <element type="field">nombredirtercero</element>
+        <element type="field">direccion</element>
+        <element type="field">codpostal</element>
+        <element type="field">ciudad</element>
+        <element type="field">provincia</element>
+        <element type="field">codpais</element>
+        <element type="field">observaciones</element>
+        <element type="field">neto</element>
+        <element type="field">totaliva</element>
+        <element type="field">totalirpf</element>
+        <element type="field">totalrecargo</element>
+        <element type="field">total</element>
+        <element type="field">totaldivisaempresa</element>
+        <element type="field">tipooperacion</element>
+        <element type="field">tasaconv</element> 	    	    	    	    	    	    
+    </inherits>
    
     <field>
         <name>idpresupuesto</name>

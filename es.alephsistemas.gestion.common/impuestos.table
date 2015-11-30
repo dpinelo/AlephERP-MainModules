@@ -40,14 +40,7 @@
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <calculated saveOnDb="true" calculatedOneTime="true" onlyOnInsert="true">true</calculated>
-        <script>
-<![CDATA[
-function value() {
-// Esta función está en __init__.js
-return idempresaActual();
-}
-]]>
-        </script>
+        <envDefaultValue>idempresa</envDefaultValue>
         <relation>
             <table>empresas</table>
             <field>id</field>
@@ -196,7 +189,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentassopisp</name>
+            <name>co_subcuentassopisp</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -213,7 +206,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentasacr</name>
+            <name>co_subcuentasacr</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -230,7 +223,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentasreu</name>
+            <name>co_subcuentasreu</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -247,7 +240,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentasdevadue</name>
+            <name>co_subcuentasdevadue</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -264,7 +257,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentasdedadue</name>
+            <name>co_subcuentasdedadue</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -281,7 +274,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentasdeventue</name>
+            <name>co_subcuentasdeventue</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -298,7 +291,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentassopimp</name>
+            <name>co_subcuentassopimp</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -315,7 +308,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentasrepexp</name>
+            <name>co_subcuentasrepexp</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -332,7 +325,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentassopexe</name>
+            <name>co_subcuentassopexe</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -349,7 +342,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentasrepexe</name>
+            <name>co_subcuentasrepexe</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -366,7 +359,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentasrepre</name>
+            <name>co_subcuentasrepre</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>
@@ -383,7 +376,7 @@ function value() {
         <visiblegrid>false</visiblegrid>
 
         <relation>
-                        <name>co_subcuentaspagra</name>
+            <name>co_subcuentaspagra</name>
             <table>co_subcuentas</table>
             <field>id</field>
             <card>M1</card>

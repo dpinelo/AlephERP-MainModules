@@ -37,11 +37,7 @@
         <null>false</null>
         <pk>false</pk>
         <type>date</type>
-        <scriptDefaultValue>
-function defaultValue() {
-    return new Date();
-}
-        </scriptDefaultValue>
+        <defaultValue>now</defaultValue>
     </field>
 
     <field>

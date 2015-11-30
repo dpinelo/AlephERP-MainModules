@@ -16,14 +16,6 @@
         </pair>
     </envVars>
 
-    <beforeDeleteScript>
-<![CDATA[
-function beforeDelete() {
-       return true;
-}
-]]>
-    </beforeDeleteScript>
-    
     <newRelatedElementScript>
 <![CDATA[
 /** Damos los valores por defecto al registro nuevo */
@@ -123,14 +115,7 @@ function deletedRelatedElement(element) {
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
-        <script>
-<![CDATA[
-function value() {
-    // Esta función está en __init__.js
-    return idempresaActual();
-}
-]]>        
-        </script>
+        <envDefaultValue>idempresa</envDefaultValue>
         <relation>
             <table>empresas</table>
             <field>id</field>
@@ -146,14 +131,7 @@ function value() {
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
-        <script>
-<![CDATA[
-function value() {
-    // Esta función está en __init__.js
-    return idejercicioActual();
-}
-]]>        
-        </script>
+        <envDefaultValue>idejercicio</envDefaultValue>
         <relation>
             <table>ejercicios</table>
             <field>id</field>
@@ -541,21 +519,10 @@ function defaultValue() {
         <default>false</default>
     </field>
 
+    <!-- A modo de punteo -->
    <field>
         <name>comprobado</name>
-        <!--Si la factura es de abono-->        
         <alias>Comprobado</alias>
-        <null>true</null>
-        <pk>false</pk>
-        <type>bool</type>
-        <default>false</default>
-    </field>
-    
-    <!--A & C-->        
-    <field>
-        <name>deposito</name>
-        <!--Si la factura es de abono-->        
-        <alias>Rectificativa</alias>
         <null>true</null>
         <pk>false</pk>
         <type>bool</type>

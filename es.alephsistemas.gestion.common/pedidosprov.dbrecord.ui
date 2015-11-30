@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1018</width>
-    <height>816</height>
+    <width>1032</width>
+    <height>672</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Pedidos a proveedores</string>
+   <string>Pedidos de clientes</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -182,6 +182,44 @@
        </widget>
       </item>
       <item>
+       <widget class="QToolButton" name="tbOdt">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Órdenes de Producción</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/printingerp/ordendetrabajo.png</normaloff>:/images/printingerp/ordendetrabajo.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QToolButton" name="tbObservaciones">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -241,7 +279,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QToolButton" name="tbEfectosCobro">
+       <widget class="QToolButton" name="tbEfectos">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -314,6 +352,12 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="font">
          <font>
           <pointsize>10</pointsize>
@@ -329,7 +373,7 @@
       <item>
        <widget class="DBLineEdit" name="db_codpedido">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -364,6 +408,12 @@
       </item>
       <item>
        <widget class="QLabel" name="label_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="font">
          <font>
           <pointsize>10</pointsize>
@@ -379,7 +429,7 @@
       <item>
        <widget class="DBLineEdit" name="db_ejercicios_descripcion">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -416,22 +466,40 @@
        </widget>
       </item>
       <item>
-       <widget class="DBChooseRecordButton" name="db_idserie">
+       <widget class="QLabel" name="label_7">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
-         <string>Serie de facturación *</string>
-        </property>
-        <property name="fieldName" stdset="0">
-         <string>idserie</string>
-        </property>
-        <property name="dataEditable" stdset="0">
-         <bool>true</bool>
+         <string>Series de Facturación</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="DBLineEdit" name="db_descripcion_serie">
+       <widget class="DBComboBox" name="db_idserie">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="fieldName" stdset="0">
-         <string>seriesfacturacion.descripcion</string>
+         <string>idserie</string>
+        </property>
+        <property name="listTableModel" stdset="0">
+         <string>seriesfacturacion</string>
+        </property>
+        <property name="listColumnName" stdset="0">
+         <string>descripcion</string>
+        </property>
+        <property name="listColumnToSave" stdset="0">
+         <string>id</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -458,309 +526,19 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QGroupBox" name="groupBox">
-         <property name="title">
-          <string>Datos generales del tercero</string>
+        <widget class="AERPScriptWidget" name="aswterceros" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
          </property>
-         <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
-           <widget class="DBChooseRecordButton" name="db_idtercero">
-            <property name="text">
-             <string>Tercero *</string>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>idtercero</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-            <property name="scriptExecuteAfterChoose" stdset="0">
-             <string>terceroWasSelected</string>
-            </property>
-            <property name="replaceFields" stdset="0">
-             <stringlist>
-              <string>nombre;nombre</string>
-              <string>cifnif;cifnif</string>
-             </stringlist>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1" colspan="7">
-           <widget class="DBLineEdit" name="db_nombre">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="toolTip">
-             <string>Se introduce aquí la razón social o nombre del tercero.</string>
-            </property>
-            <property name="statusTip">
-             <string>Se introduce aquí la razón social o nombre del tercero.</string>
-            </property>
-            <property name="whatsThis">
-             <string>Se introduce aquí la razón social o nombre del tercero.</string>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>nombre</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="8">
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>CIF / NIF *</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="9">
-           <widget class="DBLineEdit" name="db_cifnif">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>150</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="toolTip">
-             <string>Introduzca aquí el CIF o el NIF del tercero.</string>
-            </property>
-            <property name="statusTip">
-             <string>Introduzca aquí el CIF o el NIF del tercero.</string>
-            </property>
-            <property name="whatsThis">
-             <string>Introduzca aquí el CIF o el NIF del tercero. El formato del CIF debe ser: B0123567. El formato del NIF debe ser: 01234567M</string>
-            </property>
-            <property name="inputMask">
-             <string>xxxxxxxxxx</string>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>cifnif</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="DBChooseRecordButton" name="db_iddirtercero">
-            <property name="text">
-             <string>Dirección</string>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>iddirtercero</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-            <property name="replaceFields" stdset="0">
-             <stringlist>
-              <string>nombredirtercero;descripcion</string>
-              <string>direccion;direccion</string>
-              <string>codpostal;codpostal</string>
-              <string>ciudad;poblacion</string>
-              <string>codpais;codpais</string>
-             </stringlist>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1" colspan="9">
-           <widget class="DBLineEdit" name="db_nombredirtercero">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>nombredirtercero</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_16">
-            <property name="text">
-             <string>Dirección</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1" colspan="9">
-           <widget class="DBLineEdit" name="db_direccion">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>direccion</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_17">
-            <property name="text">
-             <string>Cod. Postal</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1" colspan="2">
-           <widget class="DBLineEdit" name="db_codpostal">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>codpostal</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="3">
-           <widget class="QLabel" name="label_18">
-            <property name="text">
-             <string>Ciudad</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="4" colspan="2">
-           <widget class="DBLineEdit" name="db_ciudad">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>ciudad</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="6">
-           <widget class="QLabel" name="label_19">
-            <property name="text">
-             <string>Provincia</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="7" colspan="3">
-           <widget class="DBLineEdit" name="db_provincia">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>provincia</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="DBChooseRecordButton" name="db_paisChoose">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Paises</string>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>codpais</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-            <property name="fieldsToGet" stdset="0">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="DBLineEdit" name="db_codpais">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>codpais</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="2" colspan="3">
-           <widget class="DBLineEdit" name="db_paises_nombre">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="fieldName" stdset="0">
-             <string>paises.nombre</string>
-            </property>
-            <property name="dataEditable" stdset="0">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="5" colspan="5">
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>434</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
+         <property name="name" stdset="0">
+          <string>datosgeneralestercero</string>
+         </property>
+         <property name="dataEditable" stdset="0">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -772,7 +550,7 @@
           <item row="0" column="0">
            <widget class="QLabel" name="label">
             <property name="text">
-             <string>Referencia dada por el Cliente</string>
+             <string>Referencia dada por el Proveedor</string>
             </property>
            </widget>
           </item>
@@ -812,7 +590,33 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="0" colspan="5">
+          <item row="0" column="4">
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>Fecha recepcion</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="DBDateTimeEdit" name="db_fechasalida">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="displayFormat">
+             <string>dd/MM/yyyy</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>fechaentrada</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="6">
            <layout class="QHBoxLayout" name="horizontalLayout_7">
             <item>
              <widget class="DBChooseRecordButton" name="db_idplanpago">
@@ -865,32 +669,6 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
-             <widget class="QLabel" name="label_25">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>Tipo de I.V.A.</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="DBComboBox" name="db_tipoiva">
-              <property name="fieldName" stdset="0">
-               <string>tipoiva</string>
-              </property>
-              <property name="dataEditable" stdset="0">
-               <bool>true</bool>
-              </property>
-              <property name="openListOnGetFocus" stdset="0">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
              <widget class="QLabel" name="label_26">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
@@ -904,7 +682,7 @@
              </widget>
             </item>
             <item>
-             <widget class="DBComboBox" name="db_tipoiva_2">
+             <widget class="DBComboBox" name="db_tipooperacion">
               <property name="fieldName" stdset="0">
                <string>tipooperacion</string>
               </property>
@@ -1163,6 +941,41 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="pageOdt">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Órdenes de Trabajo</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="DBDetailView" name="db_odt" native="true">
+            <property name="relationName" stdset="0">
+             <string>odt</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="pageObservaciones">
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <property name="leftMargin">
@@ -1198,7 +1011,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="pageEfectosCobro">
+     <widget class="QWidget" name="pageEfectos">
       <layout class="QVBoxLayout" name="verticalLayout_12">
        <property name="leftMargin">
         <number>0</number>
@@ -1250,6 +1063,11 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>AERPScriptWidget</class>
+   <extends>QWidget</extends>
+   <header>scripts/perpscriptwidget.h</header>
+  </customwidget>
+  <customwidget>
    <class>DBChooseRecordButton</class>
    <extends>QPushButton</extends>
    <header>widgets/dbchooserecordbutton.h</header>
@@ -1294,26 +1112,13 @@
   <tabstop>db_codpedido</tabstop>
   <tabstop>db_ejercicios_descripcion</tabstop>
   <tabstop>db_idserie</tabstop>
-  <tabstop>db_descripcion_serie</tabstop>
-  <tabstop>db_idtercero</tabstop>
-  <tabstop>db_nombre</tabstop>
-  <tabstop>db_cifnif</tabstop>
-  <tabstop>db_iddirtercero</tabstop>
-  <tabstop>db_nombredirtercero</tabstop>
-  <tabstop>db_direccion</tabstop>
-  <tabstop>db_codpostal</tabstop>
-  <tabstop>db_ciudad</tabstop>
-  <tabstop>db_provincia</tabstop>
-  <tabstop>db_paisChoose</tabstop>
-  <tabstop>db_codpais</tabstop>
-  <tabstop>db_paises_nombre</tabstop>
   <tabstop>db_reftercero</tabstop>
   <tabstop>db_fecha</tabstop>
+  <tabstop>db_fechasalida</tabstop>
   <tabstop>db_idplanpago</tabstop>
   <tabstop>db_plan_pago</tabstop>
   <tabstop>db_recfinanciero</tabstop>
-  <tabstop>db_tipoiva</tabstop>
-  <tabstop>db_tipoiva_2</tabstop>
+  <tabstop>db_tipooperacion</tabstop>
   <tabstop>db_coddivisa_2</tabstop>
   <tabstop>db_coddivisa_text_2</tabstop>
   <tabstop>db_nombre_divisa_2</tabstop>
@@ -1329,7 +1134,8 @@
   <tabstop>db_observaciones</tabstop>
  </tabstops>
  <resources>
-  <include location="../../../programacion/alepherp/alepherp/src/resources/resources.qrc"/>
+  <include location="../../../programacion/alepherp/src/resources/modules.qrc"/>
+  <include location="../../../programacion/alepherp/src/resources/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

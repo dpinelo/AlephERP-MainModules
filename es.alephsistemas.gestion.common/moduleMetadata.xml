@@ -12,7 +12,7 @@
 <file>
   <objectName>documentosgestion</objectName>
   <name>documentosgestion.tableTemp</name>
-  <version>63</version>
+  <version>65</version>
   <type>tableTemp</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -172,7 +172,7 @@
 <file>
   <objectName>distribucioncostes</objectName>
   <name>distribucioncostes.table</name>
-  <version>10</version>
+  <version>11</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -192,7 +192,7 @@
 <file>
   <objectName>ejercicios</objectName>
   <name>ejercicios.table</name>
-  <version>19</version>
+  <version>20</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -312,7 +312,7 @@
 <file>
   <objectName>impuestos</objectName>
   <name>impuestos.table</name>
-  <version>7</version>
+  <version>8</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -322,7 +322,7 @@
 <file>
   <objectName>impuestos_irpf</objectName>
   <name>impuestos_irpf.table</name>
-  <version>5</version>
+  <version>6</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -522,7 +522,7 @@
 <file>
   <objectName>pedidoscli</objectName>
   <name>pedidoscli.table</name>
-  <version>18</version>
+  <version>19</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -532,7 +532,7 @@
 <file>
   <objectName>periodosimpuestos</objectName>
   <name>periodosimpuestos.table</name>
-  <version>5</version>
+  <version>6</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -542,7 +542,7 @@
 <file>
   <objectName>periodosimpuestos_irpf</objectName>
   <name>periodosimpuestos_irpf.table</name>
-  <version>3</version>
+  <version>4</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -1642,7 +1642,7 @@
 <file>
   <objectName>main.qmaindlg.ui</objectName>
   <name>main.qmaindlg.ui</name>
-  <version>39</version>
+  <version>43</version>
   <type>ui</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -1662,7 +1662,7 @@
 <file>
   <objectName>pedidoscli.dbrecord.qs</objectName>
   <name>pedidoscli.dbrecord.qs</name>
-  <version>19</version>
+  <version>20</version>
   <type>qs</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -1673,6 +1673,26 @@
   <objectName>pedidoscli.dbrecord.ui</objectName>
   <name>pedidoscli.dbrecord.ui</name>
   <version>25</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>pedidosprov.dbrecord.qs</objectName>
+  <name>pedidosprov.dbrecord.qs</name>
+  <version>2</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
+  <objectName>pedidosprov.dbrecord.ui</objectName>
+  <name>pedidosprov.dbrecord.ui</name>
+  <version>3</version>
   <type>ui</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>

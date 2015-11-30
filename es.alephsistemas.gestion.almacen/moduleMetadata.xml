@@ -202,7 +202,7 @@
 <file>
   <objectName>subfamiliasarticulos</objectName>
   <name>subfamiliasarticulos.table</name>
-  <version>7</version>
+  <version>8</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -280,9 +280,19 @@
 </file>
 
 <file>
+  <objectName>almacenescalles.dbrecord.qs</objectName>
+  <name>almacenescalles.dbrecord.qs</name>
+  <version>5</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
+</file>
+
+<file>
   <objectName>almacenescalles.dbrecord.ui</objectName>
   <name>almacenescalles.dbrecord.ui</name>
-  <version>6</version>
+  <version>7</version>
   <type>ui</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -582,7 +592,7 @@
 <file>
   <objectName>subfamiliasarticulos.dbrecord.ui</objectName>
   <name>subfamiliasarticulos.dbrecord.ui</name>
-  <version>5</version>
+  <version>6</version>
   <type>ui</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
