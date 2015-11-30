@@ -79,7 +79,6 @@ function defaultValue() {
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
-        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
         <envDefaultValue>idempresa</envDefaultValue>
         <relation>
             <table>empresas</table>

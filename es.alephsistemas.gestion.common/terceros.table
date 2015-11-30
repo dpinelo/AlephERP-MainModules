@@ -1,13 +1,13 @@
 <table>
-    <name>terceros</name>
-    <!--Listado de datos de Terceros: Clientes, proveedores, acreedores...-->
-    <alias>Terceros</alias>
-    <allowLocalWork>true</allowLocalWork>
+     <name>terceros</name>
+     <!--Listado de datos de Terceros: Clientes, proveedores, acreedores...-->
+     <alias>Terceros</alias>
+     <allowLocalWork>true</allowLocalWork>
     
-   <canHaveRelatedElements>true</canHaveRelatedElements>
+    <canHaveRelatedElements>true</canHaveRelatedElements>
    
     <!-- Estas opciones harán que en el formulario con el listado de ejercicios, aparezca un combo box
-    que permitirá visualizar los ejercicios por empresa creada en el sistema. -->
+     que permitirá visualizar los ejercicios por empresa creada en el sistema. -->
     <itemsFilterColumn>
         <!-- Se pueden añadir tantos items "itemFilter" como se quieran. Estos pueden referirse a
         campos de esta tabla que tienen una relación M1 asignada, o que tienen definido un optionList -->
@@ -28,11 +28,12 @@
             <setFilterValueOnNewRecords>true</setFilterValueOnNewRecords>
         </itemFilter>
     </itemsFilterColumn> 
+    
     <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
-    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
-    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
-    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
-    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
+     y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
+     por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
+     AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
+     y entrando en vigor en el mismo momento de la ejecución de ese comando -->
     <envVars>
         <pair>
             <!-- Nombre de la variable de entorno en Javascript -->
@@ -64,7 +65,7 @@
             <field>idtercero</field>
             <card>1M</card>
         </relation>
-            
+
         <relation>
             <table>cuentasbcoterceros</table>
             <field>idtercero</field>
@@ -83,7 +84,7 @@
             <card>1M</card>
             <delC>true</delC>
         </relation>
-        
+
     </field>
     
     <field>
@@ -95,24 +96,22 @@
         <type>string</type>
         <length>14</length>
         <!-- Comprobará que el valor de codtercero es único para el un valor específico de idempresa en 
-        este caso. Es decir, podrá existir el registro 0000001 para idempresa=1 y 0000001 para idempresa=2 -->
+           este caso. Es decir, podrá existir el registro 0000001 para idempresa=1 y 0000001 para idempresa=2 -->
         <uniqueOnFilterField>idempresa</uniqueOnFilterField>
         <!-- Definimos la lógica de generación del contador del tercero. Se podrán anticipar
-        una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 
-        aparecen en dependsOnField. Si alguno de estos campos tiene una relación M1, como el 
-        caso de idempresa->empresas, el valor que se utilizará será el del field de empresas
-        definido en prefixOnRelation: es decir, para el caso de idempresa, el sistema se irá
-        a la relación empresas, al "padre" o empresa, y cogerá el valor definido en el field
-        counter_prefix. 
-        Finalmente, puede determinarse si el usuario puede modificar este contador, con userCanModify
-        y además, especificar si entre los diferentes prefijos y el número aparece algún separador,
-        con separator. -->
+           una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 
+           aparecen en dependsOnField. Si alguno de estos campos tiene una relación M1, como el 
+           caso de idempresa->empresas, el valor que se utilizará será el del field de empresas
+           definido en prefixOnRelation: es decir, para el caso de idempresa, el sistema se irá
+           a la relación empresas, al "padre" o empresa, y cogerá el valor definido en el field
+           counter_prefix. 
+           Finalmente, puede determinarse si el usuario puede modificar este contador, con userCanModify
+           y además, especificar si entre los diferentes prefijos y el número aparece algún separador,
+           con separator. -->
         <counter>
             <calculateOnlyOnInsert>true</calculateOnlyOnInsert>
-            <dependsOnField prefixOnRelation="counter_prefix">idempresa</dependsOnField>
-            <dependsOnField prefixOnRelation="">tipo</dependsOnField>
             <userCanModify>false</userCanModify>
-            <separator></separator>
+            <expression>{empresas.father.counter_prefix}/{value.trailingZeros}</expression>
         </counter>
     </field>
 
@@ -123,15 +122,7 @@
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
-        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
-        <script>
-<![CDATA[
-function value() {
-    // Esta función está en __init__.js
-    return idempresaActual();
-}
-]]>
-        </script>
+        <envDefaultValue>idempresa</envDefaultValue>
         <relation>
             <table>empresas</table>
             <field>id</field>

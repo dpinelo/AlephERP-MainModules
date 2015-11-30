@@ -39,7 +39,6 @@
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
-        <calculated saveOnDb="true" calculatedOneTime="true" onlyOnInsert="true">true</calculated>
         <envDefaultValue>idemprea</envDefaultValue>
         <relation>
             <table>empresas</table>

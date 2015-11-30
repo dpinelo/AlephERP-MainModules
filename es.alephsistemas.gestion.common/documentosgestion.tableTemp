@@ -114,7 +114,6 @@ function deletedRelatedElement(element) {
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
-        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
         <envDefaultValue>idempresa</envDefaultValue>
         <relation>
             <table>empresas</table>
@@ -130,7 +129,6 @@ function deletedRelatedElement(element) {
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
-        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
         <envDefaultValue>idejercicio</envDefaultValue>
         <relation>
             <table>ejercicios</table>
