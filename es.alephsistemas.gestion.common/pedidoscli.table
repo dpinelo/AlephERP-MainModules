@@ -2,7 +2,13 @@
     <name>pedidoscli</name>
     <!--Pedidos de clientes-->
     <alias>Pedidos de clientes</alias>
+    <associatedScript debug="true">documentosgestioncommonfunctions.qs</associatedScript>
 
+    <menuEntryPath>Ventas</menuEntryPath>
+    <moduleToolBarEntryPath>Ventas</moduleToolBarEntryPath>
+    
+    <canHaveRelatedElements>true</canHaveRelatedElements>
+    
     <inherits name="documentosgestion">
         <element>envVars</element>
     </inherits>

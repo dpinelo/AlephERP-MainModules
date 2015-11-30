@@ -2,10 +2,16 @@
     <name>pedidosprov</name>
     <!--Pedidos a proveedores-->
     <alias>Pedidos a proveedores</alias>
+    <associatedScript debug="true">documentosgestioncommonfunctions.qs</associatedScript>
 
     <inherits name="documentosgestion">
         <element>envVars</element>
     </inherits>
+    
+    <menuEntryPath>Compras</menuEntryPath>
+    <moduleToolBarEntryPath>Compras</moduleToolBarEntryPath>
+    
+    <canHaveRelatedElements>true</canHaveRelatedElements>
     
     <connections>
         <connection>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>frmPedidosCli</class>
+ <class>frmPedidosProv</class>
  <widget class="QWidget" name="frmPedidosProv">
   <property name="geometry">
    <rect>
@@ -18,7 +18,7 @@
     <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
   </property>
   <property name="tableName" stdset="0">
-   <string>pedidoscli</string>
+   <string>pedidosprov</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_6">
    <property name="leftMargin">
@@ -197,7 +197,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>:/images/common/albaranesprov.png</normaloff>:/images/common/albaranesprov.png</iconset>
+          <normaloff>:/images/commons/albaranesprov.png</normaloff>:/images/commons/albaranesprov.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -886,12 +886,12 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="DBTableView" name="lineasivapedidoscli">
+           <widget class="DBTableView" name="lineasivapedidosprov">
             <property name="internalData">
              <bool>true</bool>
             </property>
             <property name="relationName">
-             <string>lineasivapedidoscli</string>
+             <string>lineasivapedidosprov</string>
             </property>
            </widget>
           </item>

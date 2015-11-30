@@ -181,7 +181,7 @@ function repositoryKeywords() {
         <name>numproveedor</name>
         <!--Número que el proveedor asigna al albarán-->        
         <alias>Número Albarán Proveedor</alias>
-        <null>false</null>
+        <null>true</null>
         <pk>false</pk>
         <type>string</type>
         <length>50</length>

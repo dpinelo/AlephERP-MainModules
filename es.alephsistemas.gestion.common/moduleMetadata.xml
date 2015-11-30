@@ -8,7 +8,7 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-11-30 13:38:40</generatedTime>
+<generatedTime>2015-11-30 14:49:17</generatedTime>
 
 
 <file>
@@ -84,7 +84,7 @@
 <file>
     <objectName>albaranesprov</objectName>
     <name>albaranesprov.table</name>
-    <version>28</version>
+    <version>29</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -524,7 +524,7 @@
 <file>
     <objectName>pedidoscli</objectName>
     <name>pedidoscli.table</name>
-    <version>22</version>
+    <version>24</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -534,7 +534,7 @@
 <file>
     <objectName>pedidosprov</objectName>
     <name>pedidosprov.table</name>
-    <version>9</version>
+    <version>11</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -774,7 +774,7 @@
 <file>
     <objectName>alepherp/documentosgestion.js</objectName>
     <name>alepherp/documentosgestion.js</name>
-    <version>124</version>
+    <version>125</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1854,7 +1854,7 @@
 <file>
     <objectName>pedidoscli.dbrecord.ui</objectName>
     <name>pedidoscli.dbrecord.ui</name>
-    <version>29</version>
+    <version>30</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1864,7 +1864,7 @@
 <file>
     <objectName>pedidosprov.dbrecord.ui</objectName>
     <name>pedidosprov.dbrecord.ui</name>
-    <version>6</version>
+    <version>8</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

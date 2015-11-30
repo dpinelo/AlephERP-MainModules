@@ -311,7 +311,9 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.idserieValueModified = function(
 }
 
 alepherp.DBRecordDlgDocumentosGestion.prototype.idplanpagoValueModified = function() {
-    bean.aerpGenerarEfectos.call();
+    if ( bean.hasOwnProperty("aerpGenerarEfectos") ) {
+        bean.aerpGenerarEfectos.call();
+    }
 }
 
 alepherp.DBRecordDlgDocumentosGestion.prototype.setColorForIVAField = function() {
@@ -464,7 +466,9 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.db_idalbaranAfterChoose = functi
 }
 
 alepherp.DBRecordDlgDocumentosGestion.prototype.generarStock = function() {
-    bean.aerpGenerarEntradaStock.call();
+    if ( bean.hasOwnProperty("aerpGenerarEntradasStock") ) {
+        bean.aerpGenerarEntradaStock.call();
+    }
 }
 
 alepherp.DBRecordDlgDocumentosGestion.prototype.obtenerAlbaranesAgregados = function() {
