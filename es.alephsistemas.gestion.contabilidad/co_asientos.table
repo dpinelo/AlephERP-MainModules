@@ -62,25 +62,6 @@
             <card>11</card>
             <showOnRelatedModels>true</showOnRelatedModels>            
         </relation>
-        <relation>
-            <name>alepherp_vendi_empenio</name>
-            <table>alepherp_vendi</table>
-            <field>idasientoempenio</field>
-            <card>11</card>
-            <showOnRelatedModels>true</showOnRelatedModels>            
-        </relation>
-        <relation>
-            <table>alepherp_operaciones</table>
-            <field>idasiento</field>
-            <card>11</card>
-            <showOnRelatedModels>true</showOnRelatedModels>            
-        </relation>
-        <relation>
-            <table>alepherp_prepedidos</table>
-            <field>idasiento</field>
-            <card>11</card>
-            <showOnRelatedModels>true</showOnRelatedModels>            
-        </relation>        
     </field>
     
     <field>
@@ -91,15 +72,7 @@
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <dbIndex>true</dbIndex>
-        <calculated saveOnDb="true">true</calculated>
-        <script>
-<![CDATA[
-function value() {
-    // Esta función está en __init__.js
-    return idempresaActual();
-}
-]]>
-        </script>
+        <envDefaultValue>idempresa</envDefaultValue>
         <relation>
             <table>empresas</table>
             <field>id</field>
@@ -115,16 +88,7 @@ function value() {
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <dbIndex>true</dbIndex>
-        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
-        <script>
-<![CDATA[
-function value() {
-    // Esta función está en __init__.js
-    var idEjercicio = idejercicioActual();
-    return idEjercicio;
-}
-]]>        
-        </script>
+        <envDefaultValue>idejercicio</envDefaultValue>
         <relation>
             <table>ejercicios</table>
             <field>id</field>

@@ -87,14 +87,14 @@ function repositoryKeywords() {
     <toStringExpression>
         <expression>Albarán recibido nº interno {codalbaran} y nº de tercero {numproveedor} de fecha {fecha}</expression>
     </toStringExpression>
-                           
+
     <itemsFilterColumn>
         <itemFilter>
             <fieldToFilter>idejercicio</fieldToFilter>
             <relationFieldToShow>nombre</relationFieldToShow>
         </itemFilter>
     </itemsFilterColumn>
-         
+
     <field>
         <name>id</name>
         <alias>Identificador</alias>
@@ -136,6 +136,20 @@ function repositoryKeywords() {
         <element type="field">idempresa</element>
         <element type="field">idejercicio</element>
     </inherits>
+   
+    <field>
+        <name>idpedido</name>
+        <alias>Id. Pedido</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>pedidosprov</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
    
     <field>
         <name>codalbaran</name>

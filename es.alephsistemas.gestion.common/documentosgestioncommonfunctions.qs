@@ -214,6 +214,33 @@ aerpMarcarPagada: function(formaPago, fecha) {
             efectos[i].aerpMarcarCobrado.call(formaPago, fecha);
         }
     }
+},
+
+/**
+Si es un pedido de proveedor, o pedido de cliente, y tiene marcado o se ha marcado el campo "generaalbaranautomatico", genera un albarán de cliente o proveedor
+de forma automática. Por defecto, no creará las líneas de albarán, ya que éstas generan movimientos de stock, y todavía no se habrán producido.
+*/
+aerpGenerarAlbaranAutomatico: function() {
+    if ( this.metadata.tableName != "pedidoscli" && this.metadata.tableName != "pedidosprov" ) {
+        return;
+    }
+    var hayQueGenerarAlbaran = false;
+    if ( this.dbState == BaseBean.INSERT && this.generaralbaranautomatico.value ) {
+        hayQueGenerarAlbaran = true;
+    } else if ( this.dbState == BaseBean.UPDATE && this.generaralbaranautomatico.value && !this.generaralbaranautomatico.oldValue ) {
+        hayQueGenerarAlbaran = true;
+    }
+    if ( !hayQueGenerarAlbaran ) {
+        return;
+    }
+    var albaran;
+    if ( this.metadata.tableName == "pedidoscli" ) {
+        albaran = this.albaranescli.newChild();
+    } else if ( this.metadata.tableName == "pedidosprov" ) {
+        albaran = this.albaranesprov.newChild();
+    }
+    albaran.copyValues(this, "tasaconv", "coddivisa", "codpais", "provincia", "ciudad", "codpostal", "direccion",
+                             "nombredirtercero", "iddirtercero", "idtercero", "cifnif", "nombre", "idtarifa");
 }
 
 })

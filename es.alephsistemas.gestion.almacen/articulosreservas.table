@@ -1,20 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<table>
     <!-- Nombre de la tabla -->
     <name>articulosreservas</name>
     <!-- Alias a presentar en la aplicación -->
     <alias>Reserva de artículos</alias>
 
-    <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
-    y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
-    por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
-    AERPScriptCommon.setEnvVar("nombre_de_la_variable", valor);
-    y entrando en vigor en el mismo momento de la ejecución de ese comando -->
     <envVars>
         <pair>
-            <!-- Nombre de la variable de entorno en Javascript -->
             <varName>idempresa</varName>
-            <!-- Columna de esta tabla a la que afecta y por la que realizará el filtro WHERE -->
             <field>idempresa</field>
         </pair>
     </envVars>
@@ -73,7 +65,7 @@
         <null>false</null>
         <pk>false</pk>
         <type>string</type>
-        <length>18</length>
+        <length>25</length>
         <default>0</default>
         <!-- Definimos la lógica de generación del contador del tercero. Se podrán anticipar
         una serie de prefijos que se calcularán teniendo en cuenta el valor de los fields que 

@@ -76,7 +76,6 @@
      <string>Config&amp;uración</string>
     </property>
     <addaction name="actionDocMngmnt"/>
-    <addaction name="actionEnterLocalMode"/>
     <addaction name="actionExportData"/>
     <addaction name="actionSelectScanSource"/>
     <addaction name="action_entornousuario"/>
@@ -94,8 +93,13 @@
      <property name="title">
       <string>&amp;Configuración</string>
      </property>
-     <addaction name="table_conceptosmovimientodinerario"/>
      <addaction name="table_cajas"/>
+     <addaction name="table_conceptosmovimientodinerario"/>
+     <addaction name="table_comisiones"/>
+     <addaction name="table_cuentasbanco"/>
+     <addaction name="table_formaspago"/>
+     <addaction name="table_planespago"/>
+     <addaction name="table_tarjetascredito"/>
      <addaction name="table_tiposefectos"/>
     </widget>
     <addaction name="table_efectoscobro"/>
@@ -126,26 +130,6 @@
     <property name="title">
      <string>&amp;Maestros</string>
     </property>
-    <widget class="QMenu" name="menuTablas_Generales">
-     <property name="title">
-      <string>&amp;Maestros de la Empresa actual</string>
-     </property>
-     <addaction name="table_centroscoste"/>
-     <addaction name="table_comisiones"/>
-     <addaction name="table_cuentasbanco"/>
-     <addaction name="table_distribucioncostes"/>
-     <addaction name="table_ejercicios"/>
-     <addaction name="table_familiasservicios"/>
-     <addaction name="table_formaspago"/>
-     <addaction name="table_gruposterceros"/>
-     <addaction name="table_impuestos_irpf"/>
-     <addaction name="table_impuestos"/>
-     <addaction name="table_personas"/>
-     <addaction name="table_planespago"/>
-     <addaction name="table_seriesfacturacion"/>
-     <addaction name="table_subcentroscoste"/>
-     <addaction name="table_tarjetascredito"/>
-    </widget>
     <widget class="QMenu" name="menuConfiguraci_n_General">
      <property name="title">
       <string>&amp;Configuración General</string>
@@ -157,9 +141,16 @@
      <addaction name="table_unidadesmedida"/>
      <addaction name="separator"/>
     </widget>
-    <addaction name="table_servicios"/>
+    <addaction name="table_centroscoste"/>
+    <addaction name="table_distribucioncostes"/>
+    <addaction name="table_ejercicios"/>
+    <addaction name="table_gruposterceros"/>
+    <addaction name="table_personas"/>
+    <addaction name="table_seriesfacturacion"/>
+    <addaction name="table_subcentroscoste"/>
     <addaction name="table_terceros"/>
-    <addaction name="menuTablas_Generales"/>
+    <addaction name="table_impuestos_irpf"/>
+    <addaction name="table_impuestos"/>
     <addaction name="menuConfiguraci_n_General"/>
    </widget>
    <widget class="QMenu" name="menuAlmacen">
@@ -206,8 +197,10 @@
      </property>
      <addaction name="table_actividadesproductivas"/>
      <addaction name="table_categoriasactividades"/>
+     <addaction name="table_familiasservicios"/>
      <addaction name="table_operarios"/>
      <addaction name="table_tipostrabajo"/>
+     <addaction name="table_servicios"/>
     </widget>
     <addaction name="table_odt"/>
     <addaction name="menuConfiguraci_n_3"/>
@@ -1005,7 +998,7 @@
    <property name="text">
     <string>Albaranes de Clientes</string>
    </property>
-  </action>  
+  </action>
  </widget>
  <customwidgets>
   <customwidget>

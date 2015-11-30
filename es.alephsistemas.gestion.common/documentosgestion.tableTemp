@@ -195,6 +195,18 @@ function deletedRelatedElement(element) {
         <visiblegrid>false</visiblegrid>        
     </field>
 
+    <!-- Útil para pedidos de proveedores y pedidos de clientes -->
+    <field>
+        <name>generaralbaranautomatico</name>
+        <!--Fecha prevista de entrada pedido-->
+        <alias>Genera albarán automático</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>boolean</type>
+        <default>false</default>
+        <visiblegrid>false</visiblegrid>
+    </field>
+    
     <field>
         <name>fecha</name>
         <alias>Fecha</alias>

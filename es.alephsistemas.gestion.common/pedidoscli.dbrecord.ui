@@ -21,7 +21,16 @@
    <string>pedidoscli</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_6">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item row="0" column="0" rowspan="2">
@@ -184,11 +193,49 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="text">
-         <string>Órdenes de Trabajo</string>
+         <string>Órdenes de Producción</string>
         </property>
         <property name="icon">
          <iconset>
           <normaloff>:/images/printingerp/ordendetrabajo.png</normaloff>:/images/printingerp/ordendetrabajo.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tbAlbaranes">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Albaranes</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/albaranescli.png</normaloff>:/images/commons/albaranescli.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -504,7 +551,16 @@
      </property>
      <widget class="QWidget" name="pageDatos">
       <layout class="QVBoxLayout" name="verticalLayout_7">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
@@ -649,6 +705,19 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
+           <widget class="DBCheckBox" name="db_generaralbaranautomatico">
+            <property name="text">
+             <string>Generar albarán de forma automática</string>
+            </property>
+            <property name="fieldName">
+             <string>generaralbaranautomatico</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
              <widget class="QLabel" name="label_26">
@@ -705,9 +774,6 @@
               </property>
               <property name="dataEditable">
                <bool>true</bool>
-              </property>
-              <property name="autoComplete">
-               <set>AlephERP::NoCompletition</set>
               </property>
               <property name="autoCompletePopupSize">
                <size>
@@ -874,7 +940,16 @@
      </widget>
      <widget class="QWidget" name="pageLineas">
       <layout class="QVBoxLayout" name="verticalLayout_10">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
@@ -890,9 +965,6 @@
             </property>
             <property name="dataEditable">
              <bool>true</bool>
-            </property>
-            <property name="visibleButtons">
-             <set>DBDetailView::DELETE|DBDetailView::INSERT|DBDetailView::UPDATE|DBDetailView::VIEW</set>
             </property>
            </widget>
           </item>
@@ -913,9 +985,6 @@
             <property name="dataEditable">
              <bool>true</bool>
             </property>
-            <property name="visibleButtons">
-             <set>DBDetailView::DELETE|DBDetailView::INSERT|DBDetailView::UPDATE|DBDetailView::VIEW</set>
-            </property>
            </widget>
           </item>
          </layout>
@@ -923,9 +992,18 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="pageOdt">
+     <widget class="QWidget" name="pageOdt">         
       <layout class="QVBoxLayout" name="verticalLayout_3">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
@@ -942,9 +1020,6 @@
             <property name="dataEditable">
              <bool>true</bool>
             </property>
-            <property name="visibleButtons">
-             <set>DBDetailView::DELETE|DBDetailView::INSERT|DBDetailView::UPDATE|DBDetailView::VIEW</set>
-            </property>
            </widget>
           </item>
          </layout>
@@ -952,9 +1027,53 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="pageAlbaranes">
+      <layout class="QVBoxLayout" name="verticalLayout_20">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBoxAlbaranes">
+         <property name="title">
+          <string>Albaranes</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutAlbaranes">
+          <item>
+           <widget class="DBDetailView" name="db_albaranescli">
+            <property name="relationName">
+             <string>albaranescli</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>     
      <widget class="QWidget" name="pageObservaciones">
       <layout class="QVBoxLayout" name="verticalLayout_4">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
@@ -980,7 +1099,16 @@
      </widget>
      <widget class="QWidget" name="pageEfectos">
       <layout class="QVBoxLayout" name="verticalLayout_12">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
@@ -1008,9 +1136,6 @@
             <property name="dataEditable">
              <bool>true</bool>
             </property>
-            <property name="visibleButtons">
-             <set>DBDetailView::DELETE|DBDetailView::INSERT|DBDetailView::UPDATE|DBDetailView::VIEW</set>
-            </property>
            </widget>
           </item>
          </layout>
@@ -1027,6 +1152,11 @@
    <class>AERPScriptWidget</class>
    <extends>QWidget</extends>
    <header>scripts/perpscriptwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
   </customwidget>
   <customwidget>
    <class>DBChooseRecordButton</class>
@@ -1059,14 +1189,14 @@
    <header>widgets/dbnumberedit.h</header>
   </customwidget>
   <customwidget>
-   <class>DBRichTextEdit</class>
-   <extends>QTextEdit</extends>
-   <header>widgets/dbrichtextedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>DBTableView</class>
    <extends>QTableView</extends>
    <header>widgets/dbtableview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBRichTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>widgets/dbrichtextedit.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
@@ -1095,8 +1225,7 @@
   <tabstop>db_observaciones</tabstop>
  </tabstops>
  <resources>
-  <include location="../../../programacion/alepherp/src/resources/modules.qrc"/>
-  <include location="../../../programacion/alepherp/src/resources/resources.qrc"/>
+  <include location="../var/home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

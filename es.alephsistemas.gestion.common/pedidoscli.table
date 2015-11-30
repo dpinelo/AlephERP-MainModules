@@ -7,6 +7,23 @@
         <element>envVars</element>
     </inherits>
     
+    <connections>
+        <connection>
+            <sender>bean</sender>
+            <action>
+                <signal>beforeInsert</signal>
+                <slot>aerpGenerarAlbaranAutomatico</slot>
+            </action>
+        </connection>
+        <connection>
+            <sender>bean</sender>
+            <action>
+                <signal>beforeUpdate</signal>
+                <slot>aerpGenerarAlbaranAutomatico</slot>
+            </action>
+        </connection>
+    </connections>
+    
     <field>
         <name>id</name>
         <alias>Identificador</alias>
@@ -33,7 +50,12 @@
         	<table>lineasivapedidoscli</table>
         	<field>idpedido</field>
         	<card>1M</card>
-        </relation>        	        
+        </relation>   	        
+        <relation>
+        	<table>albaranescli</table>
+        	<field>idpedido</field>
+        	<card>1M</card>
+        </relation>   	        
     </field>
 
     <inherits name="documentosgestion">
@@ -42,6 +64,7 @@
         <element type="field">idserie</element>
         <element type="field">idplanpago</element>
         <element type="field">coddivisa</element>
+        <element type="field">generaralbaranautomatico</element>
     </inherits>
     
     <field>

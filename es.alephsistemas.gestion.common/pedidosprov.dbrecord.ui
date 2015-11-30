@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>frmPedidosCli</class>
- <widget class="QWidget" name="frmPedidosCli">
+ <widget class="QWidget" name="frmPedidosProv">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -182,7 +182,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QToolButton" name="tbOdt">
+       <widget class="QToolButton" name="tbAlbaranes">
         <property name="minimumSize">
          <size>
           <width>120</width>
@@ -193,11 +193,11 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="text">
-         <string>Órdenes de Producción</string>
+         <string>Albaranes</string>
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>:/images/printingerp/ordendetrabajo.png</normaloff>:/images/printingerp/ordendetrabajo.png</iconset>
+          <normaloff>:/images/common/albaranesprov.png</normaloff>:/images/common/albaranesprov.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -401,7 +401,7 @@
         <property name="readOnly">
          <bool>true</bool>
         </property>
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>codpedido</string>
         </property>
        </widget>
@@ -457,10 +457,10 @@
         <property name="readOnly">
          <bool>true</bool>
         </property>
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>ejercicios.nombre</string>
         </property>
-        <property name="dataEditable" stdset="0">
+        <property name="dataEditable">
          <bool>false</bool>
         </property>
        </widget>
@@ -486,19 +486,19 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="fieldName" stdset="0">
+        <property name="fieldName">
          <string>idserie</string>
         </property>
-        <property name="listTableModel" stdset="0">
+        <property name="listTableModel">
          <string>seriesfacturacion</string>
         </property>
-        <property name="listColumnName" stdset="0">
+        <property name="listColumnName">
          <string>descripcion</string>
         </property>
-        <property name="listColumnToSave" stdset="0">
+        <property name="listColumnToSave">
          <string>id</string>
         </property>
-        <property name="dataEditable" stdset="0">
+        <property name="dataEditable">
          <bool>true</bool>
         </property>
        </widget>
@@ -509,7 +509,7 @@
    <item row="1" column="1">
     <widget class="QStackedWidget" name="swFichas">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="pageDatos">
       <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -526,17 +526,17 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="AERPScriptWidget" name="aswterceros" native="true">
+        <widget class="AERPScriptWidget" name="aswterceros">
          <property name="minimumSize">
           <size>
            <width>0</width>
            <height>30</height>
           </size>
          </property>
-         <property name="name" stdset="0">
+         <property name="name">
           <string>datosgeneralestercero</string>
          </property>
-         <property name="dataEditable" stdset="0">
+         <property name="dataEditable">
           <bool>true</bool>
          </property>
         </widget>
@@ -556,10 +556,10 @@
           </item>
           <item row="0" column="1">
            <widget class="DBLineEdit" name="db_reftercero">
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>reftercero</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
            </widget>
@@ -582,10 +582,10 @@
             <property name="displayFormat">
              <string>dd/MM/yyyy</string>
             </property>
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>fecha</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
            </widget>
@@ -608,10 +608,10 @@
             <property name="displayFormat">
              <string>dd/MM/yyyy</string>
             </property>
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>fechaentrada</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
            </widget>
@@ -623,17 +623,17 @@
               <property name="text">
                <string>Plan de pago *</string>
               </property>
-              <property name="fieldName" stdset="0">
+              <property name="fieldName">
                <string>idplanpago</string>
               </property>
-              <property name="dataEditable" stdset="0">
+              <property name="dataEditable">
                <bool>true</bool>
               </property>
              </widget>
             </item>
             <item>
              <widget class="DBLineEdit" name="db_plan_pago">
-              <property name="fieldName" stdset="0">
+              <property name="fieldName">
                <string>planespago.descripcion</string>
               </property>
              </widget>
@@ -647,10 +647,10 @@
             </item>
             <item>
              <widget class="DBNumberEdit" name="db_recfinanciero">
-              <property name="fieldName" stdset="0">
+              <property name="fieldName">
                <string>recfinanciero</string>
               </property>
-              <property name="dataEditable" stdset="0">
+              <property name="dataEditable">
                <bool>true</bool>
               </property>
              </widget>
@@ -666,6 +666,19 @@
           <string>Datos administrativos</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="DBCheckBox" name="db_generaralbaranautomatico">
+            <property name="text">
+             <string>Generar albarán de forma automática</string>
+            </property>
+            <property name="fieldName">
+             <string>generaralbaranautomatico</string>
+            </property>
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
@@ -683,13 +696,13 @@
             </item>
             <item>
              <widget class="DBComboBox" name="db_tipooperacion">
-              <property name="fieldName" stdset="0">
+              <property name="fieldName">
                <string>tipooperacion</string>
               </property>
-              <property name="dataEditable" stdset="0">
+              <property name="dataEditable">
                <bool>true</bool>
               </property>
-              <property name="openListOnGetFocus" stdset="0">
+              <property name="openListOnGetFocus">
                <bool>true</bool>
               </property>
              </widget>
@@ -703,13 +716,13 @@
               <property name="text">
                <string>Divisa *</string>
               </property>
-              <property name="fieldName" stdset="0">
+              <property name="fieldName">
                <string>coddivisa</string>
               </property>
-              <property name="dataEditable" stdset="0">
+              <property name="dataEditable">
                <bool>true</bool>
               </property>
-              <property name="replaceFields" stdset="0">
+              <property name="replaceFields">
                <stringlist>
                 <string>tasaconv;tasaconv</string>
                </stringlist>
@@ -718,13 +731,13 @@
             </item>
             <item>
              <widget class="DBLineEdit" name="db_coddivisa_text_2">
-              <property name="fieldName" stdset="0">
+              <property name="fieldName">
                <string>coddivisa</string>
               </property>
-              <property name="dataEditable" stdset="0">
+              <property name="dataEditable">
                <bool>true</bool>
               </property>
-              <property name="autoCompletePopupSize" stdset="0">
+              <property name="autoCompletePopupSize">
                <size>
                 <width>300</width>
                 <height>200</height>
@@ -734,7 +747,7 @@
             </item>
             <item>
              <widget class="DBLineEdit" name="db_nombre_divisa_2">
-              <property name="fieldName" stdset="0">
+              <property name="fieldName">
                <string>divisas.descripcion</string>
               </property>
              </widget>
@@ -748,10 +761,10 @@
             </item>
             <item>
              <widget class="DBNumberEdit" name="db_tasaconv_2">
-              <property name="fieldName" stdset="0">
+              <property name="fieldName">
                <string>tasaconv</string>
               </property>
-              <property name="dataEditable" stdset="0">
+              <property name="dataEditable">
                <bool>true</bool>
               </property>
              </widget>
@@ -765,7 +778,7 @@
             </item>
             <item>
              <widget class="DBNumberEdit" name="db_totaldivisaempresa_2">
-              <property name="fieldName" stdset="0">
+              <property name="fieldName">
                <string>totaldivisaempresa</string>
               </property>
              </widget>
@@ -790,7 +803,7 @@
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_neto">
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>neto</string>
             </property>
            </widget>
@@ -804,7 +817,7 @@
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_totaliva">
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>totaliva</string>
             </property>
            </widget>
@@ -818,7 +831,7 @@
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_totalrecargo">
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>totalrecargo</string>
             </property>
            </widget>
@@ -832,7 +845,7 @@
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_totalirpf">
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>totalirpf</string>
             </property>
            </widget>
@@ -858,7 +871,7 @@
               <bold>true</bold>
              </font>
             </property>
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>total</string>
             </property>
            </widget>
@@ -874,10 +887,10 @@
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="DBTableView" name="lineasivapedidoscli">
-            <property name="internalData" stdset="0">
+            <property name="internalData">
              <bool>true</bool>
             </property>
-            <property name="relationName" stdset="0">
+            <property name="relationName">
              <string>lineasivapedidoscli</string>
             </property>
            </widget>
@@ -908,11 +921,11 @@
          </property>
          <layout class="QGridLayout">
           <item row="0" column="0">
-           <widget class="DBDetailView" name="db_lineasarticulospedidoscli" native="true">
-            <property name="relationName" stdset="0">
+           <widget class="DBDetailView" name="db_lineasarticulospedidoscli">
+            <property name="relationName">
              <string>lineasarticulospedidoscli</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
            </widget>
@@ -927,11 +940,11 @@
          </property>
          <layout class="QGridLayout" name="_2">
           <item row="0" column="0">
-           <widget class="DBDetailView" name="db_lineasserviciospedidoscli" native="true">
-            <property name="relationName" stdset="0">
+           <widget class="DBDetailView" name="db_lineasserviciospedidoscli">
+            <property name="relationName">
              <string>lineasserviciospedidoscli</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
            </widget>
@@ -962,11 +975,46 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="DBDetailView" name="db_odt" native="true">
-            <property name="relationName" stdset="0">
+           <widget class="DBDetailView" name="db_odt">
+            <property name="relationName">
              <string>odt</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageAlbaranes">
+      <layout class="QVBoxLayout" name="verticalLayoutAlbaranesGrande">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBoxAlbaranes">
+         <property name="title">
+          <string>Albaranes</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutAlbaranes">
+          <item>
+           <widget class="DBDetailView" name="db_odt">
+            <property name="relationName">
+             <string>albaranesprov</string>
+            </property>
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
            </widget>
@@ -998,10 +1046,10 @@
          <layout class="QVBoxLayout" name="verticalLayout_9">
           <item>
            <widget class="DBRichTextEdit" name="db_observaciones">
-            <property name="fieldName" stdset="0">
+            <property name="fieldName">
              <string>observaciones</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
            </widget>
@@ -1043,11 +1091,11 @@
            </widget>
           </item>
           <item>
-           <widget class="DBDetailView" name="db_efectospago" native="true">
-            <property name="relationName" stdset="0">
+           <widget class="DBDetailView" name="db_efectospago">
+            <property name="relationName">
              <string>efectoscobro</string>
             </property>
-            <property name="dataEditable" stdset="0">
+            <property name="dataEditable">
              <bool>true</bool>
             </property>
            </widget>
@@ -1066,6 +1114,11 @@
    <class>AERPScriptWidget</class>
    <extends>QWidget</extends>
    <header>scripts/perpscriptwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBCheckBox</class>
+   <extends>QCheckBox</extends>
+   <header>widgets/dbcheckbox.h</header>
   </customwidget>
   <customwidget>
    <class>DBChooseRecordButton</class>
@@ -1098,14 +1151,14 @@
    <header>widgets/dbnumberedit.h</header>
   </customwidget>
   <customwidget>
-   <class>DBRichTextEdit</class>
-   <extends>QTextEdit</extends>
-   <header>widgets/dbrichtextedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>DBTableView</class>
    <extends>QTableView</extends>
    <header>widgets/dbtableview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBRichTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>widgets/dbrichtextedit.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
@@ -1134,7 +1187,6 @@
   <tabstop>db_observaciones</tabstop>
  </tabstops>
  <resources>
-  <include location="../../../programacion/alepherp/src/resources/modules.qrc"/>
   <include location="../../../programacion/alepherp/src/resources/resources.qrc"/>
  </resources>
  <connections/>

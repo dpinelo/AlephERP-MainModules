@@ -414,8 +414,8 @@ function value() {
     </field>
 
     <field>
-        <name>codsubcuentairpfcom</name>
-        <alias>ID</alias>
+        <name>codsubcuentairpfven</name>
+        <alias>Subcuenta de IRPF ventas</alias>
         <null>true</null>
         <pk>false</pk>
         <type>string</type>

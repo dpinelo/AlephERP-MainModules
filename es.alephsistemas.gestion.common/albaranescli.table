@@ -138,6 +138,20 @@ function repositoryKeywords() {
     </inherits>
    
     <field>
+        <name>idpedido</name>
+        <alias>Id. Pedido</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>pedidoscli</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+   
+    <field>
         <name>codalbaran</name>
         <alias>Código</alias>
         <null>false</null>

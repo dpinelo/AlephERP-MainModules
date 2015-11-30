@@ -100,14 +100,6 @@ function emailTemplate() {
 ]]>   
     </emailTemplateScript>
    
-    <afterDeleteScript>
-<![CDATA[
-function afterDelete() {
-       return AERPScriptCommon.sqlExecute("update alepherp_expediciones set idfactura = 0 where idfactura = " + bean.id.value);
-}
-]]>
-    </afterDeleteScript>
-                
     <toStringExpression>
         <expression>Factura nº {codfactura} de fecha {fecha}</expression>
     </toStringExpression>
@@ -164,20 +156,6 @@ function afterDelete() {
             <delC>true</delC>
             <includeOnCopy>true</includeOnCopy>            
         </relation>
-        <relation>
-            <table>alepherp_expediciones</table>
-            <field>idfactura</field>
-            <card>1M</card>
-            <delC>false</delC>
-            <showOnRelatedModels>true</showOnRelatedModels>
-        </relation>            
-        <relation>
-            <table>alepherp_informe_fundicion</table>
-            <field>idfactura</field>
-            <card>1M</card>
-            <delC>false</delC>
-            <showOnRelatedModels>true</showOnRelatedModels>
-        </relation>            
         <relation>
             <table>facturascli</table>
             <field>idfacturarect</field>

@@ -41,11 +41,14 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.init = function(ui) {
             this.pbMarcarPagada.visible = false;
         }              
     }
+    if ( bean.metadata.tableName == "pedidoscli" || bean.metadata.tableName == "pedidosprov" ) {
+        this.tbAlbaranes = this.ui.findChild("tbAlbaranes");
+        this.tbAlbaranes.clicked.connect(this, "showPage");
+    }
     if ( bean.metadata.tableName == "albaranesprov" || bean.metadata.tableName == "albaranescli" ) {
         this.tbStocks = this.ui.findChild("tbStocks");    
         this.tbStocks.clicked.connect(this, "showPage");
     }
-        
     if ( bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli" ) {
         var beanEmpresaActual = empresaActual();
         this.tbContabilidad = this.ui.findChild("tbContabilidad");
@@ -129,6 +132,8 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.showPage = function() {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageLineas"));
     } else if ( this.tbObservaciones.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageObservaciones"));
+    } else if ( (bean.metadata.tableName == "pedidosprov" || bean.metadata.tableName == "pedidoscli") && this.tbAlbaranes.checked ) {
+        this.swFichas.setCurrentWidget(this.ui.findChild("pageAlbaranes"));
     } else if ( (bean.metadata.tableName == "albaranesprov" || bean.metadata.tableName == "albaranescli") && this.tbStocks.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageStocks"));
     } else if ( (bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli") && this.tbContabilidad.checked ) {

@@ -8,13 +8,13 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-11-30 10:52:48</generatedTime>
+<generatedTime>2015-11-30 13:38:40</generatedTime>
 
 
 <file>
     <objectName>documentosgestion</objectName>
     <name>documentosgestion.tableTemp</name>
-    <version>66</version>
+    <version>68</version>
     <type>tableTemp</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -74,7 +74,7 @@
 <file>
     <objectName>albaranescli</objectName>
     <name>albaranescli.table</name>
-    <version>9</version>
+    <version>10</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -84,7 +84,7 @@
 <file>
     <objectName>albaranesprov</objectName>
     <name>albaranesprov.table</name>
-    <version>27</version>
+    <version>28</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -234,7 +234,7 @@
 <file>
     <objectName>facturascli</objectName>
     <name>facturascli.table</name>
-    <version>70</version>
+    <version>71</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -524,7 +524,17 @@
 <file>
     <objectName>pedidoscli</objectName>
     <name>pedidoscli.table</name>
-    <version>19</version>
+    <version>22</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>pedidosprov</objectName>
+    <name>pedidosprov.table</name>
+    <version>9</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -702,6 +712,26 @@
 </file>
 
 <file>
+    <objectName>tvw_periodosimpuestos</objectName>
+    <name>tvw_periodosimpuestos.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>tvw_periodosimpuestos_irpf</objectName>
+    <name>tvw_periodosimpuestos_irpf.table</name>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
     <objectName>__init__.js</objectName>
     <name>__init__.js</name>
     <version>30</version>
@@ -744,7 +774,7 @@
 <file>
     <objectName>alepherp/documentosgestion.js</objectName>
     <name>alepherp/documentosgestion.js</name>
-    <version>123</version>
+    <version>124</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -824,7 +854,7 @@
 <file>
     <objectName>documentosgestioncommonfunctions.qs</objectName>
     <name>documentosgestioncommonfunctions.qs</name>
-    <version>54</version>
+    <version>55</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1804,7 +1834,7 @@
 <file>
     <objectName>main.qmaindlg.ui</objectName>
     <name>main.qmaindlg.ui</name>
-    <version>43</version>
+    <version>45</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1824,7 +1854,7 @@
 <file>
     <objectName>pedidoscli.dbrecord.ui</objectName>
     <name>pedidoscli.dbrecord.ui</name>
-    <version>25</version>
+    <version>29</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1834,7 +1864,7 @@
 <file>
     <objectName>pedidosprov.dbrecord.ui</objectName>
     <name>pedidosprov.dbrecord.ui</name>
-    <version>3</version>
+    <version>6</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
