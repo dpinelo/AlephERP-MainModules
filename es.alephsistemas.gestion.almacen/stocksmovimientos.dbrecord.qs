@@ -1,12 +1,3 @@
-Function.prototype.bind = function() { 
-    var func = this;
-    var thisObject = arguments[0];
-    var args = Array.prototype.slice.call(arguments, 1);
-    return function() {
-        return func.apply(thisObject, args);
-    }
-}
-
 function DBRecordDlg (ui) {
     AERPLoadExtension("alepherp.almacen");
     
@@ -16,8 +7,8 @@ function DBRecordDlg (ui) {
     
     if ( bean.dbState == BaseBean.UPDATE ) {
         thisForm.db_tipo.dataEditable = false;
-        thisForm.db_nombrealmacendestino.text = bean.almacendestino.father.nombre.value;
-        thisForm.db_nombrealmacenorigen.text = bean.almacenorigen.father.nombre.value;
+        thisForm.db_nombrealmacendestino.text = bean.ubicaciondestino.father.nombre.value;
+        thisForm.db_nombrealmacenorigen.text = bean.ubicacionorigen.father.nombre.value;
     }
     thisForm.db_introrapida["textEdited(QString)"].connect(this, "introRapida");
 }
@@ -51,29 +42,29 @@ DBRecordDlg.prototype.tipoValueModified = function() {
     thisForm.db_introrapida.visible = true;
     this.ui.findChild("lbl_introrapida").visible = true;
     if ( bean.tipo.value == "Entrada" ) {
-        thisForm.db_idalmacendestino.dataEditable = true;
-        thisForm.db_idalmacenorigen.dataEditable = false;
+        thisForm.db_idubicaciondestino.dataEditable = true;
+        thisForm.db_idubicacionorigen.dataEditable = false;
         thisForm.db_introrapida.visible = false;
         this.ui.findChild("lbl_introrapida").visible = false;
         this.ui.findChild("rbAlta").visible = false;
         this.ui.findChild("rbBaja").visible = false;
     } else if ( bean.tipo.value == "Salida" ) {
-        thisForm.db_idalmacendestino.dataEditable = false;
-        thisForm.db_idalmacenorigen.dataEditable = true;
+        thisForm.db_idubicaciondestino.dataEditable = false;
+        thisForm.db_idubicacionorigen.dataEditable = true;
         thisForm.db_introrapida.visible = false;
         this.ui.findChild("lbl_introrapida").visible = false;
         this.ui.findChild("rbAlta").visible = false;
         this.ui.findChild("rbBaja").visible = false;
     } else if ( bean.tipo.value == "Regularización" ) {
-        thisForm.db_idalmacendestino.dataEditable = true;
-        thisForm.db_idalmacenorigen.dataEditable = false;
+        thisForm.db_idubicaciondestino.dataEditable = true;
+        thisForm.db_idubicacionorigen.dataEditable = false;
         thisForm.db_introrapida.visible = true;
         this.ui.findChild("lbl_introrapida").visible = true;
         this.ui.findChild("rbAlta").visible = true;
         this.ui.findChild("rbBaja").visible = true;
     } else if ( bean.tipo.value == "Transferencia" ) {
-        thisForm.db_idalmacendestino.dataEditable = true;
-        thisForm.db_idalmacenorigen.dataEditable = true;
+        thisForm.db_idubicaciondestino.dataEditable = true;
+        thisForm.db_idubicacionorigen.dataEditable = true;
         thisForm.db_introrapida.visible = true;
         this.ui.findChild("lbl_introrapida").visible = true;
         this.ui.findChild("rbAlta").visible = false;
@@ -81,13 +72,13 @@ DBRecordDlg.prototype.tipoValueModified = function() {
     }
 }
 
-DBRecordDlg.prototype.db_idalmacenorigenAfterChoose = function(selectedBean) {
+DBRecordDlg.prototype.db_idubicacionorigenAfterChoose = function(selectedBean) {
     if ( selectedBean != null ) {
         thisForm.db_nombrealmacenorigen.text = selectedBean.nombre.value;
     }
 }
 
-DBRecordDlg.prototype.db_idalmacendestinoAfterChoose = function(selectedBean) {
+DBRecordDlg.prototype.db_idubicaciondestinoAfterChoose = function(selectedBean) {
     if ( selectedBean != null ) {
         thisForm.db_nombrealmacendestino.text = selectedBean.nombre.value;
     }

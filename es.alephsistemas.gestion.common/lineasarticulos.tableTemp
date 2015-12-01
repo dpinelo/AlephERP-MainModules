@@ -40,7 +40,7 @@
     </field>
     
     <field>
-        <name>idalmacen</name>
+        <name>idubicacion</name>
         <!--Almacen destino u origen-->
         <alias>Almacen</alias>
         <null>true</null>
@@ -48,10 +48,10 @@
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <builtInExpressionDefaultValue>
-            <expression>{${tablaPadre}.father.idalmacen}</expression>
+            <expression>{${tablaPadre}.father.idubicacion}</expression>
         </builtInExpressionDefaultValue>
         <relation>
-            <table>almacenes</table>
+            <table>almacenesubicaciones</table>
             <field>id</field>
             <card>M1</card>
         </relation>

@@ -7,7 +7,7 @@ el registro (bean) sobre el que se aplicarán estas funciones. */
 */
 aerpCalcularStockActual: function(stock, offset) {
     if ( stock.articulos.father.trazabilidad == true ) {
-        stock.cantidad.value = AERPScriptCommon.sqlCount("articulosinstancias", "idalmacen=" + stock.idalmacen.value + " and idarticulo=" + stock.idarticulo.value) + offset;
+        stock.cantidad.value = AERPScriptCommon.sqlCount("articulosinstancias", "idubicacion=" + stock.idubicacion.value + " and idarticulo=" + stock.idarticulo.value) + offset;
     } else {
         stock.cantidad.value = stock.cantidad.value + offset;
     }
@@ -36,17 +36,17 @@ aerpRecalcularStock: function(stock, offset) {
     } else {
         // En este caso, tenemos que hacer un conteo de entradas
         var entradas = AERPScriptCommon.sqlSelect("select sum(si.cantidad) as c from stocksmovimientosinstancias as si, stocksmovimientos as st where si.idmovimiento=st.id and si.idarticulo=" 
-                + stock.idarticulo.value + " and st.tipo='Entrada' and st.idalmacendestino=" + stock.idalmacen.value);
+                + stock.idarticulo.value + " and st.tipo='Entrada' and st.idubicaciondestino=" + stock.idubicacion.value);
         var salidas = AERPScriptCommon.sqlSelect("select sum(si.cantidad) as c from stocksmovimientosinstancias as si, stocksmovimientos as st where si.idmovimiento=st.id and si.idarticulo=" 
-                + stock.idarticulo.value + " and st.tipo='Salida' and st.idalmacenorigen=" + stock.idalmacen.value);
+                + stock.idarticulo.value + " and st.tipo='Salida' and st.idubicacionorigen=" + stock.idubicacion.value);
         var transferenciassalida = AERPScriptCommon.sqlSelect("select sum(si.cantidad) as c from stocksmovimientosinstancias as si, stocksmovimientos as st where si.idmovimiento=st.id and si.idarticulo=" 
-                + stock.idarticulo.value + " and st.tipo='Transferencias' and st.idalmacenorigen=" + stock.idalmacen.value);
+                + stock.idarticulo.value + " and st.tipo='Transferencias' and st.idubicacionorigen=" + stock.idubicacion.value);
         var transferenciasentradas = AERPScriptCommon.sqlSelect("select sum(si.cantidad) as c from stocksmovimientosinstancias as si, stocksmovimientos as st where si.idmovimiento=st.id and si.idarticulo=" 
-                + stock.idarticulo.value + " and st.tipo='Transferencias' and st.idalmacendestino=" + stock.idalmacen.value);
+                + stock.idarticulo.value + " and st.tipo='Transferencias' and st.idubicaciondestino=" + stock.idubicacion.value);
         var regularizacionesorigen = AERPScriptCommon.sqlSelect("select sum(si.cantidad) as c from stocksmovimientosinstancias as si, stocksmovimientos as st where si.idmovimiento=st.id and si.idarticulo=" 
-                + stock.idarticulo.value + " and st.tipo='Regularización' and st.idalmacenorigen=" + stock.idalmacen.value);
+                + stock.idarticulo.value + " and st.tipo='Regularización' and st.idubicacionorigen=" + stock.idubicacion.value);
         var regularizacionesdestino = AERPScriptCommon.sqlSelect("select sum(si.cantidad) as c from stocksmovimientosinstancias as si, stocksmovimientos as st where si.idmovimiento=st.id and si.idarticulo=" 
-                + stock.idarticulo.value + " and st.tipo='Regularización' and st.idalmacendestino=" + stock.idalmacen.value);
+                + stock.idarticulo.value + " and st.tipo='Regularización' and st.idubicaciondestino=" + stock.idubicacion.value);
         stock.cantidad.value = new Number(entradas[0].c) - new Number(salidas[0].c) - new Number(transferenciassalida[0].c) + 
                                new Number(transferenciasentradas[0].c) + new Number(regularizacionesdestino[0].c) -
                                new Number(regularizacionesorigen[0].c) + iOffset;
@@ -89,14 +89,14 @@ aerpGenerarEntradaStock: function() {
             // En documentosgestion.tableTemp, se encuentran definidas las reglas de creación de nuevos elementos relacionados, que le darán valor
             // a este elemento relacionado.
             // Lo primero es ver si tenemos el stock creado para este artículo
-            if ( lineas[i].idarticulo.value > 0 && lineas[i].idalmacen.value > 0 ) {
+            if ( lineas[i].idarticulo.value > 0 && lineas[i].idubicacion.value > 0 ) {
                 var cantidad = 0;
                 if ( this.deabono.value ) {
                     cantidad = lineas[i].cantidad.value * -1;
                 } else {
                     cantidad = lineas[i].cantidad.value;
                 }
-                var stock = AERPScriptCommon.bean("stocks", lineas[i].idarticulo.sqlEqual + " AND " + lineas[i].idalmacen.sqlEqual + " AND idempresa=" + AERPScriptCommon.envVar("idempresa"));
+                var stock = AERPScriptCommon.bean("stocks", lineas[i].idarticulo.sqlEqual + " AND " + lineas[i].idubicacion.sqlEqual + " AND idempresa=" + AERPScriptCommon.envVar("idempresa"));
                 var hasToRecalculateStock = false;
                 if ( stock === undefined ) {
                     stock = AERPScriptCommon.createBean("stocks");
@@ -183,7 +183,7 @@ aerpBorrarEntradaStock: function() {
                     }
                 }
             }
-            var stock = AERPScriptCommon.bean("stocks", "idarticulo=" + lineas[iLinea].idarticulo.value + " and idalmacen=" + lineas[iLinea].idalmacen.value);
+            var stock = AERPScriptCommon.bean("stocks", "idarticulo=" + lineas[iLinea].idarticulo.value + " and idubicacion=" + lineas[iLinea].idubicacion.value);
             if ( stock != undefined ) {
                 AERPScriptCommon.addToTransaction(stock, this.actualContext);
                 if ( this.deabono.value ) {
@@ -210,19 +210,19 @@ aerpGenerarSalidaStock: function() {
     }
     this.deleteRelatedElementByCategory(category);
     // Debemos tener tantos movimientos de stocks como almacenes origen de artículos tengamos
-    var idalmacenesorigen = new Array();
+    var idubicacionesorigen = new Array();
     var movimientosstock = new Array();
     var idx = 0;
     // Lo primero que vamos a hacer es obtener todos los almacenes orígenes de los artículos, y creamos un movimiento de stock por cada almacén origen.
     for ( var i = 0 ; i < lineas.length ; i++ ) {
         if ( this.aerpLineaGeneraMovimiento.call(lineas[i]) ) {
-            if ( idalmacenesorigen.indexOf(lineas[i].idalmacen.value) == -1 ) {
-                idalmacenesorigen[idx] = lineas[i].idalmacen.value;
+            if ( idubicacionesorigen.indexOf(lineas[i].idubicacion.value) == -1 ) {
+                idubicacionesorigen[idx] = lineas[i].idubicacion.value;
                 movimientosstock[idx] = this.newRelatedElement("stocksmovimientos", category);
                 var stockmovimiento = movimientosstock[idx].relatedBean;
                 stockmovimiento.tipo.value = "Salida";
                 stockmovimiento.fecha.value = this.fecha.value;
-                stockmovimiento.idalmacenorigen.value = lineas[i].idalmacen.value;
+                stockmovimiento.idubicacionorigen.value = lineas[i].idubicacion.value;
                 
                 if ( !this.deabono.value ) {
                     if ( this.metadata.tableName == "albaranescli" ) {
@@ -244,7 +244,7 @@ aerpGenerarSalidaStock: function() {
     for (var i = 0 ; i < movimientosstock.length ; i++) {
         for (var iLinea = 0 ; iLinea < lineas.length ; iLinea++) {
             if ( this.aerpLineaGeneraMovimiento.call(lineas[iLinea]) ) {
-                if ( lineas[iLinea].idalmacen.value == movimientosstock[i].relatedBean.idalmacenorigen.value ) {
+                if ( lineas[iLinea].idubicacion.value == movimientosstock[i].relatedBean.idubicacionorigen.value ) {
                     var stockInstancia = movimientosstock[i].relatedBean.stocksmovimientosinstancias.newChild();
                     stockInstancia.articulos.father = lineas[iLinea].articulos.father;
                     if ( !this.deabono.value ) {
@@ -252,7 +252,7 @@ aerpGenerarSalidaStock: function() {
                             stockInstancia.articulosinstancias.father = lineas[iLinea].articulosinstancias.father;
                             stockInstancia.cantidad.value = 1;
                             lineas[iLinea].articulosinstancias.father.debaja.value = true;
-                            lineas[iLinea].articulosinstancias.father.idalmacen.value = 0;
+                            lineas[iLinea].articulosinstancias.father.idubicacion.value = 0;
                         } else {
                             stockInstancia.cantidad.value = lineas[iLinea].cantidad.value;
                         }
@@ -260,7 +260,7 @@ aerpGenerarSalidaStock: function() {
                         stockInstancia.cantidad.value = -1 * lineas[iLinea].cantidad.value;
                     }
                 }
-                var stock = AERPScriptCommon.bean("stocks", "idarticulo=" + lineas[iLinea].idarticulo.value + " and idalmacen=" + lineas[iLinea].idalmacen.value);
+                var stock = AERPScriptCommon.bean("stocks", "idarticulo=" + lineas[iLinea].idarticulo.value + " and idubicacion=" + lineas[iLinea].idubicacion.value);
                 if ( stock != undefined ) {
                     AERPScriptCommon.addToTransaction(stock, this.actualContext);
                     this.aerpRecalcularStock.call(stock, -1 * lineas[iLinea].cantidad.value);
@@ -288,17 +288,17 @@ aerpBorrarSalidaStock: function() {
                     for ( var iInstancia = 0 ; iInstancia < stockmovimiento.stocksmovimientosinstancias.items.length ; iInstancia++ ) {
                         // Si es un artículo trazable, debemos volver a darlo de alta, y buscar el almacén en el que estaba
                         if ( stockmovimiento.stocksmovimientosinstancias.items[iInstancia].articulos.father.trazabilidad.value == true ) {
-                            var otrosMovimientos = AERPScriptCommon.sqlSelect("select st.idalmacendestino as idalmacendestino from stocksmovimientosinstancias as si, stocksmovimientos as st where si.idmovimiento=st.id and " +
+                            var otrosMovimientos = AERPScriptCommon.sqlSelect("select st.idubicaciondestino as idubicaciondestino from stocksmovimientosinstancias as si, stocksmovimientos as st where si.idmovimiento=st.id and " +
                                 "si.idinstancia=" + stockmovimiento.stocksmovimientosinstancias.items[iInstancia].idinstancia.value + " and st.tipo<>'Salida' order by st.fecha limit 1");
-                            if ( new Number(otrosMovimientos[0].idalmacendestino) > 0 ) {
-                                stockmovimiento.stocksmovimientosinstancias.items[iInstancia].articulosinstancias.father.idalmacen.value = otrosMovimientos[0].idalmacendestino;
+                            if ( new Number(otrosMovimientos[0].idubicaciondestino) > 0 ) {
+                                stockmovimiento.stocksmovimientosinstancias.items[iInstancia].articulosinstancias.father.idubicacion.value = otrosMovimientos[0].idubicaciondestino;
                                 stockmovimiento.stocksmovimientosinstancias.items[iInstancia].articulosinstancias.father.debaja.value = false;
                             }
                         }
                     }
                 }
             }
-            var stock = AERPScriptCommon.bean("stocks", "idarticulo=" + lineas[iLinea].idarticulo.value + " and idalmacen=" + lineas[iLinea].idalmacen.value);
+            var stock = AERPScriptCommon.bean("stocks", "idarticulo=" + lineas[iLinea].idarticulo.value + " and idubicacion=" + lineas[iLinea].idubicacion.value);
             if ( stock != undefined ) {
                 if ( !this.deabono.value ) {
                     AERPScriptCommon.addToTransaction(stock, this.actualContext);

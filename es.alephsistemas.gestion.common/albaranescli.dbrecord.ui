@@ -671,16 +671,16 @@
        <item>
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
-          <string>Almacén por defecto</string>
+          <string>Ubicación de Almacén por defecto</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
-           <widget class="DBChooseRecordButton" name="db_idalmacen">
+           <widget class="DBChooseRecordButton" name="db_idubicacion">
             <property name="text">
-             <string>Almacén</string>
+             <string>Ubicación de Almacén</string>
             </property>
             <property name="fieldName">
-             <string>idalmacen</string>
+             <string>idubicacion</string>
             </property>
             <property name="dataEditable">
              <bool>true</bool>
@@ -693,7 +693,7 @@
           <item>
            <widget class="DBLineEdit" name="db_nombrealmacen">
             <property name="fieldName">
-             <string>almacenes.father.nombre</string>
+             <string>almacenesubicaciones.father.nombre</string>
             </property>
             <property name="dataEditable">
              <bool>true</bool>
@@ -1186,7 +1186,7 @@
   <tabstop>db_nombre_divisa</tabstop>
   <tabstop>db_tasaconv</tabstop>
   <tabstop>db_totaldivisaempresa</tabstop>
-  <tabstop>db_idalmacen</tabstop>
+  <tabstop>db_idubicacion</tabstop>
   <tabstop>db_nombrealmacen</tabstop>
   <tabstop>db_deabono</tabstop>
   <tabstop>db_idalbaranrect</tabstop>

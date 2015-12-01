@@ -106,7 +106,7 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.init = function(ui) {
 
 alepherp.DBRecordDlgLineasDocumentosGestion.prototype.validate = function() {
     if ( bean.hasOwnProperty("generamovimientosstock" ) ) {
-        if ( bean.generamovimientosstock.value == true && bean.idalmacen.value == 0 ) {
+        if ( bean.generamovimientosstock.value == true && bean.idubicacion.value == 0 ) {
             AERPMessageBox.information("Para poder generar los movimientos de stocks correspondientes, debe escoger el almacén adecuado.");
             return false;
         }
@@ -256,7 +256,7 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.idarticuloValueModified = 
 
 alepherp.DBRecordDlgLineasDocumentosGestion.prototype.idinstanciaValueModified = function() {
     if ( bean.idinstancia.value > 0 ) {
-        bean.idalmacen.value = bean.articulosinstancias.father.idalmacen.value;
+        bean.idubicacion.value = bean.articulosinstancias.father.idubicacion.value;
         bean.idarticulo.value = bean.articulosinstancias.father.articulos.father.id.value;
         thisForm.db_cantidad.readOnly = true;
     } else {
@@ -273,13 +273,13 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.introRapidaArticulos = fun
         var mensaje;
         if ( objArticulo.isInstancia  ) {
             // Si es una instancia, le asignamos a esta línea, el almacén donde esté
-            if ( objArticulo.instancia.idalmacen.value > 0 ) {
-                bean.idalmacen.value = objArticulo.instancia.idalmacen.value;
+            if ( objArticulo.instancia.idubicacion.value > 0 ) {
+                bean.idubicacion.value = objArticulo.instancia.idubicacion.value;
             }
-            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.instancia, bean.idalmacen.value);
+            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.instancia, bean.idubicacion.value);
         }
         if ( !objArticulo.isInstancia ) {
-            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.articulo, bean.idalmacen.value);
+            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.articulo, bean.idubicacion.value);
         }
         if ( mensaje != "" ) {
             AERPMessageBox.information(mensaje + " No puede ser agregado.");

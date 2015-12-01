@@ -111,48 +111,48 @@
       </widget>
      </item>
      <item row="0" column="1" colspan="2">
-      <widget class="DBLineEdit" name="db_nombrealmacenorigen">
+      <widget class="DBLineEdit" name="db_nombreubicacionorigen">
        <property name="fieldName">
-        <string>almacenorigen.father.nombre</string>
+        <string>ubicacionorigen.father.nombre</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="DBChooseRecordButton" name="db_idalmacendestino">
+      <widget class="DBChooseRecordButton" name="db_idubicaciondestino">
        <property name="text">
-        <string>Almacén Destino</string>
+        <string>Ubicación Destino</string>
        </property>
        <property name="fieldName">
-        <string>idalmacendestino</string>
+        <string>idubicaciondestino</string>
        </property>
        <property name="dataEditable">
         <bool>true</bool>
        </property>
        <property name="tableName">
-        <string>almacenes</string>
+        <string>almacenesubicaciones</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1" colspan="2">
-      <widget class="DBLineEdit" name="db_nombrealmacendestino">
+      <widget class="DBLineEdit" name="db_nombreubicaciondestino">
        <property name="fieldName">
-        <string>almacendestino.father.nombre</string>
+        <string>ubicaciondestino.father.nombre</string>
        </property>
       </widget>
      </item>
      <item row="0" column="0">
-      <widget class="DBChooseRecordButton" name="db_idalmacenorigen">
+      <widget class="DBChooseRecordButton" name="db_idubicacionorigen">
        <property name="text">
-        <string>Almacén Origen</string>
+        <string>Ubicación Origen</string>
        </property>
        <property name="fieldName">
-        <string>idalmacenorigen</string>
+        <string>idubicacionorigen</string>
        </property>
        <property name="dataEditable">
         <bool>true</bool>
        </property>
        <property name="tableName">
-        <string>almacenes</string>
+        <string>almacenesubicaciones</string>
        </property>
       </widget>
      </item>
@@ -259,10 +259,10 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>db_idalmacenorigen</tabstop>
-  <tabstop>db_nombrealmacenorigen</tabstop>
-  <tabstop>db_idalmacendestino</tabstop>
-  <tabstop>db_nombrealmacendestino</tabstop>
+  <tabstop>db_idubicacionorigen</tabstop>
+  <tabstop>db_nombreubicacionorigen</tabstop>
+  <tabstop>db_idubicaciondestino</tabstop>
+  <tabstop>db_nombreubicaciondestino</tabstop>
   <tabstop>db_tipo</tabstop>
   <tabstop>db_fecha</tabstop>
   <tabstop>lineEdit</tabstop>

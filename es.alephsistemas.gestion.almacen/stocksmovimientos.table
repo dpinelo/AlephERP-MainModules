@@ -13,7 +13,7 @@
     <canHaveRelatedElements>true</canHaveRelatedElements>
     
    <toStringExpression>
-        <expression>Movimiento de almacén de tipo: {tipo}, con fecha {fecha}, almacén origen {almacenorigen.father.nombre} y almacén destino {almacendestino.father.nombre}</expression>
+        <expression>Movimiento de almacén de tipo: {tipo}, con fecha {fecha}, almacén origen {ubicacionorigen.father.nombre} y almacén destino {ubicaciondestino.father.nombre}</expression>
     </toStringExpression>
     
     <field>
@@ -34,47 +34,47 @@
     </field>
    
     <field>
-        <name>idalmacenorigen</name>
-        <alias>Id. Almacen Origen</alias>
+        <name>idubicacionorigen</name>
+        <alias>Id. Ubicación Origen</alias>
         <null>true</null>
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
 
         <relation>
-            <name>almacenorigen</name>
-            <table>almacenes</table>
+            <name>ubicacionorigen</name>
+            <table>almacenesubicaciones</table>
             <field>id</field>
             <card>M1</card>
         </relation>
     </field>
 
    <field>
-        <name>almacenorigen</name>
+        <name>ubicacionorigen</name>
         <alias>Almacén Origen</alias>
-        <expression>almacenorigen.father.nombre</expression>
+        <expression>ubicacionorigen.father.nombre</expression>
     </field>
     
     <field>
-        <name>idalmacendestino</name>
-        <alias>Id. Almacen Destino</alias>
+        <name>idubicaciondestino</name>
+        <alias>Id. Ubicación Destino</alias>
         <null>true</null>
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
 
         <relation>
-            <name>almacendestino</name>
-            <table>almacenes</table>
+            <name>ubicaciondestino</name>
+            <table>almacenesubicaciones</table>
             <field>id</field>
             <card>M1</card>
         </relation>
     </field>
 
    <field>
-        <name>almacendestino</name>
+        <name>ubicaciondestino</name>
         <alias>Almacén Destino</alias>
-        <expression>almacendestino.father.nombre</expression>
+        <expression>ubicaciondestino.father.nombre</expression>
     </field>
     
     <field>

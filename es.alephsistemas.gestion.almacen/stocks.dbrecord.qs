@@ -16,8 +16,8 @@ function DBRecordDlg (ui) {
             this.ui.db_idarticulo.enabled = false;
         }        
     } else {
-        thisForm.db_stocksmovimientosentrada.relationFilter = ";stocksmovimientos.idalmacendestino=" + bean.idalmacen.value;
-        thisForm.db_stocksmovimientossalida.relationFilter = ";stocksmovimientos.idalmacenorigen=" + bean.idalmacen.value;
+        thisForm.db_stocksmovimientosentrada.relationFilter = ";stocksmovimientos.idubicaciondestino=" + bean.idubicacion.value;
+        thisForm.db_stocksmovimientossalida.relationFilter = ";stocksmovimientos.idubicacionorigen=" + bean.idubicacion.value;
     }   
 }
 

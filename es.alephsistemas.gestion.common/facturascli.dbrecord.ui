@@ -1127,12 +1127,12 @@ de Costes</string>
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="DBChooseRecordButton" name="db_idalmacen">
+           <widget class="DBChooseRecordButton" name="db_idubicacion">
             <property name="text">
-             <string>Almacén por defecto</string>
+             <string>Ubicación de Almacén por defecto</string>
             </property>
             <property name="fieldName">
-             <string>idalmacen</string>
+             <string>idubicacion</string>
             </property>
             <property name="dataEditable">
              <bool>true</bool>
@@ -1142,7 +1142,7 @@ de Costes</string>
           <item row="0" column="1" colspan="2">
            <widget class="DBLineEdit" name="db_nombrealmacen">
             <property name="fieldName">
-             <string>almacenes.nombre</string>
+             <string>almacenesubicaciones.father.nombre</string>
             </property>
            </widget>
           </item>
@@ -1622,7 +1622,7 @@ de Costes</string>
   <tabstop>db_neto_costes</tabstop>
   <tabstop>db_totalcostesdistribuidos</tabstop>
   <tabstop>pbMarcarPagada</tabstop>
-  <tabstop>db_idalmacen</tabstop>
+  <tabstop>db_idubicacion</tabstop>
   <tabstop>db_nombrealmacen</tabstop>
   <tabstop>db_introrapidaarticulos</tabstop>
  </tabstops>

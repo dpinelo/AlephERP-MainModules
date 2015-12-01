@@ -72,12 +72,12 @@
     </widget>
    </item>
    <item row="2" column="0">
-    <widget class="DBChooseRecordButton" name="db_idalmacen">
+    <widget class="DBChooseRecordButton" name="db_idubicacion">
      <property name="text">
-      <string>Almacén</string>
+      <string>Ubicación de Almacén</string>
      </property>
      <property name="fieldName">
-      <string>idalmacen</string>
+      <string>idubicacion</string>
      </property>
      <property name="dataEditable">
       <bool>true</bool>
@@ -87,7 +87,7 @@
    <item row="2" column="1">
     <widget class="DBLineEdit" name="dbLineEdit">
      <property name="fieldName">
-      <string>almacenes.nombre</string>
+      <string>almacenesubicaciones.nombre</string>
      </property>
     </widget>
    </item>
@@ -188,7 +188,7 @@
  <tabstops>
   <tabstop>db_idarticulo</tabstop>
   <tabstop>dble_articulo</tabstop>
-  <tabstop>db_idalmacen</tabstop>
+  <tabstop>db_idubicacion</tabstop>
   <tabstop>dbLineEdit</tabstop>
   <tabstop>db_cantidad</tabstop>
  </tabstops>

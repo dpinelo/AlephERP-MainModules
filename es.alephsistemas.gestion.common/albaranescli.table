@@ -180,7 +180,7 @@ function repositoryKeywords() {
     </field>
 
    <inherits name="documentosgestion">
-      <element type="field">idalmacen</element>
+      <element type="field">idubicacion</element>
       <element type="field">idtarifa</element>
       <element type="field">fecha</element>
       <element type="field">nombre</element>

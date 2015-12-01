@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <AlephERP>
 <export>
 
@@ -8,117 +9,34 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithoutForeignKeys | WithSimulateOID | </tableCreationOptions>
-<generatedTime>2015-12-01 09:50:51</generatedTime>
-
-
 <file>
-    <objectName>alepherp_modules</objectName>
-    <name>alepherp_modules.table</name>
-    <version>1</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>alepherp_roles.dbrecord.ui</objectName>
+  <name>alepherp_roles.dbrecord.ui</name>
+  <version>5</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>alepherp_emails_attachments</objectName>
-    <name>alepherp_emails_attachments.table</name>
-    <version>1</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>alepherp_users.dbrecord.qs</objectName>
+  <name>alepherp_users.dbrecord.qs</name>
+  <version>4</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>alepherp_envvars</objectName>
-    <name>alepherp_envvars.table</name>
-    <version>1</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>alepherp_emails</objectName>
-    <name>alepherp_emails.table</name>
-    <version>1</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>alepherp_roles</objectName>
-    <name>alepherp_roles.table</name>
-    <version>1</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>alepherp_users</objectName>
-    <name>alepherp_users.table</name>
-    <version>1</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>alepherp_users_roles</objectName>
-    <name>alepherp_users_roles.table</name>
-    <version>1</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>alepherp_system</objectName>
-    <name>alepherp_system.table</name>
-    <version>1</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>alepherp_users.dbrecord.qs</objectName>
-    <name>alepherp_users.dbrecord.qs</name>
-    <version>4</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>alepherp_roles.dbrecord.ui</objectName>
-    <name>alepherp_roles.dbrecord.ui</name>
-    <version>5</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>alepherp_users.dbrecord.ui</objectName>
-    <name>alepherp_users.dbrecord.ui</name>
-    <version>10</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>alepherp_users.dbrecord.ui</objectName>
+  <name>alepherp_users.dbrecord.ui</name>
+  <version>10</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 </export>

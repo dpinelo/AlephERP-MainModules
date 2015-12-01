@@ -35,21 +35,21 @@ and m.idstockdestino=s.id</sql>
  </querysource>
  <querysource>
   <name>qry_almacenorigen</name>
-  <sql>SELECT almacenes.nombre as almacenorigen
-FROM stocksmovimientos, almacenes, stocks
+  <sql>SELECT almacenesubicaciones.nombre as almacenorigen
+FROM stocksmovimientos, almacenesubicaciones, stocks
 WHERE stocksmovimientos.id=&lt;? value("id") ?> 
 and stocksmovimientos.idstockorigen=stocks.id 
-and stocks.idalmacen=almacenes.id
+and stocks.idubicacion=almacenesubicaciones.id
 
 </sql>
  </querysource>
  <querysource>
   <name>qry_almacendestino</name>
-  <sql>SELECT almacenes.nombre as almacendestino
-FROM stocksmovimientos, almacenes, stocks
+  <sql>SELECT almacenesubicaciones.nombre as almacendestino
+FROM stocksmovimientos, almacenesubicaciones, stocks
 WHERE stocksmovimientos.id=&lt;? value("id") ?> 
 and stocksmovimientos.idstockdestino=stocks.id 
-and stocks.idalmacen=almacenes.id
+and stocks.idubicacion=almacenesubicaciones.id
 
 </sql>
  </querysource>

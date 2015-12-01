@@ -60,15 +60,15 @@ function value() {
     </field>
         
     <field>
-        <name>idalmacen</name>
-        <alias>Almacen</alias>
+        <name>idubicacion</name>
+        <alias>Ubicación de Almacen</alias>
         <null>false</null>
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <uniqueCompound>true</uniqueCompound>
         <relation>
-            <table>almacenes</table>
+            <table>almacenesubicaciones</table>
             <field>id</field>
             <card>M1</card>
         </relation>
@@ -76,7 +76,7 @@ function value() {
 
     <field>
         <name>nombrealmacen</name>
-        <alias>Almacén</alias>
+        <alias>Ubicación de Almacén</alias>
         <null>false</null>
         <pk>false</pk>
         <type>string</type>
@@ -84,7 +84,7 @@ function value() {
         <visiblegrid>true</visiblegrid>
         <calculated>true</calculated>
         <builtInStringExpression>
-            <expression>{almacenes.father.nombre}</expression>
+            <expression>{almacenesubicaciones.father.nombre}</expression>
         </builtInStringExpression>        
     </field>
     

@@ -355,18 +355,18 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.introRapidaArticulos = function(
     if ( thisForm.db_introrapidaarticulos.text == "" ) {
         return;
     }
-    if ( bean.idalmacen.value == 0 ) {
-        AERPMessageBox.information("Debe escoger un almacén por defecto, desde el que escoger los artículos.");
+    if ( bean.idubicacion.value == 0 ) {
+        AERPMessageBox.information("Debe escoger una ubicació de almacén por defecto, desde el que escoger los artículos.");
         return;
     }
     var objArticulo = alepherp.almacen.articuloOInstanciaPorReferencia(thisForm.db_introrapidaarticulos.value);
     if ( objArticulo != null ) {
         var mensaje;
         if ( objArticulo.isInstancia  ) {
-            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.instancia, bean.idalmacen.value);
+            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.instancia, bean.idubicacion.value);
         }
         if ( !objArticulo.isInstancia ) {
-            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.articulo, bean.idalmacen.value);
+            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.articulo, bean.idubicacion.value);
         }
         if ( mensaje != "" ) {
             AERPMessageBox.information(mensaje + " No puede ser agregado.");
@@ -376,7 +376,7 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.introRapidaArticulos = function(
         if ( objArticulo.isInstancia ) {
             linea.articulosinstancias.father = objArticulo.instancia;
             linea.articulos.father = objArticulo.instancia.articulos.father;
-            linea.idalmacen.father = objArticulo.instancia.idalmacen.value;
+            linea.idubicacion.father = objArticulo.instancia.idubicacion.value;
         } else {
             linea.articulos.father = objArticulo.articulo;
         }
@@ -542,7 +542,7 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.db_idalbaranrectAfterChoose = fu
     if ( ret == AERPMessageBox.No ) {
         return;
     }
-    bean.copyValues(albaran, "tasaconv", "coddivisa", "codpais", "provincia", "ciudad", "codpostal", "direccion", "nombredirtercero", "iddirtercero", "idtercero", "cifnif", "nombre", "idalmacen", "idtarifa");
+    bean.copyValues(albaran, "tasaconv", "coddivisa", "codpais", "provincia", "ciudad", "codpostal", "direccion", "nombredirtercero", "iddirtercero", "idtercero", "cifnif", "nombre", "idubicacion", "idtarifa");
     var tableOriginal;
     if ( bean.metadata.tableName == "albaranesprov" ) {
         tableOriginal = "prov";
@@ -571,7 +571,7 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.db_idfacturarectAfterChoose = fu
     if ( ret == AERPMessageBox.No ) {
         return;
     }
-    bean.copyValues(factura, "tipooperacion", "nombre", "cifnif", "idtercero", "iddirtercero", "nombredirtercero", "coddivisa", "idalmacen", "tasaconv", "codpais", "provincia", "ciudad", "codpostal", "direccion", "idtarifa");
+    bean.copyValues(factura, "tipooperacion", "nombre", "cifnif", "idtercero", "iddirtercero", "nombredirtercero", "coddivisa", "idubicacion", "tasaconv", "codpais", "provincia", "ciudad", "codpostal", "direccion", "idtarifa");
     var tableOriginal;
     if ( bean.metadata.tableName == "facturasprov" ) {
         tableOriginal = "prov";

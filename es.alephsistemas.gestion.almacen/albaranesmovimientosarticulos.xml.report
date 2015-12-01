@@ -31,17 +31,17 @@
 select 
   art.nombre as articulo, alb.codalbaran, alb.fecha, alm.nombre as almacen, lin.cantidad
 from
-  articulos as art, albaranesprov as alb, almacenes as alm,lineasarticulosalbaranesprov as lin
+  articulos as art, albaranesprov as alb, almacenesubicaciones as alm,lineasarticulosalbaranesprov as lin
 where 
-  art.id=lin.idarticulo and alm.id=lin.idalmacen and alb.id=lin.idalbaran and
+  art.id=lin.idarticulo and alm.id=lin.idubicacion and alb.id=lin.idalbaran and
   alb.fecha between &lt;? value("P_FECHA_INICIO") ?> and &lt;? value("P_FECHA_FIN") ?>
 union
 select 
   art.nombre as articulo, alb.codalbaran, alb.fecha, alm.nombre as almacen, -1 * lin.cantidad
 from
-  articulos as art, albaranescli as alb, almacenes as alm,lineasarticulosalbaranescli as lin
+  articulos as art, albaranescli as alb, almacenesubicaciones as alm,lineasarticulosalbaranescli as lin
 where 
-  art.id=lin.idarticulo and alm.id=lin.idalmacen and alb.id=lin.idalbaran and
+  art.id=lin.idarticulo and alm.id=lin.idubicacion and alb.id=lin.idalbaran and
   alb.fecha between &lt;? value("P_FECHA_INICIO") ?> and &lt;? value("P_FECHA_FIN") ?>
 ) as foo
 order by articulo, fecha
@@ -60,17 +60,17 @@ WHERE emp.id=&lt;? value("P_ID_EMPRESA") ?></sql>
 select 
   art.nombre as articulo, alb.codalbaran, alb.fecha, alm.nombre as almacen, lin.cantidad
 from
-  articulos as art, albaranesprov as alb, almacenes as alm,lineasarticulosalbaranesprov as lin
+  articulos as art, albaranesprov as alb, almacenesubicaciones as alm,lineasarticulosalbaranesprov as lin
 where 
-  art.id=lin.idarticulo and alm.id=lin.idalmacen and alb.id=lin.idalbaran and
+  art.id=lin.idarticulo and alm.id=lin.idubicacion and alb.id=lin.idalbaran and
   alb.fecha between &lt;? value("P_FECHA_INICIO") ?> and &lt;? value("P_FECHA_FIN") ?>
 union
 select 
   art.nombre as articulo, alb.codalbaran, alb.fecha, alm.nombre as almacen, -1 * lin.cantidad
 from
-  articulos as art, albaranescli as alb, almacenes as alm,lineasarticulosalbaranescli as lin
+  articulos as art, albaranescli as alb, almacenesubicaciones as alm,lineasarticulosalbaranescli as lin
 where 
-  art.id=lin.idarticulo and alm.id=lin.idalmacen and alb.id=lin.idalbaran and
+  art.id=lin.idarticulo and alm.id=lin.idubicacion and alb.id=lin.idalbaran and
   alb.fecha between &lt;? value("P_FECHA_INICIO") ?> and &lt;? value("P_FECHA_FIN") ?>
 ) as foo
 group by articulo

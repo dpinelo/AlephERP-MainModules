@@ -25,11 +25,11 @@
   articulo.nombre as articulo, 
   stocks.cantidad
 from 
-  almacenes as alm, 
+  almacenesubicaciones as alm, 
   articulos as articulo, 
   stocks
 where 
-  alm.id=stocks.idalmacen and 
+  alm.id=stocks.idubicacion and 
   articulo.id=stocks.idarticulo
 order by articulo.nombre, alm.nombre</sql>
  </querysource>

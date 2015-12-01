@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
 <AlephERP>
 <export>
 
@@ -8,537 +9,534 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-11-30 12:01:01</generatedTime>
-
-
 <file>
-    <objectName>co_asientos</objectName>
-    <name>co_asientos.table</name>
-    <version>26</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_asientos</objectName>
+  <name>co_asientos.table</name>
+  <version>26</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_balance</objectName>
-    <name>co_balance.table</name>
-    <version>4</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_balance</objectName>
+  <name>co_balance.table</name>
+  <version>4</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_balance_buffer</objectName>
-    <name>co_balance_buffer.table</name>
-    <version>4</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_balance_buffer</objectName>
+  <name>co_balance_buffer.table</name>
+  <version>4</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_buffer_impresion</objectName>
-    <name>co_buffer_impresion.table</name>
-    <version>5</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_buffer_impresion</objectName>
+  <name>co_buffer_impresion.table</name>
+  <version>5</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_conceptospar</objectName>
-    <name>co_conceptospar.table</name>
-    <version>4</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_conceptospar</objectName>
+  <name>co_conceptospar.table</name>
+  <version>4</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_cuentas</objectName>
-    <name>co_cuentas.table</name>
-    <version>32</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_cuentas</objectName>
+  <name>co_cuentas.table</name>
+  <version>32</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_cuentasesp</objectName>
-    <name>co_cuentasesp.table</name>
-    <version>7</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_cuentasesp</objectName>
+  <name>co_cuentasesp.table</name>
+  <version>7</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_grupos</objectName>
-    <name>co_grupos.table</name>
-    <version>9</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_grupos</objectName>
+  <name>co_grupos.table</name>
+  <version>9</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_partidas</objectName>
-    <name>co_partidas.table</name>
-    <version>53</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_partidas</objectName>
+  <name>co_partidas.table</name>
+  <version>53</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_pyg</objectName>
-    <name>co_pyg.table</name>
-    <version>6</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_pyg</objectName>
+  <name>co_pyg.table</name>
+  <version>6</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_pyg_buffer</objectName>
-    <name>co_pyg_buffer.table</name>
-    <version>3</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_pyg_buffer</objectName>
+  <name>co_pyg_buffer.table</name>
+  <version>3</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subcuentas</objectName>
-    <name>co_subcuentas.table</name>
-    <version>20</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subcuentas</objectName>
+  <name>co_subcuentas.table</name>
+  <version>20</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subgrupos</objectName>
-    <name>co_subgrupos.table</name>
-    <version>14</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subgrupos</objectName>
+  <name>co_subgrupos.table</name>
+  <version>14</version>
+  <type>table</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>pgc2007.ods</objectName>
-    <name>pgc2007.ods</name>
-    <version>2</version>
-    <type>binary</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_asientos.dbform.qs</objectName>
+  <name>co_asientos.dbform.qs</name>
+  <version>6</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>pgc2007abreviado.ods</objectName>
-    <name>pgc2007abreviado.ods</name>
-    <version>4</version>
-    <type>binary</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_asientos.dbrecord.qs</objectName>
+  <name>co_asientos.dbrecord.qs</name>
+  <version>9</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>pgc2007entidadessinlucro-abreviado.ods</objectName>
-    <name>pgc2007entidadessinlucro-abreviado.ods</name>
-    <version>3</version>
-    <type>binary</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_asientos.dbrecord.ui</objectName>
+  <name>co_asientos.dbrecord.ui</name>
+  <version>30</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>pgc2007entidadessinlucro.ods</objectName>
-    <name>pgc2007entidadessinlucro.ods</name>
-    <version>3</version>
-    <type>binary</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_balancesituacion</objectName>
+  <name>co_balancesituacion.reportDef</name>
+  <version>2</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_asientos.dbform.qs</objectName>
-    <name>co_asientos.dbform.qs</name>
-    <version>6</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_balancesituacion.view.qs</objectName>
+  <name>co_balancesituacion.view.qs</name>
+  <version>39</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_asientos.dbrecord.qs</objectName>
-    <name>co_asientos.dbrecord.qs</name>
-    <version>9</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_balancesituacion.view.ui</objectName>
+  <name>co_balancesituacion.view.ui</name>
+  <version>14</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_balancesituacion.view.qs</objectName>
-    <name>co_balancesituacion.view.qs</name>
-    <version>39</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_conceptospar.search.ui</objectName>
+  <name>co_conceptospar.search.ui</name>
+  <version>3</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_cuentas.dbrecord.qs</objectName>
-    <name>co_cuentas.dbrecord.qs</name>
-    <version>15</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_cuentas.dbrecord.qs</objectName>
+  <name>co_cuentas.dbrecord.qs</name>
+  <version>15</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_grupos.dbrecord.qs</objectName>
-    <name>co_grupos.dbrecord.qs</name>
-    <version>4</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_cuentas.dbrecord.ui</objectName>
+  <name>co_cuentas.dbrecord.ui</name>
+  <version>14</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_mod111.view.qs</objectName>
-    <name>co_mod111.view.qs</name>
-    <version>14</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_grupos.dbrecord.qs</objectName>
+  <name>co_grupos.dbrecord.qs</name>
+  <version>4</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_mod303.view.qs</objectName>
-    <name>co_mod303.view.qs</name>
-    <version>53</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_grupos.dbrecord.ui</objectName>
+  <name>co_grupos.dbrecord.ui</name>
+  <version>9</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_partidas.dbrecord.qs</objectName>
-    <name>co_partidas.dbrecord.qs</name>
-    <version>35</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_mod111.view.qs</objectName>
+  <name>co_mod111.view.qs</name>
+  <version>14</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_pyg.view.qs</objectName>
-    <name>co_pyg.view.qs</name>
-    <version>11</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_mod111.view.ui</objectName>
+  <name>co_mod111.view.ui</name>
+  <version>5</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subcuentas.dbform.qs</objectName>
-    <name>co_subcuentas.dbform.qs</name>
-    <version>7</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_mod303.reportDef</objectName>
+  <name>co_mod303.reportDef.reportDef</name>
+  <version>2</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subcuentas.dbrecord.qs</objectName>
-    <name>co_subcuentas.dbrecord.qs</name>
-    <version>20</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_mod303.view.qs</objectName>
+  <name>co_mod303.view.qs</name>
+  <version>53</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subgrupos.dbform.qs</objectName>
-    <name>co_subgrupos.dbform.qs</name>
-    <version>2</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_mod303.view.ui</objectName>
+  <name>co_mod303.view.ui</name>
+  <version>5</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subgrupos.dbrecord.qs</objectName>
-    <name>co_subgrupos.dbrecord.qs</name>
-    <version>2</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>contabilidadcommonfunctions.qs</objectName>
+  <name>contabilidadcommonfunctions.qs</name>
+  <version>196</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>contabilidadcommonfunctions.qs</objectName>
-    <name>contabilidadcommonfunctions.qs</name>
-    <version>196</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_partidas.dbrecord.qs</objectName>
+  <name>co_partidas.dbrecord.qs</name>
+  <version>35</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>exportcontaplus.view.qs</objectName>
-    <name>exportcontaplus.view.qs</name>
-    <version>4</version>
-    <type>qs</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_partidas.dbrecord.ui</objectName>
+  <name>co_partidas.dbrecord.ui</name>
+  <version>42</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_balancesituacion</objectName>
-    <name>co_balancesituacion.reportDef</name>
-    <version>2</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_pyg.view.qs</objectName>
+  <name>co_pyg.view.qs</name>
+  <version>11</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_mod303.reportDef</objectName>
-    <name>co_mod303.reportDef.reportDef</name>
-    <version>2</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_pyg.view.ui</objectName>
+  <name>co_pyg.view.ui</name>
+  <version>6</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subcuentas</objectName>
-    <name>co_subcuentas.reportDef</name>
-    <version>3</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subcuentas</objectName>
+  <name>co_subcuentas.reportDef</name>
+  <version>3</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>librofacturasemitidasmod303</objectName>
-    <name>librofacturasemitidasmod303.reportDef</name>
-    <version>4</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subcuentas.dbform.qs</objectName>
+  <name>co_subcuentas.dbform.qs</name>
+  <version>7</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>librofacturasrecibidasmod303</objectName>
-    <name>librofacturasrecibidasmod303.reportDef</name>
-    <version>3</version>
-    <type>reportDef</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subcuentas.dbrecord.qs</objectName>
+  <name>co_subcuentas.dbrecord.qs</name>
+  <version>20</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_asientos.dbrecord.ui</objectName>
-    <name>co_asientos.dbrecord.ui</name>
-    <version>30</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subcuentas.dbrecord.ui</objectName>
+  <name>co_subcuentas.dbrecord.ui</name>
+  <version>35</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_balancesituacion.view.ui</objectName>
-    <name>co_balancesituacion.view.ui</name>
-    <version>14</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subcuentas.report.ui</objectName>
+  <name>co_subcuentas.report.ui</name>
+  <version>3</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_conceptospar.search.ui</objectName>
-    <name>co_conceptospar.search.ui</name>
-    <version>3</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subcuentas.search.ui</objectName>
+  <name>co_subcuentas.search.ui</name>
+  <version>6</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_cuentas.dbrecord.ui</objectName>
-    <name>co_cuentas.dbrecord.ui</name>
-    <version>14</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subgrupos.dbform.qs</objectName>
+  <name>co_subgrupos.dbform.qs</name>
+  <version>2</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_grupos.dbrecord.ui</objectName>
-    <name>co_grupos.dbrecord.ui</name>
-    <version>9</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subgrupos.dbrecord.qs</objectName>
+  <name>co_subgrupos.dbrecord.qs</name>
+  <version>2</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_mod111.view.ui</objectName>
-    <name>co_mod111.view.ui</name>
-    <version>5</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>co_subgrupos.dbrecord.ui</objectName>
+  <name>co_subgrupos.dbrecord.ui</name>
+  <version>17</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_mod303.view.ui</objectName>
-    <name>co_mod303.view.ui</name>
-    <version>5</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>exportcontaplus.view.qs</objectName>
+  <name>exportcontaplus.view.qs</name>
+  <version>4</version>
+  <type>qs</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_partidas.dbrecord.ui</objectName>
-    <name>co_partidas.dbrecord.ui</name>
-    <version>42</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>exportcontaplus.view.ui</objectName>
+  <name>exportcontaplus.view.ui</name>
+  <version>6</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_pyg.view.ui</objectName>
-    <name>co_pyg.view.ui</name>
-    <version>6</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>librofacturasemitidasmod303</objectName>
+  <name>librofacturasemitidasmod303.reportDef</name>
+  <version>4</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subcuentas.dbrecord.ui</objectName>
-    <name>co_subcuentas.dbrecord.ui</name>
-    <version>35</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>librofacturasemitidasmod303.report.ui</objectName>
+  <name>librofacturasemitidasmod303.report.ui</name>
+  <version>3</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subcuentas.report.ui</objectName>
-    <name>co_subcuentas.report.ui</name>
-    <version>3</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>librofacturasrecibidasmod303</objectName>
+  <name>librofacturasrecibidasmod303.reportDef</name>
+  <version>3</version>
+  <type>reportDef</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subcuentas.search.ui</objectName>
-    <name>co_subcuentas.search.ui</name>
-    <version>6</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>librofacturasrecibidasmod303.report.ui</objectName>
+  <name>librofacturasrecibidasmod303.report.ui</name>
+  <version>3</version>
+  <type>ui</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>co_subgrupos.dbrecord.ui</objectName>
-    <name>co_subgrupos.dbrecord.ui</name>
-    <version>17</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>pgc2007abreviado.ods</objectName>
+  <name>pgc2007abreviado.ods</name>
+  <version>4</version>
+  <type>binary</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>exportcontaplus.view.ui</objectName>
-    <name>exportcontaplus.view.ui</name>
-    <version>6</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>pgc2007entidadessinlucro-abreviado.ods</objectName>
+  <name>pgc2007entidadessinlucro-abreviado.ods</name>
+  <version>3</version>
+  <type>binary</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>librofacturasemitidasmod303.report.ui</objectName>
-    <name>librofacturasemitidasmod303.report.ui</name>
-    <version>3</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>pgc2007entidadessinlucro.ods</objectName>
+  <name>pgc2007entidadessinlucro.ods</name>
+  <version>3</version>
+  <type>binary</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 <file>
-    <objectName>librofacturasrecibidasmod303.report.ui</objectName>
-    <name>librofacturasrecibidasmod303.report.ui</name>
-    <version>3</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
+  <objectName>pgc2007.ods</objectName>
+  <name>pgc2007.ods</name>
+  <version>2</version>
+  <type>binary</type>
+  <debug>false</debug>
+  <debugOnInit>false</debugOnInit>
+  <device>*</device>
 </file>
 
 </export>

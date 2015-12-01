@@ -153,15 +153,15 @@ function deletedRelatedElement(element) {
     </field>
 
     <field>
-        <name>idalmacen</name>
+        <name>idubicacion</name>
         <!--Almacen-->        
-        <alias>Almacen</alias>
+        <alias>Ubicación en Almacen</alias>
         <null>true</null>
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-            <table>almacenes</table>
+            <table>almacenesubicaciones</table>
             <field>id</field>
             <card>M1</card>
         </relation>
