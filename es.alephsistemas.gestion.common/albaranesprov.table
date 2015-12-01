@@ -135,6 +135,8 @@ function repositoryKeywords() {
     <inherits name="documentosgestion">
         <element type="field">idempresa</element>
         <element type="field">idejercicio</element>
+        <element type="field">idserie</element>
+        <element type="field">idplanpago</element>
     </inherits>
    
     <field>

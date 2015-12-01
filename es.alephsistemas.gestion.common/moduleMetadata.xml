@@ -8,7 +8,7 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-11-30 14:49:17</generatedTime>
+<generatedTime>2015-12-01 13:01:08</generatedTime>
 
 
 <file>
@@ -74,7 +74,7 @@
 <file>
     <objectName>albaranescli</objectName>
     <name>albaranescli.table</name>
-    <version>10</version>
+    <version>12</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -84,7 +84,7 @@
 <file>
     <objectName>albaranesprov</objectName>
     <name>albaranesprov.table</name>
-    <version>29</version>
+    <version>31</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
