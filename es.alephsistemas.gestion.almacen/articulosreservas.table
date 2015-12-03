@@ -50,6 +50,20 @@
     </field>
 
     <field>
+        <name>idinstancia</name>
+        <alias>Id. Artículos</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>articulosinstancias</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
         <name>usuario</name>
         <alias>Id. Artículos</alias>
         <null>false</null>
@@ -105,13 +119,20 @@
     </field>
     
     <field>
+        <name>cantidad</name>
+        <alias>Cantidad</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>integer</type>
+    </field>
+    
+    <field>
         <name>motivo</name>
         <alias>Motivo</alias>
         <null>false</null>
         <pk>false</pk>
-        <type>date</type>
-        <length>50</length>
-        <default>now</default>
+        <type>string</type>
+        <length>255</length>
     </field>
 
 </table>

@@ -30,6 +30,12 @@
         	<card>1M</card>
                 <delC>true</delC>
        	</relation>
+        <relation>
+        	<table>articulosinstanciasestados</table>
+        	<field>idinstancia</field>
+        	<card>1M</card>
+                <delC>true</delC>
+       	</relation>
     </field>
 
     <field>

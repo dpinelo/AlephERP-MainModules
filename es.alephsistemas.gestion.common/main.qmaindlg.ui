@@ -24,7 +24,7 @@
      <x>0</x>
      <y>0</y>
      <width>1045</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuGesti_n">
@@ -162,6 +162,7 @@
       <string>&amp;Configuración</string>
      </property>
      <addaction name="table_almacenes"/>
+     <addaction name="table_articulosinstanciasestadosdefiniciones"/>
      <addaction name="table_familiasarticulos"/>
      <addaction name="table_marcas"/>
      <addaction name="table_mercados"/>
@@ -270,7 +271,7 @@
   </widget>
   <action name="table_terceros">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/clientes.png</normaloff>:/images/commons/clientes.png</iconset>
    </property>
    <property name="text">
@@ -367,7 +368,7 @@
   </action>
   <action name="table_entradascaja">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/entradascaja.png</normaloff>:/images/commons/entradascaja.png</iconset>
    </property>
    <property name="text">
@@ -376,7 +377,7 @@
   </action>
   <action name="table_entradasbanco">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/entradasbanco.png</normaloff>:/images/commons/entradasbanco.png</iconset>
    </property>
    <property name="text">
@@ -385,7 +386,7 @@
   </action>
   <action name="table_ejercicios">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/ejerciciosfiscales.png</normaloff>:/images/commons/ejerciciosfiscales.png</iconset>
    </property>
    <property name="text">
@@ -399,7 +400,7 @@
   </action>
   <action name="table_paises">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/paises.png</normaloff>:/images/commons/paises.png</iconset>
    </property>
    <property name="text">
@@ -411,7 +412,7 @@
   </action>
   <action name="table_bancos">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/bancos.png</normaloff>:/images/commons/bancos.png</iconset>
    </property>
    <property name="text">
@@ -423,7 +424,7 @@
   </action>
   <action name="table_seriesfacturacion">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/seriesfacturacion.png</normaloff>:/images/commons/seriesfacturacion.png</iconset>
    </property>
    <property name="text">
@@ -435,7 +436,7 @@
   </action>
   <action name="table_planespago">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/formaspago.png</normaloff>:/images/commons/formaspago.png</iconset>
    </property>
    <property name="text">
@@ -447,7 +448,7 @@
   </action>
   <action name="table_tarjetascredito">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/tarjetascredito.png</normaloff>:/images/commons/tarjetascredito.png</iconset>
    </property>
    <property name="text">
@@ -456,7 +457,7 @@
   </action>
   <action name="table_cuentasbanco">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/cuentasbanco.png</normaloff>:/images/commons/cuentasbanco.png</iconset>
    </property>
    <property name="text">
@@ -465,7 +466,7 @@
   </action>
   <action name="table_divisas">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/divisas.png</normaloff>:/images/commons/divisas.png</iconset>
    </property>
    <property name="text">
@@ -474,7 +475,7 @@
   </action>
   <action name="table_personas">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/personas.png</normaloff>:/images/commons/personas.png</iconset>
    </property>
    <property name="text">
@@ -488,7 +489,7 @@
   </action>
   <action name="table_empresas">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/empresas.png</normaloff>:/images/commons/empresas.png</iconset>
    </property>
    <property name="text">
@@ -506,7 +507,7 @@
   </action>
   <action name="table_centroscoste">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/centrosdecoste.png</normaloff>:/images/commons/centrosdecoste.png</iconset>
    </property>
    <property name="text">
@@ -521,7 +522,7 @@
   </action>
   <action name="table_impuestos">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/impuestos.png</normaloff>:/images/commons/impuestos.png</iconset>
    </property>
    <property name="text">
@@ -533,7 +534,7 @@
   </action>
   <action name="table_familiasarticulos">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/familiasarticulos.png</normaloff>:/images/commons/familiasarticulos.png</iconset>
    </property>
    <property name="text">
@@ -542,7 +543,7 @@
   </action>
   <action name="table_articulos">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/articulos.png</normaloff>:/images/commons/articulos.png</iconset>
    </property>
    <property name="text">
@@ -551,7 +552,7 @@
   </action>
   <action name="table_familiasservicios">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/familiasservicios.png</normaloff>:/images/commons/familiasservicios.png</iconset>
    </property>
    <property name="text">
@@ -560,7 +561,7 @@
   </action>
   <action name="table_servicios">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/servicios.png</normaloff>:/images/commons/servicios.png</iconset>
    </property>
    <property name="text">
@@ -572,7 +573,7 @@
   </action>
   <action name="table_facturasprov">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/facturasproveedores.png</normaloff>:/images/commons/facturasproveedores.png</iconset>
    </property>
    <property name="text">
@@ -587,7 +588,7 @@
   </action>
   <action name="table_gruposterceros">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/gruposterceros.png</normaloff>:/images/commons/gruposterceros.png</iconset>
    </property>
    <property name="text">
@@ -599,7 +600,7 @@
   </action>
   <action name="table_impuestos_irpf">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/impuestos.png</normaloff>:/images/commons/impuestos.png</iconset>
    </property>
    <property name="text">
@@ -611,7 +612,7 @@
   </action>
   <action name="table_distribucioncostes">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/distribucioncostes.png</normaloff>:/images/commons/distribucioncostes.png</iconset>
    </property>
    <property name="text">
@@ -623,7 +624,7 @@
   </action>
   <action name="table_efectospago">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/tesoreria.png</normaloff>:/images/commons/tesoreria.png</iconset>
    </property>
    <property name="text">
@@ -644,7 +645,7 @@
   </action>
   <action name="table_pedidoscli">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/pedidoscli.png</normaloff>:/images/commons/pedidoscli.png</iconset>
    </property>
    <property name="text">
@@ -656,7 +657,7 @@
   </action>
   <action name="table_formaspago">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/money.png</normaloff>:/images/commons/money.png</iconset>
    </property>
    <property name="text">
@@ -668,7 +669,7 @@
   </action>
   <action name="table_efectoscobro">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/efectoscobro.png</normaloff>:/images/commons/efectoscobro.png</iconset>
    </property>
    <property name="text">
@@ -737,7 +738,7 @@
   </action>
   <action name="table_unidadesmedida">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/unidadesmedida.png</normaloff>:/images/commons/unidadesmedida.png</iconset>
    </property>
    <property name="text">
@@ -820,7 +821,7 @@
   </action>
   <action name="table_facturascli">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/facturasclientes.png</normaloff>:/images/commons/facturasclientes.png</iconset>
    </property>
    <property name="text">
@@ -844,7 +845,7 @@
   </action>
   <action name="table_comisiones">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/comisiones.png</normaloff>:/images/commons/comisiones.png</iconset>
    </property>
    <property name="text">
@@ -856,7 +857,7 @@
   </action>
   <action name="table_subcentroscoste">
    <property name="icon">
-    <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
+    <iconset>
      <normaloff>:/images/commons/subcentroscoste.png</normaloff>:/images/commons/subcentroscoste.png</iconset>
    </property>
    <property name="text">
@@ -997,6 +998,11 @@
   <action name="table_albaranescli">
    <property name="text">
     <string>Albaranes de Clientes</string>
+   </property>
+  </action>
+  <action name="table_articulosinstanciasestadosdefiniciones">
+   <property name="text">
+    <string>Estados de artículos</string>
    </property>
   </action>
  </widget>
