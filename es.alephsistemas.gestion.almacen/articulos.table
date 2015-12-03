@@ -89,7 +89,7 @@
         <null>false</null>
         <pk>false</pk>
         <type>string</type>
-        <length>14</length>
+        <length>25</length>
         <!-- Comprobará que el valor de codtercero es único para el un valor específico de idempresa en 
         este caso. Es decir, podrá existir el registro 0000001 para idempresa=1 y 0000001 para idempresa=2 -->
         <uniqueOnFilterField>idempresa</uniqueOnFilterField>
