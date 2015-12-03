@@ -1,7 +1,7 @@
 <table>
-    <name>articuloscaracteristicasvalores</name>
+    <name>articulosinstanciasopciones</name>
     <!-- Valores de las caracteristicas de articulos-->
-    <alias>Características de artículos</alias>
+    <alias>COpciones de las máquinas fotocopiadoras</alias>
 
     <field>
         <name>id</name>

@@ -82,7 +82,7 @@
 <file>
   <objectName>albaranesprov</objectName>
   <name>albaranesprov.table</name>
-  <version>32</version>
+  <version>34</version>
   <type>table</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>
@@ -792,7 +792,7 @@
 <file>
   <objectName>alepherp/documentosgestion.js</objectName>
   <name>alepherp/documentosgestion.js</name>
-  <version>126</version>
+  <version>131</version>
   <type>qs</type>
   <debug>false</debug>
   <debugOnInit>false</debugOnInit>

@@ -5,7 +5,9 @@
     <alias>Líneas de Albaranes de artículos de proveedores</alias>
     <uiDbRecord>lineasarticulos.dbrecord.ui</uiDbRecord>
     <qsDbRecord>lineasarticulos.dbrecord.qs</qsDbRecord>
-      
+    <uiDbRecord  role="Almacén">almacen.lineasarticulosalbaranesprov.dbrecord.ui</uiDbRecord>
+    <qsDbRecord  role="Almacén">almacen.lineasarticulosalbaranesprov.dbrecord.qs</qsDbRecord>
+
     <metadataVar name="tablaPadre">albaranesprov</metadataVar>
     <canHaveRelatedElements>true</canHaveRelatedElements>
     

@@ -11,6 +11,10 @@
     <moduleToolBarEntryPath>Marcas</moduleToolBarEntryPath>
     <isCached>true</isCached> 
 
+    <toStringExpression>
+        <expression>{nombre}</expression>
+    </toStringExpression>
+   
     <!-- Aquí se definen variables que se traducirán en filtros SQL dentro de la claúsula WHERE
     y que por tanto, harán visibles unos registros y otros no. Estas variables se pueden establecer
     por usuario de la aplicación, y deben establecerse por el programador Javascript haciendo
@@ -47,15 +51,7 @@
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
-        <calculated saveOnDb="true" calculatedOneTime="true">true</calculated>
-        <script>
-<![CDATA[
-function value() {
-    // Esta función está en __init__.js
-    return idempresaActual();
-}
-]]>
-        </script>
+        <envDefaultValue>idempresa</envDefaultValue>
         <relation>
             <table>empresas</table>
             <field>id</field>
