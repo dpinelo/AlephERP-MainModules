@@ -52,14 +52,14 @@
         <type>string</type>
         <length>150</length>
     </field>
-    
-    <field>
-        <name>identificadorcodbarras</name>
-        <alias>Identificador del código de barras</alias>
-        <null>false</null>
+
+     <field>
+        <name>prefijocodbarras</name>
+        <alias>Prefijo código barras</alias>
+        <null>true</null>
         <pk>false</pk>
         <type>string</type>
-        <length>150</length>
-    </field>   
-    
+        <length>50</length>
+    </field>
+   
 </table>

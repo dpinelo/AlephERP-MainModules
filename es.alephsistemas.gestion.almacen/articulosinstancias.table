@@ -24,6 +24,24 @@
         	<card>1M</card>
                 <delC>true</delC>
        	</relation>        
+        <relation>
+        	<table>articulosinstanciasopciones</table>
+        	<field>idinstancia</field>
+        	<card>1M</card>
+                <delC>true</delC>
+       	</relation>
+        <relation>
+        	<table>articulosinstanciasestados</table>
+        	<field>idinstancia</field>
+        	<card>1M</card>
+                <delC>true</delC>
+       	</relation>
+        <relation>
+                <table>articulosinstanciashistoricoreferencias</table>
+                <field>idinstancia</field>
+                <card>1M</card>
+                <delC>true</delC>
+        </relation>
     </field>
 
     <field>

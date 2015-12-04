@@ -28,13 +28,7 @@
 		</relation>
 
 		<relation>
-			<table>dirclientes</table>
-			<field>codpais</field>
-			<card>1M</card>
-		</relation>
-
-		<relation>
-			<table>dirproveedores</table>
+			<table>dirterceros</table>
 			<field>codpais</field>
 			<card>1M</card>
 		</relation>
@@ -46,13 +40,7 @@
 		</relation>
 
 		<relation>
-			<table>empresa</table>
-			<field>codpais</field>
-			<card>1M</card>
-		</relation>
-		
-		<relation>
-			<table>co_operaciones349</table>
+			<table>empresas</table>
 			<field>codpais</field>
 			<card>1M</card>
 		</relation>
