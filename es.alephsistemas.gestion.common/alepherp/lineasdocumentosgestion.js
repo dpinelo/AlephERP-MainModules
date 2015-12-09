@@ -210,9 +210,11 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.idservicioValueModified = 
 
 alepherp.DBRecordDlgLineasDocumentosGestion.prototype.idarticuloValueModified = function() {
     if ( bean.idarticulo.value > 0 ) {
-        bean.generamovimientosstock.value = bean.articulos.father.controlstock.value;
-        if ( !bean.articulos.father.controlstock.value ) {
-            thisForm.db_generamovimientosstock.enabled = false;
+        if ( bean.hasOwnProperty("generamovimientosstock") ) {
+            bean.generamovimientosstock.value = bean.articulos.father.controlstock.value;
+            if ( !bean.articulos.father.controlstock.value ) {
+                thisForm.db_generamovimientosstock.enabled = false;
+            }
         }
         var idImpuesto = bean.fatherFieldValue("articulos", this.idimpuestoString);
         if ( idImpuesto == null || idImpuesto == undefined ) {
@@ -265,7 +267,7 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.idinstanciaValueModified =
 }
 
 alepherp.DBRecordDlgLineasDocumentosGestion.prototype.introRapidaArticulos = function() {
-    if ( thisForm.db_referencia.text == "" || bean.generamovimientosstock.value == false ) {
+    if ( thisForm.db_referencia.text == "" ) {
         return;
     }
     var objArticulo = alepherp.almacen.articuloOInstanciaPorReferencia(thisForm.db_referencia.value);
@@ -276,24 +278,30 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.introRapidaArticulos = fun
             if ( objArticulo.instancia.idubicacion.value > 0 ) {
                 bean.idubicacion.value = objArticulo.instancia.idubicacion.value;
             }
-            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.instancia, bean.idubicacion.value);
+            if ( bean.hasOwnProperty("generamovimientosstock") && bean.generamovimientosstock.value ) {
+                mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.instancia, bean.idubicacion.value);
+            }
         }
         if ( !objArticulo.isInstancia ) {
-            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.articulo, bean.idubicacion.value);
+            if ( bean.hasOwnProperty("generamovimientosstock") && bean.generamovimientosstock.value ) {
+                mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.articulo, bean.idubicacion.value);
+            }
         }
-        if ( mensaje != "" ) {
+        if ( mensaje != undefined ) {
             AERPMessageBox.information(mensaje + " No puede ser agregado.");
             return;
         }
+        bean.cantidad.value = 1;
         if ( objArticulo.isInstancia ) {
             bean.articulosinstancias.father = objArticulo.instancia;
             bean.articulos.father = objArticulo.instancia.articulos.father;
+            this.idinstanciaValueModified();
         } else {
             bean.articulos.father = objArticulo.articulo;
+            this.idarticuloValueModified();
         }
-        bean.cantidad.value = 1;
         bean.importeunitario.value = objArticulo.articulo.pvp.value;
-        thisForm.db_referencia.text = "";
+        bean.descripcion.value = objArticulo.descripcion.value;
     }
 }
 

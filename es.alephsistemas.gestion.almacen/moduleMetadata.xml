@@ -8,7 +8,7 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-12-04 10:28:08</generatedTime>
+<generatedTime>2015-12-09 11:52:45</generatedTime>
 
 
 <file>
@@ -44,7 +44,7 @@
 <file>
     <objectName>almacenesubicaciones</objectName>
     <name>almacenesubicaciones.table</name>
-    <version>3</version>
+    <version>4</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -144,7 +144,7 @@
 <file>
     <objectName>lineasarticulosalbaranesprov</objectName>
     <name>lineasarticulosalbaranesprov.table</name>
-    <version>9</version>
+    <version>12</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -164,17 +164,7 @@
 <file>
     <objectName>marcas</objectName>
     <name>marcas.table</name>
-    <version>6</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>marcasmodelos</objectName>
-    <name>marcasmodelos.table</name>
-    <version>5</version>
+    <version>7</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -234,7 +224,7 @@
 <file>
     <objectName>alepherp/almacen/__init__.js</objectName>
     <name>alepherp/almacen/__init__.js</name>
-    <version>17</version>
+    <version>18</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -562,16 +552,6 @@
 </file>
 
 <file>
-    <objectName>marcasmodelos.dbrecord.ui</objectName>
-    <name>marcasmodelos.dbrecord.ui</name>
-    <version>8</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
     <objectName>mercados.dbrecord.ui</objectName>
     <name>mercados.dbrecord.ui</name>
     <version>3</version>
@@ -594,7 +574,7 @@
 <file>
     <objectName>stocksmovimientos.dbrecord.ui</objectName>
     <name>stocksmovimientos.dbrecord.ui</name>
-    <version>45</version>
+    <version>46</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

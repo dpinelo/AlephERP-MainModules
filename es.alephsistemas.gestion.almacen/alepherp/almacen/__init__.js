@@ -50,8 +50,7 @@ alepherp.almacen.esPosibleSalidaArticulo = function(articulo, idubicacion)
             var stock = AERPScriptCommon.bean("stocks", "idarticulo=" + articulo.id.value + " and idubicacion=" + idubicacion );
             if ( stock == undefined || stock == null ) {
                 mensaje = "Este artículo no está inventariado.";
-            }
-            if ( stock.cantidad.value <= 0 ) {
+            } else if ( stock.cantidad.value <= 0 ) {
                 mensaje = "Según el actual inventario, no hay existencias de este artículo.";
             }
         }

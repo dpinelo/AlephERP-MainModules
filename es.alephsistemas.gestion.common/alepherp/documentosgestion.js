@@ -24,18 +24,27 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.init = function(ui) {
     this.tbDatos.checked = true;
 
     this.tbDatos.clicked.connect(this, "showPage");
-    this.tbLineas.clicked.connect(this, "showPage");
-    this.tbObservaciones.clicked.connect(this, "showPage");
-    
+    if ( this.tbLineas != null ) {
+        this.tbLineas.clicked.connect(this, "showPage");
+    }
+    if ( this.tbObservaciones != null ) {
+        this.tbObservaciones.clicked.connect(this, "showPage");
+    }
+
+    this.tbEfectos = this.ui.findChild("tbEfectos");  
+    if ( this.tbEfectos != null ) { 
+        this.tbEfectos.clicked.connect(this, "showPage");
+    }
+
     if ( bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli" ||
          bean.metadata.tableName == "albaranesprov" || bean.metadata.tableName == "albaranescli" ) {
-        this.tbEfectos = this.ui.findChild("tbEfectos");    
-        this.tbEfectos.clicked.connect(this, "showPage");
-        this.pbMarcarPagada = this.ui.findChild("pbMarcarPagada");        
-        if ( thisForm.openType != AlephERP.ReadOnly ) {
-            this.pbMarcarPagada.clicked.connect(this, "marcarPagada");                     
-        } else {
-            this.pbMarcarPagada.visible = false;
+        this.pbMarcarPagada = this.ui.findChild("pbMarcarPagada");
+        if ( this.pbMarcarPagada != null ) {
+            if ( thisForm.openType != AlephERP.ReadOnly ) {
+                this.pbMarcarPagada.clicked.connect(this, "marcarPagada");
+            } else {
+                this.pbMarcarPagada.visible = false;
+            }
         }
         if ( bean.fieldValue("ptepago") == false ) {
             this.pbMarcarPagada.visible = false;
@@ -46,7 +55,7 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.init = function(ui) {
         this.tbAlbaranes.clicked.connect(this, "showPage");
     }
     if ( bean.metadata.tableName == "albaranesprov" || bean.metadata.tableName == "albaranescli" ) {
-        this.tbStocks = this.ui.findChild("tbStocks");    
+        this.tbStocks = this.ui.findChild("tbStocks");
         this.tbStocks.clicked.connect(this, "showPage");
     }
     if ( bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli" ) {
@@ -107,7 +116,9 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.init = function(ui) {
     }
     
     if ( bean.metadata.tableName == "albaranesprov" || bean.metadata.tableName == "albaranescli" ) {
-        thisForm.db_idalbaranrect.dataEditable = bean.deabono.value;
+        if ( thisForm.hasOwnProperty("db_idalbaranrect") ) {
+            thisForm.db_idalbaranrect.dataEditable = bean.deabono.value;
+        }
     }
     if ( bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli" ) {
         thisForm.db_idfacturarect.dataEditable = bean.deabono.value;
@@ -128,9 +139,9 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.init = function(ui) {
 alepherp.DBRecordDlgDocumentosGestion.prototype.showPage = function() {
     if ( this.tbDatos.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageDatos"));
-    } else if ( this.tbLineas.checked ) {
+    } else if ( this.tbLineas != null && this.tbLineas.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageLineas"));
-    } else if ( this.tbObservaciones.checked ) {
+    } else if ( this.tbObservaciones != null && this.tbObservaciones.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageObservaciones"));
     } else if ( (bean.metadata.tableName == "pedidosprov" || bean.metadata.tableName == "pedidoscli") && this.tbAlbaranes.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageAlbaranes"));
@@ -141,7 +152,7 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.showPage = function() {
     } else if ( (bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli") && this.tbCostes.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageCostes"));
     } else if ( (bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli" ||
-                 bean.metadata.tableName == "albaranescli" || bean.metadata.tableName == "albaranesprov" ) && this.tbEfectos.checked ) {
+                 bean.metadata.tableName == "albaranescli" || bean.metadata.tableName == "albaranesprov" ) && this.tbEfectos != null && this.tbEfectos.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageEfectos"));
         if ( bean.metadata.tableName == "facturasprov" ) {
             this.efectospagoautomaticosValueModified();

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Pedidos de clientes</string>
+   <string>Pedidos a proveedores</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -921,9 +921,9 @@
          </property>
          <layout class="QGridLayout">
           <item row="0" column="0">
-           <widget class="DBDetailView" name="db_lineasarticulospedidoscli">
+           <widget class="DBDetailView" name="db_lineasarticulospedidosprov">
             <property name="relationName">
-             <string>lineasarticulospedidoscli</string>
+             <string>lineasarticulospedidosprov</string>
             </property>
             <property name="dataEditable">
              <bool>true</bool>
@@ -940,9 +940,9 @@
          </property>
          <layout class="QGridLayout" name="_2">
           <item row="0" column="0">
-           <widget class="DBDetailView" name="db_lineasserviciospedidoscli">
+           <widget class="DBDetailView" name="db_lineasserviciospedidosprov">
             <property name="relationName">
-             <string>lineasserviciospedidoscli</string>
+             <string>lineasserviciospedidosprov</string>
             </property>
             <property name="dataEditable">
              <bool>true</bool>
@@ -1182,7 +1182,7 @@
   <tabstop>db_totalrecargo</tabstop>
   <tabstop>db_totalirpf</tabstop>
   <tabstop>db_total</tabstop>
-  <tabstop>lineasivapedidoscli</tabstop>
+  <tabstop>lineasivapedidosprov</tabstop>
   <tabstop>pbPagoRapido</tabstop>
   <tabstop>db_observaciones</tabstop>
  </tabstops>

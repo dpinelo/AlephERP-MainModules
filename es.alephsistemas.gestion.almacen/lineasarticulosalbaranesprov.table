@@ -5,7 +5,9 @@
     <alias>Líneas de Albaranes de artículos de proveedores</alias>
     <uiDbRecord>lineasarticulos.dbrecord.ui</uiDbRecord>
     <qsDbRecord>lineasarticulos.dbrecord.qs</qsDbRecord>
-      
+    <uiDbRecord  role="Almacén">almacen.lineasarticulosalbaranesprov.dbrecord.ui</uiDbRecord>
+    <qsDbRecord  role="Almacén">almacen.lineasarticulosalbaranesprov.dbrecord.qs</qsDbRecord>
+
     <metadataVar name="tablaPadre">albaranesprov</metadataVar>
     <canHaveRelatedElements>true</canHaveRelatedElements>
     
@@ -45,6 +47,23 @@
         <visiblegrid>false</visiblegrid>
         <relation>
             <table>lineasarticulosfacturasprov</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
+        <name>idmercado</name>
+        <alias>Mercado</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <builtInExpressionDefaultValue>
+            <expression>{albaranesprov.father.idmercado}</expression>
+        </builtInExpressionDefaultValue>        
+        <relation>
+            <table>mercados</table>
             <field>id</field>
             <card>M1</card>
         </relation>

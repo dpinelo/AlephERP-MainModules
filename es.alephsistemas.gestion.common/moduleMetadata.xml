@@ -8,7 +8,7 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-12-04 09:56:23</generatedTime>
+<generatedTime>2015-12-09 12:46:41</generatedTime>
 
 
 <file>
@@ -24,7 +24,7 @@
 <file>
     <objectName>lineasarticulos</objectName>
     <name>lineasarticulos.tableTemp</name>
-    <version>20</version>
+    <version>21</version>
     <type>tableTemp</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -75,16 +75,6 @@
     <objectName>albaranescli</objectName>
     <name>albaranescli.table</name>
     <version>13</version>
-    <type>table</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>albaranesprov</objectName>
-    <name>albaranesprov.table</name>
-    <version>34</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -374,7 +364,7 @@
 <file>
     <objectName>lineasarticulospedidosprov</objectName>
     <name>lineasarticulospedidosprov.table</name>
-    <version>1</version>
+    <version>3</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -774,7 +764,7 @@
 <file>
     <objectName>alepherp/documentosgestion.js</objectName>
     <name>alepherp/documentosgestion.js</name>
-    <version>131</version>
+    <version>132</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -794,7 +784,7 @@
 <file>
     <objectName>alepherp/lineasdocumentosgestion.js</objectName>
     <name>alepherp/lineasdocumentosgestion.js</name>
-    <version>34</version>
+    <version>40</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -994,7 +984,7 @@
 <file>
     <objectName>lineasarticulos.dbrecord.qs</objectName>
     <name>lineasarticulos.dbrecord.qs</name>
-    <version>13</version>
+    <version>14</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1064,7 +1054,7 @@
 <file>
     <objectName>pedidosprov.dbrecord.qs</objectName>
     <name>pedidosprov.dbrecord.qs</name>
-    <version>2</version>
+    <version>3</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1802,16 +1792,6 @@
 </file>
 
 <file>
-    <objectName>main.qmaindlg.ui</objectName>
-    <name>main.qmaindlg.ui</name>
-    <version>46</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
     <objectName>paises.dbrecord.ui</objectName>
     <name>paises.dbrecord.ui</name>
     <version>1</version>
@@ -1834,7 +1814,7 @@
 <file>
     <objectName>pedidosprov.dbrecord.ui</objectName>
     <name>pedidosprov.dbrecord.ui</name>
-    <version>8</version>
+    <version>9</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
