@@ -10,12 +10,7 @@ Function.prototype.bind = function() {
 function DBRecordDlg (ui) {
     this.ui = ui;
     
-    if ( bean.dbState == BaseBean.INSERT ) {
-        if ( thisForm.parentType() == "DBDetailView" ) {
-            this.ui.db_idarticulo.dataEditable = false;
-            this.ui.db_idarticulo.enabled = false;
-        }        
-    } else {
+    if ( bean.dbState == BaseBean.UPDATE ) {
         thisForm.db_stocksmovimientosentrada.relationFilter = ";stocksmovimientos.idubicaciondestino=" + bean.idubicacion.value;
         thisForm.db_stocksmovimientossalida.relationFilter = ";stocksmovimientos.idubicacionorigen=" + bean.idubicacion.value;
     }   

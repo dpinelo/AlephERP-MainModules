@@ -13,7 +13,7 @@
     <canHaveRelatedElements>true</canHaveRelatedElements>
     
    <toStringExpression>
-        <expression>Movimiento de almacén de tipo: {tipo}, con fecha {fecha}, almacén origen {ubicacionorigen.father.nombre} y almacén destino {ubicaciondestino.father.nombre}</expression>
+        <expression>Movimiento de almacén de tipo: {tipo}, con fecha {fecha}, con almacén destino {ubicaciondestino.father.nombre}</expression>
     </toStringExpression>
     
     <field>
@@ -34,28 +34,6 @@
     </field>
    
     <field>
-        <name>idubicacionorigen</name>
-        <alias>Id. Ubicación Origen</alias>
-        <null>true</null>
-        <pk>false</pk>
-        <type>int</type>
-        <visiblegrid>false</visiblegrid>
-
-        <relation>
-            <name>ubicacionorigen</name>
-            <table>almacenesubicaciones</table>
-            <field>id</field>
-            <card>M1</card>
-        </relation>
-    </field>
-
-   <field>
-        <name>ubicacionorigen</name>
-        <alias>Almacén Origen</alias>
-        <expression>ubicacionorigen.father.nombre</expression>
-    </field>
-    
-    <field>
         <name>idubicaciondestino</name>
         <alias>Id. Ubicación Destino</alias>
         <null>true</null>
@@ -74,7 +52,31 @@
    <field>
         <name>ubicaciondestino</name>
         <alias>Almacén Destino</alias>
-        <expression>ubicaciondestino.father.nombre</expression>
+        <builtInStringExpression>
+            <expression>{ubicaciondestino.father.almacenescalles.father.almacenessecciones.father.almaceneszonas.father.almacenes.father.nombre} - {ubicaciondestino.father.almacenescalles.father.almacenessecciones.father.almaceneszonas.father.nombre} - {ubicaciondestino.father.almacenescalles.father.almacenessecciones.father.nombre}- {ubicaciondestino.father.almacenescalles.father.nombre} - {ubicaciondestino.father.nombre}</expression>
+        </builtInStringExpression>
+    </field>
+
+    <field>
+        <name>idmercadodestino</name>
+        <alias>Id. Mercado Destino</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <name>mercadodestino</name>
+            <table>mercados</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+   <field>
+        <name>mercadodestino</name>
+        <alias>Mercado Destino</alias>
+        <expression>mercadodestino.father.nombre</expression>
     </field>
     
     <field>
@@ -102,7 +104,7 @@
     <field>
         <name>descripcion</name>
         <alias>Descripcion</alias>
-        <null>false</null>
+        <null>true</null>
         <pk>false</pk>
         <type>string</type>
         <length>250</length>

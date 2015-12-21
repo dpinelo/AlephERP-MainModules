@@ -14,7 +14,7 @@
    <string>Edición de tercero - AlephERP</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../var/home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc">
     <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_6">
@@ -80,6 +80,9 @@
           <height>81</height>
          </size>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
         <property name="toolTip">
          <string>Presenta la ficha con la información general de esta entidad</string>
         </property>
@@ -93,7 +96,7 @@
          <string>Datos Generales</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
           <normaloff>:/images/commons/clientes.png</normaloff>:/images/commons/clientes.png</iconset>
         </property>
         <property name="iconSize">
@@ -136,6 +139,9 @@
           <height>81</height>
          </size>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
         <property name="toolTip">
          <string>Permite editar las diferentes direcciones de sucursales de la entidad.</string>
         </property>
@@ -149,7 +155,7 @@
          <string>Direcciones</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
           <normaloff>:/images/commons/direcciones.png</normaloff>:/images/commons/direcciones.png</iconset>
         </property>
         <property name="iconSize">
@@ -192,6 +198,9 @@
           <height>81</height>
          </size>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
         <property name="toolTip">
          <string>Acceso a información de formas de pago, series de facturación, comercial...</string>
         </property>
@@ -205,7 +214,7 @@
          <string>Comercial</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
           <normaloff>:/images/commons/estadisticas.png</normaloff>:/images/commons/estadisticas.png</iconset>
         </property>
         <property name="iconSize">
@@ -248,6 +257,9 @@
           <height>81</height>
          </size>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
         <property name="toolTip">
          <string>Permite editar las cuentas bancarias asociadas a esta entidad.</string>
         </property>
@@ -261,7 +273,7 @@
          <string>Cuentas Bancarias</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
           <normaloff>:/images/commons/presupuesto_guardado.png</normaloff>:/images/commons/presupuesto_guardado.png</iconset>
         </property>
         <property name="iconSize">
@@ -304,6 +316,9 @@
           <height>81</height>
          </size>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
         <property name="toolTip">
          <string>Acceso a los diferentes documentos generados para este cliente: Presupuestos, Albaranes, Facturas...</string>
         </property>
@@ -317,7 +332,7 @@
          <string>Documentos</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
           <normaloff>:/images/commons/documentos.png</normaloff>:/images/commons/documentos.png</iconset>
         </property>
         <property name="iconSize">
@@ -360,6 +375,9 @@
           <height>81</height>
          </size>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
         <property name="toolTip">
          <string>Acceda a los datos contables.</string>
         </property>
@@ -373,7 +391,7 @@
          <string>Contabilidad</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
           <normaloff>:/images/commons/contabilidad.png</normaloff>:/images/commons/contabilidad.png</iconset>
         </property>
         <property name="iconSize">
@@ -416,6 +434,9 @@
           <height>81</height>
          </size>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
         <property name="toolTip">
          <string>Acceda a los datos contables.</string>
         </property>
@@ -429,7 +450,7 @@
          <string>Relaciones</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc">
           <normaloff>:/images/commons/relaciones.png</normaloff>:/images/commons/relaciones.png</iconset>
         </property>
         <property name="iconSize">
@@ -472,6 +493,9 @@
           <height>81</height>
          </size>
         </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
         <property name="toolTip">
          <string>Acceda a los datos contables.</string>
         </property>
@@ -485,7 +509,7 @@
          <string>Información adicional</string>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="../var/home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc">
           <normaloff>:/generales/images/relatedelements.png</normaloff>:/generales/images/relatedelements.png</iconset>
         </property>
         <property name="iconSize">
@@ -578,13 +602,13 @@
         <property name="readOnly">
          <bool>false</bool>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>codtercero</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="replacePointWithCharacter">
+        <property name="replacePointWithCharacter" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -628,10 +652,10 @@
         <property name="whatsThis">
          <string>Se introduce aquí la razón social o nombre del tercero.</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>nombre</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -642,7 +666,7 @@
    <item row="1" column="1">
     <widget class="QStackedWidget" name="swTerceros">
      <property name="currentIndex">
-      <number>5</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="pageDatos">
       <layout class="QGridLayout" name="gridLayout_7">
@@ -666,10 +690,10 @@
             <property name="text">
              <string>Baja</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>debaja</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -689,10 +713,10 @@
           </item>
           <item>
            <widget class="DBDateTimeEdit" name="dbDateTimeEdit">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>fechabaja</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -712,7 +736,7 @@
              <string>Insertar</string>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="../var/home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc">
               <normaloff>:/generales/images/edit_add.png</normaloff>:/generales/images/edit_add.png</iconset>
             </property>
            </widget>
@@ -723,7 +747,7 @@
              <string>Editar</string>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="../var/home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc">
               <normaloff>:/generales/images/edit_edit.png</normaloff>:/generales/images/edit_edit.png</iconset>
             </property>
            </widget>
@@ -736,7 +760,7 @@
               <height>70</height>
              </size>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>resumen_direccion_principal</string>
             </property>
            </widget>
@@ -756,7 +780,7 @@
              <string>Insertar</string>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="../var/home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc">
               <normaloff>:/generales/images/edit_add.png</normaloff>:/generales/images/edit_add.png</iconset>
             </property>
            </widget>
@@ -767,7 +791,7 @@
              <string>Editar</string>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="../var/home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc">
               <normaloff>:/generales/images/edit_edit.png</normaloff>:/generales/images/edit_edit.png</iconset>
             </property>
            </widget>
@@ -780,7 +804,7 @@
               <height>70</height>
              </size>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>resumen_contacto_principal</string>
             </property>
            </widget>
@@ -796,10 +820,10 @@
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="DBRichTextEdit" name="db_observaciones">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>observaciones</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -834,10 +858,10 @@
             <property name="whatsThis">
              <string>Se introduce aquí la razón social o nombre del tercero.</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>nombrecomercial</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -878,10 +902,10 @@
             <property name="inputMask">
              <string>xxxxxxxxxx</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>cifnif</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -913,19 +937,19 @@
             <property name="whatsThis">
              <string>Clasifica a este cliente en un grupo determinado. Tendra influencia en el codigo del mismo.</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>idgrupo</string>
             </property>
-            <property name="listTableModel">
+            <property name="listTableModel" stdset="0">
              <string>gruposterceros</string>
             </property>
-            <property name="listColumnName">
+            <property name="listColumnName" stdset="0">
              <string>nombre</string>
             </property>
-            <property name="listColumnToSave">
+            <property name="listColumnToSave" stdset="0">
              <string>id</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -944,10 +968,10 @@
             <property name="text">
              <string>Cliente</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>cliente</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -957,10 +981,10 @@
             <property name="text">
              <string>Proveedor</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>proveedor</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -970,7 +994,7 @@
             <property name="text">
              <string>Otro</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -980,10 +1004,10 @@
             <property name="text">
              <string>Prospecto</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>otro</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1018,18 +1042,18 @@
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <widget class="DBDetailView" name="db_dirterceros">
-             <property name="relationName">
+            <widget class="DBDetailView" name="db_dirterceros" native="true">
+             <property name="relationName" stdset="0">
               <string>dirterceros</string>
              </property>
-             <property name="dataEditable">
+             <property name="dataEditable" stdset="0">
               <bool>true</bool>
              </property>
-             <property name="order">
+             <property name="order" stdset="0">
               <string>descripcion</string>
              </property>
             </widget>
-            <widget class="DBMapPosition" name="dbMapPosition"/>
+            <widget class="DBMapPosition" name="dbMapPosition" native="true"/>
            </widget>
           </item>
          </layout>
@@ -1074,19 +1098,19 @@
             <property name="whatsThis">
              <string>Indica la forma de facturación que por defecto se aplicara a facturas realizadas a este cliente.</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>idserie</string>
             </property>
-            <property name="listTableModel">
+            <property name="listTableModel" stdset="0">
              <string>seriesfacturacion</string>
             </property>
-            <property name="listColumnName">
+            <property name="listColumnName" stdset="0">
              <string>descripcion</string>
             </property>
-            <property name="listColumnToSave">
+            <property name="listColumnToSave" stdset="0">
              <string>id</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1108,19 +1132,19 @@
             <property name="whatsThis">
              <string>Escoja el plan de pagos de este cliente</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>idplanpago</string>
             </property>
-            <property name="listTableModel">
+            <property name="listTableModel" stdset="0">
              <string>planespago</string>
             </property>
-            <property name="listColumnName">
+            <property name="listColumnName" stdset="0">
              <string>descripcion</string>
             </property>
-            <property name="listColumnToSave">
+            <property name="listColumnToSave" stdset="0">
              <string>id</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1157,10 +1181,10 @@
           </item>
           <item row="2" column="2">
            <widget class="DBComboBox" name="db_regimeniva">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>regimeniva</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1179,35 +1203,35 @@
             <property name="text">
              <string>Agente comercial</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>codagente</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item row="0" column="2" colspan="2">
            <widget class="DBLineEdit" name="db_telefono1_3">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>agentescomerciales.persona.nombrecompleto</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="DBChooseRecordButton" name="db_codcuentarem">
             <property name="text">
              <string>Remesar En</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>codcuentarem</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
-          <item row="1" column="1" colspan="2">
+          <item row="2" column="1" colspan="2">
            <widget class="DBLineEdit" name="db_codcuentarem_text">
             <property name="maximumSize">
              <size>
@@ -1215,44 +1239,41 @@
               <height>16777215</height>
              </size>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>codcuentarem</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>false</bool>
-            </property>
-            <property name="autoComplete">
-             <set>AlephERP::NoCompletition</set>
             </property>
            </widget>
           </item>
-          <item row="1" column="3">
+          <item row="2" column="3">
            <widget class="DBLineEdit" name="db_codcuentarem_cuenta">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>cuenta</string>
             </property>
-            <property name="relationFilter">
+            <property name="relationFilter" stdset="0">
              <string>cuentasbanco</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>false</bool>
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
+          <item row="3" column="0">
            <widget class="DBChooseRecordButton" name="db_codcuentadom">
             <property name="text">
              <string>Domiciliar En</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>codcuentadom</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
-          <item row="2" column="1" colspan="2">
+          <item row="3" column="1" colspan="2">
            <widget class="DBLineEdit" name="db_codcuentadom_text">
             <property name="maximumSize">
              <size>
@@ -1260,27 +1281,44 @@
               <height>16777215</height>
              </size>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>codcuentadom</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>false</bool>
-            </property>
-            <property name="autoComplete">
-             <set>AlephERP::NoCompletition</set>
             </property>
            </widget>
           </item>
-          <item row="2" column="3">
+          <item row="3" column="3">
            <widget class="DBLineEdit" name="db_codcuentadom_cuenta">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>cuenta</string>
             </property>
-            <property name="relationFilter">
+            <property name="relationFilter" stdset="0">
              <string>cuentasbanco</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="DBChooseRecordButton" name="db_idtarifa">
+            <property name="text">
+             <string>Tarifa por defecto</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>idtarifa</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2" colspan="2">
+           <widget class="DBLineEdit" name="db_tarifasnombre">
+            <property name="fieldName" stdset="0">
+             <string>tarifas.father.nombre</string>
             </property>
            </widget>
           </item>
@@ -1294,11 +1332,11 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
-           <widget class="DBDetailView" name="db_contactos">
-            <property name="relationName">
+           <widget class="DBDetailView" name="db_contactos" native="true">
+            <property name="relationName" stdset="0">
              <string>contactos</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1396,11 +1434,11 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_9">
           <item>
-           <widget class="DBDetailView" name="db_cuentasbcoterceros">
-            <property name="relationName">
+           <widget class="DBDetailView" name="db_cuentasbcoterceros" native="true">
+            <property name="relationName" stdset="0">
              <string>cuentasbcoterceros</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1465,36 +1503,33 @@
                <property name="text">
                 <string>Subcuenta como cliente</string>
                </property>
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>idsubcuentacliente</string>
                </property>
-               <property name="dataEditable">
+               <property name="dataEditable" stdset="0">
                 <bool>true</bool>
                </property>
               </widget>
              </item>
              <item row="0" column="1">
               <widget class="DBLineEdit" name="dbLineEdit">
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>idsubcuentacliente</string>
                </property>
-               <property name="dataEditable">
+               <property name="dataEditable" stdset="0">
                 <bool>true</bool>
                </property>
-               <property name="autoComplete">
-                <set>AlephERP::ValuesFromRelation</set>
-               </property>
-               <property name="autoCompleteColumn">
+               <property name="autoCompleteColumn" stdset="0">
                 <string>codsubcuenta</string>
                </property>
-               <property name="autoCompleteVisibleFields">
+               <property name="autoCompleteVisibleFields" stdset="0">
                 <string>codsubcuenta,descripcion</string>
                </property>
               </widget>
              </item>
              <item row="0" column="2">
               <widget class="DBLineEdit" name="dbLineEdit_2">
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>co_subcuentascliente.father.descripcion</string>
                </property>
               </widget>
@@ -1508,10 +1543,10 @@
              </item>
              <item row="2" column="0" colspan="3">
               <widget class="DBTableView" name="frmTerceros-co_subcuentascliente.co_partidas">
-               <property name="internalData">
+               <property name="internalData" stdset="0">
                 <bool>true</bool>
                </property>
-               <property name="relationName">
+               <property name="relationName" stdset="0">
                 <string>co_subcuentascliente.co_partidas</string>
                </property>
               </widget>
@@ -1530,36 +1565,33 @@
                <property name="text">
                 <string>Subcuenta como acreedor</string>
                </property>
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>idsubcuentaproveedor</string>
                </property>
-               <property name="dataEditable">
+               <property name="dataEditable" stdset="0">
                 <bool>true</bool>
                </property>
               </widget>
              </item>
              <item row="0" column="1">
               <widget class="DBLineEdit" name="dbLineEdit_3">
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>idsubcuentaproveedor</string>
                </property>
-               <property name="dataEditable">
+               <property name="dataEditable" stdset="0">
                 <bool>true</bool>
                </property>
-               <property name="autoComplete">
-                <set>AlephERP::ValuesFromRelation</set>
-               </property>
-               <property name="autoCompleteColumn">
+               <property name="autoCompleteColumn" stdset="0">
                 <string>codsubcuenta</string>
                </property>
-               <property name="autoCompleteVisibleFields">
+               <property name="autoCompleteVisibleFields" stdset="0">
                 <string>codsubcuenta,descripcion</string>
                </property>
               </widget>
              </item>
              <item row="0" column="2">
               <widget class="DBLineEdit" name="dbLineEdit_4">
-               <property name="fieldName">
+               <property name="fieldName" stdset="0">
                 <string>co_subcuentasproveedor.father.descripcion</string>
                </property>
               </widget>
@@ -1573,10 +1605,10 @@
              </item>
              <item row="2" column="0" colspan="3">
               <widget class="DBTableView" name="frmTerceros-co_subcuentasproveedor.co_partidas">
-               <property name="internalData">
+               <property name="internalData" stdset="0">
                 <bool>true</bool>
                </property>
-               <property name="relationName">
+               <property name="relationName" stdset="0">
                 <string>co_subcuentasproveedor.co_partidas</string>
                </property>
               </widget>
@@ -1610,20 +1642,14 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_10">
           <item>
-           <widget class="DBRelatedElementsView" name="dbRelatedElementsView">
-            <property name="allowedMetadatas">
+           <widget class="DBRelatedElementsView" name="dbRelatedElementsView" native="true">
+            <property name="allowedMetadatas" stdset="0">
              <string>personas;terceros</string>
             </property>
-            <property name="categories">
+            <property name="categories" stdset="0">
              <string>Relaciones</string>
             </property>
-            <property name="visibleButtons">
-             <set>DBRelatedElementsView::InsertExisting|DBRelatedElementsView::RemoveExisting|DBRelatedElementsView::View</set>
-            </property>
-            <property name="cardinality">
-             <set>AlephERP::PointToAll</set>
-            </property>
-            <property name="linkColumns">
+            <property name="linkColumns" stdset="0">
              <string>categorias;tabla;registros</string>
             </property>
            </widget>
@@ -1655,13 +1681,13 @@
          <layout class="QVBoxLayout" name="verticalLayout_11">
           <item>
            <widget class="DBTabWidget" name="dbTabWidget">
-            <property name="tableName">
+            <property name="tableName" stdset="0">
              <string>terceroscategoriasinfoadicional</string>
             </property>
-            <property name="fieldView">
+            <property name="fieldView" stdset="0">
              <string>nombre</string>
             </property>
-            <property name="useAsChildFilter">
+            <property name="useAsChildFilter" stdset="0">
              <bool>true</bool>
             </property>
             <widget class="QWidget" name="tab">
@@ -1670,20 +1696,20 @@
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_13">
               <item>
-               <widget class="DBDetailView" name="db_tercerosinfoadicional">
-                <property name="relationName">
+               <widget class="DBDetailView" name="db_tercerosinfoadicional" native="true">
+                <property name="relationName" stdset="0">
                  <string>tercerosinfoadicional</string>
                 </property>
-                <property name="dataEditable">
+                <property name="dataEditable" stdset="0">
                  <bool>true</bool>
                 </property>
-                <property name="inlineEdit">
+                <property name="inlineEdit" stdset="0">
                  <bool>true</bool>
                 </property>
-                <property name="atRowsEndNewRow">
+                <property name="atRowsEndNewRow" stdset="0">
                  <bool>true</bool>
                 </property>
-                <property name="useFiltersValueOnCreateBean">
+                <property name="useFiltersValueOnCreateBean" stdset="0">
                  <bool>true</bool>
                 </property>
                </widget>
@@ -1756,6 +1782,7 @@
    <class>DBTabWidget</class>
    <extends>QTabWidget</extends>
    <header>widgets/dbtabwidget.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>DBTableView</class>
@@ -1769,14 +1796,6 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>tbDatos</tabstop>
-  <tabstop>tbDirecciones</tabstop>
-  <tabstop>tbComercial</tabstop>
-  <tabstop>tbCuentasBancarias</tabstop>
-  <tabstop>tbDocumentos</tabstop>
-  <tabstop>tbContabilidad</tabstop>
-  <tabstop>tbRelaciones</tabstop>
-  <tabstop>tbInfoAdicional</tabstop>
   <tabstop>db_codtercero</tabstop>
   <tabstop>db_nombre</tabstop>
   <tabstop>db_cliente</tabstop>
@@ -1793,19 +1812,30 @@
   <tabstop>db_observaciones</tabstop>
   <tabstop>db_baja</tabstop>
   <tabstop>dbDateTimeEdit</tabstop>
-  <tabstop>db_codcuentarem_cuenta</tabstop>
-  <tabstop>db_telefono1_3</tabstop>
-  <tabstop>db_codcuentadom</tabstop>
-  <tabstop>db_codcuentadom_text</tabstop>
-  <tabstop>db_codcuentadom_cuenta</tabstop>
-  <tabstop>db_ventas_aseguradas</tabstop>
   <tabstop>dbNumberEdit</tabstop>
-  <tabstop>db_codcuentarem</tabstop>
+  <tabstop>dbLineEdit_4</tabstop>
+  <tabstop>dbLineEdit</tabstop>
+  <tabstop>frmTerceros-co_subcuentasproveedor.co_partidas</tabstop>
+  <tabstop>dbTabWidget</tabstop>
+  <tabstop>dbLineEdit_2</tabstop>
+  <tabstop>frmTerceros-co_subcuentascliente.co_partidas</tabstop>
+  <tabstop>dbChooseRecordButton_2</tabstop>
+  <tabstop>db_idsubcuentacliente</tabstop>
+  <tabstop>dbLineEdit_3</tabstop>
   <tabstop>db_idplanpago</tabstop>
   <tabstop>db_idserie</tabstop>
   <tabstop>db_regimeniva</tabstop>
   <tabstop>dbChooseRecordButton</tabstop>
+  <tabstop>db_telefono1_3</tabstop>
+  <tabstop>db_idtarifa</tabstop>
+  <tabstop>db_tarifasnombre</tabstop>
+  <tabstop>db_codcuentarem</tabstop>
   <tabstop>db_codcuentarem_text</tabstop>
+  <tabstop>db_codcuentarem_cuenta</tabstop>
+  <tabstop>db_codcuentadom</tabstop>
+  <tabstop>db_codcuentadom_text</tabstop>
+  <tabstop>db_codcuentadom_cuenta</tabstop>
+  <tabstop>db_ventas_aseguradas</tabstop>
  </tabstops>
  <resources>
   <include location="../var/home/david/src/alepherp/trunk/src/modules/es.alephsistemas.gestion.common/modules.qrc"/>

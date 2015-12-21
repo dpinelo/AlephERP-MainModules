@@ -9,7 +9,6 @@ Function.prototype.bind = function() {
 
 function DBRecordDlg (ui) {
     this.init(ui);
-    bean.aerpTest.call("Hola");
 }
 
 // Herencia de los objetos de gestión

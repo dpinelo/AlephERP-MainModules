@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Pedidos a proveedores</string>
+   <string>Pedidos de clientes</string>
   </property>
   <property name="windowIcon">
    <iconset>

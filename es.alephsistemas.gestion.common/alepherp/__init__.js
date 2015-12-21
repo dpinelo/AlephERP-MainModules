@@ -11,5 +11,6 @@ Function.prototype.bind = function() {
 
 debug("Iniciando alepherp scripts comunes.");
 AERPLoadJS(AERPScriptFunctionsPath() + "/alepherp/ivafunctions.js");
-AERPLoadJS(AERPScriptFunctionsPath() + "/alepherp/lineasdocumentosgestion.js");
+AERPLoadJS(AERPScriptFunctionsPath() + "/alepherp/lineasserviciosdocumentosgestion.js");
+AERPLoadJS(AERPScriptFunctionsPath() + "/alepherp/lineasarticulosdocumentosgestion.js");
 AERPLoadJS(AERPScriptFunctionsPath() + "/alepherp/documentosgestion.js");

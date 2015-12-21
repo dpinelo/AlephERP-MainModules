@@ -22,7 +22,7 @@ function onCreate() {
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-            <table>tvw_periodosimpuestos</table>
+            <table>periodosimpuestos</table>
             <field>id</field>
             <card>M1</card>
         </relation>
@@ -39,7 +39,7 @@ function onCreate() {
         <script>
 <![CDATA[
 function value() {
-    return bean.fatherFieldValue("tvw_periodosimpuestos", "nombre");
+    return bean.fatherFieldValue("periodosimpuestos", "nombre");
 }
 ]]>
         </script>

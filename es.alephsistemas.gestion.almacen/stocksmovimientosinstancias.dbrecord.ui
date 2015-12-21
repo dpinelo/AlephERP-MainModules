@@ -7,181 +7,109 @@
     <x>0</x>
     <y>0</y>
     <width>635</width>
-    <height>311</height>
+    <height>101</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <property name="margin">
+   <property name="leftMargin">
     <number>0</number>
    </property>
-   <item row="2" column="0">
-    <widget class="DBChooseRecordButton" name="db_idarticulo">
-     <property name="text">
-      <string>Artículo</string>
-     </property>
-     <property name="fieldName">
-      <string>idarticulo</string>
-     </property>
-     <property name="dataEditable">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="3" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Referencia Proveedor</string>
+      <string>Nº Serie Proveedor</string>
      </property>
      <property name="buddy">
       <cstring>db_refproveedor</cstring>
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
-    <widget class="DBLineEdit" name="db_nombrearticulo">
-     <property name="fieldName">
-      <string>articulos.father.nombre</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="1">
+   <item row="4" column="1">
     <widget class="DBNumberEdit" name="db_cantidad">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>cantidad</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="4" column="1">
+   <item row="2" column="1">
     <widget class="DBLineEdit" name="db_referencia">
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
      </property>
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>referencia</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="5" column="1">
+   <item row="3" column="1">
     <widget class="DBLineEdit" name="db_refproveedor">
      <property name="focusPolicy">
       <enum>Qt::StrongFocus</enum>
      </property>
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>refproveedor</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="6" column="1">
-    <widget class="DBLineEdit" name="db_codbarras">
-     <property name="focusPolicy">
-      <enum>Qt::StrongFocus</enum>
-     </property>
-     <property name="fieldName">
-      <string>codbarras</string>
-     </property>
-     <property name="dataEditable">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0" colspan="3">
-    <widget class="DBTableView" name="articulosinstancias.father.articuloscaracteristicasvalores">
-     <property name="internalData">
-      <bool>true</bool>
-     </property>
-     <property name="relationName">
-      <string>articulosinstancias.father.articuloscaracteristicasvalores</string>
-     </property>
-     <property name="dataEditable">
-      <bool>true</bool>
-     </property>
-     <property name="navigateOnEnter">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Código de barras</string>
-     </property>
-     <property name="buddy">
-      <cstring>db_codbarras</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
+   <item row="2" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Referencia</string>
+      <string>Nº Serie</string>
      </property>
      <property name="buddy">
       <cstring>db_referencia</cstring>
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="1" column="0">
     <widget class="DBChooseRecordButton" name="db_idinstancia">
      <property name="text">
-      <string>Instancia</string>
+      <string>Instancia de artículo</string>
      </property>
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>idinstancia</string>
      </property>
-     <property name="dataEditable">
+     <property name="dataEditable" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
+   <item row="1" column="1">
     <widget class="DBLineEdit" name="db_nombreinstancia">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>articulosinstancias.father.nombre</string>
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
-    <widget class="QLabel" name="label_4">
+   <item row="4" column="0">
+    <widget class="QLabel" name="lblCantidad">
      <property name="text">
       <string>Cantidad</string>
      </property>
      <property name="buddy">
       <cstring>db_cantidad</cstring>
      </property>
-    </widget>
-   </item>
-   <item row="1" column="0" colspan="2">
-    <widget class="QGroupBox" name="gbLocalizador">
-     <property name="title">
-      <string>Localizador de artículos por referencias</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QCheckBox" name="chkCodBar">
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
-        <property name="text">
-         <string>Lectura mediante lector de código de barras</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="DBLineEdit" name="db_localizador"/>
-      </item>
-     </layout>
     </widget>
    </item>
   </layout>
@@ -202,22 +130,13 @@
    <extends>QLineEdit</extends>
    <header>widgets/dbnumberedit.h</header>
   </customwidget>
-  <customwidget>
-   <class>DBTableView</class>
-   <extends>QTableView</extends>
-   <header>widgets/dbtableview.h</header>
-  </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>db_idarticulo</tabstop>
-  <tabstop>db_nombrearticulo</tabstop>
   <tabstop>db_idinstancia</tabstop>
   <tabstop>db_nombreinstancia</tabstop>
   <tabstop>db_referencia</tabstop>
   <tabstop>db_refproveedor</tabstop>
-  <tabstop>db_codbarras</tabstop>
   <tabstop>db_cantidad</tabstop>
-  <tabstop>articulosinstancias.father.articuloscaracteristicasvalores</tabstop>
  </tabstops>
  <resources/>
  <connections/>

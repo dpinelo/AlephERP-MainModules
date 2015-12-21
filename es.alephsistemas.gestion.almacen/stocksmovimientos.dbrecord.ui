@@ -14,7 +14,16 @@
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
@@ -26,7 +35,7 @@
       <item>
        <widget class="QLabel" name="label_13">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Los movimientos de stocks son transferencias de artículos que se producen entre los distintos almacenes que disponga. En los movimientos siempre habrá un almacén origen, y un almacén destino. Dentro de un movimiento podrá introducir artículos de diferente naturaleza. Existen cuatro tipo de movimientos&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Entrada. En este caso no existirá un almacén origen, y representará incorporaciones de artículos desde fuera de la empresa al almacén destino.&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Salida. En este caso no existirá almacén destino, y representará salidas de artículos desde el almacén orígen hacia fuera de la empresa&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Transferencias. Representa movimientos internos entre los almacenes de la empresa, desde el almacén origen al almacén destino.&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Regularizaciones. Sirve para apuntar, dar de alta o baja artículos en almacén de forma irregular.&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Los movimientos de stocks son transferencias de artículos que se producen entre las distintas ubicaciones de almacenes que disponga. En los movimientos siempre habrá un almacén origen, y un almacén destino. Dentro de un movimiento podrá introducir artículos de diferente naturaleza. Existen cuatro tipo de movimientos&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Entrada. En este caso no existirá un almacén origen, y representará incorporaciones de artículos desde fuera de la empresa al almacén destino.&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Salida. En este caso no existirá almacén destino, y representará salidas de artículos desde el almacén orígen hacia fuera de la empresa&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Transferencias. Representa movimientos internos entre los almacenes de la empresa, desde el almacén origen al almacén destino.&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Regularizaciones. Sirve para apuntar, dar de alta o baja artículos en almacén de forma irregular.&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="textFormat">
          <enum>Qt::RichText</enum>
@@ -41,7 +50,23 @@
    </item>
    <item>
     <layout class="QGridLayout" name="gridLayout_3">
-     <item row="3" column="1">
+     <item row="0" column="3">
+      <widget class="DBChooseRecordButton" name="db_idmercadodestino">
+       <property name="text">
+        <string>Mercado Destino</string>
+       </property>
+       <property name="dataEditable" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="tableName" stdset="0">
+        <string>mercados</string>
+       </property>
+       <property name="fieldName" stdset="0">
+        <string>idmercadodestino</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
       <widget class="DBDateTimeEdit" name="db_fecha">
        <property name="minimumSize">
         <size>
@@ -52,15 +77,15 @@
        <property name="displayFormat">
         <string>dd/MM/yyyy</string>
        </property>
-       <property name="fieldName">
+       <property name="fieldName" stdset="0">
         <string>fecha</string>
        </property>
-       <property name="dataEditable">
+       <property name="dataEditable" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
+     <item row="1" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
         <string>Tipo de movimiento</string>
@@ -70,17 +95,7 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="1" colspan="2">
-      <widget class="DBComboBox" name="db_tipo">
-       <property name="fieldName">
-        <string>tipo</string>
-       </property>
-       <property name="dataEditable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
+     <item row="2" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>Fecha</string>
@@ -90,7 +105,7 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
+     <item row="3" column="0">
       <widget class="QLabel" name="label_12">
        <property name="text">
         <string>Descripción</string>
@@ -100,63 +115,30 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="1" colspan="2">
-      <widget class="DBLineEdit" name="lineEdit">
-       <property name="fieldName">
-        <string>descripcion</string>
-       </property>
-       <property name="dataEditable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1" colspan="2">
-      <widget class="DBLineEdit" name="db_nombreubicacionorigen">
-       <property name="fieldName">
-        <string>ubicacionorigen.father.nombre</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
+     <item row="0" column="0">
       <widget class="DBChooseRecordButton" name="db_idubicaciondestino">
        <property name="text">
         <string>Ubicación Destino</string>
        </property>
-       <property name="fieldName">
+       <property name="fieldName" stdset="0">
         <string>idubicaciondestino</string>
        </property>
-       <property name="dataEditable">
+       <property name="dataEditable" stdset="0">
         <bool>true</bool>
        </property>
-       <property name="tableName">
+       <property name="tableName" stdset="0">
         <string>almacenesubicaciones</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1" colspan="2">
+     <item row="0" column="1" colspan="2">
       <widget class="DBLineEdit" name="db_nombreubicaciondestino">
-       <property name="fieldName">
+       <property name="fieldName" stdset="0">
         <string>ubicaciondestino.father.nombre</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="DBChooseRecordButton" name="db_idubicacionorigen">
-       <property name="text">
-        <string>Ubicación Origen</string>
-       </property>
-       <property name="fieldName">
-        <string>idubicacionorigen</string>
-       </property>
-       <property name="dataEditable">
-        <bool>true</bool>
-       </property>
-       <property name="tableName">
-        <string>almacenesubicaciones</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2">
+     <item row="2" column="2">
       <spacer name="horizontalSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -168,6 +150,33 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item row="0" column="4">
+      <widget class="DBLineEdit" name="db_mercadodestino">
+       <property name="fieldName" stdset="0">
+        <string>mercadodestino.father.nombre</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="4">
+      <widget class="DBComboBox" name="db_tipo">
+       <property name="fieldName" stdset="0">
+        <string>tipo</string>
+       </property>
+       <property name="dataEditable" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" colspan="4">
+      <widget class="DBLineEdit" name="lineEdit">
+       <property name="fieldName" stdset="0">
+        <string>descripcion</string>
+       </property>
+       <property name="dataEditable" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -211,17 +220,14 @@
        </widget>
       </item>
       <item row="1" column="0" colspan="4">
-       <widget class="DBDetailView" name="db_stocksmovimientosinstancias">
-        <property name="relationName">
+       <widget class="DBDetailView" name="db_stocksmovimientosinstancias" native="true">
+        <property name="relationName" stdset="0">
          <string>stocksmovimientosinstancias</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="visibleButtons">
-         <set>DBDetailView::DELETE|DBDetailView::DeleteButton|DBDetailView::INSERT|DBDetailView::InsertButton|DBDetailView::UPDATE|DBDetailView::UpdateButton</set>
-        </property>
-        <property name="atRowsEndNewRow">
+        <property name="atRowsEndNewRow" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -259,10 +265,10 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>db_idubicacionorigen</tabstop>
-  <tabstop>db_nombreubicacionorigen</tabstop>
   <tabstop>db_idubicaciondestino</tabstop>
   <tabstop>db_nombreubicaciondestino</tabstop>
+  <tabstop>db_idmercadodestino</tabstop>
+  <tabstop>db_mercadodestino</tabstop>
   <tabstop>db_tipo</tabstop>
   <tabstop>db_fecha</tabstop>
   <tabstop>lineEdit</tabstop>

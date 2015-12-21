@@ -23,10 +23,10 @@
             <card>1M</card>
         </relation>
         <relation>
-            <table>empresasvalorespordefecto</table>
-            <field>idempresa</field>
+            <table>alepherp_tienda</table>
+            <field>id_empresa</field>
             <card>1M</card>
-        </relation>
+        </relation>        
         <relation>
             <table>seriesfacturacion</table>
             <field>idempresa</field>
@@ -41,6 +41,16 @@
         <pk>false</pk>
         <type>string</type>
         <length>250</length>
+    </field>
+
+    <field>
+        <name>is_deleted</name>
+        <!--Obligatorio por tener la propiedad logicalDeleted a true-->
+        <alias>De baja</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>bool</type>
+        <default>false</default>
     </field>
 
     <field>
@@ -284,7 +294,7 @@
         <type>string</type>
         <length>1000</length>
         <visiblegrid>false</visiblegrid>
-    </field>
+    </field>    
     
     <field>
         <name>is_deleted</name>

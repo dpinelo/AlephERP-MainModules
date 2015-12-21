@@ -8,7 +8,7 @@
 <icon><![CDATA[]]></icon>
 <enabled>true</enabled>
 <tableCreationOptions>WithForeignKeys | CreateIndexOnRelationColumns | </tableCreationOptions>
-<generatedTime>2015-12-09 12:46:41</generatedTime>
+<generatedTime>2015-12-21 12:54:48</generatedTime>
 
 
 <file>
@@ -24,7 +24,7 @@
 <file>
     <objectName>lineasarticulos</objectName>
     <name>lineasarticulos.tableTemp</name>
-    <version>21</version>
+    <version>30</version>
     <type>tableTemp</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -34,7 +34,7 @@
 <file>
     <objectName>lineasiva</objectName>
     <name>lineasiva.tableTemp</name>
-    <version>6</version>
+    <version>7</version>
     <type>tableTemp</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -44,7 +44,7 @@
 <file>
     <objectName>lineasservicios</objectName>
     <name>lineasservicios.tableTemp</name>
-    <version>8</version>
+    <version>9</version>
     <type>tableTemp</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -74,7 +74,7 @@
 <file>
     <objectName>albaranescli</objectName>
     <name>albaranescli.table</name>
-    <version>13</version>
+    <version>15</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -224,7 +224,7 @@
 <file>
     <objectName>facturascli</objectName>
     <name>facturascli.table</name>
-    <version>72</version>
+    <version>73</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -324,7 +324,7 @@
 <file>
     <objectName>lineasarticulosalbaranescli</objectName>
     <name>lineasarticulosalbaranescli.table</name>
-    <version>4</version>
+    <version>6</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -334,7 +334,7 @@
 <file>
     <objectName>lineasarticulosfacturascli</objectName>
     <name>lineasarticulosfacturascli.table</name>
-    <version>7</version>
+    <version>8</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -354,7 +354,7 @@
 <file>
     <objectName>lineasarticulospedidoscli</objectName>
     <name>lineasarticulospedidoscli.table</name>
-    <version>2</version>
+    <version>6</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -364,7 +364,17 @@
 <file>
     <objectName>lineasarticulospedidosprov</objectName>
     <name>lineasarticulospedidosprov.table</name>
-    <version>3</version>
+    <version>5</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasarticulospresupuestoscli</objectName>
+    <name>lineasarticulospresupuestoscli.table</name>
+    <version>4</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -424,7 +434,7 @@
 <file>
     <objectName>lineasivapedidoscli</objectName>
     <name>lineasivapedidoscli.table</name>
-    <version>3</version>
+    <version>4</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -434,7 +444,17 @@
 <file>
     <objectName>lineasivapedidosprov</objectName>
     <name>lineasivapedidosprov.table</name>
-    <version>12</version>
+    <version>13</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasivapresupuestoscli</objectName>
+    <name>lineasivapresupuestoscli.table</name>
+    <version>2</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -484,7 +504,7 @@
 <file>
     <objectName>lineasserviciospedidoscli</objectName>
     <name>lineasserviciospedidoscli.table</name>
-    <version>13</version>
+    <version>14</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -494,7 +514,17 @@
 <file>
     <objectName>lineasserviciospedidosprov</objectName>
     <name>lineasserviciospedidosprov.table</name>
-    <version>1</version>
+    <version>2</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>lineasserviciospresupuestoscli</objectName>
+    <name>lineasserviciospresupuestoscli.table</name>
+    <version>2</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -514,7 +544,7 @@
 <file>
     <objectName>pedidoscli</objectName>
     <name>pedidoscli.table</name>
-    <version>25</version>
+    <version>28</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -524,7 +554,7 @@
 <file>
     <objectName>pedidosprov</objectName>
     <name>pedidosprov.table</name>
-    <version>11</version>
+    <version>12</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -575,6 +605,16 @@
     <objectName>plazos</objectName>
     <name>plazos.table</name>
     <version>20</version>
+    <type>table</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>presupuestoscli</objectName>
+    <name>presupuestoscli.table</name>
+    <version>5</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -654,7 +694,7 @@
 <file>
     <objectName>terceros</objectName>
     <name>terceros.table</name>
-    <version>38</version>
+    <version>41</version>
     <type>table</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -754,7 +794,7 @@
 <file>
     <objectName>alepherp/__init__.js</objectName>
     <name>alepherp/__init__.js</name>
-    <version>9</version>
+    <version>10</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -764,7 +804,7 @@
 <file>
     <objectName>alepherp/documentosgestion.js</objectName>
     <name>alepherp/documentosgestion.js</name>
-    <version>132</version>
+    <version>136</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -782,9 +822,29 @@
 </file>
 
 <file>
+    <objectName>alepherp/lineasarticulosdocumentosgestion.js</objectName>
+    <name>alepherp/lineasarticulosdocumentosgestion.js</name>
+    <version>62</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
     <objectName>alepherp/lineasdocumentosgestion.js</objectName>
     <name>alepherp/lineasdocumentosgestion.js</name>
-    <version>40</version>
+    <version>50</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>alepherp/lineasserviciosdocumentosgestion.js</objectName>
+    <name>alepherp/lineasserviciosdocumentosgestion.js</name>
+    <version>3</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -834,7 +894,7 @@
 <file>
     <objectName>documentosgestioncommonfunctions.qs</objectName>
     <name>documentosgestioncommonfunctions.qs</name>
-    <version>55</version>
+    <version>58</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -984,7 +1044,7 @@
 <file>
     <objectName>lineasarticulos.dbrecord.qs</objectName>
     <name>lineasarticulos.dbrecord.qs</name>
-    <version>14</version>
+    <version>15</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1024,7 +1084,7 @@
 <file>
     <objectName>lineasservicios.dbrecord.qs</objectName>
     <name>lineasservicios.dbrecord.qs</name>
-    <version>23</version>
+    <version>24</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1065,6 +1125,16 @@
     <objectName>plazos.dbrecord.qs</objectName>
     <name>plazos.dbrecord.qs</name>
     <version>12</version>
+    <type>qs</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>presupuestoscli.dbrecord.qs</objectName>
+    <name>presupuestoscli.dbrecord.qs</name>
+    <version>2</version>
     <type>qs</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1374,17 +1444,7 @@
 <file>
     <objectName>albaranescli.dbrecord.ui</objectName>
     <name>albaranescli.dbrecord.ui</name>
-    <version>22</version>
-    <type>ui</type>
-    <debug>false</debug>
-    <debugOnInit>false</debugOnInit>
-    <device>*</device>
-</file>
-
-<file>
-    <objectName>albaranesprov.dbrecord.ui</objectName>
-    <name>albaranesprov.dbrecord.ui</name>
-    <version>29</version>
+    <version>23</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1394,7 +1454,17 @@
 <file>
     <objectName>articulos.search.ui</objectName>
     <name>articulos.search.ui</name>
-    <version>4</version>
+    <version>5</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>articulosinstancias.dbrecord.ui</objectName>
+    <name>articulosinstancias.dbrecord.ui</name>
+    <version>5</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1724,7 +1794,7 @@
 <file>
     <objectName>lineasarticulos.dbrecord.ui</objectName>
     <name>lineasarticulos.dbrecord.ui</name>
-    <version>20</version>
+    <version>29</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1804,7 +1874,7 @@
 <file>
     <objectName>pedidoscli.dbrecord.ui</objectName>
     <name>pedidoscli.dbrecord.ui</name>
-    <version>30</version>
+    <version>32</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1885,6 +1955,16 @@
     <objectName>plazos.dbrecord.ui</objectName>
     <name>plazos.dbrecord.ui</name>
     <version>7</version>
+    <type>ui</type>
+    <debug>false</debug>
+    <debugOnInit>false</debugOnInit>
+    <device>*</device>
+</file>
+
+<file>
+    <objectName>presupuestoscli.dbrecord.ui</objectName>
+    <name>presupuestoscli.dbrecord.ui</name>
+    <version>5</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>
@@ -1994,7 +2074,7 @@
 <file>
     <objectName>terceros.dbrecord.ui</objectName>
     <name>terceros.dbrecord.ui</name>
-    <version>34</version>
+    <version>35</version>
     <type>ui</type>
     <debug>false</debug>
     <debugOnInit>false</debugOnInit>

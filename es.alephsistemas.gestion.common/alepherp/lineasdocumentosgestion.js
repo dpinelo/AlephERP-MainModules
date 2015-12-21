@@ -1,16 +1,14 @@
 /** 
-Este será el código compartido para poder agregar servicios o artículos, a facturas, pedidos o albaranes tanto de cliente 
-como de provedor.
+Este será el código compartido para poder agregar servicios o artículos, a presupuestos, pedidos, albaranes o facturas tanto de cliente  como de provedor.
 Utilizamos prototype changing.
+Es importante aclarar el comportamiento de la zona de almacén para las líneas de artículos. 
+Por defecto, la línea de artículo almacenará si esta genera o no movimiento de stock. Pero eso no lo podrá determinar el usuario para garantizar integridad del almacén.
+Todo viene de la definición de artículo. 
+- Si el artículo NO controla stock, el usuario no verá las opciones de almacén (esto es, la ubicación desde la que se escoge el artículo).
+- Si el artículo SÍ controla stock, y NO es instanciable, el usuario verá las opciones de almacén (para decidir desde qué almacén escoger el artículo).
+- Si el artículo SÍ controla stock, y SÍ es instanciable, el usuario verá las opciones de almacén en modo lectura, ya que la ubicación desde la que saldrá será la que tenga la instancia.
+El anterior comportamiento se determinará al escoger artículo o instancia.
 */
-Function.prototype.bind = function() { 
-    var func = this;
-    var thisObject = arguments[0];
-    var args = Array.prototype.slice.call(arguments, 1);
-    return function() {
-        return func.apply(thisObject, args);
-    }
-}
 
 alepherp.DBRecordDlgLineasDocumentosGestion = function() {
 }
@@ -21,9 +19,14 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.init = function(ui) {
 
     if ( bean.dbState == BaseBean.INSERT ) {
         thisForm.db_recargo.visible = false;
+        if ( this.ui.findChild("gbAlmacen") != null ) {
+            this.ui.findChild("gbAlmacen").visible = false;
+        }
     } else {
         thisForm.db_recargo.visible = bean.fieldValue("incluirrecargoequivalencia");
+        this.establecerEstadoWidgetsAlmacen();
     }
+    
     // El filtro del IVA a seleccionar, se basa en la fecha de factura, del pedido o del albarán
     var beanPadre = bean.father("facturasprov");
     this.idimpuestoString = "idimpuestocompra";
@@ -91,16 +94,11 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.init = function(ui) {
         this.ui.findChild("gbContabilidad").visible = false;
     }
     if ( bean.metadata.tableName == "lineasarticulosalbaranesprov" ) {
-        this.ui.findChild("lblReferencia").visible = false;
-        thisForm.db_referencia.visible = false;
         thisForm.db_idinstancia.visible = false;
         thisForm.db_nombreinstancia.visible = false;
     }
     
     thisForm.db_idimpuesto.relationFilter = "fechadesde < " + beanPadre.fecha.sqlValue + " AND fechahasta > " + beanPadre.fecha.sqlValue;
-    if ( thisForm.hasOwnProperty("db_referencia") ) {
-        thisForm.db_referencia["textEdited(QString)"].connect(this, "introRapidaArticulos");
-    }
     this.updateLabels();
 }
 
@@ -153,6 +151,12 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.updateIRPF = function() {
 
 alepherp.DBRecordDlgLineasDocumentosGestion.prototype.incluirrecargoequivalenciaValueModified = function() {
     thisForm.db_recargo.visible = thisForm.db_incluirrecargoequivalencia.checked;
+}
+
+alepherp.DBRecordDlgLineasDocumentosGestion.prototype.generamovimientosstockValueModified = function() {
+    if ( this.ui.findChild("gbAlmacen") != null ) {
+        this.ui.findChild("gbAlmacen").visible = bean.generamovimientosstock.value;
+    }
 }
 
 alepherp.DBRecordDlgLineasDocumentosGestion.prototype.idservicioValueModified = function() {
@@ -210,12 +214,7 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.idservicioValueModified = 
 
 alepherp.DBRecordDlgLineasDocumentosGestion.prototype.idarticuloValueModified = function() {
     if ( bean.idarticulo.value > 0 ) {
-        if ( bean.hasOwnProperty("generamovimientosstock") ) {
-            bean.generamovimientosstock.value = bean.articulos.father.controlstock.value;
-            if ( !bean.articulos.father.controlstock.value ) {
-                thisForm.db_generamovimientosstock.enabled = false;
-            }
-        }
+        this.establecerEstadoWidgetsAlmacen();
         var idImpuesto = bean.fatherFieldValue("articulos", this.idimpuestoString);
         if ( idImpuesto == null || idImpuesto == undefined ) {
             return;
@@ -260,49 +259,8 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.idinstanciaValueModified =
     if ( bean.idinstancia.value > 0 ) {
         bean.idubicacion.value = bean.articulosinstancias.father.idubicacion.value;
         bean.idarticulo.value = bean.articulosinstancias.father.articulos.father.id.value;
-        thisForm.db_cantidad.readOnly = true;
-    } else {
-        thisForm.db_cantidad.readOnly = false;
     }
-}
-
-alepherp.DBRecordDlgLineasDocumentosGestion.prototype.introRapidaArticulos = function() {
-    if ( thisForm.db_referencia.text == "" ) {
-        return;
-    }
-    var objArticulo = alepherp.almacen.articuloOInstanciaPorReferencia(thisForm.db_referencia.value);
-    if ( objArticulo != null ) {
-        var mensaje;
-        if ( objArticulo.isInstancia  ) {
-            // Si es una instancia, le asignamos a esta línea, el almacén donde esté
-            if ( objArticulo.instancia.idubicacion.value > 0 ) {
-                bean.idubicacion.value = objArticulo.instancia.idubicacion.value;
-            }
-            if ( bean.hasOwnProperty("generamovimientosstock") && bean.generamovimientosstock.value ) {
-                mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.instancia, bean.idubicacion.value);
-            }
-        }
-        if ( !objArticulo.isInstancia ) {
-            if ( bean.hasOwnProperty("generamovimientosstock") && bean.generamovimientosstock.value ) {
-                mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.articulo, bean.idubicacion.value);
-            }
-        }
-        if ( mensaje != undefined ) {
-            AERPMessageBox.information(mensaje + " No puede ser agregado.");
-            return;
-        }
-        bean.cantidad.value = 1;
-        if ( objArticulo.isInstancia ) {
-            bean.articulosinstancias.father = objArticulo.instancia;
-            bean.articulos.father = objArticulo.instancia.articulos.father;
-            this.idinstanciaValueModified();
-        } else {
-            bean.articulos.father = objArticulo.articulo;
-            this.idarticuloValueModified();
-        }
-        bean.importeunitario.value = objArticulo.articulo.pvp.value;
-        bean.descripcion.value = objArticulo.descripcion.value;
-    }
+    this.establecerEstadoWidgetsAlmacen();
 }
 
 alepherp.DBRecordDlgLineasDocumentosGestion.prototype.updateLabels = function() {
@@ -311,3 +269,22 @@ alepherp.DBRecordDlgLineasDocumentosGestion.prototype.updateLabels = function() 
     }
 }
 
+alepherp.DBRecordDlgLineasDocumentosGestion.prototype.establecerEstadoWidgetsAlmacen = function() {
+    if ( this.ui.findChild("gbAlmacen") != null && bean.hasOwnProperty("generamovimientosstock") ) {
+        this.ui.findChild("gbAlmacen").visible = bean.generamovimientosstock.value;
+    }
+    if ( bean.idarticulo.value > 0 ) {
+        if ( bean.hasOwnProperty("generamovimientosstock") ) {
+            bean.generamovimientosstock.value = bean.articulos.father.controlstock.value;
+        }
+        thisForm.db_idubicacion.visible = !bean.articulos.father.trazabilidad.value;
+        thisForm.db_idubicacion.enabled = !bean.articulos.father.trazabilidad.value;
+    }
+    if ( bean.idinstancia.value > 0 ) {
+        thisForm.db_idubicacion.visible = !bean.articulosinstancias.father.articulos.father.trazabilidad.value;
+        thisForm.db_idubicacion.enabled = !bean.articulosinstancias.father.articulos.father.trazabilidad.value;
+        thisForm.db_cantidad.readOnly = true;
+    } else {
+        thisForm.db_cantidad.readOnly = false;
+    }    
+}

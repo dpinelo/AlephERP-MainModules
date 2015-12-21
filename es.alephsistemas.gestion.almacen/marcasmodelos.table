@@ -52,6 +52,7 @@
         <type>string</type>
         <length>150</length>
     </field>
+<<<<<<< HEAD
 
      <field>
         <name>prefijocodbarras</name>
@@ -61,5 +62,7 @@
         <type>string</type>
         <length>50</length>
     </field>
+=======
+>>>>>>> 4a4d622b4e7ccb991ee76de84e2065364985e11f
    
 </table>

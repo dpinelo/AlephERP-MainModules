@@ -118,14 +118,14 @@ function emailTemplate() {
             <setFilterValueOnNewRecords>true</setFilterValueOnNewRecords>
         </itemFilter>
     </itemsFilterColumn> 
-            
+
     <inherits name="documentosgestion">
         <element type="connections"/>
         <element>beforeDeleteScript</element>
         <element>newRelatedElementScript</element>
         <element>deleteRelatedElementScript</element>
     </inherits>
-                                
+
     <field>
         <name>id</name>
         <alias>Identificador</alias>

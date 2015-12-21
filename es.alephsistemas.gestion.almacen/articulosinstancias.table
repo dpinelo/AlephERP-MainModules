@@ -36,12 +36,15 @@
         	<card>1M</card>
                 <delC>true</delC>
        	</relation>
+<<<<<<< HEAD
         <relation>
                 <table>articulosinstanciashistoricoreferencias</table>
                 <field>idinstancia</field>
                 <card>1M</card>
                 <delC>true</delC>
         </relation>
+=======
+>>>>>>> 4a4d622b4e7ccb991ee76de84e2065364985e11f
     </field>
 
     <field>

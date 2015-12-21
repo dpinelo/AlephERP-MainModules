@@ -1,13 +1,7 @@
-Function.prototype.bind = function() {
-  var func = this;
-  var thisObject = arguments[0];
-  var args = Array.prototype.slice.call(arguments, 1);
-  return function() {
-    return func.apply(thisObject, args);
-  }
-}
-
 function MainDlg(ui) {
+    AERPLoadExtension("qt.core");
+    AERPLoadExtension("qt.gui");
+
     this.ui = ui;
 
     // Vamos a comprobar primero si estamos antes una instancia recién creada, vacía, y por tanto precargamos algunos datos
@@ -28,6 +22,13 @@ function MainDlg(ui) {
     action_entornousuario.triggered.connect(this, "selectEntornoUsuario");
     var action_informes = thisForm.findChild("action_informes");
     action_informes.triggered.connect(this, "viewInformes");
+    var actionExportContaplus = thisForm.findChild("actionExportContaplus");
+    actionExportContaplus.triggered.connect(this, "exportContaplus");
+
+    var actionBalanceSituacion = thisForm.findChild("actionBalanceSituacion");
+    actionBalanceSituacion.triggered.connect(this, "balanceSituacion");
+    var actionPyG = thisForm.findChild("actionPyG");
+    actionPyG.triggered.connect(this, "pyg");    
 }
 
 MainDlg.prototype.checkEjercicios = function () 
@@ -54,6 +55,7 @@ MainDlg.prototype.selectEntornoUsuario = function ()
     dlg.uiName = "entornousuario.view.ui";
     dlg.qsName = "entornousuario.view.qs";
     dlg.show();
+    this.setWindowTitle();
 }
 
 MainDlg.prototype.viewInformes = function ()
@@ -65,3 +67,30 @@ MainDlg.prototype.viewInformes = function ()
     dlg.show();
 }
 
+MainDlg.prototype.exportContaplus = function(){
+    var dlg = new DBDialog;
+    dlg.type = "script";
+    dlg.uiName = "exportcontaplus.view.ui";
+    dlg.qsName = "exportcontaplus.view.qs";
+    dlg.show();
+}
+
+MainDlg.prototype.balanceSituacion = function () 
+{
+    var dlg = new DBDialog;
+    dlg.type = "script";
+    dlg.uiName = "co_balancesituacion.view.ui";
+    dlg.qsName = "co_balancesituacion.view.qs";
+    dlg.show();
+    this.setWindowTitle();
+}
+
+MainDlg.prototype.pyg = function () 
+{
+    var dlg = new DBDialog;
+    dlg.type = "script";
+    dlg.uiName = "co_pyg.view.ui";
+    dlg.qsName = "co_pyg.view.qs";
+    dlg.show();
+    this.setWindowTitle();
+}

@@ -4,13 +4,14 @@
     <alias>Pedidos de clientes</alias>
     <associatedScript debug="true">documentosgestioncommonfunctions.qs</associatedScript>
 
-    <menuEntryPath>Ventas</menuEntryPath>
     <moduleToolBarEntryPath>Ventas</moduleToolBarEntryPath>
     
     <canHaveRelatedElements>true</canHaveRelatedElements>
     
     <inherits name="documentosgestion">
         <element>envVars</element>
+        <element>newRelatedElementScript</element>
+        <element>deleteRelatedElementScript</element>
     </inherits>
     
     <connections>
@@ -170,7 +171,7 @@
         <default>0</default>
         <visiblegrid>false</visiblegrid>
         <relation>
-            <table>presupuestos</table>
+            <table>presupuestoscli</table>
             <field>id</field>
             <card>M1</card>
         </relation>

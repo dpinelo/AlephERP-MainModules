@@ -7,50 +7,30 @@
     <x>0</x>
     <y>0</y>
     <width>514</width>
-    <height>178</height>
+    <height>207</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Valores de entorno de usuario</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../resources/resources.qrc">
+   <iconset>
     <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
-   <property name="margin">
-    <number>0</number>
-   </property>
-   <item row="0" column="0" colspan="2">
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Valores de entorno de usuario</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Valores de entorno de usuario</string>
+     </property>
+    </widget>
    </item>
    <item row="1" column="0" colspan="2">
     <widget class="QGroupBox" name="groupBox">
@@ -63,11 +43,11 @@
         <property name="text">
          <string>Empresa</string>
         </property>
-        <property name="scriptExecuteAfterChoose">
-         <string>setEmpresa</string>
-        </property>
-        <property name="tableName">
+        <property name="tableName" stdset="0">
          <string>empresas</string>
+        </property>
+        <property name="scriptExecuteAfterChoose" stdset="0">
+         <string>setEmpresa</string>
         </property>
        </widget>
       </item>
@@ -92,11 +72,11 @@
         <property name="text">
          <string>Ejercicio Fiscal</string>
         </property>
-        <property name="scriptExecuteAfterChoose">
-         <string>setEjercicio</string>
-        </property>
-        <property name="tableName">
+        <property name="tableName" stdset="0">
          <string>ejercicios</string>
+        </property>
+        <property name="scriptExecuteAfterChoose" stdset="0">
+         <string>setEjercicio</string>
         </property>
        </widget>
       </item>
@@ -155,7 +135,7 @@
       <string>Cancelar (ESC)</string>
      </property>
      <property name="icon">
-      <iconset resource="../../resources/resources.qrc">
+      <iconset>
        <normaloff>:/generales/images/delete.png</normaloff>:/generales/images/delete.png</iconset>
      </property>
      <property name="shortcut">

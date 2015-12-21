@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>788</width>
-    <height>704</height>
+    <height>838</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,35 +28,41 @@
    </property>
    <item>
     <widget class="QGroupBox" name="groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Artículo</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="2" column="0">
+      <item row="1" column="0">
        <widget class="DBChooseRecordButton" name="db_idinstancia">
         <property name="text">
          <string>Instancia</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idinstancia</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="0" column="0">
        <widget class="DBChooseRecordButton" name="db_idarticulo">
         <property name="text">
          <string>Artículo</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idarticulo</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="replaceFields">
+        <property name="replaceFields" stdset="0">
          <stringlist>
           <string>descripcion;descripcion</string>
           <string>pvp;importeunitario</string>
@@ -64,9 +70,9 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
+      <item row="0" column="2">
        <widget class="DBLineEdit" name="db_articulos_nombre">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>articulos.nombre</string>
         </property>
        </widget>
@@ -74,7 +80,7 @@
       <item row="3" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Descripción</string>
+         <string>&amp;Descripción</string>
         </property>
         <property name="buddy">
          <cstring>db_descripcion</cstring>
@@ -83,35 +89,38 @@
       </item>
       <item row="4" column="0" colspan="3">
        <widget class="DBTextEdit" name="db_descripcion">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>descripcion</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
+      <item row="1" column="2">
        <widget class="DBLineEdit" name="db_nombreinstancia">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>articulosinstancias.nombre</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="lblReferencia">
+      <item row="2" column="0">
+       <widget class="DBChooseRecordButton" name="db_idtarifa">
         <property name="text">
-         <string>Referencia</string>
+         <string>Tarifa</string>
         </property>
-        <property name="buddy">
-         <cstring>db_referencia</cstring>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="fieldName" stdset="0">
+         <string>idtarifa</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="DBLineEdit" name="db_referencia">
-        <property name="dataEditable">
-         <bool>true</bool>
+      <item row="2" column="2">
+       <widget class="DBLineEdit" name="db_tarifasnombre">
+        <property name="fieldName" stdset="0">
+         <string>tarifas.father.nombre</string>
         </property>
        </widget>
       </item>
@@ -119,7 +128,13 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox_4">
+    <widget class="QGroupBox" name="gbAlmacen">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Ubicación de Almacén</string>
      </property>
@@ -129,31 +144,18 @@
         <property name="text">
          <string>Ubicación de Almacén</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idubicacion</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
        <widget class="DBLineEdit" name="db_nombrealmacen">
-        <property name="fieldName">
-         <string>almacenes.nombre</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="DBCheckBox" name="db_generamovimientosstock">
-        <property name="text">
-         <string>Genera movimiento de stock</string>
-        </property>
-        <property name="fieldName">
-         <string>generamovimientosstock</string>
-        </property>
-        <property name="dataEditable">
-         <bool>true</bool>
+        <property name="fieldName" stdset="0">
+         <string>almacenesubicaciones.nombre</string>
         </property>
        </widget>
       </item>
@@ -162,6 +164,12 @@
    </item>
    <item>
     <widget class="QGroupBox" name="groupBox_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Impuestos</string>
      </property>
@@ -171,23 +179,23 @@
         <property name="text">
          <string>I.V.A.</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idimpuesto</string>
         </property>
-        <property name="relationFilter">
+        <property name="relationFilter" stdset="0">
          <string>fechahasta&gt;now()</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="scriptExecuteAfterChoose">
+        <property name="scriptExecuteAfterChoose" stdset="0">
          <string>updateIVA</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="DBLineEdit" name="db_periodosimpuestos_nombre">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>tvw_periodosimpuestos.nombre</string>
         </property>
        </widget>
@@ -195,7 +203,7 @@
       <item row="0" column="2">
        <widget class="QLabel" name="label_8">
         <property name="text">
-         <string>I.V.A. %</string>
+         <string>&amp;I.V.A. %</string>
         </property>
         <property name="buddy">
          <cstring>db_iva</cstring>
@@ -210,10 +218,10 @@
           <height>16777215</height>
          </size>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>iva</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -223,10 +231,10 @@
         <property name="text">
          <string>Incluir recargo de equivalencia %</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>incluirrecargoequivalencia</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -239,10 +247,10 @@
           <height>16777215</height>
          </size>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>recargo</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -250,7 +258,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="lblDeduccionIva">
         <property name="text">
-         <string>Deducción de I.V.A.</string>
+         <string>Deducci&amp;ón de I.V.A.</string>
         </property>
         <property name="buddy">
          <cstring>db_tipooperacioniva</cstring>
@@ -259,10 +267,10 @@
       </item>
       <item row="1" column="1">
        <widget class="DBComboBox" name="db_tipooperacioniva">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>tipooperacioniva</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -270,7 +278,7 @@
       <item row="1" column="2">
        <widget class="QLabel" name="label_11">
         <property name="text">
-         <string>Tipo de operación</string>
+         <string>&amp;Tipo de operación</string>
         </property>
         <property name="buddy">
          <cstring>db_tipoiva</cstring>
@@ -279,10 +287,10 @@
       </item>
       <item row="1" column="3" colspan="4">
        <widget class="DBComboBox" name="db_tipoiva">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>tipoiva</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -292,23 +300,23 @@
         <property name="text">
          <string>I.R.P.F.</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idimpuesto_irpf</string>
         </property>
-        <property name="relationFilter">
+        <property name="relationFilter" stdset="0">
          <string>fechahasta&gt;now()</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="scriptExecuteAfterChoose">
+        <property name="scriptExecuteAfterChoose" stdset="0">
          <string>updateIRPF</string>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
        <widget class="DBLineEdit" name="db_periodosimpuestos_irpf_nombre">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>tvw_periodosimpuestos_irpf.nombre</string>
         </property>
        </widget>
@@ -331,10 +339,10 @@
           <height>16777215</height>
          </size>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>irpf</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -372,14 +380,20 @@
    </item>
    <item>
     <widget class="QGroupBox" name="groupBox_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Precios</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="0" column="0">
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="lblCantidad">
         <property name="text">
-         <string>Cantidad</string>
+         <string>&amp;Cantidad</string>
         </property>
         <property name="buddy">
          <cstring>db_cantidad</cstring>
@@ -388,10 +402,10 @@
       </item>
       <item row="0" column="1">
        <widget class="DBNumberEdit" name="db_cantidad">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>cantidad</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -399,7 +413,7 @@
       <item row="0" column="2">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Importe unidad</string>
+         <string>Importe &amp;unidad</string>
         </property>
         <property name="buddy">
          <cstring>db_importeunitario</cstring>
@@ -408,10 +422,10 @@
       </item>
       <item row="0" column="3">
        <widget class="DBNumberEdit" name="db_importeunitario">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>importeunitario</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -428,7 +442,7 @@
       </item>
       <item row="0" column="5">
        <widget class="DBNumberEdit" name="db_importesindto">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>importesindto</string>
         </property>
        </widget>
@@ -449,7 +463,7 @@
       <item row="1" column="2">
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>Descuento lineal</string>
+         <string>Descuento &amp;lineal</string>
         </property>
         <property name="buddy">
          <cstring>db_dtolineal</cstring>
@@ -458,10 +472,10 @@
       </item>
       <item row="1" column="3">
        <widget class="DBNumberEdit" name="db_dtolineal">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>dtolineal</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -478,10 +492,10 @@
       </item>
       <item row="1" column="5">
        <widget class="DBNumberEdit" name="db_dtopor">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>dtopor</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -511,7 +525,7 @@
       </item>
       <item row="2" column="5">
        <widget class="DBNumberEdit" name="db_importetotal">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>importetotal</string>
         </property>
        </widget>
@@ -521,6 +535,12 @@
    </item>
    <item>
     <widget class="QGroupBox" name="gbAlbaran">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Albarán origen</string>
      </property>
@@ -530,17 +550,17 @@
         <property name="text">
          <string>Albarán</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idlineaalbaran</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
        <widget class="DBLineEdit" name="db_codalbaran">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string/>
         </property>
        </widget>
@@ -563,6 +583,12 @@
    </item>
    <item>
     <widget class="QGroupBox" name="gbContabilidad">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Contabilidad</string>
      </property>
@@ -572,10 +598,10 @@
         <property name="text">
          <string>Seleccione subcuenta contable</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idsubcuenta</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -588,35 +614,32 @@
           <height>16777215</height>
          </size>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idsubcuenta</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="autoComplete">
-         <set>AlephERP::ValuesFromRelation</set>
-        </property>
-        <property name="autoCompleteColumn">
+        <property name="autoCompleteColumn" stdset="0">
          <string>codsubcuenta</string>
         </property>
-        <property name="autoCompletePopupSize">
+        <property name="autoCompletePopupSize" stdset="0">
          <size>
           <width>300</width>
           <height>0</height>
          </size>
         </property>
-        <property name="autoCompleteVisibleFields">
+        <property name="autoCompleteVisibleFields" stdset="0">
          <string>codigo,descripcion</string>
         </property>
-        <property name="replacePointWithCharacter">
+        <property name="replacePointWithCharacter" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
        <widget class="DBLineEdit" name="db_co_subcuentas_descripcion">
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>co_subcuentas.father.descripcion</string>
         </property>
        </widget>
@@ -664,15 +687,15 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>db_referencia</tabstop>
   <tabstop>db_idarticulo</tabstop>
   <tabstop>db_articulos_nombre</tabstop>
   <tabstop>db_idinstancia</tabstop>
   <tabstop>db_nombreinstancia</tabstop>
+  <tabstop>db_idtarifa</tabstop>
+  <tabstop>db_tarifasnombre</tabstop>
   <tabstop>db_descripcion</tabstop>
   <tabstop>db_idubicacion</tabstop>
   <tabstop>db_nombrealmacen</tabstop>
-  <tabstop>db_generamovimientosstock</tabstop>
   <tabstop>db_idimpuesto</tabstop>
   <tabstop>db_periodosimpuestos_nombre</tabstop>
   <tabstop>db_iva</tabstop>
@@ -689,6 +712,12 @@
   <tabstop>db_dtolineal</tabstop>
   <tabstop>db_dtopor</tabstop>
   <tabstop>db_importetotal</tabstop>
+  <tabstop>db_idlineaalbaran</tabstop>
+  <tabstop>db_codalbaran</tabstop>
+  <tabstop>db_fechaalbaran</tabstop>
+  <tabstop>db_idsubcuenta</tabstop>
+  <tabstop>db_idsubcuenta_text</tabstop>
+  <tabstop>db_co_subcuentas_descripcion</tabstop>
  </tabstops>
  <resources/>
  <connections/>

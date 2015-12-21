@@ -7,8 +7,6 @@
     <name>almacenessecciones</name>
     <!-- Alias a presentar en la aplicación -->
     <alias>Almacenes: Ubicaciones</alias>
-    <menuEntryPath>Ubicaciones de Almacén</menuEntryPath>
-    <moduleToolBarEntryPath>Ubicaciones de Almacén</moduleToolBarEntryPath>
     <isCached>true</isCached> 
 
     <field>
@@ -46,7 +44,7 @@
         <null>false</null>
         <pk>false</pk>
         <type>string</type>
-        <length>6</length>
+        <length>10</length>
     </field>
 
     <field>
@@ -58,12 +56,33 @@
         <length>150</length>
     </field>
     
+   <field>
+        <name>displayName</name>
+        <alias>Ubicación completa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>string</type>
+        <visiblegrid>true</visiblegrid>
+        <calculated>true</calculated>
+        <builtInStringExpression>
+            <expression>{almacenescalles.father.almacenessecciones.father.almaceneszonas.father.almacenes.father.nombre} - {almacenescalles.father.almacenessecciones.father.almaceneszonas.father.nombre} - {almacenescalles.father.almacenessecciones.father.nombre}- {almacenescalles.father.nombre} - {nombre}</expression>
+        </builtInStringExpression>
+    </field>
+    
     <field>
         <name>capacidad</name>
         <alias>Capacidad</alias>
         <null>true</null>
         <pk>false</pk>
         <type>double</type>
+    </field>
+
+    <field>
+        <name>pordefectoparaentrada</name>
+        <alias>Ubicación por defecto para recepción de material</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>boolean</type>
     </field>
     
 </table>

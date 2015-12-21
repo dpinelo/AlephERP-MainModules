@@ -50,6 +50,10 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.init = function(ui) {
             this.pbMarcarPagada.visible = false;
         }              
     }
+    if ( bean.metadata.tableName == "presupuestoscli" ) {
+        this.tbPedidos = this.ui.findChild("tbPedidos");
+        this.tbPedidos.clicked.connect(this, "showPage");
+    }
     if ( bean.metadata.tableName == "pedidoscli" || bean.metadata.tableName == "pedidosprov" ) {
         this.tbAlbaranes = this.ui.findChild("tbAlbaranes");
         this.tbAlbaranes.clicked.connect(this, "showPage");
@@ -80,9 +84,13 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.init = function(ui) {
     }
         
     if ( bean.dbState == BaseBean.INSERT ) {
-        thisForm.db_iddirtercero.enabled = false;
+        if ( thisForm.hasOwnProperty("db_iddirtercero") ) {
+            thisForm.db_iddirtercero.enabled = false;
+        }
     } else {
-        thisForm.db_iddirtercero.beanSearchList = bean.terceros.father;
+        if ( thisForm.hasOwnProperty("db_iddirtercero") ) {
+            thisForm.db_iddirtercero.beanSearchList = bean.terceros.father;
+        }
         if ( bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli" ) {
             this.setColorForIVAField();
         }
@@ -151,14 +159,15 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.showPage = function() {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageContabilidad"));
     } else if ( (bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli") && this.tbCostes.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageCostes"));
-    } else if ( (bean.metadata.tableName == "facturasprov" || bean.metadata.tableName == "facturascli" ||
-                 bean.metadata.tableName == "albaranescli" || bean.metadata.tableName == "albaranesprov" ) && this.tbEfectos != null && this.tbEfectos.checked ) {
+    } else if ( this.tbEfectos != null && this.tbEfectos.checked ) {
         this.swFichas.setCurrentWidget(this.ui.findChild("pageEfectos"));
         if ( bean.metadata.tableName == "facturasprov" ) {
             this.efectospagoautomaticosValueModified();
         } else if ( bean.metadata.tableName == "facturascli" ) {
             this.efectoscobroautomaticosValueModified();
         }
+    } else if ( bean.metadata.tableName == "presupuestoscli" && this.tbPedidos.checked ) {
+        this.swFichas.setCurrentWidget(this.ui.findChild("pagePedidos"));
     }
 }
 
@@ -366,31 +375,16 @@ alepherp.DBRecordDlgDocumentosGestion.prototype.introRapidaArticulos = function(
     if ( thisForm.db_introrapidaarticulos.text == "" ) {
         return;
     }
-    if ( bean.idubicacion.value == 0 ) {
-        AERPMessageBox.information("Debe escoger una ubicació de almacén por defecto, desde el que escoger los artículos.");
-        return;
-    }
-    var objArticulo = alepherp.almacen.articuloOInstanciaPorReferencia(thisForm.db_introrapidaarticulos.value);
-    if ( objArticulo != null ) {
-        var mensaje;
-        if ( objArticulo.isInstancia  ) {
-            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.instancia, bean.idubicacion.value);
-        }
-        if ( !objArticulo.isInstancia ) {
-            mensaje = alepherp.almacen.esPosibleSalidaArticulo(objArticulo.articulo, bean.idubicacion.value);
-        }
+    var instancia = alepherp.almacen.instanciaPorReferencia(thisForm.db_introrapidaarticulos.value);
+    if ( instancia != undefined ) {
+        mensaje = alepherp.almacen.esPosibleSalidaArticulo(instancia, bean.idubicacion.value);
         if ( mensaje != "" ) {
             AERPMessageBox.information(mensaje + " No puede ser agregado.");
             return;
         }
         var linea = bean["lineasarticulos" + bean.metadata.tableName].newChild();
-        if ( objArticulo.isInstancia ) {
-            linea.articulosinstancias.father = objArticulo.instancia;
-            linea.articulos.father = objArticulo.instancia.articulos.father;
-            linea.idubicacion.father = objArticulo.instancia.idubicacion.value;
-        } else {
-            linea.articulos.father = objArticulo.articulo;
-        }
+        linea.articulosinstancias.father = objArticulo.instancia;
+        linea.idubicacion.father = objArticulo.instancia.idubicacion.value;
         linea.cantidad.value = 1;
         linea.importeunitario.value = objArticulo.articulo.pvp.value;
         thisForm.db_introrapidaarticulos.text = "";

@@ -10,21 +10,6 @@
     </toStringExpression>
     
     <field>
-        <name>idarticulo</name>
-        <!--Referencia del artículo-->
-        <alias>Artículo</alias>
-        <null>true</null>
-        <pk>false</pk>
-        <type>int</type>
-        <visiblegrid>false</visiblegrid>
-        <relation>
-            <table>articulos</table>
-            <field>id</field>
-            <card>M1</card>
-        </relation>
-    </field>
-
-    <field>
         <name>idinstancia</name>
         <!--Referencia del artículo-->
         <alias>Artículo Instancia</alias>
@@ -58,17 +43,34 @@
     </field>
     
     <field>
+        <name>idmercado</name>
+        <alias>Mercado</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <builtInExpressionDefaultValue>
+            <expression>{${tablaPadre}.father.idmercado}</expression>
+        </builtInExpressionDefaultValue>        
+        <relation>
+            <table>mercados</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+
+    <field>
         <name>referencia</name>
         <!--Nombre del artículo-->
-        <alias>Referencia</alias>
-        <expression>articulos.father.referencia</expression>
+        <alias>Nº de Serie</alias>
+        <expression>articulosinstancias.father.referencia</expression>
     </field>
 
     <field>
         <name>nombre</name>
         <!--Nombre del artículo-->
-        <alias>Nombre</alias>
-        <expression>articulos.father.nombre</expression>
+        <alias>Artículo</alias>
+        <expression>articulosinstancias.father.nombre</expression>
     </field>
 
     <field>
@@ -98,6 +100,7 @@
         <pk>false</pk>
         <type>double</type>
         <partD>2</partD>
+        <default>0</default>
     </field>
 
     <field>
@@ -117,7 +120,7 @@
     <field>
         <name>dtolineal</name>
         <alias>Dto. Lineal</alias>
-        <null>false</null>
+        <null>true</null>
         <pk>false</pk>
         <type>double</type>
         <partD>2</partD>
@@ -129,7 +132,7 @@
     <field>
         <name>dtopor</name>
         <alias>% Descuento</alias>
-        <null>false</null>
+        <null>true</null>
         <pk>false</pk>
         <type>double</type>
         <partD>2</partD>
@@ -161,7 +164,7 @@
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-            <table>tvw_periodosimpuestos</table>
+            <table>periodosimpuestos</table>
             <field>id</field>
             <card>M1</card>
         </relation>
@@ -176,7 +179,7 @@
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-            <table>tvw_periodosimpuestos_irpf</table>
+            <table>periodosimpuestos_irpf</table>
             <field>id</field>
             <card>M1</card>
         </relation>
@@ -232,15 +235,5 @@
         <partD>2</partD>
     </field>
 
-    <field>
-        <name>generamovimientosstock</name>
-        <alias>Genera movimientos de stock</alias>
-        <null>false</null>
-        <pk>false</pk>
-        <type>bool</type>
-        <default>true</default>
-        <visiblegrid>false</visiblegrid>
-    </field>
-  
 </table>
 

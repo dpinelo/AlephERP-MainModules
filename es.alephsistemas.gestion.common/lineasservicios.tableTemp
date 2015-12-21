@@ -129,7 +129,7 @@ function value() {
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-            <table>tvw_periodosimpuestos</table>
+            <table>periodosimpuestos</table>
             <field>id</field>
             <card>M1</card>
         </relation>
@@ -144,7 +144,7 @@ function value() {
         <type>int</type>
         <visiblegrid>false</visiblegrid>
         <relation>
-            <table>tvw_periodosimpuestos_irpf</table>
+            <table>periodosimpuestos_irpf</table>
             <field>id</field>
             <card>M1</card>
         </relation>

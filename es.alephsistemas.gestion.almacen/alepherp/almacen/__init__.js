@@ -32,6 +32,12 @@ alepherp.almacen.articuloOInstanciaPorReferencia = function(referencia)
     return result;
 }
 
+alepherp.almacen.instanciaPorReferencia = function(referencia)
+{
+    var instancia = AERPScriptCommon.bean("articulosinstancias", "referencia='" + referencia + "' or refproveedor='" + referencia + "'");
+    return instancia;
+}
+
 /**
 Comprueba si es posible dar de baja un artículo del stock a través de una venta
 */

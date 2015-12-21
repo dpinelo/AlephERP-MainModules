@@ -31,28 +31,30 @@
             <table>stocksmovimientos</table>
             <field>id</field>
             <card>M1</card>
+            <delC>true</delC>
         </relation>
     </field>
 
     <field>
-        <name>idarticulo</name>
-        <alias>Id. Articulo</alias>
-        <null>false</null>
+        <name>idubicacionorigen</name>
+        <alias>Id. Ubicación Origen</alias>
+        <null>true</null>
         <pk>false</pk>
         <type>int</type>
         <visiblegrid>false</visiblegrid>
 
         <relation>
-            <table>articulos</table>
+            <name>ubicacionesorigen</name>
+            <table>almacenesubicaciones</table>
             <field>id</field>
             <card>M1</card>
         </relation>
-   </field>
+    </field>
 
    <field>
         <name>articulo</name>
         <alias>Artículo</alias>
-        <expression>articulos.father.nombre</expression>
+        <expression>articulosinstancias.father.articulos.father.nombre</expression>
     </field>
     
     <field>
@@ -91,7 +93,7 @@ function onChange() {
     
    <field>
         <name>referencia</name>
-        <alias>Ref. Artículo</alias>
+        <alias>Nº de Serie</alias>
         <null>true</null>
         <pk>false</pk>
         <type>string</type>
@@ -104,22 +106,8 @@ function onChange() {
     </field>
 
     <field>
-        <name>codbarras</name>
-        <alias>Código de barras</alias>
-        <null>true</null>
-        <pk>false</pk>
-        <type>string</type>
-        <length>50</length>
-        <visiblegrid>true</visiblegrid>
-        <calculated saveOnDb="true">true</calculated>
-        <builtInStringExpression>
-            <expression>{articulosinstancias.father.codbarras}</expression>
-        </builtInStringExpression>
-    </field>
-    
-    <field>
         <name>refproveedor</name>
-        <alias>Referencia Proveedor</alias>
+        <alias>Nº de Serie Proveedor</alias>
         <null>true</null>
         <pk>false</pk>
         <type>string</type>

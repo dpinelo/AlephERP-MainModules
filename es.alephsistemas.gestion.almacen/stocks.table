@@ -77,12 +77,6 @@ function value() {
     <field>
         <name>nombrealmacen</name>
         <alias>Ubicación de Almacén</alias>
-        <null>false</null>
-        <pk>false</pk>
-        <type>string</type>
-        <length>250</length>
-        <visiblegrid>true</visiblegrid>
-        <calculated>true</calculated>
         <builtInStringExpression>
             <expression>{almacenesubicaciones.father.nombre}</expression>
         </builtInStringExpression>        
@@ -106,12 +100,6 @@ function value() {
     <field>
         <name>referencia</name>
         <alias>Ref. Artículo</alias>
-        <null>false</null>
-        <pk>false</pk>
-        <type>string</type>
-        <length>250</length>
-        <visiblegrid>true</visiblegrid>
-        <calculated>true</calculated>
         <builtInStringExpression>
             <expression>{articulos.father.referencia}</expression>
         </builtInStringExpression>        
@@ -120,12 +108,6 @@ function value() {
    <field>
         <name>nombrearticulo</name>
         <alias>Artículo</alias>
-        <null>false</null>
-        <pk>false</pk>
-        <type>string</type>
-        <length>250</length>
-        <visiblegrid>true</visiblegrid>
-        <calculated>true</calculated>
         <builtInStringExpression>
             <expression>{articulos.father.nombre}</expression>
         </builtInStringExpression>        
@@ -167,18 +149,6 @@ function value() {
     </field>
     
     <field>
-        <name>pterecibir</name>
-        <!-- Movimientos pendientes positivos-->
-        <alias>Pte.Recibir</alias>
-        <null>true</null>
-        <pk>false</pk>
-        <type>double</type>
-        <partD>2</partD>
-        <default>0</default>
-        <visiblegrid>false</visiblegrid>
-    </field>
-    
-    <field>
         <name>fechaultreg</name>
         <alias>Fecha</alias>
         <null>true</null>
@@ -186,5 +156,5 @@ function value() {
         <type>datetime</type>
         <default>now</default>
     </field>
-        
+
 </table>

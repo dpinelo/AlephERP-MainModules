@@ -5,7 +5,9 @@
     <alias>Líneas de Albaranes de artículos</alias>
     <uiDbRecord>lineasarticulos.dbrecord.ui</uiDbRecord>
     <qsDbRecord>lineasarticulos.dbrecord.qs</qsDbRecord>
-      
+    <uiDbRecord  role="Almacén">almacen.lineasarticulosalbaranescli.dbrecord.ui</uiDbRecord>
+    <qsDbRecord  role="Almacén">almacen.lineasarticulosalbaranescli.dbrecord.qs</qsDbRecord>
+
     <metadataVar name="tablaPadre">albaranescli</metadataVar>
     <canHaveRelatedElements>true</canHaveRelatedElements>
     
@@ -51,6 +53,21 @@
         </relation>
     </field>
 
+    <field>
+        <name>idtarifa</name>
+        <!--Referencia del artículo-->
+        <alias>Tarifa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>tarifas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
     <inherits name="lineasarticulos">
         <element>toStringExpression</element>
         <element type="allFields"/>

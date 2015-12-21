@@ -7,8 +7,6 @@
     <name>marcas</name>
     <!-- Alias a presentar en la aplicación -->
     <alias>Marcas</alias>
-    <menuEntryPath>Marcas</menuEntryPath>
-    <moduleToolBarEntryPath>Marcas</moduleToolBarEntryPath>
     <isCached>true</isCached> 
 
     <toStringExpression>
@@ -89,10 +87,20 @@
 
     <field>
         <name>numdigitoslecturacodbarras</name>
-        <alias>Código</alias>
+        <alias>Número de dígitos iniciales para lectura de código de barras</alias>
         <null>true</null>
         <pk>false</pk>
         <type>integer</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>numdigitosbusquedacodbarras</name>
+        <alias>Número de dígitos para iniciar una lectura de código de barras</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>integer</type>
+        <visiblegrid>false</visiblegrid>
     </field>
     
 </table>

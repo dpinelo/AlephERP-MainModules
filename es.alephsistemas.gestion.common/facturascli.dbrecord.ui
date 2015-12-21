@@ -14,7 +14,7 @@
    <string>Facturas emitidas</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc">
     <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
   </property>
   <property name="tableName" stdset="0">
@@ -214,8 +214,8 @@
          <string>Campo libre de observaciones.</string>
         </property>
         <property name="text">
-         <string>Contabilidad 
-de Costes</string>
+         <string>Distribución de
+Ingresos</string>
         </property>
         <property name="icon">
          <iconset>
@@ -491,10 +491,10 @@ de Costes</string>
         <property name="readOnly">
          <bool>false</bool>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>codfactura</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -553,10 +553,10 @@ de Costes</string>
         <property name="readOnly">
          <bool>true</bool>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>ejercicios.nombre</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>false</bool>
         </property>
        </widget>
@@ -585,22 +585,22 @@ de Costes</string>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>idserie</string>
         </property>
-        <property name="listTableModel">
+        <property name="listTableModel" stdset="0">
          <string>seriesfacturacion</string>
         </property>
-        <property name="listColumnName">
+        <property name="listColumnName" stdset="0">
          <string>descripcion</string>
         </property>
-        <property name="listSqlFilter">
+        <property name="listSqlFilter" stdset="0">
          <string>serieventa=true</string>
         </property>
-        <property name="listColumnToSave">
+        <property name="listColumnToSave" stdset="0">
          <string>id</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -638,10 +638,10 @@ de Costes</string>
         <property name="displayFormat">
          <string>dd/MM/yyyy</string>
         </property>
-        <property name="fieldName">
+        <property name="fieldName" stdset="0">
          <string>fecha</string>
         </property>
-        <property name="dataEditable">
+        <property name="dataEditable" stdset="0">
          <bool>true</bool>
         </property>
        </widget>
@@ -652,7 +652,7 @@ de Costes</string>
    <item row="1" column="1">
     <widget class="QStackedWidget" name="swFichas">
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="pageDatos">
       <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -669,12 +669,15 @@ de Costes</string>
         <number>0</number>
        </property>
        <item>
-        <widget class="AERPScriptWidget" name="aswdatosgeneralestercero">
+        <widget class="AERPScriptWidget" name="aswdatosgeneralestercero" native="true">
          <property name="focusPolicy">
           <enum>Qt::TabFocus</enum>
          </property>
-         <property name="name">
+         <property name="name" stdset="0">
           <string>datosgeneralestercero</string>
+         </property>
+         <property name="dataEditable" stdset="0">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -686,13 +689,13 @@ de Costes</string>
          <layout class="QGridLayout" name="gridLayout">
           <item row="0" column="3">
            <widget class="DBComboBox" name="db_tipooperacion">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>tipooperacion</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="openListOnGetFocus">
+            <property name="openListOnGetFocus" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -718,10 +721,10 @@ de Costes</string>
             <property name="text">
              <string>Tarifa</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>idtarifa</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -733,17 +736,17 @@ de Costes</string>
               <property name="text">
                <string>Plan de pago *</string>
               </property>
-              <property name="fieldName">
+              <property name="fieldName" stdset="0">
                <string>idplanpago</string>
               </property>
-              <property name="dataEditable">
+              <property name="dataEditable" stdset="0">
                <bool>true</bool>
               </property>
              </widget>
             </item>
             <item>
              <widget class="DBLineEdit" name="db_forma_pago">
-              <property name="fieldName">
+              <property name="fieldName" stdset="0">
                <string>planespago.descripcion</string>
               </property>
              </widget>
@@ -760,10 +763,10 @@ de Costes</string>
             </item>
             <item>
              <widget class="DBNumberEdit" name="db_recfinanciero">
-              <property name="fieldName">
+              <property name="fieldName" stdset="0">
                <string>recfinanciero</string>
               </property>
-              <property name="dataEditable">
+              <property name="dataEditable" stdset="0">
                <bool>true</bool>
               </property>
              </widget>
@@ -777,13 +780,13 @@ de Costes</string>
               <property name="text">
                <string>Divisa *</string>
               </property>
-              <property name="fieldName">
+              <property name="fieldName" stdset="0">
                <string>coddivisa</string>
               </property>
-              <property name="dataEditable">
+              <property name="dataEditable" stdset="0">
                <bool>true</bool>
               </property>
-              <property name="replaceFields">
+              <property name="replaceFields" stdset="0">
                <stringlist>
                 <string>tasaconv;tasaconv</string>
                </stringlist>
@@ -792,13 +795,13 @@ de Costes</string>
             </item>
             <item>
              <widget class="DBLineEdit" name="db_coddivisa_text">
-              <property name="fieldName">
+              <property name="fieldName" stdset="0">
                <string>coddivisa</string>
               </property>
-              <property name="dataEditable">
+              <property name="dataEditable" stdset="0">
                <bool>true</bool>
               </property>
-              <property name="autoCompletePopupSize">
+              <property name="autoCompletePopupSize" stdset="0">
                <size>
                 <width>300</width>
                 <height>200</height>
@@ -808,7 +811,7 @@ de Costes</string>
             </item>
             <item>
              <widget class="DBLineEdit" name="db_nombre_divisa">
-              <property name="fieldName">
+              <property name="fieldName" stdset="0">
                <string>divisas.descripcion</string>
               </property>
              </widget>
@@ -825,10 +828,10 @@ de Costes</string>
             </item>
             <item>
              <widget class="DBNumberEdit" name="db_tasaconv">
-              <property name="fieldName">
+              <property name="fieldName" stdset="0">
                <string>tasaconv</string>
               </property>
-              <property name="dataEditable">
+              <property name="dataEditable" stdset="0">
                <bool>true</bool>
               </property>
              </widget>
@@ -845,7 +848,7 @@ de Costes</string>
             </item>
             <item>
              <widget class="DBNumberEdit" name="db_totaldivisaempresa">
-              <property name="fieldName">
+              <property name="fieldName" stdset="0">
                <string>totaldivisaempresa</string>
               </property>
              </widget>
@@ -854,10 +857,10 @@ de Costes</string>
           </item>
           <item row="0" column="1">
            <widget class="DBLineEdit" name="db_nombretarifa">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>tarifas.nombre</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -889,7 +892,7 @@ de Costes</string>
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_neto">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>neto</string>
             </property>
            </widget>
@@ -912,7 +915,7 @@ de Costes</string>
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_totaliva">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>totaliva</string>
             </property>
            </widget>
@@ -935,7 +938,7 @@ de Costes</string>
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_totalrecargo">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>totalrecargo</string>
             </property>
            </widget>
@@ -958,7 +961,7 @@ de Costes</string>
           </item>
           <item>
            <widget class="DBNumberEdit" name="db_totalirpf">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>totalirpf</string>
             </property>
            </widget>
@@ -989,7 +992,7 @@ de Costes</string>
               <bold>true</bold>
              </font>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>total</string>
             </property>
            </widget>
@@ -1008,10 +1011,10 @@ de Costes</string>
             <property name="text">
              <string>Rectificativa o de abono</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>deabono</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1021,20 +1024,16 @@ de Costes</string>
             <property name="text">
              <string>Factura a la que rectifica</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>idfacturarect</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="DBLineEdit" name="db_codrect">
-            <property name="fieldName">
-             <string>codrect</string>
-            </property>
-           </widget>
+           <widget class="DBLineEdit" name="db_codrect"/>
           </item>
          </layout>
         </widget>
@@ -1047,11 +1046,24 @@ de Costes</string>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="DBTableView" name="frmFacturasCli-lineasivafacturascli">
-            <property name="internalData">
+            <property name="internalData" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="relationName">
+            <property name="relationName" stdset="0">
              <string>lineasivafacturascli</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBCheckBox" name="db_comprobado">
+            <property name="text">
+             <string>Comprobada / Revisada</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>comprobado</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -1085,10 +1097,10 @@ de Costes</string>
             <property name="text">
              <string>Seleccione Albarán</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="tableName">
+            <property name="tableName" stdset="0">
              <string>albaranescli</string>
             </property>
            </widget>
@@ -1111,17 +1123,17 @@ de Costes</string>
           </item>
           <item row="1" column="2">
            <widget class="DBLineEdit" name="db_introrapidaarticulos">
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item row="2" column="0" colspan="3">
-           <widget class="DBDetailView" name="db_lineasarticulosfacturascli">
-            <property name="relationName">
+           <widget class="DBDetailView" name="db_lineasarticulosfacturascli" native="true">
+            <property name="relationName" stdset="0">
              <string>lineasarticulosfacturascli</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1131,17 +1143,17 @@ de Costes</string>
             <property name="text">
              <string>Ubicación de Almacén por defecto</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>idubicacion</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item row="0" column="1" colspan="2">
            <widget class="DBLineEdit" name="db_nombrealmacen">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>almacenesubicaciones.father.nombre</string>
             </property>
            </widget>
@@ -1156,11 +1168,11 @@ de Costes</string>
          </property>
          <layout class="QGridLayout" name="_2">
           <item row="0" column="0">
-           <widget class="DBDetailView" name="db_lineasserviciosfacturascli">
-            <property name="relationName">
+           <widget class="DBDetailView" name="db_lineasserviciosfacturascli" native="true">
+            <property name="relationName" stdset="0">
              <string>lineasserviciosfacturascli</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1192,10 +1204,10 @@ de Costes</string>
          <layout class="QVBoxLayout" name="verticalLayout_9">
           <item>
            <widget class="DBRichTextEdit" name="db_observaciones">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>observaciones</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1225,54 +1237,71 @@ de Costes</string>
           <string>Contabilidad</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_6">
-          <item row="0" column="0" colspan="2">
-           <widget class="DBCheckBox" name="db_nogenerarasiento">
+          <item row="0" column="3">
+           <widget class="DBDateTimeEdit" name="dbDateTimeEdit">
+            <property name="displayFormat">
+             <string>dd/MM/yyyy</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>co_asientos.brother.fecha</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>No generar asiento contable</string>
+             <string>Nº Asiento</string>
             </property>
-            <property name="fieldName">
-             <string>nogenerarasiento</string>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="6">
+           <widget class="DBTableView" name="frmFacturasCli-co_asientos.co_partidas">
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
             </property>
-            <property name="dataEditable">
+            <property name="alternatingRowColors">
              <bool>true</bool>
             </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="DBDateTimeEdit" name="db_co_asientos_fecha">
-            <property name="fieldName">
-             <string>co_asientos.father.fecha</string>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <property name="internalData" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="relationName" stdset="0">
+             <string>co_asientos.co_partidas</string>
+            </property>
+            <property name="visibleColumns" stdset="0">
+             <string>codsubcuenta;concepto;debe;haber</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="2">
+          <item row="0" column="5">
+           <widget class="QPushButton" name="pbGenerarAsiento">
+            <property name="text">
+             <string>Volver a generar asiento contable</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc">
+              <normaloff>:/generales/images/recalculatecounter.png</normaloff>:/generales/images/recalculatecounter.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="DBNumberEdit" name="db_co_asientos_num">
+            <property name="fieldName" stdset="0">
+             <string>co_asientos.brother.numero</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
            <widget class="QLabel" name="label_17">
             <property name="text">
              <string>Fecha</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>Asiento número</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="DBLineEdit" name="db_co_asientos_numero">
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="fieldName">
-             <string>co_asientos.father.numero</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="4">
+          <item row="0" column="4">
            <spacer name="horizontalSpacer_3">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -1285,16 +1314,16 @@ de Costes</string>
             </property>
            </spacer>
           </item>
-          <item row="2" column="0" colspan="5">
-           <widget class="DBTableView" name="frmFacturasCli-co_asientos.co_partidas">
-            <property name="internalData">
-             <bool>true</bool>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_19">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
             </property>
-            <property name="relationName">
-             <string>co_asientos.co_partidas</string>
-            </property>
-            <property name="allowedEdit">
-             <bool>false</bool>
+            <property name="text">
+             <string>Partidas</string>
             </property>
            </widget>
           </item>
@@ -1320,28 +1349,28 @@ de Costes</string>
        <item>
         <widget class="QGroupBox" name="groupBox_2">
          <property name="title">
-          <string>Seleccione una distribución de costes a aplicar</string>
+          <string>Seleccione una distribución de costes/ingresos a aplicar</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
            <widget class="DBChooseRecordButton" name="db_iddistribucioncostes">
             <property name="text">
-             <string>Distribución de costes</string>
+             <string>Distribución de costes/ingresos</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>iddistribucioncostes</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="scriptExecuteAfterChoose">
+            <property name="scriptExecuteAfterChoose" stdset="0">
              <string>asignarCostes</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="DBLineEdit" name="db_distribucioncostes_nombre">
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>distribucioncostes.nombre</string>
             </property>
            </widget>
@@ -1349,7 +1378,7 @@ de Costes</string>
           <item>
            <widget class="QPushButton" name="pbAgregarMultiplesCentrosCoste">
             <property name="text">
-             <string>Agregar Múltiples Subcentros de coste</string>
+             <string>Agregar Múltiples Subcentros de coste/ingresos</string>
             </property>
             <property name="icon">
              <iconset>
@@ -1363,15 +1392,15 @@ de Costes</string>
        <item>
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
-          <string>Distribución de costes de esta factura</string>
+          <string>Distribución de costes/ingresos de esta factura</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="DBDetailView" name="db_lineasdistribucioncostesfacturascli">
-            <property name="relationName">
+           <widget class="DBDetailView" name="db_lineasdistribucioncostesfacturascli" native="true">
+            <property name="relationName" stdset="0">
              <string>lineasdistribucioncostesfacturascli</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1406,7 +1435,7 @@ de Costes</string>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="fieldName">
+              <property name="fieldName" stdset="0">
                <string>neto</string>
               </property>
              </widget>
@@ -1426,7 +1455,7 @@ de Costes</string>
                 <bold>true</bold>
                </font>
               </property>
-              <property name="fieldName">
+              <property name="fieldName" stdset="0">
                <string>totalcostesdistribuidos</string>
               </property>
              </widget>
@@ -1463,10 +1492,10 @@ de Costes</string>
             <property name="text">
              <string>Gestión automática de efectos de cobro</string>
             </property>
-            <property name="fieldName">
+            <property name="fieldName" stdset="0">
              <string>efectoscobroautomaticos</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -1499,26 +1528,23 @@ de Costes</string>
              <string>Marcar como pagada</string>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="../home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc">
               <normaloff>:/aplicacion/images/ok.png</normaloff>:/aplicacion/images/ok.png</iconset>
             </property>
            </widget>
           </item>
           <item row="1" column="0" colspan="3">
-           <widget class="DBRelatedElementsView" name="db_efectoscobro">
-            <property name="allowedMetadatas">
+           <widget class="DBRelatedElementsView" name="db_efectoscobro" native="true">
+            <property name="allowedMetadatas" stdset="0">
              <string>efectoscobro</string>
             </property>
-            <property name="categories">
+            <property name="categories" stdset="0">
              <string>Cobros</string>
             </property>
-            <property name="dataEditable">
+            <property name="dataEditable" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="visibleButtons">
-             <set>DBRelatedElementsView::Delete|DBRelatedElementsView::Insert|DBRelatedElementsView::InsertExisting|DBRelatedElementsView::RemoveExisting|DBRelatedElementsView::Update|DBRelatedElementsView::View</set>
-            </property>
-            <property name="visibleFields">
+            <property name="visibleFields" stdset="0">
              <string>codigo;estado;fecha;fechav;importe;importecobrado</string>
             </property>
            </widget>
@@ -1627,9 +1653,8 @@ de Costes</string>
   <tabstop>db_introrapidaarticulos</tabstop>
  </tabstops>
  <resources>
-  <include location="../../../../git/alepherp/src/resources/resources.qrc"/>
+  <include location="../home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc"/>
   <include location="../../../../git/alepherp/src/resources/modules.qrc"/>
-  <include location="../../../programacion/alepherp/alepherp/src/modules/es.alephsistemas.gestion.common/modules.qrc"/>
   <include location="../var/home/david/src/alepherp/trunk/src/resources/resources.qrc"/>
  </resources>
  <connections/>

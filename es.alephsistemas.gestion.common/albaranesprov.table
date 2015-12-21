@@ -7,6 +7,9 @@
     <associatedScript debug="true">documentosgestioncommonfunctions.qs</associatedScript>
     <associatedScript debug="true">almacencommonfunctions.qs</associatedScript>
     
+    <uiDbRecord role="Almacén">almacen.albaranesprov.dbrecord.ui</uiDbRecord>
+    <qsDbRecord role="Almacén">almacen.albaranesprov.dbrecord.qs</qsDbRecord>
+    
    <menuEntryPath>Compras</menuEntryPath>
    <moduleToolBarEntryPath>Compras</moduleToolBarEntryPath>
     

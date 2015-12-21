@@ -14,10 +14,41 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <property name="margin">
+   <property name="leftMargin">
     <number>0</number>
    </property>
-   <item row="0" column="0" colspan="2">
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="4" column="0" colspan="3">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Movimientos de entrada a este almacén</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="DBDetailView" name="db_stocksmovimientosentrada" native="true">
+        <property name="relationName" stdset="0">
+         <string>articulos.stocksmovimientosinstancias</string>
+        </property>
+        <property name="additionalColumns" stdset="0">
+         <string>stocksmovimientos.father.tipo;stocksmovimientos.father.descripcion</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
     <widget class="QGroupBox" name="groupBox_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -51,47 +82,67 @@
      </layout>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="DBChooseRecordButton" name="db_idarticulo">
-     <property name="text">
-      <string>Artículo</string>
-     </property>
-     <property name="fieldName">
-      <string>idarticulo</string>
-     </property>
-     <property name="dataEditable">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
+   <item row="1" column="2">
     <widget class="DBLineEdit" name="dble_articulo">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>articulos.nombre</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="DBChooseRecordButton" name="db_idubicacion">
-     <property name="text">
-      <string>Ubicación de Almacén</string>
-     </property>
-     <property name="fieldName">
-      <string>idubicacion</string>
-     </property>
-     <property name="dataEditable">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
+   <item row="2" column="2">
     <widget class="DBLineEdit" name="dbLineEdit">
-     <property name="fieldName">
+     <property name="fieldName" stdset="0">
       <string>almacenesubicaciones.nombre</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="3" column="2">
+    <widget class="DBNumberEdit" name="db_cantidad">
+     <property name="fieldName" stdset="0">
+      <string>cantidad</string>
+     </property>
+     <property name="dataEditable" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="3">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Movimientos de salida de este almacén</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="DBDetailView" name="db_stocksmovimientossalida" native="true">
+        <property name="relationName" stdset="0">
+         <string>articulos.stocksmovimientosinstancias</string>
+        </property>
+        <property name="additionalColumns" stdset="0">
+         <string>stocksmovimientos.father.tipo;stocksmovimientos.father.descripcion</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Artículo</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Ubicación</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
     <widget class="QLabel" name="label">
      <property name="text">
       <string>Cantidad</string>
@@ -101,74 +152,9 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
-    <widget class="DBNumberEdit" name="db_cantidad">
-     <property name="fieldName">
-      <string>cantidad</string>
-     </property>
-     <property name="dataEditable">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0" colspan="2">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>Movimientos de entrada a este almacén</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="DBDetailView" name="db_stocksmovimientosentrada">
-        <property name="relationName">
-         <string>articulos.stocksmovimientosinstancias</string>
-        </property>
-        <property name="additionalColumns">
-         <string>stocksmovimientos.father.tipo;stocksmovimientos.father.descripcion</string>
-        </property>
-        <property name="dataEditable">
-         <bool>true</bool>
-        </property>
-        <property name="visibleButtons">
-         <set>DBDetailView::VIEW</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="5" column="0" colspan="2">
-    <widget class="QGroupBox" name="groupBox_3">
-     <property name="title">
-      <string>Movimientos de salida de este almacén</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <widget class="DBDetailView" name="db_stocksmovimientossalida">
-        <property name="relationName">
-         <string>articulos.stocksmovimientosinstancias</string>
-        </property>
-        <property name="additionalColumns">
-         <string>stocksmovimientos.father.tipo;stocksmovimientos.father.descripcion</string>
-        </property>        
-        <property name="dataEditable">
-         <bool>true</bool>
-        </property>
-        <property name="visibleButtons">
-         <set>DBDetailView::VIEW</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>DBChooseRecordButton</class>
-   <extends>QPushButton</extends>
-   <header>widgets/dbchooserecordbutton.h</header>
-  </customwidget>
   <customwidget>
    <class>DBDetailView</class>
    <extends>QWidget</extends>
@@ -186,9 +172,7 @@
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>db_idarticulo</tabstop>
   <tabstop>dble_articulo</tabstop>
-  <tabstop>db_idubicacion</tabstop>
   <tabstop>dbLineEdit</tabstop>
   <tabstop>db_cantidad</tabstop>
  </tabstops>

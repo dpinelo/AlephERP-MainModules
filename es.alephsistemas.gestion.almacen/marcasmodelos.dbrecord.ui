@@ -94,6 +94,7 @@
         </property>
        </widget>
       </item>
+<<<<<<< HEAD
       <item row="2" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
@@ -114,6 +115,8 @@
         </property>
        </widget>
       </item>
+=======
+>>>>>>> 4a4d622b4e7ccb991ee76de84e2065364985e11f
      </layout>
     </widget>
    </item>

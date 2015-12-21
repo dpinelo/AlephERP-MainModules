@@ -85,6 +85,12 @@
             <delC>true</delC>
         </relation>
 
+        <relation>
+            <table>tarifas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+        
     </field>
     
     <field>
@@ -130,6 +136,20 @@
         </relation>
     </field>
 
+    <field>
+        <name>idtarifa</name>
+        <alias>Tarifa por defecto</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>tarifas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
     <field>
         <name>cliente</name>
         <alias>Cliente</alias>
@@ -182,7 +202,7 @@
         <null>true</null>
         <pk>false</pk>
         <type>string</type>
-        <length>12</length>
+        <length>21</length>
     </field>
 
     <field>
@@ -331,7 +351,7 @@
         <null>true</null>
         <pk>false</pk>
         <type>string</type>
-        <length>50</length>
+        <length>51</length>
         <visiblegrid>false</visiblegrid>        
     </field>
     

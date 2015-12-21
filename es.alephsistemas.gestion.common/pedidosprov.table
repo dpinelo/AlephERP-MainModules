@@ -6,6 +6,8 @@
 
     <inherits name="documentosgestion">
         <element>envVars</element>
+        <element>newRelatedElementScript</element>
+        <element>deleteRelatedElementScript</element>
     </inherits>
     
     <menuEntryPath>Compras</menuEntryPath>

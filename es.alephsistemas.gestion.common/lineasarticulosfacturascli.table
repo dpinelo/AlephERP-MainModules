@@ -37,6 +37,21 @@
         </relation>
     </field>
 
+    <field>
+        <name>idtarifa</name>
+        <!--Referencia del artículo-->
+        <alias>Tarifa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>tarifas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
     <inherits name="lineasarticulos">
         <element>toStringExpression</element>
         <element type="allFields"/>

@@ -8,8 +8,6 @@ Function.prototype.bind = function() {
 }
 
 function ScriptDlg (ui) {
-    loadExtension("qt.core");    
-    loadExtension("qt.gui");
     this.ui = ui;
     this.idempresa = -1;
     this.idejercicio = "";
@@ -28,6 +26,7 @@ function ScriptDlg (ui) {
     } else {
         this.idejercicio = idejercicio;
     }
+    
     this.dbcrbEmpresa = this.ui.findChild("dbcrbEmpresa");
     this.dbcrbEjercicio = this.ui.findChild("dbcrbEjercicio");
     this.txtCodEjercicioFiscal = this.ui.findChild("txtCodEjercicioFiscal");

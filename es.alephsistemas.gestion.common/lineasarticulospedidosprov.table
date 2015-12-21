@@ -8,14 +8,6 @@
     <metadataVar name="tablaPadre">pedidosprov</metadataVar>
     <canHaveRelatedElements>true</canHaveRelatedElements>
 
-    <onCreateScript>
-<![CDATA[
-function onCreate() {
-    bean.generamovimientosstock.value = false;
- }
- ]]>    
-    </onCreateScript>
-    
     <field>
         <name>id</name>
         <!--Identificador interno de la tabla-->
@@ -43,6 +35,23 @@ function onCreate() {
         </relation>
     </field>
 
+    <field>
+        <name>idarticulo</name>
+        <!--Identificador del pedido a la que pertenece la línea-->
+        <alias>Artículo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>articulos</table>
+            <field>id</field>
+            <card>M1</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+    
     <inherits name="lineasarticulos">
         <element>toStringExpression</element>
         <element type="allFields"/>

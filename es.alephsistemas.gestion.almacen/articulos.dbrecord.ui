@@ -537,7 +537,7 @@
          </font>
         </property>
         <property name="text">
-         <string>&amp;Referencia</string>
+         <string>&amp;Nº de Serie</string>
         </property>
         <property name="buddy">
          <cstring>db_referencia</cstring>
@@ -864,6 +864,12 @@
        </property>
        <item>
         <widget class="QGroupBox" name="groupBox_10">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="title">
           <string>Datos de ventas</string>
          </property>
@@ -957,6 +963,12 @@
        </property>
        <item>
         <widget class="QGroupBox" name="groupBox_11">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="title">
           <string>Datos de compra</string>
          </property>
@@ -1038,6 +1050,12 @@
        </property>
        <item>
         <widget class="QGroupBox" name="groupBox_12">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="title">
           <string>Configuración del stock</string>
          </property>

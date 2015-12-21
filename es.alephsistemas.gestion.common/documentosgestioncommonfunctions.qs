@@ -110,10 +110,10 @@ aerpGenerarEfectos: function() {
         return;
     }
     var category, efecto;
-    if ( this.metadata.tableName == "facturasprov" || this.metadata.tableName == "albaranesprov" ) {
+    if ( this.metadata.tableName == "facturasprov" || this.metadata.tableName == "albaranesprov" || this.metadata.tableName == "pedidosprov" ) {
         category = "Pagos";
         efecto = "efectospago";
-    } else if ( this.metadata.tableName == "facturascli" || this.metadata.tableName == "albaranescli" ) {
+    } else if ( this.metadata.tableName == "pedidoscli" || this.metadata.tableName == "facturascli" || this.metadata.tableName == "albaranescli" ) {
         category = "Cobros";
         efecto = "efectoscobro";
     }
@@ -132,18 +132,20 @@ aerpGenerarEfectos: function() {
         // En documentosgestion.tableTemp, se encuentran definidas las reglas de creación de nuevos elementos relacionados, que le darán valor
         // a este elemento relacionado.
         var element = this.newRelatedElement(efecto, category);
-        element.relatedBean.estado.value = this.planespago.father.genrecibos.value;
-        if ( this.planespago.father.plazos.items[i].cargodiafijomes.value == true ) {
-            var vencimiento = new Date(this.fecha.value.getFullYear(), this.fecha.value.getMonth(), this.planespago.father.plazos.items[i].diames.value);
-            element.relatedBean.fechav.value = vencimiento;
-        } else {
-            element.relatedBean.fechav.value = AERPScriptCommon.addIntervalToDate(this.fecha.value, AERPScriptCommon.DAYS, this.planespago.father.plazos.items[i].dias.value);
-        }
-        element.relatedBean.fecha.value = this.fecha.value;
-        element.relatedBean.importe.value = this.total.value * this.planespago.father.plazos.items[i].aplazado.value / 100;
-        element.relatedBean.idformapagoprevista.value = this.planespago.father.plazos.items[i].idformapago.value;
-        if ( element.relatedBean.estado.value == "Pagado" ) {
-            this.aerpMarcarPagada.call(this.planespago.father.plazos.items[i].formaspago.father, element.relatedBean.fechav.value);
+        if ( element != null ) {
+            element.relatedBean.estado.value = this.planespago.father.genrecibos.value;
+            if ( this.planespago.father.plazos.items[i].cargodiafijomes.value == true ) {
+                var vencimiento = new Date(this.fecha.value.getFullYear(), this.fecha.value.getMonth(), this.planespago.father.plazos.items[i].diames.value);
+                element.relatedBean.fechav.value = vencimiento;
+            } else {
+                element.relatedBean.fechav.value = AERPScriptCommon.addIntervalToDate(this.fecha.value, AERPScriptCommon.DAYS, this.planespago.father.plazos.items[i].dias.value);
+            }
+            element.relatedBean.fecha.value = this.fecha.value;
+            element.relatedBean.importe.value = this.total.value * this.planespago.father.plazos.items[i].aplazado.value / 100;
+            element.relatedBean.idformapagoprevista.value = this.planespago.father.plazos.items[i].idformapago.value;
+            if ( element.relatedBean.estado.value == "Pagado" ) {
+                this.aerpMarcarPagada.call(this.planespago.father.plazos.items[i].formaspago.father, element.relatedBean.fechav.value);
+            }
         }
     }
 },
@@ -165,9 +167,11 @@ aerpMarcarPagada: function(formaPago, fecha) {
         if ( elements.length == 0 ) {
             // En las tablas, el script newRelatedElementScript se encarga de dar los valores adecuados.
             var element = this.newRelatedElement("efectospago", "Pagos");
-            efectos[efectos.length] = element.relatedBean;
-            if ( this.metadata.tableName == "albaranesprov" ) {
-                element.addCategory("Albaranes");
+            if ( element != null ) {
+                efectos[efectos.length] = element.relatedBean;
+                if ( this.metadata.tableName == "albaranesprov" ) {
+                    element.addCategory("Albaranes");
+                }
             }
         } else {
             for (var i = 0 ; i < elements.length ;i++) { efectos[efectos.length]=elements[i].relatedBean; }
@@ -177,9 +181,11 @@ aerpMarcarPagada: function(formaPago, fecha) {
         if ( elements.length == 0 ) {
             // En las tablas, el script newRelatedElementScript se encarga de dar los valores adecuados.
             var element = this.newRelatedElement("efectoscobro", "Cobros");
-            efectos[efectos.length] = element.relatedBean;
-            if ( this.metadata.tableName == "albaranescli" ) {
-                element.addCategory("Albaranes");
+            if ( element != null ) {
+                efectos[efectos.length] = element.relatedBean;
+                if ( this.metadata.tableName == "albaranescli" ) {
+                    element.addCategory("Albaranes");
+                }
             }
         } else {
             for (var i = 0 ; i < elements.length ;i++) { efectos[efectos.length]=elements[i].relatedBean; }
@@ -196,10 +202,14 @@ aerpMarcarPagada: function(formaPago, fecha) {
         if ( this.metadata.tableName == "facturasprov" || this.metadata.tableName == "albaranesprov" ) {
             // En las tablas, el script newRelatedElementScript se encarga de dar los valores adecuados.
             element = this.newRelatedElement("efectospago", "Pagos");
-            efectos[efectos.length] = element.relatedBean;
+            if ( element != null ) {
+                efectos[efectos.length] = element.relatedBean;
+            }
         } else if ( this.metadata.tableName == "facturascli" || this.metadata.tableName == "albaranescli" ) {
             element = this.newRelatedElement("efectoscobro", "Cobros");
-            efectos[efectos.length] = element.relatedBean;
+            if ( element != null ) {
+                efectos[efectos.length] = element.relatedBean;
+            }
         }
         element.relatedBean.importe.value = this.total.value - total;
         if ( this.metadata.tableName == "albaranesprov" || this.metadata.tableName == "albaranescli" ) {
@@ -240,7 +250,7 @@ aerpGenerarAlbaranAutomatico: function() {
         albaran = this.albaranesprov.newChild();
     }
     albaran.copyValues(this, "tasaconv", "coddivisa", "codpais", "provincia", "ciudad", "codpostal", "direccion",
-                             "nombredirtercero", "iddirtercero", "idtercero", "cifnif", "nombre", "idtarifa");
+                             "nombredirtercero", "iddirtercero", "idtercero", "cifnif", "nombre", "idtarifa", "idplanpago", "idserie");
 }
 
 })

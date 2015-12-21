@@ -50,46 +50,41 @@
             <table>articuloscaracteristicasvalores</table>
             <field>idarticulo</field>
             <card>1M</card>
-                <delC>true</delC>
-           </relation>
+            <delC>true</delC>
+        </relation>
         <relation>
             <table>articulosprov</table>
             <field>id</field>
             <card>1M</card>
-                <delC>true</delC>
-           </relation>
+            <delC>true</delC>
+        </relation>
         <relation>
             <table>stocks</table>
             <field>idarticulo</field>
             <card>1M</card>
-           </relation>
+        </relation>
         <relation>
             <table>articulosinstancias</table>
             <field>idarticulo</field>
             <card>1M</card>
-                <delC>true</delC>
-           </relation>
+            <delC>true</delC>
+        </relation>
         <relation>
             <table>articulostarifas</table>
             <field>idarticulo</field>
             <card>1M</card>
-                <delC>true</delC>
-           </relation>
-        <relation>
-            <table>stocksmovimientosinstancias</table>
-            <field>idarticulo</field>
-            <card>1M</card>
-           </relation>        
+            <delC>true</delC>
+        </relation>
     </field>
     
     <field>
         <name>referencia</name>
         <!-- Código de referencia del artículo    -->
-        <alias>Referencia</alias>
+        <alias>Nº de Serie</alias>
         <null>false</null>
         <pk>false</pk>
         <type>string</type>
-        <length>14</length>
+        <length>25</length>
         <!-- Comprobará que el valor de codtercero es único para el un valor específico de idempresa en 
         este caso. Es decir, podrá existir el registro 0000001 para idempresa=1 y 0000001 para idempresa=2 -->
         <uniqueOnFilterField>idempresa</uniqueOnFilterField>
@@ -303,7 +298,7 @@ function value() {
         <alias>Tipo Cod.Barras</alias>
         <null>true</null>
         <pk>false</pk>
-        <optionList>allowedCodeBars</optionList>
+        <optionList>allowedBarCode</optionList>
         <type>string</type>
         <length>50</length>
         <visiblegrid>false</visiblegrid>

@@ -7,7 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>786</width>
+<<<<<<< .mine
+    <height>354</height>
+=======
     <height>414</height>
+>>>>>>> .r3760
    </rect>
   </property>
   <property name="windowTitle">
