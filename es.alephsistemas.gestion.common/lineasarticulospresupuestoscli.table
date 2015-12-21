@@ -1,0 +1,76 @@
+<table>
+    <name>lineasarticulospresupuestoscli</name>
+    <!--Líneas de Presupuestos con artículos -->
+    <alias>Líneas de presupuestos de artículos de clientes</alias>
+    <uiDbRecord>lineasarticulos.dbrecord.ui</uiDbRecord>
+    <qsDbRecord>lineasarticulos.dbrecord.qs</qsDbRecord>
+
+    <metadataVar name="tablaPadre">presupuestoscli</metadataVar>
+    <canHaveRelatedElements>true</canHaveRelatedElements>
+
+    <field>
+        <name>id</name>
+        <!--Identificador interno de la tabla-->
+        <alias>Identificador</alias>
+        <null>false</null>
+        <pk>true</pk>
+        <type>serial</type>
+        <visiblegrid>false</visiblegrid>
+    </field>
+
+    <field>
+        <name>idpresupuesto</name>
+        <!--Identificador del presupuesto a la que pertenece la línea-->
+        <alias>presupuesto</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>presupuestoscli</table>
+            <field>id</field>
+            <card>M1</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+
+    <field>
+        <name>idarticulo</name>
+        <!--Identificador del presupuesto a la que pertenece la línea-->
+        <alias>Artículo</alias>
+        <null>false</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+
+        <relation>
+            <table>articulos</table>
+            <field>id</field>
+            <card>M1</card>
+            <delC>true</delC>
+        </relation>
+    </field>
+    
+    <field>
+        <name>idtarifa</name>
+        <!--Referencia del artículo-->
+        <alias>Tarifa</alias>
+        <null>true</null>
+        <pk>false</pk>
+        <type>int</type>
+        <visiblegrid>false</visiblegrid>
+        <relation>
+            <table>tarifas</table>
+            <field>id</field>
+            <card>M1</card>
+        </relation>
+    </field>
+    
+    <inherits name="lineasarticulos">
+        <element>toStringExpression</element>
+        <element type="allFields"/>
+    </inherits>
+
+</table>
+

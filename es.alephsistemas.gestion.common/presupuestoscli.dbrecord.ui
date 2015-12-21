@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmPresupuestosCli</class>
+ <widget class="QWidget" name="frmPresupuestosCli">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1032</width>
+    <height>672</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Presupuestos a clientes</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../var/home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc">
+    <normaloff>:/aplicacion/images/alephLogoIcon.ico</normaloff>:/aplicacion/images/alephLogoIcon.ico</iconset>
+  </property>
+  <property name="tableName" stdset="0">
+   <string>presupuestoscli</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_6">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0" rowspan="2">
+    <widget class="QFrame" name="frameButtons">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>140</width>
+       <height>450</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>135</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background: #CECFB0</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QToolButton" name="tbDatos">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>111</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Presenta la información general de este presupuesto.</string>
+        </property>
+        <property name="statusTip">
+         <string>Presenta la información general de este presupuesto.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Presenta la información general de este presupuesto.</string>
+        </property>
+        <property name="text">
+         <string>Datos Generales</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/documentos.png</normaloff>:/images/commons/documentos.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tbLineas">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>111</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Permite editar las líneas de detalles del presupuesto.</string>
+        </property>
+        <property name="statusTip">
+         <string>Permite editar las líneas de detalles del presupuesto.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Permite editar las líneas de detalles del presupuesto.</string>
+        </property>
+        <property name="text">
+         <string>Líneas de Presupuesto</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/articulos.png</normaloff>:/images/commons/articulos.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tbPedidos">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Pedidos</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/pedidoscli.png</normaloff>:/images/commons/pedidoscli.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tbObservaciones">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>111</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip">
+         <string>Campo libre de observaciones.</string>
+        </property>
+        <property name="statusTip">
+         <string>Campo libre de observaciones.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Campo libre de observaciones.</string>
+        </property>
+        <property name="text">
+         <string>Observaciones</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/estadisticas.png</normaloff>:/images/commons/estadisticas.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tbEfectos">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>81</height>
+         </size>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Efectos de cobro</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>:/images/commons/efectoscobro.png</normaloff>:/images/commons/efectoscobro.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextUnderIcon</enum>
+        </property>
+        <property name="autoRaise">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="groupBox_14">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Código*</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_codpresupuesto">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="fieldName" stdset="0">
+         <string>codpresupuesto</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Ejercicio</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="DBLineEdit" name="db_ejercicios_descripcion">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Código unico del tercero. El sistema propone un número, aunque usted puede cambiarlo. El número debe ser único.</string>
+        </property>
+        <property name="statusTip">
+         <string>Código unico del tercero. El sistema propone un número, aunque usted puede cambiarlo. El número debe ser único.</string>
+        </property>
+        <property name="whatsThis">
+         <string>Código unico del tercero. El sistema propone un número, aunque usted puede cambiarlo. El número debe ser único.</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="fieldName" stdset="0">
+         <string>ejercicios.nombre</string>
+        </property>
+        <property name="dataEditable" stdset="0">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QStackedWidget" name="swFichas">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="pageDatos">
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="AERPScriptWidget" name="aswterceros" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="name" stdset="0">
+          <string>datosgeneralestercero</string>
+         </property>
+         <property name="dataEditable" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_10">
+         <property name="title">
+          <string>Datos del presupuesto</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Fecha *</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBDateTimeEdit" name="db_fecha">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="displayFormat">
+             <string>dd/MM/yyyy</string>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>fecha</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="DBChooseRecordButton" name="db_idplanpago">
+              <property name="text">
+               <string>Plan de pago *</string>
+              </property>
+              <property name="fieldName" stdset="0">
+               <string>idplanpago</string>
+              </property>
+              <property name="dataEditable" stdset="0">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="DBLineEdit" name="db_plan_pago">
+              <property name="fieldName" stdset="0">
+               <string>planespago.descripcion</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_6">
+         <property name="title">
+          <string>Totales</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Base imponible</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBNumberEdit" name="db_neto">
+            <property name="fieldName" stdset="0">
+             <string>neto</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>IVA</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBNumberEdit" name="db_totaliva">
+            <property name="fieldName" stdset="0">
+             <string>totaliva</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>Recargo</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBNumberEdit" name="db_totalrecargo">
+            <property name="fieldName" stdset="0">
+             <string>totalrecargo</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>I.R.P.F.</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBNumberEdit" name="db_totalirpf">
+            <property name="fieldName" stdset="0">
+             <string>totalirpf</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_15">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Total</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBNumberEdit" name="db_total">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="fieldName" stdset="0">
+             <string>total</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_7">
+         <property name="title">
+          <string>Líneas de IVA</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="DBTableView" name="lineasivapresupuestoscli">
+            <property name="internalData" stdset="0">
+             <bool>true</bool>
+            </property>
+            <property name="relationName" stdset="0">
+             <string>lineasivapresupuestoscli</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageLineas">
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="title">
+          <string>Artículos</string>
+         </property>
+         <layout class="QGridLayout">
+          <item row="0" column="0">
+           <widget class="DBDetailView" name="db_lineasarticulospresupuestoscli" native="true">
+            <property name="relationName" stdset="0">
+             <string>lineasarticulospresupuestoscli</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_13">
+         <property name="title">
+          <string>Servicios</string>
+         </property>
+         <layout class="QGridLayout" name="_2">
+          <item row="0" column="0">
+           <widget class="DBDetailView" name="db_lineasserviciospresupuestoscli" native="true">
+            <property name="relationName" stdset="0">
+             <string>lineasserviciospresupuestoscli</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pagePedidos">
+      <layout class="QVBoxLayout" name="verticalLayout_20">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBoxPedidos">
+         <property name="title">
+          <string>Pedidos</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutPedidos">
+          <item>
+           <widget class="DBDetailView" name="db_pedidoscli" native="true">
+            <property name="relationName" stdset="0">
+             <string>pedidoscli</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageObservaciones">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_8">
+         <property name="title">
+          <string>Observaciones</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="DBRichTextEdit" name="db_observaciones">
+            <property name="fieldName" stdset="0">
+             <string>observaciones</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageEfectos">
+      <layout class="QVBoxLayout" name="verticalLayout_12">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>Efectos de pago</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <widget class="QPushButton" name="pbPagoRapido">
+            <property name="text">
+             <string>Introducir pago anticipado o pago rapido</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>:/images/commons/efectoscobro.png</normaloff>:/images/commons/efectoscobro.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="DBDetailView" name="db_efectospago" native="true">
+            <property name="relationName" stdset="0">
+             <string>efectoscobro</string>
+            </property>
+            <property name="dataEditable" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AERPScriptWidget</class>
+   <extends>QWidget</extends>
+   <header>scripts/perpscriptwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBChooseRecordButton</class>
+   <extends>QPushButton</extends>
+   <header>widgets/dbchooserecordbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>widgets/dbdatetimeedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBDetailView</class>
+   <extends>QWidget</extends>
+   <header>widgets/dbdetailview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dblineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBNumberEdit</class>
+   <extends>QLineEdit</extends>
+   <header>widgets/dbnumberedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBTableView</class>
+   <extends>QTableView</extends>
+   <header>widgets/dbtableview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DBRichTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>widgets/dbrichtextedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>db_codpresupuesto</tabstop>
+  <tabstop>db_ejercicios_descripcion</tabstop>
+  <tabstop>db_fecha</tabstop>
+  <tabstop>db_idplanpago</tabstop>
+  <tabstop>db_plan_pago</tabstop>
+  <tabstop>db_neto</tabstop>
+  <tabstop>db_totaliva</tabstop>
+  <tabstop>db_totalrecargo</tabstop>
+  <tabstop>db_totalirpf</tabstop>
+  <tabstop>db_total</tabstop>
+  <tabstop>lineasivapresupuestoscli</tabstop>
+  <tabstop>pbPagoRapido</tabstop>
+  <tabstop>db_observaciones</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../var/home/david/src/alepherp/trunk/src/lib/daobusiness/resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
